@@ -61,7 +61,7 @@ class ItemTypeReferenceTest(unittest.TestCase):
 
     def test_primary_indexes_link_the_reference(self):
         references = {
-            ROOT / "README.md": "docs/ITEM_TYPE_REFERENCE.md",
+            ROOT / "docs/README.md": "ITEM_TYPE_REFERENCE.md",
             ROOT / "docs/ROW_LAYOUT.md": "ITEM_TYPE_REFERENCE.md",
             ROOT / "docs/SOURCES.md": "ITEM_TYPE_REFERENCE.md",
         }

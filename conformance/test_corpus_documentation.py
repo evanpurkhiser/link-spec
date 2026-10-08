@@ -11,18 +11,17 @@ DOCUMENTS = (ROOT / "docs/CONFORMANCE.md", ROOT / "docs/CONFORMANCE_COVERAGE.md"
 class CorpusDocumentationTests(unittest.TestCase):
     def test_readme_indexes_every_document_once(self) -> None:
         readme = (ROOT / "README.md").read_text()
-        documents = readme.split("## Documents", 1)[1].split(
-            "## Evidence labels", 1
-        )[0]
-        paths = [
-            ROOT / "CONTRIBUTING.md",
-            *sorted((ROOT / "docs").glob("*.md")),
-        ]
+        self.assertIn("[documentation index](docs/README.md)", readme)
+
+        documents = (ROOT / "docs/README.md").read_text()
+        paths = sorted((ROOT / "docs").glob("*.md"))
 
         for path in paths:
-            relative = path.relative_to(ROOT)
-            with self.subTest(document=relative):
-                self.assertEqual(1, documents.count(f"- `{relative}`"))
+            if path.name == "README.md":
+                continue
+
+            with self.subTest(document=path.name):
+                self.assertEqual(1, documents.count(f"({path.name})"))
 
     def test_documented_totals_match_recursive_suite_inventory(self) -> None:
         suite_paths = sorted(SUITES.rglob("*.json"))

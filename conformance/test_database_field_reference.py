@@ -111,7 +111,10 @@ class DatabaseFieldReferenceTest(unittest.TestCase):
         text = REFERENCE.read_text()
         self.assertIn("## Request-kind index", text)
         self.assertIn("family-level evidence", text)
-        self.assertIn("95-row inverse request-kind index", (ROOT / "README.md").read_text())
+        self.assertIn(
+            "95-row inverse request-kind index",
+            (ROOT / "docs/README.md").read_text(),
+        )
         navigation = (ROOT / "docs/LINK_EXPORT_NAVIGATION.md").read_text()
         self.assertIn("inverse database lookup", navigation)
         self.assertIn("family-level evidence", navigation)

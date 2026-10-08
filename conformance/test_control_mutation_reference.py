@@ -68,7 +68,7 @@ class ControlMutationReferenceTest(unittest.TestCase):
 
     def test_primary_documents_link_the_reference_and_live_boundary(self):
         expected = {
-            "README.md": "docs/CONTROL_AND_MUTATION_REFERENCE.md",
+            "docs/README.md": "CONTROL_AND_MUTATION_REFERENCE.md",
             "docs/PROTOCOL_REFERENCE.md": "complete adjacent control plane",
             "docs/STATIC_ANALYSIS.md": "control-mutation-command-map.json",
             "docs/SOURCES.md": "Complete generated join for 54 control/mutation commands",
