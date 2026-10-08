@@ -6,7 +6,6 @@ from types import SimpleNamespace
 from unittest import mock
 
 import conformance_backend
-import replay_vynull
 
 
 class FakeAdapter:
@@ -66,15 +65,6 @@ class BackendAdapterTests(unittest.TestCase):
         self.assertEqual("source", adapter.version(adapter.source_provenance()))
         with adapter.server("full", "key", None, Path("results")) as port:
             self.assertEqual(12345, port)
-
-    def test_vynull_uses_the_shared_replay_catalog(self) -> None:
-        self.assertEqual(287, len(replay_vynull.REPLAYS))
-
-    def test_vynull_replay_requires_explicit_opt_in(self) -> None:
-        with self.assertRaisesRegex(SystemExit, "requires an explicit opt-in"):
-            replay_vynull.require_opt_in(False)
-
-        replay_vynull.require_opt_in(True)
 
     def test_aggregate_reports_exact_and_shape_rates(self) -> None:
         totals = conformance_backend.aggregate_suites(

@@ -10,7 +10,7 @@ Rekordbox 7.2.19 is the behavioral oracle. The recording queue remains isolated
 from backend implementations, and `test_real_rekordbox_phase_boundary.py`
 enforces that every script in the active serial queue, including its finalizer,
 contains no backend invocation. The safe replay catalog can be evaluated
-independently against rbxport, Vynull, or another adapter. Mutation and
+independently against rbxport or another adapter. Mutation and
 lifecycle suites stay deferred until a backend-specific disposable-state
 contract is defined.
 

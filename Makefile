@@ -1,4 +1,4 @@
-.PHONY: test test-python test-research smoke-vynull conformance-vynull
+.PHONY: test test-python test-research
 
 test: test-python
 
@@ -7,9 +7,3 @@ test-python:
 
 test-research:
 	cd conformance && ../.venv/bin/python -m unittest discover -p 'test_*.py'
-
-smoke-vynull:
-	python3 conformance/replay_vynull.py --enable-vynull-replay --suite xdj-rx3/empty
-
-conformance-vynull:
-	python3 conformance/replay_vynull.py --enable-vynull-replay

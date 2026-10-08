@@ -45,17 +45,8 @@ python3 -m venv .venv
 Restore the binary at the path recorded in `docs/SOURCES.md`, then run
 `make test-research`.
 
-The Vynull adapter defaults to a `vynull` checkout beside this repository and
-requires the local Rekordbox options file used to decrypt generated fixtures.
-Vynull owns the Go command used to serve those fixtures. The rbxport adapter
-similarly consumes a backend-provided executable. Paths can be overridden with
-the adapter command-line options.
-
-Run a small Vynull integration replay with:
-
-```sh
-make smoke-vynull
-```
+The rbxport adapter consumes a backend-provided executable. Its path can be
+overridden with the adapter command-line options.
 
 See `conformance/BACKENDS.md` for the adapter contract, full-corpus command,
 result schema, and safety boundary.
