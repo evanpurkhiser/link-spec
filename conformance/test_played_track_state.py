@@ -643,40 +643,40 @@ class PlayedTrackStateTests(unittest.TestCase):
 
     def test_documents_distinguish_static_ownership_from_live_gap(self) -> None:
         documents = {
-            "ROW_LAYOUT.md": (
+            "docs/ROW_LAYOUT.md": (
                 "Link-played content-ID cache",
                 "returns scalar value `2`",
             ),
-            "CONFIGURATION.md": (
+            "docs/CONFIGURATION.md": (
                 "Played-track presentation state",
                 "AnotherHistories",
             ),
-            "PROTOCOL_REFERENCE.md": (
+            "docs/PROTOCOL_REFERENCE.md": (
                 "Bit 8 is the Link-played marker",
                 "Expected transitions remain unset",
             ),
-            "LINK_EXPORT_REQUEST_VOCABULARY.md": (
+            "docs/LINK_EXPORT_REQUEST_VOCABULARY.md": (
                 "`0x3b03` has a fully recovered scalar contract",
                 "argument-7 bit `0x100`",
             ),
-            "XDJ_RR_CLIENT_NAVIGATION.md": (
+            "docs/XDJ_RR_CLIENT_NAVIGATION.md": (
                 "The location-1 play-state path is concrete",
                 "Played versus Unplayed row action",
             ),
-            "REKORDBOX_RESEARCH_GAPS.md": (
+            "docs/REKORDBOX_RESEARCH_GAPS.md": (
                 "Link-played row state",
                 "`ah18` records mutation timing",
             ),
-            "CLEANUP.md": (
+            "docs/CLEANUP.md": (
                 "Played-state follow-up boundary",
                 "snapshots the exact guest `rekordbox3.settings`",
             ),
-            "SOURCES.md": (
+            "docs/SOURCES.md": (
                 "Played-track state",
                 "independent physical CDJ-3000 observation",
                 "two-requester ownership/admission oracle",
             ),
-            "DEVICE_COMPATIBILITY.md": (
+            "docs/DEVICE_COMPATIBILITY.md": (
                 "advertised only player 1",
                 "shared-versus-partitioned Link-played state",
             ),
@@ -689,13 +689,13 @@ class PlayedTrackStateTests(unittest.TestCase):
 
     def test_active_played_state_generations_are_current_in_documentation(self) -> None:
         documents = (
-            "CONFIGURATION.md",
-            "CONFORMANCE_COVERAGE.md",
-            "DEVICE_COMPATIBILITY.md",
-            "EXPERIMENTS.md",
-            "HOT_CUE_BANK_ORACLE.md",
-            "PROTOCOL_REFERENCE.md",
-            "REKORDBOX_RESEARCH_GAPS.md",
+            "docs/CONFIGURATION.md",
+            "docs/CONFORMANCE_COVERAGE.md",
+            "docs/DEVICE_COMPATIBILITY.md",
+            "docs/EXPERIMENTS.md",
+            "docs/HOT_CUE_BANK_ORACLE.md",
+            "docs/PROTOCOL_REFERENCE.md",
+            "docs/REKORDBOX_RESEARCH_GAPS.md",
         )
         superseded = ("ag17", "ah17", "ai17", "aj17", "ak17")
 

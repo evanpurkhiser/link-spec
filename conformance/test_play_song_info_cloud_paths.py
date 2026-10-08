@@ -99,9 +99,9 @@ class PlaySongInfoCloudPathTests(unittest.TestCase):
         )
 
     def test_protocol_docs_state_the_exact_remaining_live_class(self):
-        path_oracle = (ROOT / "PLAY_SONG_INFO_PATH_ORACLE.md").read_text()
-        protocol = (ROOT / "PROTOCOL_REFERENCE.md").read_text()
-        gaps = (ROOT / "REKORDBOX_RESEARCH_GAPS.md").read_text()
+        path_oracle = (ROOT / "docs/PLAY_SONG_INFO_PATH_ORACLE.md").read_text()
+        protocol = (ROOT / "docs/PROTOCOL_REFERENCE.md").read_text()
+        gaps = (ROOT / "docs/REKORDBOX_RESEARCH_GAPS.md").read_text()
         for document in (path_oracle, protocol, gaps):
             self.assertIn("CLSSyncMethod=0", document)
         for fragment in (
@@ -113,7 +113,7 @@ class PlaySongInfoCloudPathTests(unittest.TestCase):
             self.assertIn(fragment, path_oracle)
         self.assertNotIn(
             "A follow-up stored-scale numeric profile is required",
-            (ROOT / "EXPERIMENTS.md").read_text(),
+            (ROOT / "docs/EXPERIMENTS.md").read_text(),
         )
 
     def test_live_suite_regenerates_byte_identically(self):

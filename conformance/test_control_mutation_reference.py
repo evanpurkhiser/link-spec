@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 VOCABULARY = ROOT / "data/static-analysis/link-export-request-vocabulary.json"
 INDEX = ROOT / "data/static-analysis/control-mutation-command-map.json"
-REFERENCE = ROOT / "CONTROL_AND_MUTATION_REFERENCE.md"
+REFERENCE = ROOT / "docs/CONTROL_AND_MUTATION_REFERENCE.md"
 GENERATOR = ROOT / "tools/generate_control_mutation_reference.py"
 
 
@@ -68,11 +68,11 @@ class ControlMutationReferenceTest(unittest.TestCase):
 
     def test_primary_documents_link_the_reference_and_live_boundary(self):
         expected = {
-            "README.md": "CONTROL_AND_MUTATION_REFERENCE.md",
-            "PROTOCOL_REFERENCE.md": "complete adjacent control plane",
-            "STATIC_ANALYSIS.md": "control-mutation-command-map.json",
-            "SOURCES.md": "Complete generated join for 54 control/mutation commands",
-            "CLEANUP.md": "require no cleanup",
+            "README.md": "docs/CONTROL_AND_MUTATION_REFERENCE.md",
+            "docs/PROTOCOL_REFERENCE.md": "complete adjacent control plane",
+            "docs/STATIC_ANALYSIS.md": "control-mutation-command-map.json",
+            "docs/SOURCES.md": "Complete generated join for 54 control/mutation commands",
+            "docs/CLEANUP.md": "require no cleanup",
         }
         for name, fragment in expected.items():
             with self.subTest(document=name):

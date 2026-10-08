@@ -88,9 +88,9 @@ class DeviceBehaviorMatrixTest(unittest.TestCase):
         self.assertEqual(13, matrix["semantic_reference_matches"])
 
     def test_documents_expose_surface_and_dimension_boundaries(self):
-        oracle = (ROOT / "DEVICE_MATRIX_ORACLE.md").read_text()
-        compatibility = (ROOT / "DEVICE_COMPATIBILITY.md").read_text()
-        gaps = " ".join((ROOT / "REKORDBOX_RESEARCH_GAPS.md").read_text().split())
+        oracle = (ROOT / "docs/DEVICE_MATRIX_ORACLE.md").read_text()
+        compatibility = (ROOT / "docs/DEVICE_COMPATIBILITY.md").read_text()
+        gaps = " ".join((ROOT / "docs/REKORDBOX_RESEARCH_GAPS.md").read_text().split())
         self.assertIn("## Serving dimensions", oracle)
         self.assertIn("seven completed status-backed surfaces", oracle)
         self.assertIn("packed Hot Cue extended setter", compatibility)

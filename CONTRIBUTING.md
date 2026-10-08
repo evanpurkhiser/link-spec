@@ -15,7 +15,7 @@ behavior:
 
 Do not edit a golden to make an implementation pass. Change a golden only when
 a reproducible Rekordbox recording establishes a different oracle result, and
-retain the recording provenance described in `CONFORMANCE.md`.
+retain the recording provenance described in `docs/CONFORMANCE.md`.
 
 Install the pinned development tools and Git hooks with:
 
@@ -42,7 +42,7 @@ python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-dev.txt
 ```
 
-Restore the binary at the path recorded in `SOURCES.md`, then run
+Restore the binary at the path recorded in `docs/SOURCES.md`, then run
 `make test-research`.
 
 The Vynull adapter defaults to a `vynull` checkout beside this repository and

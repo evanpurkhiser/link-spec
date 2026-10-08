@@ -332,7 +332,7 @@ class HotCueLegacySetterParserSummaryTests(unittest.TestCase):
                 )
 
     def test_complete_fixed_word_map_is_promoted_in_oracle(self) -> None:
-        oracle = (summary.ROOT / "HOT_CUE_BANK_ORACLE.md").read_text()
+        oracle = (summary.ROOT / "docs/HOT_CUE_BANK_ORACLE.md").read_text()
         self.assertNotIn("static; live pair pending", oracle)
         for field in ("OutMpegFrame", "InMpegAbs", "OutMpegAbs"):
             self.assertIn(

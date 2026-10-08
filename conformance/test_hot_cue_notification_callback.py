@@ -153,8 +153,8 @@ class HotCueNotificationCallbackTests(unittest.TestCase):
             self.assertEqual(output.read_bytes(), GENERATED_TRACE.read_bytes())
 
     def test_oracles_keep_the_protocol_boundary_explicit(self) -> None:
-        hot_cue_oracle = (ROOT / "HOT_CUE_BANK_ORACLE.md").read_text()
-        gap_matrix = (ROOT / "GAP_MATRIX.md").read_text()
+        hot_cue_oracle = (ROOT / "docs/HOT_CUE_BANK_ORACLE.md").read_text()
+        gap_matrix = (ROOT / "docs/GAP_MATRIX.md").read_text()
 
         self.assertRegex(hot_cue_oracle, r"with no\s+Link Export packet")
         self.assertIn("statically closed in-process setter callback", gap_matrix)

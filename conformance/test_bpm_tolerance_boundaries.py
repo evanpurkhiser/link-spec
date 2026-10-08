@@ -50,7 +50,7 @@ class BpmToleranceBoundarySuiteTests(unittest.TestCase):
         self.assertIn("bpm-tolerance-boundaries.json", SUMMARIZER.read_text())
 
     def test_protocol_reference_does_not_leave_completed_capture_pending(self) -> None:
-        protocol = (ROOT.parent / "PROTOCOL_REFERENCE.md").read_text()
+        protocol = (ROOT.parent / "docs/PROTOCOL_REFERENCE.md").read_text()
 
         self.assertNotIn("Wire-verify the ±0–6% BPM boundaries", protocol)
         self.assertIn("119.50..120.49", protocol)

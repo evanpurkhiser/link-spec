@@ -59,7 +59,7 @@ class LinkExportRequestVocabularyTest(unittest.TestCase):
         self.assertEqual(len(self.commands), len(self.by_kind))
 
     def test_documented_coverage_counts_match_the_generated_ledger(self):
-        protocol = (ROOT / "LINK_EXPORT_REQUEST_VOCABULARY.md").read_text()
+        protocol = (ROOT / "docs/LINK_EXPORT_REQUEST_VOCABULARY.md").read_text()
         counts = self.document["summary"]["coverage_counts"]
         for coverage, count in counts.items():
             with self.subTest(coverage=coverage):
@@ -233,9 +233,9 @@ class LinkExportRequestVocabularyTest(unittest.TestCase):
             self.assertEqual(output.read_bytes(), YEAR_HANDLER.read_bytes())
 
     def test_protocol_docs_distinguish_rejected_commands_from_live_queries(self):
-        protocol = (ROOT / "PROTOCOL_REFERENCE.md").read_text()
-        queries = (ROOT / "DATABASE_QUERIES.md").read_text()
-        gaps = (ROOT / "REKORDBOX_RESEARCH_GAPS.md").read_text()
+        protocol = (ROOT / "docs/PROTOCOL_REFERENCE.md").read_text()
+        queries = (ROOT / "docs/DATABASE_QUERIES.md").read_text()
+        gaps = (ROOT / "docs/REKORDBOX_RESEARCH_GAPS.md").read_text()
 
         for fragment in (
             "supported `StockDate` browser is exclusively `1708..1a08`",

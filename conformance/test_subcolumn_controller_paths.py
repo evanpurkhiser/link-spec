@@ -79,28 +79,28 @@ class SubcolumnControllerPathsTests(unittest.TestCase):
         documents = {
             name: (ROOT / name).read_text()
             for name in (
-                "CONFIGURATION.md",
-                "DATABASE_QUERIES.md",
-                "PROTOCOL_REFERENCE.md",
-                "SECONDARY_COLUMNS.md",
-                "SECONDARY_COLUMN_ORACLE.md",
+                "docs/CONFIGURATION.md",
+                "docs/DATABASE_QUERIES.md",
+                "docs/PROTOCOL_REFERENCE.md",
+                "docs/SECONDARY_COLUMNS.md",
+                "docs/SECONDARY_COLUMN_ORACLE.md",
             )
         }
 
         self.assertIn(
-            "first selected ID in `Seq` order", documents["CONFIGURATION.md"]
+            "first selected ID in `Seq` order", documents["docs/CONFIGURATION.md"]
         )
         self.assertIn(
             "query has no `ORDER BY` and consumes row zero",
-            documents["CONFIGURATION.md"],
+            documents["docs/CONFIGURATION.md"],
         )
         self.assertIn(
-            "do not share a selected-row", documents["SECONDARY_COLUMNS.md"]
+            "do not share a selected-row", documents["docs/SECONDARY_COLUMNS.md"]
         )
         for name in (
-            "DATABASE_QUERIES.md",
-            "PROTOCOL_REFERENCE.md",
-            "SECONDARY_COLUMN_ORACLE.md",
+            "docs/DATABASE_QUERIES.md",
+            "docs/PROTOCOL_REFERENCE.md",
+            "docs/SECONDARY_COLUMN_ORACLE.md",
         ):
             with self.subTest(document=name):
                 self.assertIn("Preferences", documents[name])

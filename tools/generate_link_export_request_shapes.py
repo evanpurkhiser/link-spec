@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 GRAPH = ROOT / "data/static-analysis/link-export-navigation-graph.json"
-OUTPUT = ROOT / "REQUEST_SHAPES.md"
+OUTPUT = ROOT / "docs/REQUEST_SHAPES.md"
 
 
 def parse_args() -> argparse.Namespace:

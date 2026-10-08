@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "data/static-analysis/sql-literal-index.json"
-REFERENCE = ROOT / "SQL_LITERAL_INDEX.md"
+REFERENCE = ROOT / "docs/SQL_LITERAL_INDEX.md"
 GENERATOR = ROOT / "tools/generate_sql_literal_index.py"
 
 

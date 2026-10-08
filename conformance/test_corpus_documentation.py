@@ -5,22 +5,24 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SUITES = ROOT / "conformance/suites"
-DOCUMENTS = (ROOT / "CONFORMANCE.md", ROOT / "CONFORMANCE_COVERAGE.md")
+DOCUMENTS = (ROOT / "docs/CONFORMANCE.md", ROOT / "docs/CONFORMANCE_COVERAGE.md")
 
 
 class CorpusDocumentationTests(unittest.TestCase):
-    def test_readme_indexes_every_root_document_once(self) -> None:
+    def test_readme_indexes_every_document_once(self) -> None:
         readme = (ROOT / "README.md").read_text()
         documents = readme.split("## Documents", 1)[1].split(
             "## Evidence labels", 1
         )[0]
+        paths = [
+            ROOT / "CONTRIBUTING.md",
+            *sorted((ROOT / "docs").glob("*.md")),
+        ]
 
-        for path in sorted(ROOT.glob("*.md")):
-            if path.name == "README.md":
-                continue
-
-            with self.subTest(document=path.name):
-                self.assertEqual(1, documents.count(f"- `{path.name}`"))
+        for path in paths:
+            relative = path.relative_to(ROOT)
+            with self.subTest(document=relative):
+                self.assertEqual(1, documents.count(f"- `{relative}`"))
 
     def test_documented_totals_match_recursive_suite_inventory(self) -> None:
         suite_paths = sorted(SUITES.rglob("*.json"))
@@ -52,7 +54,7 @@ class CorpusDocumentationTests(unittest.TestCase):
             with self.subTest(summary=path):
                 self.assertTrue(json.loads(path.read_text())["complete"])
 
-        sources = (ROOT / "SOURCES.md").read_text()
+        sources = (ROOT / "docs/SOURCES.md").read_text()
         cdj_readme = (
             ROOT / "data/experiments/device-status/cdj-2000nexus/README.md"
         ).read_text()
@@ -79,7 +81,7 @@ class CorpusDocumentationTests(unittest.TestCase):
             f"{case_count:,} cases"
         )
 
-        self.assertIn(statement, (ROOT / "SOURCES.md").read_text())
+        self.assertIn(statement, (ROOT / "docs/SOURCES.md").read_text())
 
 
 if __name__ == "__main__":

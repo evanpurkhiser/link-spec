@@ -8,9 +8,9 @@ SETTER_DISASSEMBLY = ROOT / "data/static-analysis/hot-cue-bank-mutations.disasm.
 RESOLVER_DISASSEMBLY = (
     ROOT / "data/static-analysis/hot-cue-bank-membership-resolver.disasm.txt"
 )
-STATIC_ANALYSIS = ROOT / "STATIC_ANALYSIS.md"
-HOT_CUE_ORACLE = ROOT / "HOT_CUE_BANK_ORACLE.md"
-DATABASE_QUERIES = ROOT / "DATABASE_QUERIES.md"
+STATIC_ANALYSIS = ROOT / "docs/STATIC_ANALYSIS.md"
+HOT_CUE_ORACLE = ROOT / "docs/HOT_CUE_BANK_ORACLE.md"
+DATABASE_QUERIES = ROOT / "docs/DATABASE_QUERIES.md"
 
 
 class HotCueSlot8StaticAnalysisTests(unittest.TestCase):

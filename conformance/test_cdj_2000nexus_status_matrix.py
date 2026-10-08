@@ -83,15 +83,15 @@ class Cdj2000NexusStatusMatrixTests(unittest.TestCase):
         self.assertEqual(13, completed["matrix"]["semantic_reference_matches"])
 
         documents = (
-            "DEVICE_STATUS_PROVENANCE.md",
-            "DEVICE_MATRIX_ORACLE.md",
-            "EXPERIMENTS.md",
-            "REKORDBOX_RESEARCH_GAPS.md",
-            "CONFORMANCE_COVERAGE.md",
-            "SOURCES.md",
-            "CLEANUP.md",
-            "GAP_MATRIX.md",
-            "PROTOCOL_REFERENCE.md",
+            "docs/DEVICE_STATUS_PROVENANCE.md",
+            "docs/DEVICE_MATRIX_ORACLE.md",
+            "docs/EXPERIMENTS.md",
+            "docs/REKORDBOX_RESEARCH_GAPS.md",
+            "docs/CONFORMANCE_COVERAGE.md",
+            "docs/SOURCES.md",
+            "docs/CLEANUP.md",
+            "docs/GAP_MATRIX.md",
+            "docs/PROTOCOL_REFERENCE.md",
         )
         stale_claims = (
             "pending 249-case",

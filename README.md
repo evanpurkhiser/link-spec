@@ -18,16 +18,16 @@ The investigation covers:
 
 ## Repository map
 
-- `PROTOCOL_REFERENCE.md` is the consolidated wire-protocol reference.
-- `RESEARCH_SUMMARY.md` summarizes the strongest findings and remaining gaps.
-- `CONFORMANCE.md` documents the oracle, fixtures, recording workflow, and
+- `docs/PROTOCOL_REFERENCE.md` is the consolidated wire-protocol reference.
+- `docs/RESEARCH_SUMMARY.md` summarizes the strongest findings and remaining gaps.
+- `docs/CONFORMANCE.md` documents the oracle, fixtures, recording workflow, and
   safety boundaries.
 - `conformance/` contains suite declarations, canonical goldens, the protocol
   client, and backend adapters.
 - `conformance/BACKENDS.md` documents the adapter interface and replay commands.
 - `conformance/reports/` contains compact reports from complete backend runs.
 - `data/` contains compact retained evidence and a larger local raw-evidence
-  archive; `PUBLISHING.md` defines the Git boundary.
+  archive; `docs/PUBLISHING.md` defines the Git boundary.
 
 Run the local unit and protocol-client checks with `make test`. See
 `CONTRIBUTING.md` for development conventions.
@@ -267,32 +267,32 @@ executions were replayed against the exact fingerprinted `rbxport`
 source tree `c144f19+tree.80e87ec8aace`; 365 cases are field-exact and 1,223 have
 the same outcome, total, and row count, while no suite passes in full. Actual responses,
 semantic diffs, logs, source hashes, and a readable summary are under
-`conformance/results/rbxport/`. `CONFORMANCE_COVERAGE.md` is the status
+`conformance/results/rbxport/`. `docs/CONFORMANCE_COVERAGE.md` is the status
 authority.
 
 ## Documents
 
 - `CONTRIBUTING.md` defines the test, golden, and adapter contribution
   boundaries.
-- `PUBLISHING.md` defines the public Git boundary and pre-publication review.
-- `RESEARCH_SUMMARY.md` is the self-contained project handoff: lab architecture,
+- `docs/PUBLISHING.md` defines the public Git boundary and pre-publication review.
+- `docs/RESEARCH_SUMMARY.md` is the self-contained project handoff: lab architecture,
   major protocol/database findings, current authority status, remaining work,
   and a reading map into the detailed evidence chapters.
-- `SOURCES.md` records every source and its evidentiary role.
-- `PUBLIC_STATUS_SOURCE_AUDIT.md` pins six public packet-source candidates,
+- `docs/SOURCES.md` records every source and its evidentiary role.
+- `docs/PUBLIC_STATUS_SOURCE_AUDIT.md` pins six public packet-source candidates,
   distinguishes captured bytes from modeled fixtures, and records the
   unresolved modern-model acquisition set.
-- `EXPERIMENTS.md` is the chronological lab notebook.
-- `LINK_EXPORT_NAVIGATION.md` is the behavioral navigation-tree reference.
+- `docs/EXPERIMENTS.md` is the chronological lab notebook.
+- `docs/LINK_EXPORT_NAVIGATION.md` is the behavioral navigation-tree reference.
 - `data/static-analysis/link-export-navigation-graph.json` is the generated
   47-family, 95-request transition graph joining root choices, hierarchy
   stages, database tables, rendering, direct replies, mutations, and terminal
   error/no-builder paths. It also inventories every declared argument-count and
   wire-type signature with suite/case provenance.
-- `REQUEST_SHAPES.md` is the generated readable form of that graph, with all
+- `docs/REQUEST_SHAPES.md` is the generated readable form of that graph, with all
   301 signatures grouped by request family and navigation stage, plus exact
   per-position suite symbols, literal cardinalities, and bounded examples.
-- `OBSERVED_RESPONSE_SHAPES.md` and
+- `docs/OBSERVED_RESPONSE_SHAPES.md` and
   `data/observed-response-shapes.json` provide the inverse real-Rekordbox
   index: every request kind present in canonical 7.2.19 goldens, its observed
   outcomes, exact immediate-reply signatures, separately attributed `0x3000`
@@ -308,51 +308,51 @@ authority.
   seven status-backed surfaces, eight independent serving dimensions, static
   serving predicates, and native-status provenance without collapsing
   synthetic, derived, and captured controls.
-- `PHYSICAL_RX3_SESSION.md` is the complete ordered physical XDJ-RX3 session
+- `docs/PHYSICAL_RX3_SESSION.md` is the complete ordered physical XDJ-RX3 session
   transcript, including native contexts, browse and prefetch cadence, selected-
   track payload requests, and the boundary between captured and 7.2.19 oracle
   evidence.
-- `XDJ_RR_CLIENT_NAVIGATION.md` maps 304 hash-pinned decompiled XDJ-RR direct
+- `docs/XDJ_RR_CLIENT_NAVIGATION.md` maps 304 hash-pinned decompiled XDJ-RR direct
   call sites to 102 request kinds and literal/dynamic menu locations, including
   the functional roles of locations 4-8 and the source-defined location-9
   Delivery wrapper.
-- `XDJ_RR_ADJACENT_COMMANDS.md` joins the old-Key/Cue Track browsers and every
+- `docs/XDJ_RR_ADJACENT_COMMANDS.md` joins the old-Key/Cue Track browsers and every
   directly reached XDJ-RR write/modification command to its exact Rekordbox
   target, reply constructor, database/filesystem effect, and live-test safety
   boundary. Its guarded old-Key/CueTrack campaign declares 48 real-Rekordbox
   cases with post-timeout health controls across three identity envelopes and
   both row widths.
-- `PROTOCOL_REFERENCE.md` is the detailed message, field, database and
+- `docs/PROTOCOL_REFERENCE.md` is the detailed message, field, database and
   request-family reference derived from the exhaustive capture.
-- `DATABASE_QUERIES.md` and its machine-readable query map tie every declared
+- `docs/DATABASE_QUERIES.md` and its machine-readable query map tie every declared
   request kind to tables, predicates, materialized rowsets, sorting, mutation
   behavior, rendering-time lookups, or an explicit absence of a database
   builder.
-- `DATABASE_FIELD_REFERENCE.md` and
+- `docs/DATABASE_FIELD_REFERENCE.md` and
   `data/database/link-export-schema.json` enumerate all 389 fields in the 22
   physical AppSync tables reached by that map, distinguish three runtime or
   alternate-interface names, provide a 95-row inverse request-kind index over
   families, operations, tables, and family-named fields, and label schema
   presence, exact SQL retrieval, and reconstructed semantic use separately.
-- `SQL_LITERAL_INDEX.md` separately indexes all exact SQL literals retained in
+- `docs/SQL_LITERAL_INDEX.md` separately indexes all exact SQL literals retained in
   the disassembly, including fragments and duplicate source provenance.
-- `ITEM_TYPE_REFERENCE.md` and `data/item-type-reference.json` catalog every
+- `docs/ITEM_TYPE_REFERENCE.md` and `data/item-type-reference.json` catalog every
   one of the 85 represented `0x4101` item types across 51,148 corpus row
   occurrences, including menu, Song Info, synthetic, and track-composite roles
   with producing requests and source provenance.
-- `CONTROL_AND_MUTATION_REFERENCE.md` joins the complete write/database-modify
+- `docs/CONTROL_AND_MUTATION_REFERENCE.md` joins the complete write/database-modify
   and `0x3xxx` control namespace to Rekordbox routes and XDJ-RR caller sites.
-- `PACKED_CONTEXT_ORACLE.md` records the complete context-byte layout, exhaustive
+- `docs/PACKED_CONTEXT_ORACLE.md` records the complete context-byte layout, exhaustive
   Track final-byte domain, row delta, static control flow, and provenance.
-- `CONFIGURATION.md` specifies root construction, capability bits, category and
+- `docs/CONFIGURATION.md` specifies root construction, capability bits, category and
   sort visibility, selected-column persistence, exact AppSync setting
   transactions, and the distinct Preferences-versus-renderer selected-row
   readers.
 - `data/configuration-behavior-map.json` is the generated field-to-wire map for
   Category, Sort, Column, capability masks, refresh, and render-shape behavior.
-- `SECONDARY_COLUMNS.md` maps every secondary sort ID to its database value,
+- `docs/SECONDARY_COLUMNS.md` maps every secondary sort ID to its database value,
   wire type, and rendering behavior.
-- `SECONDARY_COLUMN_ORACLE.md` records all 15 live settings selections, the
+- `docs/SECONDARY_COLUMN_ORACLE.md` records all 15 live settings selections, the
   missing/multiple-selection states, exact row values, sort-menu coupling, and
   the complete 11-sort RX3 six-argument render cross with physical request
   provenance and fresh-process repeat.
@@ -361,91 +361,91 @@ authority.
   `0x05fdffff` root mask, root rows, and six-argument renders; its focused
   authority suite replays that envelope separately from the semantic sort
   matrix.
-- `KEY_NOTATION_ORACLE.md` separates the desktop key preference, local CDJ
+- `docs/KEY_NOTATION_ORACLE.md` separates the desktop key preference, local CDJ
   `DEVSETTING.DAT` style, and raw database spelling; it records exact Classic
   and Camelot behavior across key menus, collection and Smart rows, sorting,
   Display Song Info, and Delivery Info.
-- `HOT_CUE_BANK_ORACLE.md` proves the `0x2001` catalog request, tree and track
+- `docs/HOT_CUE_BANK_ORACLE.md` proves the `0x2001` catalog request, tree and track
   modes, fourth-argument limit, exact rows, database predicates, player call
   sites, locations, invalid behavior, and retained fixture provenance.
-- `LINK_EXPORT_VISIBILITY_ORACLE.md` proves the exact `FolderPath` streaming
+- `docs/LINK_EXPORT_VISIBILITY_ORACLE.md` proves the exact `FolderPath` streaming
   predicate, fixed-provider classification, six filtered serving paths,
   persisted-History exception, and no-media requirement.
-- `CATEGORY_ORACLE.md` records every persisted category-disable mutation,
+- `docs/CATEGORY_ORACLE.md` records every persisted category-disable mutation,
   complete ordering reversal, special disable bits, masks, and replay results.
-- `SORT_AND_COLOR_ORACLE.md` records every sort visibility toggle, complete
+- `docs/SORT_AND_COLOR_ORACLE.md` records every sort visibility toggle, complete
   ordering reversal, hidden selection, custom color labels, and replay results.
-- `SETTINGS_SESSION_REFRESH_ORACLE.md` records the Category/Sort/Column UI,
+- `docs/SETTINGS_SESSION_REFRESH_ORACLE.md` records the Category/Sort/Column UI,
   active-Link edit lock, complete Column choices, and same-process refresh for
   category visibility, sort visibility/order, and Column selection.
-- `SEARCH_ORACLE.md` records Search request validation, token and Unicode
+- `docs/SEARCH_ORACLE.md` records Search request validation, token and Unicode
   matching, mixed entity/content rows, Category-controlled domains,
   pagination, static control flow, and rbxport differences.
-- `SMART_PLAYLIST_ORACLE.md` records rule/membership precedence, all operator
+- `docs/SMART_PLAYLIST_ORACLE.md` records rule/membership precedence, all operator
   codes over text and decimal BPM inputs, direct-child and ignored nested XML,
   malformed/parser boundaries, fixture fingerprints, and the rbxport gap.
-- `BOUNDARY_INVALID_LIFECYCLE_ORACLE.md` records numeric selector boundaries,
+- `docs/BOUNDARY_INVALID_LIFECYCLE_ORACLE.md` records numeric selector boundaries,
   string caps and stalls, invalid database values, track compatibility flags,
   Link History mutation, and their replay results.
-- `DISPLAY_SONG_INFO_ORACLE.md` records request `0x2002`, every fixed metadata
+- `docs/DISPLAY_SONG_INFO_ORACLE.md` records request `0x2002`, every fixed metadata
   row, ordinary/AIO ordering, database construction, status-packet lifecycle,
   dispatch path, and rbxport differences.
-- `SONG_INFO_SIBLINGS_ORACLE.md` records Play Song Info, Delivery Info, the
+- `docs/SONG_INFO_SIBLINGS_ORACLE.md` records Play Song Info, Delivery Info, the
   four recognized no-builder kinds, complete row payloads, render selectors,
   pagination, malformed parser state, cross-family row-order state, database
   paths, and rbxport differences.
-- `USER_INFO_DJID_ORACLE.md` records the `0x3006`/`0x4d02` DJ-ID exchange,
+- `docs/USER_INFO_DJID_ORACLE.md` records the `0x3006`/`0x4d02` DJ-ID exchange,
   `djprofile.nxs` configuration and validation path, 160-byte reply builder,
   and CDJ-3000 post-load browsing dependency.
-- `PLAY_SONG_INFO_PATH_ORACLE.md` records every observed local/cloud path,
+- `docs/PLAY_SONG_INFO_PATH_ORACLE.md` records every observed local/cloud path,
   file-presence, file-size, and hot-cue-auto-load branch.
-- `ROW_LAYOUT.md` follows track rows through the insert record, materialized
+- `docs/ROW_LAYOUT.md` follows track rows through the insert record, materialized
   list buffer, secondary reconciliation, flags, and 12/16-field wire layouts.
-- `LINK_EXPORT_REQUEST_VOCABULARY.md` separates the complete known client
+- `docs/LINK_EXPORT_REQUEST_VOCABULARY.md` separates the complete known client
   command vocabulary from Rekordbox 7.2.19's exact dispatch, rejection, reply,
   database, artwork, and analysis-file evidence, including the physical RX3's
   transaction-reusing `0x0001` cancellation command (called "invalid data" by
   Dysentery).
-- `ADJACENT_PAYLOAD_SERVICES.md` gives the direct-response artwork, waveform,
+- `docs/ADJACENT_PAYLOAD_SERVICES.md` gives the direct-response artwork, waveform,
   beat-grid, cue, VBR, key, and analysis-atom contracts, including the active
   AppSync/fallback Master database split, deterministic success files, the
   JPEG/PMAI parser-boundary matrix, and decoded legacy/extended cue payloads
   over deterministic count, field, deletion, seek, device, and setup states.
-- `DEVICE_COMPATIBILITY.md` separates setup width, request capabilities,
+- `docs/DEVICE_COMPATIBILITY.md` separates setup width, request capabilities,
   model-name classification, and per-track compatibility checks.
-- `DEVICE_MATRIX_ORACLE.md` records all named model identities, all four
+- `docs/DEVICE_MATRIX_ORACLE.md` records all named model identities, all four
   keepalive classes, generations 0/2/3, both setup widths, exact behavior
   hashes, and remaining cross-product work.
-- `DEVICE_PREDICATE_AUDIT.md` inventories 23 peer-identity and capability
+- `docs/DEVICE_PREDICATE_AUDIT.md` inventories 23 peer-identity and capability
   helpers, all 67 validated direct references, exact model literals, the three
   distinct AIO-like decisions, and their database-serving boundary.
-- `DEVICE_STATUS_PROVENANCE.md` separates captured hardware status packets from
+- `docs/DEVICE_STATUS_PROVENANCE.md` separates captured hardware status packets from
   RX3-template-derived classifier probes and inventories the remaining native
   packet-source gaps.
-- `STATIC_ANALYSIS.md` pins the analyzed binary and records reproducible tools,
+- `docs/STATIC_ANALYSIS.md` pins the analyzed binary and records reproducible tools,
   addresses, generated evidence, and confidence limits.
-- `CONFORMANCE.md` specifies the fixture profiles, declarative oracle recorder,
+- `docs/CONFORMANCE.md` specifies the fixture profiles, declarative oracle recorder,
   backend-neutral verifier, coverage/device matrices, and guarded VM workflow.
-- `CONFORMANCE_COVERAGE.md` is the requirement-to-suite ledger. Current work
+- `docs/CONFORMANCE_COVERAGE.md` is the requirement-to-suite ledger. Current work
   advances declarations through repeat-verified real-Rekordbox evidence; its
   replay columns preserve earlier historical results for context.
-- `REKORDBOX_RESEARCH_GAPS.md` is the real-Rekordbox-only completion ledger. It
+- `docs/REKORDBOX_RESEARCH_GAPS.md` is the real-Rekordbox-only completion ledger. It
   separates the active serial queue from native-packet, account-conditioned-provider,
   opposite-serving-role, and safety-boundary gaps.
 - `conformance/` contains the Python protocol runner, fixture builder, suites,
   results, settings variants, matrix generator, VM switch scripts, and the
   explicit-opt-in backend adapters.
-- `GAP_MATRIX.md` compares rekordbox, `rbxport`, Dysentery/Beat Link and current
+- `docs/GAP_MATRIX.md` compares rekordbox, `rbxport`, Dysentery/Beat Link and current
   observations.
-- `RBXPORT_AUDIT.md` records exact current implementation coverage and gaps.
-- `DYSENTERY_CROSSWALK.md` maps this work to the relevant Dysentery model.
-- `SETTINGS_EXPERIMENTS.md` defines reproducible one-variable settings tests.
-- `CLEANUP.md` inventories host changes, runtime state and retained artifacts.
+- `docs/RBXPORT_AUDIT.md` records exact current implementation coverage and gaps.
+- `docs/DYSENTERY_CROSSWALK.md` maps this work to the relevant Dysentery model.
+- `docs/SETTINGS_EXPERIMENTS.md` defines reproducible one-variable settings tests.
+- `docs/CLEANUP.md` inventories host changes, runtime state and retained artifacts.
 - `data/` contains derived, reviewable datasets. Large source captures and
   binaries remain in their existing workspace locations and are named precisely
-  in `SOURCES.md`.
+  in `docs/SOURCES.md`.
 - `../dysentery/` is the local shallow clone of the upstream Dysentery research,
-  pinned in `SOURCES.md` by commit.
+  pinned in `docs/SOURCES.md` by commit.
 
 ## Evidence labels
 
@@ -476,7 +476,7 @@ This deterministically rewrites `summary.json`, `menu-nodes.csv`,
 the checksum ledger are not modified.
 
 The configuration export and static-analysis commands are documented in
-`STATIC_ANALYSIS.md`. They write only beneath this research directory.
+`docs/STATIC_ANALYSIS.md`. They write only beneath this research directory.
 `tools/update_checksums.py` regenerates the retained-artifact checksum ledger;
 the real-Rekordbox campaign finalizers run it after writing their completion
 receipts, and it excludes atomic `.next` promotion files. Run it manually after

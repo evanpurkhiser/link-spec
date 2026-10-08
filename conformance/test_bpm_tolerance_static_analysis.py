@@ -5,8 +5,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DISASSEMBLY = ROOT / "data/static-analysis/bpm-tolerance-boundaries.disasm.txt"
-STATIC_ANALYSIS = ROOT / "STATIC_ANALYSIS.md"
-DATABASE_QUERIES = ROOT / "DATABASE_QUERIES.md"
+STATIC_ANALYSIS = ROOT / "docs/STATIC_ANALYSIS.md"
+DATABASE_QUERIES = ROOT / "docs/DATABASE_QUERIES.md"
 
 
 class BpmToleranceStaticAnalysisTests(unittest.TestCase):

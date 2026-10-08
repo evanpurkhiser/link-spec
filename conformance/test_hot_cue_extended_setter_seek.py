@@ -120,13 +120,13 @@ class HotCueExtendedSetterSeekTest(unittest.TestCase):
             )
 
     def test_database_query_document_promotes_completed_seek_matrix(self) -> None:
-        document = (ROOT.parent / "DATABASE_QUERIES.md").read_text()
+        document = (ROOT.parent / "docs/DATABASE_QUERIES.md").read_text()
 
         self.assertIn("completed 17-case health matrix", document)
         self.assertIn("Fourteen variants return the canonical status-zero", document)
         self.assertNotIn("declared 17-case health matrix", document)
 
-        coverage = (ROOT.parent / "CONFORMANCE_COVERAGE.md").read_text()
+        coverage = (ROOT.parent / "docs/CONFORMANCE_COVERAGE.md").read_text()
         self.assertIn(
             "adjacent extended-parser, mutable-field, seek-descriptor, "
             "legacy-parser, and identical-request lifecycle matrices",

@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 GOLDEN = ROOT / "conformance/goldens/rekordbox-7.2.19/xdj-rx3/history-lifecycle.json"
-REFERENCE = ROOT / "PROTOCOL_REFERENCE.md"
+REFERENCE = ROOT / "docs/PROTOCOL_REFERENCE.md"
 
 
 def number(row: dict, index: int) -> int:

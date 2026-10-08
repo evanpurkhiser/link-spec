@@ -150,11 +150,11 @@ class RenderArgumentTypeTests(unittest.TestCase):
 
     def test_docs_preserve_the_pending_real_authority_boundary(self) -> None:
         documents = {
-            "PROTOCOL_REFERENCE.md": "Track render argument types",
-            "CONFORMANCE_COVERAGE.md": "Track render argument types",
-            "REKORDBOX_RESEARCH_GAPS.md": "render-argument-types",
-            "SOURCES.md": "Track render argument types",
-            "CLEANUP.md": "render-argument-types",
+            "docs/PROTOCOL_REFERENCE.md": "Track render argument types",
+            "docs/CONFORMANCE_COVERAGE.md": "Track render argument types",
+            "docs/REKORDBOX_RESEARCH_GAPS.md": "render-argument-types",
+            "docs/SOURCES.md": "Track render argument types",
+            "docs/CLEANUP.md": "render-argument-types",
         }
         for name, fragment in documents.items():
             text = " ".join((LAB / name).read_text().split())

@@ -53,10 +53,10 @@ class StatusLocation2MalformedHistoryTimingTests(unittest.TestCase):
 
     def test_docs_preserve_conflict_and_timing_authority(self) -> None:
         documents = {
-            "REKORDBOX_RESEARCH_GAPS.md": "malformed-history timing",
-            "CONFORMANCE_COVERAGE.md": "pair-48 zero is an orphaned prior reply",
-            "EXPERIMENTS.md": "13-versus-zero",
-            "CLEANUP.md": "malformed-history-timing",
+            "docs/REKORDBOX_RESEARCH_GAPS.md": "malformed-history timing",
+            "docs/CONFORMANCE_COVERAGE.md": "pair-48 zero is an orphaned prior reply",
+            "docs/EXPERIMENTS.md": "13-versus-zero",
+            "docs/CLEANUP.md": "malformed-history-timing",
         }
         for name, fragment in documents.items():
             text = " ".join((LAB / name).read_text().split())

@@ -40,7 +40,7 @@ class XdjRrOldKeyTest(unittest.TestCase):
         self.assertIn("validate_health_pair(", reducer)
 
     def test_live_boundary_names_the_current_guarded_generation(self):
-        for document in ("XDJ_RR_ADJACENT_COMMANDS.md", "XDJ_RR_CLIENT_NAVIGATION.md"):
+        for document in ("docs/XDJ_RR_ADJACENT_COMMANDS.md", "docs/XDJ_RR_CLIENT_NAVIGATION.md"):
             with self.subTest(document=document):
                 source = (ROOT / document).read_text()
                 self.assertIn("generation `ae18`", source)

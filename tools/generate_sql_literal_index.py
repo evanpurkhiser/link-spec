@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 STATIC = ROOT / "data/static-analysis"
 JSON_OUTPUT = STATIC / "sql-literal-index.json"
-MARKDOWN_OUTPUT = ROOT / "SQL_LITERAL_INDEX.md"
+MARKDOWN_OUTPUT = ROOT / "docs/SQL_LITERAL_INDEX.md"
 FUNCTION_RE = re.compile(r"^##\s+(.+?)(?:\s+\|\s*)?$")
 ADDRESS_HEADER_RE = re.compile(r"^address=(?P<address>0x[0-9a-fA-F]+)\s+size=")
 LITERAL_RE = re.compile(

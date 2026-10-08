@@ -177,7 +177,7 @@ class ObservedResponseShapesTests(unittest.TestCase):
         )
 
     def test_markdown_exposes_identity_and_per_request_device_coverage(self) -> None:
-        markdown = (ROOT / "OBSERVED_RESPONSE_SHAPES.md").read_text()
+        markdown = (ROOT / "docs/OBSERVED_RESPONSE_SHAPES.md").read_text()
         self.assertIn("## Identity profiles", markdown)
         self.assertIn("| Profile | Model | Player | Class |", markdown)
         self.assertIn("| Identities | Models | Status coverage | Setup |", markdown)

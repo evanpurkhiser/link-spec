@@ -130,12 +130,12 @@ class RenderOverrideControlTests(unittest.TestCase):
 
     def test_docs_name_override_boundary_and_authority_status(self) -> None:
         documents = {
-            "PROTOCOL_REFERENCE.md": "Track render override controls",
-            "CONFORMANCE_COVERAGE.md": "Track render override controls",
-            "REKORDBOX_RESEARCH_GAPS.md": "render-override-controls",
-            "SOURCES.md": "Track render override controls",
-            "SECONDARY_COLUMNS.md": "high-word Artist lookalike",
-            "CLEANUP.md": "render-override-controls",
+            "docs/PROTOCOL_REFERENCE.md": "Track render override controls",
+            "docs/CONFORMANCE_COVERAGE.md": "Track render override controls",
+            "docs/REKORDBOX_RESEARCH_GAPS.md": "render-override-controls",
+            "docs/SOURCES.md": "Track render override controls",
+            "docs/SECONDARY_COLUMNS.md": "high-word Artist lookalike",
+            "docs/CLEANUP.md": "render-override-controls",
         }
         for name, fragment in documents.items():
             text = " ".join((LAB / name).read_text().split())

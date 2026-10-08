@@ -48,7 +48,7 @@ class HotCueBufferDisconnectSummaryTests(unittest.TestCase):
             )
 
     def test_completed_capture_is_promoted_in_source_ledger(self) -> None:
-        sources = (summary.ROOT / "SOURCES.md").read_text()
+        sources = (summary.ROOT / "docs/SOURCES.md").read_text()
         self.assertIn("Repeat-verified control/rejoin experiment", sources)
         self.assertNotIn(
             "while real captures are pending",

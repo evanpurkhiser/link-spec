@@ -88,18 +88,18 @@ class SortSecondaryRender7Tests(unittest.TestCase):
 
     def test_declaration_is_documented_as_pending_evidence(self) -> None:
         documents = {
-            "SECONDARY_COLUMNS.md": "seven-argument active-sort matrix",
-            "PROTOCOL_REFERENCE.md": "Seven-argument rendering is accepted",
-            "REKORDBOX_RESEARCH_GAPS.md": "sort-secondary-render-7",
-            "CONFORMANCE_COVERAGE.md": "active sort x seven-argument track render",
-            "SOURCES.md": "Seven-argument active-sort rendering",
+            "docs/SECONDARY_COLUMNS.md": "seven-argument active-sort matrix",
+            "docs/PROTOCOL_REFERENCE.md": "Seven-argument rendering is accepted",
+            "docs/REKORDBOX_RESEARCH_GAPS.md": "sort-secondary-render-7",
+            "docs/CONFORMANCE_COVERAGE.md": "active sort x seven-argument track render",
+            "docs/SOURCES.md": "Seven-argument active-sort rendering",
         }
         for name, fragment in documents.items():
             text = " ".join((ROOT.parent / name).read_text().split())
             with self.subTest(document=name):
                 self.assertIn(fragment, text)
 
-        coverage = " ".join((ROOT.parent / "CONFORMANCE_COVERAGE.md").read_text().split())
+        coverage = " ".join((ROOT.parent / "docs/CONFORMANCE_COVERAGE.md").read_text().split())
         self.assertIn("three common render arities", coverage)
         self.assertIn("fourth parser-accepted shape", coverage)
 

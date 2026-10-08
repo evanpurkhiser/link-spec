@@ -194,9 +194,9 @@ class SecondaryColumnSemanticsTests(unittest.TestCase):
 
     def test_documentation_links_the_joined_authority(self) -> None:
         for name in (
-            "SECONDARY_COLUMNS.md",
-            "SECONDARY_COLUMN_ORACLE.md",
-            "PROTOCOL_REFERENCE.md",
+            "docs/SECONDARY_COLUMNS.md",
+            "docs/SECONDARY_COLUMN_ORACLE.md",
+            "docs/PROTOCOL_REFERENCE.md",
         ):
             document = (ROOT / name).read_text()
             self.assertIn("secondary-column-semantics.json", document)

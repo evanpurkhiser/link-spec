@@ -253,37 +253,37 @@ class PhysicalRX3SessionEnvelopeTests(unittest.TestCase):
 
     def test_protocol_docs_distinguish_physical_and_lab_envelopes(self):
         for name in (
-            "PROTOCOL_REFERENCE.md",
-            "CONFIGURATION.md",
-            "DEVICE_COMPATIBILITY.md",
-            "EXPERIMENTS.md",
+            "docs/PROTOCOL_REFERENCE.md",
+            "docs/CONFIGURATION.md",
+            "docs/DEVICE_COMPATIBILITY.md",
+            "docs/EXPERIMENTS.md",
         ):
             with self.subTest(name=name):
                 self.assertIn("0x05fdffff", (ROOT / name).read_text())
         self.assertNotIn(
             "leaves physical-RX3 query-device behavior as an explicit matrix gap",
-            (ROOT / "EXPERIMENTS.md").read_text(),
+            (ROOT / "docs/EXPERIMENTS.md").read_text(),
         )
-        physical = (ROOT / "PHYSICAL_RX3_SESSION.md").read_text()
+        physical = (ROOT / "docs/PHYSICAL_RX3_SESSION.md").read_text()
         self.assertIn("0x0b010401", physical)
         self.assertIn("| `0x0b010401` | 11 | 1 | 4 | 1 |", physical)
         self.assertIn("packet capture does not identify the serving", physical)
         self.assertNotIn("location 4, media slot 1", physical)
 
-        adjacent = (ROOT / "ADJACENT_PAYLOAD_SERVICES.md").read_text()
+        adjacent = (ROOT / "docs/ADJACENT_PAYLOAD_SERVICES.md").read_text()
         self.assertIn("## Physical XDJ-RX3 request cadence", adjacent)
         self.assertIn("2c04 [0x0b010401, content_id, PWV4, EXT]", adjacent)
         self.assertIn("2003 [0x0b080401, content_id, 1]", adjacent)
         self.assertIn("83,148 bytes", adjacent)
         self.assertIn("21,098 to 126,329 microseconds", adjacent)
 
-        vocabulary = (ROOT / "LINK_EXPORT_REQUEST_VOCABULARY.md").read_text()
+        vocabulary = (ROOT / "docs/LINK_EXPORT_REQUEST_VOCABULARY.md").read_text()
         self.assertIn("location 8 for artwork", vocabulary)
         self.assertIn("location 1 for specified atoms", vocabulary)
         self.assertIn("not its Rekordbox server version", vocabulary)
         self.assertIn("Client cancellation command (`0001`)", vocabulary)
 
-        protocol = (ROOT / "PROTOCOL_REFERENCE.md").read_text()
+        protocol = (ROOT / "docs/PROTOCOL_REFERENCE.md").read_text()
         self.assertIn("### Client cancellation `0001`", protocol)
         self.assertIn("21,098 to 126,329 microseconds", protocol)
 

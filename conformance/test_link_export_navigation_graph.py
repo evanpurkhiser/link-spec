@@ -126,7 +126,7 @@ class LinkExportNavigationGraphTest(unittest.TestCase):
 
     def test_suite_corpus_fingerprint_matches_documented_domain(self):
         corpus = self.graph["suite_corpus"]
-        coverage = (ROOT / "CONFORMANCE_COVERAGE.md").read_text()
+        coverage = (ROOT / "docs/CONFORMANCE_COVERAGE.md").read_text()
         self.assertIn(
             f"{corpus['case_count']:,} case declarations in "
             f"{corpus['suite_file_count']} suite files",
@@ -186,12 +186,12 @@ class LinkExportNavigationGraphTest(unittest.TestCase):
 
     def test_documented_counts_match_generated_authority(self):
         summary = self.graph["summary"]
-        for name in ("CONFORMANCE_COVERAGE.md", "REKORDBOX_RESEARCH_GAPS.md"):
+        for name in ("docs/CONFORMANCE_COVERAGE.md", "docs/REKORDBOX_RESEARCH_GAPS.md"):
             text = (ROOT / name).read_text()
             with self.subTest(document=name):
                 self.assertIn(
                     f"{summary['request_kind_count']} distinct request kinds"
-                    if name == "CONFORMANCE_COVERAGE.md"
+                    if name == "docs/CONFORMANCE_COVERAGE.md"
                     else f"all {summary['request_kind_count']} declared request kinds",
                     text,
                 )

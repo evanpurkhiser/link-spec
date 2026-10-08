@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 GOLDENS = ROOT / "conformance/goldens/rekordbox-7.2.19"
 DOMAIN = ROOT / "data/static-analysis/item-type-domain.json"
 JSON_OUTPUT = ROOT / "data/item-type-reference.json"
-MARKDOWN_OUTPUT = ROOT / "ITEM_TYPE_REFERENCE.md"
+MARKDOWN_OUTPUT = ROOT / "docs/ITEM_TYPE_REFERENCE.md"
 
 MEANINGS = {
     0x00: "zero type; path or explicitly untyped row",

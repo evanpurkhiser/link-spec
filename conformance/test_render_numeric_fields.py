@@ -132,13 +132,13 @@ class RenderNumericFieldTests(unittest.TestCase):
 
     def test_docs_name_correct_fields_and_pending_authority(self) -> None:
         documents = {
-            "PROTOCOL_REFERENCE.md": "Track render numeric fields",
-            "CONFORMANCE_COVERAGE.md": "Track render numeric fields",
-            "REKORDBOX_RESEARCH_GAPS.md": "render-numeric-fields",
-            "SOURCES.md": "Track render numeric fields",
-            "SECONDARY_COLUMNS.md": "first-row character seek key",
-            "ROW_LAYOUT.md": "client-reported total",
-            "CLEANUP.md": "render-numeric-fields",
+            "docs/PROTOCOL_REFERENCE.md": "Track render numeric fields",
+            "docs/CONFORMANCE_COVERAGE.md": "Track render numeric fields",
+            "docs/REKORDBOX_RESEARCH_GAPS.md": "render-numeric-fields",
+            "docs/SOURCES.md": "Track render numeric fields",
+            "docs/SECONDARY_COLUMNS.md": "first-row character seek key",
+            "docs/ROW_LAYOUT.md": "client-reported total",
+            "docs/CLEANUP.md": "render-numeric-fields",
         }
         for name, fragment in documents.items():
             text = " ".join((LAB / name).read_text().split())

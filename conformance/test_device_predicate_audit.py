@@ -101,9 +101,9 @@ class DevicePredicateAuditTests(unittest.TestCase):
             )
 
     def test_documentation_states_the_reproducibility_contract(self) -> None:
-        document = (ROOT / "DEVICE_PREDICATE_AUDIT.md").read_text()
-        sources = (ROOT / "SOURCES.md").read_text()
-        gaps = (ROOT / "REKORDBOX_RESEARCH_GAPS.md").read_text()
+        document = (ROOT / "docs/DEVICE_PREDICATE_AUDIT.md").read_text()
+        sources = (ROOT / "docs/SOURCES.md").read_text()
+        gaps = (ROOT / "docs/REKORDBOX_RESEARCH_GAPS.md").read_text()
 
         self.assertIn("relative invocation", document)
         self.assertIn("compares them byte for byte", document)

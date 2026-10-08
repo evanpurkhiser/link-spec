@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT.parent / "dysentery"
 INVENTORY = ROOT / "data/external/dysentery-docs.json"
 GENERATOR = ROOT / "tools/inventory_dysentery_docs.py"
-CROSSWALK = ROOT / "DYSENTERY_CROSSWALK.md"
+CROSSWALK = ROOT / "docs/DYSENTERY_CROSSWALK.md"
 
 
 class DysenteryCrosswalkTests(unittest.TestCase):

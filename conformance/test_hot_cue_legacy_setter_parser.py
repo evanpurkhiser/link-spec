@@ -10,7 +10,7 @@ import generate_hot_cue_legacy_setter_parser_suites as parser_suites
 class HotCueLegacySetterParserSuiteTests(unittest.TestCase):
     def test_oracle_describes_completed_process_isolated_matrix(self) -> None:
         oracle = (
-            Path(__file__).resolve().parent.parent / "HOT_CUE_BANK_ORACLE.md"
+            Path(__file__).resolve().parent.parent / "docs/HOT_CUE_BANK_ORACLE.md"
         ).read_text()
 
         self.assertIn("completed live boundary matrix", oracle)

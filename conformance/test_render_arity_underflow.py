@@ -95,10 +95,10 @@ class RenderArityUnderflowTests(unittest.TestCase):
 
     def test_docs_preserve_pending_authority_boundary(self) -> None:
         documents = {
-            "PROTOCOL_REFERENCE.md": "Track render arity underflow",
-            "CONFORMANCE_COVERAGE.md": "Track render arities 0 through 2",
-            "REKORDBOX_RESEARCH_GAPS.md": "render-arity-underflow",
-            "SOURCES.md": "Track render arity underflow",
+            "docs/PROTOCOL_REFERENCE.md": "Track render arity underflow",
+            "docs/CONFORMANCE_COVERAGE.md": "Track render arities 0 through 2",
+            "docs/REKORDBOX_RESEARCH_GAPS.md": "render-arity-underflow",
+            "docs/SOURCES.md": "Track render arity underflow",
         }
         for name, fragment in documents.items():
             text = " ".join((ROOT.parent / name).read_text().split())

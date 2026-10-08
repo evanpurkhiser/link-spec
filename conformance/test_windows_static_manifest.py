@@ -58,8 +58,8 @@ class WindowsStaticManifestTests(unittest.TestCase):
 
     def test_cleanup_and_documentation_keep_the_pe_boundary(self) -> None:
         manifest = json.loads(MANIFEST.read_text())
-        static = (ROOT / "STATIC_ANALYSIS.md").read_text()
-        cleanup = (ROOT / "CLEANUP.md").read_text()
+        static = (ROOT / "docs/STATIC_ANALYSIS.md").read_text()
+        cleanup = (ROOT / "docs/CLEANUP.md").read_text()
 
         self.assertFalse(manifest["cleanup"]["temporary_host_copy_retained"])
         self.assertEqual(3, manifest["format"])

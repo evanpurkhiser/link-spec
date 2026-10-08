@@ -67,8 +67,8 @@ class ModelLiteralOwnerAuditTests(unittest.TestCase):
         self.assertEqual(36, windows["xdj_az_reference_count"])
 
     def test_documentation_retains_result_and_boundary(self) -> None:
-        predicate = (ROOT / "DEVICE_PREDICATE_AUDIT.md").read_text()
-        gaps = (ROOT / "REKORDBOX_RESEARCH_GAPS.md").read_text()
+        predicate = (ROOT / "docs/DEVICE_PREDICATE_AUDIT.md").read_text()
+        gaps = (ROOT / "docs/REKORDBOX_RESEARCH_GAPS.md").read_text()
         for document in (predicate, gaps):
             self.assertIn("model-literal-owner-audit.json", document)
             self.assertIn("19 audio-device", document)

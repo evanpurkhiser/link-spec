@@ -110,9 +110,9 @@ class StatusLocation2MalformedHistoryTests(unittest.TestCase):
         )
 
     def test_lifecycle_aware_corpus_is_indexed_without_replacing_history(self) -> None:
-        coverage = (ROOT.parent / "CONFORMANCE_COVERAGE.md").read_text()
-        sources = (ROOT.parent / "SOURCES.md").read_text()
-        cleanup = (ROOT.parent / "CLEANUP.md").read_text()
+        coverage = (ROOT.parent / "docs/CONFORMANCE_COVERAGE.md").read_text()
+        sources = (ROOT.parent / "docs/SOURCES.md").read_text()
+        cleanup = (ROOT.parent / "docs/CLEANUP.md").read_text()
 
         self.assertIn("lifecycle-aware ordered pairs", coverage)
         self.assertIn("256 suites / 768 declared requests", coverage)
@@ -249,8 +249,8 @@ class StatusLocation2MalformedHistoryTests(unittest.TestCase):
                 pair,
             )
 
-        protocol = (ROOT.parent / "PROTOCOL_REFERENCE.md").read_text()
-        oracle = (ROOT.parent / "SONG_INFO_SIBLINGS_ORACLE.md").read_text()
+        protocol = (ROOT.parent / "docs/PROTOCOL_REFERENCE.md").read_text()
+        oracle = (ROOT.parent / "docs/SONG_INFO_SIBLINGS_ORACLE.md").read_text()
         self.assertIn("all 16 promoted pairs", protocol)
         self.assertIn("one player-routed delayed header per", protocol)
         self.assertIn("all 16 successors after blob-valued Play", oracle)

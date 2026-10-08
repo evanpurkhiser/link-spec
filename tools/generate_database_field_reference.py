@@ -22,7 +22,7 @@ DEFAULT_OPTIONS = Path("/mnt/documents/multimedia/djing/rekordbox/options.json")
 QUERY_MAP = ROOT / "data/static-analysis/menu-database-query-map.json"
 SQL_INDEX = ROOT / "data/static-analysis/sql-literal-index.json"
 JSON_OUTPUT = ROOT / "data/database/link-export-schema.json"
-MARKDOWN_OUTPUT = ROOT / "DATABASE_FIELD_REFERENCE.md"
+MARKDOWN_OUTPUT = ROOT / "docs/DATABASE_FIELD_REFERENCE.md"
 
 NON_PHYSICAL = {
     "djmdLeftBuf": {

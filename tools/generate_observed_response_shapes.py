@@ -15,7 +15,7 @@ GOLDENS = ROOT / "conformance/goldens/rekordbox-7.2.19"
 SUITES = ROOT / "conformance/suites"
 NAVIGATION = ROOT / "data/static-analysis/link-export-navigation-graph.json"
 JSON_OUTPUT = ROOT / "data/observed-response-shapes.json"
-MARKDOWN_OUTPUT = ROOT / "OBSERVED_RESPONSE_SHAPES.md"
+MARKDOWN_OUTPUT = ROOT / "docs/OBSERVED_RESPONSE_SHAPES.md"
 
 
 def sha256(data: bytes) -> str:

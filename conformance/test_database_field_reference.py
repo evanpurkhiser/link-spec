@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = ROOT / "data/database/link-export-schema.json"
-REFERENCE = ROOT / "DATABASE_FIELD_REFERENCE.md"
+REFERENCE = ROOT / "docs/DATABASE_FIELD_REFERENCE.md"
 GENERATOR = ROOT / "tools/generate_database_field_reference.py"
 OPTIONS = Path("/mnt/documents/multimedia/djing/rekordbox/options.json")
 
@@ -112,7 +112,7 @@ class DatabaseFieldReferenceTest(unittest.TestCase):
         self.assertIn("## Request-kind index", text)
         self.assertIn("family-level evidence", text)
         self.assertIn("95-row inverse request-kind index", (ROOT / "README.md").read_text())
-        navigation = (ROOT / "LINK_EXPORT_NAVIGATION.md").read_text()
+        navigation = (ROOT / "docs/LINK_EXPORT_NAVIGATION.md").read_text()
         self.assertIn("inverse database lookup", navigation)
         self.assertIn("family-level evidence", navigation)
 

@@ -71,12 +71,12 @@ class SecondaryLegacyMatrixTests(unittest.TestCase):
         self.assertTrue(summary["all_rows_exact_prefixes"])
 
         documents = (
-            "SECONDARY_COLUMN_ORACLE.md",
-            "SECONDARY_COLUMNS.md",
-            "EXPERIMENTS.md",
-            "REKORDBOX_RESEARCH_GAPS.md",
-            "CONFORMANCE_COVERAGE.md",
-            "SOURCES.md",
+            "docs/SECONDARY_COLUMN_ORACLE.md",
+            "docs/SECONDARY_COLUMNS.md",
+            "docs/EXPERIMENTS.md",
+            "docs/REKORDBOX_RESEARCH_GAPS.md",
+            "docs/CONFORMANCE_COVERAGE.md",
+            "docs/SOURCES.md",
         )
         corpus = "\n".join((ROOT.parent / path).read_text() for path in documents)
         for stale_claim in (

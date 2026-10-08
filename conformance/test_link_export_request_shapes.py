@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DOCUMENT = ROOT / "REQUEST_SHAPES.md"
+DOCUMENT = ROOT / "docs/REQUEST_SHAPES.md"
 GENERATOR = ROOT / "tools/generate_link_export_request_shapes.py"
 
 

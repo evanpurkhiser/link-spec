@@ -161,34 +161,34 @@ class SortSecondaryRender6Tests(unittest.TestCase):
 
     def test_protocol_documents_keep_the_four_column_inputs_distinct(self) -> None:
         documents = {
-            "SECONDARY_COLUMNS.md": (
+            "docs/SECONDARY_COLUMNS.md": (
                 "not the active track sort",
                 "active sort's materialized column",
                 "8 arguments",
             ),
-            "SECONDARY_COLUMN_ORACLE.md": (
+            "docs/SECONDARY_COLUMN_ORACLE.md": (
                 "Active sort with RX3 six-argument rendering",
                 "Arguments 12-15 remain independent content metadata",
                 "physical RX3 PCAP",
             ),
-            "ROW_LAYOUT.md": (
+            "docs/ROW_LAYOUT.md": (
                 "Six-argument rendering exposes the active sort's cached right-column value",
                 "eight-argument render supplies an override gate",
             ),
-            "SORT_AND_COLOR_ORACLE.md": (
+            "docs/SORT_AND_COLOR_ORACLE.md": (
                 "Sort affects RX3 track-row presentation",
                 "final argument `12`",
             ),
-            "KEY_NOTATION_ORACLE.md": (
+            "docs/KEY_NOTATION_ORACLE.md": (
                 "active Key sort",
                 "active BPM sort",
                 "composites are preserved cached list-builder output",
             ),
-            "PROTOCOL_REFERENCE.md": (
+            "docs/PROTOCOL_REFERENCE.md": (
                 "Six-argument RX3 rendering instead preserves",
                 "final value `12` does not select Key",
             ),
-            "LINK_EXPORT_NAVIGATION.md": (
+            "docs/LINK_EXPORT_NAVIGATION.md": (
                 "Track sorting is a separate presentation input",
                 "final value `12` does not select Key",
             ),

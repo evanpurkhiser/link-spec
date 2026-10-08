@@ -146,10 +146,10 @@ class ModelNameStatePathTests(unittest.TestCase):
         documents = {
             name: (ROOT / name).read_text()
             for name in (
-                "DEVICE_COMPATIBILITY.md",
-                "DEVICE_PREDICATE_AUDIT.md",
-                "DEVICE_STATUS_PROVENANCE.md",
-                "STATIC_ANALYSIS.md",
+                "docs/DEVICE_COMPATIBILITY.md",
+                "docs/DEVICE_PREDICATE_AUDIT.md",
+                "docs/DEVICE_STATUS_PROVENANCE.md",
+                "docs/STATIC_ANALYSIS.md",
             )
         }
 
@@ -159,15 +159,15 @@ class ModelNameStatePathTests(unittest.TestCase):
 
         self.assertIn(
             "membership and model availability are separate state transitions",
-            documents["DEVICE_COMPATIBILITY.md"],
+            documents["docs/DEVICE_COMPATIBILITY.md"],
         )
         self.assertIn(
             "does not itself populate the model buffer",
-            documents["DEVICE_PREDICATE_AUDIT.md"],
+            documents["docs/DEVICE_PREDICATE_AUDIT.md"],
         )
         self.assertIn(
             "status parser owns the model buffer",
-            documents["DEVICE_STATUS_PROVENANCE.md"],
+            documents["docs/DEVICE_STATUS_PROVENANCE.md"],
         )
 
     def test_regeneration_is_byte_identical(self) -> None:

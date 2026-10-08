@@ -94,9 +94,9 @@ class PlayerHostedSongInfoTests(unittest.TestCase):
 
     def test_protocol_documents_preserve_the_role_boundary(self) -> None:
         for name in (
-            "SONG_INFO_SIBLINGS_ORACLE.md",
-            "LINK_EXPORT_REQUEST_VOCABULARY.md",
-            "REKORDBOX_RESEARCH_GAPS.md",
+            "docs/SONG_INFO_SIBLINGS_ORACLE.md",
+            "docs/LINK_EXPORT_REQUEST_VOCABULARY.md",
+            "docs/REKORDBOX_RESEARCH_GAPS.md",
         ):
             text = (ROOT / name).read_text()
             self.assertIn("player-hosted-song-info.json", text)

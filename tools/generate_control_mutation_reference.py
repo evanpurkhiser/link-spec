@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 VOCABULARY = ROOT / "data/static-analysis/link-export-request-vocabulary.json"
 CLIENT = ROOT / "data/static-analysis/xdj-rr-client-navigation.json"
 JSON_OUTPUT = ROOT / "data/static-analysis/control-mutation-command-map.json"
-MARKDOWN_OUTPUT = ROOT / "CONTROL_AND_MUTATION_REFERENCE.md"
+MARKDOWN_OUTPUT = ROOT / "docs/CONTROL_AND_MUTATION_REFERENCE.md"
 
 EFFECT_CLASSES = {
     "list-buffer-render": {"3000"},

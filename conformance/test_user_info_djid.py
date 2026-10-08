@@ -69,10 +69,10 @@ class UserInfoDjidTests(unittest.TestCase):
 
     def test_protocol_documents_link_the_generated_audit(self) -> None:
         for name in (
-            "USER_INFO_DJID_ORACLE.md",
-            "LINK_EXPORT_REQUEST_VOCABULARY.md",
-            "PROTOCOL_REFERENCE.md",
-            "REKORDBOX_RESEARCH_GAPS.md",
+            "docs/USER_INFO_DJID_ORACLE.md",
+            "docs/LINK_EXPORT_REQUEST_VOCABULARY.md",
+            "docs/PROTOCOL_REFERENCE.md",
+            "docs/REKORDBOX_RESEARCH_GAPS.md",
         ):
             text = (ROOT / name).read_text()
             self.assertIn("user-info-djid.json", text)

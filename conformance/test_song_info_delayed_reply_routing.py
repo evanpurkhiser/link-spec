@@ -119,20 +119,20 @@ class SongInfoDelayedReplyRoutingTests(unittest.TestCase):
 
     def test_documents_distinguish_orphan_reply_from_probe_result(self) -> None:
         documents = {
-            "SONG_INFO_SIBLINGS_ORACLE.md": (
+            "docs/SONG_INFO_SIBLINGS_ORACLE.md": (
                 "late response from the malformed request",
                 "not the response to the valid probe",
                 "exact drop point remains an inference",
             ),
-            "PROTOCOL_REFERENCE.md": (
+            "docs/PROTOCOL_REFERENCE.md": (
                 "A no-send drain exposes the orphan directly",
                 "valid Delivery request returns 13",
             ),
-            "CONFORMANCE_COVERAGE.md": (
+            "docs/CONFORMANCE_COVERAGE.md": (
                 "24 observation receipts",
                 "all 48 probes return 13",
             ),
-            "STATIC_ANALYSIS.md": (
+            "docs/STATIC_ANALYSIS.md": (
                 "player byte and no originating socket",
                 "can reach a replacement connection",
             ),

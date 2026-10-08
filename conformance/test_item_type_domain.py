@@ -34,8 +34,8 @@ class ItemTypeDomainTests(unittest.TestCase):
 
     def test_documentation_resolves_the_versioned_dysentery_unknown(self) -> None:
         audit = json.loads(AUDIT.read_text())
-        crosswalk = (ROOT / "DYSENTERY_CROSSWALK.md").read_text()
-        row_layout = (ROOT / "ROW_LAYOUT.md").read_text()
+        crosswalk = (ROOT / "docs/DYSENTERY_CROSSWALK.md").read_text()
+        row_layout = (ROOT / "docs/ROW_LAYOUT.md").read_text()
 
         for document in (crosswalk, row_layout):
             self.assertIn("item-type-domain.json", document)

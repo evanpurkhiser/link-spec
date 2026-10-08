@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REFERENCE = ROOT / "data/item-type-reference.json"
-MARKDOWN = ROOT / "ITEM_TYPE_REFERENCE.md"
+MARKDOWN = ROOT / "docs/ITEM_TYPE_REFERENCE.md"
 DOMAIN = ROOT / "data/static-analysis/item-type-domain.json"
 GENERATOR = ROOT / "tools/generate_item_type_reference.py"
 
@@ -60,8 +60,14 @@ class ItemTypeReferenceTest(unittest.TestCase):
         self.assertEqual(expected, {value: self.types[value]["meaning"] for value in expected})
 
     def test_primary_indexes_link_the_reference(self):
-        for path in (ROOT / "README.md", ROOT / "ROW_LAYOUT.md", ROOT / "SOURCES.md"):
-            self.assertIn("ITEM_TYPE_REFERENCE.md", path.read_text())
+        references = {
+            ROOT / "README.md": "docs/ITEM_TYPE_REFERENCE.md",
+            ROOT / "docs/ROW_LAYOUT.md": "ITEM_TYPE_REFERENCE.md",
+            ROOT / "docs/SOURCES.md": "ITEM_TYPE_REFERENCE.md",
+        }
+
+        for path, reference in references.items():
+            self.assertIn(reference, path.read_text())
 
     def test_regeneration_is_byte_identical(self):
         runtime = ROOT / "conformance/runtime"

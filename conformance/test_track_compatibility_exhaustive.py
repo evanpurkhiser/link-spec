@@ -95,9 +95,9 @@ class TrackCompatibilityExhaustiveTests(unittest.TestCase):
 
     def test_documents_describe_the_completed_live_oracle(self) -> None:
         documents = (
-            LAB / "DEVICE_PREDICATE_AUDIT.md",
-            LAB / "STATIC_ANALYSIS.md",
-            LAB / "BOUNDARY_INVALID_LIFECYCLE_ORACLE.md",
+            LAB / "docs/DEVICE_PREDICATE_AUDIT.md",
+            LAB / "docs/STATIC_ANALYSIS.md",
+            LAB / "docs/BOUNDARY_INVALID_LIFECYCLE_ORACLE.md",
         )
 
         for path in documents:

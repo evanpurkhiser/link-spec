@@ -69,11 +69,11 @@ class RenderArityBoundaryTests(unittest.TestCase):
 
     def test_docs_preserve_pending_authority_boundary(self) -> None:
         documents = {
-            "PROTOCOL_REFERENCE.md": "Track render arity boundary sweep",
-            "SECONDARY_COLUMNS.md": "render-arity-boundaries.json",
-            "CONFORMANCE_COVERAGE.md": "Track render arities 3 through 32",
-            "REKORDBOX_RESEARCH_GAPS.md": "render-arity-boundaries",
-            "SOURCES.md": "Track render arity boundaries",
+            "docs/PROTOCOL_REFERENCE.md": "Track render arity boundary sweep",
+            "docs/SECONDARY_COLUMNS.md": "render-arity-boundaries.json",
+            "docs/CONFORMANCE_COVERAGE.md": "Track render arities 3 through 32",
+            "docs/REKORDBOX_RESEARCH_GAPS.md": "render-arity-boundaries",
+            "docs/SOURCES.md": "Track render arity boundaries",
         }
         for name, fragment in documents.items():
             text = " ".join((ROOT.parent / name).read_text().split())

@@ -59,8 +59,8 @@ class WindowsDeviceSemanticTests(unittest.TestCase):
         )
 
     def test_documentation_states_result_and_boundary(self) -> None:
-        predicate = (ROOT / "DEVICE_PREDICATE_AUDIT.md").read_text()
-        gaps = (ROOT / "REKORDBOX_RESEARCH_GAPS.md").read_text()
+        predicate = (ROOT / "docs/DEVICE_PREDICATE_AUDIT.md").read_text()
+        gaps = (ROOT / "docs/REKORDBOX_RESEARCH_GAPS.md").read_text()
         for document in (predicate, gaps):
             self.assertIn("device-semantic-audit.json", document)
             self.assertIn("174,813", document)

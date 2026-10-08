@@ -55,11 +55,11 @@ class WindowsDevicePredicateAuditTests(unittest.TestCase):
             self.assertEqual(expected, actual, name)
 
     def test_documentation_replaces_the_old_windows_gap(self) -> None:
-        predicate_doc = (ROOT / "DEVICE_PREDICATE_AUDIT.md").read_text()
-        compatibility_doc = (ROOT / "DEVICE_COMPATIBILITY.md").read_text()
-        queries_doc = (ROOT / "DATABASE_QUERIES.md").read_text()
-        row_layout = (ROOT / "ROW_LAYOUT.md").read_text()
-        gaps = (ROOT / "REKORDBOX_RESEARCH_GAPS.md").read_text()
+        predicate_doc = (ROOT / "docs/DEVICE_PREDICATE_AUDIT.md").read_text()
+        compatibility_doc = (ROOT / "docs/DEVICE_COMPATIBILITY.md").read_text()
+        queries_doc = (ROOT / "docs/DATABASE_QUERIES.md").read_text()
+        row_layout = (ROOT / "docs/ROW_LAYOUT.md").read_text()
+        gaps = (ROOT / "docs/REKORDBOX_RESEARCH_GAPS.md").read_text()
 
         for document in (predicate_doc, compatibility_doc, gaps):
             self.assertIn("0x142380930", document)
