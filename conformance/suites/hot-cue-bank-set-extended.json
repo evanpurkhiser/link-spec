@@ -1,0 +1,62 @@
+{
+  "name": "hot-cue-bank-set-extended",
+  "fixture_profile": "hot-cue-bank-mutation",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "before",
+      "description": "Read the pristine mutation membership",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.mutation"},
+        {"number": 1}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "set",
+      "description": "Replace slot 1 through the extended mutation command",
+      "request_kind": "0x2401",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.mutation"},
+        {"number": 1},
+        {"number": 124},
+        {
+          "blob_hex": "7c000000010002000000e80355f8060052aa0800000000000800000000000000ffffffff0403020114131211242322213433323142000000000006000d0c0b0a000034127856000000002c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {"number": 1}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "after",
+      "description": "Read slot 1 again on the mutation connection",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.mutation"},
+        {"number": 1}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "hot-cue-bank-buffer-disconnect-post",
+  "fixture_profile": "hot-cue-banks",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010201",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "beta-header-render-old-location-1",
+      "description": "Populate location two with Beta Folder and render prior location one",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "0x01010201"},
+        {"number": "$fixture.hotcue.folder.beta"},
+        {"number": 1},
+        {"number": 0}
+      ],
+      "render_context": "0x01010101",
+      "fresh_connection": true,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "beta-header-render-current-location-2",
+      "description": "Populate and render the current location-two Beta Folder buffer",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "0x01010201"},
+        {"number": "$fixture.hotcue.folder.beta"},
+        {"number": 1},
+        {"number": 0}
+      ],
+      "render_context": "0x01010201",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": ["$fixture.hotcue.bank.beta"]
+      }
+    }
+  ]
+}

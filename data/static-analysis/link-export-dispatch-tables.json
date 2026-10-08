@@ -1,0 +1,847 @@
+{
+  "format": 1,
+  "source": {
+    "product": "rekordbox 7.2.19",
+    "path": "/home/evan/workspace/rx3-research/artifacts/rekordbox/7.2.19/extracted/app-root/rekordbox.app/Contents/MacOS/rekordbox",
+    "sha256": "07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244",
+    "slice": "x86-64",
+    "slice_file_offset": 16384
+  },
+  "top_level": {
+    "owner": "PSvDBMain::OnClientReq",
+    "key_format": "signed request kind shifted right by 12",
+    "accepted_classes": {
+      "1": "PSvDBMain::OnListClientCmd",
+      "2": "PSvDBMain::OnMAnlzClientCmd",
+      "3": "PSvDBMain::OnOtherClientCmd"
+    },
+    "default_target": "PSvDBMain::OnUnknownClientCmd",
+    "default_reply_kind": "4003"
+  },
+  "tables": [
+    {
+      "id": "list-low-byte",
+      "owner": "PSvDBMain::OnListClientCmd",
+      "table_address": "0x101d2be98",
+      "key_format": "low byte of request kind",
+      "raw_sha256": "bfc8439044da89ed9b6c78d2d2a7efeed8736999af1dfb6f80fdd85c74bbf9c5",
+      "entries": [
+        {
+          "key": "00",
+          "relative_target": -729,
+          "target_address": "0x101d2bbbf",
+          "target": "PSvDBMain::OnOtherListCmd"
+        },
+        {
+          "key": "01",
+          "relative_target": -699,
+          "target_address": "0x101d2bbdd",
+          "target": "PSvDBMain::OnGenreListCmd"
+        },
+        {
+          "key": "02",
+          "relative_target": -669,
+          "target_address": "0x101d2bbfb",
+          "target": "PSvDBMain::OnArtistListCmd"
+        },
+        {
+          "key": "03",
+          "relative_target": -639,
+          "target_address": "0x101d2bc19",
+          "target": "PSvDBMain::OnAlbumListCmd"
+        },
+        {
+          "key": "04",
+          "relative_target": -609,
+          "target_address": "0x101d2bc37",
+          "target": "PSvDBMain::OnTrackListCmd"
+        },
+        {
+          "key": "05",
+          "relative_target": -579,
+          "target_address": "0x101d2bc55",
+          "target": "PSvDBMain::OnPlaylistListCmd"
+        },
+        {
+          "key": "06",
+          "relative_target": -549,
+          "target_address": "0x101d2bc73",
+          "target": "PSvDBMain::OnBpmListCmd"
+        },
+        {
+          "key": "07",
+          "relative_target": -519,
+          "target_address": "0x101d2bc91",
+          "target": "PSvDBMain::OnRatingListCmd"
+        },
+        {
+          "key": "08",
+          "relative_target": -489,
+          "target_address": "0x101d2bcaf",
+          "target": "PSvDBMain::OnYearListCmd"
+        },
+        {
+          "key": "09",
+          "relative_target": -20,
+          "target_address": "0x101d2be84",
+          "target": "unsupported-low-byte"
+        },
+        {
+          "key": "0A",
+          "relative_target": -459,
+          "target_address": "0x101d2bccd",
+          "target": "PSvDBMain::OnLabelListCmd"
+        },
+        {
+          "key": "0B",
+          "relative_target": -429,
+          "target_address": "0x101d2bceb",
+          "target": "PSvDBMain::OnKeyListCmd"
+        },
+        {
+          "key": "0C",
+          "relative_target": -399,
+          "target_address": "0x101d2bd09",
+          "target": "special-0x130c-or-unsupported"
+        },
+        {
+          "key": "0D",
+          "relative_target": -322,
+          "target_address": "0x101d2bd56",
+          "target": "PSvDBMain::OnColorListCmd"
+        },
+        {
+          "key": "0E",
+          "relative_target": -292,
+          "target_address": "0x101d2bd74",
+          "target": "PSvDBMain::OnPlayCntListCmd"
+        },
+        {
+          "key": "0F",
+          "relative_target": -262,
+          "target_address": "0x101d2bd92",
+          "target": "PSvDBMain::OnPrepareListCmd"
+        },
+        {
+          "key": "10",
+          "relative_target": -232,
+          "target_address": "0x101d2bdb0",
+          "target": "PSvDBMain::OnLengthListCmd"
+        },
+        {
+          "key": "11",
+          "relative_target": -206,
+          "target_address": "0x101d2bdca",
+          "target": "PSvDBMain::OnBitrateListCmd"
+        },
+        {
+          "key": "12",
+          "relative_target": -183,
+          "target_address": "0x101d2bde1",
+          "target": "PSvDBMain::OnHistoryListCmd"
+        },
+        {
+          "key": "13",
+          "relative_target": -160,
+          "target_address": "0x101d2bdf8",
+          "target": "PSvDBMain::OnFileNameListCmd"
+        },
+        {
+          "key": "14",
+          "relative_target": -137,
+          "target_address": "0x101d2be0f",
+          "target": "PSvDBMain::OnNewKeyListCmd"
+        },
+        {
+          "key": "15",
+          "relative_target": -114,
+          "target_address": "0x101d2be26",
+          "target": "PSvDBMain::OnMyTagListCmd"
+        },
+        {
+          "key": "16",
+          "relative_target": -20,
+          "target_address": "0x101d2be84",
+          "target": "unsupported-low-byte"
+        },
+        {
+          "key": "17",
+          "relative_target": -86,
+          "target_address": "0x101d2be42",
+          "target": "PSvDBMain::OnMatchingListCmd"
+        }
+      ]
+    },
+    {
+      "id": "analysis-class-low-byte",
+      "owner": "PSvDBMain::OnMAnlzClientCmd",
+      "table_address": "0x101d2e710",
+      "key_format": "low byte of request kind",
+      "raw_sha256": "13a62d62efc94119358fe7ea0161bbabd9f77b95f8a7cc4c751a17008231e3b2",
+      "entries": [
+        {
+          "key": "01",
+          "relative_target": -60,
+          "target_address": "0x101d2e6d4",
+          "target": "PSvDBMain::OnCueBnkCmd"
+        },
+        {
+          "key": "02",
+          "relative_target": -30,
+          "target_address": "0x101d2e6f2",
+          "target": "PSvDBMain::OnSongInfCmd"
+        },
+        {
+          "key": "03",
+          "relative_target": -24,
+          "target_address": "0x101d2e6f8",
+          "target": "PSvDBMain::OnImgCmd"
+        },
+        {
+          "key": "04",
+          "relative_target": -18,
+          "target_address": "0x101d2e6fe",
+          "target": "PSvDBMain::OnSongAnlzCmd"
+        },
+        {
+          "key": "05",
+          "relative_target": -12,
+          "target_address": "0x101d2e704",
+          "target": "PSvDBMain::OnWriteCmd"
+        },
+        {
+          "key": "06",
+          "relative_target": -37,
+          "target_address": "0x101d2e6eb",
+          "target": "unsupported-low-byte"
+        },
+        {
+          "key": "07",
+          "relative_target": -6,
+          "target_address": "0x101d2e70a",
+          "target": "PSvDBMain::OnDbModCmd"
+        }
+      ]
+    },
+    {
+      "id": "other-list-high-byte",
+      "owner": "PSvDBMain::OnOtherListCmd",
+      "table_address": "0x101d2e690",
+      "key_format": "request kind after subtract-0x1000 and rotate-right-8",
+      "raw_sha256": "23853a271f64b4378b4c7fba401284179f0ac8f7fcb8fb587d807daf4a55a9ab",
+      "entries": [
+        {
+          "key": "1000",
+          "relative_target": -1031,
+          "target_address": "0x101d2e289",
+          "target": "root"
+        },
+        {
+          "key": "1100",
+          "relative_target": -925,
+          "target_address": "0x101d2e2f3",
+          "target": "unsupported-other-list-kind"
+        },
+        {
+          "key": "1200",
+          "relative_target": -864,
+          "target_address": "0x101d2e330",
+          "target": "track-content"
+        },
+        {
+          "key": "1300",
+          "relative_target": -727,
+          "target_address": "0x101d2e3b9",
+          "target": "search"
+        },
+        {
+          "key": "1400",
+          "relative_target": -536,
+          "target_address": "0x101d2e478",
+          "target": "sort-menu"
+        },
+        {
+          "key": "1500",
+          "relative_target": -425,
+          "target_address": "0x101d2e4e7",
+          "target": "search-track"
+        }
+      ]
+    },
+    {
+      "id": "song-analysis-high-byte",
+      "owner": "PSvDBMain::OnSongAnlzCmd",
+      "table_address": "0x101d2f690",
+      "key_format": "request kind after subtract-0x2004 and rotate-right-8",
+      "raw_sha256": "53e5ecd78e53009a391c790b767d6e02f742a7ff7f24505ecd25b01ec3f76192",
+      "entries": [
+        {
+          "key": "2004",
+          "relative_target": -997,
+          "target_address": "0x101d2f2ab",
+          "target": "PSvDBMain::GetWave"
+        },
+        {
+          "key": "2104",
+          "relative_target": -903,
+          "target_address": "0x101d2f309",
+          "target": "PSvDBMain::GetUsbCue"
+        },
+        {
+          "key": "2204",
+          "relative_target": -793,
+          "target_address": "0x101d2f377",
+          "target": "PSvDBMain::GetQtzInf"
+        },
+        {
+          "key": "2304",
+          "relative_target": -699,
+          "target_address": "0x101d2f3d5",
+          "target": "recognized-log-only"
+        },
+        {
+          "key": "2404",
+          "relative_target": -664,
+          "target_address": "0x101d2f3f8",
+          "target": "recognized-log-only"
+        },
+        {
+          "key": "2504",
+          "relative_target": -629,
+          "target_address": "0x101d2f41b",
+          "target": "PSvDBMain::GetVbrInf"
+        },
+        {
+          "key": "2604",
+          "relative_target": -535,
+          "target_address": "0x101d2f479",
+          "target": "recognized-log-only"
+        },
+        {
+          "key": "2704",
+          "relative_target": -503,
+          "target_address": "0x101d2f499",
+          "target": "recognized-log-only"
+        },
+        {
+          "key": "2804",
+          "relative_target": -440,
+          "target_address": "0x101d2f4d8",
+          "target": "PSvDBMain::GetQtzInf"
+        },
+        {
+          "key": "2904",
+          "relative_target": -346,
+          "target_address": "0x101d2f536",
+          "target": "PSvDBMain::LoadParWav"
+        },
+        {
+          "key": "2A04",
+          "relative_target": -277,
+          "target_address": "0x101d2f57b",
+          "target": "PSvDBMain::LoadKeyInf"
+        },
+        {
+          "key": "2B04",
+          "relative_target": -211,
+          "target_address": "0x101d2f5bd",
+          "target": "PSvDBMain::GetUsbCueExt"
+        },
+        {
+          "key": "2C04",
+          "relative_target": -1093,
+          "target_address": "0x101d2f24b",
+          "target": "PSvDBMain::GetSpecifiedAtomInfo"
+        },
+        {
+          "key": "2D04",
+          "relative_target": -1093,
+          "target_address": "0x101d2f24b",
+          "target": "PSvDBMain::GetSpecifiedAtomInfo"
+        }
+      ]
+    },
+    {
+      "id": "year-high-byte",
+      "owner": "PSvDBMain::OnYearListCmd",
+      "table_address": "0x101d2d020",
+      "key_format": "request kind after subtract-0x1008 and rotate-right-8",
+      "raw_sha256": "94b56bad2a0afba6d230c724461a97df71fd71a7ba2e42468781f7012c2e88a9",
+      "entries": [
+        {
+          "key": "1008",
+          "relative_target": -498,
+          "target_address": "0x101d2ce2e",
+          "target": "database-interface release-decade root via vtable +0xA0"
+        },
+        {
+          "key": "1108",
+          "relative_target": -408,
+          "target_address": "0x101d2ce88",
+          "target": "database-interface release-year children via vtable +0xA8"
+        },
+        {
+          "key": "1208",
+          "relative_target": -312,
+          "target_address": "0x101d2cee8",
+          "target": "database-interface release-year tracks via vtable +0xB0"
+        },
+        {
+          "key": "1308",
+          "relative_target": -182,
+          "target_address": "0x101d2cf6a",
+          "target": "unsupported-year-kind"
+        },
+        {
+          "key": "1408",
+          "relative_target": -182,
+          "target_address": "0x101d2cf6a",
+          "target": "unsupported-year-kind"
+        },
+        {
+          "key": "1508",
+          "relative_target": -182,
+          "target_address": "0x101d2cf6a",
+          "target": "unsupported-year-kind"
+        },
+        {
+          "key": "1608",
+          "relative_target": -182,
+          "target_address": "0x101d2cf6a",
+          "target": "unsupported-year-kind"
+        },
+        {
+          "key": "1708",
+          "relative_target": -562,
+          "target_address": "0x101d2cdee",
+          "target": "database-interface date-added hierarchy via vtable +0xB8"
+        },
+        {
+          "key": "1808",
+          "relative_target": -562,
+          "target_address": "0x101d2cdee",
+          "target": "database-interface date-added hierarchy via vtable +0xB8"
+        },
+        {
+          "key": "1908",
+          "relative_target": -562,
+          "target_address": "0x101d2cdee",
+          "target": "database-interface date-added hierarchy via vtable +0xB8"
+        },
+        {
+          "key": "1A08",
+          "relative_target": -128,
+          "target_address": "0x101d2cfa0",
+          "target": "database-interface date-added tracks via vtable +0xC0"
+        }
+      ]
+    },
+    {
+      "id": "other-client-low-byte",
+      "owner": "PSvDBMain::OnOtherClientCmd",
+      "table_address": "0x101d2fe90",
+      "key_format": "low byte of 3xxx request kind",
+      "raw_sha256": "4b6189f09c540369e4c79f309b1dc62fe8f2f2fa1f50a71525c22c85cb50f130",
+      "entries": [
+        {
+          "key": "00",
+          "relative_target": -291,
+          "target_address": "0x101d2fd6d",
+          "target": "PSvDBMain::OnListBuffCmd"
+        },
+        {
+          "key": "01",
+          "relative_target": -266,
+          "target_address": "0x101d2fd86",
+          "target": "PSvDBMain::OnHistoryCmd"
+        },
+        {
+          "key": "02",
+          "relative_target": -241,
+          "target_address": "0x101d2fd9f",
+          "target": "PSvDBMain::OnPrepareCmd"
+        },
+        {
+          "key": "03",
+          "relative_target": -216,
+          "target_address": "0x101d2fdb8",
+          "target": "PSvDBMain::OnOtherCmd"
+        },
+        {
+          "key": "04",
+          "relative_target": -191,
+          "target_address": "0x101d2fdd1",
+          "target": "special-0x3104-only"
+        },
+        {
+          "key": "05",
+          "relative_target": -21,
+          "target_address": "0x101d2fe7b",
+          "target": "unsupported-low-byte"
+        },
+        {
+          "key": "06",
+          "relative_target": -110,
+          "target_address": "0x101d2fe22",
+          "target": "PSvDBMain::OnUserCmd"
+        },
+        {
+          "key": "07",
+          "relative_target": -85,
+          "target_address": "0x101d2fe3b",
+          "target": "PSvDBMain::OnFilterCmd"
+        },
+        {
+          "key": "08",
+          "relative_target": -60,
+          "target_address": "0x101d2fe54",
+          "target": "PSvDBMain::OnOther2Cmd"
+        }
+      ]
+    },
+    {
+      "id": "history-high-byte",
+      "owner": "PSvDBMain::OnHistoryCmd",
+      "table_address": "0x101d30314",
+      "key_format": "request kind after subtract-0x3001 and rotate-right-8",
+      "raw_sha256": "fa72e4cb6453b6a8c3273e7d49714e63b4bf8c218d3d940c296918287d92232e",
+      "entries": [
+        {
+          "key": "3001",
+          "relative_target": -707,
+          "target_address": "0x101d30051",
+          "target": "insert-history"
+        },
+        {
+          "key": "3101",
+          "relative_target": -570,
+          "target_address": "0x101d300da",
+          "target": "delete-history"
+        },
+        {
+          "key": "3201",
+          "relative_target": -474,
+          "target_address": "0x101d3013a",
+          "target": "set-onair"
+        },
+        {
+          "key": "3301",
+          "relative_target": -419,
+          "target_address": "0x101d30171",
+          "target": "delete-history-reply"
+        },
+        {
+          "key": "3401",
+          "relative_target": -364,
+          "target_address": "0x101d301a8",
+          "target": "delete-history-track"
+        }
+      ]
+    },
+    {
+      "id": "prepare-high-byte",
+      "owner": "PSvDBMain::OnPrepareCmd",
+      "table_address": "0x101d30654",
+      "key_format": "request kind after subtract-0x3002 and rotate-right-8",
+      "raw_sha256": "decc0eab5773cc99102546019c0ecdb34ea7429d1b29696dd113bed8aa527208",
+      "entries": [
+        {
+          "key": "3002",
+          "relative_target": -697,
+          "target_address": "0x101d3039b",
+          "target": "add-prepare"
+        },
+        {
+          "key": "3102",
+          "relative_target": -562,
+          "target_address": "0x101d30422",
+          "target": "add-taglist-playlist"
+        },
+        {
+          "key": "3202",
+          "relative_target": -354,
+          "target_address": "0x101d304f2",
+          "target": "unlisted-static-arm"
+        },
+        {
+          "key": "3302",
+          "relative_target": -56,
+          "target_address": "0x101d3061c",
+          "target": "change-taglist-order"
+        },
+        {
+          "key": "3402",
+          "relative_target": -274,
+          "target_address": "0x101d30542",
+          "target": "is-taglist-playlist"
+        }
+      ]
+    },
+    {
+      "id": "other-command-high-byte",
+      "owner": "PSvDBMain::OnOtherCmd",
+      "table_address": "0x101d30ad8",
+      "key_format": "request kind after subtract-0x3003 and rotate-right-8",
+      "raw_sha256": "1ffd51e4747b647f3a367c949376d9b0346c0763f2a82afd030a6e5410750545",
+      "entries": [
+        {
+          "key": "3003",
+          "relative_target": -1028,
+          "target_address": "0x101d306d4",
+          "target": "color-code"
+        },
+        {
+          "key": "3103",
+          "relative_target": -945,
+          "target_address": "0x101d30727",
+          "target": "unlisted-static-arm"
+        },
+        {
+          "key": "3203",
+          "relative_target": -896,
+          "target_address": "0x101d30758",
+          "target": "get-db-firmware-version"
+        },
+        {
+          "key": "3303",
+          "relative_target": -825,
+          "target_address": "0x101d3079f",
+          "target": "get-browse-type"
+        },
+        {
+          "key": "3403",
+          "relative_target": -945,
+          "target_address": "0x101d30727",
+          "target": "unlisted-static-arm"
+        },
+        {
+          "key": "3503",
+          "relative_target": -706,
+          "target_address": "0x101d30816",
+          "target": "info-unplayable"
+        },
+        {
+          "key": "3603",
+          "relative_target": -655,
+          "target_address": "0x101d30849",
+          "target": "get-db-hierarchy"
+        },
+        {
+          "key": "3703",
+          "relative_target": -945,
+          "target_address": "0x101d30727",
+          "target": "unlisted-static-arm"
+        },
+        {
+          "key": "3803",
+          "relative_target": -945,
+          "target_address": "0x101d30727",
+          "target": "unlisted-static-arm"
+        },
+        {
+          "key": "3903",
+          "relative_target": -548,
+          "target_address": "0x101d308b4",
+          "target": "property-table"
+        },
+        {
+          "key": "3A03",
+          "relative_target": -497,
+          "target_address": "0x101d308e7",
+          "target": "translate-new-key"
+        },
+        {
+          "key": "3B03",
+          "relative_target": -425,
+          "target_address": "0x101d3092f",
+          "target": "get-play-state"
+        },
+        {
+          "key": "3C03",
+          "relative_target": -303,
+          "target_address": "0x101d309a9",
+          "target": "set-my-setting-flag"
+        },
+        {
+          "key": "3D03",
+          "relative_target": -240,
+          "target_address": "0x101d309e8",
+          "target": "get-new-key-id"
+        }
+      ]
+    },
+    {
+      "id": "filter-high-byte",
+      "owner": "PSvDBMain::OnFilterCmd",
+      "table_address": "0x101d30e5c",
+      "key_format": "request kind after subtract-0x3007 and rotate-right-8",
+      "raw_sha256": "ef52d82a665c03fd2e0f0fb5619b42feb8b2b8d93ddec0982940b669c66b5919",
+      "entries": [
+        {
+          "key": "3007",
+          "relative_target": -483,
+          "target_address": "0x101d30c79",
+          "target": "set-filter-onoff"
+        },
+        {
+          "key": "3107",
+          "relative_target": -339,
+          "target_address": "0x101d30d09",
+          "target": "get-filter-condition-property"
+        },
+        {
+          "key": "3207",
+          "relative_target": -267,
+          "target_address": "0x101d30d51",
+          "target": "set-filter-condition-property"
+        },
+        {
+          "key": "3307",
+          "relative_target": -199,
+          "target_address": "0x101d30d95",
+          "target": "set-filter-condition-mytag"
+        },
+        {
+          "key": "3407",
+          "relative_target": -134,
+          "target_address": "0x101d30dd6",
+          "target": "add-filter-mytag-item"
+        }
+      ]
+    }
+  ],
+  "direct_dispatch": [
+    {
+      "owner": "PSvDBMain::OnKeyListCmd",
+      "request_kind": "100B",
+      "target": "PSvAppSyncDBIF::getKey_Root via database-interface vtable +0xE8",
+      "reply_kind": "4000"
+    },
+    {
+      "owner": "PSvDBMain::OnKeyListCmd",
+      "request_kind": "110B",
+      "target": "PSvAppSyncDBIF::getTrack_Key via database-interface vtable +0xF0",
+      "reply_kind": "4000"
+    },
+    {
+      "owner": "PSvDBMain::OnListClientCmd",
+      "request_kind": "130C",
+      "target": "recognized-log-only",
+      "reply_kind": null
+    },
+    {
+      "owner": "PSvDBMain::OnImgCmd",
+      "request_kind": "2003",
+      "target": "database-interface vtable +0x190",
+      "reply_kind": "4002"
+    },
+    {
+      "owner": "PSvDBMain::OnImgCmd",
+      "request_kind": "2103",
+      "target": "database-interface vtable +0x198",
+      "reply_kind": "4002"
+    },
+    {
+      "owner": "PSvDBMain::OnListBuffCmd",
+      "request_kind": "3000",
+      "target": "PSvDBMain::GetListBufContents",
+      "reply_kind": "4001/4101/4201"
+    },
+    {
+      "owner": "PSvDBMain::OnListBuffCmd",
+      "request_kind": "3100",
+      "target": "PSvDBMain::GetListBufOffset",
+      "reply_kind": "4000"
+    },
+    {
+      "owner": "PSvDBMain::OnOtherClientCmd",
+      "request_kind": "3104",
+      "target": "recognized zero-result special case",
+      "reply_kind": "4000"
+    },
+    {
+      "owner": "PSvDBMain::OnUserCmd",
+      "request_kind": "3006",
+      "target": "PSvDBMain::GetDJID",
+      "reply_kind": "4D02"
+    },
+    {
+      "owner": "PSvDBMain::OnOther2Cmd",
+      "request_kind": "3008",
+      "target": "database-interface vtable +0x228",
+      "reply_kind": "4000"
+    },
+    {
+      "owner": "PSvDBMain::OnWriteCmd",
+      "request_kind": "2005",
+      "target": "PSvDBMain::SavWave",
+      "reply_kind": null
+    },
+    {
+      "owner": "PSvDBMain::OnWriteCmd",
+      "request_kind": "2105",
+      "target": "PSvDBMain::SavUsbCue",
+      "reply_kind": "4702"
+    },
+    {
+      "owner": "PSvDBMain::OnWriteCmd",
+      "request_kind": "2205",
+      "target": "PSvDBMain::SavVbrInf (constant-success stub)",
+      "reply_kind": null
+    },
+    {
+      "owner": "PSvDBMain::OnWriteCmd",
+      "request_kind": "2305",
+      "target": "recognized-log-only",
+      "reply_kind": null
+    },
+    {
+      "owner": "PSvDBMain::OnWriteCmd",
+      "request_kind": "2405",
+      "target": "recognized-log-only",
+      "reply_kind": null
+    },
+    {
+      "owner": "PSvDBMain::OnWriteCmd",
+      "request_kind": "2505",
+      "target": "recognized-log-only",
+      "reply_kind": null
+    },
+    {
+      "owner": "PSvDBMain::OnWriteCmd",
+      "request_kind": "2605",
+      "target": "PSvDBMain::SavQtzOfs",
+      "reply_kind": "4000"
+    },
+    {
+      "owner": "PSvDBMain::OnWriteCmd",
+      "request_kind": "2705",
+      "target": "PSvDBMain::SavUsbCueExt",
+      "reply_kind": "4E02"
+    },
+    {
+      "owner": "PSvDBMain::OnWriteCmd",
+      "request_kind": "2805",
+      "target": "PSvDBMain::SaveSpecifiedAtomInfo",
+      "reply_kind": "4000"
+    },
+    {
+      "owner": "PSvDBMain::OnWriteCmd",
+      "request_kind": "2905",
+      "target": "PSvDBMain::UpdateSpecifiedAtomInfo",
+      "reply_kind": "4000"
+    },
+    {
+      "owner": "PSvDBMain::OnDbModCmd",
+      "request_kind": "2107",
+      "target": "PSvAppSyncDBIF::modTrackRate via database-interface vtable +0x2A0",
+      "reply_kind": "4000"
+    },
+    {
+      "owner": "PSvDBMain::OnDbModCmd",
+      "request_kind": "2507",
+      "target": "PSvAppSyncDBIF::modTrackBPM via database-interface vtable +0x2A8",
+      "reply_kind": "4000"
+    }
+  ]
+}

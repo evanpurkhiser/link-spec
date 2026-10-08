@@ -1,0 +1,60 @@
+{
+  "name": "hot-cue-bank-count-boundaries",
+  "fixture_profile": "hot-cue-banks",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 10000,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "count-17",
+      "description": "First value above the prior count matrix",
+      "request_kind": "0x2001",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.alpha"}, {"number": 0}, {"number": 17}],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "count-uint8-max",
+      "description": "Unsigned 8-bit maximum count",
+      "request_kind": "0x2001",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.alpha"}, {"number": 0}, {"number": 255}],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "count-uint8-plus-one",
+      "description": "First count above unsigned 8-bit width",
+      "request_kind": "0x2001",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.alpha"}, {"number": 0}, {"number": 256}],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "count-uint16-max",
+      "description": "Unsigned 16-bit maximum count",
+      "request_kind": "0x2001",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.alpha"}, {"number": 0}, {"number": 65535}],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "count-uint16-plus-one",
+      "description": "First count above unsigned 16-bit width",
+      "request_kind": "0x2001",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.alpha"}, {"number": 0}, {"number": 65536}],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "count-one-mebibit",
+      "description": "Large safe allocation count preserving upper bits",
+      "request_kind": "0x2001",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.alpha"}, {"number": 0}, {"number": 1048576}],
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

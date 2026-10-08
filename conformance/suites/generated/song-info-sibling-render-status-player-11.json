@@ -1,0 +1,1021 @@
+{
+  "name": "song-info-sibling-render-status-player-11",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ],
+    "read_timeout_ms": 10000
+  },
+  "cases": [
+    {
+      "id": "play-arity-5",
+      "description": "Play Song Info: Five-argument render",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total"
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-arity-6",
+      "description": "Play Song Info: Six-argument render",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-database-selection-zero-gate",
+      "description": "Play Song Info: Zero gate with database selection",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0,
+        0
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-disabled-with-zero-gate",
+      "description": "Play Song Info: Zero gate with nonzero override",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0,
+        7
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-database-selection",
+      "description": "Play Song Info: Eight-argument render with database selection",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-02",
+      "description": "Play Song Info: Render-time secondary selector override 2",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        2
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-03",
+      "description": "Play Song Info: Render-time secondary selector override 3",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        3
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-04",
+      "description": "Play Song Info: Render-time secondary selector override 4",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        4
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-05",
+      "description": "Play Song Info: Render-time secondary selector override 5",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        5
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-06",
+      "description": "Play Song Info: Render-time secondary selector override 6",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        6
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-07",
+      "description": "Play Song Info: Render-time secondary selector override 7",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-08",
+      "description": "Play Song Info: Render-time secondary selector override 8",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        8
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-09",
+      "description": "Play Song Info: Render-time secondary selector override 9",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        9
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-10",
+      "description": "Play Song Info: Render-time secondary selector override 10",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        10
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-11",
+      "description": "Play Song Info: Render-time secondary selector override 11",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        11
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-12",
+      "description": "Play Song Info: Render-time secondary selector override 12",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        12
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-13",
+      "description": "Play Song Info: Render-time secondary selector override 13",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        13
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-14",
+      "description": "Play Song Info: Render-time secondary selector override 14",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        14
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-15",
+      "description": "Play Song Info: Render-time secondary selector override 15",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        15
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-16",
+      "description": "Play Song Info: Render-time secondary selector override 16",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        16
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "play-override-17",
+      "description": "Play Song Info: Render-time secondary selector override 17",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      }
+    },
+    {
+      "id": "delivery-arity-5",
+      "description": "Delivery Song Info: Five-argument render",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total"
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-arity-6",
+      "description": "Delivery Song Info: Six-argument render",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-database-selection-zero-gate",
+      "description": "Delivery Song Info: Zero gate with database selection",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0,
+        0
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-disabled-with-zero-gate",
+      "description": "Delivery Song Info: Zero gate with nonzero override",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0,
+        7
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-database-selection",
+      "description": "Delivery Song Info: Eight-argument render with database selection",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-02",
+      "description": "Delivery Song Info: Render-time secondary selector override 2",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        2
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-03",
+      "description": "Delivery Song Info: Render-time secondary selector override 3",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        3
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-04",
+      "description": "Delivery Song Info: Render-time secondary selector override 4",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        4
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-05",
+      "description": "Delivery Song Info: Render-time secondary selector override 5",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        5
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-06",
+      "description": "Delivery Song Info: Render-time secondary selector override 6",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        6
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-07",
+      "description": "Delivery Song Info: Render-time secondary selector override 7",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-08",
+      "description": "Delivery Song Info: Render-time secondary selector override 8",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        8
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-09",
+      "description": "Delivery Song Info: Render-time secondary selector override 9",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        9
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-10",
+      "description": "Delivery Song Info: Render-time secondary selector override 10",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        10
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-11",
+      "description": "Delivery Song Info: Render-time secondary selector override 11",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        11
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-12",
+      "description": "Delivery Song Info: Render-time secondary selector override 12",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        12
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-13",
+      "description": "Delivery Song Info: Render-time secondary selector override 13",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        13
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-14",
+      "description": "Delivery Song Info: Render-time secondary selector override 14",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        14
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-15",
+      "description": "Delivery Song Info: Render-time secondary selector override 15",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        15
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-16",
+      "description": "Delivery Song Info: Render-time secondary selector override 16",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        16
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "delivery-override-17",
+      "description": "Delivery Song Info: Render-time secondary selector override 17",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "search-category-domain-probe",
+  "fixture_profile": "settings",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 64,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"alpha","description":"Artist entity plus title domain","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"ALPHA"},{"string":"ALPHA"},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"album","description":"Album entities plus title domain","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"ALBUM"},{"string":"ALBUM"},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"fixture","description":"Artist entities plus file-name domain","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"FIXTURE"},{"string":"FIXTURE"},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"beta-searchstr","description":"SearchStr-enabled Beta query","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"BETA"},{"string":"BETA"},{"number":1}],"expect":{"outcome":"any"}}
+  ]
+}

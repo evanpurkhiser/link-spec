@@ -1,0 +1,37 @@
+{
+  "name": "render-arity-6",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12
+    ]
+  },
+  "cases": [
+    {
+      "id": "render-6",
+      "description": "Track rendering with 6 request arguments",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "item_type": "0x0f04"
+      }
+    }
+  ]
+}

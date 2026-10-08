@@ -1,0 +1,3235 @@
+{
+  "name": "smart-rule-date-format-matrix",
+  "fixture_profile": "smart-date-format-matrix",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 7,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "stock-date-canonical-jan-31-equal",
+      "description": "stock date canonical jan 31 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_canonical_jan_31_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-canonical-leap-day-equal",
+      "description": "stock date canonical leap day equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_canonical_leap_day_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_leap_day"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-canonical-epoch-equal",
+      "description": "stock date canonical epoch equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_canonical_epoch_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-pre-epoch-equal",
+      "description": "stock date pre epoch equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_pre_epoch_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-year-zero-equal",
+      "description": "stock date year zero equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_year_zero_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-year-9999-equal",
+      "description": "stock date year 9999 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_year_9999_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-separator-slash-equal",
+      "description": "stock date separator slash equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_separator_slash_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-separator-dot-equal",
+      "description": "stock date separator dot equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_separator_dot_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-separator-space-equal",
+      "description": "stock date separator space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_separator_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-separator-letters-equal",
+      "description": "stock date separator letters equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_separator_letters_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-separator-unicode-equal",
+      "description": "stock date separator unicode equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_separator_unicode_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-separator-newline-equal",
+      "description": "stock date separator newline equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_separator_newline_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-nonleap-feb-29-equal",
+      "description": "stock date nonleap feb 29 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_nonleap_feb_29_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.nonleap_feb_29"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-leap-feb-30-equal",
+      "description": "stock date leap feb 30 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_leap_feb_30_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.leap_feb_30"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-nonleap-feb-30-equal",
+      "description": "stock date nonleap feb 30 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_nonleap_feb_30_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.nonleap_feb_30"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-nonleap-feb-31-equal",
+      "description": "stock date nonleap feb 31 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_nonleap_feb_31_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.nonleap_feb_31"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-april-31-equal",
+      "description": "stock date april 31 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_april_31_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.april_31"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-month-zero-equal",
+      "description": "stock date month zero equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_month_zero_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.month_zero"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-month-13-equal",
+      "description": "stock date month 13 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_month_13_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.month_13"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-day-zero-equal",
+      "description": "stock date day zero equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_day_zero_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.day_zero"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-day-32-equal",
+      "description": "stock date day 32 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_day_32_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.day_32"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-month-99-equal",
+      "description": "stock date month 99 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_month_99_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.month_99"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-day-99-equal",
+      "description": "stock date day 99 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_day_99_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.day_99"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-single-digit-month-equal",
+      "description": "stock date single digit month equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_single_digit_month_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-single-digit-day-equal",
+      "description": "stock date single digit day equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_single_digit_day_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-five-digit-year-equal",
+      "description": "stock date five digit year equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_five_digit_year_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-timestamp-t-equal",
+      "description": "stock date timestamp t equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_timestamp_t_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-timestamp-space-equal",
+      "description": "stock date timestamp space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_timestamp_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-leading-space-equal",
+      "description": "stock date leading space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_leading_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-trailing-space-equal",
+      "description": "stock date trailing space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_trailing_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-not-a-date-equal",
+      "description": "stock date not a date equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_not_a_date_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-ascii-letters-equal",
+      "description": "stock date ascii letters equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_ascii_letters_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-zero-digits-equal",
+      "description": "stock date zero digits equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_zero_digits_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-letter-in-year-equal",
+      "description": "stock date letter in year equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_letter_in_year_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.letter_in_year"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-plus-year-equal",
+      "description": "stock date plus year equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_plus_year_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-minus-year-equal",
+      "description": "stock date minus year equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_minus_year_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-fullwidth-digits-equal",
+      "description": "stock date fullwidth digits equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_fullwidth_digits_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-empty-equal",
+      "description": "stock date empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "stock-date-canonical-not-equal",
+      "description": "stock date canonical not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.stock_date_canonical_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 13,
+        "row_count": 13,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_leap_day",
+          "$fixture.track.date_format.nonleap_feb_29",
+          "$fixture.track.date_format.leap_feb_30",
+          "$fixture.track.date_format.nonleap_feb_30",
+          "$fixture.track.date_format.nonleap_feb_31",
+          "$fixture.track.date_format.april_31",
+          "$fixture.track.date_format.month_zero",
+          "$fixture.track.date_format.month_13",
+          "$fixture.track.date_format.day_zero",
+          "$fixture.track.date_format.day_32",
+          "$fixture.track.date_format.month_99",
+          "$fixture.track.date_format.day_99",
+          "$fixture.track.date_format.letter_in_year"
+        ]
+      }
+    },
+    {
+      "id": "date-created-canonical-jan-31-equal",
+      "description": "date created canonical jan 31 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_canonical_jan_31_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-created-canonical-leap-day-equal",
+      "description": "date created canonical leap day equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_canonical_leap_day_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_leap_day"
+        ]
+      }
+    },
+    {
+      "id": "date-created-canonical-epoch-equal",
+      "description": "date created canonical epoch equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_canonical_epoch_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-pre-epoch-equal",
+      "description": "date created pre epoch equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_pre_epoch_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-year-zero-equal",
+      "description": "date created year zero equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_year_zero_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-year-9999-equal",
+      "description": "date created year 9999 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_year_9999_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-separator-slash-equal",
+      "description": "date created separator slash equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_separator_slash_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-created-separator-dot-equal",
+      "description": "date created separator dot equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_separator_dot_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-created-separator-space-equal",
+      "description": "date created separator space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_separator_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-created-separator-letters-equal",
+      "description": "date created separator letters equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_separator_letters_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-created-separator-unicode-equal",
+      "description": "date created separator unicode equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_separator_unicode_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-created-separator-newline-equal",
+      "description": "date created separator newline equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_separator_newline_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-created-nonleap-feb-29-equal",
+      "description": "date created nonleap feb 29 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_nonleap_feb_29_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.nonleap_feb_29"
+        ]
+      }
+    },
+    {
+      "id": "date-created-leap-feb-30-equal",
+      "description": "date created leap feb 30 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_leap_feb_30_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.leap_feb_30"
+        ]
+      }
+    },
+    {
+      "id": "date-created-nonleap-feb-30-equal",
+      "description": "date created nonleap feb 30 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_nonleap_feb_30_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.nonleap_feb_30"
+        ]
+      }
+    },
+    {
+      "id": "date-created-nonleap-feb-31-equal",
+      "description": "date created nonleap feb 31 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_nonleap_feb_31_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.nonleap_feb_31"
+        ]
+      }
+    },
+    {
+      "id": "date-created-april-31-equal",
+      "description": "date created april 31 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_april_31_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.april_31"
+        ]
+      }
+    },
+    {
+      "id": "date-created-month-zero-equal",
+      "description": "date created month zero equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_month_zero_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.month_zero"
+        ]
+      }
+    },
+    {
+      "id": "date-created-month-13-equal",
+      "description": "date created month 13 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_month_13_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.month_13"
+        ]
+      }
+    },
+    {
+      "id": "date-created-day-zero-equal",
+      "description": "date created day zero equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_day_zero_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.day_zero"
+        ]
+      }
+    },
+    {
+      "id": "date-created-day-32-equal",
+      "description": "date created day 32 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_day_32_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.day_32"
+        ]
+      }
+    },
+    {
+      "id": "date-created-month-99-equal",
+      "description": "date created month 99 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_month_99_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.month_99"
+        ]
+      }
+    },
+    {
+      "id": "date-created-day-99-equal",
+      "description": "date created day 99 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_day_99_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.day_99"
+        ]
+      }
+    },
+    {
+      "id": "date-created-single-digit-month-equal",
+      "description": "date created single digit month equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_single_digit_month_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-single-digit-day-equal",
+      "description": "date created single digit day equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_single_digit_day_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-five-digit-year-equal",
+      "description": "date created five digit year equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_five_digit_year_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-timestamp-t-equal",
+      "description": "date created timestamp t equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_timestamp_t_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-timestamp-space-equal",
+      "description": "date created timestamp space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_timestamp_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-leading-space-equal",
+      "description": "date created leading space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_leading_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-trailing-space-equal",
+      "description": "date created trailing space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_trailing_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-not-a-date-equal",
+      "description": "date created not a date equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_not_a_date_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-ascii-letters-equal",
+      "description": "date created ascii letters equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_ascii_letters_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-zero-digits-equal",
+      "description": "date created zero digits equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_zero_digits_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-letter-in-year-equal",
+      "description": "date created letter in year equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_letter_in_year_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.letter_in_year"
+        ]
+      }
+    },
+    {
+      "id": "date-created-plus-year-equal",
+      "description": "date created plus year equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_plus_year_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-minus-year-equal",
+      "description": "date created minus year equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_minus_year_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-fullwidth-digits-equal",
+      "description": "date created fullwidth digits equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_fullwidth_digits_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-empty-equal",
+      "description": "date created empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-created-canonical-not-equal",
+      "description": "date created canonical not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_created_canonical_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 13,
+        "row_count": 13,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_leap_day",
+          "$fixture.track.date_format.nonleap_feb_29",
+          "$fixture.track.date_format.leap_feb_30",
+          "$fixture.track.date_format.nonleap_feb_30",
+          "$fixture.track.date_format.nonleap_feb_31",
+          "$fixture.track.date_format.april_31",
+          "$fixture.track.date_format.month_zero",
+          "$fixture.track.date_format.month_13",
+          "$fixture.track.date_format.day_zero",
+          "$fixture.track.date_format.day_32",
+          "$fixture.track.date_format.month_99",
+          "$fixture.track.date_format.day_99",
+          "$fixture.track.date_format.letter_in_year"
+        ]
+      }
+    },
+    {
+      "id": "date-released-canonical-jan-31-equal",
+      "description": "date released canonical jan 31 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_canonical_jan_31_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-released-canonical-leap-day-equal",
+      "description": "date released canonical leap day equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_canonical_leap_day_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_leap_day"
+        ]
+      }
+    },
+    {
+      "id": "date-released-canonical-epoch-equal",
+      "description": "date released canonical epoch equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_canonical_epoch_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-pre-epoch-equal",
+      "description": "date released pre epoch equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_pre_epoch_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-year-zero-equal",
+      "description": "date released year zero equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_year_zero_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-year-9999-equal",
+      "description": "date released year 9999 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_year_9999_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-separator-slash-equal",
+      "description": "date released separator slash equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_separator_slash_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-released-separator-dot-equal",
+      "description": "date released separator dot equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_separator_dot_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-released-separator-space-equal",
+      "description": "date released separator space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_separator_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-released-separator-letters-equal",
+      "description": "date released separator letters equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_separator_letters_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-released-separator-unicode-equal",
+      "description": "date released separator unicode equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_separator_unicode_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-released-separator-newline-equal",
+      "description": "date released separator newline equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_separator_newline_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_jan_31",
+          "$fixture.track.date_format.separator_slash",
+          "$fixture.track.date_format.separator_dot",
+          "$fixture.track.date_format.separator_space",
+          "$fixture.track.date_format.separator_letters",
+          "$fixture.track.date_format.separator_unicode",
+          "$fixture.track.date_format.separator_newline"
+        ]
+      }
+    },
+    {
+      "id": "date-released-nonleap-feb-29-equal",
+      "description": "date released nonleap feb 29 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_nonleap_feb_29_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.nonleap_feb_29"
+        ]
+      }
+    },
+    {
+      "id": "date-released-leap-feb-30-equal",
+      "description": "date released leap feb 30 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_leap_feb_30_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.leap_feb_30"
+        ]
+      }
+    },
+    {
+      "id": "date-released-nonleap-feb-30-equal",
+      "description": "date released nonleap feb 30 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_nonleap_feb_30_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.nonleap_feb_30"
+        ]
+      }
+    },
+    {
+      "id": "date-released-nonleap-feb-31-equal",
+      "description": "date released nonleap feb 31 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_nonleap_feb_31_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.nonleap_feb_31"
+        ]
+      }
+    },
+    {
+      "id": "date-released-april-31-equal",
+      "description": "date released april 31 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_april_31_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.april_31"
+        ]
+      }
+    },
+    {
+      "id": "date-released-month-zero-equal",
+      "description": "date released month zero equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_month_zero_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.month_zero"
+        ]
+      }
+    },
+    {
+      "id": "date-released-month-13-equal",
+      "description": "date released month 13 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_month_13_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.month_13"
+        ]
+      }
+    },
+    {
+      "id": "date-released-day-zero-equal",
+      "description": "date released day zero equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_day_zero_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.day_zero"
+        ]
+      }
+    },
+    {
+      "id": "date-released-day-32-equal",
+      "description": "date released day 32 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_day_32_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.day_32"
+        ]
+      }
+    },
+    {
+      "id": "date-released-month-99-equal",
+      "description": "date released month 99 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_month_99_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.month_99"
+        ]
+      }
+    },
+    {
+      "id": "date-released-day-99-equal",
+      "description": "date released day 99 equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_day_99_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.day_99"
+        ]
+      }
+    },
+    {
+      "id": "date-released-single-digit-month-equal",
+      "description": "date released single digit month equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_single_digit_month_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-single-digit-day-equal",
+      "description": "date released single digit day equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_single_digit_day_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-five-digit-year-equal",
+      "description": "date released five digit year equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_five_digit_year_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-timestamp-t-equal",
+      "description": "date released timestamp t equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_timestamp_t_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-timestamp-space-equal",
+      "description": "date released timestamp space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_timestamp_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-leading-space-equal",
+      "description": "date released leading space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_leading_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-trailing-space-equal",
+      "description": "date released trailing space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_trailing_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-not-a-date-equal",
+      "description": "date released not a date equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_not_a_date_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-ascii-letters-equal",
+      "description": "date released ascii letters equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_ascii_letters_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-zero-digits-equal",
+      "description": "date released zero digits equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_zero_digits_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-letter-in-year-equal",
+      "description": "date released letter in year equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_letter_in_year_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.date_format.letter_in_year"
+        ]
+      }
+    },
+    {
+      "id": "date-released-plus-year-equal",
+      "description": "date released plus year equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_plus_year_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-minus-year-equal",
+      "description": "date released minus year equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_minus_year_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-fullwidth-digits-equal",
+      "description": "date released fullwidth digits equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_fullwidth_digits_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-empty-equal",
+      "description": "date released empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "date-released-canonical-not-equal",
+      "description": "date released canonical not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_date_format.date_released_canonical_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 13,
+        "row_count": 13,
+        "item_ids": [
+          "$fixture.track.date_format.canonical_leap_day",
+          "$fixture.track.date_format.nonleap_feb_29",
+          "$fixture.track.date_format.leap_feb_30",
+          "$fixture.track.date_format.nonleap_feb_30",
+          "$fixture.track.date_format.nonleap_feb_31",
+          "$fixture.track.date_format.april_31",
+          "$fixture.track.date_format.month_zero",
+          "$fixture.track.date_format.month_13",
+          "$fixture.track.date_format.day_zero",
+          "$fixture.track.date_format.day_32",
+          "$fixture.track.date_format.month_99",
+          "$fixture.track.date_format.day_99",
+          "$fixture.track.date_format.letter_in_year"
+        ]
+      }
+    }
+  ]
+}

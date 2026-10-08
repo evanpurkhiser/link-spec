@@ -1,0 +1,345 @@
+{
+  "name": "packed-context-sweep",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "player-1",
+      "description": "Requester/player byte 1",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "player-2",
+      "description": "Requester/player byte 2",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x02010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "player-3",
+      "description": "Requester/player byte 3",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x03010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "player-4",
+      "description": "Requester/player byte 4",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x04010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "player-5",
+      "description": "Requester/player byte 5",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x05010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "player-6",
+      "description": "Requester/player byte 6",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x06010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "location-1",
+      "description": "Menu-location candidate byte 1",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "location-2",
+      "description": "Menu-location candidate byte 2",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01020301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "location-3",
+      "description": "Menu-location candidate byte 3",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01030301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "location-4",
+      "description": "Menu-location candidate byte 4",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01040301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "location-5",
+      "description": "Menu-location candidate byte 5",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01050301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "location-6",
+      "description": "Menu-location candidate byte 6",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01060301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "location-7",
+      "description": "Menu-location candidate byte 7",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01070301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "location-8",
+      "description": "Menu-location candidate byte 8",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01080301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "slot-0",
+      "description": "Media-slot candidate byte 0",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010001"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "slot-1",
+      "description": "Media-slot candidate byte 1",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010101"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "slot-2",
+      "description": "Media-slot candidate byte 2",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010201"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "slot-3",
+      "description": "Media-slot candidate byte 3",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "slot-4",
+      "description": "Media-slot candidate byte 4",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010401"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

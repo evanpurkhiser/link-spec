@@ -1,0 +1,103 @@
+## __ZN8MusicKey21getKeyNotationSettingEv | 
+address=0x1003b0c40 size=0xb0
+0x01003b0c40  push      rbp
+0x01003b0c41  mov       rbp, rsp
+0x01003b0c44  push      r14
+0x01003b0c46  push      rbx
+0x01003b0c47  sub       rsp, 0x10
+0x01003b0c4b  lea       r14, [rip + 0x5723766]  ; __ZN6common11SettingFile15singletonHolderE
+0x01003b0c52  mov       rbx, qword ptr [r14]
+0x01003b0c55  test      rbx, rbx
+0x01003b0c58  jne       0x1003b0c75
+0x01003b0c5a  mov       edi, 0x18
+0x01003b0c5f  call      0x1038c3cd4
+0x01003b0c64  mov       rbx, rax
+0x01003b0c67  mov       rdi, rax
+0x01003b0c6a  call      0x10175e930  ; __ZN6common11SettingFileC1Ev |
+0x01003b0c6f  mov       rax, rbx
+0x01003b0c72  xchg      qword ptr [r14], rax
+0x01003b0c75  lea       rsi, [rip + 0x4f8af96]  ; 'ShowOriginalKey'
+0x01003b0c7c  lea       rdi, [rbp - 0x20]
+0x01003b0c80  call      0x10278ad70  ; __ZN4juce9StringRefC1EPKc |
+0x01003b0c85  mov       rsi, qword ptr [rbp - 0x20]
+0x01003b0c89  mov       rdi, rbx
+0x01003b0c8c  mov       edx, 1
+0x01003b0c91  mov       ecx, 1
+0x01003b0c96  call      0x10175ed50  ; __ZN6common11SettingFile12getBoolValueEN4juce9StringRefEbb |
+0x01003b0c9b  mov       ecx, eax
+0x01003b0c9d  xor       eax, eax
+0x01003b0c9f  test      cl, cl
+0x01003b0ca1  jne       0x1003b0cc9
+0x01003b0ca3  lea       rsi, [rip + 0x4f8af78]  ; 'KeyStringSetting'
+0x01003b0caa  lea       rdi, [rbp - 0x18]
+0x01003b0cae  call      0x10278ad70  ; __ZN4juce9StringRefC1EPKc |
+0x01003b0cb3  mov       rsi, qword ptr [rbp - 0x18]
+0x01003b0cb7  mov       rdi, rbx
+0x01003b0cba  mov       edx, 1
+0x01003b0cbf  mov       ecx, 1
+0x01003b0cc4  call      0x10175eb60  ; __ZN6common11SettingFile11getIntValueEN4juce9StringRefEib |
+0x01003b0cc9  add       rsp, 0x10
+0x01003b0ccd  pop       rbx
+0x01003b0cce  pop       r14
+0x01003b0cd0  pop       rbp
+0x01003b0cd1  ret
+0x01003b0cd2  mov       r14, rax
+0x01003b0cd5  mov       rdi, rbx
+0x01003b0cd8  call      0x1038c3cc8
+0x01003b0cdd  mov       rdi, r14
+0x01003b0ce0  call      0x1038c3812
+0x01003b0ce5  nop       word ptr cs:[rax + rax]
+
+## __ZN8MusicKey31isKeyDisplaySettingAlphanumericEv | 
+address=0x1003b0cf0 size=0x20
+0x01003b0cf0  push      rbp
+0x01003b0cf1  mov       rbp, rsp
+0x01003b0cf4  call      0x1003b0c40  ; __ZN8MusicKey21getKeyNotationSettingEv |
+0x01003b0cf9  cmp       eax, 2
+0x01003b0cfc  sete      al
+0x01003b0cff  pop       rbp
+0x01003b0d00  ret
+0x01003b0d01  nop       word ptr cs:[rax + rax]
+
+## __ZN8MusicKey28isKeyMenuSettingAlphanumericEv | 
+address=0x1003b0d10 size=0x80
+0x01003b0d10  push      rbp
+0x01003b0d11  mov       rbp, rsp
+0x01003b0d14  push      r14
+0x01003b0d16  push      rbx
+0x01003b0d17  sub       rsp, 0x10
+0x01003b0d1b  lea       r14, [rip + 0x5723696]  ; __ZN6common11SettingFile15singletonHolderE
+0x01003b0d22  mov       rbx, qword ptr [r14]
+0x01003b0d25  test      rbx, rbx
+0x01003b0d28  jne       0x1003b0d45
+0x01003b0d2a  mov       edi, 0x18
+0x01003b0d2f  call      0x1038c3cd4
+0x01003b0d34  mov       rbx, rax
+0x01003b0d37  mov       rdi, rax
+0x01003b0d3a  call      0x10175e930  ; __ZN6common11SettingFileC1Ev |
+0x01003b0d3f  mov       rax, rbx
+0x01003b0d42  xchg      qword ptr [r14], rax
+0x01003b0d45  lea       rsi, [rip + 0x4f8aed6]  ; 'KeyStringSetting'
+0x01003b0d4c  lea       rdi, [rbp - 0x18]
+0x01003b0d50  call      0x10278ad70  ; __ZN4juce9StringRefC1EPKc |
+0x01003b0d55  mov       rsi, qword ptr [rbp - 0x18]
+0x01003b0d59  mov       rdi, rbx
+0x01003b0d5c  mov       edx, 1
+0x01003b0d61  mov       ecx, 1
+0x01003b0d66  call      0x10175eb60  ; __ZN6common11SettingFile11getIntValueEN4juce9StringRefEib |
+0x01003b0d6b  cmp       eax, 2
+0x01003b0d6e  sete      al
+0x01003b0d71  add       rsp, 0x10
+0x01003b0d75  pop       rbx
+0x01003b0d76  pop       r14
+0x01003b0d78  pop       rbp
+0x01003b0d79  ret
+0x01003b0d7a  mov       r14, rax
+0x01003b0d7d  mov       rdi, rbx
+0x01003b0d80  call      0x1038c3cc8
+0x01003b0d85  mov       rdi, r14
+0x01003b0d88  call      0x1038c3812
+0x01003b0d8d  nop
+0x01003b0d8e  nop
+0x01003b0d8f  nop
+

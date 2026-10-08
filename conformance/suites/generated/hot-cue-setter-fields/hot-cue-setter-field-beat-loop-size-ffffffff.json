@@ -1,0 +1,83 @@
+{
+  "name": "hot-cue-setter-field-beat-loop-size-ffffffff",
+  "fixture_profile": "hot-cue-bank-mutation",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "mutable_field_probe": {
+    "axis": "beat-loop-size",
+    "value": 4294967295,
+    "record_length": 124,
+    "fixture_variant": "duplicate-slot"
+  },
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "setter",
+      "description": "Extended setter mutable field beat-loop-size-ffffffff",
+      "request_kind": "0x2401",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 124
+        },
+        {
+          "blob_hex": "7c000000010002000000e80355f8060052aa0800000000000800000000000000ffffffff0403020114131211242322213433323142000000000006000d0c0b0a0000ffffffff000000002c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "database-read-after-setter",
+      "description": "Database-backed getter after isolated setter probe",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "raw_reply"
+      }
+    }
+  ]
+}

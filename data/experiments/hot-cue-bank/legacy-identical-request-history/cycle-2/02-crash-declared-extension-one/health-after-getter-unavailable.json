@@ -1,0 +1,77 @@
+{
+    "schema_version":  2,
+    "label":  "crash-declared-extension-one-cycle-2-after-getter-unavailable",
+    "since_utc":  "2026-10-03T18:16:29.1021013Z",
+    "captured_at_utc":  "2026-10-03T18:18:50.9050720Z",
+    "rekordbox_processes":  [
+
+                            ],
+    "rekordbox_process_count":  0,
+    "helper_processes":  [
+                             {
+                                 "id":  2004,
+                                 "parent_id":  4220,
+                                 "name":  "rekordboxAgent.exe",
+                                 "executable_path":  "C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\rekordboxAgent-win32-x64\\rekordboxAgent.exe",
+                                 "command_line":  "\"C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\rekordboxAgent-win32-x64\\rekordboxAgent.exe\" "
+                             },
+                             {
+                                 "id":  2104,
+                                 "parent_id":  4220,
+                                 "name":  "edb_streamd.exe",
+                                 "executable_path":  "C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\edb_streamd.exe",
+                                 "command_line":  "\"C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\edb_streamd.exe\""
+                             },
+                             {
+                                 "id":  3496,
+                                 "parent_id":  2004,
+                                 "name":  "rekordboxAgent.exe",
+                                 "executable_path":  "C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\rekordboxAgent-win32-x64\\rekordboxAgent.exe",
+                                 "command_line":  "\"C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\rekordboxAgent-win32-x64\\rekordboxAgent.exe\" --type=renderer --user-data-dir=\"C:\\Users\\Research\\AppData\\Roaming\\Pioneer\\rekordboxAgent\" --app-user-model-id=rekordboxAgent --app-path=\"C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\rekordboxAgent-win32-x64\\resources\\app.asar\" --no-sandbox --no-zygote --disable-gpu-compositing --lang=en-US --device-scale-factor=1 --num-raster-threads=1 --renderer-client-id=4 --launch-time-ticks=490555640 --mojo-platform-channel-handle=2632 --field-trial-handle=1684,i,17997130852059401568,9644867498021093012,131072 --disable-features=SpareRendererForSitePerProcess,WinRetrieveSuggestionsOnlyOnDemand /prefetch:1"
+                             },
+                             {
+                                 "id":  9148,
+                                 "parent_id":  2004,
+                                 "name":  "rekordboxAgent.exe",
+                                 "executable_path":  "C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\rekordboxAgent-win32-x64\\rekordboxAgent.exe",
+                                 "command_line":  "\"C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\rekordboxAgent-win32-x64\\rekordboxAgent.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --user-data-dir=\"C:\\Users\\Research\\AppData\\Roaming\\Pioneer\\rekordboxAgent\" --mojo-platform-channel-handle=2076 --field-trial-handle=1684,i,17997130852059401568,9644867498021093012,131072 --disable-features=SpareRendererForSitePerProcess,WinRetrieveSuggestionsOnlyOnDemand /prefetch:8"
+                             },
+                             {
+                                 "id":  9224,
+                                 "parent_id":  2004,
+                                 "name":  "rekordboxAgent.exe",
+                                 "executable_path":  "C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\rekordboxAgent-win32-x64\\rekordboxAgent.exe",
+                                 "command_line":  "\"C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\rekordboxAgent-win32-x64\\rekordboxAgent.exe\" --type=gpu-process --user-data-dir=\"C:\\Users\\Research\\AppData\\Roaming\\Pioneer\\rekordboxAgent\" --gpu-preferences=UAAAAAAAAADgAAAYAAAAAAAAAAAAAAAAAABgAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAASAAAAAAAAAAYAAAAAgAAABAAAAAAAAAAGAAAAAAAAAAQAAAAAAAAAAAAAAAOAAAAEAAAAAAAAAABAAAADgAAAAgAAAAAAAAACAAAAAAAAAA= --use-gl=angle --use-angle=swiftshader-webgl --mojo-platform-channel-handle=1712 --field-trial-handle=1684,i,17997130852059401568,9644867498021093012,131072 --disable-features=SpareRendererForSitePerProcess,WinRetrieveSuggestionsOnlyOnDemand /prefetch:2"
+                             }
+                         ],
+    "helper_process_count":  5,
+    "tcp_listeners":  [
+                          {
+                              "local_address":  "::",
+                              "local_port":  30001,
+                              "owning_process_id":  2004,
+                              "state":  "Listen"
+                          },
+                          {
+                              "local_address":  "0.0.0.0",
+                              "local_port":  12523,
+                              "owning_process_id":  2104,
+                              "state":  "Listen"
+                          }
+                      ],
+    "os":  {
+               "free_physical_memory_kib":  1818248,
+               "free_virtual_memory_kib":  3006428,
+               "total_virtual_memory_kib":  5631260
+           },
+    "application_events":  [
+                               {
+                                   "time_created_utc":  "2026-10-03T18:17:48.8744105Z",
+                                   "provider":  "Application Error",
+                                   "event_id":  1000,
+                                   "level":  "Error",
+                                   "record_id":  1555,
+                                   "message":  "Faulting application name: rekordbox.exe, version: 7.2.19.0, time stamp: 0x6a97b2e4\r\nFaulting module name: ntdll.dll, version: 10.0.26100.7920, time stamp: 0x5ffc11eb\r\nException code: 0xc0000374\r\nFault offset: 0x00000000001176e5\r\nFaulting process id: 0x107C\r\nFaulting application start time: 0x1DD536337FF3ABC\r\nFaulting application path: C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\rekordbox.exe\r\nFaulting module path: C:\\WINDOWS\\SYSTEM32\\ntdll.dll\r\nReport Id: d69f04fa-4e6e-4aaa-b1b7-14ff5ba20bed\r\nFaulting package full name: \r\nFaulting package-relative application ID: "
+                               }
+                           ]
+}

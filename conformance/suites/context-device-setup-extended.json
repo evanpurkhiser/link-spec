@@ -1,0 +1,380 @@
+{
+  "name": "context-device-setup-extended",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "immediate",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "type-00--tracks",
+      "description": "Track type 0x00: ordinary Track membership and row enrichment",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--tracks",
+      "description": "Track type 0x01: ordinary Track membership and row enrichment",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--tracks",
+      "description": "Track type 0x02: ordinary Track membership and row enrichment",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--tracks",
+      "description": "Track type 0x03: ordinary Track membership and row enrichment",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--tracks",
+      "description": "Track type 0x04: ordinary Track membership and row enrichment",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--tracks",
+      "description": "Track type 0x05: ordinary Track membership and row enrichment",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--tracks",
+      "description": "Track type 0x06: ordinary Track membership and row enrichment",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--genre-tracks-all",
+      "description": "Track type 0x00: hierarchy Track leaf and argument-7 propagation",
+      "request_kind": "0x1301",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--genre-tracks-all",
+      "description": "Track type 0x01: hierarchy Track leaf and argument-7 propagation",
+      "request_kind": "0x1301",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--genre-tracks-all",
+      "description": "Track type 0x02: hierarchy Track leaf and argument-7 propagation",
+      "request_kind": "0x1301",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--genre-tracks-all",
+      "description": "Track type 0x05: hierarchy Track leaf and argument-7 propagation",
+      "request_kind": "0x1301",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--genre-tracks-all",
+      "description": "Track type 0x06: hierarchy Track leaf and argument-7 propagation",
+      "request_kind": "0x1301",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--root",
+      "description": "Track type 0x00: Root admission",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": "0x05cfffff"
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--root",
+      "description": "Track type 0x01: Root admission",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": "0x05cfffff"
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--search",
+      "description": "Track type 0x00: Search admission",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--search",
+      "description": "Track type 0x01: Search admission",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

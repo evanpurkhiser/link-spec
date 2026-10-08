@@ -1,0 +1,31 @@
+{
+  "name": "custom-color-labels",
+  "fixture_profile": "settings",
+  "fixture_version": 1,
+  "fixture_variant": "custom-colors",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 15, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "colors",
+      "description": "Configured color labels are served in the color root",
+      "request_kind": "0x100d",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8}
+    },
+    {
+      "id": "track-rows",
+      "description": "Custom color is the selected track secondary column",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    }
+  ]
+}

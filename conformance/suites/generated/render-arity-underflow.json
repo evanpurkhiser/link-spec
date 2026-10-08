@@ -1,0 +1,183 @@
+{
+  "name": "track-render-arity-underflow",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "warm-list-arity-0",
+      "description": "Materialize the Default track list before the total-0-argument render probe",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8
+      }
+    },
+    {
+      "id": "render-arity-0",
+      "description": "Correctly framed 0x3000 with 0 arguments after a valid Default track list on the same connection",
+      "request_kind": "0x3000",
+      "arguments": [],
+      "render": false,
+      "direct_response": true,
+      "raw_read_ms": 3000,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "health-after-arity-0",
+      "description": "Fresh-connection Track health after the total-0-argument render probe",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8
+      }
+    },
+    {
+      "id": "warm-list-arity-1",
+      "description": "Materialize the Default track list before the total-1-argument render probe",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8
+      }
+    },
+    {
+      "id": "render-arity-1",
+      "description": "Correctly framed 0x3000 with 1 arguments after a valid Default track list on the same connection",
+      "request_kind": "0x3000",
+      "arguments": [
+        {
+          "number": "$context"
+        }
+      ],
+      "render": false,
+      "direct_response": true,
+      "raw_read_ms": 3000,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "health-after-arity-1",
+      "description": "Fresh-connection Track health after the total-1-argument render probe",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8
+      }
+    },
+    {
+      "id": "warm-list-arity-2",
+      "description": "Materialize the Default track list before the total-2-argument render probe",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8
+      }
+    },
+    {
+      "id": "render-arity-2",
+      "description": "Correctly framed 0x3000 with 2 arguments after a valid Default track list on the same connection",
+      "request_kind": "0x3000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render": false,
+      "direct_response": true,
+      "raw_read_ms": 3000,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "health-after-arity-2",
+      "description": "Fresh-connection Track health after the total-2-argument render probe",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8
+      }
+    }
+  ]
+}

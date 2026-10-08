@@ -1,0 +1,40 @@
+{
+  "format": 1,
+  "experiment": "link-played-multiplayer-ownership",
+  "identities": [
+    "runs/xdj-rx3-player-1.json",
+    "runs/xdj-rx3-player-2.json"
+  ],
+  "sequence": [
+    {
+      "id": "link-played-multiplayer-player-1-prime",
+      "suite": "suites/link-played-multiplayer-player-1-prime.json",
+      "player": 1,
+      "context": "0x01010301",
+      "case_count": 7
+    },
+    {
+      "id": "link-played-multiplayer-player-2-insert",
+      "suite": "suites/link-played-multiplayer-player-2-insert.json",
+      "player": 2,
+      "context": "0x02010301",
+      "case_count": 7
+    },
+    {
+      "id": "link-played-multiplayer-player-1-remove",
+      "suite": "suites/link-played-multiplayer-player-1-remove.json",
+      "player": 1,
+      "context": "0x01010301",
+      "case_count": 7
+    },
+    {
+      "id": "link-played-multiplayer-player-2-remove",
+      "suite": "suites/link-played-multiplayer-player-2-remove.json",
+      "player": 2,
+      "context": "0x02010301",
+      "case_count": 7
+    }
+  ],
+  "suite_count": 4,
+  "case_count": 28
+}

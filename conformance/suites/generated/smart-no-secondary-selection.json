@@ -1,0 +1,58 @@
+{
+  "name": "smart-no-secondary-selection",
+  "fixture_profile": "smart-settings",
+  "fixture_version": 1,
+  "fixture_variant": "no-secondary-selection",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 10,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "tracks",
+      "description": "Rule-selected tracks with persisted secondary state no-secondary-selection",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    }
+  ]
+}

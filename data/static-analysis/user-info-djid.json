@@ -1,0 +1,122 @@
+{
+  "format": 1,
+  "scope": "Rekordbox 7.2.19 user-info/DJ-ID server path and CDJ-3000 post-load client chain",
+  "sources": {
+    "rekordbox_macho": {
+      "path": "artifacts/rekordbox/7.2.19/extracted/app-root/rekordbox.app/Contents/MacOS/rekordbox",
+      "sha256": "07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244",
+      "architecture": "x86_64"
+    },
+    "rekordbox_disassembly": {
+      "path": "rekordbox-link-export-research/data/static-analysis/user-info-djid.disasm.txt",
+      "sha256": "0e0b35ec5557d9cb483a3883175e137a6b90638e8fca509f8987da468a4c91b1"
+    },
+    "command_format_disassembly": {
+      "path": "rekordbox-link-export-research/data/static-analysis/dbserver-command-parser.disasm.txt",
+      "sha256": "f6066519e7fd9585f4790c655b03e6b162d128e30e143fe4eb0f94b072fb2c08"
+    },
+    "cdj_3000_client": {
+      "path": "alphatheta-docs/devices/cdj-3000/application/remote-database-client.md",
+      "sha256": "d3563dc35962b21ba224906f2307f8e7f872368d4b16cdd93c9ee24d9104fa95",
+      "firmware": "3.20 build 14970",
+      "rekordbox_capture_version": "7.2.11"
+    }
+  },
+  "symbols": {
+    "common::PropertyPath": "0x100077530",
+    "KuvoService::isValid": "0x1008bb850",
+    "KuvoService::nxsFile": "0x1010bd150",
+    "KuvoService::nxsName": "0x105ad2ec8",
+    "Kuvo static initializer": "0x1010bfd20",
+    "juce::FileInputStream vtable": "0x10570a158",
+    "juce::InputStream::readInt": "0x1027add00",
+    "juce::InputStream::readIntBigEndian": "0x1027add30",
+    "PSvDBMain::OnUserCmd": "0x101d30b10",
+    "PSvDBMain::Start": "0x1025205b0",
+    "PSvDBMain::GetDJID": "0x102521b40",
+    "PSvDBServer::Start": "0x101c5b130",
+    "UiProDJLink::run": "0x102274c90"
+  },
+  "static_initialization": {
+    "filename": "djprofile.nxs",
+    "filename_literal_address": "0x105337b96",
+    "initializer_references": {
+      "nxs_name_object": [
+        "0x1010c0851"
+      ],
+      "djprofile_nxs_literal": [
+        "0x1010c0858"
+      ]
+    },
+    "macos_path": "<user Application Support>/Pioneer/rekordbox6/djprofile.nxs"
+  },
+  "server_startup": {
+    "ui_call_sites": {
+      "KuvoService::nxsFile": [
+        "0x102275998"
+      ],
+      "KuvoService::isValid": [
+        "0x1022759a4"
+      ],
+      "PSvDBServer::Start": [
+        "0x102278c75",
+        "0x102278cd0"
+      ]
+    },
+    "file_validation": {
+      "exists_as_file": true,
+      "case_folded_extension": ".nxs",
+      "exact_bytes": 160,
+      "checksum": "big-endian u32 at offset 28 equals the modulo-2^32 sum of little-endian u32 at offset 0 and big-endian u32 values at offsets 4, 8, and 12",
+      "checksum_reader_vtable_targets": {
+        "offset_0_vptr_slot_0x48": "0x1027add00",
+        "offsets_4_8_12_28_vptr_slot_0x50": "0x1027add30"
+      }
+    },
+    "loaded_state": "first 32 file bytes copied into PSvDBMain member +0x5e8",
+    "absent_or_invalid_state": "PSvDBMain member +0x5e8 remains null"
+  },
+  "wire_contract": {
+    "request": {
+      "kind": "0x3006",
+      "name": "CMD_GET_USER_INFO",
+      "arguments_from_cdj_3000": [
+        "context"
+      ]
+    },
+    "success_reply": {
+      "kind": "0x4d02",
+      "name": "CMD_RET_USER_INFO",
+      "arguments": [
+        "0x3006",
+        0,
+        160,
+        "blob(160)"
+      ],
+      "blob": "first 32 bytes are the DJ ID; remaining 128 bytes are zero"
+    },
+    "absent_reply": {
+      "kind": "0x4d02",
+      "name": "CMD_RET_USER_INFO",
+      "arguments": [
+        "0x3006",
+        0,
+        0,
+        "blob(0)"
+      ],
+      "blob": "zero-length blob field"
+    },
+    "unknown_user_command_result": "0xfffffffe"
+  },
+  "cdj_3000_post_load_chain": [
+    "0x3006 user info -> 0x4d02",
+    "0x2602 delivery info -> 0x4000 count",
+    "0x3000 render -> 0x4001/0x4101*/0x4201"
+  ],
+  "client_failure_semantics": {
+    "missing_reply": "about 18 seconds to first timeout, then two retries; later browsing can be serialized behind the ticket",
+    "unsupported_reply_0x4003": "finishes the ticket cleanly",
+    "short_or_length_mismatched_0x4d02": "logs a parameter error and continues to delivery info"
+  },
+  "evidence_boundary": "The server construction and configuration path are static Rekordbox 7.2.19 evidence. The request shape and player lifecycle are CDJ-3000 firmware evidence cross-checked there against Rekordbox 7.2.11. A live 7.2.19 oracle remains required for actual reply serialization, argument-boundary behavior, and controlled valid/invalid djprofile.nxs states."
+}

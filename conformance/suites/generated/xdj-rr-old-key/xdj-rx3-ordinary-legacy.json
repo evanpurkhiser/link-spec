@@ -1,0 +1,180 @@
+{
+  "name": "xdj-rr-old-key-xdj-rx3-ordinary-legacy",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "reset-and-restart",
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "legacy",
+    "page_size": 32,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ],
+    "read_timeout_ms": 3000
+  },
+  "cases": [
+    {
+      "id": "old-key-root-location-1",
+      "description": "XDJ-RR old-Key root at the left-browser location",
+      "request_kind": "0x100b",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "old-key-am-tracks-location-1",
+      "description": "Tracks selected by the old-Key Am identifier at location 1",
+      "request_kind": "0x110b",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.key.am"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4
+      }
+    },
+    {
+      "id": "old-key-root-location-2",
+      "description": "XDJ-RR old-Key root at the fixed right-browser location",
+      "request_kind": "0x100b",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "old-key-c-tracks-location-2",
+      "description": "Tracks selected by the old-Key C identifier at location 2",
+      "request_kind": "0x110b",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.key.c"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4
+      }
+    },
+    {
+      "id": "cue-track-root-location-1",
+      "description": "CueTrack root at location 1 has no Rekordbox reply",
+      "request_kind": "0x130c",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "timeout"
+      }
+    },
+    {
+      "id": "old-key-root-after-cue-location-1",
+      "description": "Fresh old-Key root proves dbserver health after silent CueTrack location 1",
+      "request_kind": "0x100b",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "cue-track-root-location-2",
+      "description": "CueTrack root at location 2 has no Rekordbox reply",
+      "request_kind": "0x130c",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "timeout"
+      }
+    },
+    {
+      "id": "old-key-root-after-cue-location-2",
+      "description": "Fresh old-Key root proves dbserver health after silent CueTrack location 2",
+      "request_kind": "0x100b",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2
+      }
+    }
+  ]
+}

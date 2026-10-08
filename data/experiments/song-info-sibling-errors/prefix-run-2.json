@@ -1,0 +1,828 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "Play malformed prefix: no-arguments",
+        "header": [],
+        "id": "play-01-no-arguments",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Play zero context after no-arguments",
+        "header": [],
+        "id": "play-01-zero-after-no-arguments",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Play malformed prefix: missing-content",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 8450
+              },
+              {
+                "type": "number",
+                "value": 0
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "play-02-missing-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": 0
+      },
+      {
+        "description": "Play zero context after missing-content",
+        "header": [],
+        "id": "play-02-zero-after-missing-content",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Play malformed prefix: extra-argument",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 8450
+              },
+              {
+                "type": "number",
+                "value": 7
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "play-03-extra-argument",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 10001
+            },
+            {
+              "type": "number",
+              "value": 3735928559
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": 7
+      },
+      {
+        "description": "Play zero context after extra-argument",
+        "header": [],
+        "id": "play-03-zero-after-extra-argument",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Play malformed prefix: string-context",
+        "header": [
+          {
+            "arguments": [],
+            "kind": 256
+          }
+        ],
+        "id": "play-04-string-context",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "string",
+              "value": "wrong-type"
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Play zero context after string-context",
+        "header": [],
+        "id": "play-04-zero-after-string-context",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Play malformed prefix: blob-context",
+        "header": [
+          {
+            "arguments": [],
+            "kind": 256
+          }
+        ],
+        "id": "play-05-blob-context",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "hex": "01020304",
+              "type": "blob"
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Play zero context after blob-context",
+        "header": [],
+        "id": "play-05-zero-after-blob-context",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Play malformed prefix: string-content",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 8450
+              },
+              {
+                "type": "number",
+                "value": 0
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "play-06-string-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "string",
+              "value": "wrong-type"
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": 0
+      },
+      {
+        "description": "Play zero context after string-content",
+        "header": [],
+        "id": "play-06-zero-after-string-content",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Play malformed prefix: blob-content",
+        "header": [
+          {
+            "arguments": [],
+            "kind": 256
+          }
+        ],
+        "id": "play-07-blob-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "hex": "01020304",
+              "type": "blob"
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Play zero context after blob-content",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 8450
+              },
+              {
+                "type": "number",
+                "value": 0
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "play-07-zero-after-blob-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": 0
+      },
+      {
+        "description": "Delivery malformed prefix: no-arguments",
+        "header": [],
+        "id": "delivery-01-no-arguments",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Delivery zero context after no-arguments",
+        "header": [],
+        "id": "delivery-01-zero-after-no-arguments",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Delivery malformed prefix: missing-content",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 9730
+              },
+              {
+                "type": "number",
+                "value": 0
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "delivery-02-missing-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": 0
+      },
+      {
+        "description": "Delivery zero context after missing-content",
+        "header": [],
+        "id": "delivery-02-zero-after-missing-content",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Delivery malformed prefix: extra-argument",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 9730
+              },
+              {
+                "type": "number",
+                "value": 13
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "delivery-03-extra-argument",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 10001
+            },
+            {
+              "type": "number",
+              "value": 3735928559
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": 13
+      },
+      {
+        "description": "Delivery zero context after extra-argument",
+        "header": [],
+        "id": "delivery-03-zero-after-extra-argument",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Delivery malformed prefix: string-context",
+        "header": [
+          {
+            "arguments": [],
+            "kind": 256
+          }
+        ],
+        "id": "delivery-04-string-context",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "string",
+              "value": "wrong-type"
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Delivery zero context after string-context",
+        "header": [],
+        "id": "delivery-04-zero-after-string-context",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Delivery malformed prefix: blob-context",
+        "header": [
+          {
+            "arguments": [],
+            "kind": 256
+          }
+        ],
+        "id": "delivery-05-blob-context",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "hex": "01020304",
+              "type": "blob"
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Delivery zero context after blob-context",
+        "header": [],
+        "id": "delivery-05-zero-after-blob-context",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Delivery malformed prefix: string-content",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 9730
+              },
+              {
+                "type": "number",
+                "value": 0
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "delivery-06-string-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "string",
+              "value": "wrong-type"
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": 0
+      },
+      {
+        "description": "Delivery zero context after string-content",
+        "header": [],
+        "id": "delivery-06-zero-after-string-content",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Delivery malformed prefix: blob-content",
+        "header": [
+          {
+            "arguments": [],
+            "kind": 256
+          }
+        ],
+        "id": "delivery-07-blob-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "hex": "01020304",
+              "type": "blob"
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Delivery zero context after blob-content",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 9730
+              },
+              {
+                "type": "number",
+                "value": 0
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "delivery-07-zero-after-blob-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": 0
+      }
+    ],
+    "fixture": {
+      "fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+      "profile": "full",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 1
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "song-info-zero-context-prefix"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "e8c45a7020a70103d6a15d5cf9aaa32a3d8c758c6c1f3f33b2a8d80872f7c812",
+    "fixture_fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 3,
+      "mac": "02:00:00:60:00:50",
+      "model": "XDJ-RX3",
+      "model_code": 0,
+      "packet_sha256": "49dd1bbbac4a0f254d02362f396026f9623cf623fdb90fcae5549665475b3ddb",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 1,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-rx3-player-1.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/full/manifest.json",
+    "recorded_unix_seconds": 1790829218,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/data/experiments/song-info-sibling-errors/zero-context-prefix-suite.json",
+    "suite_sha256": "bc06b70ad5de10548eeb0e5038c9de92a64a66ffac6156ed4f01862f75b0104b"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "name": "hot-cue-bank-extended-fields",
+  "fixture_profile": "hot-cue-bank-extended-fields",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "baseline",
+      "description": "New-format baseline membership",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.extended_baseline"},
+        {"number": 1}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "timing",
+      "description": "New-format timing and MPEG fields",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.extended_timing"},
+        {"number": 1}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "color",
+      "description": "New-format color and ignored table-index fields",
+      "request_kind": "0x2301",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.extended_color"}, {"number": 1}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "comment-ascii",
+      "description": "New-format ASCII comment",
+      "request_kind": "0x2301",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.extended_comment_ascii"}, {"number": 1}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "comment-unicode",
+      "description": "New-format BMP and supplementary-plane comment",
+      "request_kind": "0x2301",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.extended_comment_unicode"}, {"number": 1}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "beat-loop",
+      "description": "New-format packed beat-loop value",
+      "request_kind": "0x2301",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.extended_beat_loop"}, {"number": 1}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "microseconds",
+      "description": "New-format cue microsecond value",
+      "request_kind": "0x2301",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.extended_microseconds"}, {"number": 1}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "out-seek",
+      "description": "New-format outbound seek triple",
+      "request_kind": "0x2301",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.extended_out_seek"}, {"number": 1}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "name": "boundary-values",
+  "fixture_profile": "boundaries",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "tracks",
+      "description": "All live boundary tracks render while the soft-deleted row stays hidden",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    },
+    {
+      "id": "bpm-groups",
+      "description": "BPM grouping around half-unit and whole-unit rounding boundaries",
+      "request_kind": "0x1006",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "bpm-zero-tracks",
+      "description": "Track selection for the zero BPM group",
+      "request_kind": "0x1206",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 0}, {"number": 0}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "bpm-100-tracks",
+      "description": "Tracks on both sides of the half-unit rounding boundary share group 100",
+      "request_kind": "0x1206",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 100}, {"number": 0}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "bpm-200-tracks",
+      "description": "The exact 1.50 BPM boundary rounds into group 200",
+      "request_kind": "0x1206",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 200}, {"number": 0}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "bpm-high-tracks",
+      "description": "Track selection for the highest fixture BPM group",
+      "request_kind": "0x1206",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 49900}, {"number": 0}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "decades",
+      "description": "Decade grouping across zero, one-digit, and four-digit year boundaries",
+      "request_kind": "0x1008",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "years-in-2000s",
+      "description": "Year grouping within the 2000 decade",
+      "request_kind": "0x1108",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 2000}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "years-in-zero-decade",
+      "description": "Year grouping within decade zero",
+      "request_kind": "0x1108",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 0}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "years-in-2990s",
+      "description": "Highest advertised decade returns year 2999",
+      "request_kind": "0x1108",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 2990}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "zero-decade-all-tracks",
+      "description": "ALL selector for decade zero returns years zero and nine",
+      "request_kind": "0x1208",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 0}, {"number": "0xffffffff"}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "year-zero-tracks",
+      "description": "Exact release-year-zero selector",
+      "request_kind": "0x1208",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 0}, {"number": 0}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "year-nine-tracks",
+      "description": "Exact one-digit release-year selector",
+      "request_kind": "0x1208",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 0}, {"number": 9}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "year-2999-tracks",
+      "description": "Exact highest advertised release-year selector",
+      "request_kind": "0x1208",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 2990}, {"number": 2999}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "year-3000-tracks",
+      "description": "Direct selector for the first release year excluded from the root",
+      "request_kind": "0x1208",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 3000}, {"number": 3000}],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "year-4000-tracks",
+      "description": "Direct selector for a release year well beyond the root limit",
+      "request_kind": "0x1208",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 4000}, {"number": 4000}],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "times",
+      "description": "Duration grouping across minute and ten-minute boundaries",
+      "request_kind": "0x1010",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "time-zero-tracks",
+      "description": "Durations below one minute",
+      "request_kind": "0x1110",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 0}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "time-nine-tracks",
+      "description": "Last bucket below ten minutes",
+      "request_kind": "0x1110",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 9}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "time-ten-tracks",
+      "description": "First ten-minute bucket",
+      "request_kind": "0x1110",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 10}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "time-179-tracks",
+      "description": "Highest advertised duration bucket",
+      "request_kind": "0x1110",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 179}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "time-180-tracks",
+      "description": "Direct selector for the first duration bucket excluded from the root",
+      "request_kind": "0x1110",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 180}],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "play-count-groups",
+      "description": "Play-count selectors across the one-byte request and 16-bit database boundaries",
+      "request_kind": "0x100e",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "play-count-254",
+      "description": "Highest ordinary selector below the byte maximum",
+      "request_kind": "0x110e",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 254}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "play-count-255",
+      "description": "One-byte maximum and possible low-byte collision with 65535",
+      "request_kind": "0x110e",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 255}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "play-count-256",
+      "description": "First selector above one byte and possible collision with zero",
+      "request_kind": "0x110e",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 256}],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "play-count-257",
+      "description": "Second selector above one byte and possible collision with one",
+      "request_kind": "0x110e",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 257}],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "play-count-65535",
+      "description": "Unsigned 16-bit database maximum serialized through the request path",
+      "request_kind": "0x110e",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 65535}],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "play-count-32767",
+      "description": "Highest positive signed 16-bit database value",
+      "request_kind": "0x110e",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 32767}],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "play-count-wire-negative-one",
+      "description": "Wire selector matching the sign-extended 65535 root row",
+      "request_kind": "0x110e",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": "0xffffffff"}],
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "name": "song-info-cloud-sync-zero",
+  "description": "Real-Rekordbox authority for the zero branch of Play Song Info's CLSSyncMethod decision",
+  "fixture_profile": "cloud-sync-zero",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-settings-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "track-01",
+      "description": "CLSSyncMethod zero: null service local-path control",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-02",
+      "description": "CLSSyncMethod zero: negative service local-path control",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-03",
+      "description": "CLSSyncMethod zero: zero service local-path control",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.third"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-04",
+      "description": "CLSSyncMethod zero: service 1 with mismatched DBID and existing original file",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.fourth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-05",
+      "description": "CLSSyncMethod zero: service 1 with mismatched DBID and existing original directory",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.fifth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-06",
+      "description": "CLSSyncMethod zero: service 2 with missing original and existing moved-root candidate",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.sixth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-07",
+      "description": "CLSSyncMethod zero: service 2 with missing original and missing moved-root candidate",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.seventh"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-08",
+      "description": "CLSSyncMethod zero: service 1 outside the download-root helper domain",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.eighth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-09",
+      "description": "CLSSyncMethod zero: service 5 with missing original and existing moved-root candidate",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.ninth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-10",
+      "description": "CLSSyncMethod zero: service 6 outside the download-root helper domain",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.tenth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

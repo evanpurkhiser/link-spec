@@ -1,0 +1,58 @@
+{
+  "name": "category-26-disabled",
+  "fixture_profile": "settings",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "root",
+      "description": "Root menu with persisted category row 26 disabled",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$root_capabilities"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "display-song-info",
+      "description": "Display Song Info with persisted category row 26 disabled",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    }
+  ],
+  "fixture_variant": "category-26-disabled"
+}

@@ -1,0 +1,315 @@
+{
+  "name": "song-info-sibling-errors-status-player-11-ordered",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ],
+    "read_timeout_ms": 10000
+  },
+  "cases": [
+    {
+      "id": "play-no-arguments",
+      "description": "Play Song Info: Display request with no arguments",
+      "request_kind": "0x2102",
+      "arguments": [],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-missing-content",
+      "description": "Play Song Info: Display request with content ID omitted",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-extra-argument",
+      "description": "Play Song Info: Display request with an extra number",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0xdeadbeef"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-string-context",
+      "description": "Play Song Info: Display request with string context",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "string": "wrong-type"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-blob-context",
+      "description": "Play Song Info: Display request with blob context",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "blob_hex": "01020304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-string-content",
+      "description": "Play Song Info: Display request with string content ID",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "string": "wrong-type"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-blob-content",
+      "description": "Play Song Info: Display request with blob content ID",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "blob_hex": "01020304"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-zero-context",
+      "description": "Play Song Info: Display request with zero context",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": 0
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-alternate-location",
+      "description": "Play Song Info: Display request at menu location 2",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x01020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-no-arguments",
+      "description": "Delivery Song Info: Display request with no arguments",
+      "request_kind": "0x2602",
+      "arguments": [],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-missing-content",
+      "description": "Delivery Song Info: Display request with content ID omitted",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-extra-argument",
+      "description": "Delivery Song Info: Display request with an extra number",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0xdeadbeef"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-string-context",
+      "description": "Delivery Song Info: Display request with string context",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "string": "wrong-type"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-blob-context",
+      "description": "Delivery Song Info: Display request with blob context",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "blob_hex": "01020304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-string-content",
+      "description": "Delivery Song Info: Display request with string content ID",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "string": "wrong-type"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-blob-content",
+      "description": "Delivery Song Info: Display request with blob content ID",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "blob_hex": "01020304"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-alternate-location",
+      "description": "Delivery Song Info: Display request at menu location 2",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x01020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

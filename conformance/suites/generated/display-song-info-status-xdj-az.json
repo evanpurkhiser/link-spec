@@ -1,0 +1,90 @@
+{
+  "name": "display-song-info-status-xdj-az",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "populated-track",
+      "description": "Display Song Info populated row order for xdj-az",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "deleted-track",
+      "description": "Display Song Info deleted content for xdj-az",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.deleted"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "zero-content-id",
+      "description": "Display Song Info zero content ID for xdj-az",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "unknown-content-id",
+      "description": "Display Song Info unknown content for xdj-az",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "0xfffffffe"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

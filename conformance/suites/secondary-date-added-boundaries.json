@@ -1,0 +1,23 @@
+{
+  "name": "secondary-date-added-boundaries",
+  "fixture_profile": "boundaries",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 8,
+    "render_arguments": [0, "$total", 12, 1, 17]
+  },
+  "cases": [
+    {
+      "id": "date-added-255-cap",
+      "description": "Date Added strings at 0, 126-128, 254-256, and 256 supplementary characters",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

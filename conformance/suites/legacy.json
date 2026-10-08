@@ -1,0 +1,18 @@
+{
+  "name": "legacy-row-width",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x00ffffff",
+    "setup": "legacy",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"tracks","description":"Legacy setup truncates complete track rows to twelve arguments","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":8,"row_count":8,"argument_count":12}},
+    {"id":"root","description":"Legacy root-mask Hot Cue Bank compatibility branch","request_kind":"0x1000","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$root_capabilities"}],"expect":{"outcome":"menu","argument_count":12}}
+  ]
+}

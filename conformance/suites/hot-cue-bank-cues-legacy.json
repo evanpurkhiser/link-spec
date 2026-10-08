@@ -1,0 +1,43 @@
+{
+  "name": "hot-cue-bank-cues-legacy",
+  "fixture_profile": "hot-cue-banks",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "legacy",
+    "page_size": 32,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "alpha-bank",
+      "description": "Cue payload for the populated Alpha Bank over legacy setup",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.alpha"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "empty-bank",
+      "description": "Cue payload for an empty bank over legacy setup",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.empty"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "unknown-selector",
+      "description": "Unknown selector over legacy setup",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": "0xfffffffe"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

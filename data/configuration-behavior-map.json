@@ -1,0 +1,840 @@
+{
+  "format": 1,
+  "product": "rekordbox 7.2.19",
+  "scope": "Persisted Category, Sort, and Column configuration joined to Link Export root, sort-menu, and track-row rendering behavior.",
+  "sources": {
+    "djmdMenuItems": {
+      "path": "data/database/djmdMenuItems.csv",
+      "sha256": "14e0cf7533a54713cc060687eed15e768387059a4a282099ce7dab4fd421a0f1",
+      "row_count": 27
+    },
+    "djmdCategory": {
+      "path": "data/database/djmdCategory.csv",
+      "sha256": "7bd73d3b9db44152f97ecb19a92d750e2aa7083b44343521e90ed2f39fe3afbd",
+      "row_count": 21
+    },
+    "djmdSort": {
+      "path": "data/database/djmdSort.csv",
+      "sha256": "2ffdabaa7348d5986a9eae7f7454b5a87846c3d024bc84d6bd3682cd93cfa83d",
+      "row_count": 17
+    },
+    "djmdColor": {
+      "path": "data/database/djmdColor.csv",
+      "sha256": "e4fb48f2a1877b61826beb8bc9cc67f2180bfe59752dbb1e3327dd136f97ae50",
+      "row_count": 8
+    },
+    "sort_secondary_render_6": {
+      "path": "conformance/goldens/rekordbox-7.2.19/xdj-rx3/sort-secondary-render-6.json",
+      "sha256": "c104225b20b997d4ebf8992b3a7723322af6b4f2e17f9b798acf3c2d56b74a3f"
+    },
+    "settings_refresh": {
+      "path": "data/session-refresh/settings-refresh-summary.json",
+      "sha256": "412fb389743dded4ecb88520592848650fd02f6d404d048dd781de7072db7833"
+    }
+  },
+  "capability_masks": {
+    "controlled_lab": "0x05cfffff",
+    "physical_xdj_rx3": "0x05fdffff",
+    "legacy_exact": "0x00ffffff",
+    "legacy_exact_special_case": "Append category ID 23 pointing to Hot Cue Bank when Hot Cue Bank was not otherwise returned.",
+    "date_added_remap": "Menu item 22 requires bit 24, colliding with the ordinary bit for menu item 25."
+  },
+  "field_ownership": {
+    "djmdCategory.ID": [
+      "root row selector returned to the client"
+    ],
+    "djmdCategory.MenuItemID": [
+      "label",
+      "class",
+      "capability bit",
+      "Display Song Info enabled flag"
+    ],
+    "djmdCategory.Seq": [
+      "root order",
+      "Preferences Category order"
+    ],
+    "djmdCategory.Disable": [
+      "root visibility predicate",
+      "Display Song Info enabled flag"
+    ],
+    "djmdCategory.InfoOrder": [
+      "Preferences persistence only; not root or Display serving"
+    ],
+    "djmdSort.ID": [
+      "track sort selector",
+      "secondary-column selector"
+    ],
+    "djmdSort.MenuItemID": [
+      "sort label",
+      "sort class"
+    ],
+    "djmdSort.Seq": [
+      "sort-menu order",
+      "Preferences first-selected order"
+    ],
+    "djmdSort.Disable.bit0": [
+      "sort-menu visibility"
+    ],
+    "djmdSort.Disable.bit1": [
+      "persisted Column selection"
+    ],
+    "djmdColor.Commnt": [
+      "Color root label",
+      "Color secondary text"
+    ]
+  },
+  "categories": [
+    {
+      "ID": 4,
+      "MenuItemID": 4,
+      "Seq": 1,
+      "Disable": 0,
+      "InfoOrder": 1,
+      "Name": "TRACK",
+      "Class": -125,
+      "required_capability_mask": "0x00000008",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 12,
+      "MenuItemID": 11,
+      "Seq": 2,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "KEY",
+      "Class": -117,
+      "required_capability_mask": "0x00000400",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 6,
+      "MenuItemID": 5,
+      "Seq": 3,
+      "Disable": 0,
+      "InfoOrder": 5,
+      "Name": "BPM",
+      "Class": -123,
+      "required_capability_mask": "0x00000010",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 1,
+      "MenuItemID": 1,
+      "Seq": 4,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "GENRE",
+      "Class": -128,
+      "required_capability_mask": "0x00000001",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 2,
+      "MenuItemID": 2,
+      "Seq": 5,
+      "Disable": 0,
+      "InfoOrder": 2,
+      "Name": "ARTIST",
+      "Class": -127,
+      "required_capability_mask": "0x00000002",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 3,
+      "MenuItemID": 3,
+      "Seq": 6,
+      "Disable": 0,
+      "InfoOrder": 3,
+      "Name": "ALBUM",
+      "Class": -126,
+      "required_capability_mask": "0x00000004",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 26,
+      "MenuItemID": 27,
+      "Seq": 7,
+      "Disable": 2,
+      "InfoOrder": 99,
+      "Name": "MATCHING",
+      "Class": -86,
+      "required_capability_mask": "0x04000000",
+      "disable_predicate": "bit-0",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 18,
+      "MenuItemID": 20,
+      "Seq": 8,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "SEARCH",
+      "Class": -111,
+      "required_capability_mask": "0x00080000",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 5,
+      "MenuItemID": 17,
+      "Seq": 9,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "PLAYLIST",
+      "Class": -124,
+      "required_capability_mask": "0x00010000",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 22,
+      "MenuItemID": 19,
+      "Seq": 10,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "HISTORY",
+      "Class": -107,
+      "required_capability_mask": "0x00040000",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 17,
+      "MenuItemID": 24,
+      "Seq": 11,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "FOLDER",
+      "Class": -112,
+      "required_capability_mask": "0x00800000",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": false
+    },
+    {
+      "ID": 20,
+      "MenuItemID": 15,
+      "Seq": 12,
+      "Disable": 0,
+      "InfoOrder": 6,
+      "Name": "BITRATE",
+      "Class": -109,
+      "required_capability_mask": "0x00004000",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 15,
+      "MenuItemID": 13,
+      "Seq": 13,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "COLOR",
+      "Class": -114,
+      "required_capability_mask": "0x00001000",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 21,
+      "MenuItemID": 16,
+      "Seq": 14,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "FILE NAME",
+      "Class": -108,
+      "required_capability_mask": "0x00008000",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 23,
+      "MenuItemID": 18,
+      "Seq": 15,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "HOT CUE BANK",
+      "Class": -104,
+      "required_capability_mask": "0x00020000",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 10,
+      "MenuItemID": 9,
+      "Seq": 16,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "LABEL",
+      "Class": -119,
+      "required_capability_mask": "0x00000100",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 11,
+      "MenuItemID": 10,
+      "Seq": 17,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "ORIGINAL ARTIST",
+      "Class": -118,
+      "required_capability_mask": "0x00000200",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 7,
+      "MenuItemID": 6,
+      "Seq": 18,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "RATING",
+      "Class": -122,
+      "required_capability_mask": "0x00000020",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 9,
+      "MenuItemID": 8,
+      "Seq": 19,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "REMIXER",
+      "Class": -120,
+      "required_capability_mask": "0x00000080",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 19,
+      "MenuItemID": 14,
+      "Seq": 20,
+      "Disable": 0,
+      "InfoOrder": 4,
+      "Name": "TIME",
+      "Class": -110,
+      "required_capability_mask": "0x00002000",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    },
+    {
+      "ID": 8,
+      "MenuItemID": 7,
+      "Seq": 21,
+      "Disable": 0,
+      "InfoOrder": 99,
+      "Name": "YEAR",
+      "Class": -121,
+      "required_capability_mask": "0x00000040",
+      "disable_predicate": "nonzero",
+      "visible_before_folder_suppression": true,
+      "visible_in_controlled_root": true
+    }
+  ],
+  "sorts": [
+    {
+      "ID": 7,
+      "MenuItemID": 21,
+      "Seq": 0,
+      "Disable": 1,
+      "Name": "COMMENTS",
+      "Class": -106,
+      "visible_in_sort_menu": false,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "comments"
+    },
+    {
+      "ID": 8,
+      "MenuItemID": 14,
+      "Seq": 0,
+      "Disable": 1,
+      "Name": "TIME",
+      "Class": -110,
+      "visible_in_sort_menu": false,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "time"
+    },
+    {
+      "ID": 9,
+      "MenuItemID": 8,
+      "Seq": 0,
+      "Disable": 1,
+      "Name": "REMIXER",
+      "Class": -120,
+      "visible_in_sort_menu": false,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "remixer"
+    },
+    {
+      "ID": 11,
+      "MenuItemID": 10,
+      "Seq": 0,
+      "Disable": 1,
+      "Name": "ORIGINAL ARTIST",
+      "Class": -118,
+      "visible_in_sort_menu": false,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "original-artist"
+    },
+    {
+      "ID": 13,
+      "MenuItemID": 15,
+      "Seq": 0,
+      "Disable": 1,
+      "Name": "BITRATE",
+      "Class": -109,
+      "visible_in_sort_menu": false,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "bitrate"
+    },
+    {
+      "ID": 15,
+      "MenuItemID": 13,
+      "Seq": 0,
+      "Disable": 1,
+      "Name": "COLOR",
+      "Class": -114,
+      "visible_in_sort_menu": false,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "color"
+    },
+    {
+      "ID": 0,
+      "MenuItemID": 25,
+      "Seq": 1,
+      "Disable": 0,
+      "Name": "DEFAULT",
+      "Class": -95,
+      "visible_in_sort_menu": true,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "persisted-column-fallback"
+    },
+    {
+      "ID": 1,
+      "MenuItemID": 26,
+      "Seq": 2,
+      "Disable": 0,
+      "Name": "ALPHABET",
+      "Class": -94,
+      "visible_in_sort_menu": true,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "title"
+    },
+    {
+      "ID": 2,
+      "MenuItemID": 2,
+      "Seq": 3,
+      "Disable": 0,
+      "Name": "ARTIST",
+      "Class": -127,
+      "visible_in_sort_menu": true,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "artist"
+    },
+    {
+      "ID": 3,
+      "MenuItemID": 3,
+      "Seq": 4,
+      "Disable": 0,
+      "Name": "ALBUM",
+      "Class": -126,
+      "visible_in_sort_menu": true,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "album"
+    },
+    {
+      "ID": 4,
+      "MenuItemID": 5,
+      "Seq": 5,
+      "Disable": 0,
+      "Name": "BPM",
+      "Class": -123,
+      "visible_in_sort_menu": true,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "bpm-key-composite"
+    },
+    {
+      "ID": 5,
+      "MenuItemID": 6,
+      "Seq": 6,
+      "Disable": 0,
+      "Name": "RATING",
+      "Class": -122,
+      "visible_in_sort_menu": true,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "rating"
+    },
+    {
+      "ID": 12,
+      "MenuItemID": 11,
+      "Seq": 7,
+      "Disable": 2,
+      "Name": "KEY",
+      "Class": -117,
+      "visible_in_sort_menu": true,
+      "selected_as_persisted_column": true,
+      "track_materialized_role": "key-bpm-composite"
+    },
+    {
+      "ID": 10,
+      "MenuItemID": 9,
+      "Seq": 8,
+      "Disable": 0,
+      "Name": "LABEL",
+      "Class": -119,
+      "visible_in_sort_menu": true,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "label"
+    },
+    {
+      "ID": 6,
+      "MenuItemID": 1,
+      "Seq": 9,
+      "Disable": 0,
+      "Name": "GENRE",
+      "Class": -128,
+      "visible_in_sort_menu": true,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "genre"
+    },
+    {
+      "ID": 17,
+      "MenuItemID": 22,
+      "Seq": 10,
+      "Disable": 0,
+      "Name": "DATE ADDED",
+      "Class": -116,
+      "visible_in_sort_menu": true,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "date-added"
+    },
+    {
+      "ID": 16,
+      "MenuItemID": 23,
+      "Seq": 11,
+      "Disable": 0,
+      "Name": "DJ PLAY COUNT",
+      "Class": -105,
+      "visible_in_sort_menu": true,
+      "selected_as_persisted_column": false,
+      "track_materialized_role": "dj-play-count"
+    }
+  ],
+  "colors": [
+    {
+      "ID": 1,
+      "ColorCode": null,
+      "SortKey": 1,
+      "Commnt": "Pink"
+    },
+    {
+      "ID": 2,
+      "ColorCode": null,
+      "SortKey": 2,
+      "Commnt": "Red"
+    },
+    {
+      "ID": 3,
+      "ColorCode": null,
+      "SortKey": 3,
+      "Commnt": "Orange"
+    },
+    {
+      "ID": 4,
+      "ColorCode": null,
+      "SortKey": 4,
+      "Commnt": "Yellow"
+    },
+    {
+      "ID": 5,
+      "ColorCode": null,
+      "SortKey": 5,
+      "Commnt": "Green"
+    },
+    {
+      "ID": 6,
+      "ColorCode": null,
+      "SortKey": 6,
+      "Commnt": "Aqua"
+    },
+    {
+      "ID": 7,
+      "ColorCode": null,
+      "SortKey": 7,
+      "Commnt": "Blue"
+    },
+    {
+      "ID": 8,
+      "ColorCode": null,
+      "SortKey": 8,
+      "Commnt": "Purple"
+    }
+  ],
+  "render_decision_table": [
+    {
+      "argument_count": 5,
+      "behavior": "Uses the materialized list-buffer value in the captured Default case.",
+      "authority_status": "Complete non-default active-sort cross queued for record/repeat."
+    },
+    {
+      "argument_count": 6,
+      "behavior": "Argument 6 is a row-layout category. The active list sort controls the materialized right column; Default falls back to persisted Column selection.",
+      "authority_status": "Eleven visible sorts captured and exactly repeated."
+    },
+    {
+      "argument_count": 7,
+      "behavior": "Static decoder reads argument 6 but not argument 7; active-sort matrix is queued.",
+      "authority_status": "Static prediction only pending record/repeat."
+    },
+    {
+      "argument_count": 8,
+      "behavior": "Argument 7 gates reconciliation. With a nonzero gate, argument 8 selects a column or zero invokes persisted Column fallback; a zero gate ignores argument 8.",
+      "authority_status": "Ordinary gate/selector behavior captured; width and boundary matrix queued."
+    }
+  ],
+  "six_argument_active_sort_observations": [
+    {
+      "case": "00-default",
+      "sort_id": 0,
+      "materialized_role": "persisted-column-fallback",
+      "render_argument_count": 6,
+      "render_argument_6": 12,
+      "first_row": {
+        "argument_0_secondary_raw": 5001,
+        "argument_5_secondary_text": "Am - 120.0 bpm",
+        "argument_6_composite_type": 3844,
+        "argument_12_original_key_id": 5001,
+        "argument_13_key_text_utf16_byte_length_including_nul": 6,
+        "argument_14_key_text": "Am",
+        "argument_15_bpm_x100": 12000
+      },
+      "row_count": 8
+    },
+    {
+      "case": "01-alphabet",
+      "sort_id": 1,
+      "materialized_role": "title",
+      "render_argument_count": 6,
+      "render_argument_6": 12,
+      "first_row": {
+        "argument_0_secondary_raw": 0,
+        "argument_5_secondary_text": "Alpha One",
+        "argument_6_composite_type": 1028,
+        "argument_12_original_key_id": 5001,
+        "argument_13_key_text_utf16_byte_length_including_nul": 6,
+        "argument_14_key_text": "Am",
+        "argument_15_bpm_x100": 12000
+      },
+      "row_count": 8
+    },
+    {
+      "case": "02-artist",
+      "sort_id": 2,
+      "materialized_role": "artist",
+      "render_argument_count": 6,
+      "render_argument_6": 12,
+      "first_row": {
+        "argument_0_secondary_raw": 0,
+        "argument_5_secondary_text": "Alpha Artist",
+        "argument_6_composite_type": 1796,
+        "argument_12_original_key_id": 5001,
+        "argument_13_key_text_utf16_byte_length_including_nul": 6,
+        "argument_14_key_text": "Am",
+        "argument_15_bpm_x100": 12000
+      },
+      "row_count": 8
+    },
+    {
+      "case": "03-album",
+      "sort_id": 3,
+      "materialized_role": "album",
+      "render_argument_count": 6,
+      "render_argument_6": 12,
+      "first_row": {
+        "argument_0_secondary_raw": 0,
+        "argument_5_secondary_text": "Album One",
+        "argument_6_composite_type": 516,
+        "argument_12_original_key_id": 5001,
+        "argument_13_key_text_utf16_byte_length_including_nul": 6,
+        "argument_14_key_text": "Am",
+        "argument_15_bpm_x100": 12000
+      },
+      "row_count": 8
+    },
+    {
+      "case": "04-bpm",
+      "sort_id": 4,
+      "materialized_role": "bpm-key-composite",
+      "render_argument_count": 6,
+      "render_argument_6": 12,
+      "first_row": {
+        "argument_0_secondary_raw": 12000,
+        "argument_5_secondary_text": "120.0 bpm - Am",
+        "argument_6_composite_type": 3332,
+        "argument_12_original_key_id": 5001,
+        "argument_13_key_text_utf16_byte_length_including_nul": 6,
+        "argument_14_key_text": "Am",
+        "argument_15_bpm_x100": 12000
+      },
+      "row_count": 8
+    },
+    {
+      "case": "05-rating",
+      "sort_id": 5,
+      "materialized_role": "rating",
+      "render_argument_count": 6,
+      "render_argument_6": 12,
+      "first_row": {
+        "argument_0_secondary_raw": 5,
+        "argument_5_secondary_text": "",
+        "argument_6_composite_type": 2564,
+        "argument_12_original_key_id": 5002,
+        "argument_13_key_text_utf16_byte_length_including_nul": 4,
+        "argument_14_key_text": "C",
+        "argument_15_bpm_x100": 12250
+      },
+      "row_count": 8
+    },
+    {
+      "case": "06-genre",
+      "sort_id": 6,
+      "materialized_role": "genre",
+      "render_argument_count": 6,
+      "render_argument_6": 12,
+      "first_row": {
+        "argument_0_secondary_raw": 0,
+        "argument_5_secondary_text": "Fixture House",
+        "argument_6_composite_type": 1540,
+        "argument_12_original_key_id": 5001,
+        "argument_13_key_text_utf16_byte_length_including_nul": 6,
+        "argument_14_key_text": "Am",
+        "argument_15_bpm_x100": 12000
+      },
+      "row_count": 8
+    },
+    {
+      "case": "10-label",
+      "sort_id": 10,
+      "materialized_role": "label",
+      "render_argument_count": 6,
+      "render_argument_6": 12,
+      "first_row": {
+        "argument_0_secondary_raw": 0,
+        "argument_5_secondary_text": "Fixture Label One",
+        "argument_6_composite_type": 3588,
+        "argument_12_original_key_id": 5001,
+        "argument_13_key_text_utf16_byte_length_including_nul": 6,
+        "argument_14_key_text": "Am",
+        "argument_15_bpm_x100": 12000
+      },
+      "row_count": 8
+    },
+    {
+      "case": "12-key",
+      "sort_id": 12,
+      "materialized_role": "key-bpm-composite",
+      "render_argument_count": 6,
+      "render_argument_6": 12,
+      "first_row": {
+        "argument_0_secondary_raw": 14,
+        "argument_5_secondary_text": "Am - 120.0 bpm",
+        "argument_6_composite_type": 3844,
+        "argument_12_original_key_id": 5001,
+        "argument_13_key_text_utf16_byte_length_including_nul": 6,
+        "argument_14_key_text": "Am",
+        "argument_15_bpm_x100": 12000
+      },
+      "row_count": 8
+    },
+    {
+      "case": "17-date-added",
+      "sort_id": 17,
+      "materialized_role": "date-added",
+      "render_argument_count": 6,
+      "render_argument_6": 12,
+      "first_row": {
+        "argument_0_secondary_raw": 0,
+        "argument_5_secondary_text": "2024-05-05",
+        "argument_6_composite_type": 11780,
+        "argument_12_original_key_id": 5002,
+        "argument_13_key_text_utf16_byte_length_including_nul": 4,
+        "argument_14_key_text": "C",
+        "argument_15_bpm_x100": 12150
+      },
+      "row_count": 8
+    },
+    {
+      "case": "16-dj-play-count",
+      "sort_id": 16,
+      "materialized_role": "dj-play-count",
+      "render_argument_count": 6,
+      "render_argument_6": 12,
+      "first_row": {
+        "argument_0_secondary_raw": 7,
+        "argument_5_secondary_text": "",
+        "argument_6_composite_type": 10756,
+        "argument_12_original_key_id": 5002,
+        "argument_13_key_text_utf16_byte_length_including_nul": 4,
+        "argument_14_key_text": "C",
+        "argument_15_bpm_x100": 12350
+      },
+      "row_count": 8
+    }
+  ],
+  "render_invariants": {
+    "argument_6_across_all_observed_sorts": 12,
+    "key_metadata_arguments_12_through_15": "Always carry artist ID, key ID, key text, and BPM x100 independently of the visible secondary column.",
+    "default_sort": "Uses persisted Column selection; base fixture selects Key and emits Key - BPM.",
+    "bpm_sort": "Emits BPM - Key.",
+    "key_sort": "Emits Key - BPM.",
+    "other_observed_nondefault_sorts": "Emit the single active-sort value, including an empty string for numeric Rating and DJ Play Count rows."
+  },
+  "refresh_boundary": {
+    "rule": "Category, Sort, and Column controls are locked while LINK is active. Changes made while inactive are consumed by the next LINK activation in the same Rekordbox process.",
+    "evidence": {
+      "category_recorded_unix_seconds": 1790848330,
+      "interactive_ready_unix_seconds": 1790848169,
+      "process_id": 8,
+      "process_path": "C:\\Program Files\\rekordbox\\rekordbox 7.2.19\\rekordbox.exe",
+      "process_started_unix_seconds": 1790848132.419,
+      "rekordbox_version": "7.2.19",
+      "sequence": [
+        "launch full fixture",
+        "move Album from Active to Inactive Categories",
+        "activate LINK and record/repeat Category probe",
+        "deactivate LINK",
+        "move Comments from Inactive to Active Sort Options",
+        "activate LINK and record/repeat Sort probe",
+        "deactivate LINK and snapshot database/WAL"
+      ],
+      "sort_recorded_unix_seconds": 1790848433
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "display-song-info",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "populated-track",
+      "description": "Display fields for a populated live track",
+      "request_kind": "0x2002",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.track.first"}
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16,
+        "row_argument_values": {
+          "6": ["0x0f04", "0x0007", "0x0002", "0x000b", "0x000d", "0x000f", "0x000a", "0x0014", "0x0006", "0x002e", "0x0023", "0x0010", "0x0011", "0x000e", "0x0028", "0x0029"]
+        }
+      }
+    },
+    {
+      "id": "deleted-track",
+      "description": "Display fields for a locally deleted track",
+      "request_kind": "0x2002",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.track.deleted"}
+      ],
+      "expect": {"outcome": "menu", "total": 0, "row_count": 0}
+    },
+    {
+      "id": "zero-content-id",
+      "description": "Display fields for content ID zero",
+      "request_kind": "0x2002",
+      "arguments": [
+        {"number": "$context"},
+        {"number": 0}
+      ],
+      "expect": {"outcome": "menu", "total": 0, "row_count": 0}
+    },
+    {
+      "id": "unknown-content-id",
+      "description": "Display fields for an unknown content ID",
+      "request_kind": "0x2002",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "0xfffffffe"}
+      ],
+      "expect": {"outcome": "menu", "total": 0, "row_count": 0}
+    }
+  ]
+}

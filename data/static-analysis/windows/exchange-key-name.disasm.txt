@@ -1,0 +1,104 @@
+address=0x14235e5e0 size=0x17a
+0x014235e5e0  push      rbx
+0x014235e5e2  push      rbp
+0x014235e5e3  push      rsi
+0x014235e5e4  push      rdi
+0x014235e5e5  push      r14
+0x014235e5e7  sub       rsp, 0x20
+0x014235e5eb  movzx     r14d, dl
+0x014235e5ef  mov       rdi, rcx
+0x014235e5f2  test      r8b, r8b
+0x014235e5f5  jne       0x14235e608  ; function 0x14235e5e0
+0x014235e5f7  cmp       byte ptr [rip + 0x3e0d29a], r8b
+0x014235e5fe  je        0x14235e608  ; function 0x14235e5e0
+0x014235e600  mov       ebx, dword ptr [rip + 0x3a9ac7a]
+0x014235e606  jmp       0x14235e62b  ; function 0x14235e5e0
+0x014235e608  call      0x141c5f780  ; function 0x141c5f780
+0x014235e60d  movzx     ebx, al
+0x014235e610  xor       ebx, 1
+0x014235e613  inc       ebx
+0x014235e615  mov       dword ptr [rip + 0x3a9ac65], ebx
+0x014235e61b  cmp       byte ptr [rip + 0x3e0d276], 0
+0x014235e622  jne       0x14235e62b  ; function 0x14235e5e0
+0x014235e624  mov       byte ptr [rip + 0x3e0d26d], 1
+0x014235e62b  test      rdi, rdi
+0x014235e62e  je        0x14235e74f  ; function 0x14235e5e0
+0x014235e634  mov       rsi, qword ptr [rdi]
+0x014235e637  test      rsi, rsi
+0x014235e63a  je        0x14235e74f  ; function 0x14235e5e0
+0x014235e640  test      ebx, ebx
+0x014235e642  je        0x14235e74f  ; function 0x14235e5e0
+0x014235e648  mov       rdx, rsi
+0x014235e64b  lea       rcx, [rsp + 0x68]
+0x014235e650  call      0x142a6e3a0  ; function 0x142a6e3a0
+0x014235e655  nop
+0x014235e656  lea       rcx, [rsp + 0x68]
+0x014235e65b  call      0x141e41d60  ; function 0x141e41d60
+0x014235e660  cmp       eax, 0x18
+0x014235e663  jae       0x14235e745  ; function 0x14235e5e0
+0x014235e669  cmp       ebx, 2
+0x014235e66c  jne       0x14235e68b  ; function 0x14235e5e0
+0x014235e66e  cdqe
+0x014235e670  lea       rdx, [rax + rax*4]
+0x014235e674  lea       rax, [rip + 0x3a8f085]
+0x014235e67b  mov       rdx, qword ptr [rax + rdx*8]
+0x014235e67f  lea       rcx, [rsp + 0x50]
+0x014235e684  call      0x142a6e420  ; function 0x142a6e420
+0x014235e689  jmp       0x14235e6cc  ; function 0x14235e5e0
+0x014235e68b  cmp       ebx, 1
+0x014235e68e  jne       0x14235e6c1  ; function 0x14235e5e0
+0x014235e690  mov       edx, 8
+0x014235e695  mov       ecx, 0x10
+0x014235e69a  cmp       eax, 0x12
+0x014235e69d  cmovl     edx, ecx
+0x014235e6a0  cdqe
+0x014235e6a2  lea       rcx, [rax + rax*4]
+0x014235e6a6  lea       rdx, [rdx + rcx*8]
+0x014235e6aa  lea       rax, [rip + 0x3a8f04f]
+0x014235e6b1  mov       rdx, qword ptr [rdx + rax]
+0x014235e6b5  lea       rcx, [rsp + 0x50]
+0x014235e6ba  call      0x142a6e420  ; function 0x142a6e420
+0x014235e6bf  jmp       0x14235e6cc  ; function 0x14235e5e0
+0x014235e6c1  lea       rcx, [rsp + 0x50]
+0x014235e6c6  call      0x142a6e6c0
+0x014235e6cb  nop
+0x014235e6cc  mov       rax, qword ptr [rsp + 0x50]
+0x014235e6d1  cmp       byte ptr [rax], 0
+0x014235e6d4  je        0x14235e73a  ; function 0x14235e5e0
+0x014235e6d6  lea       rdx, [rsp + 0x68]
+0x014235e6db  lea       rcx, [rsp + 0x50]
+0x014235e6e0  call      0x142a6d110  ; function 0x142a6d110
+0x014235e6e5  test      al, al
+0x014235e6e7  je        0x14235e73a  ; function 0x14235e5e0
+0x014235e6e9  mov       rcx, qword ptr [rsp + 0x50]
+0x014235e6ee  call      0x140ef6020
+0x014235e6f3  mov       rbx, rax
+0x014235e6f6  lea       rcx, [rax + 1]
+0x014235e6fa  mov       eax, 2
+0x014235e6ff  mul       rcx
+0x014235e702  mov       rcx, 0xffffffffffffffff
+0x014235e709  cmovb     rax, rcx
+0x014235e70d  mov       rcx, rax
+0x014235e710  call      0x14280db58
+0x014235e715  mov       rbp, rax
+0x014235e718  lea       r8, [rbx + rbx]
+0x014235e71c  mov       rdx, rax
+0x014235e71f  lea       rcx, [rsp + 0x50]
+0x014235e724  call      0x142a67480  ; function 0x142a67480
+0x014235e729  cmp       r14b, 1
+0x014235e72d  jne       0x14235e737  ; function 0x14235e5e0
+0x014235e72f  mov       rcx, rsi
+0x014235e732  call      0x14299f450
+0x014235e737  mov       qword ptr [rdi], rbp
+0x014235e73a  lea       rcx, [rsp + 0x50]
+0x014235e73f  call      0x142a6e690
+0x014235e744  nop
+0x014235e745  lea       rcx, [rsp + 0x68]
+0x014235e74a  call      0x142a6e690
+0x014235e74f  add       rsp, 0x20
+0x014235e753  pop       r14
+0x014235e755  pop       rdi
+0x014235e756  pop       rsi
+0x014235e757  pop       rbp
+0x014235e758  pop       rbx
+0x014235e759  ret

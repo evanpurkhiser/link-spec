@@ -1,0 +1,1628 @@
+{
+  "name": "smart-xml-matrix",
+  "fixture_profile": "smart-xml-matrix",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 10,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "canonical-house",
+      "description": "SmartList XML parser probe: canonical house",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.canonical_house"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "lowercase-elements",
+      "description": "SmartList XML parser probe: lowercase elements",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.lowercase_elements"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "mixedcase-elements",
+      "description": "SmartList XML parser probe: mixedcase elements",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.mixedcase_elements"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "xml-declaration",
+      "description": "SmartList XML parser probe: xml declaration",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.xml_declaration"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "xml-declaration-encoding",
+      "description": "SmartList XML parser probe: xml declaration encoding",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.xml_declaration_encoding"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "leading-bom",
+      "description": "SmartList XML parser probe: leading bom",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.leading_bom"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "leading-comment",
+      "description": "SmartList XML parser probe: leading comment",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.leading_comment"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "leading-processing-instruction",
+      "description": "SmartList XML parser probe: leading processing instruction",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.leading_processing_instruction"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "trailing-comment",
+      "description": "SmartList XML parser probe: trailing comment",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.trailing_comment"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "surrounding-whitespace",
+      "description": "SmartList XML parser probe: surrounding whitespace",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.surrounding_whitespace"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "reordered-attributes",
+      "description": "SmartList XML parser probe: reordered attributes",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.reordered_attributes"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "single-quoted-attributes",
+      "description": "SmartList XML parser probe: single quoted attributes",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.single_quoted_attributes"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "decimal-character-reference",
+      "description": "SmartList XML parser probe: decimal character reference",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.decimal_character_reference"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "hex-character-reference",
+      "description": "SmartList XML parser probe: hex character reference",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.hex_character_reference"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "empty-string",
+      "description": "SmartList XML parser probe: empty string",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.empty_string"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "whitespace-only",
+      "description": "SmartList XML parser probe: whitespace only",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.whitespace_only"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "text-only",
+      "description": "SmartList XML parser probe: text only",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.text_only"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "malformed-open",
+      "description": "SmartList XML parser probe: malformed open",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.malformed_open"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "unclosed-root",
+      "description": "SmartList XML parser probe: unclosed root",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.unclosed_root"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "mismatched-close",
+      "description": "SmartList XML parser probe: mismatched close",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.mismatched_close"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "unclosed-condition",
+      "description": "SmartList XML parser probe: unclosed condition",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.unclosed_condition"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "missing-attribute-quote",
+      "description": "SmartList XML parser probe: missing attribute quote",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.missing_attribute_quote"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "unescaped-ampersand",
+      "description": "SmartList XML parser probe: unescaped ampersand",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.unescaped_ampersand"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "unknown-entity",
+      "description": "SmartList XML parser probe: unknown entity",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.unknown_entity"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "invalid-numeric-entity",
+      "description": "SmartList XML parser probe: invalid numeric entity",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.invalid_numeric_entity"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "wrapper-root",
+      "description": "SmartList XML parser probe: wrapper root",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.wrapper_root"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "namespaced-root",
+      "description": "SmartList XML parser probe: namespaced root",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.namespaced_root"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "condition-as-root",
+      "description": "SmartList XML parser probe: condition as root",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.condition_as_root"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "self-closing-node",
+      "description": "SmartList XML parser probe: self closing node",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.self_closing_node"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "text-child-only",
+      "description": "SmartList XML parser probe: text child only",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.text_child_only"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "comment-child-only",
+      "description": "SmartList XML parser probe: comment child only",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.comment_child_only"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "cdata-child-only",
+      "description": "SmartList XML parser probe: cdata child only",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.cdata_child_only"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "unknown-child",
+      "description": "SmartList XML parser probe: unknown child",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.unknown_child"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "unknown-wrapper-condition",
+      "description": "SmartList XML parser probe: unknown wrapper condition",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.unknown_wrapper_condition"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "nested-node-only",
+      "description": "SmartList XML parser probe: nested node only",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.nested_node_only"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "nested-then-direct-house",
+      "description": "SmartList XML parser probe: nested then direct house",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.nested_then_direct_house"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "direct-house-then-nested-techno",
+      "description": "SmartList XML parser probe: direct house then nested techno",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.direct_house_then_nested_techno"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "two-direct-all",
+      "description": "SmartList XML parser probe: two direct all",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.two_direct_all"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "two-direct-any",
+      "description": "SmartList XML parser probe: two direct any",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.two_direct_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "condition-before-node",
+      "description": "SmartList XML parser probe: condition before node",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.condition_before_node"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "two-roots-house-then-techno",
+      "description": "SmartList XML parser probe: two roots house then techno",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.two_roots_house_then_techno"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "valid-root-trailing-text",
+      "description": "SmartList XML parser probe: valid root trailing text",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.valid_root_trailing_text"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "leading-text-valid-root",
+      "description": "SmartList XML parser probe: leading text valid root",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.leading_text_valid_root"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "missing-logical-operator",
+      "description": "SmartList XML parser probe: missing logical operator",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.missing_logical_operator"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "blank-logical-operator",
+      "description": "SmartList XML parser probe: blank logical operator",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.blank_logical_operator"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "invalid-logical-operator",
+      "description": "SmartList XML parser probe: invalid logical operator",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.invalid_logical_operator"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "plus-two-logical-operator",
+      "description": "SmartList XML parser probe: plus two logical operator",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.plus_two_logical_operator"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "spaced-two-logical-operator",
+      "description": "SmartList XML parser probe: spaced two logical operator",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.spaced_two_logical_operator"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "duplicate-logical-one-then-two",
+      "description": "SmartList XML parser probe: duplicate logical one then two",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.duplicate_logical_one_then_two"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "duplicate-logical-two-then-one",
+      "description": "SmartList XML parser probe: duplicate logical two then one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.duplicate_logical_two_then_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "lowercase-root-attributes",
+      "description": "SmartList XML parser probe: lowercase root attributes",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.lowercase_root_attributes"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "uppercase-root-attributes",
+      "description": "SmartList XML parser probe: uppercase root attributes",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.uppercase_root_attributes"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "missing-property",
+      "description": "SmartList XML parser probe: missing property",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.missing_property"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "blank-property",
+      "description": "SmartList XML parser probe: blank property",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.blank_property"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "whitespace-property",
+      "description": "SmartList XML parser probe: whitespace property",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.whitespace_property"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "uppercase-property-value",
+      "description": "SmartList XML parser probe: uppercase property value",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.uppercase_property_value"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "property-leading-space",
+      "description": "SmartList XML parser probe: property leading space",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.property_leading_space"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "missing-operator",
+      "description": "SmartList XML parser probe: missing operator",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.missing_operator"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "blank-operator",
+      "description": "SmartList XML parser probe: blank operator",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.blank_operator"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "invalid-operator-text",
+      "description": "SmartList XML parser probe: invalid operator text",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.invalid_operator_text"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "plus-one-operator",
+      "description": "SmartList XML parser probe: plus one operator",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.plus_one_operator"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "spaced-one-operator",
+      "description": "SmartList XML parser probe: spaced one operator",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.spaced_one_operator"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "leading-zero-operator",
+      "description": "SmartList XML parser probe: leading zero operator",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.leading_zero_operator"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "duplicate-operator-one-then-two",
+      "description": "SmartList XML parser probe: duplicate operator one then two",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.duplicate_operator_one_then_two"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "duplicate-operator-two-then-one",
+      "description": "SmartList XML parser probe: duplicate operator two then one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.duplicate_operator_two_then_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "missing-value-left",
+      "description": "SmartList XML parser probe: missing value left",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.missing_value_left"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "duplicate-value-house-then-techno",
+      "description": "SmartList XML parser probe: duplicate value house then techno",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.duplicate_value_house_then_techno"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "duplicate-value-techno-then-house",
+      "description": "SmartList XML parser probe: duplicate value techno then house",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.duplicate_value_techno_then_house"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "extra-condition-attributes",
+      "description": "SmartList XML parser probe: extra condition attributes",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.extra_condition_attributes"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "condition-with-text-content",
+      "description": "SmartList XML parser probe: condition with text content",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.condition_with_text_content"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "namespaced-condition",
+      "description": "SmartList XML parser probe: namespaced condition",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.namespaced_condition"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "valid-root-then-nul-junk",
+      "description": "SmartList XML parser probe: valid root then nul junk",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.valid_root_then_nul_junk"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "nul-before-root",
+      "description": "SmartList XML parser probe: nul before root",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_xml.nul_before_root"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    }
+  ]
+}

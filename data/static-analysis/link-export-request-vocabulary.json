@@ -1,0 +1,4234 @@
+{
+  "format": 2,
+  "scope": "Complete known Link Export command vocabulary from CDJ-3000 firmware, the retained physical RX3 session, conformance probes, and Rekordbox 7.2.19 dispatch evidence. A client command proves client vocabulary, not Rekordbox server support.",
+  "sources": [
+    {
+      "id": "ALPHA",
+      "path": "/home/evan/workspace/rx3-research/alphatheta-docs/devices/cdj-3000/application/remote-database-client.md",
+      "commit": "a70aeefb202ffddd2900e7b40e339a47ac077057",
+      "sha256": "d3563dc35962b21ba224906f2307f8e7f872368d4b16cdd93c9ee24d9104fa95"
+    },
+    {
+      "id": "DYS",
+      "path": "/home/evan/workspace/rx3-research/dysentery",
+      "commit": "f62a24ba947f9db4c1553bb2dc3ba76de1fecbb4"
+    },
+    {
+      "id": "CAP",
+      "path": "data/experiments/sort-secondary-render-6/source-rx3-rekordbox-working-ap-20260927.pcap",
+      "sha256": "bee17ddfa72b093479a68c1590953ddc79629cdf43905769761c656a5149aa2b"
+    },
+    {
+      "id": "RX3DEC",
+      "path": "/home/evan/workspace/rx3-research/alphatheta-docs/devices/xdj-rx3/application/assets/decompiled-readable/_unattributed/chunk_0025.c",
+      "commit": "a70aeefb202ffddd2900e7b40e339a47ac077057",
+      "sha256": "179f437b7779bdbfb7d0c44d025082417d5e5cd03767a2b4287004d4844cdabd",
+      "functions": {
+        "RecvFromCommTask": "0x0025fc94"
+      }
+    },
+    {
+      "id": "DEC",
+      "path": "data/static-analysis/link-export-dispatch-tables.json",
+      "rekordbox_sha256": "07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244"
+    },
+    {
+      "id": "OBS",
+      "path": "conformance/goldens/rekordbox-7.2.19"
+    },
+    {
+      "id": "DB",
+      "path": "data/static-analysis/menu-database-query-map.json"
+    }
+  ],
+  "summary": {
+    "command_count": 185,
+    "alpha_command_count": 173,
+    "menu_corpus_request_count": 74,
+    "direction_counts": {
+      "probe": 4,
+      "client-control": 1,
+      "request": 159,
+      "reply": 21
+    },
+    "coverage_counts": {
+      "real-rekordbox-menu-oracle": 74,
+      "physical-client-control": 1,
+      "rekordbox-static-rejected": 27,
+      "rekordbox-static-dispatch": 54,
+      "rekordbox-recognized-log-only": 8,
+      "reply-vocabulary": 21
+    }
+  },
+  "commands": [
+    {
+      "kind": "0000",
+      "name": "conformance-only malformed/guessed request",
+      "direction": "probe",
+      "menu_family": "malformed_unknown_kind",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0x0 is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "0001",
+      "name": "cancel request (Dysentery: invalid data)",
+      "direction": "client-control",
+      "menu_family": null,
+      "coverage": "physical-client-control",
+      "evidence": [
+        "CAP",
+        "DYS",
+        "RX3DEC"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null,
+      "observation": "The physical RX3 sent five zero-argument cancellation commands while artwork requests were outstanding, preserving each artwork transaction ID. RX3 RecvFromCommTask constructs kind 0x0001 when CheckCanceledRequest reports a GUI cancellation. Three commands followed a captured 0x4002 reply and two had no correlated captured reply; packet order therefore does not identify whether the reply had already reached the client task."
+    },
+    {
+      "kind": "0100",
+      "name": "CMD_INFO_DROP",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0x0 is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "1000",
+      "name": "CMD_ROOT_MENU",
+      "direction": "request",
+      "menu_family": "root",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnOtherListCmd",
+        "root"
+      ],
+      "rekordbox_target": "root",
+      "static_table": "other-list-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1001",
+      "name": "CMD_GENRE_ROOT",
+      "direction": "request",
+      "menu_family": "genre_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnGenreListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnGenreListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1002",
+      "name": "CMD_ARTIST_ROOT",
+      "direction": "request",
+      "menu_family": "artist_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnArtistListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnArtistListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1003",
+      "name": "CMD_ALBUM_ROOT",
+      "direction": "request",
+      "menu_family": "album_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnAlbumListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnAlbumListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1004",
+      "name": "CMD_TRACK_ROOT",
+      "direction": "request",
+      "menu_family": "collection_tracks",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnTrackListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnTrackListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1006",
+      "name": "CMD_BPM_ROOT",
+      "direction": "request",
+      "menu_family": "bpm",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnBpmListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnBpmListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1007",
+      "name": "CMD_RATING_ROOT",
+      "direction": "request",
+      "menu_family": "rating",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnRatingListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnRatingListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1008",
+      "name": "CMD_RELYEAR10_ROOT",
+      "direction": "request",
+      "menu_family": "release_year",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnYearListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnYearListCmd",
+        "database-interface release-decade root via vtable +0xA0"
+      ],
+      "rekordbox_target": "database-interface release-decade root via vtable +0xA0",
+      "static_table": "year-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "100A",
+      "name": "CMD_LABEL_ROOT",
+      "direction": "request",
+      "menu_family": "label_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnLabelListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnLabelListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "100B",
+      "name": "CMD_KEY_ROOT",
+      "direction": "request",
+      "menu_family": "old_key",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnKeyListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnKeyListCmd",
+        "PSvAppSyncDBIF::getKey_Root via database-interface vtable +0xE8"
+      ],
+      "rekordbox_target": "PSvAppSyncDBIF::getKey_Root via database-interface vtable +0xE8",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4000",
+      "dependencies": {
+        "database": [
+          "djmdKey live rows"
+        ],
+        "filesystem": "No filesystem access is visible; AppSync materializes the key root into the location-keyed list buffer."
+      }
+    },
+    {
+      "kind": "100D",
+      "name": "CMD_COLOR_ROOT",
+      "direction": "request",
+      "menu_family": "color",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnColorListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnColorListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "100E",
+      "name": "CMD_PLAYS_ROOT",
+      "direction": "request",
+      "menu_family": "dj_play_count",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnPlayCntListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnPlayCntListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "100F",
+      "name": "CMD_PREPARE_ROOT",
+      "direction": "request",
+      "menu_family": "prepare",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnPrepareListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnPrepareListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1010",
+      "name": "CMD_LENGTH_ROOT",
+      "direction": "request",
+      "menu_family": "duration",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnLengthListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnLengthListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1011",
+      "name": "CMD_BITRATE_ROOT",
+      "direction": "request",
+      "menu_family": "bitrate",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnBitrateListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnBitrateListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1012",
+      "name": "CMD_HISTORY_ROOT",
+      "direction": "request",
+      "menu_family": "history",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnHistoryListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnHistoryListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1013",
+      "name": "CMD_FILENAME_ROOT",
+      "direction": "request",
+      "menu_family": "file_name",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnFileNameListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnFileNameListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1014",
+      "name": "CMD_NEW_KEY_ROOT",
+      "direction": "request",
+      "menu_family": "key",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnNewKeyListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnNewKeyListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1015",
+      "name": "CMD_GET_MYTAG",
+      "direction": "request",
+      "menu_family": "my_tag",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnMyTagListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnMyTagListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1017",
+      "name": "CMD_GET_MATCHING_TRACK",
+      "direction": "request",
+      "menu_family": "matching",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnMatchingListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnMatchingListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1018",
+      "name": "conformance-only malformed/guessed request",
+      "direction": "probe",
+      "menu_family": "rejected_guessed_route",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnListClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "low byte 0x18 is outside list-low-byte",
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1100",
+      "name": "REKORDBOX_STATIC_UNSUPPORTED_OTHER_LIST_KIND",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnOtherListCmd",
+        "PSvDBMain::OnUnknownClientCmd",
+        "unsupported-other-list-kind"
+      ],
+      "rekordbox_target": "unsupported-other-list-kind",
+      "static_table": "other-list-high-byte",
+      "rejection_reason": "unsupported-other-list-kind",
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1101",
+      "name": "CMD_ARTIST_GENRE",
+      "direction": "request",
+      "menu_family": "genre_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnGenreListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnGenreListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1102",
+      "name": "CMD_ALBUM_ARTIST",
+      "direction": "request",
+      "menu_family": "artist_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnArtistListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnArtistListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1103",
+      "name": "CMD_TRACK_ALBUM",
+      "direction": "request",
+      "menu_family": "album_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnAlbumListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnAlbumListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1105",
+      "name": "CMD_TRACK_PLAYLIST",
+      "direction": "request",
+      "menu_family": "playlist",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnPlaylistListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnPlaylistListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1106",
+      "name": "CMD_BPMRANGE_BPM",
+      "direction": "request",
+      "menu_family": "bpm",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnBpmListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnBpmListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1107",
+      "name": "CMD_TRACK_RATING",
+      "direction": "request",
+      "menu_family": "rating",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnRatingListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnRatingListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1108",
+      "name": "CMD_RELEASEYEAR_YEAR10",
+      "direction": "request",
+      "menu_family": "release_year",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnYearListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnYearListCmd",
+        "database-interface release-year children via vtable +0xA8"
+      ],
+      "rekordbox_target": "database-interface release-year children via vtable +0xA8",
+      "static_table": "year-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "110A",
+      "name": "CMD_ARTIST_LABEL",
+      "direction": "request",
+      "menu_family": "label_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnLabelListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnLabelListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "110B",
+      "name": "CMD_TRACK_KEY",
+      "direction": "request",
+      "menu_family": "old_key",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnKeyListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnKeyListCmd",
+        "PSvAppSyncDBIF::getTrack_Key via database-interface vtable +0xF0"
+      ],
+      "rekordbox_target": "PSvAppSyncDBIF::getTrack_Key via database-interface vtable +0xF0",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4000",
+      "dependencies": {
+        "database": [
+          "djmdContent",
+          "djmdKey",
+          "sort-dependent lookup tables"
+        ],
+        "filesystem": "No filesystem access is visible; AppSync builds ordinary track rows selected by KeyID."
+      }
+    },
+    {
+      "kind": "110D",
+      "name": "CMD_TRACK_COLOR",
+      "direction": "request",
+      "menu_family": "color",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnColorListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnColorListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "110E",
+      "name": "CMD_TRACK_PLAYS",
+      "direction": "request",
+      "menu_family": "dj_play_count",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnPlayCntListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnPlayCntListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1110",
+      "name": "CMD_TRACK_LENGTH",
+      "direction": "request",
+      "menu_family": "duration",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnLengthListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnLengthListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1111",
+      "name": "CMD_TRACK_BITRATE",
+      "direction": "request",
+      "menu_family": "bitrate",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnBitrateListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnBitrateListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1112",
+      "name": "CMD_TRACK_HISTORY",
+      "direction": "request",
+      "menu_family": "history",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnHistoryListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnHistoryListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1114",
+      "name": "CMD_KEYRANGE_NEW_KEY",
+      "direction": "request",
+      "menu_family": "key",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnNewKeyListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnNewKeyListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1200",
+      "name": "CMD_TRACK_CONTENT",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnOtherListCmd",
+        "track-content"
+      ],
+      "rekordbox_target": "track-content",
+      "static_table": "other-list-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1201",
+      "name": "CMD_ALBUM_ARTIST_GENRE",
+      "direction": "request",
+      "menu_family": "genre_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnGenreListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnGenreListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1202",
+      "name": "CMD_TRACK_ALBUM_ARTIST",
+      "direction": "request",
+      "menu_family": "artist_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnArtistListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnArtistListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1206",
+      "name": "CMD_TRACK_BPM_RANGE",
+      "direction": "request",
+      "menu_family": "bpm",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnBpmListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnBpmListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1208",
+      "name": "CMD_TRACK_RELEASEYEAR",
+      "direction": "request",
+      "menu_family": "release_year",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnYearListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnYearListCmd",
+        "database-interface release-year tracks via vtable +0xB0"
+      ],
+      "rekordbox_target": "database-interface release-year tracks via vtable +0xB0",
+      "static_table": "year-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "120A",
+      "name": "CMD_ALBUM_ARTIST_LABEL",
+      "direction": "request",
+      "menu_family": "label_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnLabelListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnLabelListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1214",
+      "name": "CMD_TRACK_KEY_RANGE",
+      "direction": "request",
+      "menu_family": "key",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnNewKeyListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnNewKeyListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1300",
+      "name": "CMD_SEARCH",
+      "direction": "request",
+      "menu_family": "search",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnOtherListCmd",
+        "search"
+      ],
+      "rekordbox_target": "search",
+      "static_table": "other-list-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1301",
+      "name": "CMD_TRACK_ALBUM_ARTIST_GENRE",
+      "direction": "request",
+      "menu_family": "genre_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnGenreListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnGenreListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1302",
+      "name": "CMD_ORGARTIST_ROOT",
+      "direction": "request",
+      "menu_family": "original_artist_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnArtistListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnArtistListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1308",
+      "name": "CMD_STOCKYEAR_ROOT",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnYearListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnYearListCmd",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": "unsupported-year-kind",
+      "static_table": "year-high-byte",
+      "rejection_reason": "year-high-byte routes 1308 to unsupported-year-kind",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "130A",
+      "name": "CMD_TRACK_ALBUM_ARTIST_LABEL",
+      "direction": "request",
+      "menu_family": "label_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnLabelListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnLabelListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "130C",
+      "name": "CMD_CUETRACK_ROOT",
+      "direction": "request",
+      "menu_family": "cue_track_root",
+      "coverage": "rekordbox-recognized-log-only",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnListClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "special-0x130c-or-unsupported",
+        "recognized-log-only"
+      ],
+      "rekordbox_target": "recognized-log-only",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": {
+        "database": [],
+        "filesystem": "Rekordbox recognizes and logs this XDJ-RR cue-track root kind but returns before any builder or reply."
+      }
+    },
+    {
+      "kind": "1315",
+      "name": "CMD_GET_MYTAG_ON_TRACK",
+      "direction": "request",
+      "menu_family": "my_tag",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnMyTagListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnMyTagListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1400",
+      "name": "CMD_RIGHT_MENU",
+      "direction": "request",
+      "menu_family": "sort_menu",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnOtherListCmd",
+        "sort-menu"
+      ],
+      "rekordbox_target": "sort-menu",
+      "static_table": "other-list-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1402",
+      "name": "CMD_ALBUM_ORGARTIST",
+      "direction": "request",
+      "menu_family": "original_artist_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnArtistListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnArtistListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1408",
+      "name": "CMD_TRACK_STOCKYEAR",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnYearListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnYearListCmd",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": "unsupported-year-kind",
+      "static_table": "year-high-byte",
+      "rejection_reason": "year-high-byte routes 1408 to unsupported-year-kind",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "1500",
+      "name": "CMD_SEARCH_TRACK",
+      "direction": "request",
+      "menu_family": "search_tracks",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnOtherListCmd",
+        "search-track"
+      ],
+      "rekordbox_target": "search-track",
+      "static_table": "other-list-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1502",
+      "name": "CMD_TRACK_ALBUM_ORGARTIST",
+      "direction": "request",
+      "menu_family": "original_artist_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnArtistListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnArtistListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1508",
+      "name": "CMD_STOCKMONTH_STOCKYEAR",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnYearListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnYearListCmd",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": "unsupported-year-kind",
+      "static_table": "year-high-byte",
+      "rejection_reason": "year-high-byte routes 1508 to unsupported-year-kind",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "1602",
+      "name": "CMD_REMIX_ROOT",
+      "direction": "request",
+      "menu_family": "remixer_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnArtistListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnArtistListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1608",
+      "name": "CMD_TRACK_STOCKYEAR_MONTH",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnYearListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnYearListCmd",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": "unsupported-year-kind",
+      "static_table": "year-high-byte",
+      "rejection_reason": "year-high-byte routes 1608 to unsupported-year-kind",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "1702",
+      "name": "CMD_ALBUM_REMIX",
+      "direction": "request",
+      "menu_family": "remixer_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnArtistListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnArtistListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1708",
+      "name": "CMD_DATEADDED_YEAR",
+      "direction": "request",
+      "menu_family": "date_added",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnYearListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnYearListCmd",
+        "database-interface date-added hierarchy via vtable +0xB8"
+      ],
+      "rekordbox_target": "database-interface date-added hierarchy via vtable +0xB8",
+      "static_table": "year-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1802",
+      "name": "CMD_TRACK_ALBUM_REMIX",
+      "direction": "request",
+      "menu_family": "remixer_hierarchy",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnArtistListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnArtistListCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1808",
+      "name": "CMD_DATEADDED_MONTH",
+      "direction": "request",
+      "menu_family": "date_added",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnYearListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnYearListCmd",
+        "database-interface date-added hierarchy via vtable +0xB8"
+      ],
+      "rekordbox_target": "database-interface date-added hierarchy via vtable +0xB8",
+      "static_table": "year-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1908",
+      "name": "CMD_DATEADDED_DATE",
+      "direction": "request",
+      "menu_family": "date_added",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnYearListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnYearListCmd",
+        "database-interface date-added hierarchy via vtable +0xB8"
+      ],
+      "rekordbox_target": "database-interface date-added hierarchy via vtable +0xB8",
+      "static_table": "year-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "1A08",
+      "name": "CMD_DATEADDED_TRACK",
+      "direction": "request",
+      "menu_family": "date_added",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnYearListCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnListClientCmd",
+        "PSvDBMain::OnYearListCmd",
+        "database-interface date-added tracks via vtable +0xC0"
+      ],
+      "rekordbox_target": "database-interface date-added tracks via vtable +0xC0",
+      "static_table": "year-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2001",
+      "name": "CMD_HOTCUE_BANK",
+      "direction": "request",
+      "menu_family": "hot_cue_bank_catalog",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnCueBnkCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnCueBnkCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2002",
+      "name": "CMD_SONGDATA_TRACK",
+      "direction": "request",
+      "menu_family": "display_song_info",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongInfCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongInfCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2003",
+      "name": "CMD_GET_IMAGE",
+      "direction": "request",
+      "menu_family": "artwork_payload",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnImgCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnImgCmd",
+        "database-interface vtable +0x190"
+      ],
+      "rekordbox_target": "database-interface vtable +0x190",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4002",
+      "dependencies": {
+        "database": [
+          "AppSync djmdContent.ImagePath",
+          "AppSync djmdPlaylist.ImagePath",
+          "Master djmdImage path"
+        ],
+        "filesystem": "The active AppSync path reads ImagePath directly; the Master fallback resolves an image ID. Both use the common JPEG loader."
+      }
+    },
+    {
+      "kind": "2004",
+      "name": "CMD_GET_WAVEDATA",
+      "direction": "request",
+      "menu_family": "analysis_payload",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "PSvDBMain::GetWave"
+      ],
+      "rekordbox_target": "PSvDBMain::GetWave",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": "4402",
+      "dependencies": {
+        "database": [
+          "content analysis-path lookup"
+        ],
+        "filesystem": "ANLZ path is parsed by MstLoadLoudWave and MstLoadDotWave."
+      }
+    },
+    {
+      "kind": "2005",
+      "name": "CMD_SAV_WAVE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnWriteCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnWriteCmd",
+        "PSvDBMain::SavWave"
+      ],
+      "rekordbox_target": "PSvDBMain::SavWave",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": {
+        "database": [
+          "djmdContent.AnalysisDataPath"
+        ],
+        "filesystem": "SavWave resolves the analysis path and writes 400 loud-wave samples plus 100 dot-wave bytes through MstStoreLoudWave and MstStoreDotWave."
+      }
+    },
+    {
+      "kind": "2006",
+      "name": "CMD_CACHE_FOLDER",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC",
+        "DYS"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnMAnlzClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "unsupported-low-byte",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "analysis-class-low-byte routes low byte 0x06 to unsupported-low-byte",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "2101",
+      "name": "CMD_GET_HCBNK_CUE",
+      "direction": "request",
+      "menu_family": "hot_cue_bank_legacy_getter",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnCueBnkCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnCueBnkCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2102",
+      "name": "CMD_SONGDATA_TRACK2",
+      "direction": "request",
+      "menu_family": "play_song_info",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongInfCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongInfCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2103",
+      "name": "CMD_GET_IMAGE2",
+      "direction": "request",
+      "menu_family": "artwork_payload",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnImgCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnImgCmd",
+        "database-interface vtable +0x198"
+      ],
+      "rekordbox_target": "database-interface vtable +0x198",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4002",
+      "dependencies": {
+        "database": [
+          "AppSync djmdContent.ImagePath",
+          "AppSync djmdPlaylist.ImagePath",
+          "Master djmdContent.ImageID",
+          "Master djmdImage path"
+        ],
+        "filesystem": "AppSync treats the content ID as the direct ImagePath row ID; the Master fallback resolves Content.ImageID first."
+      }
+    },
+    {
+      "kind": "2104",
+      "name": "CMD_GET_USB_CUE",
+      "direction": "request",
+      "menu_family": "cue_payload",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "PSvDBMain::GetUsbCue"
+      ],
+      "rekordbox_target": "PSvDBMain::GetUsbCue",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": "4702",
+      "dependencies": {
+        "database": [
+          "djmdCue"
+        ],
+        "filesystem": "No audio decoding is visible in the recovered database cue path."
+      }
+    },
+    {
+      "kind": "2105",
+      "name": "CMD_SAV_USB_CUE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnWriteCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnWriteCmd",
+        "PSvDBMain::SavUsbCue"
+      ],
+      "rekordbox_target": "PSvDBMain::SavUsbCue",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4702",
+      "dependencies": {
+        "database": [
+          "djmdCue and cue-option rows"
+        ],
+        "filesystem": "No audio decoding is visible; the legacy cue writer mutates cue records and returns the resulting 4702 cue set."
+      }
+    },
+    {
+      "kind": "2106",
+      "name": "CMD_GET_CDROM_1ST_TRK",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnMAnlzClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "unsupported-low-byte",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "analysis-class-low-byte routes low byte 0x06 to unsupported-low-byte",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "2107",
+      "name": "CMD_MOD_TRACK_RATE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnDbModCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnDbModCmd",
+        "PSvAppSyncDBIF::modTrackRate via database-interface vtable +0x2A0"
+      ],
+      "rekordbox_target": "PSvAppSyncDBIF::modTrackRate via database-interface vtable +0x2A0",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4000",
+      "dependencies": {
+        "database": [
+          "djmdContent.Rating"
+        ],
+        "filesystem": "No filesystem access is visible; modTrackRate reads the current Rating and updates it by content ID only when the byte value changes."
+      }
+    },
+    {
+      "kind": "2201",
+      "name": "CMD_CHANGE_HCBNK_CUE",
+      "direction": "request",
+      "menu_family": "hot_cue_bank_legacy_setter",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnCueBnkCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnCueBnkCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2202",
+      "name": "CMD_GET_CACHE_CONTENT_TRACK",
+      "direction": "request",
+      "menu_family": "recognized_song_info_without_builder",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongInfCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongInfCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2204",
+      "name": "CMD_GET_QUANTIZE_DATA",
+      "direction": "request",
+      "menu_family": "analysis_payload",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "PSvDBMain::GetQtzInf"
+      ],
+      "rekordbox_target": "PSvDBMain::GetQtzInf",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": "4602",
+      "dependencies": {
+        "database": [
+          "content analysis-path lookup"
+        ],
+        "filesystem": "ANLZ path is parsed by MstLoadBeatGrid and MstLoadBeatGridWithHeader."
+      }
+    },
+    {
+      "kind": "2205",
+      "name": "CMD_SAV_VBR_INFO",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnWriteCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnWriteCmd",
+        "PSvDBMain::SavVbrInf (constant-success stub)"
+      ],
+      "rekordbox_target": "PSvDBMain::SavVbrInf (constant-success stub)",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": {
+        "database": [],
+        "filesystem": "SavVbrInf is a constant-success stub in Rekordbox 7.2.19 and does not inspect its message."
+      }
+    },
+    {
+      "kind": "2206",
+      "name": "CMD_GET_FOL_HIERARCHY",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnMAnlzClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "unsupported-low-byte",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "analysis-class-low-byte routes low byte 0x06 to unsupported-low-byte",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "2207",
+      "name": "CMD_CHG_KUVO_STATUS",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnDbModCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnDbModCmd",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "PSvDBMain::OnDbModCmd recognizes only 2107, 2507",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "2301",
+      "name": "CMD_GET_HCBNK_CUE2",
+      "direction": "request",
+      "menu_family": "hot_cue_bank_extended_getter",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnCueBnkCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnCueBnkCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2302",
+      "name": "CMD_GET_PCMODE_SONG_INFO",
+      "direction": "request",
+      "menu_family": "recognized_song_info_without_builder",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongInfCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongInfCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2304",
+      "name": "conformance-only malformed/guessed request",
+      "direction": "probe",
+      "menu_family": "analysis_log_only",
+      "coverage": "rekordbox-recognized-log-only",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "recognized-log-only"
+      ],
+      "rekordbox_target": "recognized-log-only",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2305",
+      "name": "CMD_SAV_DISC_CUE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-recognized-log-only",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnWriteCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnWriteCmd",
+        "recognized-log-only"
+      ],
+      "rekordbox_target": "recognized-log-only",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": {
+        "database": [],
+        "filesystem": "Rekordbox recognizes and logs this disc-cue write kind but invokes no writer and sends no reply."
+      }
+    },
+    {
+      "kind": "2401",
+      "name": "CMD_CHANGE_HCBNK_CUE2",
+      "direction": "request",
+      "menu_family": "hot_cue_bank_extended_setter",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnCueBnkCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnCueBnkCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2402",
+      "name": "CMD_GET_DECODE_INFO",
+      "direction": "request",
+      "menu_family": "recognized_song_info_without_builder",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongInfCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongInfCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2404",
+      "name": "CMD_GET_DISC_CUE",
+      "direction": "request",
+      "menu_family": "analysis_log_only",
+      "coverage": "rekordbox-recognized-log-only",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "recognized-log-only"
+      ],
+      "rekordbox_target": "recognized-log-only",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2405",
+      "name": "CMD_DEL_ALL_DISC_CUE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-recognized-log-only",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnWriteCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnWriteCmd",
+        "recognized-log-only"
+      ],
+      "rekordbox_target": "recognized-log-only",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": {
+        "database": [],
+        "filesystem": "Rekordbox recognizes and logs this delete-all-disc-cue kind but invokes no writer and sends no reply."
+      }
+    },
+    {
+      "kind": "2502",
+      "name": "CMD_REG_TRK_LENGTH",
+      "direction": "request",
+      "menu_family": "recognized_song_info_without_builder",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongInfCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongInfCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2504",
+      "name": "CMD_GET_VBR_INFO",
+      "direction": "request",
+      "menu_family": "analysis_payload",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "PSvDBMain::GetVbrInf"
+      ],
+      "rekordbox_target": "PSvDBMain::GetVbrInf",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": "4502",
+      "dependencies": {
+        "database": [
+          "content analysis-path lookup"
+        ],
+        "filesystem": "ANLZ path is parsed by MstLoadVBR."
+      }
+    },
+    {
+      "kind": "2505",
+      "name": "CMD_REG_DISCID",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-recognized-log-only",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnWriteCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnWriteCmd",
+        "recognized-log-only"
+      ],
+      "rekordbox_target": "recognized-log-only",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": {
+        "database": [],
+        "filesystem": "Rekordbox recognizes and logs this disc-ID registration kind but invokes no writer and sends no reply."
+      }
+    },
+    {
+      "kind": "2507",
+      "name": "REKORDBOX_STATIC_PSVAPPSYNCDBIF::MODTRACKBPM VIA DATABASE_INTERFACE VTABLE +0X2A8",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnDbModCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnDbModCmd",
+        "PSvAppSyncDBIF::modTrackBPM via database-interface vtable +0x2A8"
+      ],
+      "rekordbox_target": "PSvAppSyncDBIF::modTrackBPM via database-interface vtable +0x2A8",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4000",
+      "dependencies": {
+        "database": [
+          "djmdContent.BPM"
+        ],
+        "filesystem": "No filesystem access is visible; modTrackBPM reads the current BPM and updates it by content ID only when the value changes."
+      }
+    },
+    {
+      "kind": "2602",
+      "name": "CMD_GET_DELIVERY_INFO",
+      "direction": "request",
+      "menu_family": "delivery_song_info",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongInfCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongInfCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2604",
+      "name": "CMD_INFO_DISC_EJECT",
+      "direction": "request",
+      "menu_family": "analysis_log_only",
+      "coverage": "rekordbox-recognized-log-only",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "recognized-log-only"
+      ],
+      "rekordbox_target": "recognized-log-only",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2605",
+      "name": "CMD_SAV_QTZ_OFFSET",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnWriteCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnWriteCmd",
+        "PSvDBMain::SavQtzOfs"
+      ],
+      "rekordbox_target": "PSvDBMain::SavQtzOfs",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4000",
+      "dependencies": {
+        "database": [
+          "djmdContent.AnalysisDataPath",
+          "djmdContent.ContentLink"
+        ],
+        "filesystem": "SavQtzOfs writes the quantize offset to the analysis path, then mirrors its nonzero state into ContentLink bit zero."
+      }
+    },
+    {
+      "kind": "2704",
+      "name": "CMD_ASK_DISCID_REGSTAT",
+      "direction": "request",
+      "menu_family": "analysis_log_only",
+      "coverage": "rekordbox-recognized-log-only",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "recognized-log-only"
+      ],
+      "rekordbox_target": "recognized-log-only",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "2705",
+      "name": "CMD_SAV_USB_CUE2",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnWriteCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnWriteCmd",
+        "PSvDBMain::SavUsbCueExt"
+      ],
+      "rekordbox_target": "PSvDBMain::SavUsbCueExt",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4E02",
+      "dependencies": {
+        "database": [
+          "djmdCue and cue-option rows"
+        ],
+        "filesystem": "No audio decoding is visible; SavUsbCueExt applies the extended cue mutation and replies through RetNewCueToClient (4E02)."
+      }
+    },
+    {
+      "kind": "2804",
+      "name": "CMD_GET_QTZ_OFFSET",
+      "direction": "request",
+      "menu_family": "analysis_payload",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "PSvDBMain::GetQtzInf"
+      ],
+      "rekordbox_target": "PSvDBMain::GetQtzInf",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": "4000",
+      "dependencies": {
+        "database": [
+          "content analysis-path lookup"
+        ],
+        "filesystem": "The quantize loader returns an offset through a 4000 numeric reply."
+      }
+    },
+    {
+      "kind": "2805",
+      "name": "CMD_SAV_SPECIFIED_ATOM_INFO",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnWriteCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnWriteCmd",
+        "PSvDBMain::SaveSpecifiedAtomInfo"
+      ],
+      "rekordbox_target": "PSvDBMain::SaveSpecifiedAtomInfo",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4000",
+      "dependencies": {
+        "database": [
+          "djmdContent.AnalysisDataPath"
+        ],
+        "filesystem": "SaveSpecifiedAtomInfo validates the atom and extension, derives a sibling analysis file, and writes it through MstSaveAtomData."
+      }
+    },
+    {
+      "kind": "2904",
+      "name": "CMD_GET_PAR_WAVE",
+      "direction": "request",
+      "menu_family": "analysis_payload",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "PSvDBMain::LoadParWav"
+      ],
+      "rekordbox_target": "PSvDBMain::LoadParWav",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": "4A02",
+      "dependencies": {
+        "database": [
+          "content analysis-path lookup"
+        ],
+        "filesystem": "Detailed waveform data is loaded from the analysis file."
+      }
+    },
+    {
+      "kind": "2905",
+      "name": "CMD_UPD_SPECIFIED_ATOM_INFO",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnWriteCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnWriteCmd",
+        "PSvDBMain::UpdateSpecifiedAtomInfo"
+      ],
+      "rekordbox_target": "PSvDBMain::UpdateSpecifiedAtomInfo",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4000",
+      "dependencies": {
+        "database": [
+          "djmdContent.AnalysisDataPath"
+        ],
+        "filesystem": "UpdateSpecifiedAtomInfo accepts PQT2 only, derives a sibling analysis file, and updates it through MstUpdateAtomData."
+      }
+    },
+    {
+      "kind": "2A04",
+      "name": "CMD_GET_KEY_INFO",
+      "direction": "request",
+      "menu_family": "analysis_payload",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "PSvDBMain::LoadKeyInf"
+      ],
+      "rekordbox_target": "PSvDBMain::LoadKeyInf",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": "4C02",
+      "dependencies": {
+        "database": [
+          "content analysis-path lookup"
+        ],
+        "filesystem": "Key-analysis data is loaded from the analysis file."
+      }
+    },
+    {
+      "kind": "2B04",
+      "name": "CMD_GET_USB_CUE2",
+      "direction": "request",
+      "menu_family": "cue_payload",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "PSvDBMain::GetUsbCueExt"
+      ],
+      "rekordbox_target": "PSvDBMain::GetUsbCueExt",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": "4E02",
+      "dependencies": {
+        "database": [
+          "djmdCue and cue-option lookups or AppSync cue callback"
+        ],
+        "filesystem": "No analysis-file or audio read is visible in either recovered extended-cue builder."
+      }
+    },
+    {
+      "kind": "2C04",
+      "name": "CMD_GET_SPECIFIED_ATOM_INFO",
+      "direction": "request",
+      "menu_family": "analysis_payload",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "PSvDBMain::GetSpecifiedAtomInfo"
+      ],
+      "rekordbox_target": "PSvDBMain::GetSpecifiedAtomInfo",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": "4F02",
+      "dependencies": {
+        "database": [
+          "content analysis-path lookup"
+        ],
+        "filesystem": "EXT and 2EX reach MstLoadAtomInfo except PCP2, PCPT, and PMAI, which are explicitly returned empty."
+      }
+    },
+    {
+      "kind": "2D04",
+      "name": "CMD_GET_SPECIFIED_ATOM_INFO2",
+      "direction": "request",
+      "menu_family": "analysis_payload",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnSongAnlzCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnMAnlzClientCmd",
+        "PSvDBMain::OnSongAnlzCmd",
+        "PSvDBMain::GetSpecifiedAtomInfo"
+      ],
+      "rekordbox_target": "PSvDBMain::GetSpecifiedAtomInfo",
+      "static_table": "song-analysis-high-byte",
+      "rejection_reason": null,
+      "reply_kind": "4F02",
+      "dependencies": {
+        "database": [
+          "content analysis-path lookup"
+        ],
+        "filesystem": "Alias of the specified-atom loader in Rekordbox 7.2.19."
+      }
+    },
+    {
+      "kind": "3000",
+      "name": "CMD_LEFT_BUF",
+      "direction": "request",
+      "menu_family": "render_buffer",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnListBuffCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnListBuffCmd",
+        "PSvDBMain::GetListBufContents"
+      ],
+      "rekordbox_target": "PSvDBMain::GetListBufContents",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4001/4101/4201",
+      "dependencies": null
+    },
+    {
+      "kind": "3001",
+      "name": "CMD_INSERT_HISTORY",
+      "direction": "request",
+      "menu_family": "link_history_mutation",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnHistoryCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnHistoryCmd",
+        "insert-history"
+      ],
+      "rekordbox_target": "insert-history",
+      "static_table": "history-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3002",
+      "name": "CMD_ADD_PREPARE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnPrepareCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnPrepareCmd",
+        "add-prepare"
+      ],
+      "rekordbox_target": "add-prepare",
+      "static_table": "prepare-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3003",
+      "name": "CMD_COLOR_CODE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "color-code"
+      ],
+      "rekordbox_target": "color-code",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3005",
+      "name": "CMD_CHK_NEWCMD_ENBL",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "unsupported-low-byte",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "other-client-low-byte routes low byte 0x05 to unsupported-low-byte",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "3006",
+      "name": "CMD_GET_USER_INFO",
+      "direction": "request",
+      "menu_family": "user_info_djid",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUserCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnUserCmd",
+        "PSvDBMain::GetDJID"
+      ],
+      "rekordbox_target": "PSvDBMain::GetDJID",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4D02",
+      "dependencies": null
+    },
+    {
+      "kind": "3007",
+      "name": "CMD_SET_FILTER_ONOFF",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnFilterCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnFilterCmd",
+        "set-filter-onoff"
+      ],
+      "rekordbox_target": "set-filter-onoff",
+      "static_table": "filter-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3008",
+      "name": "CMD_GET_BPM",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOther2Cmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOther2Cmd",
+        "database-interface vtable +0x228"
+      ],
+      "rekordbox_target": "database-interface vtable +0x228",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4000",
+      "dependencies": null
+    },
+    {
+      "kind": "3100",
+      "name": "CMD_GET_OFFSET_CONTENTID",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnListBuffCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnListBuffCmd",
+        "PSvDBMain::GetListBufOffset"
+      ],
+      "rekordbox_target": "PSvDBMain::GetListBufOffset",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4000",
+      "dependencies": null
+    },
+    {
+      "kind": "3101",
+      "name": "CMD_DEL_HISTORY",
+      "direction": "request",
+      "menu_family": "link_history_mutation",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnHistoryCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnHistoryCmd",
+        "delete-history"
+      ],
+      "rekordbox_target": "delete-history",
+      "static_table": "history-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3102",
+      "name": "CMD_ADD_TAGLIST_PLAYLIST",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnPrepareCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnPrepareCmd",
+        "add-taglist-playlist"
+      ],
+      "rekordbox_target": "add-taglist-playlist",
+      "static_table": "prepare-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3103",
+      "name": "REKORDBOX_STATIC_UNLISTED_STATIC_ARM",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "unlisted-static-arm"
+      ],
+      "rekordbox_target": "unlisted-static-arm",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3104",
+      "name": "CMD_DEL_PLAYLIST",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "special-0x3104-only",
+        "recognized zero-result special case"
+      ],
+      "rekordbox_target": "recognized zero-result special case",
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": "4000",
+      "dependencies": null
+    },
+    {
+      "kind": "3107",
+      "name": "CMD_GET_FILTER_CONDITION_PROPERTY",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnFilterCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnFilterCmd",
+        "get-filter-condition-property"
+      ],
+      "rekordbox_target": "get-filter-condition-property",
+      "static_table": "filter-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3201",
+      "name": "CMD_SET_ONAIR",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnHistoryCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnHistoryCmd",
+        "set-onair"
+      ],
+      "rekordbox_target": "set-onair",
+      "static_table": "history-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3202",
+      "name": "REKORDBOX_STATIC_UNLISTED_STATIC_ARM",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnPrepareCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnPrepareCmd",
+        "unlisted-static-arm"
+      ],
+      "rekordbox_target": "unlisted-static-arm",
+      "static_table": "prepare-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3203",
+      "name": "CMD_GET_DB_FIRM_VER",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "get-db-firmware-version"
+      ],
+      "rekordbox_target": "get-db-firmware-version",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3207",
+      "name": "CMD_SET_FILTER_CONDITION_PROPERTY",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnFilterCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnFilterCmd",
+        "set-filter-condition-property"
+      ],
+      "rekordbox_target": "set-filter-condition-property",
+      "static_table": "filter-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3301",
+      "name": "CMD_DEL_HISTORY_REPLY",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnHistoryCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnHistoryCmd",
+        "delete-history-reply"
+      ],
+      "rekordbox_target": "delete-history-reply",
+      "static_table": "history-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3302",
+      "name": "CMD_CHG_TAGLIST_ORDER",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnPrepareCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnPrepareCmd",
+        "change-taglist-order"
+      ],
+      "rekordbox_target": "change-taglist-order",
+      "static_table": "prepare-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3303",
+      "name": "CMD_GET_BRWS_TYPE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "get-browse-type"
+      ],
+      "rekordbox_target": "get-browse-type",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3307",
+      "name": "CMD_SET_FILTER_CONDITION_MYTAG",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnFilterCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnFilterCmd",
+        "set-filter-condition-mytag"
+      ],
+      "rekordbox_target": "set-filter-condition-mytag",
+      "static_table": "filter-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3401",
+      "name": "CMD_DEL_HISTORY_TRACK",
+      "direction": "request",
+      "menu_family": "link_history_mutation",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnHistoryCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnHistoryCmd",
+        "delete-history-track"
+      ],
+      "rekordbox_target": "delete-history-track",
+      "static_table": "history-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3402",
+      "name": "CMD_IS_TAGLIST_PLAYLIST",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnPrepareCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnPrepareCmd",
+        "is-taglist-playlist"
+      ],
+      "rekordbox_target": "is-taglist-playlist",
+      "static_table": "prepare-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3403",
+      "name": "REKORDBOX_STATIC_UNLISTED_STATIC_ARM",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "unlisted-static-arm"
+      ],
+      "rekordbox_target": "unlisted-static-arm",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3407",
+      "name": "CMD_ADD_FILTER_MYTAG_ITEM",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnFilterCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnFilterCmd",
+        "add-filter-mytag-item"
+      ],
+      "rekordbox_target": "add-filter-mytag-item",
+      "static_table": "filter-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3501",
+      "name": "CMD_GET_CURRENT_HISTORY_ID",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnHistoryCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnHistoryCmd",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "3501 is outside history-high-byte",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "3503",
+      "name": "CMD_INFO_UNPLAYABLE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "info-unplayable"
+      ],
+      "rekordbox_target": "info-unplayable",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3602",
+      "name": "CMD_REPLACE_TAGLIST",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnPrepareCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnPrepareCmd",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "3602 is outside prepare-high-byte",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "3603",
+      "name": "CMD_GET_DB_HIERARCHY",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "get-db-hierarchy"
+      ],
+      "rekordbox_target": "get-db-hierarchy",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3703",
+      "name": "REKORDBOX_STATIC_UNLISTED_STATIC_ARM",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "unlisted-static-arm"
+      ],
+      "rekordbox_target": "unlisted-static-arm",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3704",
+      "name": "CMD_APPEND_PLAYLIST",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "special-0x3104-only",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "special-0x3104-only",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "special-0x3104-only recognizes only 3104",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "3803",
+      "name": "REKORDBOX_STATIC_UNLISTED_STATIC_ARM",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "unlisted-static-arm"
+      ],
+      "rekordbox_target": "unlisted-static-arm",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3804",
+      "name": "CMD_REPLACE_PLAYLIST_TRACK",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "special-0x3104-only",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "special-0x3104-only",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "special-0x3104-only recognizes only 3104",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "3903",
+      "name": "CMD_PROPERTY_TABLE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "property-table"
+      ],
+      "rekordbox_target": "property-table",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3A03",
+      "name": "CMD_TRANS_NEWKEY",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "translate-new-key"
+      ],
+      "rekordbox_target": "translate-new-key",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3B03",
+      "name": "CMD_GET_PLAYSTATE",
+      "direction": "request",
+      "menu_family": "play_state_snapshot",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "get-play-state"
+      ],
+      "rekordbox_target": "get-play-state",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3C03",
+      "name": "CMD_SET_MY_SETTING_FLG",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "set-my-setting-flag"
+      ],
+      "rekordbox_target": "set-my-setting-flag",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3D03",
+      "name": "CMD_GET_NEW_KEY_ID",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "get-new-key-id"
+      ],
+      "rekordbox_target": "get-new-key-id",
+      "static_table": "other-command-high-byte",
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "3E03",
+      "name": "CMD_GET_IS_RBM_MOUNT",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "3E03 is outside other-command-high-byte",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "3F03",
+      "name": "CMD_SET_BACKGROUND_COLOR",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnOtherCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnOtherClientCmd",
+        "PSvDBMain::OnOtherCmd",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "3F03 is outside other-command-high-byte",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "4000",
+      "name": "CMD_RET_DWORD_DATA",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4001",
+      "name": "CMD_RET_LISTBUF_START",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4002",
+      "name": "CMD_RET_IMAGE",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4003",
+      "name": "CMD_RET_UNSUPORT_CMD",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4004",
+      "name": "CMD_RET_FILTER_CONDITION_PROPERTY",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4100",
+      "name": "CMD_RET_DISCID_REGSTAT",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4101",
+      "name": "CMD_RET_LISTBUF_SET",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4103",
+      "name": "CMD_RET_DB_FIRM_VER",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4201",
+      "name": "CMD_RET_LISTBUF_END",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4402",
+      "name": "CMD_RET_WAVE",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4502",
+      "name": "CMD_RET_VBR_INFO",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4602",
+      "name": "CMD_RET_QTZ_INFO",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4702",
+      "name": "CMD_RET_CUE",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4802",
+      "name": "CMD_RET_DECODE_INFO",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4902",
+      "name": "CMD_RET_PROP_TABLE",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4A02",
+      "name": "CMD_RET_PAR_WAVE",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4B02",
+      "name": "CMD_RET_2STRING",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4C02",
+      "name": "CMD_RET_KEY_INFO",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4D02",
+      "name": "CMD_RET_USER_INFO",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4E02",
+      "name": "CMD_RET_CUE2",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "4F02",
+      "name": "CMD_RET_ATOM_INFO",
+      "direction": "reply",
+      "menu_family": null,
+      "coverage": "reply-vocabulary",
+      "evidence": [
+        "ALPHA"
+      ],
+      "rekordbox_dispatcher": null,
+      "rekordbox_route": [],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": null,
+      "reply_kind": null,
+      "dependencies": null
+    },
+    {
+      "kind": "5000",
+      "name": "CMD_TOP100_GENRE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0x5 is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "5001",
+      "name": "CMD_GENRES_GENRE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0x5 is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "5002",
+      "name": "CMD_CURATED_GENRE",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0x5 is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "5003",
+      "name": "CMD_MYPLAYLIST_PLAYLIST",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0x5 is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "5100",
+      "name": "CMD_TOP100_GENRE_TRACK",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0x5 is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "5101",
+      "name": "CMD_GENRES_GENRE_TRACK",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0x5 is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "5102",
+      "name": "CMD_CURATED_GENRE_PLAYLIST",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0x5 is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "5103",
+      "name": "CMD_MYPLAYLIST_PLAYLIST_TRACK",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0x5 is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "5202",
+      "name": "CMD_CURATED_GENRE_PLAYLIST_TRACK",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0x5 is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "6100",
+      "name": "CMD_GET_64BIT_TRACKID",
+      "direction": "request",
+      "menu_family": null,
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0x6 is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": "4003",
+      "dependencies": null
+    },
+    {
+      "kind": "FFFF",
+      "name": "conformance-only malformed/guessed request",
+      "direction": "probe",
+      "menu_family": "malformed_unknown_kind",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "rekordbox_dispatcher": "PSvDBMain::OnUnknownClientCmd",
+      "rekordbox_route": [
+        "PSvDBMain::OnClientReq",
+        "PSvDBMain::OnUnknownClientCmd"
+      ],
+      "rekordbox_target": null,
+      "static_table": null,
+      "rejection_reason": "request class 0xf is outside the top-level 1xxx/2xxx/3xxx dispatch",
+      "reply_kind": null,
+      "dependencies": null
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "display-song-info-aio-player-11",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [0, "$total", 12, 1, 0],
+    "read_timeout_ms": 10000
+  },
+  "cases": [
+    {
+      "id": "populated-track",
+      "description": "Display fields when discovery, setup, and requester all identify player 11",
+      "request_kind": "0x2002",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.track.first"}
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16,
+        "row_argument_values": {
+          "6": ["0x0f04", "0x0007", "0x0002", "0x000b", "0x000d", "0x0023", "0x000f", "0x000a", "0x0014", "0x0006", "0x002e", "0x0010", "0x0011", "0x000e", "0x0028", "0x0029"]
+        }
+      }
+    }
+  ]
+}

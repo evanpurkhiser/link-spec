@@ -1,0 +1,24 @@
+{
+  "name": "secondary-string-boundaries",
+  "fixture_profile": "boundaries",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 8,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"artist-127-cap","description":"Artist lookup values around the 127-character cap","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_arguments":[0,"$total",12,1,2],"expect":{"outcome":"menu","item_type":"0x0704"}},
+    {"id":"album-127-cap","description":"Album lookup values around the 127-character cap","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_arguments":[0,"$total",12,1,3],"expect":{"outcome":"menu","item_type":"0x0204"}},
+    {"id":"genre-127-cap","description":"Genre lookup values around the 127-character cap","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_arguments":[0,"$total",12,1,6],"expect":{"outcome":"menu","item_type":"0x0604"}},
+    {"id":"remixer-127-cap","description":"Remixer lookup values at the 127-character cap","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_arguments":[0,"$total",12,1,9],"expect":{"outcome":"menu","item_type":"0x2904"}},
+    {"id":"label-127-cap","description":"Label lookup values around the 127-character cap","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_arguments":[0,"$total",12,1,10],"expect":{"outcome":"menu","item_type":"0x0e04"}},
+    {"id":"original-artist-127-cap","description":"Original Artist lookup values beyond the 127-character cap","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_arguments":[0,"$total",12,1,11],"expect":{"outcome":"menu","item_type":"0x2804"}},
+    {"id":"key-127-cap","description":"Key lookup values around the 127-character cap and key-name exchange","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_arguments":[0,"$total",12,1,12],"expect":{"outcome":"menu","item_type":"0x0f04"}},
+    {"id":"color-127-cap","description":"Color lookup values around the 127-character cap","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_arguments":[0,"$total",12,1,15],"expect":{"outcome":"menu","item_type_low_byte":"0x04","item_type_high_bytes":["0x13","0x14","0x15","0x16","0x17","0x18","0x19","0x1a","0x1b"]}}
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "concurrent-menu-sessions",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "parallel_connections": true,
+  "canonicalize_parallel": true,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "read_timeout_ms": 10000,
+    "page_size": 2,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"worker-01","description":"Concurrent player-1 track session 1","request_kind":"0x1004","arguments":[{"number":"0x01010301"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"worker-02","description":"Concurrent player-1 track session 2","request_kind":"0x1004","arguments":[{"number":"0x01010301"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"worker-03","description":"Concurrent player-1 track session 3","request_kind":"0x1004","arguments":[{"number":"0x01010301"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"worker-04","description":"Concurrent player-1 track session 4","request_kind":"0x1004","arguments":[{"number":"0x01010301"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"worker-05","description":"Concurrent player-1 track session 5","request_kind":"0x1004","arguments":[{"number":"0x01010301"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"worker-06","description":"Concurrent player-1 track session 6","request_kind":"0x1004","arguments":[{"number":"0x01010301"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"worker-07","description":"Concurrent player-1 track session 7","request_kind":"0x1004","arguments":[{"number":"0x01010301"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"worker-08","description":"Concurrent player-1 track session 8","request_kind":"0x1004","arguments":[{"number":"0x01010301"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"worker-09","description":"Concurrent player-1 track session 9","request_kind":"0x1004","arguments":[{"number":"0x01010301"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"worker-10","description":"Concurrent player-1 track session 10","request_kind":"0x1004","arguments":[{"number":"0x01010301"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"worker-11","description":"Concurrent player-1 track session 11","request_kind":"0x1004","arguments":[{"number":"0x01010301"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"worker-12","description":"Concurrent player-1 track session 12","request_kind":"0x1004","arguments":[{"number":"0x01010301"},{"number":"$sort"}],"expect":{"outcome":"any"}}
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "name": "song-info-delivery-wide-strings",
+  "fixture_profile": "delivery-wide-strings",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "track-01",
+      "description": "Delivery Info direct strings at 254 ASCII characters",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-02",
+      "description": "Delivery Info direct strings at 255 ASCII characters",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-03",
+      "description": "Delivery Info direct strings at 256 ASCII characters",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.third"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-04",
+      "description": "Delivery Info direct strings at 252 UTF-16 units",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.fourth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-05",
+      "description": "Delivery Info direct strings at 254 UTF-16 units",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.fifth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-06",
+      "description": "Delivery Info direct strings at 255 UTF-16 units",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.sixth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-07",
+      "description": "Delivery Info direct strings at 256 UTF-16 units",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.seventh"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-08",
+      "description": "Delivery Info direct strings at 257 UTF-16 units",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.eighth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ],
+  "repeat_strategy": "fixture-reset-and-restart"
+}

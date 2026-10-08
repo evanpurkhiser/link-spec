@@ -1,0 +1,88 @@
+## AppSync inline compatibility path
+address=0x14238ca79 size=0x11d
+0x014238ca79  mov       ebx, dword ptr [rdi + 8]
+0x014238ca7c  mov       r15b, 1
+0x014238ca7f  lea       rdx, [rip + 0x1a1573a]  ; 'select FileType, SampleRate from djmdContent where rb_local_deleted = 0'
+0x014238ca86  lea       rcx, [rbp - 0x59]
+0x014238ca8a  call      0x142a6e420  ; function 0x142a6e420
+0x014238ca8f  nop
+0x014238ca90  lea       rdx, [rip + 0x1a11de9]  ; ' and ID = %lu'
+0x014238ca97  lea       rcx, [rbp - 0x51]
+0x014238ca9b  call      0x142a6e420  ; function 0x142a6e420
+0x014238caa0  nop
+0x014238caa1  lea       rcx, [rbp - 0x51]
+0x014238caa5  call      0x142a67690
+0x014238caaa  mov       rdx, rax
+0x014238caad  mov       r8d, ebx
+0x014238cab0  lea       rcx, [rbp - 0x49]
+0x014238cab4  call      0x142a68130  ; function 0x142a68130
+0x014238cab9  nop
+0x014238caba  lea       rdx, [rbp - 0x49]
+0x014238cabe  lea       rcx, [rbp - 0x59]
+0x014238cac2  call      0x142a6c200  ; function 0x142a6c200
+0x014238cac7  nop
+0x014238cac8  lea       rcx, [rbp - 0x49]
+0x014238cacc  call      0x142a6e690
+0x014238cad1  nop
+0x014238cad2  lea       rcx, [rbp - 0x51]
+0x014238cad6  call      0x142a6e690
+0x014238cadb  lea       rcx, [rbp - 0x31]
+0x014238cadf  call      0x142a5c950
+0x014238cae4  nop
+0x014238cae5  lea       r8, [rbp - 0x31]
+0x014238cae9  lea       rdx, [rbp - 0x59]
+0x014238caed  lea       rcx, [rip + 0x3a61ec4]
+0x014238caf4  call      0x141e5b550  ; function 0x141e5b550
+0x014238caf9  test      eax, eax
+0x014238cafb  jne       0x14238cb79  ; function 0x14238c720
+0x014238cafd  lea       rcx, [rbp - 0x31]
+0x014238cb01  call      0x142a5b890  ; function 0x142a5b890
+0x014238cb06  cmp       eax, 1
+0x014238cb09  jne       0x14238cb79  ; function 0x14238c720
+0x014238cb0b  xor       edx, edx
+0x014238cb0d  lea       rcx, [rbp - 0x31]
+0x014238cb11  call      0x142a5b830  ; function 0x142a5b830
+0x014238cb16  lea       rdx, [rip + 0x1a156eb]  ; 'FileType'
+0x014238cb1d  mov       rcx, rax
+0x014238cb20  call      0x142a5ba10  ; function 0x142a5ba10
+0x014238cb25  mov       rcx, rax
+0x014238cb28  call      0x142a5c3b0  ; function 0x142a5c3b0
+0x014238cb2d  mov       ebx, eax
+0x014238cb2f  xor       edx, edx
+0x014238cb31  lea       rcx, [rbp - 0x31]
+0x014238cb35  call      0x142a5b830  ; function 0x142a5b830
+0x014238cb3a  lea       rdx, [rip + 0x1872d2f]  ; 'SampleRate'
+0x014238cb41  mov       rcx, rax
+0x014238cb44  call      0x142a5ba10  ; function 0x142a5ba10
+0x014238cb49  mov       rcx, rax
+0x014238cb4c  call      0x142a5c3b0  ; function 0x142a5c3b0
+0x014238cb51  movsx     ecx, bl
+0x014238cb54  sub       ecx, 5
+0x014238cb57  je        0x14238cb76  ; function 0x14238c720
+0x014238cb59  sub       ecx, 1
+0x014238cb5c  je        0x14238cb76  ; function 0x14238c720
+0x014238cb5e  sub       ecx, 5
+0x014238cb61  je        0x14238cb68  ; function 0x14238c720
+0x014238cb63  cmp       ecx, 1
+0x014238cb66  jne       0x14238cb79  ; function 0x14238c720
+0x014238cb68  cmp       eax, 0xac44
+0x014238cb6d  je        0x14238cb79  ; function 0x14238c720
+0x014238cb6f  cmp       eax, 0xbb80
+0x014238cb74  je        0x14238cb79  ; function 0x14238c720
+0x014238cb76  xor       r15b, r15b
+0x014238cb79  lea       rcx, [rbp - 0x31]
+0x014238cb7d  call      0x142a5c930  ; function 0x142a5c930
+0x014238cb82  nop
+0x014238cb83  lea       rcx, [rbp - 0x59]
+0x014238cb87  call      0x142a6e690
+0x014238cb8c  test      r15b, r15b
+0x014238cb8f  jne       0x14238cb96  ; function 0x14238c720
+0x014238cb91  or        qword ptr [rdi + 0x50], 1
+
+## Master-interface standalone call
+address=0x14238d06c size=0x11
+0x014238d06c  mov       ecx, dword ptr [rdi + 8]
+0x014238d06f  call      0x14227e200  ; function 0x14227e200
+0x014238d074  test      al, al
+0x014238d076  jne       0x14238d07d  ; function 0x14238c720
+0x014238d078  or        qword ptr [rdi + 0x50], 1

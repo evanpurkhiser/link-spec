@@ -1,0 +1,66 @@
+{
+  "name": "hot-cue-bank-deleted-bank-member",
+  "fixture_profile": "hot-cue-bank-deleted-bank-member",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "parent-tree",
+      "description": "List the deleted bank's parent folder",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.folder.beta"},
+        {"number": 1},
+        {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "direct-tracks",
+      "description": "Query tracks directly beneath the deleted bank ID",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.beta_deleted"},
+        {"number": 0},
+        {"number": 8}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "legacy-cues",
+      "description": "Query legacy cue information beneath the deleted bank ID",
+      "request_kind": "0x2101",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.beta_deleted"}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "extended-cues",
+      "description": "Query extended cue information beneath the deleted bank ID",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.beta_deleted"},
+        {"number": 3}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

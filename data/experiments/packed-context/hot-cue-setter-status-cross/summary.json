@@ -1,0 +1,86 @@
+{
+  "artifacts": {
+    "cdj-3000-status/extended": {
+      "case_count": 14,
+      "golden_sha256": "04830d02966f48dfdee44a679c08539b5edf899a57e89f07099c10599135a63a",
+      "response_signature": "93cb7f88f8289a00ad3c4350421360ae830aad7ab2be1ada03f52a8e9b1b72e3",
+      "suite_sha256": "7551467e5adddfc4637a1321ef22268bf44a4599c346c6d926ed1af80758a0fd"
+    },
+    "cdj-3000-status/legacy": {
+      "case_count": 14,
+      "golden_sha256": "84994914c17741af3b521512dad8f8a1f9280edb96eb994755161e233ec1e872",
+      "response_signature": "93cb7f88f8289a00ad3c4350421360ae830aad7ab2be1ada03f52a8e9b1b72e3",
+      "suite_sha256": "4c5ca28f63842ba1e0fbbcb0ec0c5e4b0dcd7357fa6490e6b85ee0fef1acdb87"
+    },
+    "xdj-rx3-status/extended": {
+      "case_count": 14,
+      "golden_sha256": "724fbf0015294087fa4f13e4a8238d986a761263324073c03154b54e3c70f42d",
+      "response_signature": "93cb7f88f8289a00ad3c4350421360ae830aad7ab2be1ada03f52a8e9b1b72e3",
+      "suite_sha256": "0177e8790b14c9caff85960baacd91962dab1f518f22df422e1ed0c2da6ab962"
+    },
+    "xdj-rx3-status/legacy": {
+      "case_count": 14,
+      "golden_sha256": "98e171ee6049289a1f206bba9a6ffcdf0be0f2c779607fd311a3e4c1b3d2e137",
+      "response_signature": "93cb7f88f8289a00ad3c4350421360ae830aad7ab2be1ada03f52a8e9b1b72e3",
+      "suite_sha256": "f503efd6798dc44981541d371af3bc71cd52cb68484d49c67fda53f94550fc6d"
+    }
+  },
+  "fixture": {
+    "bank_id": 9060,
+    "database_sha256": "9f0b8c2d4aaa1dfa6549b8f268ce3ee764392682ee1c7524644eed5cd991815e",
+    "fixture_fingerprint": "281f7de3ffa966c37d40833f10197d77eebd64dc7b5ae89807654e56f36dda1f",
+    "profile": "hot-cue-bank-mutation"
+  },
+  "matrix": {
+    "cases": 56,
+    "goldens": 4,
+    "immediate_database_checks_after_rejected_setters": 24,
+    "independent_fixture_reset_repeats": 4,
+    "models": [
+      "XDJ-RX3",
+      "CDJ-3000"
+    ],
+    "packed_types": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "players": [
+      11,
+      1
+    ],
+    "setups": [
+      "extended",
+      "legacy"
+    ]
+  },
+  "observations": {
+    "accepted_database_effect": "the following type-1 getter returned the canonical mutated record",
+    "accepted_reply": "4e02 [2401, 0, 124, canonical_record, 1]",
+    "accepted_type": 1,
+    "baseline_record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0",
+    "identity_and_setup_effect": "none in the complete decoded response sequence",
+    "mutated_record_sha256": "264459eb4216e71ba20403d32d174e1c5972337f3d3b9af4520c360c06239abe",
+    "rejected_database_effect": "none; every following type-1 getter returned the shared baseline record",
+    "rejected_reply": "4e02 [2401, 50, 0, empty_blob, 0]",
+    "rejected_types": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "shared_response_signature": "93cb7f88f8289a00ad3c4350421360ae830aad7ab2be1ada03f52a8e9b1b72e3"
+  },
+  "scope": "real Rekordbox 7.2.19 only; backend comparison is deferred",
+  "sha256": {
+    "fixture_manifest": "d2873fa6645a4199cff18b6c5f326c8bbb641fc0a5e52ee8ede35926e34a8ed1",
+    "generator": "2416e7cc6223220741f6bd12debc98cd0ec83fd02d27ac8d4d0fa2f5a9e78054",
+    "recorder": "78dc4071aaafc35a905ce9e9e9ee722a6b63e0d91e0a8572d397f5885199985d"
+  }
+}

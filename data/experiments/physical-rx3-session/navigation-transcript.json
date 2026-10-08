@@ -1,0 +1,5648 @@
+{
+  "format": 1,
+  "scope": "complete retained physical XDJ-RX3 RemoteDBServer transaction trace",
+  "source": {
+    "path": "data/experiments/sort-secondary-render-6/source-rx3-rekordbox-working-ap-20260927.pcap",
+    "sha256": "bee17ddfa72b093479a68c1590953ddc79629cdf43905769761c656a5149aa2b",
+    "rekordbox_version": "not established by this packet capture"
+  },
+  "stream": {
+    "player_address": "10.0.0.143",
+    "rekordbox_address": "10.0.0.119"
+  },
+  "counts": {
+    "request_messages": 106,
+    "request_transactions": 101,
+    "response_messages": 268,
+    "response_transactions": 93,
+    "menu_rows": 144
+  },
+  "request_kinds": [
+    {
+      "kind": "0x0000",
+      "name": "setup",
+      "count": 1
+    },
+    {
+      "kind": "0x0001",
+      "name": "cancel request (Dysentery: invalid data)",
+      "count": 5
+    },
+    {
+      "kind": "0x1000",
+      "name": "root menu",
+      "count": 1
+    },
+    {
+      "kind": "0x1004",
+      "name": "track menu",
+      "count": 4
+    },
+    {
+      "kind": "0x2002",
+      "name": "Display Song Info",
+      "count": 22
+    },
+    {
+      "kind": "0x2003",
+      "name": "artwork",
+      "count": 17
+    },
+    {
+      "kind": "0x2004",
+      "name": "preview waveform",
+      "count": 1
+    },
+    {
+      "kind": "0x2102",
+      "name": "Play Song Info",
+      "count": 3
+    },
+    {
+      "kind": "0x2103",
+      "name": "content artwork",
+      "count": 1
+    },
+    {
+      "kind": "0x2204",
+      "name": "beat grid",
+      "count": 1
+    },
+    {
+      "kind": "0x2504",
+      "name": "VBR information",
+      "count": 1
+    },
+    {
+      "kind": "0x2b04",
+      "name": "extended cue information",
+      "count": 1
+    },
+    {
+      "kind": "0x2c04",
+      "name": "specified analysis atom",
+      "count": 16
+    },
+    {
+      "kind": "0x2d04",
+      "name": "specified analysis atom alternate",
+      "count": 1
+    },
+    {
+      "kind": "0x3000",
+      "name": "render list buffer",
+      "count": 30
+    },
+    {
+      "kind": "0x3100",
+      "name": "list-buffer offset",
+      "count": 1
+    }
+  ],
+  "response_kinds": [
+    {
+      "kind": "0x0100",
+      "name": "connection close",
+      "count": 1
+    },
+    {
+      "kind": "0x4000",
+      "name": "menu/setup header",
+      "count": 30
+    },
+    {
+      "kind": "0x4001",
+      "name": "render header",
+      "count": 30
+    },
+    {
+      "kind": "0x4002",
+      "name": "image response",
+      "count": 11
+    },
+    {
+      "kind": "0x4101",
+      "name": "menu row",
+      "count": 144
+    },
+    {
+      "kind": "0x4201",
+      "name": "render footer",
+      "count": 30
+    },
+    {
+      "kind": "0x4402",
+      "name": "preview waveform response",
+      "count": 1
+    },
+    {
+      "kind": "0x4502",
+      "name": "VBR response",
+      "count": 1
+    },
+    {
+      "kind": "0x4602",
+      "name": "beat-grid response",
+      "count": 1
+    },
+    {
+      "kind": "0x4e02",
+      "name": "cue response",
+      "count": 1
+    },
+    {
+      "kind": "0x4f02",
+      "name": "specified-atom response",
+      "count": 18
+    }
+  ],
+  "contexts": [
+    {
+      "value": 184615937,
+      "hex": "0x0b010401",
+      "requester": 11,
+      "menu_location": 1,
+      "media_slot": 4,
+      "track_type": 1
+    },
+    {
+      "value": 184747009,
+      "hex": "0x0b030401",
+      "requester": 11,
+      "menu_location": 3,
+      "media_slot": 4,
+      "track_type": 1
+    },
+    {
+      "value": 184878081,
+      "hex": "0x0b050401",
+      "requester": 11,
+      "menu_location": 5,
+      "media_slot": 4,
+      "track_type": 1
+    },
+    {
+      "value": 185074689,
+      "hex": "0x0b080401",
+      "requester": 11,
+      "menu_location": 8,
+      "media_slot": 4,
+      "track_type": 1
+    }
+  ],
+  "duplicate_request_transactions": [
+    {
+      "transaction": 199689,
+      "request_kinds": [
+        "0x2003",
+        "0x0001"
+      ]
+    },
+    {
+      "transaction": 207881,
+      "request_kinds": [
+        "0x2003",
+        "0x0001"
+      ]
+    },
+    {
+      "transaction": 208905,
+      "request_kinds": [
+        "0x2003",
+        "0x0001"
+      ]
+    },
+    {
+      "transaction": 209929,
+      "request_kinds": [
+        "0x2003",
+        "0x0001"
+      ]
+    },
+    {
+      "transaction": 210953,
+      "request_kinds": [
+        "0x2003",
+        "0x0001"
+      ]
+    }
+  ],
+  "cancellation_commands": [
+    {
+      "transaction": 199689,
+      "transaction_hex": "0x00030c09",
+      "artwork_request_timestamp_us": 1790556413951020,
+      "report_timestamp_us": 1790556414077349,
+      "delay_after_artwork_request_us": 126329,
+      "responses_before_report": [
+        "0x4002"
+      ],
+      "responses_after_report": []
+    },
+    {
+      "transaction": 207881,
+      "transaction_hex": "0x00032c09",
+      "artwork_request_timestamp_us": 1790556414395462,
+      "report_timestamp_us": 1790556414416795,
+      "delay_after_artwork_request_us": 21333,
+      "responses_before_report": [
+        "0x4002"
+      ],
+      "responses_after_report": []
+    },
+    {
+      "transaction": 208905,
+      "transaction_hex": "0x00033009",
+      "artwork_request_timestamp_us": 1790556414422407,
+      "report_timestamp_us": 1790556414443505,
+      "delay_after_artwork_request_us": 21098,
+      "responses_before_report": [],
+      "responses_after_report": []
+    },
+    {
+      "transaction": 209929,
+      "transaction_hex": "0x00033409",
+      "artwork_request_timestamp_us": 1790556414461960,
+      "report_timestamp_us": 1790556414486003,
+      "delay_after_artwork_request_us": 24043,
+      "responses_before_report": [
+        "0x4002"
+      ],
+      "responses_after_report": []
+    },
+    {
+      "transaction": 210953,
+      "transaction_hex": "0x00033809",
+      "artwork_request_timestamp_us": 1790556414498611,
+      "report_timestamp_us": 1790556414592626,
+      "delay_after_artwork_request_us": 94015,
+      "responses_before_report": [],
+      "responses_after_report": []
+    }
+  ],
+  "exchanges": [
+    {
+      "transaction": 4294967294,
+      "transaction_hex": "0xfffffffe",
+      "requests": [
+        {
+          "kind": "0x0000",
+          "name": "setup",
+          "arguments": [
+            11
+          ]
+        }
+      ],
+      "response_message_count": 2,
+      "response_kinds": {
+        "0x0100": 1,
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            0,
+            41
+          ]
+        },
+        {
+          "kind": "0x0100",
+          "name": "connection close",
+          "arguments": []
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 195593,
+      "transaction_hex": "0x0002fc09",
+      "requests": [
+        {
+          "kind": "0x1000",
+          "name": "root menu",
+          "arguments": [
+            184615937,
+            0,
+            100532223
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            4096,
+            19
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 196617,
+      "transaction_hex": "0x00030009",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184615937,
+            0,
+            19,
+            0,
+            19,
+            0
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 21,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 19,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 19,
+      "row_projections": [
+        {
+          "argument_0": 0,
+          "argument_1": 4,
+          "argument_3": "\ufffaTRACK\ufffb",
+          "argument_5": "",
+          "argument_6": 131
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 12,
+          "argument_3": "\ufffaKEY\ufffb",
+          "argument_5": "",
+          "argument_6": 139
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 6,
+          "argument_3": "\ufffaBPM\ufffb",
+          "argument_5": "",
+          "argument_6": 133
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 1,
+          "argument_3": "\ufffaGENRE\ufffb",
+          "argument_5": "",
+          "argument_6": 128
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 2,
+          "argument_3": "\ufffaARTIST\ufffb",
+          "argument_5": "",
+          "argument_6": 129
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 3,
+          "argument_3": "\ufffaALBUM\ufffb",
+          "argument_5": "",
+          "argument_6": 130
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 26,
+          "argument_3": "\ufffaMATCHING\ufffb",
+          "argument_5": "",
+          "argument_6": 170
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 18,
+          "argument_3": "\ufffaSEARCH\ufffb",
+          "argument_5": "",
+          "argument_6": 145
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 5,
+          "argument_3": "\ufffaPLAYLIST\ufffb",
+          "argument_5": "",
+          "argument_6": 132
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 22,
+          "argument_3": "\ufffaHISTORY\ufffb",
+          "argument_5": "",
+          "argument_6": 149
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 20,
+          "argument_3": "\ufffaBITRATE\ufffb",
+          "argument_5": "",
+          "argument_6": 147
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 15,
+          "argument_3": "\ufffaCOLOR\ufffb",
+          "argument_5": "",
+          "argument_6": 142
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 21,
+          "argument_3": "\ufffaFILE NAME\ufffb",
+          "argument_5": "",
+          "argument_6": 148
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 10,
+          "argument_3": "\ufffaLABEL\ufffb",
+          "argument_5": "",
+          "argument_6": 137
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 11,
+          "argument_3": "\ufffaORIGINAL ARTIST\ufffb",
+          "argument_5": "",
+          "argument_6": 138
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 7,
+          "argument_3": "\ufffaRATING\ufffb",
+          "argument_5": "",
+          "argument_6": 134
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 9,
+          "argument_3": "\ufffaREMIXER\ufffb",
+          "argument_5": "",
+          "argument_6": 136
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 19,
+          "argument_3": "\ufffaTIME\ufffb",
+          "argument_5": "",
+          "argument_6": 146
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 8,
+          "argument_3": "\ufffaYEAR\ufffb",
+          "argument_5": "",
+          "argument_6": 135
+        }
+      ]
+    },
+    {
+      "transaction": 197641,
+      "transaction_hex": "0x00030409",
+      "requests": [
+        {
+          "kind": "0x1004",
+          "name": "track menu",
+          "arguments": [
+            184615937,
+            0
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            4100,
+            4342
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 198665,
+      "transaction_hex": "0x00030809",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184615937,
+            0,
+            12,
+            0,
+            4342,
+            12
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 14,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 12,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 12,
+      "row_projections": [
+        {
+          "argument_0": 3441880869,
+          "argument_1": 206733291,
+          "argument_3": "Abandon All Hope Here",
+          "argument_5": "3A - 112.2 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 3478530025,
+          "argument_1": 42296611,
+          "argument_3": "About To Fly",
+          "argument_5": "3B - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 1648417788,
+          "argument_1": 256934718,
+          "argument_3": "Above The Clouds",
+          "argument_5": "4B - 140.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 4250600603,
+          "argument_1": 152979655,
+          "argument_3": "Absolutely Not",
+          "argument_5": "11A - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 1804376517,
+          "argument_1": 185780855,
+          "argument_3": "Abyss",
+          "argument_5": "6A - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 2053530013,
+          "argument_1": 214409742,
+          "argument_3": "Accalia",
+          "argument_5": "10A - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 2164862286,
+          "argument_1": 264959496,
+          "argument_3": "Accelerate (Darren Styles Edit)",
+          "argument_5": "10B - 170.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 403987813,
+          "argument_1": 193883336,
+          "argument_3": "Acidcore",
+          "argument_5": "11B - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 3971848974,
+          "argument_1": 236661681,
+          "argument_3": "Acid Orange",
+          "argument_5": "5A - 128.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 2063869497,
+          "argument_1": 249751460,
+          "argument_3": "Acid Porn Monkey (Cat Like Thief & Starkiss Remix)",
+          "argument_5": "7A - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 3856251018,
+          "argument_1": 250283474,
+          "argument_3": "Acid Porn Monkey (Ranzor's 2014 Re-Remix)",
+          "argument_5": "7B - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 2164862286,
+          "argument_1": 179476775,
+          "argument_3": "Acid Sunshine",
+          "argument_5": "10B - 130.0 bpm",
+          "argument_6": 3844
+        }
+      ]
+    },
+    {
+      "transaction": 199689,
+      "transaction_hex": "0x00030c09",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            206733291,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        },
+        {
+          "kind": "0x0001",
+          "name": "cancel request (Dysentery: invalid data)",
+          "arguments": []
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4002": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4002",
+          "name": "image response",
+          "arguments": [
+            8195,
+            0,
+            28040,
+            {
+              "blob_bytes": 28040,
+              "sha256": "f9eeaac8a6ff62af1ca86628cb9d79cb3cfe0fcc61934bf56e8fbbeff47123cd",
+              "prefix_hex": "ffd8ffe000104a464946000101000001"
+            }
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 200713,
+      "transaction_hex": "0x00031009",
+      "requests": [
+        {
+          "kind": "0x1004",
+          "name": "track menu",
+          "arguments": [
+            184615937,
+            0
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            4100,
+            4342
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 201737,
+      "transaction_hex": "0x00031409",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184615937,
+            0,
+            12,
+            0,
+            4342,
+            12
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 14,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 12,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 12,
+      "row_projections": [
+        {
+          "argument_0": 3441880869,
+          "argument_1": 206733291,
+          "argument_3": "Abandon All Hope Here",
+          "argument_5": "3A - 112.2 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 3478530025,
+          "argument_1": 42296611,
+          "argument_3": "About To Fly",
+          "argument_5": "3B - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 1648417788,
+          "argument_1": 256934718,
+          "argument_3": "Above The Clouds",
+          "argument_5": "4B - 140.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 4250600603,
+          "argument_1": 152979655,
+          "argument_3": "Absolutely Not",
+          "argument_5": "11A - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 1804376517,
+          "argument_1": 185780855,
+          "argument_3": "Abyss",
+          "argument_5": "6A - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 2053530013,
+          "argument_1": 214409742,
+          "argument_3": "Accalia",
+          "argument_5": "10A - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 2164862286,
+          "argument_1": 264959496,
+          "argument_3": "Accelerate (Darren Styles Edit)",
+          "argument_5": "10B - 170.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 403987813,
+          "argument_1": 193883336,
+          "argument_3": "Acidcore",
+          "argument_5": "11B - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 3971848974,
+          "argument_1": 236661681,
+          "argument_3": "Acid Orange",
+          "argument_5": "5A - 128.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 2063869497,
+          "argument_1": 249751460,
+          "argument_3": "Acid Porn Monkey (Cat Like Thief & Starkiss Remix)",
+          "argument_5": "7A - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 3856251018,
+          "argument_1": 250283474,
+          "argument_3": "Acid Porn Monkey (Ranzor's 2014 Re-Remix)",
+          "argument_5": "7B - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 2164862286,
+          "argument_1": 179476775,
+          "argument_3": "Acid Sunshine",
+          "argument_5": "10B - 130.0 bpm",
+          "argument_6": 3844
+        }
+      ]
+    },
+    {
+      "transaction": 202761,
+      "transaction_hex": "0x00031809",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            206733291,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4002": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4002",
+          "name": "image response",
+          "arguments": [
+            8195,
+            0,
+            28040,
+            {
+              "blob_bytes": 28040,
+              "sha256": "f9eeaac8a6ff62af1ca86628cb9d79cb3cfe0fcc61934bf56e8fbbeff47123cd",
+              "prefix_hex": "ffd8ffe000104a464946000101000001"
+            }
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 203785,
+      "transaction_hex": "0x00031c09",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            42296611,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4002": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4002",
+          "name": "image response",
+          "arguments": [
+            8195,
+            50,
+            0,
+            2267236782
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 204809,
+      "transaction_hex": "0x00032009",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            256934718,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 0,
+      "response_kinds": {},
+      "responses_except_rows": [],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 205833,
+      "transaction_hex": "0x00032409",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            152979655,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4002": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4002",
+          "name": "image response",
+          "arguments": [
+            8195,
+            50,
+            0,
+            2267236782
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 206857,
+      "transaction_hex": "0x00032809",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            185780855,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 0,
+      "response_kinds": {},
+      "responses_except_rows": [],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 207881,
+      "transaction_hex": "0x00032c09",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            214409742,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        },
+        {
+          "kind": "0x0001",
+          "name": "cancel request (Dysentery: invalid data)",
+          "arguments": []
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4002": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4002",
+          "name": "image response",
+          "arguments": [
+            8195,
+            50,
+            0,
+            2267236782
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 208905,
+      "transaction_hex": "0x00033009",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            214409742,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        },
+        {
+          "kind": "0x0001",
+          "name": "cancel request (Dysentery: invalid data)",
+          "arguments": []
+        }
+      ],
+      "response_message_count": 0,
+      "response_kinds": {},
+      "responses_except_rows": [],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 209929,
+      "transaction_hex": "0x00033409",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            214409742,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        },
+        {
+          "kind": "0x0001",
+          "name": "cancel request (Dysentery: invalid data)",
+          "arguments": []
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4002": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4002",
+          "name": "image response",
+          "arguments": [
+            8195,
+            50,
+            0,
+            2267236782
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 210953,
+      "transaction_hex": "0x00033809",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            214409742,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        },
+        {
+          "kind": "0x0001",
+          "name": "cancel request (Dysentery: invalid data)",
+          "arguments": []
+        }
+      ],
+      "response_message_count": 0,
+      "response_kinds": {},
+      "responses_except_rows": [],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 211977,
+      "transaction_hex": "0x00033c09",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            214409742,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4002": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4002",
+          "name": "image response",
+          "arguments": [
+            8195,
+            50,
+            0,
+            2267236782
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 213001,
+      "transaction_hex": "0x00034009",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            264959496,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 0,
+      "response_kinds": {},
+      "responses_except_rows": [],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 214025,
+      "transaction_hex": "0x00034409",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            193883336,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4002": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4002",
+          "name": "image response",
+          "arguments": [
+            8195,
+            0,
+            12520,
+            {
+              "blob_bytes": 12520,
+              "sha256": "43f567ff1b1ad3b33276b5f2af2bf9d3965b08aa6788e363fa20b7440e428a33",
+              "prefix_hex": "ffd8ffe000104a464946000101000001"
+            }
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 215049,
+      "transaction_hex": "0x00034809",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            236661681,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4002": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4002",
+          "name": "image response",
+          "arguments": [
+            8195,
+            0,
+            24270,
+            {
+              "blob_bytes": 24270,
+              "sha256": "ea629c7ec4b01a1ba77ee544e71b4b03afdfd1cd98f15bf69ae6c3a2f13668ae",
+              "prefix_hex": "ffd8ffe000104a464946000101000001"
+            }
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 216073,
+      "transaction_hex": "0x00034c09",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            249751460,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4002": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4002",
+          "name": "image response",
+          "arguments": [
+            8195,
+            50,
+            0,
+            2267236782
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 217097,
+      "transaction_hex": "0x00035009",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            250283474,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 0,
+      "response_kinds": {},
+      "responses_except_rows": [],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 218121,
+      "transaction_hex": "0x00035409",
+      "requests": [
+        {
+          "kind": "0x2003",
+          "name": "artwork",
+          "arguments": [
+            185074689,
+            179476775,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4002": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4002",
+          "name": "image response",
+          "arguments": [
+            8195,
+            0,
+            20572,
+            {
+              "blob_bytes": 20572,
+              "sha256": "96bc5456a7ff1707c56f5e315699f0db04cc86ec8ad520e1d1dbe282fa9d0a99",
+              "prefix_hex": "ffd8ffe000104a464946000101000001"
+            }
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 219145,
+      "transaction_hex": "0x00035809",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            206733291
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 220169,
+      "transaction_hex": "0x00035c09",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 299,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 221193,
+      "transaction_hex": "0x00036009",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            206733291,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "2aef287f426fc07903c946479dca6698e723b194cde433099f49779e8a321ea5",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 222217,
+      "transaction_hex": "0x00036409",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            206733291
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 223241,
+      "transaction_hex": "0x00036809",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 299,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 224265,
+      "transaction_hex": "0x00036c09",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            206733291,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "2aef287f426fc07903c946479dca6698e723b194cde433099f49779e8a321ea5",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 225289,
+      "transaction_hex": "0x00037009",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            42296611
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 226313,
+      "transaction_hex": "0x00037409",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 372,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 227337,
+      "transaction_hex": "0x00037809",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            42296611,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "29032534132453a45af91a0709ee20cadd793ea650086b38a80e5c7170062d7f",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 228361,
+      "transaction_hex": "0x00037c09",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            256934718
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 229385,
+      "transaction_hex": "0x00038009",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 490,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 230409,
+      "transaction_hex": "0x00038409",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            256934718,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "e3d0ad3b7d23e387f3645f612875d35812c2a3272cd191504eaec65d1c1a08ae",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 231433,
+      "transaction_hex": "0x00038809",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            152979655
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 232457,
+      "transaction_hex": "0x00038c09",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 332,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 233481,
+      "transaction_hex": "0x00039009",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            152979655,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "fa09685b7f57b48a0a676608defef1e19c29fbf8c22ce7f34a1a00d541641843",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 234505,
+      "transaction_hex": "0x00039409",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            185780855
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 235529,
+      "transaction_hex": "0x00039809",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 382,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 236553,
+      "transaction_hex": "0x00039c09",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            185780855,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "2b68db0daf9d519f8b5e2ec29cc0d292b095c95aff825dfee5a76669445a083d",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 237577,
+      "transaction_hex": "0x0003a009",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            214409742
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 238601,
+      "transaction_hex": "0x0003a409",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 293,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 239625,
+      "transaction_hex": "0x0003a809",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            214409742,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "b1436d58a943a5ebb94339bf173f0882dee88e50c8912b5c6aff7df7bcec1d5d",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 240649,
+      "transaction_hex": "0x0003ac09",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            264959496
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 241673,
+      "transaction_hex": "0x0003b009",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 248,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 242697,
+      "transaction_hex": "0x0003b409",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            264959496,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "b977a4dac63f3861bd95ffe14238ea4e175db63f4400c3b8e44a3d9ee1545637",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 243721,
+      "transaction_hex": "0x0003b809",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            193883336
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 244745,
+      "transaction_hex": "0x0003bc09",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 277,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 245769,
+      "transaction_hex": "0x0003c009",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            193883336,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "2a767e3376e06e67762e646aab090c9c1bbb3b6a8e84b6a6ea88cd40112d9c74",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 246793,
+      "transaction_hex": "0x0003c409",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            236661681
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 247817,
+      "transaction_hex": "0x0003c809",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 331,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 248841,
+      "transaction_hex": "0x0003cc09",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            236661681,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "c544e31bd8e32fab0d727e5af60dde765c470544758fdbb36a5fd8dcc61dde07",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 249865,
+      "transaction_hex": "0x0003d009",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            249751460
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 250889,
+      "transaction_hex": "0x0003d409",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 310,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 251913,
+      "transaction_hex": "0x0003d809",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            249751460,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "a89825b5712942ac2be88172d6ab6f065f8aeb3f803c0ef64024376167786eb8",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 252937,
+      "transaction_hex": "0x0003dc09",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            250283474
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 253961,
+      "transaction_hex": "0x0003e009",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 293,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 254985,
+      "transaction_hex": "0x0003e409",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            250283474,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "1feb5d3bd6219b0168ba98e62130f7e04be8d9e1edb0000742560eae680eb62e",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 256009,
+      "transaction_hex": "0x0003e809",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            179476775
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 257033,
+      "transaction_hex": "0x0003ec09",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            3,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            3
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 407,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        }
+      ]
+    },
+    {
+      "transaction": 258057,
+      "transaction_hex": "0x0003f009",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            179476775,
+            878073680,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            7228,
+            {
+              "blob_bytes": 7228,
+              "sha256": "f454e4e597c6f3f1e499012a42f308cb988991c2956902eaec00d973a762bd28",
+              "prefix_hex": "381c0000505756340000001800001c38"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 259081,
+      "transaction_hex": "0x0003f409",
+      "requests": [
+        {
+          "kind": "0x1004",
+          "name": "track menu",
+          "arguments": [
+            184615937,
+            0
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            4100,
+            4342
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 260105,
+      "transaction_hex": "0x0003f809",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184615937,
+            0,
+            12,
+            0,
+            4342,
+            12
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 14,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 12,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 12,
+      "row_projections": [
+        {
+          "argument_0": 3441880869,
+          "argument_1": 206733291,
+          "argument_3": "Abandon All Hope Here",
+          "argument_5": "3A - 112.2 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 3478530025,
+          "argument_1": 42296611,
+          "argument_3": "About To Fly",
+          "argument_5": "3B - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 1648417788,
+          "argument_1": 256934718,
+          "argument_3": "Above The Clouds",
+          "argument_5": "4B - 140.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 4250600603,
+          "argument_1": 152979655,
+          "argument_3": "Absolutely Not",
+          "argument_5": "11A - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 1804376517,
+          "argument_1": 185780855,
+          "argument_3": "Abyss",
+          "argument_5": "6A - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 2053530013,
+          "argument_1": 214409742,
+          "argument_3": "Accalia",
+          "argument_5": "10A - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 2164862286,
+          "argument_1": 264959496,
+          "argument_3": "Accelerate (Darren Styles Edit)",
+          "argument_5": "10B - 170.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 403987813,
+          "argument_1": 193883336,
+          "argument_3": "Acidcore",
+          "argument_5": "11B - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 3971848974,
+          "argument_1": 236661681,
+          "argument_3": "Acid Orange",
+          "argument_5": "5A - 128.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 2063869497,
+          "argument_1": 249751460,
+          "argument_3": "Acid Porn Monkey (Cat Like Thief & Starkiss Remix)",
+          "argument_5": "7A - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 3856251018,
+          "argument_1": 250283474,
+          "argument_3": "Acid Porn Monkey (Ranzor's 2014 Re-Remix)",
+          "argument_5": "7B - 175.0 bpm",
+          "argument_6": 3844
+        },
+        {
+          "argument_0": 2164862286,
+          "argument_1": 179476775,
+          "argument_3": "Acid Sunshine",
+          "argument_5": "10B - 130.0 bpm",
+          "argument_6": 3844
+        }
+      ]
+    },
+    {
+      "transaction": 261129,
+      "transaction_hex": "0x0003fc09",
+      "requests": [
+        {
+          "kind": "0x1004",
+          "name": "track menu",
+          "arguments": [
+            184747009,
+            0
+          ],
+          "context": {
+            "value": 184747009,
+            "hex": "0x0b030401",
+            "requester": 11,
+            "menu_location": 3,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            4100,
+            4342
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 262153,
+      "transaction_hex": "0x00040009",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184747009,
+            7,
+            1,
+            0,
+            4342,
+            0
+          ],
+          "context": {
+            "value": 184747009,
+            "hex": "0x0b030401",
+            "requester": 11,
+            "menu_location": 3,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            7
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 403987813,
+          "argument_1": 193883336,
+          "argument_3": "Acidcore",
+          "argument_5": "11B - 175.0 bpm",
+          "argument_6": 3844
+        }
+      ]
+    },
+    {
+      "transaction": 263177,
+      "transaction_hex": "0x00040409",
+      "requests": [
+        {
+          "kind": "0x2102",
+          "name": "Play Song Info",
+          "arguments": [
+            185074689,
+            193883336
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8450,
+            7
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 264201,
+      "transaction_hex": "0x00040809",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            185074689,
+            0,
+            7,
+            0,
+            7,
+            0
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 9,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 7,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 7,
+      "row_projections": [
+        {
+          "argument_0": 0,
+          "argument_1": 1,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 4
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 277,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 17500,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 13
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 193883336,
+          "argument_3": "RLNTDIGI083",
+          "argument_5": "",
+          "argument_6": 35
+        },
+        {
+          "argument_0": 11141776,
+          "argument_1": 193883336,
+          "argument_3": "/Users/evan/Music/Tracks/Relentless Digital/[RLNTDIGI083] Summer Mayhem EP/02. [11B] Ranzor - Acidcore.mp3",
+          "argument_5": "",
+          "argument_6": 0
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 1,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 47
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 403987813,
+          "argument_3": "11B",
+          "argument_5": "",
+          "argument_6": 15
+        }
+      ]
+    },
+    {
+      "transaction": 265225,
+      "transaction_hex": "0x00040c09",
+      "requests": [
+        {
+          "kind": "0x2004",
+          "name": "preview waveform",
+          "arguments": [
+            185074689,
+            4,
+            193883336,
+            0,
+            2267236782
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4402": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4402",
+          "name": "preview waveform response",
+          "arguments": [
+            8196,
+            0,
+            904,
+            {
+              "blob_bytes": 904,
+              "sha256": "33fa564e6b6e6ff43da74c773d233975444c78627e6f343e93cb8a059cd0f984",
+              "prefix_hex": "17031603160316031603160316031803"
+            }
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 267273,
+      "transaction_hex": "0x00041409",
+      "requests": [
+        {
+          "kind": "0x2d04",
+          "name": "specified analysis atom alternate",
+          "arguments": [
+            184615937,
+            193883336,
+            911628112,
+            5784882
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11524,
+            0,
+            3624,
+            {
+              "blob_bytes": 3624,
+              "sha256": "d0dce8ecb507a6ebbf8d6101b33205470fd4577c8e09ddd85c35344d0d326d2e",
+              "prefix_hex": "240e0000505756360000001400000e24"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 268297,
+      "transaction_hex": "0x00041809",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            193883336,
+            1230197584,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            50,
+            0,
+            0,
+            2267236782
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 269321,
+      "transaction_hex": "0x00041c09",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184615937,
+            193883336
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 0,
+      "response_kinds": {},
+      "responses_except_rows": [],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 270345,
+      "transaction_hex": "0x00042009",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184615937,
+            0,
+            16,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 18,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 16,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 16,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 193883336,
+          "argument_3": "Acidcore",
+          "argument_5": "",
+          "argument_6": 4
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 3810257752,
+          "argument_3": "Ranzor",
+          "argument_5": "",
+          "argument_6": 7
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 1438036647,
+          "argument_3": "Summer Mayhem EP",
+          "argument_5": "",
+          "argument_6": 2
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 277,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 17500,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 13
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 193883336,
+          "argument_3": "RLNTDIGI083",
+          "argument_5": "",
+          "argument_6": 35
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 403987813,
+          "argument_3": "11B",
+          "argument_5": "",
+          "argument_6": 15
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 0,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 10
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 0,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 19
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 259314966,
+          "argument_3": "Hardcore",
+          "argument_5": "",
+          "argument_6": 6
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 193883336,
+          "argument_3": "2014-07-31",
+          "argument_5": "",
+          "argument_6": 46
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 320,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 16
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 2012,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 17
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 2822171688,
+          "argument_3": "Relentless Digital",
+          "argument_5": "",
+          "argument_6": 14
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 0,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 40
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 0,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 41
+        }
+      ]
+    },
+    {
+      "transaction": 271369,
+      "transaction_hex": "0x00042409",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            193883336
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 272393,
+      "transaction_hex": "0x00042809",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            0,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 193883336,
+          "argument_3": "Acidcore",
+          "argument_5": "",
+          "argument_6": 4
+        }
+      ]
+    },
+    {
+      "transaction": 273417,
+      "transaction_hex": "0x00042c09",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            193883336
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 274441,
+      "transaction_hex": "0x00043009",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            6,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            6
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 403987813,
+          "argument_3": "11B",
+          "argument_5": "",
+          "argument_6": 15
+        }
+      ]
+    },
+    {
+      "transaction": 275465,
+      "transaction_hex": "0x00043409",
+      "requests": [
+        {
+          "kind": "0x2b04",
+          "name": "extended cue information",
+          "arguments": [
+            185074689,
+            193883336,
+            0
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4e02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4e02",
+          "name": "cue response",
+          "arguments": [
+            11012,
+            1,
+            0,
+            0,
+            2267236782
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 276489,
+      "transaction_hex": "0x00043809",
+      "requests": [
+        {
+          "kind": "0x3100",
+          "name": "list-buffer offset",
+          "arguments": [
+            184747009,
+            193883336,
+            0,
+            0
+          ],
+          "context": {
+            "value": 184747009,
+            "hex": "0x0b030401",
+            "requester": 11,
+            "menu_location": 3,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 0,
+      "response_kinds": {},
+      "responses_except_rows": [],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 277513,
+      "transaction_hex": "0x00043c09",
+      "requests": [
+        {
+          "kind": "0x2102",
+          "name": "Play Song Info",
+          "arguments": [
+            185074689,
+            193883336
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8450,
+            7
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 278537,
+      "transaction_hex": "0x00044009",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            185074689,
+            0,
+            7,
+            0,
+            7,
+            0
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 9,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 7,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 7,
+      "row_projections": [
+        {
+          "argument_0": 0,
+          "argument_1": 1,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 4
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 277,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 17500,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 13
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 193883336,
+          "argument_3": "RLNTDIGI083",
+          "argument_5": "",
+          "argument_6": 35
+        },
+        {
+          "argument_0": 11141776,
+          "argument_1": 193883336,
+          "argument_3": "/Users/evan/Music/Tracks/Relentless Digital/[RLNTDIGI083] Summer Mayhem EP/02. [11B] Ranzor - Acidcore.mp3",
+          "argument_5": "",
+          "argument_6": 0
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 1,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 47
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 403987813,
+          "argument_3": "11B",
+          "argument_5": "",
+          "argument_6": 15
+        }
+      ]
+    },
+    {
+      "transaction": 279561,
+      "transaction_hex": "0x00044409",
+      "requests": [
+        {
+          "kind": "0x2504",
+          "name": "VBR information",
+          "arguments": [
+            185074689,
+            193883336
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4502": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4502",
+          "name": "VBR response",
+          "arguments": [
+            9476,
+            0,
+            1604,
+            {
+              "blob_bytes": 1604,
+              "sha256": "1547d264250506d0fa534c7703372d3f37f5817910a8f068e12d4f1589b1deb1",
+              "prefix_hex": "00000000000000000000000000000000"
+            }
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 280585,
+      "transaction_hex": "0x00044809",
+      "requests": [
+        {
+          "kind": "0x2204",
+          "name": "beat grid",
+          "arguments": [
+            185074689,
+            193883336
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4602": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4602",
+          "name": "beat-grid response",
+          "arguments": [
+            8708,
+            0,
+            12948,
+            {
+              "blob_bytes": 12948,
+              "sha256": "d4a14a5fbfbe72fa2029a882f9a0c7defa6cf8f943a80a7f6974e25cd34f195b",
+              "prefix_hex": "00000800280300008032000001000000"
+            },
+            0
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 281609,
+      "transaction_hex": "0x00044c09",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            193883336,
+            844386640,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            50,
+            0,
+            0,
+            2267236782
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 282633,
+      "transaction_hex": "0x00045009",
+      "requests": [
+        {
+          "kind": "0x2103",
+          "name": "content artwork",
+          "arguments": [
+            185074689,
+            193883336,
+            1
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 0,
+      "response_kinds": {},
+      "responses_except_rows": [],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 283657,
+      "transaction_hex": "0x00045409",
+      "requests": [
+        {
+          "kind": "0x2102",
+          "name": "Play Song Info",
+          "arguments": [
+            185074689,
+            193883336
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8450,
+            7
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 284681,
+      "transaction_hex": "0x00045809",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            185074689,
+            0,
+            7,
+            0,
+            7,
+            0
+          ],
+          "context": {
+            "value": 185074689,
+            "hex": "0x0b080401",
+            "requester": 11,
+            "menu_location": 8,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 9,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 7,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 7,
+      "row_projections": [
+        {
+          "argument_0": 0,
+          "argument_1": 1,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 4
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 277,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 17500,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 13
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 193883336,
+          "argument_3": "RLNTDIGI083",
+          "argument_5": "",
+          "argument_6": 35
+        },
+        {
+          "argument_0": 11141776,
+          "argument_1": 193883336,
+          "argument_3": "/Users/evan/Music/Tracks/Relentless Digital/[RLNTDIGI083] Summer Mayhem EP/02. [11B] Ranzor - Acidcore.mp3",
+          "argument_5": "",
+          "argument_6": 0
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 1,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 47
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 403987813,
+          "argument_3": "11B",
+          "argument_5": "",
+          "argument_6": 15
+        }
+      ]
+    },
+    {
+      "transaction": 285705,
+      "transaction_hex": "0x00045c09",
+      "requests": [
+        {
+          "kind": "0x2c04",
+          "name": "specified analysis atom",
+          "arguments": [
+            184615937,
+            193883336,
+            894850896,
+            5527621
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4f02": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4f02",
+          "name": "specified-atom response",
+          "arguments": [
+            11268,
+            0,
+            83148,
+            {
+              "blob_bytes": 83148,
+              "sha256": "f2a6fce5276b29a3f101526e1111c4689e799cfb1b70ac9c02c9e28c80df3117",
+              "prefix_hex": "c84401005057563500000018000144c6"
+            },
+            1
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 286729,
+      "transaction_hex": "0x00046009",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184615937,
+            193883336
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 287753,
+      "transaction_hex": "0x00046409",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184615937,
+            0,
+            16,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 18,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 16,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 16,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 193883336,
+          "argument_3": "Acidcore",
+          "argument_5": "",
+          "argument_6": 4
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 3810257752,
+          "argument_3": "Ranzor",
+          "argument_5": "",
+          "argument_6": 7
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 1438036647,
+          "argument_3": "Summer Mayhem EP",
+          "argument_5": "",
+          "argument_6": 2
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 277,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 17500,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 13
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 193883336,
+          "argument_3": "RLNTDIGI083",
+          "argument_5": "",
+          "argument_6": 35
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 403987813,
+          "argument_3": "11B",
+          "argument_5": "",
+          "argument_6": 15
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 0,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 10
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 0,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 19
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 259314966,
+          "argument_3": "Hardcore",
+          "argument_5": "",
+          "argument_6": 6
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 193883336,
+          "argument_3": "2014-07-31",
+          "argument_5": "",
+          "argument_6": 46
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 320,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 16
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 2012,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 17
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 2822171688,
+          "argument_3": "Relentless Digital",
+          "argument_5": "",
+          "argument_6": 14
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 0,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 40
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 0,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 41
+        }
+      ]
+    },
+    {
+      "transaction": 288777,
+      "transaction_hex": "0x00046809",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            193883336
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 289801,
+      "transaction_hex": "0x00046c09",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            0,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 193883336,
+          "argument_3": "Acidcore",
+          "argument_5": "",
+          "argument_6": 4
+        }
+      ]
+    },
+    {
+      "transaction": 290825,
+      "transaction_hex": "0x00047009",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            193883336
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 291849,
+      "transaction_hex": "0x00047409",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            6,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            6
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 403987813,
+          "argument_3": "11B",
+          "argument_5": "",
+          "argument_6": 15
+        }
+      ]
+    },
+    {
+      "transaction": 292873,
+      "transaction_hex": "0x00047809",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184615937,
+            193883336
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 293897,
+      "transaction_hex": "0x00047c09",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184615937,
+            0,
+            16,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184615937,
+            "hex": "0x0b010401",
+            "requester": 11,
+            "menu_location": 1,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 18,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 16,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 16,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 193883336,
+          "argument_3": "Acidcore",
+          "argument_5": "",
+          "argument_6": 4
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 3810257752,
+          "argument_3": "Ranzor",
+          "argument_5": "",
+          "argument_6": 7
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 1438036647,
+          "argument_3": "Summer Mayhem EP",
+          "argument_5": "",
+          "argument_6": 2
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 277,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 11
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 17500,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 13
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 193883336,
+          "argument_3": "RLNTDIGI083",
+          "argument_5": "",
+          "argument_6": 35
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 403987813,
+          "argument_3": "11B",
+          "argument_5": "",
+          "argument_6": 15
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 0,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 10
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 0,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 19
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 259314966,
+          "argument_3": "Hardcore",
+          "argument_5": "",
+          "argument_6": 6
+        },
+        {
+          "argument_0": 0,
+          "argument_1": 193883336,
+          "argument_3": "2014-07-31",
+          "argument_5": "",
+          "argument_6": 46
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 320,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 16
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 2012,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 17
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 2822171688,
+          "argument_3": "Relentless Digital",
+          "argument_5": "",
+          "argument_6": 14
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 0,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 40
+        },
+        {
+          "argument_0": 1,
+          "argument_1": 0,
+          "argument_3": "",
+          "argument_5": "",
+          "argument_6": 41
+        }
+      ]
+    },
+    {
+      "transaction": 294921,
+      "transaction_hex": "0x00048009",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            193883336
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 295945,
+      "transaction_hex": "0x00048409",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            0,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 193883336,
+          "argument_3": "Acidcore",
+          "argument_5": "",
+          "argument_6": 4
+        }
+      ]
+    },
+    {
+      "transaction": 296969,
+      "transaction_hex": "0x00048809",
+      "requests": [
+        {
+          "kind": "0x2002",
+          "name": "Display Song Info",
+          "arguments": [
+            184878081,
+            193883336
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 1,
+      "response_kinds": {
+        "0x4000": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4000",
+          "name": "menu/setup header",
+          "arguments": [
+            8194,
+            16
+          ]
+        }
+      ],
+      "row_count": 0,
+      "row_projections": []
+    },
+    {
+      "transaction": 297993,
+      "transaction_hex": "0x00048c09",
+      "requests": [
+        {
+          "kind": "0x3000",
+          "name": "render list buffer",
+          "arguments": [
+            184878081,
+            6,
+            1,
+            0,
+            16,
+            0
+          ],
+          "context": {
+            "value": 184878081,
+            "hex": "0x0b050401",
+            "requester": 11,
+            "menu_location": 5,
+            "media_slot": 4,
+            "track_type": 1
+          }
+        }
+      ],
+      "response_message_count": 3,
+      "response_kinds": {
+        "0x4001": 1,
+        "0x4101": 1,
+        "0x4201": 1
+      },
+      "responses_except_rows": [
+        {
+          "kind": "0x4001",
+          "name": "render header",
+          "arguments": [
+            1,
+            6
+          ]
+        },
+        {
+          "kind": "0x4201",
+          "name": "render footer",
+          "arguments": []
+        }
+      ],
+      "row_count": 1,
+      "row_projections": [
+        {
+          "argument_0": 1,
+          "argument_1": 403987813,
+          "argument_3": "11B",
+          "argument_5": "",
+          "argument_6": 15
+        }
+      ]
+    }
+  ]
+}

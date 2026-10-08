@@ -1,0 +1,2206 @@
+{
+  "name": "track-render-arity-boundaries",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "default-arity-03",
+      "description": "Default track sort followed by a total-3-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-04",
+      "description": "Default track sort followed by a total-4-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-05",
+      "description": "Default track sort followed by a total-5-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-06",
+      "description": "Default track sort followed by a total-6-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-07",
+      "description": "Default track sort followed by a total-7-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-08",
+      "description": "Default track sort followed by a total-8-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-09",
+      "description": "Default track sort followed by a total-9-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-10",
+      "description": "Default track sort followed by a total-10-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-11",
+      "description": "Default track sort followed by a total-11-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-12",
+      "description": "Default track sort followed by a total-12-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-13",
+      "description": "Default track sort followed by a total-13-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-14",
+      "description": "Default track sort followed by a total-14-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-15",
+      "description": "Default track sort followed by a total-15-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-16",
+      "description": "Default track sort followed by a total-16-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-17",
+      "description": "Default track sort followed by a total-17-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-18",
+      "description": "Default track sort followed by a total-18-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-19",
+      "description": "Default track sort followed by a total-19-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-20",
+      "description": "Default track sort followed by a total-20-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-21",
+      "description": "Default track sort followed by a total-21-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-22",
+      "description": "Default track sort followed by a total-22-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-23",
+      "description": "Default track sort followed by a total-23-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-24",
+      "description": "Default track sort followed by a total-24-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-25",
+      "description": "Default track sort followed by a total-25-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-26",
+      "description": "Default track sort followed by a total-26-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-27",
+      "description": "Default track sort followed by a total-27-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-28",
+      "description": "Default track sort followed by a total-28-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-29",
+      "description": "Default track sort followed by a total-29-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-30",
+      "description": "Default track sort followed by a total-30-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-31",
+      "description": "Default track sort followed by a total-31-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e",
+        "0x9000001f"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "default-arity-32",
+      "description": "Default track sort followed by a total-32-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e",
+        "0x9000001f",
+        "0x90000020"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "01-alphabet-arity-03",
+      "description": "RX3 Alphabet track sort followed by a total-3-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "render_arguments": [],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "02-artist-arity-03",
+      "description": "RX3 Artist track sort followed by a total-3-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 2
+        }
+      ],
+      "render_arguments": [],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "03-album-arity-03",
+      "description": "RX3 Album track sort followed by a total-3-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "render_arguments": [],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "04-bpm-arity-03",
+      "description": "RX3 Bpm track sort followed by a total-3-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "render_arguments": [],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "05-rating-arity-03",
+      "description": "RX3 Rating track sort followed by a total-3-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "render_arguments": [],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "06-genre-arity-03",
+      "description": "RX3 Genre track sort followed by a total-3-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "render_arguments": [],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "10-label-arity-03",
+      "description": "RX3 Label track sort followed by a total-3-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 10
+        }
+      ],
+      "render_arguments": [],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "12-key-arity-03",
+      "description": "RX3 Key track sort followed by a total-3-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        }
+      ],
+      "render_arguments": [],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "17-date-added-arity-03",
+      "description": "RX3 Date Added track sort followed by a total-3-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 17
+        }
+      ],
+      "render_arguments": [],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "16-dj-play-count-arity-03",
+      "description": "RX3 Dj Play Count track sort followed by a total-3-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 16
+        }
+      ],
+      "render_arguments": [],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "01-alphabet-arity-04",
+      "description": "RX3 Alphabet track sort followed by a total-4-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "render_arguments": [
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "02-artist-arity-04",
+      "description": "RX3 Artist track sort followed by a total-4-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 2
+        }
+      ],
+      "render_arguments": [
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "03-album-arity-04",
+      "description": "RX3 Album track sort followed by a total-4-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "render_arguments": [
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "04-bpm-arity-04",
+      "description": "RX3 Bpm track sort followed by a total-4-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "render_arguments": [
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "05-rating-arity-04",
+      "description": "RX3 Rating track sort followed by a total-4-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "render_arguments": [
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "06-genre-arity-04",
+      "description": "RX3 Genre track sort followed by a total-4-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "render_arguments": [
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "10-label-arity-04",
+      "description": "RX3 Label track sort followed by a total-4-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 10
+        }
+      ],
+      "render_arguments": [
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "12-key-arity-04",
+      "description": "RX3 Key track sort followed by a total-4-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        }
+      ],
+      "render_arguments": [
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "17-date-added-arity-04",
+      "description": "RX3 Date Added track sort followed by a total-4-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 17
+        }
+      ],
+      "render_arguments": [
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "16-dj-play-count-arity-04",
+      "description": "RX3 Dj Play Count track sort followed by a total-4-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 16
+        }
+      ],
+      "render_arguments": [
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "01-alphabet-arity-09",
+      "description": "RX3 Alphabet track sort followed by a total-9-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "02-artist-arity-09",
+      "description": "RX3 Artist track sort followed by a total-9-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 2
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "03-album-arity-09",
+      "description": "RX3 Album track sort followed by a total-9-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "04-bpm-arity-09",
+      "description": "RX3 Bpm track sort followed by a total-9-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "05-rating-arity-09",
+      "description": "RX3 Rating track sort followed by a total-9-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "06-genre-arity-09",
+      "description": "RX3 Genre track sort followed by a total-9-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "10-label-arity-09",
+      "description": "RX3 Label track sort followed by a total-9-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 10
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "12-key-arity-09",
+      "description": "RX3 Key track sort followed by a total-9-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "17-date-added-arity-09",
+      "description": "RX3 Date Added track sort followed by a total-9-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 17
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "16-dj-play-count-arity-09",
+      "description": "RX3 Dj Play Count track sort followed by a total-9-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 16
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "01-alphabet-arity-32",
+      "description": "RX3 Alphabet track sort followed by a total-32-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e",
+        "0x9000001f",
+        "0x90000020"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "02-artist-arity-32",
+      "description": "RX3 Artist track sort followed by a total-32-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 2
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e",
+        "0x9000001f",
+        "0x90000020"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "03-album-arity-32",
+      "description": "RX3 Album track sort followed by a total-32-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e",
+        "0x9000001f",
+        "0x90000020"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "04-bpm-arity-32",
+      "description": "RX3 Bpm track sort followed by a total-32-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e",
+        "0x9000001f",
+        "0x90000020"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "05-rating-arity-32",
+      "description": "RX3 Rating track sort followed by a total-32-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e",
+        "0x9000001f",
+        "0x90000020"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "06-genre-arity-32",
+      "description": "RX3 Genre track sort followed by a total-32-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e",
+        "0x9000001f",
+        "0x90000020"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "10-label-arity-32",
+      "description": "RX3 Label track sort followed by a total-32-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 10
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e",
+        "0x9000001f",
+        "0x90000020"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "12-key-arity-32",
+      "description": "RX3 Key track sort followed by a total-32-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e",
+        "0x9000001f",
+        "0x90000020"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "17-date-added-arity-32",
+      "description": "RX3 Date Added track sort followed by a total-32-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 17
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e",
+        "0x9000001f",
+        "0x90000020"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "16-dj-play-count-arity-32",
+      "description": "RX3 Dj Play Count track sort followed by a total-32-argument render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 16
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0,
+        "0x90000009",
+        "0x9000000a",
+        "0x9000000b",
+        "0x9000000c",
+        "0x9000000d",
+        "0x9000000e",
+        "0x9000000f",
+        "0x90000010",
+        "0x90000011",
+        "0x90000012",
+        "0x90000013",
+        "0x90000014",
+        "0x90000015",
+        "0x90000016",
+        "0x90000017",
+        "0x90000018",
+        "0x90000019",
+        "0x9000001a",
+        "0x9000001b",
+        "0x9000001c",
+        "0x9000001d",
+        "0x9000001e",
+        "0x9000001f",
+        "0x90000020"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

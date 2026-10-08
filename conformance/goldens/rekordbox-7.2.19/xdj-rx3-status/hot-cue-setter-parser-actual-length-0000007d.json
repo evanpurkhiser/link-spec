@@ -1,0 +1,209 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "Extended Hot Cue setter parser axis actual-length value 0x0000007d",
+        "header": [],
+        "id": "setter",
+        "outcome": "raw_reply",
+        "pages": [],
+        "raw_response": {
+          "decoded_bytes": 174,
+          "error_kind": null,
+          "messages": [
+            {
+              "arguments": [
+                {
+                  "type": "number",
+                  "value": 9217
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "type": "number",
+                  "value": 124
+                },
+                {
+                  "hex": "7c000000010002000000e80355f8060052aa0800000000000800000000000000ffffffff0403020114131211242322213433323142000000000006000d0c0b0a000034127856000000002c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                  "type": "blob"
+                },
+                {
+                  "type": "number",
+                  "value": 1
+                }
+              ],
+              "kind": 19970
+            }
+          ],
+          "outcome": "raw_reply",
+          "raw_hex": "11872349ae1100000001104e020f051400000005060606030611000024011100000000110000007c140000007c7c000000010002000000e80355f8060052aa0800000000000800000000000000ffffffff0403020114131211242322213433323142000000000006000d0c0b0a000034127856000000002c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001100000001"
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 184615681
+            },
+            {
+              "type": "number",
+              "value": 9060
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 125
+            },
+            {
+              "hex": "7c000000010002000000e80355f8060052aa0800000000000800000000000000ffffffff0403020114131211242322213433323142000000000006000d0c0b0a000034127856000000002c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "type": "blob"
+            },
+            {
+              "type": "number",
+              "value": 1
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 9217
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Canonical type-1 getter after the isolated setter probe",
+        "header": [],
+        "id": "database-read-after-setter",
+        "outcome": "raw_reply",
+        "pages": [],
+        "raw_response": {
+          "decoded_bytes": 174,
+          "error_kind": null,
+          "messages": [
+            {
+              "arguments": [
+                {
+                  "type": "number",
+                  "value": 8961
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "type": "number",
+                  "value": 124
+                },
+                {
+                  "hex": "7c000000010002000000e80355f8060052aa0800000000000800000000000000ffffffff0403020114131211242322213433323142000000000006000d0c0b0a000034127856000000002c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                  "type": "blob"
+                },
+                {
+                  "type": "number",
+                  "value": 1
+                }
+              ],
+              "kind": 19970
+            }
+          ],
+          "outcome": "raw_reply",
+          "raw_hex": "11872349ae1100000001104e020f051400000005060606030611000023011100000000110000007c140000007c7c000000010002000000e80355f8060052aa0800000000000800000000000000ffffffff0403020114131211242322213433323142000000000006000d0c0b0a000034127856000000002c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001100000001"
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 184615681
+            },
+            {
+              "type": "number",
+              "value": 9060
+            },
+            {
+              "type": "number",
+              "value": 1
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8961
+        },
+        "rows": [],
+        "total": null
+      }
+    ],
+    "fixture": {
+      "fingerprint": "281f7de3ffa966c37d40833f10197d77eebd64dc7b5ae89807654e56f36dda1f",
+      "profile": "hot-cue-bank-mutation",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 11
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "hot-cue-setter-parser-actual-length-0000007d"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "9f0b8c2d4aaa1dfa6549b8f268ce3ee764392682ee1c7524644eed5cd991815e",
+    "fixture_fingerprint": "281f7de3ffa966c37d40833f10197d77eebd64dc7b5ae89807654e56f36dda1f",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 3,
+      "mac": "02:00:00:60:00:50",
+      "model": "XDJ-RX3",
+      "model_code": 0,
+      "packet_sha256": "da12196004059977cdbcd83b9e0ae22366a2daf50320ed1a7b033c1d7ab157d4",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 11,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0,
+      "status_packet_sha256": "49d262852bc10cbed30f9cd1f40283047b2423d4865ec5d1b240ae5fe6e20987",
+      "status_port": 50002,
+      "status_template": "rx3-captured"
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-rx3-player-11-status.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/hot-cue-bank-mutation-duplicate-slot/manifest.json",
+    "recorded_unix_seconds": 1790934269,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/suites/generated/hot-cue-setter-parser/hot-cue-setter-parser-actual-length-0000007d.json",
+    "suite_sha256": "8c11e3477de6373cf867f0e733385e44e9454df14103159ea28154723f3e0c72"
+  }
+}

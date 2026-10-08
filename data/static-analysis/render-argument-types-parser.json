@@ -1,0 +1,203 @@
+{
+  "architecture": "x86_64",
+  "authority_boundary": "Static decoding proves parser storage and dependencies only; real Rekordbox record/repeat determines each response and process outcome.",
+  "executable_sha256": "07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244",
+  "findings": {
+    "argument_tag_blob": 3,
+    "argument_tag_number": 6,
+    "argument_tag_string": 2,
+    "blob_preceding_length_exclusive_maximum": "0x500000",
+    "blob_requires_preceding_length_slot": true,
+    "decoded_variable_width_slot_contains_allocation_pointer": true,
+    "render_reads_value_slots_without_semantic_tag_checks": true,
+    "string_allocation_multiplier": 4,
+    "string_preceding_length_exclusive_maximum": "0x201",
+    "string_receive_element_tag": "0x26",
+    "string_requires_preceding_length_slot": true,
+    "variable_width_argument_one_is_rejected_before_dispatch": true
+  },
+  "format": 1,
+  "functions": {
+    "get_list_buffer_contents": {
+      "address": "0x100fa1110",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    "receive_command": {
+      "address": "0x10143b430",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    }
+  },
+  "tag_dispatch": {
+    "1": "0x10143b826",
+    "2": "0x10143b86d",
+    "3": "0x10143b8a8",
+    "4": "0x10143b7fa",
+    "5": "0x10143b7fa",
+    "6": "0x10143b7fa"
+  },
+  "validated_instruction_count": 27,
+  "validated_instructions": [
+    {
+      "address": "0x10143b7d5",
+      "mnemonic": "movzx",
+      "operands": "eax, byte ptr [r12 + r13 + 8]",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b7de",
+      "mnemonic": "cmp",
+      "operands": "cl, 5",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b7fa",
+      "mnemonic": "lea",
+      "operands": "rdx, [r12 + rbx]",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b80b",
+      "mnemonic": "call",
+      "operands": "0x10143c3d0",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b86d",
+      "mnemonic": "test",
+      "operands": "r13, r13",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b872",
+      "mnemonic": "mov",
+      "operands": "rax, qword ptr [r12 + r13*8 + 0x10]",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b877",
+      "mnemonic": "cmp",
+      "operands": "rax, 0x201",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b899",
+      "mnemonic": "mov",
+      "operands": "rax, qword ptr [r12 + r13*8 + 0x10]",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b942",
+      "mnemonic": "mov",
+      "operands": "ecx, 4",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b961",
+      "mnemonic": "mov",
+      "operands": "qword ptr [r12 + r13*8 + 0x18], rax",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b966",
+      "mnemonic": "mov",
+      "operands": "rax, qword ptr [r12 + rbx*8 + 0x18]",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b96b",
+      "mnemonic": "shr",
+      "operands": "rax, 1",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b99c",
+      "mnemonic": "mov",
+      "operands": "rcx, qword ptr [r15 + 8]",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b9a0",
+      "mnemonic": "mov",
+      "operands": "edi, 0x26",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b9ad",
+      "mnemonic": "call",
+      "operands": "0x10328c640",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b8a8",
+      "mnemonic": "test",
+      "operands": "r13, r13",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b8ad",
+      "mnemonic": "mov",
+      "operands": "rax, qword ptr [r12 + r13*8 + 0x10]",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b8b2",
+      "mnemonic": "cmp",
+      "operands": "rax, 0x500000",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b9b6",
+      "mnemonic": "test",
+      "operands": "rax, rax",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b9cf",
+      "mnemonic": "mov",
+      "operands": "qword ptr [r12 + r13*8 + 0x18], rax",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b9d4",
+      "mnemonic": "mov",
+      "operands": "rax, qword ptr [rbp - 0x38]",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b921",
+      "mnemonic": "mov",
+      "operands": "rdx, qword ptr [r15 + 8]",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x10143b92d",
+      "mnemonic": "call",
+      "operands": "0x10328e020",
+      "symbol": "__ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb"
+    },
+    {
+      "address": "0x100fa112b",
+      "mnemonic": "mov",
+      "operands": "r15, qword ptr [r14 + 0x18]",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    {
+      "address": "0x100fa112f",
+      "mnemonic": "mov",
+      "operands": "r12, qword ptr [r14 + 0x20]",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    {
+      "address": "0x100fa1133",
+      "mnemonic": "mov",
+      "operands": "eax, dword ptr [r14 + 0x28]",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    {
+      "address": "0x100fa113b",
+      "mnemonic": "cmp",
+      "operands": "byte ptr [r14 + 7], 6",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    }
+  ]
+}

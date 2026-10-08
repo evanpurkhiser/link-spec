@@ -1,0 +1,39 @@
+{
+  "name": "Rekordbox adjacent payload malformed kind-2804--extra-number",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 1500,
+    "render_arguments": []
+  },
+  "cases": [
+    {
+      "id": "kind-2804--extra-number",
+      "description": "0x2804 with an extra numeric argument",
+      "request_kind": "0x2804",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": 3735928559
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

@@ -1,0 +1,520 @@
+{
+  "name": "search-ceiling-conformance",
+  "fixture_profile": "search-ceiling",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 64,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "ceiling-total",
+      "description": "Shared title token total without rendering rows",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render": false,
+      "expect": {
+        "outcome": "menu",
+        "total": 1000
+      }
+    },
+    {
+      "id": "ceiling-first",
+      "description": "First row in the capped result",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1000,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "ceiling-full-default",
+      "description": "Complete capped result fetched through default pages",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1000,
+        "row_count": 1000
+      }
+    },
+    {
+      "id": "ceiling-zero-count-start",
+      "description": "Zero-count render at the first capped-result offset",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1000,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "ceiling-zero-count-at-cap",
+      "description": "Zero-count render at the capped total",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 1000,
+          "count": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1000,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "ceiling-last-full-window",
+      "description": "Five-row window ending exactly at the capped total",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 995,
+          "count": 5
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1000,
+        "row_count": 5
+      }
+    },
+    {
+      "id": "ceiling-overrun-one",
+      "description": "Five-row window overrunning the capped total by one",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 996,
+          "count": 5
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1000,
+        "row_count": 5
+      }
+    },
+    {
+      "id": "ceiling-offset-999",
+      "description": "Last valid zero-based row below the wrapper ceiling",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 999,
+          "count": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1000,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "ceiling-offset-1000",
+      "description": "Render offset exactly at the capped total",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 1000,
+          "count": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1000,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "ceiling-offset-1001",
+      "description": "Render offset beyond the capped total",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 1001,
+          "count": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1000,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "ceiling-cross-boundary",
+      "description": "Render window beginning two rows below the capped total",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 998,
+          "count": 5
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1000,
+        "row_count": 5
+      }
+    },
+    {
+      "id": "ceiling-last-offset-window",
+      "description": "Five-row window beginning at the final valid offset",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 999,
+          "count": 5
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1000,
+        "row_count": 5
+      }
+    },
+    {
+      "id": "ceiling-at-cap-window",
+      "description": "Five-row window beginning at the capped total",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 1000,
+          "count": 5
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1000,
+        "row_count": 5
+      }
+    },
+    {
+      "id": "narrow-thousandth",
+      "description": "Independently search the thousandth source row",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING MATCH 1000"
+        },
+        {
+          "string": "CEILING MATCH 1000"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "narrow-thousand-first",
+      "description": "Independently search the first source row beyond the cap",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING MATCH 1001"
+        },
+        {
+          "string": "CEILING MATCH 1001"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "narrow-last",
+      "description": "Independently search the final source row beyond the cap",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "CEILING MATCH 1005"
+        },
+        {
+          "string": "CEILING MATCH 1005"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    }
+  ]
+}

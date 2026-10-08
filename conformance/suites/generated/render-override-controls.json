@@ -1,0 +1,447 @@
+{
+  "name": "track-render-override-controls",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "control",
+      "description": "Normal eight-argument Artist override",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        2
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-gate-zero",
+      "description": "Render secondary override gate 0",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        0,
+        2
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-gate-two",
+      "description": "Render secondary override gate 2",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        2,
+        2
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-gate-signed-max",
+      "description": "Render secondary override gate 0x7fffffff",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        "0x7fffffff",
+        2
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-gate-high-bit",
+      "description": "Render secondary override gate 0x80000000",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        "0x80000000",
+        2
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-gate-uint32-max",
+      "description": "Render secondary override gate 0xffffffff",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        "0xffffffff",
+        2
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-selector-zero",
+      "description": "Render secondary override selector 0",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-selector-one",
+      "description": "Render secondary override selector 1",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        1
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-selector-hole-14",
+      "description": "Render secondary override selector 14",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        14
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-selector-upper-valid-17",
+      "description": "Render secondary override selector 17",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-selector-first-outside-18",
+      "description": "Render secondary override selector 18",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        18
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-selector-low-byte-ff",
+      "description": "Render secondary override selector 0x000000ff",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        "0x000000ff"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-selector-low-byte-wrap",
+      "description": "Render secondary override selector 0x00000100",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        "0x00000100"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-selector-high-word-artist",
+      "description": "Render secondary override selector 0x00010002",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        "0x00010002"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-selector-signed-max",
+      "description": "Render secondary override selector 0x7fffffff",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        "0x7fffffff"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-selector-high-bit",
+      "description": "Render secondary override selector 0x80000000",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        "0x80000000"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-selector-uint32-max",
+      "description": "Render secondary override selector 0xffffffff",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        "0xffffffff"
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "name": "song-info-play-paths",
+  "fixture_profile": "play-paths",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "track-01",
+      "description": "Play Song Info path branch: null link/cloud identifiers and missing original path",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-02",
+      "description": "Play Song Info path branch: zero link/cloud identifiers, empty path, zero size, and empty hot-cue flag",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-03",
+      "description": "Play Song Info path branch: ContentLink bit 7, negative service, negative size, null hot-cue flag, and existing original file",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.third"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-04",
+      "description": "Play Song Info path branch: ContentLink bits 7+0, maximum signed size, nonempty OFF hot-cue flag, and existing original directory",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.fourth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-05",
+      "description": "Play Song Info path branch: cloud service 1, matching MasterDBID, and existing original file",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.fifth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-06",
+      "description": "Play Song Info path branch: cloud service 1, mismatched MasterDBID, and existing original directory",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.sixth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-07",
+      "description": "Play Song Info path branch: cloud service 2, matching MasterDBID, missing original path, and maximum unsigned size",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.seventh"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-08",
+      "description": "Play Song Info path branch: maximum signed cloud service, null MasterDBID, empty original path, Unicode filename, and 2^32 size",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.eighth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-09",
+      "description": "Play Song Info path branch: local path, null file size, and empty hot-cue flag",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.ninth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-10",
+      "description": "Play Song Info path branch: null local path with an existing original file",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.tenth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-11",
+      "description": "Play Song Info path branch: cloud service 1, matching MasterDBID, and existing original directory",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.eleventh"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-12",
+      "description": "Play Song Info path branch: cloud service 1, matching MasterDBID, and existing zero-byte original file",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.twelfth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-13",
+      "description": "Play Song Info path branch: ContentLink zero paired control",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.thirteenth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-14",
+      "description": "Play Song Info path branch: ContentLink bit 7 paired control",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.fourteenth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ],
+  "repeat_strategy": "fixture-reset-and-restart"
+}

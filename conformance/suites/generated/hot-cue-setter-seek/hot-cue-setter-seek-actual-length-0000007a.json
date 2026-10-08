@@ -1,0 +1,61 @@
+{
+  "name": "hot-cue-setter-seek-actual-length-0000007a",
+  "fixture_profile": "hot-cue-bank-mutation",
+  "fixture_version": 1,
+  "repeat_strategy": "two-cold-process-health-captures",
+  "seek_descriptor_probe": {
+    "axis": "actual-length",
+    "value": 122,
+    "record_length": 122,
+    "fixture_variant": "duplicate-slot"
+  },
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "setter",
+      "description": "Extended setter seek descriptor actual-length-0000007a",
+      "request_kind": "0x2401",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 122
+        },
+        {
+          "blob_hex": "7a000000010002000000e80355f8060052aa0800000000000800000000000000ffffffff0403020114131211242322213433323142000000000006000d0c0b0a000034127856000000002c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

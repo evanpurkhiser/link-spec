@@ -1,0 +1,148 @@
+{
+  "name": "hot-cue-bank-discovery",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "root-folder-mode",
+      "description": "Hot Cue Bank root using the folder-list mode emitted by a player",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "$context"},
+        {"number": 0},
+        {"number": 1},
+        {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "folder-children",
+      "description": "Children of the populated Hot Cue Bank folder",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.folder"},
+        {"number": 1},
+        {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "bank-tracks",
+      "description": "Tracks assigned to the populated Hot Cue Bank leaf",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank"},
+        {"number": 0},
+        {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "bank-as-folder",
+      "description": "Leaf ID sent through the folder-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank"},
+        {"number": 1},
+        {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "folder-as-bank",
+      "description": "Folder ID sent through the track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.folder"},
+        {"number": 0},
+        {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "root-track-mode",
+      "description": "Zero selector sent through the track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "$context"},
+        {"number": 0},
+        {"number": 0},
+        {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "bank-tracks-location-2",
+      "description": "Populated leaf under browse menu location 2",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "0x01010201"},
+        {"number": "$fixture.hotcue.bank"},
+        {"number": 0},
+        {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "bank-tracks-drag-drop-location-7",
+      "description": "Populated leaf under the player drag-and-drop location",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "0x01010701"},
+        {"number": "$fixture.hotcue.bank"},
+        {"number": 0},
+        {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "bank-tracks-fourth-argument-8",
+      "description": "Track-list mode with the fourth numeric argument set to eight",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank"},
+        {"number": 0},
+        {"number": 8}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "unknown-selector-folder-mode",
+      "description": "Unknown selector in folder-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "0xfffffffe"},
+        {"number": 1},
+        {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "unknown-selector-track-mode",
+      "description": "Unknown selector in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "0xfffffffe"},
+        {"number": 0},
+        {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

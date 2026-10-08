@@ -1,0 +1,149 @@
+{
+  "name": "context-display-status-legacy",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "immediate",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "legacy",
+    "page_size": 32,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "type-00--display",
+      "description": "Track type 0x00: status-backed Display Song Info",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--display",
+      "description": "Track type 0x01: status-backed Display Song Info",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--display",
+      "description": "Track type 0x02: status-backed Display Song Info",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--display",
+      "description": "Track type 0x03: status-backed Display Song Info",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--display",
+      "description": "Track type 0x04: status-backed Display Song Info",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--display",
+      "description": "Track type 0x05: status-backed Display Song Info",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--display",
+      "description": "Track type 0x06: status-backed Display Song Info",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

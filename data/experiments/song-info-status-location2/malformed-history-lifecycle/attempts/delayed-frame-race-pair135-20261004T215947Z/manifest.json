@@ -1,0 +1,52 @@
+{
+  "format": 1,
+  "scope": "unpromoted real Rekordbox 7.2.19 malformed-history lifecycle divergence",
+  "pair": "play-alternate-location__then__play-blob-content",
+  "pair_index": 135,
+  "recording_generation": "z34",
+  "recording_service": "codex-rekordbox-song-info-malformed-history-lifecycle-20261004z34.service",
+  "recording_invocation_id": "6ae13e30e7cd40089a42588a9cc1324d",
+  "observed_at": "2026-10-04T21:59:47Z",
+  "authority_status": "quarantined-unpromoted",
+  "difference": {
+    "case": "delivery-probe",
+    "field": "pre_request_drain",
+    "record": {
+      "outcome": "timeout",
+      "error_kind": "WouldBlock",
+      "raw_hex": ""
+    },
+    "repeat": {
+      "outcome": "raw_reply",
+      "decoded_bytes": 32,
+      "message_kind": 16384,
+      "arguments": [
+        8450,
+        0
+      ],
+      "raw_hex": "11872349ae11000000011040000f021400000002060611000021021100000000"
+    }
+  },
+  "stable_results": {
+    "first": "seven-row-menu",
+    "second": "menu-without-total",
+    "health_probe_total": 13
+  },
+  "sha256": {
+    "suite": "36e355f7d88bb7e2ef5cdfed4b3bf70a4c994077fc345b53d4d607702bdb49be",
+    "record": "e1484f28d3e514bfb2f623d8be1155f6f82f332de68d56abf4c1084e13cc72c3",
+    "repeat_actual": "d82cdca27dfbc8a723a610638e3ec11687e26612549be1842787e9484f090a31",
+    "record_health_before": "fb7a0a29372c54314f8be20a70eb3ffb586151d5363998441775bc568f0058cb",
+    "record_health_after": "10297e93bcbafa67f3f42c6fd7594477035b36abcc26ea14bc1611a7dd82063f",
+    "repeat_health_before": "10bc0fd04063c56c898a0fbcfad0984bf8463e30407e5693192b2b62fb56ccdf"
+  },
+  "recovery": {
+    "generation": "z35",
+    "service": "codex-rekordbox-song-info-malformed-history-lifecycle-20261004z35.service",
+    "invocation_id": "b2947157bd7048a4836aebf820b198e1",
+    "strategy": "archive both divergent runs and perform a wholly fresh record and cold repeat",
+    "result": "fresh record and repeat both received the delayed frame in the health drain; canonical pair promoted",
+    "canonical_golden_sha256": "49a7bb584ab1464e9f7dc941b4651467a68d9529b395ea14ab8e8d083c84cf6c",
+    "canonical_receipt_sha256": "affc4f136697a23baf5b76dbe90701121424df95bfa8f61105cc931a86a58bcc"
+  }
+}

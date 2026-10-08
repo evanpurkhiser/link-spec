@@ -1,0 +1,17 @@
+* text=auto
+
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.rs text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=crlf
+
+*.DAT binary
+*.nxs binary
+*.pcap binary
+*.pcapng binary
+*.png binary
+
+# Generated disassembly preserves the renderer's exact line endings and spacing.
+data/static-analysis/** -whitespace

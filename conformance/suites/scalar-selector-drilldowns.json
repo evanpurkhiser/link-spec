@@ -1,0 +1,694 @@
+{
+  "name": "scalar-selector-drilldowns",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 64,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "rating-0",
+      "description": "Rating zero drilldown",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "rating-1",
+      "description": "Rating one drilldown",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "rating-2",
+      "description": "Rating two drilldown",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "rating-3",
+      "description": "Rating three drilldown",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "rating-4",
+      "description": "Rating four drilldown",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "rating-5",
+      "description": "Rating five drilldown",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "rating-6",
+      "description": "First rating above the advertised domain",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "rating-99",
+      "description": "Out-of-range rating present only in the invalid profile",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 99
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "rating-u32-max",
+      "description": "Maximum unsigned rating selector",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 4294967295
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "bitrate-0",
+      "description": "Zero bitrate drilldown",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "bitrate-32",
+      "description": "32 kbps drilldown",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 32
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "bitrate-128",
+      "description": "128 kbps drilldown",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 128
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "bitrate-160",
+      "description": "160 kbps drilldown",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 160
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "bitrate-192",
+      "description": "192 kbps drilldown",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 192
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "bitrate-256",
+      "description": "256 kbps drilldown",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 256
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "bitrate-320",
+      "description": "320 kbps drilldown",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 320
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "bitrate-1411",
+      "description": "1411 kbps drilldown",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1411
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "bitrate-1",
+      "description": "Absent positive bitrate selector",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "bitrate-i32-max",
+      "description": "Maximum signed bitrate selector",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2147483647
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "bitrate-u32-max",
+      "description": "Maximum unsigned bitrate selector",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 4294967295
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "color-0",
+      "description": "Unassigned color selector",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "color-1",
+      "description": "Color one drilldown",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "color-2",
+      "description": "Color two drilldown",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "color-3",
+      "description": "Color three drilldown",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "color-4",
+      "description": "Color four drilldown",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "color-5",
+      "description": "Color five drilldown",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "color-6",
+      "description": "Color six drilldown",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "color-7",
+      "description": "Color seven drilldown",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 7
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "color-8",
+      "description": "Color eight drilldown",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 8
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "color-9",
+      "description": "First color above the palette",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 9
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "color-999999",
+      "description": "Dangling color ID used by the invalid profile",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 999999
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "color-u32-max",
+      "description": "Maximum unsigned color selector",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 4294967295
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    }
+  ]
+}

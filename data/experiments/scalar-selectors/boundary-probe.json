@@ -1,0 +1,23 @@
+{
+  "name": "scalar-selector-boundary-probe",
+  "fixture_profile": "scalar-boundaries",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 64,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"rating-root","description":"Rating root with out-of-range value 99","request_kind":"0x1007","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"rating-99","description":"Direct out-of-range rating equality selector","request_kind":"0x1107","arguments":[{"number":"$context"},{"number":"$sort"},{"number":99}],"expect":{"outcome":"any"}},
+    {"id":"bitrate-root","description":"Bitrate root with maximum signed value","request_kind":"0x1011","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"bitrate-i32-max","description":"Direct maximum signed bitrate equality selector","request_kind":"0x1111","arguments":[{"number":"$context"},{"number":"$sort"},{"number":2147483647}],"expect":{"outcome":"any"}},
+    {"id":"color-root","description":"Color root with unassigned and dangling references","request_kind":"0x100d","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"color-0","description":"Direct unassigned-color equality selector","request_kind":"0x110d","arguments":[{"number":"$context"},{"number":"$sort"},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"color-999999","description":"Direct dangling-color equality selector","request_kind":"0x110d","arguments":[{"number":"$context"},{"number":"$sort"},{"number":999999}],"expect":{"outcome":"any"}}
+  ]
+}

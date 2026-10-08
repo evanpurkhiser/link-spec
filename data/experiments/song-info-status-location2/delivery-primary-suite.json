@@ -1,0 +1,311 @@
+{
+  "name": "song-info-status-location2-delivery-primary",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ],
+    "read_timeout_ms": 10000
+  },
+  "cases": [
+    {
+      "id": "01-delivery-primary",
+      "description": "Iteration 1: delivery-primary precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "01-delivery-probe",
+      "description": "Iteration 1: location-2 Delivery after delivery-primary",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "02-delivery-primary",
+      "description": "Iteration 2: delivery-primary precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "02-delivery-probe",
+      "description": "Iteration 2: location-2 Delivery after delivery-primary",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "03-delivery-primary",
+      "description": "Iteration 3: delivery-primary precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "03-delivery-probe",
+      "description": "Iteration 3: location-2 Delivery after delivery-primary",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "04-delivery-primary",
+      "description": "Iteration 4: delivery-primary precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "04-delivery-probe",
+      "description": "Iteration 4: location-2 Delivery after delivery-primary",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "05-delivery-primary",
+      "description": "Iteration 5: delivery-primary precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "05-delivery-probe",
+      "description": "Iteration 5: location-2 Delivery after delivery-primary",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "06-delivery-primary",
+      "description": "Iteration 6: delivery-primary precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "06-delivery-probe",
+      "description": "Iteration 6: location-2 Delivery after delivery-primary",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "07-delivery-primary",
+      "description": "Iteration 7: delivery-primary precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "07-delivery-probe",
+      "description": "Iteration 7: location-2 Delivery after delivery-primary",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "08-delivery-primary",
+      "description": "Iteration 8: delivery-primary precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "08-delivery-probe",
+      "description": "Iteration 8: location-2 Delivery after delivery-primary",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

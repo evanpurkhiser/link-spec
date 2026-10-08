@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "scope": "self-authored deterministic Rekordbox user-info/DJ-ID profiles",
+  "checksum": {
+    "offset_0": {
+      "byte_order": "little",
+      "value": "0x01020304"
+    },
+    "offset_4": {
+      "byte_order": "big",
+      "value": "0x11121314"
+    },
+    "offset_8": {
+      "byte_order": "big",
+      "value": "0x21222324"
+    },
+    "offset_12": {
+      "byte_order": "big",
+      "value": "0x31323334"
+    },
+    "offset_28": {
+      "byte_order": "big",
+      "value": "0x64686c70"
+    }
+  },
+  "profiles": [
+    {
+      "id": "valid-zero-tail",
+      "filename": "valid-zero-tail.nxs",
+      "size": 160,
+      "sha256": "fcbf8d7acf2e137f9e050fe905fcc3d8cd731e8677ee7f184bc5d5a54b0f25fc",
+      "first_32_sha256": "5a02bc6dab5cd88f8cd047cc39b797955a7859e639986946bde53411eb91fbed",
+      "static_classification": "valid",
+      "guest_target": "djprofile.nxs"
+    },
+    {
+      "id": "valid-pattern-tail",
+      "filename": "valid-pattern-tail.nxs",
+      "size": 160,
+      "sha256": "6a369b0bf022d75765a6ee7c0a807280a741406710b71b6493b0c915e8a30eea",
+      "first_32_sha256": "5a02bc6dab5cd88f8cd047cc39b797955a7859e639986946bde53411eb91fbed",
+      "static_classification": "valid",
+      "guest_target": "djprofile.nxs"
+    },
+    {
+      "id": "checksum-invalid",
+      "filename": "checksum-invalid.nxs",
+      "size": 160,
+      "sha256": "24671316054e82eb205a37e757507ca14c7127b49daed77a3cbef9a48434aed5",
+      "first_32_sha256": "bfec41e5a6e89bb3b1ab45eebfb6aa3f5d03296ed49eef4dcc427b8b49c5b6f7",
+      "static_classification": "invalid-checksum",
+      "guest_target": "djprofile.nxs"
+    },
+    {
+      "id": "short-159",
+      "filename": "short-159.nxs",
+      "size": 159,
+      "sha256": "11faf59934c7edc39edc56471a49d7c11b3fc1b1550a47f5d8df067cdc444b4a",
+      "first_32_sha256": "5a02bc6dab5cd88f8cd047cc39b797955a7859e639986946bde53411eb91fbed",
+      "static_classification": "invalid-length",
+      "guest_target": "djprofile.nxs"
+    },
+    {
+      "id": "long-161",
+      "filename": "long-161.nxs",
+      "size": 161,
+      "sha256": "e72e5b004df4a5b35a84c8f4a117d859270d8c98e6970bddbbc3380ce29d2469",
+      "first_32_sha256": "5a02bc6dab5cd88f8cd047cc39b797955a7859e639986946bde53411eb91fbed",
+      "static_classification": "invalid-length",
+      "guest_target": "djprofile.nxs"
+    },
+    {
+      "id": "alternate-extension-only",
+      "filename": "alternate-extension-only.nxs",
+      "size": 160,
+      "sha256": "fcbf8d7acf2e137f9e050fe905fcc3d8cd731e8677ee7f184bc5d5a54b0f25fc",
+      "first_32_sha256": "5a02bc6dab5cd88f8cd047cc39b797955a7859e639986946bde53411eb91fbed",
+      "static_classification": "ignored-alternate-path",
+      "guest_target": "djprofile.bin"
+    }
+  ]
+}

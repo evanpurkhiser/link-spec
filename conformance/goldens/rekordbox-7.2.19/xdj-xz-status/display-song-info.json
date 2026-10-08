@@ -1,0 +1,169 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "Display Song Info populated row order for xdj-xz",
+        "header": [],
+        "id": "populated-track",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 184615681
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8194
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Display Song Info deleted content for xdj-xz",
+        "header": [],
+        "id": "deleted-track",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 184615681
+            },
+            {
+              "type": "number",
+              "value": 10999
+            }
+          ],
+          "kind": 8194
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Display Song Info zero content ID for xdj-xz",
+        "header": [],
+        "id": "zero-content-id",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 184615681
+            },
+            {
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "kind": 8194
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Display Song Info unknown content for xdj-xz",
+        "header": [],
+        "id": "unknown-content-id",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 184615681
+            },
+            {
+              "type": "number",
+              "value": 4294967294
+            }
+          ],
+          "kind": 8194
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      }
+    ],
+    "fixture": {
+      "fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+      "profile": "full",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 1
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "display-song-info-status-xdj-xz"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "e8c45a7020a70103d6a15d5cf9aaa32a3d8c758c6c1f3f33b2a8d80872f7c812",
+    "fixture_fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 2,
+      "mac": "02:00:00:60:00:53",
+      "model": "XDJ-XZ",
+      "model_code": 0,
+      "packet_sha256": "274596e984fd6b8df1d634f1a90fa4c3749852de6abfb744ab00419fb6a4b97d",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 11,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0,
+      "status_packet_sha256": "9ed356339a8b011698151ce2a01b00982ed9fd2857399b1eb41acd1a9f9959e2",
+      "status_port": 50002,
+      "status_template": "rx3-captured"
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-xz-player-11-status.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/full/manifest.json",
+    "recorded_unix_seconds": 1790826652,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/suites/generated/display-song-info-status-xdj-xz.json",
+    "suite_sha256": "9ea6bb044f5ee6079564b1ac422217b720dca5693cab01bb8bb28e994cfe690a"
+  }
+}

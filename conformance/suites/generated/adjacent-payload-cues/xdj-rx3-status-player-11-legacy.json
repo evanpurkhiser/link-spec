@@ -1,0 +1,263 @@
+{
+  "name": "Rekordbox adjacent cue payload xdj-rx3-status player 11 legacy",
+  "fixture_profile": "adjacent-payload-cues",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "legacy",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": []
+  },
+  "cases": [
+    {
+      "id": "kind-2104--content-zero",
+      "description": "0x2104 cue payload for zero",
+      "request_kind": "0x2104",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.cue_payload.zero"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2104--content-one",
+      "description": "0x2104 cue payload for one",
+      "request_kind": "0x2104",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.cue_payload.one"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2104--content-three",
+      "description": "0x2104 cue payload for three",
+      "request_kind": "0x2104",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.cue_payload.three"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2104--content-count-255",
+      "description": "0x2104 cue payload for count 255",
+      "request_kind": "0x2104",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.cue_payload.count_255"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2104--content-count-256",
+      "description": "0x2104 cue payload for count 256",
+      "request_kind": "0x2104",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.cue_payload.count_256"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2104--content-comment-unicode",
+      "description": "0x2104 cue payload for comment unicode",
+      "request_kind": "0x2104",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.cue_payload.comment_unicode"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2b04--content-zero",
+      "description": "0x2b04 cue payload for zero",
+      "request_kind": "0x2b04",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.cue_payload.zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2b04--content-one",
+      "description": "0x2b04 cue payload for one",
+      "request_kind": "0x2b04",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.cue_payload.one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2b04--content-three",
+      "description": "0x2b04 cue payload for three",
+      "request_kind": "0x2b04",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.cue_payload.three"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2b04--content-count-255",
+      "description": "0x2b04 cue payload for count 255",
+      "request_kind": "0x2b04",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.cue_payload.count_255"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2b04--content-count-256",
+      "description": "0x2b04 cue payload for count 256",
+      "request_kind": "0x2b04",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.cue_payload.count_256"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2b04--content-comment-unicode",
+      "description": "0x2b04 cue payload for comment unicode",
+      "request_kind": "0x2b04",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.cue_payload.comment_unicode"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

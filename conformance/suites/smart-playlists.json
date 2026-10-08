@@ -1,0 +1,28 @@
+{
+  "name": "smart-playlist-serving",
+  "fixture_profile": "smart-playlists",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"root","description":"Root representation and ordering of ordinary and Attribute=4 smart playlists","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":"$sort"},{"number":0},{"number":1}],"expect":{"outcome":"menu","total":8,"row_count":8,"item_ids":["$fixture.playlist.folder","$fixture.playlist.cue_analysis","$fixture.playlist.empty","$fixture.playlist.smart_rule_only","$fixture.playlist.smart_contradiction","$fixture.playlist.smart_malformed","$fixture.playlist.ordinary_with_rule","$fixture.playlist.smart_without_rule"]}},
+    {"id":"rule-only-tracks","description":"Attribute=4 valid House rule without materialized membership","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.playlist.smart_rule_only"},{"number":0}],"expect":{"outcome":"menu","total":4,"row_count":4,"item_ids":["$fixture.track.first","$fixture.track.third","$fixture.track.fifth","$fixture.track.seventh"]}},
+    {"id":"rule-only-children","description":"The same smart ID forced through folder-child dispatch","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.playlist.smart_rule_only"},{"number":1}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"contradiction-membership-order","description":"Valid House rule whose materialized rows contain only Techno tracks","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.playlist.smart_contradiction"},{"number":0}],"expect":{"outcome":"menu","total":4,"row_count":4,"item_ids":["$fixture.track.first","$fixture.track.third","$fixture.track.fifth","$fixture.track.seventh"]}},
+    {"id":"contradiction-title-sort","description":"Contradictory membership under explicit title sort","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":1},{"number":"$fixture.playlist.smart_contradiction"},{"number":0}],"expect":{"outcome":"menu","total":4,"row_count":4,"item_ids":["$fixture.track.first","$fixture.track.third","$fixture.track.fifth","$fixture.track.seventh"]}},
+    {"id":"contradiction-children","description":"Contradictory smart ID forced through folder-child dispatch","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.playlist.smart_contradiction"},{"number":1}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"malformed-membership","description":"Malformed smart XML with materialized House-track membership","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.playlist.smart_malformed"},{"number":0}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"malformed-children","description":"Malformed smart ID forced through folder-child dispatch","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.playlist.smart_malformed"},{"number":1}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"ordinary-rule-only-tracks","description":"Attribute=0 ordinary playlist with valid House rule and no membership","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.playlist.ordinary_with_rule"},{"number":0}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"ordinary-rule-only-children","description":"Ordinary rule-bearing ID forced through folder-child dispatch","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.playlist.ordinary_with_rule"},{"number":1}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"smart-without-rule-membership","description":"Attribute=4 row without SmartList XML but with materialized membership","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.playlist.smart_without_rule"},{"number":0}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"smart-without-rule-children","description":"Rule-less smart ID forced through folder-child dispatch","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.playlist.smart_without_rule"},{"number":1}],"expect":{"outcome":"menu","total":0,"row_count":0}}
+  ]
+}

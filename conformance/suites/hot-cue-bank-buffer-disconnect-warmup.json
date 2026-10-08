@@ -1,0 +1,41 @@
+{
+  "name": "hot-cue-bank-buffer-disconnect-warmup",
+  "fixture_profile": "hot-cue-banks",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010101",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "prime-location-1-root",
+      "description": "Populate location one with the three-row Hot Cue Bank root",
+      "request_kind": "0x2001",
+      "arguments": [
+        {"number": "0x01010101"},
+        {"number": 0},
+        {"number": 1},
+        {"number": 0}
+      ],
+      "render_context": "0x01010101",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3,
+        "item_ids": [
+          "$fixture.hotcue.folder.beta",
+          "$fixture.hotcue.folder.alpha",
+          "$fixture.hotcue.bank.root"
+        ]
+      }
+    }
+  ]
+}

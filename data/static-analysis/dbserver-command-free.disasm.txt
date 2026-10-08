@@ -1,0 +1,64 @@
+## __Z11DBCCmd_FreePK19_struct_db_comm_cmd | 
+address=0x10049ddd0 size=0xb0
+0x010049ddd0  push      rbp
+0x010049ddd1  mov       rbp, rsp
+0x010049ddd4  push      r14
+0x010049ddd6  push      rbx
+0x010049ddd7  test      rdi, rdi
+0x010049ddda  je        0x10049de3e
+0x010049dddc  mov       r14, rdi
+0x010049dddf  movzx     edx, byte ptr [rdi + 7]
+0x010049dde3  cmp       rdx, 0xd
+0x010049dde7  jb        0x10049ddf8
+0x010049dde9  mov       edi, 0x1000302
+0x010049ddee  mov       esi, 2
+0x010049ddf3  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010049ddf8  test      byte ptr [r14 + 6], 3
+0x010049ddfd  je        0x10049de6a
+0x010049ddff  mov       al, byte ptr [r14 + 7]
+0x010049de03  test      al, al
+0x010049de05  je        0x10049de59
+0x010049de07  xor       ebx, ebx
+0x010049de09  jmp       0x10049de1b
+0x010049de0b  nop       dword ptr [rax + rax]
+0x010049de10  inc       rbx
+0x010049de13  movzx     ecx, al
+0x010049de16  cmp       rbx, rcx
+0x010049de19  jae       0x10049de59
+0x010049de1b  movzx     ecx, byte ptr [r14 + rbx + 8]
+0x010049de21  dec       cl
+0x010049de23  cmp       cl, 2
+0x010049de26  ja        0x10049de10
+0x010049de28  mov       rdi, qword ptr [r14 + rbx*8 + 0x18]
+0x010049de2d  test      rdi, rdi
+0x010049de30  je        0x10049de10
+0x010049de32  call      0x1038c3cc8
+0x010049de37  movzx     eax, byte ptr [r14 + 7]
+0x010049de3c  jmp       0x10049de10
+0x010049de3e  movzx     edx, byte ptr [7]
+0x010049de46  mov       edi, 0x1000302
+0x010049de4b  mov       esi, 1
+0x010049de50  pop       rbx
+0x010049de51  pop       r14
+0x010049de53  pop       rbp
+0x010049de54  jmp       0x1025a5410  ; __Z11errorHandlejtm |
+0x010049de59  mov       rdi, qword ptr [r14 + 0x80]
+0x010049de60  test      rdi, rdi
+0x010049de63  je        0x10049de6a
+0x010049de65  call      0x1038c3cc8
+0x010049de6a  mov       rdi, r14
+0x010049de6d  pop       rbx
+0x010049de6e  pop       r14
+0x010049de70  pop       rbp
+0x010049de71  jmp       0x1038c3cc8
+0x010049de76  nop
+0x010049de77  nop
+0x010049de78  nop
+0x010049de79  nop
+0x010049de7a  nop
+0x010049de7b  nop
+0x010049de7c  nop
+0x010049de7d  nop
+0x010049de7e  nop
+0x010049de7f  nop
+

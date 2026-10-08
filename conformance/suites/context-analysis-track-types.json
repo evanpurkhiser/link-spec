@@ -1,0 +1,905 @@
+{
+  "name": "context-analysis-track-types",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "type-00--display",
+      "description": "Track type 0x00: populated 0x2002 display",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--play",
+      "description": "Track type 0x00: populated 0x2102 play",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--recognized-22",
+      "description": "Track type 0x00: populated 0x2202 recognized-22",
+      "request_kind": "0x2202",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--recognized-23",
+      "description": "Track type 0x00: populated 0x2302 recognized-23",
+      "request_kind": "0x2302",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--recognized-24",
+      "description": "Track type 0x00: populated 0x2402 recognized-24",
+      "request_kind": "0x2402",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--recognized-25",
+      "description": "Track type 0x00: populated 0x2502 recognized-25",
+      "request_kind": "0x2502",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--delivery",
+      "description": "Track type 0x00: populated 0x2602 delivery",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--display",
+      "description": "Track type 0x01: populated 0x2002 display",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--play",
+      "description": "Track type 0x01: populated 0x2102 play",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--recognized-22",
+      "description": "Track type 0x01: populated 0x2202 recognized-22",
+      "request_kind": "0x2202",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--recognized-23",
+      "description": "Track type 0x01: populated 0x2302 recognized-23",
+      "request_kind": "0x2302",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--recognized-24",
+      "description": "Track type 0x01: populated 0x2402 recognized-24",
+      "request_kind": "0x2402",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--recognized-25",
+      "description": "Track type 0x01: populated 0x2502 recognized-25",
+      "request_kind": "0x2502",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--delivery",
+      "description": "Track type 0x01: populated 0x2602 delivery",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--display",
+      "description": "Track type 0x02: populated 0x2002 display",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--play",
+      "description": "Track type 0x02: populated 0x2102 play",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--recognized-22",
+      "description": "Track type 0x02: populated 0x2202 recognized-22",
+      "request_kind": "0x2202",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--recognized-23",
+      "description": "Track type 0x02: populated 0x2302 recognized-23",
+      "request_kind": "0x2302",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--recognized-24",
+      "description": "Track type 0x02: populated 0x2402 recognized-24",
+      "request_kind": "0x2402",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--recognized-25",
+      "description": "Track type 0x02: populated 0x2502 recognized-25",
+      "request_kind": "0x2502",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--delivery",
+      "description": "Track type 0x02: populated 0x2602 delivery",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--display",
+      "description": "Track type 0x03: populated 0x2002 display",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--play",
+      "description": "Track type 0x03: populated 0x2102 play",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--recognized-22",
+      "description": "Track type 0x03: populated 0x2202 recognized-22",
+      "request_kind": "0x2202",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--recognized-23",
+      "description": "Track type 0x03: populated 0x2302 recognized-23",
+      "request_kind": "0x2302",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--recognized-24",
+      "description": "Track type 0x03: populated 0x2402 recognized-24",
+      "request_kind": "0x2402",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--recognized-25",
+      "description": "Track type 0x03: populated 0x2502 recognized-25",
+      "request_kind": "0x2502",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--delivery",
+      "description": "Track type 0x03: populated 0x2602 delivery",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--display",
+      "description": "Track type 0x04: populated 0x2002 display",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--play",
+      "description": "Track type 0x04: populated 0x2102 play",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--recognized-22",
+      "description": "Track type 0x04: populated 0x2202 recognized-22",
+      "request_kind": "0x2202",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--recognized-23",
+      "description": "Track type 0x04: populated 0x2302 recognized-23",
+      "request_kind": "0x2302",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--recognized-24",
+      "description": "Track type 0x04: populated 0x2402 recognized-24",
+      "request_kind": "0x2402",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--recognized-25",
+      "description": "Track type 0x04: populated 0x2502 recognized-25",
+      "request_kind": "0x2502",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--delivery",
+      "description": "Track type 0x04: populated 0x2602 delivery",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--display",
+      "description": "Track type 0x05: populated 0x2002 display",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--play",
+      "description": "Track type 0x05: populated 0x2102 play",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--recognized-22",
+      "description": "Track type 0x05: populated 0x2202 recognized-22",
+      "request_kind": "0x2202",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--recognized-23",
+      "description": "Track type 0x05: populated 0x2302 recognized-23",
+      "request_kind": "0x2302",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--recognized-24",
+      "description": "Track type 0x05: populated 0x2402 recognized-24",
+      "request_kind": "0x2402",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--recognized-25",
+      "description": "Track type 0x05: populated 0x2502 recognized-25",
+      "request_kind": "0x2502",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--delivery",
+      "description": "Track type 0x05: populated 0x2602 delivery",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--display",
+      "description": "Track type 0x06: populated 0x2002 display",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--play",
+      "description": "Track type 0x06: populated 0x2102 play",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--recognized-22",
+      "description": "Track type 0x06: populated 0x2202 recognized-22",
+      "request_kind": "0x2202",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--recognized-23",
+      "description": "Track type 0x06: populated 0x2302 recognized-23",
+      "request_kind": "0x2302",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--recognized-24",
+      "description": "Track type 0x06: populated 0x2402 recognized-24",
+      "request_kind": "0x2402",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--recognized-25",
+      "description": "Track type 0x06: populated 0x2502 recognized-25",
+      "request_kind": "0x2502",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--delivery",
+      "description": "Track type 0x06: populated 0x2602 delivery",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "name": "streaming-provider-paths",
+  "description": "Real-Rekordbox authority for the Beatport catalog substring, case and near-match boundaries, scheme controls, and History split",
+  "fixture_profile": "streaming-provider-paths",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 20,
+    "render_arguments": [
+      0,
+      "$total",
+      20,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "collection-default",
+      "description": "Collection authority for production-shaped Beatport path boundaries",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "collection-key-sort",
+      "description": "Explicit sorting preserves the same path-admission result",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "file-name",
+      "description": "File Name uses the shared track-insertion visibility gate",
+      "request_kind": "0x1013",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "ordinary-playlist",
+      "description": "Ordinary playlist membership applies provider path visibility",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": "$fixture.playlist.primary"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "smart-playlist",
+      "description": "Smart playlist rule candidates apply provider path visibility",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": "$fixture.playlist.visibility_smart"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "search",
+      "description": "Search applies provider path visibility to matching tracks",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "PROVIDER PATH"
+        },
+        {
+          "string": "PROVIDER PATH"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "history",
+      "description": "Persisted History retains the Windows AppSync platform control",
+      "request_kind": "0x1112",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": "$fixture.history.one"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    }
+  ]
+}

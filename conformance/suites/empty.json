@@ -1,0 +1,37 @@
+{
+  "name": "empty-library",
+  "fixture_profile": "empty",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"root","description":"Root configuration exists with no content","request_kind":"0x1000","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$root_capabilities"}],"expect":{"outcome":"menu","total":20,"row_count":20,"argument_count":16}},
+    {"id":"tracks","description":"Empty track root","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"genres","description":"No unreferenced lookup leakage","request_kind":"0x1001","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"artists","description":"Empty artist root","request_kind":"0x1002","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"albums","description":"Empty album root","request_kind":"0x1003","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"bpm","description":"Empty BPM root","request_kind":"0x1006","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"ratings","description":"Empty rating root","request_kind":"0x1007","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"years","description":"Empty release-year root","request_kind":"0x1008","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"labels","description":"Empty label root","request_kind":"0x100a","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"colors","description":"Palette exists independently of content","request_kind":"0x100d","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":8,"row_count":8}},
+    {"id":"times","description":"Empty duration root","request_kind":"0x1010","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"bitrates","description":"Empty bitrate root","request_kind":"0x1011","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"history","description":"Empty Link history root","request_kind":"0x1012","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"filenames","description":"Empty file-name root","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"keys","description":"Key root behavior without content","request_kind":"0x1014","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"matching-missing-seed","description":"Unknown Matching seed","request_kind":"0x1017","arguments":[{"number":"$context"},{"number":"$sort"},{"number":10001}],"expect":{"outcome":"any"}},
+    {"id":"hot-cue-bank","description":"Empty Hot Cue Bank behavior","request_kind":"0x1018","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"search","description":"Empty mixed search","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"FIXTURE"},{"string":"FIXTURE"},{"number":0}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"original-artists","description":"Empty Original Artist root","request_kind":"0x1302","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"remixers","description":"Empty Remixer root","request_kind":"0x1602","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"playlists","description":"Required CUE Analysis playlist is the only row in an empty library","request_kind":"0x1105","arguments":[{"number":"$context"},{"number":"$sort"},{"number":0},{"number":1}],"expect":{"outcome":"menu","total":1,"row_count":1,"item_ids":["$fixture.playlist.cue_analysis"]}}
+  ]
+}

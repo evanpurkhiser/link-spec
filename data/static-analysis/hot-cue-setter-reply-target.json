@@ -1,0 +1,35 @@
+{
+  "format": "rekordbox-hot-cue-setter-reply-target-v1",
+  "binary": {
+    "path": "/home/evan/workspace/rx3-research/artifacts/rekordbox/7.2.19/extracted/app-root/rekordbox.app/Contents/MacOS/rekordbox",
+    "sha256": "07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244",
+    "architecture": "x86_64"
+  },
+  "appsync_vtable": {
+    "symbol": "__ZTV14PSvAppSyncDBIF",
+    "address": "0x105656d30",
+    "object_vptr_offset": "0x10",
+    "method_offset": "0x288",
+    "entry_address": "0x105656fc8",
+    "entry_bytes_little_endian": "202f6d0101000000",
+    "target_address": "0x1016d2f20",
+    "target_symbol": "__ZN14PSvAppSyncDBIF19getHCBnkCuePointExtEP16_struct_dbsm_msgjj"
+  },
+  "setter_calls": {
+    "rejection_path": {
+      "count_load": "0x1016d4068",
+      "call": "0x1016d4074"
+    },
+    "successful_mutation_path": {
+      "last_database_update_call": "0x1016d4c18",
+      "bank_id_load": "0x1016d4c76",
+      "returned_slot_count_load": "0x1016d4c79",
+      "getter_call": "0x1016d4c85"
+    }
+  },
+  "conclusion": "The successful extended setter updates the database before invoking getHCBnkCuePointExt with the request bank ID and returned-slot count to construct its reply.",
+  "limits": [
+    "Pinned Rekordbox 7.2.19 x86-64 binary only",
+    "The static target does not by itself characterize extreme-count runtime behavior"
+  ]
+}

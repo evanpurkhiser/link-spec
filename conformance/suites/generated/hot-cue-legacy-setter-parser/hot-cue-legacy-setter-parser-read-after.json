@@ -1,0 +1,46 @@
+{
+  "name": "hot-cue-legacy-setter-parser-read-after",
+  "fixture_profile": "hot-cue-bank-legacy-ordinals",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "database-read-after-setter",
+      "description": "Six-slot extended getter after a surviving isolated legacy setter probe",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

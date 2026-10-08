@@ -1,0 +1,672 @@
+{
+  "name": "Rekordbox adjacent payload null, empty, and missing file paths",
+  "fixture_profile": "payload-paths",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 3000,
+    "render_arguments": []
+  },
+  "cases": [
+    {
+      "id": "kind-2003--path-nonempty-missing",
+      "description": "0x2003 with nonempty missing database payload path",
+      "request_kind": "0x2003",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2003--path-empty",
+      "description": "0x2003 with empty database payload path",
+      "request_kind": "0x2003",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2003--path-null",
+      "description": "0x2003 with null database payload path",
+      "request_kind": "0x2003",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.third"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2103--path-nonempty-missing",
+      "description": "0x2103 with nonempty missing database payload path",
+      "request_kind": "0x2103",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2103--path-empty",
+      "description": "0x2103 with empty database payload path",
+      "request_kind": "0x2103",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2103--path-null",
+      "description": "0x2103 with null database payload path",
+      "request_kind": "0x2103",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.third"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2004--path-nonempty-missing",
+      "description": "0x2004 with nonempty missing database payload path",
+      "request_kind": "0x2004",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": 4
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      },
+      "fixed_tag_slots": 5
+    },
+    {
+      "id": "kind-2004--path-empty",
+      "description": "0x2004 with empty database payload path",
+      "request_kind": "0x2004",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": 4
+        },
+        {
+          "number": "$fixture.track.second"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      },
+      "fixed_tag_slots": 5
+    },
+    {
+      "id": "kind-2004--path-null",
+      "description": "0x2004 with null database payload path",
+      "request_kind": "0x2004",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": 4
+        },
+        {
+          "number": "$fixture.track.third"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      },
+      "fixed_tag_slots": 5
+    },
+    {
+      "id": "kind-2204--path-nonempty-missing",
+      "description": "0x2204 with nonempty missing database payload path",
+      "request_kind": "0x2204",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2204--path-empty",
+      "description": "0x2204 with empty database payload path",
+      "request_kind": "0x2204",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2204--path-null",
+      "description": "0x2204 with null database payload path",
+      "request_kind": "0x2204",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.third"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2504--path-nonempty-missing",
+      "description": "0x2504 with nonempty missing database payload path",
+      "request_kind": "0x2504",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2504--path-empty",
+      "description": "0x2504 with empty database payload path",
+      "request_kind": "0x2504",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2504--path-null",
+      "description": "0x2504 with null database payload path",
+      "request_kind": "0x2504",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.third"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2804--path-nonempty-missing",
+      "description": "0x2804 with nonempty missing database payload path",
+      "request_kind": "0x2804",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2804--path-empty",
+      "description": "0x2804 with empty database payload path",
+      "request_kind": "0x2804",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2804--path-null",
+      "description": "0x2804 with null database payload path",
+      "request_kind": "0x2804",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.third"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2904--path-nonempty-missing",
+      "description": "0x2904 with nonempty missing database payload path",
+      "request_kind": "0x2904",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2904--path-empty",
+      "description": "0x2904 with empty database payload path",
+      "request_kind": "0x2904",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.second"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2904--path-null",
+      "description": "0x2904 with null database payload path",
+      "request_kind": "0x2904",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.third"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2a04--path-nonempty-missing",
+      "description": "0x2a04 with nonempty missing database payload path",
+      "request_kind": "0x2a04",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2a04--path-empty",
+      "description": "0x2a04 with empty database payload path",
+      "request_kind": "0x2a04",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2a04--path-null",
+      "description": "0x2a04 with null database payload path",
+      "request_kind": "0x2a04",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.third"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2c04--path-nonempty-missing",
+      "description": "0x2c04 with nonempty missing database payload path",
+      "request_kind": "0x2c04",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0x34565750"
+        },
+        {
+          "number": "0x00545845"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2c04--path-empty",
+      "description": "0x2c04 with empty database payload path",
+      "request_kind": "0x2c04",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.second"
+        },
+        {
+          "number": "0x34565750"
+        },
+        {
+          "number": "0x00545845"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2c04--path-null",
+      "description": "0x2c04 with null database payload path",
+      "request_kind": "0x2c04",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.third"
+        },
+        {
+          "number": "0x34565750"
+        },
+        {
+          "number": "0x00545845"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2d04--path-nonempty-missing",
+      "description": "0x2d04 with nonempty missing database payload path",
+      "request_kind": "0x2d04",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0x34565750"
+        },
+        {
+          "number": "0x00545845"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2d04--path-empty",
+      "description": "0x2d04 with empty database payload path",
+      "request_kind": "0x2d04",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.second"
+        },
+        {
+          "number": "0x34565750"
+        },
+        {
+          "number": "0x00545845"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2d04--path-null",
+      "description": "0x2d04 with null database payload path",
+      "request_kind": "0x2d04",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.third"
+        },
+        {
+          "number": "0x34565750"
+        },
+        {
+          "number": "0x00545845"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2003--path-playlist-nonempty-missing",
+      "description": "0x2003 with playlist nonempty missing database payload path",
+      "request_kind": "0x2003",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.playlist.primary"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

@@ -1,0 +1,521 @@
+{
+  "name": "song-info-delivery-controls-forward",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "arity-5",
+      "description": "Delivery-only order probe: Five-argument render",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total"
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "arity-6",
+      "description": "Delivery-only order probe: Six-argument render",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "database-selection-zero-gate",
+      "description": "Delivery-only order probe: Zero gate with database selection",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-disabled-with-zero-gate",
+      "description": "Delivery-only order probe: Zero gate with nonzero override",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "database-selection",
+      "description": "Delivery-only order probe: Eight-argument render with database selection",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-02",
+      "description": "Delivery-only order probe: Render-time secondary selector override 2",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        2
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-03",
+      "description": "Delivery-only order probe: Render-time secondary selector override 3",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        3
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-04",
+      "description": "Delivery-only order probe: Render-time secondary selector override 4",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        4
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-05",
+      "description": "Delivery-only order probe: Render-time secondary selector override 5",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        5
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-06",
+      "description": "Delivery-only order probe: Render-time secondary selector override 6",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        6
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-07",
+      "description": "Delivery-only order probe: Render-time secondary selector override 7",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-08",
+      "description": "Delivery-only order probe: Render-time secondary selector override 8",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        8
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-09",
+      "description": "Delivery-only order probe: Render-time secondary selector override 9",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        9
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-10",
+      "description": "Delivery-only order probe: Render-time secondary selector override 10",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        10
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-11",
+      "description": "Delivery-only order probe: Render-time secondary selector override 11",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        11
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-12",
+      "description": "Delivery-only order probe: Render-time secondary selector override 12",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        12
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-13",
+      "description": "Delivery-only order probe: Render-time secondary selector override 13",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        13
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-14",
+      "description": "Delivery-only order probe: Render-time secondary selector override 14",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        14
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-15",
+      "description": "Delivery-only order probe: Render-time secondary selector override 15",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        15
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-16",
+      "description": "Delivery-only order probe: Render-time secondary selector override 16",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        16
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "override-17",
+      "description": "Delivery-only order probe: Render-time secondary selector override 17",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

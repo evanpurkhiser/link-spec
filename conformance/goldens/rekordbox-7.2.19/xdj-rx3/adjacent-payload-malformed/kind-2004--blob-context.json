@@ -1,0 +1,117 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "0x2004 with a blob context",
+        "header": [],
+        "id": "kind-2004--blob-context",
+        "outcome": "raw_reply",
+        "pages": [],
+        "raw_response": {
+          "decoded_bytes": 20,
+          "error_kind": null,
+          "messages": [
+            {
+              "arguments": [],
+              "kind": 256
+            }
+          ],
+          "outcome": "raw_reply",
+          "raw_hex": "11872349ae11fffffffe1001000f001400000000"
+        },
+        "request": {
+          "arguments": [
+            {
+              "hex": "01020304",
+              "type": "blob"
+            },
+            {
+              "type": "number",
+              "value": 4
+            },
+            {
+              "type": "number",
+              "value": 10001
+            },
+            {
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "fixed_tag_slots": 5,
+          "kind": 8196
+        },
+        "rows": [],
+        "total": null
+      }
+    ],
+    "fixture": {
+      "fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+      "profile": "full",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 1
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "Rekordbox adjacent payload malformed kind-2004--blob-context"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "e8c45a7020a70103d6a15d5cf9aaa32a3d8c758c6c1f3f33b2a8d80872f7c812",
+    "fixture_fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 3,
+      "mac": "02:00:00:60:00:50",
+      "model": "XDJ-RX3",
+      "model_code": 0,
+      "packet_sha256": "da12196004059977cdbcd83b9e0ae22366a2daf50320ed1a7b033c1d7ab157d4",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 11,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-rx3-player-11.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/full/manifest.json",
+    "recorded_unix_seconds": 1791022264,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/suites/generated/adjacent-payload-malformed/kind-2004--blob-context.json",
+    "suite_sha256": "07459657c1953d90a44dafd5a0f7c66234c058a1464cd58dfad60b17a5def81d"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "hot-cue-bank-cue-fields",
+  "fixture_profile": "hot-cue-bank-cue-fields",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "wire-fields",
+      "description": "Distinct timing and MPEG fields with loop boundaries",
+      "request_kind": "0x2101",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.cue_fields"}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ignored-fields",
+      "description": "Same wire fields with distinct non-wire database columns",
+      "request_kind": "0x2101",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.cue_ignored"}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "wire-fields-fixed-tags",
+      "description": "Wire-field bank using a fixed twelve-slot tag area",
+      "request_kind": "0x2101",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.cue_fields"}
+      ],
+      "direct_response": true,
+      "fixed_tag_slots": 12,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ignored-fields-fixed-tags",
+      "description": "Ignored-field bank using a fixed twelve-slot tag area",
+      "request_kind": "0x2101",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.cue_ignored"}
+      ],
+      "direct_response": true,
+      "fixed_tag_slots": 12,
+      "render": false,
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

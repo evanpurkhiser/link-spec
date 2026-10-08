@@ -1,0 +1,362 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "Distinct timing and MPEG fields with loop boundaries",
+        "header": [],
+        "id": "wire-fields",
+        "outcome": "raw_reply",
+        "pages": [],
+        "raw_response": {
+          "decoded_bytes": 206,
+          "error_kind": null,
+          "messages": [
+            {
+              "arguments": [
+                {
+                  "type": "number",
+                  "value": 8449
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "type": "number",
+                  "value": 108
+                },
+                {
+                  "hex": "000104001127000000000000960000000000000009b201000ab201000bb201000cb201000101050012270000000000002c0100005702000005640300066403000764030008640300010106001327000000000000c20100000000000001160500021605000316050004160500",
+                  "type": "blob"
+                },
+                {
+                  "type": "number",
+                  "value": 36
+                },
+                {
+                  "type": "number",
+                  "value": 3
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "type": "number",
+                  "value": 24
+                },
+                {
+                  "hex": "e9030000ffffffffd2070000a40f0000bb0b000001000000",
+                  "type": "blob"
+                }
+              ],
+              "kind": 18178
+            }
+          ],
+          "outcome": "raw_reply",
+          "raw_hex": "11872349ae11000000011047020f09140000000906060603060606060311000021011100000000110000006c140000006c000104001127000000000000960000000000000009b201000ab201000bb201000cb201000101050012270000000000002c0100005702000005640300066403000764030008640300010106001327000000000000c2010000000000000116050002160500031605000416050011000000241100000003110000000011000000181400000018e9030000ffffffffd2070000a40f0000bb0b000001000000"
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9041
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8449
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Same wire fields with distinct non-wire database columns",
+        "header": [],
+        "id": "ignored-fields",
+        "outcome": "raw_reply",
+        "pages": [],
+        "raw_response": {
+          "decoded_bytes": 206,
+          "error_kind": null,
+          "messages": [
+            {
+              "arguments": [
+                {
+                  "type": "number",
+                  "value": 8449
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "type": "number",
+                  "value": 108
+                },
+                {
+                  "hex": "000104001127000000000000960000000000000009b201000ab201000bb201000cb201000101050012270000000000002c0100005702000005640300066403000764030008640300010106001327000000000000c20100000000000001160500021605000316050004160500",
+                  "type": "blob"
+                },
+                {
+                  "type": "number",
+                  "value": 36
+                },
+                {
+                  "type": "number",
+                  "value": 3
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "type": "number",
+                  "value": 24
+                },
+                {
+                  "hex": "e9030000ffffffffd2070000a40f0000bb0b000001000000",
+                  "type": "blob"
+                }
+              ],
+              "kind": 18178
+            }
+          ],
+          "outcome": "raw_reply",
+          "raw_hex": "11872349ae11000000021047020f09140000000906060603060606060311000021011100000000110000006c140000006c000104001127000000000000960000000000000009b201000ab201000bb201000cb201000101050012270000000000002c0100005702000005640300066403000764030008640300010106001327000000000000c2010000000000000116050002160500031605000416050011000000241100000003110000000011000000181400000018e9030000ffffffffd2070000a40f0000bb0b000001000000"
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9042
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8449
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Wire-field bank using a fixed twelve-slot tag area",
+        "header": [],
+        "id": "wire-fields-fixed-tags",
+        "outcome": "raw_reply",
+        "pages": [],
+        "raw_response": {
+          "decoded_bytes": 206,
+          "error_kind": null,
+          "messages": [
+            {
+              "arguments": [
+                {
+                  "type": "number",
+                  "value": 8449
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "type": "number",
+                  "value": 108
+                },
+                {
+                  "hex": "000104001127000000000000960000000000000009b201000ab201000bb201000cb201000101050012270000000000002c0100005702000005640300066403000764030008640300010106001327000000000000c20100000000000001160500021605000316050004160500",
+                  "type": "blob"
+                },
+                {
+                  "type": "number",
+                  "value": 36
+                },
+                {
+                  "type": "number",
+                  "value": 3
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "type": "number",
+                  "value": 24
+                },
+                {
+                  "hex": "e9030000ffffffffd2070000a40f0000bb0b000001000000",
+                  "type": "blob"
+                }
+              ],
+              "kind": 18178
+            }
+          ],
+          "outcome": "raw_reply",
+          "raw_hex": "11872349ae11000000031047020f09140000000906060603060606060311000021011100000000110000006c140000006c000104001127000000000000960000000000000009b201000ab201000bb201000cb201000101050012270000000000002c0100005702000005640300066403000764030008640300010106001327000000000000c2010000000000000116050002160500031605000416050011000000241100000003110000000011000000181400000018e9030000ffffffffd2070000a40f0000bb0b000001000000"
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9041
+            }
+          ],
+          "fixed_tag_slots": 12,
+          "kind": 8449
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Ignored-field bank using a fixed twelve-slot tag area",
+        "header": [],
+        "id": "ignored-fields-fixed-tags",
+        "outcome": "raw_reply",
+        "pages": [],
+        "raw_response": {
+          "decoded_bytes": 206,
+          "error_kind": null,
+          "messages": [
+            {
+              "arguments": [
+                {
+                  "type": "number",
+                  "value": 8449
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "type": "number",
+                  "value": 108
+                },
+                {
+                  "hex": "000104001127000000000000960000000000000009b201000ab201000bb201000cb201000101050012270000000000002c0100005702000005640300066403000764030008640300010106001327000000000000c20100000000000001160500021605000316050004160500",
+                  "type": "blob"
+                },
+                {
+                  "type": "number",
+                  "value": 36
+                },
+                {
+                  "type": "number",
+                  "value": 3
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "type": "number",
+                  "value": 24
+                },
+                {
+                  "hex": "e9030000ffffffffd2070000a40f0000bb0b000001000000",
+                  "type": "blob"
+                }
+              ],
+              "kind": 18178
+            }
+          ],
+          "outcome": "raw_reply",
+          "raw_hex": "11872349ae11000000041047020f09140000000906060603060606060311000021011100000000110000006c140000006c000104001127000000000000960000000000000009b201000ab201000bb201000cb201000101050012270000000000002c0100005702000005640300066403000764030008640300010106001327000000000000c2010000000000000116050002160500031605000416050011000000241100000003110000000011000000181400000018e9030000ffffffffd2070000a40f0000bb0b000001000000"
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9042
+            }
+          ],
+          "fixed_tag_slots": 12,
+          "kind": 8449
+        },
+        "rows": [],
+        "total": null
+      }
+    ],
+    "fixture": {
+      "fingerprint": "e66ce7280727577a6fdb42c08585df9c821aa48431c026f86464c4052474f47f",
+      "profile": "hot-cue-bank-cue-fields",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 1
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "hot-cue-bank-cue-fields"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "ed68121b4370c714db33686c9d3aa0d18007378df14108541c3254744f13252b",
+    "fixture_fingerprint": "e66ce7280727577a6fdb42c08585df9c821aa48431c026f86464c4052474f47f",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 3,
+      "mac": "02:00:00:60:00:50",
+      "model": "XDJ-RX3",
+      "model_code": 0,
+      "packet_sha256": "da12196004059977cdbcd83b9e0ae22366a2daf50320ed1a7b033c1d7ab157d4",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 11,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-rx3-player-11.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/hot-cue-bank-cue-fields/manifest.json",
+    "recorded_unix_seconds": 1790900802,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/suites/hot-cue-bank-cue-fields.json",
+    "suite_sha256": "3d5c263697240b1d245249d4cb57bf36cd83a50e157b5a63898beceec3a88536"
+  }
+}

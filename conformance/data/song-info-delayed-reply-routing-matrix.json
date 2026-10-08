@@ -1,0 +1,32 @@
+{
+  "format": 1,
+  "scope": "real Rekordbox 7.2.19 player-routed malformed Song Info reply lifecycle",
+  "fixture_profile": "full",
+  "identity": "xdj-rx3-player-11-status",
+  "observations_per_variant": 4,
+  "dimensions": {
+    "second_precursor": [
+      "delivery-blob-content",
+      "delivery-extra-argument-control"
+    ],
+    "delay_before_replacement_connection_ms": [0, 50, 100]
+  },
+  "sequence": [
+    "Play Song Info with an ignored extra numeric argument",
+    "Delivery Song Info malformed blob or valid-extra control",
+    "fresh replacement connection and read without sending",
+    "valid location-2 Delivery on the observation connection",
+    "valid location-2 Delivery health probe on a fresh connection"
+  ],
+  "authority": {
+    "backend": "rekordbox",
+    "version": "7.2.19",
+    "expected_outcomes": "unconstrained",
+    "backend_comparison": "deferred"
+  },
+  "static_prediction": {
+    "close_sentinel": "transaction 0xfffffffe, kind 0x0100, zero arguments",
+    "late_correlated_reply": "kind 0x4000, arguments [0x2602, 0]",
+    "prediction_is_expectation": false
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Rekordbox adjacent payload boundary: pwv2-count-99",
+  "fixture_profile": "payload-valid",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": []
+  },
+  "cases": [
+    {
+      "id": "kind-2004",
+      "description": "0x2004 observes the selected payload boundary profile",
+      "request_kind": "0x2004",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": 4
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      },
+      "fixed_tag_slots": 5
+    }
+  ]
+}

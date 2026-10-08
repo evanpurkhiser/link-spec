@@ -1,0 +1,39 @@
+{
+  "name": "Rekordbox adjacent extended cue payload: seek_in",
+  "fixture_profile": "adjacent-payload-cues",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": []
+  },
+  "cases": [
+    {
+      "id": "kind-2b04--content-seek-in",
+      "description": "0x2b04 cue payload for seek in",
+      "request_kind": "0x2b04",
+      "arguments": [
+        {
+          "number": 17302273
+        },
+        {
+          "number": "$fixture.track.cue_payload.seek_in"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "database": "rekordbox-windows/shared/library/master.db",
+  "database_sha256": "4d1371a65d9f19518b92420934eb6110aa20c73c8af146b4e4a3aad06290aa10",
+  "rows": {
+    "djmdMenuItems": 27,
+    "djmdCategory": 21,
+    "djmdSort": 17,
+    "djmdColor": 8
+  },
+  "schemas": {
+    "djmdMenuItems": "CREATE TABLE `djmdMenuItems` (`ID` VARCHAR(255) PRIMARY KEY, `Class` INTEGER DEFAULT NULL, `Name` VARCHAR(255) DEFAULT NULL, `UUID` VARCHAR(255) DEFAULT NULL, `rb_data_status` INTEGER DEFAULT 0, `rb_local_data_status` INTEGER DEFAULT 0, `rb_local_deleted` TINYINT(1) DEFAULT 0, `rb_local_synced` TINYINT(1) DEFAULT 0, `usn` BIGINT DEFAULT NULL, `rb_local_usn` BIGINT DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL)",
+    "djmdCategory": "CREATE TABLE `djmdCategory` (`ID` VARCHAR(255) PRIMARY KEY, `MenuItemID` VARCHAR(255) DEFAULT NULL, `Seq` INTEGER DEFAULT NULL, `Disable` INTEGER DEFAULT NULL, `InfoOrder` INTEGER DEFAULT NULL, `UUID` VARCHAR(255) DEFAULT NULL, `rb_data_status` INTEGER DEFAULT 0, `rb_local_data_status` INTEGER DEFAULT 0, `rb_local_deleted` TINYINT(1) DEFAULT 0, `rb_local_synced` TINYINT(1) DEFAULT 0, `usn` BIGINT DEFAULT NULL, `rb_local_usn` BIGINT DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL)",
+    "djmdSort": "CREATE TABLE `djmdSort` (`ID` VARCHAR(255) PRIMARY KEY, `MenuItemID` VARCHAR(255) DEFAULT NULL, `Seq` INTEGER DEFAULT NULL, `Disable` INTEGER DEFAULT NULL, `UUID` VARCHAR(255) DEFAULT NULL, `rb_data_status` INTEGER DEFAULT 0, `rb_local_data_status` INTEGER DEFAULT 0, `rb_local_deleted` TINYINT(1) DEFAULT 0, `rb_local_synced` TINYINT(1) DEFAULT 0, `usn` BIGINT DEFAULT NULL, `rb_local_usn` BIGINT DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL)",
+    "djmdColor": "CREATE TABLE `djmdColor` (`ID` VARCHAR(255) PRIMARY KEY, `ColorCode` INTEGER DEFAULT NULL, `SortKey` INTEGER DEFAULT NULL, `Commnt` VARCHAR(255) DEFAULT NULL, `UUID` VARCHAR(255) DEFAULT NULL, `rb_data_status` INTEGER DEFAULT 0, `rb_local_data_status` INTEGER DEFAULT 0, `rb_local_deleted` TINYINT(1) DEFAULT 0, `rb_local_synced` TINYINT(1) DEFAULT 0, `usn` BIGINT DEFAULT NULL, `rb_local_usn` BIGINT DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL)"
+  },
+  "selected_secondary_sort_ids": [
+    "12"
+  ]
+}

@@ -1,0 +1,2940 @@
+{
+  "name": "smart-numeric-boundaries",
+  "fixture_profile": "smart-numeric-boundaries",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 20,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "bpm-equal-zero",
+      "description": "SmartList numeric database boundary: bpm equal zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_equal_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5,
+        "row_count": 5,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "bpm-not-equal-zero",
+      "description": "SmartList numeric database boundary: bpm not equal zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_not_equal_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.int32_max"
+        ]
+      }
+    },
+    {
+      "id": "bpm-greater-zero",
+      "description": "SmartList numeric database boundary: bpm greater zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_greater_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.int32_max"
+        ]
+      }
+    },
+    {
+      "id": "bpm-less-zero",
+      "description": "SmartList numeric database boundary: bpm less zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_less_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "bpm-range-minus-one-to-one",
+      "description": "SmartList numeric database boundary: bpm range minus one to one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_range_minus_one_to_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "bpm-equal-half",
+      "description": "SmartList numeric database boundary: bpm equal half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_equal_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5,
+        "row_count": 5,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "bpm-not-equal-half",
+      "description": "SmartList numeric database boundary: bpm not equal half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_not_equal_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.int32_max"
+        ]
+      }
+    },
+    {
+      "id": "bpm-greater-half",
+      "description": "SmartList numeric database boundary: bpm greater half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_greater_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.int32_max"
+        ]
+      }
+    },
+    {
+      "id": "bpm-less-half",
+      "description": "SmartList numeric database boundary: bpm less half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_less_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "bpm-range-half-to-one-half",
+      "description": "SmartList numeric database boundary: bpm range half to one half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_range_half_to_one_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "bpm-equal-int32-max",
+      "description": "SmartList numeric database boundary: bpm equal int32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_equal_int32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.int32_max"
+        ]
+      }
+    },
+    {
+      "id": "bpm-greater-int32-max",
+      "description": "SmartList numeric database boundary: bpm greater int32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_greater_int32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "bpm-equal-int32-plus-one",
+      "description": "SmartList numeric database boundary: bpm equal int32 plus one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_equal_int32_plus_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.int32_max"
+        ]
+      }
+    },
+    {
+      "id": "bpm-equal-uint32-max",
+      "description": "SmartList numeric database boundary: bpm equal uint32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_equal_uint32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.int32_max"
+        ]
+      }
+    },
+    {
+      "id": "bpm-equal-uint32-plus-one",
+      "description": "SmartList numeric database boundary: bpm equal uint32 plus one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_equal_uint32_plus_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.int32_max"
+        ]
+      }
+    },
+    {
+      "id": "bpm-missing-left-equal",
+      "description": "SmartList numeric database boundary: bpm missing left equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_missing_left_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5,
+        "row_count": 5,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "bpm-missing-left-not-equal",
+      "description": "SmartList numeric database boundary: bpm missing left not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_missing_left_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.int32_max"
+        ]
+      }
+    },
+    {
+      "id": "bpm-range-missing-left",
+      "description": "SmartList numeric database boundary: bpm range missing left",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_range_missing_left"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "bpm-range-missing-right",
+      "description": "SmartList numeric database boundary: bpm range missing right",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_range_missing_right"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5,
+        "row_count": 5,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "bpm-range-both-missing",
+      "description": "SmartList numeric database boundary: bpm range both missing",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.bpm_range_both_missing"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5,
+        "row_count": 5,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "rating-equal-zero",
+      "description": "SmartList numeric database boundary: rating equal zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_equal_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "rating-not-equal-zero",
+      "description": "SmartList numeric database boundary: rating not equal zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_not_equal_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "rating-greater-zero",
+      "description": "SmartList numeric database boundary: rating greater zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_greater_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half"
+        ]
+      }
+    },
+    {
+      "id": "rating-less-zero",
+      "description": "SmartList numeric database boundary: rating less zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_less_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "rating-range-minus-one-to-one",
+      "description": "SmartList numeric database boundary: rating range minus one to one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_range_minus_one_to_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 10,
+        "row_count": 10,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "rating-equal-half",
+      "description": "SmartList numeric database boundary: rating equal half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_equal_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "rating-not-equal-half",
+      "description": "SmartList numeric database boundary: rating not equal half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_not_equal_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "rating-greater-half",
+      "description": "SmartList numeric database boundary: rating greater half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_greater_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half"
+        ]
+      }
+    },
+    {
+      "id": "rating-less-half",
+      "description": "SmartList numeric database boundary: rating less half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_less_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "rating-range-half-to-one-half",
+      "description": "SmartList numeric database boundary: rating range half to one half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_range_half_to_one_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "rating-equal-int32-max",
+      "description": "SmartList numeric database boundary: rating equal int32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_equal_int32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "rating-greater-int32-max",
+      "description": "SmartList numeric database boundary: rating greater int32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_greater_int32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "rating-equal-int32-plus-one",
+      "description": "SmartList numeric database boundary: rating equal int32 plus one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_equal_int32_plus_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "rating-equal-uint32-max",
+      "description": "SmartList numeric database boundary: rating equal uint32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_equal_uint32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "rating-equal-uint32-plus-one",
+      "description": "SmartList numeric database boundary: rating equal uint32 plus one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_equal_uint32_plus_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "rating-missing-left-equal",
+      "description": "SmartList numeric database boundary: rating missing left equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_missing_left_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "rating-missing-left-not-equal",
+      "description": "SmartList numeric database boundary: rating missing left not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_missing_left_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "rating-range-missing-left",
+      "description": "SmartList numeric database boundary: rating range missing left",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_range_missing_left"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "rating-range-missing-right",
+      "description": "SmartList numeric database boundary: rating range missing right",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_range_missing_right"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 9,
+        "row_count": 9,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "rating-range-both-missing",
+      "description": "SmartList numeric database boundary: rating range both missing",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.rating_range_both_missing"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "play-count-equal-zero",
+      "description": "SmartList numeric database boundary: play count equal zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_equal_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "play-count-not-equal-zero",
+      "description": "SmartList numeric database boundary: play count not equal zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_not_equal_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "play-count-greater-zero",
+      "description": "SmartList numeric database boundary: play count greater zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_greater_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "play-count-less-zero",
+      "description": "SmartList numeric database boundary: play count less zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_less_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "play-count-range-minus-one-to-one",
+      "description": "SmartList numeric database boundary: play count range minus one to one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_range_minus_one_to_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "play-count-equal-half",
+      "description": "SmartList numeric database boundary: play count equal half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_equal_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "play-count-not-equal-half",
+      "description": "SmartList numeric database boundary: play count not equal half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_not_equal_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "play-count-greater-half",
+      "description": "SmartList numeric database boundary: play count greater half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_greater_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "play-count-less-half",
+      "description": "SmartList numeric database boundary: play count less half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_less_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "play-count-range-half-to-one-half",
+      "description": "SmartList numeric database boundary: play count range half to one half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_range_half_to_one_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "play-count-equal-int32-max",
+      "description": "SmartList numeric database boundary: play count equal int32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_equal_int32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "play-count-greater-int32-max",
+      "description": "SmartList numeric database boundary: play count greater int32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_greater_int32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "play-count-equal-int32-plus-one",
+      "description": "SmartList numeric database boundary: play count equal int32 plus one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_equal_int32_plus_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "play-count-equal-uint32-max",
+      "description": "SmartList numeric database boundary: play count equal uint32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_equal_uint32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "play-count-equal-uint32-plus-one",
+      "description": "SmartList numeric database boundary: play count equal uint32 plus one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_equal_uint32_plus_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "play-count-missing-left-equal",
+      "description": "SmartList numeric database boundary: play count missing left equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_missing_left_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "play-count-missing-left-not-equal",
+      "description": "SmartList numeric database boundary: play count missing left not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_missing_left_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "play-count-range-missing-left",
+      "description": "SmartList numeric database boundary: play count range missing left",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_range_missing_left"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "play-count-range-missing-right",
+      "description": "SmartList numeric database boundary: play count range missing right",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_range_missing_right"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "play-count-range-both-missing",
+      "description": "SmartList numeric database boundary: play count range both missing",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.play_count_range_both_missing"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "duration-equal-zero",
+      "description": "SmartList numeric database boundary: duration equal zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_equal_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "duration-not-equal-zero",
+      "description": "SmartList numeric database boundary: duration not equal zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_not_equal_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "duration-greater-zero",
+      "description": "SmartList numeric database boundary: duration greater zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_greater_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "duration-less-zero",
+      "description": "SmartList numeric database boundary: duration less zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_less_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "duration-range-minus-one-to-one",
+      "description": "SmartList numeric database boundary: duration range minus one to one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_range_minus_one_to_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "duration-equal-half",
+      "description": "SmartList numeric database boundary: duration equal half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_equal_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "duration-not-equal-half",
+      "description": "SmartList numeric database boundary: duration not equal half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_not_equal_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "duration-greater-half",
+      "description": "SmartList numeric database boundary: duration greater half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_greater_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "duration-less-half",
+      "description": "SmartList numeric database boundary: duration less half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_less_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "duration-range-half-to-one-half",
+      "description": "SmartList numeric database boundary: duration range half to one half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_range_half_to_one_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "duration-equal-int32-max",
+      "description": "SmartList numeric database boundary: duration equal int32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_equal_int32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "duration-greater-int32-max",
+      "description": "SmartList numeric database boundary: duration greater int32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_greater_int32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "duration-equal-int32-plus-one",
+      "description": "SmartList numeric database boundary: duration equal int32 plus one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_equal_int32_plus_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "duration-equal-uint32-max",
+      "description": "SmartList numeric database boundary: duration equal uint32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_equal_uint32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "duration-equal-uint32-plus-one",
+      "description": "SmartList numeric database boundary: duration equal uint32 plus one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_equal_uint32_plus_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "duration-missing-left-equal",
+      "description": "SmartList numeric database boundary: duration missing left equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_missing_left_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "duration-missing-left-not-equal",
+      "description": "SmartList numeric database boundary: duration missing left not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_missing_left_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "duration-range-missing-left",
+      "description": "SmartList numeric database boundary: duration range missing left",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_range_missing_left"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "duration-range-missing-right",
+      "description": "SmartList numeric database boundary: duration range missing right",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_range_missing_right"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "duration-range-both-missing",
+      "description": "SmartList numeric database boundary: duration range both missing",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.duration_range_both_missing"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "year-equal-zero",
+      "description": "SmartList numeric database boundary: year equal zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_equal_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "year-not-equal-zero",
+      "description": "SmartList numeric database boundary: year not equal zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_not_equal_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "year-greater-zero",
+      "description": "SmartList numeric database boundary: year greater zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_greater_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "year-less-zero",
+      "description": "SmartList numeric database boundary: year less zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_less_zero"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "year-range-minus-one-to-one",
+      "description": "SmartList numeric database boundary: year range minus one to one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_range_minus_one_to_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "year-equal-half",
+      "description": "SmartList numeric database boundary: year equal half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_equal_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "year-not-equal-half",
+      "description": "SmartList numeric database boundary: year not equal half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_not_equal_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "year-greater-half",
+      "description": "SmartList numeric database boundary: year greater half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_greater_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "year-less-half",
+      "description": "SmartList numeric database boundary: year less half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_less_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "year-range-half-to-one-half",
+      "description": "SmartList numeric database boundary: year range half to one half",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_range_half_to_one_half"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "year-equal-int32-max",
+      "description": "SmartList numeric database boundary: year equal int32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_equal_int32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "year-greater-int32-max",
+      "description": "SmartList numeric database boundary: year greater int32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_greater_int32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "year-equal-int32-plus-one",
+      "description": "SmartList numeric database boundary: year equal int32 plus one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_equal_int32_plus_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "year-equal-uint32-max",
+      "description": "SmartList numeric database boundary: year equal uint32 max",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_equal_uint32_max"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "year-equal-uint32-plus-one",
+      "description": "SmartList numeric database boundary: year equal uint32 plus one",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_equal_uint32_plus_one"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "year-missing-left-equal",
+      "description": "SmartList numeric database boundary: year missing left equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_missing_left_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "year-missing-left-not-equal",
+      "description": "SmartList numeric database boundary: year missing left not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_missing_left_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_one",
+          "$fixture.track.smart_numeric_boundary.int32_max",
+          "$fixture.track.smart_numeric_boundary.uint32_max"
+        ]
+      }
+    },
+    {
+      "id": "year-range-missing-left",
+      "description": "SmartList numeric database boundary: year range missing left",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_range_missing_left"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 7,
+        "row_count": 7,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.one_half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "year-range-missing-right",
+      "description": "SmartList numeric database boundary: year range missing right",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_range_missing_right"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    },
+    {
+      "id": "year-range-both-missing",
+      "description": "SmartList numeric database boundary: year range both missing",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_numeric_boundary.year_range_both_missing"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_numeric_boundary.null",
+          "$fixture.track.smart_numeric_boundary.zero",
+          "$fixture.track.smart_numeric_boundary.half",
+          "$fixture.track.smart_numeric_boundary.minus_half",
+          "$fixture.track.smart_numeric_boundary.int32_plus_one",
+          "$fixture.track.smart_numeric_boundary.uint32_plus_one"
+        ]
+      }
+    }
+  ]
+}

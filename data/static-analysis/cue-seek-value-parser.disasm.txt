@@ -1,0 +1,78 @@
+## __Z14getUInt64ValuePPt | 
+address=0x1009b1f80 size=0x70
+0x01009b1f80  push      rbp
+0x01009b1f81  mov       rbp, rsp
+0x01009b1f84  test      rdi, rdi
+0x01009b1f87  je        0x1009b1fdb
+0x01009b1f89  mov       rcx, qword ptr [rdi]
+0x01009b1f8c  test      rcx, rcx
+0x01009b1f8f  je        0x1009b1fdb
+0x01009b1f91  movzx     edx, word ptr [rcx]
+0x01009b1f94  mov       eax, edx
+0x01009b1f96  add       eax, -0x30
+0x01009b1f99  cmp       ax, 9
+0x01009b1f9d  ja        0x1009b1fdf
+0x01009b1f9f  xor       eax, eax
+0x01009b1fa1  nop       word ptr cs:[rax + rax]
+0x01009b1fb0  lea       rax, [rax + rax*4]
+0x01009b1fb4  movzx     edx, dx
+0x01009b1fb7  add       edx, -0x30
+0x01009b1fba  lea       rax, [rdx + rax*2]
+0x01009b1fbe  movzx     edx, word ptr [rcx + 2]
+0x01009b1fc2  add       rcx, 2
+0x01009b1fc6  mov       esi, edx
+0x01009b1fc8  add       esi, -0x30
+0x01009b1fcb  cmp       si, 0xa
+0x01009b1fcf  jb        0x1009b1fb0
+0x01009b1fd1  mov       qword ptr [rdi], rcx
+0x01009b1fd4  test      dx, dx
+0x01009b1fd7  jne       0x1009b1fe6
+0x01009b1fd9  jmp       0x1009b1fed
+0x01009b1fdb  xor       eax, eax
+0x01009b1fdd  pop       rbp
+0x01009b1fde  ret
+0x01009b1fdf  xor       eax, eax
+0x01009b1fe1  test      dx, dx
+0x01009b1fe4  je        0x1009b1fed
+0x01009b1fe6  add       rcx, 2
+0x01009b1fea  mov       qword ptr [rdi], rcx
+0x01009b1fed  pop       rbp
+0x01009b1fee  ret
+0x01009b1fef  nop
+
+## __Z14getUInt32ValuePPt | 
+address=0x1009b1ff0 size=0x60
+0x01009b1ff0  push      rbp
+0x01009b1ff1  mov       rbp, rsp
+0x01009b1ff4  xor       eax, eax
+0x01009b1ff6  test      rdi, rdi
+0x01009b1ff9  je        0x1009b204e
+0x01009b1ffb  mov       rcx, qword ptr [rdi]
+0x01009b1ffe  test      rcx, rcx
+0x01009b2001  je        0x1009b204e
+0x01009b2003  movzx     edx, word ptr [rcx]
+0x01009b2006  mov       esi, edx
+0x01009b2008  add       esi, -0x30
+0x01009b200b  xor       eax, eax
+0x01009b200d  cmp       si, 9
+0x01009b2011  ja        0x1009b2042
+0x01009b2013  xor       eax, eax
+0x01009b2015  nop       word ptr cs:[rax + rax]
+0x01009b2020  movzx     edx, dx
+0x01009b2023  lea       eax, [rax + rax*4]
+0x01009b2026  lea       eax, [rdx + rax*2]
+0x01009b2029  add       eax, -0x30
+0x01009b202c  movzx     edx, word ptr [rcx + 2]
+0x01009b2030  add       rcx, 2
+0x01009b2034  mov       esi, edx
+0x01009b2036  add       esi, -0x30
+0x01009b2039  cmp       si, 0xa
+0x01009b203d  jb        0x1009b2020
+0x01009b203f  mov       qword ptr [rdi], rcx
+0x01009b2042  test      dx, dx
+0x01009b2045  je        0x1009b204e
+0x01009b2047  add       rcx, 2
+0x01009b204b  mov       qword ptr [rdi], rcx
+0x01009b204e  pop       rbp
+0x01009b204f  ret
+

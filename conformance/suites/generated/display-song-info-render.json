@@ -1,0 +1,563 @@
+{
+  "name": "display-song-info-render",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "arity-5",
+      "description": "Five-argument render",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total"
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "arity-6",
+      "description": "Six-argument render",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "database-selection-zero-gate",
+      "description": "Zero gate with database selection",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0,
+        0
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-disabled-with-zero-gate",
+      "description": "Zero gate with nonzero override",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0,
+        7
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "database-selection",
+      "description": "Eight-argument render with database selection",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-02",
+      "description": "Render-time secondary selector override 2",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        2
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-03",
+      "description": "Render-time secondary selector override 3",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        3
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-04",
+      "description": "Render-time secondary selector override 4",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        4
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-05",
+      "description": "Render-time secondary selector override 5",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        5
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-06",
+      "description": "Render-time secondary selector override 6",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        6
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-07",
+      "description": "Render-time secondary selector override 7",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-08",
+      "description": "Render-time secondary selector override 8",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        8
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-09",
+      "description": "Render-time secondary selector override 9",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        9
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-10",
+      "description": "Render-time secondary selector override 10",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        10
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-11",
+      "description": "Render-time secondary selector override 11",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        11
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-12",
+      "description": "Render-time secondary selector override 12",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        12
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-13",
+      "description": "Render-time secondary selector override 13",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        13
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-14",
+      "description": "Render-time secondary selector override 14",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        14
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-15",
+      "description": "Render-time secondary selector override 15",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        15
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-16",
+      "description": "Render-time secondary selector override 16",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        16
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "override-17",
+      "description": "Render-time secondary selector override 17",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      }
+    }
+  ]
+}

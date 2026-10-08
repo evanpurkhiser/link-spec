@@ -1,0 +1,534 @@
+{
+  "name": "secondary-string-threshold-isolation",
+  "fixture_profile": "boundaries",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "comment-empty",
+      "description": "Isolated comment rendering with empty string (BPM 0)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "comment-ascii-126",
+      "description": "Isolated comment rendering with 126 ASCII characters (BPM 49)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 9
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "comment-ascii-127",
+      "description": "Isolated comment rendering with 127 ASCII characters (BPM 50)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 10
+        },
+        {
+          "number": 10
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "comment-ascii-128",
+      "description": "Isolated comment rendering with 128 ASCII characters (BPM 99)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1990
+        },
+        {
+          "number": 1999
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "comment-ascii-254",
+      "description": "Isolated comment rendering with 254 ASCII characters (BPM 100)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2000
+        },
+        {
+          "number": 2000
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "comment-ascii-255",
+      "description": "Isolated comment rendering with 255 ASCII characters (BPM 149)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2990
+        },
+        {
+          "number": 2999
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "comment-ascii-256",
+      "description": "Isolated comment rendering with 256 ASCII characters (BPM 150)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 3000
+        },
+        {
+          "number": 3000
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "comment-supplementary-256",
+      "description": "Isolated comment rendering with 256 supplementary characters (BPM 49949)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 4000
+        },
+        {
+          "number": 4000
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 1,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "date-added-empty",
+      "description": "Isolated date-added rendering with empty string (BPM 0)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "date-added-ascii-126",
+      "description": "Isolated date-added rendering with 126 ASCII characters (BPM 49)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 9
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "date-added-ascii-127",
+      "description": "Isolated date-added rendering with 127 ASCII characters (BPM 50)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 10
+        },
+        {
+          "number": 10
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "date-added-ascii-128",
+      "description": "Isolated date-added rendering with 128 ASCII characters (BPM 99)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1990
+        },
+        {
+          "number": 1999
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "date-added-ascii-254",
+      "description": "Isolated date-added rendering with 254 ASCII characters (BPM 100)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2000
+        },
+        {
+          "number": 2000
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "date-added-ascii-255",
+      "description": "Isolated date-added rendering with 255 ASCII characters (BPM 149)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2990
+        },
+        {
+          "number": 2999
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "date-added-ascii-256",
+      "description": "Isolated date-added rendering with 256 ASCII characters (BPM 150)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 3000
+        },
+        {
+          "number": 3000
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "date-added-supplementary-256",
+      "description": "Isolated date-added rendering with 256 supplementary characters (BPM 49949)",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 4000
+        },
+        {
+          "number": 4000
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 1,
+        "row_count": 0
+      }
+    }
+  ]
+}

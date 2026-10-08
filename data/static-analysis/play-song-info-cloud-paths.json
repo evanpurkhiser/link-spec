@@ -1,0 +1,112 @@
+{
+  "format": 1,
+  "scope": "Rekordbox 7.2.19 x86-64 Play Song Info cloud-path selection",
+  "source": {
+    "path": "artifacts/rekordbox/7.2.19/extracted/app-root/rekordbox.app/Contents/MacOS/rekordbox",
+    "sha256": "07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244",
+    "architecture": "x86_64"
+  },
+  "sync_method": {
+    "setting": "CLSSyncMethod",
+    "default": 1,
+    "raw_integer_returned": true,
+    "play_call": "0x1016c1a79",
+    "binary_direct_call_sites": [
+      {
+        "address": "0x1016c1a79",
+        "owner": "PSvAppSyncDBIF::getPlaySongInf"
+      }
+    ],
+    "direct_call_scope": "the complete x86-64 __TEXT,__text section",
+    "decision": "zero versus nonzero",
+    "zero_target": "0x1016c1dc3",
+    "nonzero_target": "0x1016c1a86",
+    "equivalence_classes": [
+      {
+        "name": "zero",
+        "values": [
+          0
+        ]
+      },
+      {
+        "name": "nonzero",
+        "values": "every integer other than zero"
+      }
+    ]
+  },
+  "nonzero_branch": {
+    "first_preference": "OrgFolderPath when local DBID equals MasterDBID and it exists as a regular file",
+    "fallback": "share-path reconstruction and file checks",
+    "download_folder_path_calls": 0
+  },
+  "zero_branch": {
+    "first_preference": "OrgFolderPath when it exists as any filesystem object",
+    "fallback": "downloadFolderPath(ServiceID) reconstruction and existence checks",
+    "download_folder_path_call_sites": [
+      "0x1016c1e3e",
+      "0x1016c1e64",
+      "0x1016c1ecb"
+    ]
+  },
+  "service_domains": {
+    "share_path": {
+      "switch_domain": "0 through 4",
+      "jump_table_address": "0x100fddfcc",
+      "jump_table_bytes": "36ffffffdbfdffff24feffff7bfeffffcffeffff",
+      "service_ids": [
+        {
+          "id": 0,
+          "target": "0x100fddf02",
+          "root": "empty string"
+        },
+        {
+          "id": 1,
+          "target": "0x100fddda7",
+          "owner": "djplay::SettingIF::getCurrentMasterDbDirectory",
+          "root": "current master-database directory + /share"
+        },
+        {
+          "id": 2,
+          "target": "0x100fdddf0",
+          "owner": "DropBox::localPublicPath",
+          "root": "Dropbox local public path + /rekordbox"
+        },
+        {
+          "id": 3,
+          "target": "0x100fdde47",
+          "owner": "GoogleDrive::localPublicPath",
+          "root": "Google Drive local public path + /rekordbox"
+        },
+        {
+          "id": 4,
+          "target": "0x100fdde9b",
+          "owner": "OneDrive::localPublicPath",
+          "root": "OneDrive local public path + /rekordbox"
+        }
+      ],
+      "outside_domain": "empty string",
+      "requires_absolute_nonempty_result": true
+    },
+    "download_folder_path": {
+      "accepted_service_ids": [
+        0,
+        2,
+        3,
+        4,
+        5
+      ],
+      "outside_domain": "empty string",
+      "setting": "MovedFromCloudDir",
+      "default": {
+        "special_location": 3,
+        "child_path": "PioneerDJ/Moved from Cloud",
+        "normalization": "tools::UnifiedFilePath::toUnifiedFilePath"
+      }
+    }
+  },
+  "live_oracle_boundary": {
+    "completed_equivalence_class": "nonzero (CLSSyncMethod=1)",
+    "missing_equivalence_class": "zero (CLSSyncMethod=0)",
+    "other_integer_values_needed": false
+  }
+}

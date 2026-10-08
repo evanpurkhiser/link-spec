@@ -1,0 +1,534 @@
+{
+  "name": "secondary-unicode-threshold-isolation",
+  "fixture_profile": "unicode-boundaries",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "comment-supplementary-126",
+      "description": "Isolated comment rendering with 252 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "comment-supplementary-127",
+      "description": "Isolated comment rendering with 254 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 9
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "comment-supplementary-127-plus-ascii",
+      "description": "Isolated comment rendering with 255 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 10
+        },
+        {
+          "number": 10
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "comment-supplementary-128",
+      "description": "Isolated comment rendering with 256 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1990
+        },
+        {
+          "number": 1999
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 1,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "comment-supplementary-128-plus-ascii",
+      "description": "Isolated comment rendering with 257 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2000
+        },
+        {
+          "number": 2000
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 1,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "comment-supplementary-254",
+      "description": "Isolated comment rendering with 508 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2990
+        },
+        {
+          "number": 2999
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 1,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "comment-supplementary-255",
+      "description": "Isolated comment rendering with 510 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 3000
+        },
+        {
+          "number": 3000
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 1,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "comment-supplementary-256",
+      "description": "Isolated comment rendering with 512 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 4000
+        },
+        {
+          "number": 4000
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 1,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "date-added-supplementary-126",
+      "description": "Isolated date-added rendering with 252 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "date-added-supplementary-127",
+      "description": "Isolated date-added rendering with 254 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 9
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "date-added-supplementary-127-plus-ascii",
+      "description": "Isolated date-added rendering with 255 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 10
+        },
+        {
+          "number": 10
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "date-added-supplementary-128",
+      "description": "Isolated date-added rendering with 256 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1990
+        },
+        {
+          "number": 1999
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 1,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "date-added-supplementary-128-plus-ascii",
+      "description": "Isolated date-added rendering with 257 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2000
+        },
+        {
+          "number": 2000
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 1,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "date-added-supplementary-254",
+      "description": "Isolated date-added rendering with 508 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2990
+        },
+        {
+          "number": 2999
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 1,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "date-added-supplementary-255",
+      "description": "Isolated date-added rendering with 510 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 3000
+        },
+        {
+          "number": 3000
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 1,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "date-added-supplementary-256",
+      "description": "Isolated date-added rendering with 512 UTF-16 code units",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 4000
+        },
+        {
+          "number": 4000
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 1,
+        "row_count": 0
+      }
+    }
+  ]
+}

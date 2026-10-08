@@ -1,0 +1,25 @@
+{
+  "name": "hot-cue-bank-count-uint32-max",
+  "fixture_profile": "hot-cue-banks",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 30000,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "count-uint32-max",
+      "description": "Maximum unsigned 32-bit count, isolated to establish signed-limit behavior and process health",
+      "request_kind": "0x2001",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.alpha"}, {"number": 0}, {"number": "0xffffffff"}],
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

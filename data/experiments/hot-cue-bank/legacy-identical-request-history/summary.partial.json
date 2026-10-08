@@ -1,0 +1,557 @@
+{
+  "canonical_lifecycle_groups": [
+    {
+      "observations": [
+        {
+          "cycle": 1,
+          "phase": "fresh-vm-canonical"
+        },
+        {
+          "cycle": 1,
+          "phase": "after-crash-one-canonical"
+        },
+        {
+          "cycle": 1,
+          "phase": "after-crash-seven-canonical"
+        },
+        {
+          "cycle": 1,
+          "phase": "after-vm-restart-canonical"
+        }
+      ],
+      "signature": "1d51b292ceb35074a916f9a1d708a7d8fabb9ecf926770cd7c7462be3d8cfd4f"
+    }
+  ],
+  "canonical_request_signature": "9b7300807e8244b915d869ae1e8269778a32579ead927f1d28444600b9740925",
+  "fixture": {
+    "database_sha256": "360b18b44de76c47360f1f3f5c6193c895e053f08cad536a8e4d8872872cb0b3",
+    "profile": "hot-cue-bank-legacy-ordinals"
+  },
+  "matrix": {
+    "completed_cycles": [
+      1
+    ],
+    "completed_request_observations": 6,
+    "completed_vm_restarts": 2,
+    "declared_cycles": 2,
+    "declared_request_observations": 12,
+    "declared_vm_restarts": 4
+  },
+  "phase_repeat": [
+    {
+      "durable_repeat_verified": false,
+      "durable_signature": "602ce7e1fac127528a520b8ce7df5b8b11fd368be40e3afbca578bbfb445acc7",
+      "observations": 1,
+      "phase": "after-crash-one-canonical"
+    },
+    {
+      "durable_repeat_verified": false,
+      "durable_signature": "602ce7e1fac127528a520b8ce7df5b8b11fd368be40e3afbca578bbfb445acc7",
+      "observations": 1,
+      "phase": "after-crash-seven-canonical"
+    },
+    {
+      "durable_repeat_verified": false,
+      "durable_signature": "602ce7e1fac127528a520b8ce7df5b8b11fd368be40e3afbca578bbfb445acc7",
+      "observations": 1,
+      "phase": "after-vm-restart-canonical"
+    },
+    {
+      "durable_repeat_verified": false,
+      "durable_signature": "c9efb86d4bd9505fcdd2db8260b84598f774cece79f1ca58888a0500141fe285",
+      "observations": 1,
+      "phase": "crash-declared-extension-one"
+    },
+    {
+      "durable_repeat_verified": false,
+      "durable_signature": "c9efb86d4bd9505fcdd2db8260b84598f774cece79f1ca58888a0500141fe285",
+      "observations": 1,
+      "phase": "crash-declared-extension-seven"
+    },
+    {
+      "durable_repeat_verified": false,
+      "durable_signature": "602ce7e1fac127528a520b8ce7df5b8b11fd368be40e3afbca578bbfb445acc7",
+      "observations": 1,
+      "phase": "fresh-vm-canonical"
+    }
+  ],
+  "results": [
+    {
+      "application_error_signatures": [],
+      "changed_membership_ids": [
+        "94201"
+      ],
+      "cycle": 1,
+      "database_effect": "changed",
+      "database_snapshot_sha256": "852658111a4513b74c2adee77139b42c985d665f71b30de41d83eb78422bf835",
+      "getter_blob_bytes": null,
+      "getter_blob_sha256": null,
+      "getter_effect": "unavailable-port-query-timeout",
+      "getter_outcome": "skipped-port-query-timeout",
+      "getter_record_count": null,
+      "getter_record_lengths": null,
+      "getter_unavailable_application_error_signatures": [],
+      "getter_unavailable_process_state": "alive",
+      "health_sha256": "872dc8899dc5ef639c1413f1d588442396f483b6125057a35fcc24c023f4afa5",
+      "helper_process_count": 6,
+      "outcome": "raw_reply",
+      "phase": "fresh-vm-canonical",
+      "process_count": 1,
+      "process_state": "alive",
+      "receipt_sha256": "e32f3ec350721a82a5bc0527a4e64d3095dedce5eb4563f9e2d2b5c292ebac5b",
+      "request_signature": "9b7300807e8244b915d869ae1e8269778a32579ead927f1d28444600b9740925",
+      "response_argument_count": 9,
+      "response_kind": 18178,
+      "response_record_count": 2,
+      "response_signature": "9e05e5ae306ca8a67afebaa5edca369013d8ca9f39fe7986b17d0d04bd5fcc92",
+      "restart_changed_membership_ids": [
+        "94201"
+      ],
+      "restart_database_effect": "changed",
+      "restart_database_snapshot_sha256": "48049dfe810298a700dad6ad79a4baf62118bff3855bb863abd6b8a6bb089bbf",
+      "restart_getter_blob_sha256": "ffccd8cf995f3ae589e82e349da64655e2f0a7cc40b2f88120118284cb9f6dd2",
+      "restart_getter_effect": "changed",
+      "restart_getter_outcome": "raw_reply",
+      "restart_getter_sha256": "76217daf84967e03f84a7e78f92e918c64638045c26ea4e53b09204380b61a4c",
+      "restart_health_sha256": "204857d0b19517347bd3d25942f18f2b23d94ac9ba8db8e5fe0d3551a2cccdeb",
+      "restart_process_state": "alive",
+      "setter_sha256": "2a6319523f6770d58bf09288fb2b0d4fcee1a90e2436cfddcb7a32f019025fee",
+      "status": 0,
+      "tcp_listeners": [
+        {
+          "local_address": "::",
+          "local_port": 30001,
+          "owning_process_id": 3196,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 12523,
+          "owning_process_id": 7952,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 50000,
+          "owning_process_id": 9040,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 53181,
+          "owning_process_id": 9040,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 55000,
+          "owning_process_id": 9040,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 55002,
+          "owning_process_id": 9040,
+          "state": "Listen"
+        }
+      ]
+    },
+    {
+      "application_error_signatures": [
+        "93b0d1e166a999640bec683faebc3e165922225a999415bcaf3533d309802419"
+      ],
+      "changed_membership_ids": [],
+      "cycle": 1,
+      "database_effect": "pristine",
+      "database_snapshot_sha256": "c3b76a565940fe8dd75adc2dcaccfd26dc4eb57d62489b7111b8fce7f6009d8d",
+      "getter_blob_bytes": null,
+      "getter_blob_sha256": null,
+      "getter_effect": "unavailable-dbserver-connect-timeout",
+      "getter_outcome": "skipped-dbserver-connect-timeout",
+      "getter_record_count": null,
+      "getter_record_lengths": null,
+      "getter_unavailable_application_error_signatures": [
+        "93b0d1e166a999640bec683faebc3e165922225a999415bcaf3533d309802419"
+      ],
+      "getter_unavailable_process_state": "exited",
+      "health_sha256": "d79195f9a2046be47235047062a5a799874c069f8ef1ca572dc7e250b3c487d0",
+      "helper_process_count": 7,
+      "outcome": "timeout",
+      "phase": "crash-declared-extension-one",
+      "process_count": 2,
+      "process_state": "alive",
+      "receipt_sha256": "f548d51ecd9d4fd43caeab36e634ee6ea5020f90a1641664149632c54135fbba",
+      "request_signature": "174bf612c7dd1ddd44cb81ad2835500bdc01843f1af501e2c66da9f26a1d0522",
+      "response_argument_count": null,
+      "response_kind": null,
+      "response_record_count": null,
+      "response_signature": "d6f49b4923fccae4e7bf4d3e1f497ad58cf5f7137b7d177f32724df4224e6bf4",
+      "restart_changed_membership_ids": [],
+      "restart_database_effect": "pristine",
+      "restart_database_snapshot_sha256": "1da27f17ad50e0938267534725c936fe108958a9ecacdb5c11ece95969360c58",
+      "restart_getter_blob_sha256": "7fd1a9b06b36c2bed17fb65bf84378762b3bacc95564c020c8bbd79dfd0f01d4",
+      "restart_getter_effect": "pristine",
+      "restart_getter_outcome": "raw_reply",
+      "restart_getter_sha256": "9fd47bd2f4305156ea038e2316ed9197b67a85a14bc7d271f845fb9b2d8e88d8",
+      "restart_health_sha256": "14e0e53206c51e527b7744d1a5e77e6f76d1a2ed132d45f54381857f2e5ddb02",
+      "restart_process_state": "alive",
+      "setter_sha256": "d0c09400daeb14a1de90d538efa0f1c1e9a192daae48735e3057f77fbb41d246",
+      "status": null,
+      "tcp_listeners": [
+        {
+          "local_address": "::",
+          "local_port": 30001,
+          "owning_process_id": 9496,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 12523,
+          "owning_process_id": 3540,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 50000,
+          "owning_process_id": 3088,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 55000,
+          "owning_process_id": 3088,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 55002,
+          "owning_process_id": 3088,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 60496,
+          "owning_process_id": 3088,
+          "state": "Listen"
+        }
+      ]
+    },
+    {
+      "application_error_signatures": [],
+      "changed_membership_ids": [
+        "94201"
+      ],
+      "cycle": 1,
+      "database_effect": "changed",
+      "database_snapshot_sha256": "c78ddc2683719eb2b731b7191f7d15841a55b8b768891d83a0c1413e9d14a842",
+      "getter_blob_bytes": null,
+      "getter_blob_sha256": null,
+      "getter_effect": "unavailable-port-query-timeout",
+      "getter_outcome": "skipped-port-query-timeout",
+      "getter_record_count": null,
+      "getter_record_lengths": null,
+      "getter_unavailable_application_error_signatures": [],
+      "getter_unavailable_process_state": "alive",
+      "health_sha256": "82348be6a7a2ae9c1954b89cf19a894da9dcebcf3194c4c9db3ef55f4d54a1ec",
+      "helper_process_count": 6,
+      "outcome": "raw_reply",
+      "phase": "after-crash-one-canonical",
+      "process_count": 1,
+      "process_state": "alive",
+      "receipt_sha256": "45dc936bf49edaf54d8fb4faa112d6a8919aabe89f78a94c8fee21768414c810",
+      "request_signature": "9b7300807e8244b915d869ae1e8269778a32579ead927f1d28444600b9740925",
+      "response_argument_count": 9,
+      "response_kind": 18178,
+      "response_record_count": 2,
+      "response_signature": "9e05e5ae306ca8a67afebaa5edca369013d8ca9f39fe7986b17d0d04bd5fcc92",
+      "restart_changed_membership_ids": [
+        "94201"
+      ],
+      "restart_database_effect": "changed",
+      "restart_database_snapshot_sha256": "11c64ca710f501f50505a37af981e83d0d17f455930c61030a6fcb1b3fcc0777",
+      "restart_getter_blob_sha256": "ffccd8cf995f3ae589e82e349da64655e2f0a7cc40b2f88120118284cb9f6dd2",
+      "restart_getter_effect": "changed",
+      "restart_getter_outcome": "raw_reply",
+      "restart_getter_sha256": "dae6cda53175171353490429ff478fe35f93cf5cfd1523d28ed82e99d8df3e68",
+      "restart_health_sha256": "10a8ab675c308ffd4a43a24eade78ccb8582380ee99deb15a78cacb591bd8d11",
+      "restart_process_state": "alive",
+      "setter_sha256": "4f423945212b1cd39177261f61f3f6013b63eb8fe0d09c4860027f7f79636615",
+      "status": 0,
+      "tcp_listeners": [
+        {
+          "local_address": "::",
+          "local_port": 30001,
+          "owning_process_id": 5420,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 12523,
+          "owning_process_id": 9056,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 50000,
+          "owning_process_id": 4876,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 55000,
+          "owning_process_id": 4876,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 55002,
+          "owning_process_id": 4876,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 60544,
+          "owning_process_id": 4876,
+          "state": "Listen"
+        }
+      ]
+    },
+    {
+      "application_error_signatures": [
+        "93b0d1e166a999640bec683faebc3e165922225a999415bcaf3533d309802419"
+      ],
+      "changed_membership_ids": [],
+      "cycle": 1,
+      "database_effect": "pristine",
+      "database_snapshot_sha256": "528e1a6f72fe7df8322d04addfe771cc84b208d5560e23ed7d37dbcb35951b62",
+      "getter_blob_bytes": null,
+      "getter_blob_sha256": null,
+      "getter_effect": "unavailable-process-exited",
+      "getter_outcome": "skipped-process-exited",
+      "getter_record_count": null,
+      "getter_record_lengths": null,
+      "getter_unavailable_application_error_signatures": [
+        "93b0d1e166a999640bec683faebc3e165922225a999415bcaf3533d309802419"
+      ],
+      "getter_unavailable_process_state": "exited",
+      "health_sha256": "910e7ba21daa47ce423abd30d42e3845431ecf1fb2edff442ab9c52cbed37c16",
+      "helper_process_count": 5,
+      "outcome": "disconnect",
+      "phase": "crash-declared-extension-seven",
+      "process_count": 0,
+      "process_state": "exited",
+      "receipt_sha256": "8c5b3717c68868041d21ceb395158bc6cc3265d56c5fb8079017d4cf5db5b32f",
+      "request_signature": "dd871b4b76fd1e208de651b7704ac2c008e28e403e2a9342f8f413fdba625672",
+      "response_argument_count": null,
+      "response_kind": null,
+      "response_record_count": null,
+      "response_signature": "006b4fee016b9fe51002fc9b3610ebbd524bb8ee99495b47d2fc683d29f06794",
+      "restart_changed_membership_ids": [],
+      "restart_database_effect": "pristine",
+      "restart_database_snapshot_sha256": "3a84366f520ef229921afe6231d4e4cf45ee493499f58c0ad988bd7ddb340297",
+      "restart_getter_blob_sha256": "7fd1a9b06b36c2bed17fb65bf84378762b3bacc95564c020c8bbd79dfd0f01d4",
+      "restart_getter_effect": "pristine",
+      "restart_getter_outcome": "raw_reply",
+      "restart_getter_sha256": "d84836d97f7175c2c5b07b5d520e51903b9bcbcf43eacc9e66073c2895f02e03",
+      "restart_health_sha256": "3235a7afd454cbc900b78db88a6fae8ffe4b6be5bd2a3d1715d77cab06fc3101",
+      "restart_process_state": "alive",
+      "setter_sha256": "15f4b9c30a35226544b3a12b3a66868001bbe86dbff444239c0a1001fa2b63bd",
+      "status": null,
+      "tcp_listeners": [
+        {
+          "local_address": "::",
+          "local_port": 30001,
+          "owning_process_id": 10180,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 12523,
+          "owning_process_id": 9480,
+          "state": "Listen"
+        }
+      ]
+    },
+    {
+      "application_error_signatures": [],
+      "changed_membership_ids": [
+        "94201"
+      ],
+      "cycle": 1,
+      "database_effect": "changed",
+      "database_snapshot_sha256": "40258545e288198a27fb5ddc88e204a7c5ee55d51ea5b53726afe8f193bf3788",
+      "getter_blob_bytes": null,
+      "getter_blob_sha256": null,
+      "getter_effect": "unavailable-port-query-timeout",
+      "getter_outcome": "skipped-port-query-timeout",
+      "getter_record_count": null,
+      "getter_record_lengths": null,
+      "getter_unavailable_application_error_signatures": [],
+      "getter_unavailable_process_state": "alive",
+      "health_sha256": "e6c199e4f1b8f6d2954fc59b392ebc7454e0d89471811b53d3bb2da9486f5645",
+      "helper_process_count": 6,
+      "outcome": "raw_reply",
+      "phase": "after-crash-seven-canonical",
+      "process_count": 1,
+      "process_state": "alive",
+      "receipt_sha256": "1c50076d94ad17cf9d63d6c750b4061bd5b8f8a816f6f9bc4b4154b18a412650",
+      "request_signature": "9b7300807e8244b915d869ae1e8269778a32579ead927f1d28444600b9740925",
+      "response_argument_count": 9,
+      "response_kind": 18178,
+      "response_record_count": 2,
+      "response_signature": "9e05e5ae306ca8a67afebaa5edca369013d8ca9f39fe7986b17d0d04bd5fcc92",
+      "restart_changed_membership_ids": [
+        "94201"
+      ],
+      "restart_database_effect": "changed",
+      "restart_database_snapshot_sha256": "2da9b7af845c0504f406cf9952fd413354cb20c7274b2e1679afc3a23dfba60c",
+      "restart_getter_blob_sha256": "ffccd8cf995f3ae589e82e349da64655e2f0a7cc40b2f88120118284cb9f6dd2",
+      "restart_getter_effect": "changed",
+      "restart_getter_outcome": "raw_reply",
+      "restart_getter_sha256": "cdce626010c78c95e9f437db2e98637b30a10d5f92e4cfd0ff6bf083ad861f03",
+      "restart_health_sha256": "2c85605603407d136801a2878cbedce1f758e9f0c03872113a3edb6b7f0c8e5a",
+      "restart_process_state": "alive",
+      "setter_sha256": "ee0369628af9fe0850e8b326b579386149fc7a1439ae0d46dc1475dd9917422e",
+      "status": 0,
+      "tcp_listeners": [
+        {
+          "local_address": "::",
+          "local_port": 30001,
+          "owning_process_id": 1216,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 12523,
+          "owning_process_id": 9880,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 50000,
+          "owning_process_id": 5424,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 55000,
+          "owning_process_id": 5424,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 55002,
+          "owning_process_id": 5424,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 60630,
+          "owning_process_id": 5424,
+          "state": "Listen"
+        }
+      ]
+    },
+    {
+      "application_error_signatures": [],
+      "changed_membership_ids": [
+        "94201"
+      ],
+      "cycle": 1,
+      "database_effect": "changed",
+      "database_snapshot_sha256": "78707df6217c176c8a8c363e63d90bd4c50b189955859e71876135f078bc727f",
+      "getter_blob_bytes": null,
+      "getter_blob_sha256": null,
+      "getter_effect": "unavailable-port-query-timeout",
+      "getter_outcome": "skipped-port-query-timeout",
+      "getter_record_count": null,
+      "getter_record_lengths": null,
+      "getter_unavailable_application_error_signatures": [],
+      "getter_unavailable_process_state": "alive",
+      "health_sha256": "b231e207e2e4850f7f62393992af209c8ec2b4fa74b44548c88f26c2de55f12a",
+      "helper_process_count": 6,
+      "outcome": "raw_reply",
+      "phase": "after-vm-restart-canonical",
+      "process_count": 1,
+      "process_state": "alive",
+      "receipt_sha256": "4b80712451e549a044d40d0a08209dd13156d79cbaf3b4691ffaa3f573db8db2",
+      "request_signature": "9b7300807e8244b915d869ae1e8269778a32579ead927f1d28444600b9740925",
+      "response_argument_count": 9,
+      "response_kind": 18178,
+      "response_record_count": 2,
+      "response_signature": "9e05e5ae306ca8a67afebaa5edca369013d8ca9f39fe7986b17d0d04bd5fcc92",
+      "restart_changed_membership_ids": [
+        "94201"
+      ],
+      "restart_database_effect": "changed",
+      "restart_database_snapshot_sha256": "a85ac8b5e0878f395d899c1b3c884ec255b6a05c4c71e07d3a1b81849d9802f1",
+      "restart_getter_blob_sha256": "ffccd8cf995f3ae589e82e349da64655e2f0a7cc40b2f88120118284cb9f6dd2",
+      "restart_getter_effect": "changed",
+      "restart_getter_outcome": "raw_reply",
+      "restart_getter_sha256": "d48f7e406d1d47b0d75682d61ca327607aa9b3fc2237fca5731e78923f8cbc23",
+      "restart_health_sha256": "5aaefa16fc6f2c46c5fe254bd52e9c991c61b9148affa3104da42ae0749e4ed2",
+      "restart_process_state": "alive",
+      "setter_sha256": "dd16b4e32f6a379b8dc57690ba01736aa010388a79018b5f9e65d0b92cee4b09",
+      "status": 0,
+      "tcp_listeners": [
+        {
+          "local_address": "::",
+          "local_port": 30001,
+          "owning_process_id": 8228,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 12523,
+          "owning_process_id": 7256,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 50000,
+          "owning_process_id": 8188,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 55000,
+          "owning_process_id": 8188,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 55002,
+          "owning_process_id": 8188,
+          "state": "Listen"
+        },
+        {
+          "local_address": "0.0.0.0",
+          "local_port": 62033,
+          "owning_process_id": 8188,
+          "state": "Listen"
+        }
+      ]
+    }
+  ],
+  "scope": "real Rekordbox 7.2.19 only; backend comparison is deferred",
+  "sha256": {
+    "declaration": "68002cd28a768d88eb167929b385377983fff6e6db62d69f225495d39ce7a24d",
+    "fixture_manifest": "2964af5df183349a6670d7ea74f3869e9047b042c86ea0cae0cf876db25e52d2",
+    "health_capture": "3687bc107008069eb5c08335aa235f024b8430727bc3d70fb611c0bf44943b45",
+    "recorder": "ab72f09ce8c01a7bf5bc91e00c6932853c35cbdcf3c05fb89bee78afb0fd7377"
+  },
+  "vm_restarts": [
+    {
+      "completed_at": "2026-10-03T17:33:18Z",
+      "phase": "fresh-vm-canonical-before",
+      "sha256": "c9147b85cd6a16e4ff414d335aeb45deae579b6e63d84531d4d79d14f24fb76b",
+      "started_at": "2026-10-03T17:30:57Z"
+    },
+    {
+      "completed_at": "2026-10-03T18:02:01Z",
+      "phase": "restart-isolated-vm",
+      "sha256": "a3ad0f9acd9f7dae2c7461b5314409bc7f325381d9e458029bfef6c7e22fda4f",
+      "started_at": "2026-10-03T17:59:25Z"
+    }
+  ]
+}

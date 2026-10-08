@@ -1,0 +1,36 @@
+address=0x14238e3e0 size=0x74
+0x014238e3e0  push      rbx
+0x014238e3e2  sub       rsp, 0x20
+0x014238e3e6  mov       rbx, rdx
+0x014238e3e9  movzx     r10d, r8b
+0x014238e3ed  mov       edx, r8d
+0x014238e3f0  shr       edx, 8
+0x014238e3f3  sub       r10d, 1
+0x014238e3f7  je        0x14238e422  ; function 0x14238e3e0
+0x014238e3f9  sub       r10d, 1
+0x014238e3fd  je        0x14238e403  ; function 0x14238e3e0
+0x014238e3ff  sub       r10d, 1
+0x014238e403  xor       r9d, r9d
+0x014238e406  xor       edx, edx
+0x014238e408  mov       r8d, 0x1010339
+0x014238e40e  call      0x142381090  ; function 0x142381090
+0x014238e413  mov       eax, 0xffffffff
+0x014238e418  mov       byte ptr [rbx + 0x13], 6
+0x014238e41c  add       rsp, 0x20
+0x014238e420  pop       rbx
+0x014238e421  ret
+0x014238e422  mov       rcx, qword ptr [rcx + 0x708]
+0x014238e429  test      rcx, rcx
+0x014238e42c  je        0x14238e445  ; function 0x14238e3e0
+0x014238e42e  mov       rax, qword ptr [rcx]
+0x014238e431  mov       r9d, dword ptr [r9 + 8]
+0x014238e435  call      qword ptr [rax + 0x168]
+0x014238e43b  mov       byte ptr [rbx + 0x13], 6
+0x014238e43f  add       rsp, 0x20
+0x014238e443  pop       rbx
+0x014238e444  ret
+0x014238e445  mov       eax, 0xfffffffe
+0x014238e44a  mov       byte ptr [rbx + 0x13], 6
+0x014238e44e  add       rsp, 0x20
+0x014238e452  pop       rbx
+0x014238e453  ret

@@ -1,0 +1,250 @@
+{
+  "name": "rx3-track-sort-secondary-render-5",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total"
+    ]
+  },
+  "cases": [
+    {
+      "id": "00-default",
+      "description": "RX3 Default track sort followed by five-argument rendering",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "01-alphabet",
+      "description": "RX3 Alphabet track sort followed by five-argument rendering",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "02-artist",
+      "description": "RX3 Artist track sort followed by five-argument rendering",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 2
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "03-album",
+      "description": "RX3 Album track sort followed by five-argument rendering",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "04-bpm",
+      "description": "RX3 Bpm track sort followed by five-argument rendering",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "05-rating",
+      "description": "RX3 Rating track sort followed by five-argument rendering",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "06-genre",
+      "description": "RX3 Genre track sort followed by five-argument rendering",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "10-label",
+      "description": "RX3 Label track sort followed by five-argument rendering",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 10
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "12-key",
+      "description": "RX3 Key track sort followed by five-argument rendering",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "17-date-added",
+      "description": "RX3 Date Added track sort followed by five-argument rendering",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 17
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "16-dj-play-count",
+      "description": "RX3 Dj Play Count track sort followed by five-argument rendering",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 16
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "name": "hot-cue-bank-cues-extended",
+  "fixture_profile": "hot-cue-banks",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "count-zero",
+      "description": "New-format cue request with a zero slot count",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.alpha"},
+        {"number": 0}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "count-one",
+      "description": "New-format cue request through slot one",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.alpha"},
+        {"number": 1}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "count-two",
+      "description": "New-format cue request through slot two",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.alpha"},
+        {"number": 2}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "count-three",
+      "description": "New-format cue request through all three bank slots",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.alpha"},
+        {"number": 3}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "count-four",
+      "description": "New-format cue request one slot beyond populated data",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.alpha"},
+        {"number": 4}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "count-eight",
+      "description": "New-format cue request through the player hot-cue ceiling",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.alpha"},
+        {"number": 8}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "count-three-fixed-tags",
+      "description": "Three-slot request using the XDJ fixed twelve-slot tag area",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.alpha"},
+        {"number": 3}
+      ],
+      "direct_response": true,
+      "fixed_tag_slots": 12,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "folder-selector",
+      "description": "New-format cue request using a folder selector",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.folder.alpha"},
+        {"number": 3}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "unknown-selector",
+      "description": "New-format cue request using an unknown bank selector",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "0xfffffffe"},
+        {"number": 3}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

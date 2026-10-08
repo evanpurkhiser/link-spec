@@ -1,0 +1,153 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "Date Added strings at 0, 126-128, 254-256, and 256 supplementary characters",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 4100
+              },
+              {
+                "type": "number",
+                "value": 8
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "date-added-255-cap",
+        "outcome": "render_timeout",
+        "pages": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 16843521
+              },
+              {
+                "type": "number",
+                "value": 0
+              },
+              {
+                "type": "number",
+                "value": 8
+              },
+              {
+                "type": "number",
+                "value": 0
+              },
+              {
+                "type": "number",
+                "value": 8
+              },
+              {
+                "type": "number",
+                "value": 12
+              },
+              {
+                "type": "number",
+                "value": 1
+              },
+              {
+                "type": "number",
+                "value": 17
+              }
+            ],
+            "messages": [],
+            "offset": 0,
+            "outcome": "timeout",
+            "received": 0,
+            "requested": 8,
+            "transport_error_kind": "WouldBlock"
+          }
+        ],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "kind": 4100
+        },
+        "rows": [],
+        "total": 8
+      }
+    ],
+    "fixture": {
+      "fingerprint": "076ebc495465e7d0e35274dad4a8c91c76ad67cd509ef0569d13105374b3116c",
+      "profile": "boundaries",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 1
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "secondary-date-added-boundaries"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "a4780456448104d2391b267b9d8c0ba8a9be49a739a044a144158906483d31fc",
+    "fixture_fingerprint": "076ebc495465e7d0e35274dad4a8c91c76ad67cd509ef0569d13105374b3116c",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 3,
+      "mac": "02:00:00:60:00:50",
+      "model": "XDJ-RX3",
+      "model_code": 0,
+      "packet_sha256": "da12196004059977cdbcd83b9e0ae22366a2daf50320ed1a7b033c1d7ab157d4",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 11,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-rx3-player-11.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/boundaries/manifest.json",
+    "recorded_unix_seconds": 1790808894,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/suites/secondary-date-added-boundaries.json",
+    "suite_sha256": "120799a93fe2c62d724eae1b2edde58197545075d9f4580801d8cd5883bd4672"
+  }
+}

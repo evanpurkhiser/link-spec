@@ -1,0 +1,66 @@
+{
+  "name": "bpm-tolerance-boundaries",
+  "fixture_profile": "bpm-tolerance-boundaries",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 64,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "tolerance-0",
+      "description": "BPM 120.00 special zero-percent whole-BPM bucket edges",
+      "request_kind": "0x1206",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 12000}, {"number": 0}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "tolerance-1",
+      "description": "BPM 120.00 with lower and upper one-percent edge controls",
+      "request_kind": "0x1206",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 12000}, {"number": 1}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "tolerance-2",
+      "description": "BPM 120.00 with lower and upper two-percent edge controls",
+      "request_kind": "0x1206",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 12000}, {"number": 2}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "tolerance-3",
+      "description": "BPM 120.00 with lower and upper three-percent edge controls",
+      "request_kind": "0x1206",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 12000}, {"number": 3}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "tolerance-4",
+      "description": "BPM 120.00 with lower and upper four-percent edge controls",
+      "request_kind": "0x1206",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 12000}, {"number": 4}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "tolerance-5",
+      "description": "BPM 120.00 with lower and upper five-percent edge controls",
+      "request_kind": "0x1206",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 12000}, {"number": 5}],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "tolerance-6",
+      "description": "BPM 120.00 with lower and upper six-percent edge controls",
+      "request_kind": "0x1206",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}, {"number": 12000}, {"number": 6}],
+      "expect": {"outcome": "menu"}
+    }
+  ]
+}

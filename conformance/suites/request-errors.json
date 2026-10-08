@@ -1,0 +1,25 @@
+{
+  "name": "request-error-behavior",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"unknown-kind","description":"Unknown request kind with no arguments","request_kind":"0xffff","arguments":[],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"tracks-no-arguments","description":"Track request with every required argument omitted","request_kind":"0x1004","arguments":[],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"tracks-missing-sort","description":"Track request with sort omitted","request_kind":"0x1004","arguments":[{"number":"$context"}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"tracks-extra-argument","description":"Track request with an extra number","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"},{"number":3735928559}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"tracks-string-context","description":"Track request with a string in the context position","request_kind":"0x1004","arguments":[{"string":"wrong-type"},{"number":"$sort"}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"tracks-blob-context","description":"Track request with a blob in the context position","request_kind":"0x1004","arguments":[{"blob_hex":"01020304"},{"number":"$sort"}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"root-missing-capabilities","description":"Root request with the capability mask omitted","request_kind":"0x1000","arguments":[{"number":"$context"},{"number":"$sort"}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"root-string-capabilities","description":"Root request with a string capability mask","request_kind":"0x1000","arguments":[{"number":"$context"},{"number":"$sort"},{"string":"wrong-type"}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"render-as-menu-request","description":"Render kind sent before any menu request","request_kind":"0x3000","arguments":[{"number":"$context"},{"number":0},{"number":1}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}}
+  ]
+}

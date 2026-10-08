@@ -1,0 +1,25 @@
+## __Z31CmnFunc_MsecToFrm150_InOoutConvjjjPjS_ | 
+address=0x1009b1f30 size=0x50
+0x01009b1f30  push      rbp
+0x01009b1f31  mov       rbp, rsp
+0x01009b1f34  mov       eax, esi
+0x01009b1f36  vcvtsi2sd xmm0, xmm0, rax
+0x01009b1f3b  vmulsd    xmm0, xmm0, qword ptr [rip + 0x315efad]
+0x01009b1f43  vcvttsd2si rax, xmm0
+0x01009b1f48  mov       dword ptr [rcx], eax
+0x01009b1f4a  xor       eax, eax
+0x01009b1f4c  cmp       edi, 1
+0x01009b1f4f  jne       0x1009b1f6e
+0x01009b1f51  mov       eax, edx
+0x01009b1f53  vcvtsi2sd xmm0, xmm1, rax
+0x01009b1f58  vmulsd    xmm0, xmm0, qword ptr [rip + 0x315ef90]
+0x01009b1f60  vcvttsd2si rax, xmm0
+0x01009b1f65  mov       dword ptr [r8], eax
+0x01009b1f68  test      eax, eax
+0x01009b1f6a  je        0x1009b1f71
+0x01009b1f6c  dec       eax
+0x01009b1f6e  mov       dword ptr [r8], eax
+0x01009b1f71  pop       rbp
+0x01009b1f72  ret
+0x01009b1f73  nop       word ptr cs:[rax + rax]
+

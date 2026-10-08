@@ -1,0 +1,87 @@
+{
+  "name": "song-info-location2-malformed-history-lifecycle--play-blob-context__then__delivery-extra-argument",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-cold-process",
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ],
+    "read_timeout_ms": 10000
+  },
+  "cases": [
+    {
+      "id": "first--play-blob-context",
+      "description": "First malformed precursor: Play Song Info: Display request with blob context",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "blob_hex": "01020304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      },
+      "capture_connection_setup": true,
+      "drain_before_request_ms": 1200
+    },
+    {
+      "id": "second--delivery-extra-argument",
+      "description": "Second malformed precursor: Delivery Song Info: Display request with an extra number",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0xdeadbeef"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      },
+      "capture_connection_setup": true,
+      "drain_before_request_ms": 1200
+    },
+    {
+      "id": "delivery-probe",
+      "description": "Matched RX3 location-2 Delivery after both malformed precursors",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "capture_connection_setup": true,
+      "drain_before_request_ms": 1200,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

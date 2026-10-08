@@ -1,0 +1,1954 @@
+## __Z23djepl_getPlaylistTracks9RbDBIndexiia | 
+address=0x1004b3d20 size=0x560
+0x01004b3d20  push      rbp
+0x01004b3d21  mov       rbp, rsp
+0x01004b3d24  push      r15
+0x01004b3d26  push      r14
+0x01004b3d28  push      r13
+0x01004b3d2a  push      r12
+0x01004b3d2c  push      rbx
+0x01004b3d2d  and       rsp, 0xffffffffffffffe0
+0x01004b3d31  sub       rsp, 0xc0
+0x01004b3d38  mov       dword ptr [rsp + 0x2c], ecx
+0x01004b3d3c  mov       r14d, edx
+0x01004b3d3f  mov       r12d, esi
+0x01004b3d42  mov       dword ptr [rsp + 0x30], edi
+0x01004b3d46  mov       dword ptr [rsp + 0x28], esi
+0x01004b3d4a  mov       dword ptr [rsp + 0x24], 0
+0x01004b3d52  mov       byte ptr [rsp + 0x1e], 0
+0x01004b3d57  mov       dword ptr [rsp + 0x20], 0
+0x01004b3d5f  mov       qword ptr [rsp + 0x50], 0
+0x01004b3d68  mov       dword ptr [rsp + 0x4c], 0xffffffff
+0x01004b3d70  mov       byte ptr [rsp + 0x1d], 0
+0x01004b3d75  mov       dword ptr [rsp + 0x34], 0
+0x01004b3d7d  mov       r15d, esi
+0x01004b3d80  shr       r15d, 0x10
+0x01004b3d84  mov       ebx, esi
+0x01004b3d86  shr       ebx, 0xa
+0x01004b3d89  not       bl
+0x01004b3d8b  and       bl, 0x40
+0x01004b3d8e  vxorps    xmm0, xmm0, xmm0
+0x01004b3d92  vmovaps   ymmword ptr [rsp + 0x80], ymm0
+0x01004b3d9b  vmovaps   ymmword ptr [rsp + 0x60], ymm0
+0x01004b3da1  mov       byte ptr [rsp + 0x84], 4
+0x01004b3da9  mov       edi, esi
+0x01004b3dab  mov       esi, 1
+0x01004b3db0  vzeroupper
+0x01004b3db3  call      0x10249cf40  ; __Z17DsqlListBuf_Clearji |
+0x01004b3db8  cmp       r15b, 1
+0x01004b3dbc  jne       0x1004b3de0
+0x01004b3dbe  mov       edi, r12d
+0x01004b3dc1  shr       edi, 0x18
+0x01004b3dc4  call      0x102521d20  ; __ZN9PSvDBMain14getTrackFilterEh |
+0x01004b3dc9  mov       r15, rax
+0x01004b3dcc  mov       eax, dword ptr [rsp + 0x2c]
+0x01004b3dd0  or        bl, al
+0x01004b3dd2  cmp       al, 1
+0x01004b3dd4  jbe       0x1004b3ded
+0x01004b3dd6  movzx     edi, al
+0x01004b3dd9  call      0x101614f90  ; __Z19dsqlGetSortCategoryh |
+0x01004b3dde  jmp       0x1004b3dfa
+0x01004b3de0  xor       r15d, r15d
+0x01004b3de3  mov       eax, dword ptr [rsp + 0x2c]
+0x01004b3de7  or        bl, al
+0x01004b3de9  cmp       al, 1
+0x01004b3deb  ja        0x1004b3dd6
+0x01004b3ded  shr       r12d, 8
+0x01004b3df1  movzx     edi, r12b
+0x01004b3df5  call      0x101011710  ; __Z25Dsql_getRightDispCategoryh |
+0x01004b3dfa  movzx     edi, ax
+0x01004b3dfd  lea       rsi, [rsp + 0x4c]
+0x01004b3e02  lea       rdx, [rsp + 0x1d]
+0x01004b3e07  lea       rcx, [rsp + 0x34]
+0x01004b3e0c  call      0x101614df0  ; __Z23dsqlGetRightListInfo_DBtPiPhP13TBL_STRING_ID |
+0x01004b3e11  mov       r8d, dword ptr [rsp + 0x28]
+0x01004b3e16  movsx     esi, bl
+0x01004b3e19  xor       ebx, ebx
+0x01004b3e1b  mov       edi, dword ptr [rsp + 0x30]
+0x01004b3e1f  mov       edx, r14d
+0x01004b3e22  xor       ecx, ecx
+0x01004b3e24  call      0x100489470  ; __Z18getRowset_Playlist9RbDBIndexaihi |
+0x01004b3e29  test      rax, rax
+0x01004b3e2c  je        0x1004b4216
+0x01004b3e32  mov       r14, rax
+0x01004b3e35  call      0x1004a6b70  ; __Z18dsqlCancelTimeInitv |
+0x01004b3e3a  lea       rsi, [rsp + 0x24]
+0x01004b3e3f  mov       rdi, r14
+0x01004b3e42  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x01004b3e47  test      rax, rax
+0x01004b3e4a  je        0x1004b41ed
+0x01004b3e50  mov       rbx, rax
+0x01004b3e53  xor       eax, eax
+0x01004b3e55  mov       qword ptr [rsp + 0x40], rax
+0x01004b3e5a  xor       r12d, r12d
+0x01004b3e5d  mov       qword ptr [rsp + 0x38], r14
+0x01004b3e62  cmp       byte ptr [rsp + 0x2c], 0
+0x01004b3e67  je        0x1004b3f99
+0x01004b3e6d  inc       r12d
+0x01004b3e70  jmp       0x1004b3e9c
+0x01004b3e72  nop       word ptr cs:[rax + rax]
+0x01004b3e80  mov       rdi, r14
+0x01004b3e83  lea       rsi, [rsp + 0x24]
+0x01004b3e88  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x01004b3e8d  mov       rbx, rax
+0x01004b3e90  inc       r12d
+0x01004b3e93  test      rax, rax
+0x01004b3e96  je        0x1004b4209
+0x01004b3e9c  call      0x1004a6b90  ; __Z21dsqlIsGetListCanceledv |
+0x01004b3ea1  test      eax, eax
+0x01004b3ea3  js        0x1004b41f1
+0x01004b3ea9  mov       rdi, rbx
+0x01004b3eac  xor       esi, esi
+0x01004b3eae  lea       rdx, [rsp + 0x1e]
+0x01004b3eb3  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x01004b3eb8  mov       esi, dword ptr [rax]
+0x01004b3eba  mov       dword ptr [rsp + 0x20], esi
+0x01004b3ebe  test      r15, r15
+0x01004b3ec1  je        0x1004b3ed1
+0x01004b3ec3  mov       rdi, r15
+0x01004b3ec6  xor       edx, edx
+0x01004b3ec8  call      0x100f93480  ; __ZN11TrackFilter18getFilteringResultEjPv |
+0x01004b3ecd  test      al, al
+0x01004b3ecf  je        0x1004b3e80
+0x01004b3ed1  cmp       r12d, 0x2710
+0x01004b3ed8  ja        0x1004b41d2
+0x01004b3ede  lea       rax, [rsp + 0x20]
+0x01004b3ee3  mov       qword ptr [rsp + 0x50], rax
+0x01004b3ee8  mov       ebx, dword ptr [rsp + 0x30]
+0x01004b3eec  mov       edi, ebx
+0x01004b3eee  mov       esi, 1
+0x01004b3ef3  call      0x101af8e80  ; __Z14getDBTableName9RbDBIndex12TableNameKey |
+0x01004b3ef8  mov       r14, rax
+0x01004b3efb  mov       edi, ebx
+0x01004b3efd  mov       esi, 1
+0x01004b3f02  xor       edx, edx
+0x01004b3f04  call      0x101af8ee0  ; __Z14getDBIndexName9RbDBIndex12TableNameKey8FieldKey |
+0x01004b3f09  sub       rsp, 8
+0x01004b3f0d  lea       rbx, [rsp + 0x2c]
+0x01004b3f12  mov       rdi, rbx
+0x01004b3f15  mov       rsi, r14
+0x01004b3f18  mov       rdx, rax
+0x01004b3f1b  xor       ecx, ecx
+0x01004b3f1d  xor       r8d, r8d
+0x01004b3f20  xor       r9d, r9d
+0x01004b3f23  lea       rax, [rsp + 0x58]
+0x01004b3f28  push      rax
+0x01004b3f29  push      1
+0x01004b3f2b  lea       rax, [rip + 0x4eff6da]
+0x01004b3f32  push      rax
+0x01004b3f33  call      0x1000d2e20  ; _edb_dyn_Select_ |
+0x01004b3f38  add       rsp, 0x20
+0x01004b3f3c  mov       r13, rax
+0x01004b3f3f  mov       rdi, rax
+0x01004b3f42  mov       rsi, rbx
+0x01004b3f45  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x01004b3f4a  test      rax, rax
+0x01004b3f4d  je        0x1004b408a
+0x01004b3f53  mov       r14, rax
+0x01004b3f56  mov       rdi, rax
+0x01004b3f59  call      0x101f3edf0  ; __Z28dsqlIsLinkExportVisibleTrackPv |
+0x01004b3f5e  test      al, al
+0x01004b3f60  jne       0x1004b4094
+0x01004b3f66  mov       rdi, r13
+0x01004b3f69  call      0x1000d2e40  ; _edb_dyn_CloseRowSet_ |
+0x01004b3f6e  mov       r14, qword ptr [rsp + 0x38]
+0x01004b3f73  jmp       0x1004b3e80
+0x01004b3f78  nop       dword ptr [rax + rax]
+0x01004b3f80  mov       rdi, r14
+0x01004b3f83  lea       rsi, [rsp + 0x24]
+0x01004b3f88  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x01004b3f8d  mov       rbx, rax
+0x01004b3f90  test      rax, rax
+0x01004b3f93  je        0x1004b4209
+0x01004b3f99  call      0x1004a6b90  ; __Z21dsqlIsGetListCanceledv |
+0x01004b3f9e  test      eax, eax
+0x01004b3fa0  js        0x1004b41f1
+0x01004b3fa6  mov       rdi, rbx
+0x01004b3fa9  mov       esi, 1
+0x01004b3fae  lea       r12, [rsp + 0x1e]
+0x01004b3fb3  mov       rdx, r12
+0x01004b3fb6  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x01004b3fbb  mov       eax, dword ptr [rax]
+0x01004b3fbd  mov       dword ptr [rsp + 0x20], eax
+0x01004b3fc1  mov       rdi, rbx
+0x01004b3fc4  mov       esi, 2
+0x01004b3fc9  mov       rdx, r12
+0x01004b3fcc  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x01004b3fd1  mov       r12d, dword ptr [rax]
+0x01004b3fd4  test      r15, r15
+0x01004b3fd7  je        0x1004b3feb
+0x01004b3fd9  mov       esi, dword ptr [rsp + 0x20]
+0x01004b3fdd  mov       rdi, r15
+0x01004b3fe0  xor       edx, edx
+0x01004b3fe2  call      0x100f93480  ; __ZN11TrackFilter18getFilteringResultEjPv |
+0x01004b3fe7  test      al, al
+0x01004b3fe9  je        0x1004b3f80
+0x01004b3feb  cmp       r12d, 0x2710
+0x01004b3ff2  ja        0x1004b41d2
+0x01004b3ff8  lea       rax, [rsp + 0x20]
+0x01004b3ffd  mov       qword ptr [rsp + 0x50], rax
+0x01004b4002  mov       ebx, dword ptr [rsp + 0x30]
+0x01004b4006  mov       edi, ebx
+0x01004b4008  mov       esi, 1
+0x01004b400d  call      0x101af8e80  ; __Z14getDBTableName9RbDBIndex12TableNameKey |
+0x01004b4012  mov       r14, rax
+0x01004b4015  mov       edi, ebx
+0x01004b4017  mov       esi, 1
+0x01004b401c  xor       edx, edx
+0x01004b401e  call      0x101af8ee0  ; __Z14getDBIndexName9RbDBIndex12TableNameKey8FieldKey |
+0x01004b4023  sub       rsp, 8
+0x01004b4027  lea       rbx, [rsp + 0x2c]
+0x01004b402c  mov       rdi, rbx
+0x01004b402f  mov       rsi, r14
+0x01004b4032  mov       rdx, rax
+0x01004b4035  xor       ecx, ecx
+0x01004b4037  xor       r8d, r8d
+0x01004b403a  xor       r9d, r9d
+0x01004b403d  lea       rax, [rsp + 0x58]
+0x01004b4042  push      rax
+0x01004b4043  push      1
+0x01004b4045  lea       rax, [rip + 0x4eff5c0]
+0x01004b404c  push      rax
+0x01004b404d  call      0x1000d2e20  ; _edb_dyn_Select_ |
+0x01004b4052  add       rsp, 0x20
+0x01004b4056  mov       r13, rax
+0x01004b4059  mov       rdi, rax
+0x01004b405c  mov       rsi, rbx
+0x01004b405f  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x01004b4064  test      rax, rax
+0x01004b4067  je        0x1004b408a
+0x01004b4069  mov       r14, rax
+0x01004b406c  mov       rdi, rax
+0x01004b406f  call      0x101f3edf0  ; __Z28dsqlIsLinkExportVisibleTrackPv |
+0x01004b4074  test      al, al
+0x01004b4076  jne       0x1004b4094
+0x01004b4078  mov       rdi, r13
+0x01004b407b  call      0x1000d2e40  ; _edb_dyn_CloseRowSet_ |
+0x01004b4080  mov       r14, qword ptr [rsp + 0x38]
+0x01004b4085  jmp       0x1004b3f80
+0x01004b408a  mov       r14, qword ptr [rsp + 0x38]
+0x01004b408f  jmp       0x1004b41d2
+0x01004b4094  mov       byte ptr [rsp + 0x1f], 0
+0x01004b4099  mov       word ptr [rsp + 0x1a], 0
+0x01004b40a0  mov       eax, dword ptr [rsp + 0x20]
+0x01004b40a4  mov       dword ptr [rsp + 0x60], eax
+0x01004b40a8  mov       esi, dword ptr [rsp + 0x4c]
+0x01004b40ac  mov       rdi, r14
+0x01004b40af  call      0x101614e50  ; __Z20dsqlGetRightTrackKeyPvi |
+0x01004b40b4  mov       dword ptr [rsp + 0x64], eax
+0x01004b40b8  mov       rdi, r14
+0x01004b40bb  mov       esi, 0x18
+0x01004b40c0  lea       rdx, [rsp + 0x1f]
+0x01004b40c5  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x01004b40ca  mov       eax, dword ptr [rax]
+0x01004b40cc  mov       dword ptr [rsp + 0x68], eax
+0x01004b40d0  mov       rdi, r14
+0x01004b40d3  mov       esi, 4
+0x01004b40d8  lea       rdx, [rsp + 0x1a]
+0x01004b40dd  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x01004b40e2  movzx     ecx, byte ptr [rsp + 0x1d]
+0x01004b40e7  mov       esi, dword ptr [rsp + 0x64]
+0x01004b40eb  lea       edx, [rsi + 0x13]
+0x01004b40ee  cmp       esi, 0x7fffffff
+0x01004b40f4  movzx     edx, dl
+0x01004b40f7  cmove     edx, ecx
+0x01004b40fa  cmp       cl, 0x13
+0x01004b40fd  cmovne    edx, ecx
+0x01004b4100  mov       qword ptr [rsp + 0x70], rax
+0x01004b4105  mov       byte ptr [rsp + 0x85], dl
+0x01004b410c  mov       dword ptr [rsp + 0x80], r12d
+0x01004b4114  mov       dword ptr [rsp + 0x98], r12d
+0x01004b411c  cmp       byte ptr [rsp + 0x2c], 1
+0x01004b4121  je        0x1004b416d
+0x01004b4123  mov       qword ptr [rsp + 0x58], 0
+0x01004b412c  mov       edi, dword ptr [rsp + 0x34]
+0x01004b4130  mov       rdx, r14
+0x01004b4133  lea       rcx, [rsp + 0x58]
+0x01004b4138  lea       r8, [rsp + 0x28]
+0x01004b413d  xor       r9d, r9d
+0x01004b4140  call      0x10048b5e0  ; __Z19Get_DsqlTableString13TBL_STRING_IDjPvPPtPiP9RbDBIndex |
+0x01004b4145  test      eax, eax
+0x01004b4147  js        0x1004b415a
+0x01004b4149  mov       rax, qword ptr [rsp + 0x58]
+0x01004b414e  mov       qword ptr [rsp + 0x78], rax
+0x01004b4153  mov       byte ptr [rsp + 0x1b], 1
+0x01004b4158  jmp       0x1004b416d
+0x01004b415a  mov       edx, dword ptr [rsp + 0x34]
+0x01004b415e  mov       edi, 0xfd00006c
+0x01004b4163  mov       esi, 2
+0x01004b4168  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x01004b416d  mov       rdi, r13
+0x01004b4170  call      0x1000d2e40  ; _edb_dyn_CloseRowSet_ |
+0x01004b4175  mov       edi, dword ptr [rsp + 0x28]
+0x01004b4179  lea       rsi, [rsp + 0x60]
+0x01004b417e  call      0x10249cd50  ; __Z18DsqlListBuf_InsertjPK18_st_listbuf_record |
+0x01004b4183  mov       cl, byte ptr [rsp + 0x1a]
+0x01004b4187  test      eax, eax
+0x01004b4189  jne       0x1004b424f
+0x01004b418f  cmp       cl, 1
+0x01004b4192  jne       0x1004b41a7
+0x01004b4194  mov       rdi, qword ptr [rsp + 0x70]
+0x01004b4199  call      0x102325ce0  ; __Z7djrfreePv |
+0x01004b419e  mov       qword ptr [rsp + 0x70], 0
+0x01004b41a7  cmp       byte ptr [rsp + 0x1b], 1
+0x01004b41ac  mov       r14, qword ptr [rsp + 0x38]
+0x01004b41b1  jne       0x1004b41c6
+0x01004b41b3  mov       rdi, qword ptr [rsp + 0x78]
+0x01004b41b8  call      0x102325ce0  ; __Z7djrfreePv |
+0x01004b41bd  mov       qword ptr [rsp + 0x78], 0
+0x01004b41c6  mov       rax, qword ptr [rsp + 0x40]
+0x01004b41cb  inc       eax
+0x01004b41cd  mov       qword ptr [rsp + 0x40], rax
+0x01004b41d2  mov       rdi, r14
+0x01004b41d5  lea       rsi, [rsp + 0x24]
+0x01004b41da  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x01004b41df  mov       rbx, rax
+0x01004b41e2  test      rax, rax
+0x01004b41e5  jne       0x1004b3e62
+0x01004b41eb  jmp       0x1004b4209
+0x01004b41ed  xor       eax, eax
+0x01004b41ef  jmp       0x1004b4204
+0x01004b41f1  mov       edi, dword ptr [rsp + 0x28]
+0x01004b41f5  mov       esi, 1
+0x01004b41fa  call      0x10249cf40  ; __Z17DsqlListBuf_Clearji |
+0x01004b41ff  mov       eax, 0xfffffffd
+0x01004b4204  mov       qword ptr [rsp + 0x40], rax
+0x01004b4209  mov       rdi, r14
+0x01004b420c  call      0x1000d2e40  ; _edb_dyn_CloseRowSet_ |
+0x01004b4211  mov       rbx, qword ptr [rsp + 0x40]
+0x01004b4216  mov       edi, 1
+0x01004b421b  call      0x10249cfc0  ; __Z18DsqlListBuf_InsEndi |
+0x01004b4220  mov       r14d, eax
+0x01004b4223  test      r15, r15
+0x01004b4226  je        0x1004b4231
+0x01004b4228  mov       rax, qword ptr [r15]
+0x01004b422b  mov       rdi, r15
+0x01004b422e  call      qword ptr [rax + 8]
+0x01004b4231  cmp       r14d, -2
+0x01004b4235  mov       eax, 0xfffffffd
+0x01004b423a  cmove     ebx, eax
+0x01004b423d  movsxd    rax, ebx
+0x01004b4240  lea       rsp, [rbp - 0x28]
+0x01004b4244  pop       rbx
+0x01004b4245  pop       r12
+0x01004b4247  pop       r13
+0x01004b4249  pop       r14
+0x01004b424b  pop       r15
+0x01004b424d  pop       rbp
+0x01004b424e  ret
+0x01004b424f  cmp       cl, 1
+0x01004b4252  jne       0x1004b425e
+0x01004b4254  mov       rdi, qword ptr [rsp + 0x70]
+0x01004b4259  call      0x102325ce0  ; __Z7djrfreePv |
+0x01004b425e  cmp       byte ptr [rsp + 0x1b], 1
+0x01004b4263  mov       r14, qword ptr [rsp + 0x38]
+0x01004b4268  jne       0x1004b4209
+0x01004b426a  mov       rdi, qword ptr [rsp + 0x78]
+0x01004b426f  call      0x102325ce0  ; __Z7djrfreePv |
+0x01004b4274  jmp       0x1004b4209
+0x01004b4276  nop       word ptr cs:[rax + rax]
+
+## __Z22djepl_getPlaylistLists9RbDBIndexiia | 
+address=0x1004b4280 size=0x550
+0x01004b4280  push      rbp
+0x01004b4281  mov       rbp, rsp
+0x01004b4284  push      r15
+0x01004b4286  push      r14
+0x01004b4288  push      r13
+0x01004b428a  push      r12
+0x01004b428c  push      rbx
+0x01004b428d  and       rsp, 0xffffffffffffffe0
+0x01004b4291  sub       rsp, 0xc0
+0x01004b4298  mov       r14d, edx
+0x01004b429b  mov       ebx, edi
+0x01004b429d  mov       dword ptr [rsp + 0x54], 0
+0x01004b42a5  mov       byte ptr [rsp + 0x17], 0
+0x01004b42aa  xor       eax, eax
+0x01004b42ac  mov       qword ptr [rsp + 0x18], rax
+0x01004b42b1  mov       dword ptr [rsp + 0x24], esi
+0x01004b42b5  mov       edi, esi
+0x01004b42b7  mov       esi, 1
+0x01004b42bc  call      0x10249cf40  ; __Z17DsqlListBuf_Clearji |
+0x01004b42c1  vxorps    xmm0, xmm0, xmm0
+0x01004b42c5  vmovaps   ymmword ptr [rsp + 0x80], ymm0
+0x01004b42ce  vmovaps   ymmword ptr [rsp + 0x60], ymm0
+0x01004b42d4  xor       eax, eax
+0x01004b42d6  mov       qword ptr [rsp + 0x18], rax
+0x01004b42db  mov       edi, ebx
+0x01004b42dd  xor       esi, esi
+0x01004b42df  mov       edx, r14d
+0x01004b42e2  mov       ecx, 1
+0x01004b42e7  mov       r8d, dword ptr [rsp + 0x24]
+0x01004b42ec  vzeroupper
+0x01004b42ef  call      0x100489470  ; __Z18getRowset_Playlist9RbDBIndexaihi |
+0x01004b42f4  mov       qword ptr [rsp + 0x58], rax
+0x01004b42f9  xor       eax, eax
+0x01004b42fb  mov       qword ptr [rsp + 0x18], rax
+0x01004b4300  call      0x1004a6b70  ; __Z18dsqlCancelTimeInitv |
+0x01004b4305  mov       dword ptr [rsp + 0x44], 1
+0x01004b430d  mov       r13d, 0x18
+0x01004b4313  lea       rbx, [rsp + 0x17]
+0x01004b4318  xor       r12d, r12d
+0x01004b431b  xor       r15d, r15d
+0x01004b431e  xor       eax, eax
+0x01004b4320  mov       qword ptr [rsp + 0x18], rax
+0x01004b4325  jmp       0x1004b4389
+0x01004b4327  nop       word ptr [rax + rax]
+0x01004b4330  mov       ebx, r15d
+0x01004b4333  mov       ecx, dword ptr [rsp + 0x40]
+0x01004b4337  mov       esi, dword ptr [rsp + 0x3c]
+0x01004b433b  mov       edi, dword ptr [rsp + 0x38]
+0x01004b433f  mov       rdx, qword ptr [rsp + 0x18]
+0x01004b4344  mov       dword ptr [rdx + r13 - 0x18], esi
+0x01004b4349  mov       dword ptr [rdx + r13 - 0x14], ecx
+0x01004b434e  mov       dword ptr [rdx + r13 - 0x10], edi
+0x01004b4353  mov       byte ptr [rdx + r13 - 8], r12b
+0x01004b4358  mov       eax, dword ptr [rsp + 0x48]
+0x01004b435c  mov       ecx, dword ptr [rsp + 0x4b]
+0x01004b4360  mov       dword ptr [rdx + r13 - 7], eax
+0x01004b4365  mov       dword ptr [rdx + r13 - 4], ecx
+0x01004b436a  mov       qword ptr [rdx + r13], r14
+0x01004b436e  inc       dword ptr [rsp + 0x44]
+0x01004b4372  add       r13, 0x20
+0x01004b4376  mov       rax, qword ptr [rsp + 0x28]
+0x01004b437b  inc       rax
+0x01004b437e  mov       r15d, ebx
+0x01004b4381  mov       r12, rax
+0x01004b4384  lea       rbx, [rsp + 0x17]
+0x01004b4389  mov       rdi, qword ptr [rsp + 0x58]
+0x01004b438e  lea       rsi, [rsp + 0x54]
+0x01004b4393  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x01004b4398  mov       r14, rax
+0x01004b439b  test      rax, rax
+0x01004b439e  je        0x1004b4471
+0x01004b43a4  call      0x1004a6b90  ; __Z21dsqlIsGetListCanceledv |
+0x01004b43a9  test      eax, eax
+0x01004b43ab  mov       qword ptr [rsp + 0x28], r12
+0x01004b43b0  js        0x1004b4479
+0x01004b43b6  mov       rdi, r14
+0x01004b43b9  mov       esi, 1
+0x01004b43be  mov       rdx, rbx
+0x01004b43c1  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x01004b43c6  mov       eax, dword ptr [rax]
+0x01004b43c8  mov       dword ptr [rsp + 0x40], eax
+0x01004b43cc  mov       rdi, r14
+0x01004b43cf  xor       esi, esi
+0x01004b43d1  mov       rdx, rbx
+0x01004b43d4  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x01004b43d9  mov       eax, dword ptr [rax]
+0x01004b43db  mov       dword ptr [rsp + 0x3c], eax
+0x01004b43df  mov       rdi, r14
+0x01004b43e2  mov       esi, 3
+0x01004b43e7  mov       rdx, rbx
+0x01004b43ea  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x01004b43ef  mov       eax, dword ptr [rax]
+0x01004b43f1  mov       dword ptr [rsp + 0x38], eax
+0x01004b43f5  mov       rdi, r14
+0x01004b43f8  mov       esi, 4
+0x01004b43fd  mov       rdx, rbx
+0x01004b4400  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x01004b4405  movzx     r12d, byte ptr [rax]
+0x01004b4409  mov       rdi, r14
+0x01004b440c  mov       esi, 2
+0x01004b4411  mov       rdx, rbx
+0x01004b4414  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x01004b4419  mov       r14, rax
+0x01004b441c  cmp       byte ptr [rsp + 0x17], 0
+0x01004b4421  mov       eax, 0
+0x01004b4426  cmove     r14, rax
+0x01004b442a  movsxd    rax, r15d
+0x01004b442d  mov       rcx, qword ptr [rsp + 0x28]
+0x01004b4432  cmp       rcx, rax
+0x01004b4435  jl        0x1004b4330
+0x01004b443b  mov       rax, rcx
+0x01004b443e  mov       ebx, dword ptr [rsp + 0x44]
+0x01004b4442  shr       rbx, 1
+0x01004b4445  add       rbx, 9
+0x01004b4449  add       ebx, eax
+0x01004b444b  and       ebx, 0xfffffff8
+0x01004b444e  cmp       r15d, ebx
+0x01004b4451  je        0x1004b4330
+0x01004b4457  mov       esi, ebx
+0x01004b4459  shl       rsi, 5
+0x01004b445d  mov       rdi, qword ptr [rsp + 0x18]
+0x01004b4462  call      0x1038c44b4
+0x01004b4467  mov       qword ptr [rsp + 0x18], rax
+0x01004b446c  jmp       0x1004b4333
+0x01004b4471  xor       r15d, r15d
+0x01004b4474  jmp       0x1004b456d
+0x01004b4479  test      r12d, r12d
+0x01004b447c  je        0x1004b4564
+0x01004b4482  mov       r14, r12
+0x01004b4485  neg       r14
+0x01004b4488  mov       rax, r12
+0x01004b448b  inc       r12
+0x01004b448e  mov       r13d, eax
+0x01004b4491  dec       r13
+0x01004b4494  jmp       0x1004b44c3
+0x01004b4496  mov       esi, r15d
+0x01004b4499  shl       rsi, 5
+0x01004b449d  mov       rdi, qword ptr [rsp + 0x18]
+0x01004b44a2  call      0x1038c44b4
+0x01004b44a7  mov       qword ptr [rsp + 0x18], rax
+0x01004b44ac  nop       dword ptr [rax]
+0x01004b44b0  dec       r12d
+0x01004b44b3  inc       r14d
+0x01004b44b6  dec       r13
+0x01004b44b9  cmp       r12d, 1
+0x01004b44bd  jle       0x1004b4557
+0x01004b44c3  lea       eax, [r12 - 2]
+0x01004b44c8  mov       rcx, qword ptr [rsp + 0x28]
+0x01004b44cd  cmp       ecx, eax
+0x01004b44cf  jbe       0x1004b44b0
+0x01004b44d1  mov       ebx, r13d
+0x01004b44d4  shl       rbx, 5
+0x01004b44d8  mov       rax, qword ptr [rsp + 0x18]
+0x01004b44dd  mov       rdi, qword ptr [rax + rbx + 0x18]
+0x01004b44e2  test      rdi, rdi
+0x01004b44e5  je        0x1004b44b0
+0x01004b44e7  call      0x102325ce0  ; __Z7djrfreePv |
+0x01004b44ec  mov       rcx, qword ptr [rsp + 0x18]
+0x01004b44f1  lea       rdi, [rcx + rbx]
+0x01004b44f5  mov       rdx, qword ptr [rsp + 0x28]
+0x01004b44fa  lea       eax, [r14 + rdx]
+0x01004b44fe  lea       rsi, [rcx + rbx]
+0x01004b4502  add       rsi, 0x20
+0x01004b4506  mov       rbx, rdx
+0x01004b4509  movsxd    rdx, eax
+0x01004b450c  shl       rdx, 5
+0x01004b4510  call      0x1038c42b6
+0x01004b4515  mov       eax, ebx
+0x01004b4517  dec       ebx
+0x01004b4519  add       eax, eax
+0x01004b451b  add       eax, -2
+0x01004b451e  test      eax, eax
+0x01004b4520  mov       ecx, 0
+0x01004b4525  cmovle    eax, ecx
+0x01004b4528  cmp       r15d, eax
+0x01004b452b  mov       qword ptr [rsp + 0x28], rbx
+0x01004b4530  jle       0x1004b44b0
+0x01004b4536  cmp       ebx, 3
+0x01004b4539  mov       eax, r15d
+0x01004b453c  mov       r15d, 2
+0x01004b4542  cmovge    r15d, ebx
+0x01004b4546  cmp       eax, r15d
+0x01004b4549  jg        0x1004b4496
+0x01004b454f  mov       r15d, eax
+0x01004b4552  jmp       0x1004b44b0
+0x01004b4557  mov       r15d, 0xfffffffd
+0x01004b455d  mov       r12, qword ptr [rsp + 0x28]
+0x01004b4562  jmp       0x1004b456d
+0x01004b4564  xor       r12d, r12d
+0x01004b4567  mov       r15d, 0xfffffffd
+0x01004b456d  mov       rdi, qword ptr [rsp + 0x58]
+0x01004b4572  call      0x1000d2e40  ; _edb_dyn_CloseRowSet_ |
+0x01004b4577  cmp       r12d, 2
+0x01004b457b  jl        0x1004b45ba
+0x01004b457d  lea       eax, [r12 - 1]
+0x01004b4582  shl       rax, 5
+0x01004b4586  mov       rcx, qword ptr [rsp + 0x18]
+0x01004b458b  lea       rsi, [rcx + rax]
+0x01004b458f  add       rsi, 0x20
+0x01004b4593  lea       rax, [rsp + 0x30]
+0x01004b4598  mov       qword ptr [rsp + 0x48], rax
+0x01004b459d  mov       rax, rsi
+0x01004b45a0  sub       rax, rcx
+0x01004b45a3  je        0x1004b45c5
+0x01004b45a5  sar       rax, 5
+0x01004b45a9  bsr       rcx, rax
+0x01004b45ad  xor       rcx, 0x3f
+0x01004b45b1  add       rcx, rcx
+0x01004b45b4  xor       rcx, 0x7e
+0x01004b45b8  jmp       0x1004b45c7
+0x01004b45ba  cmp       r12d, 1
+0x01004b45be  je        0x1004b45d6
+0x01004b45c0  jmp       0x1004b4769
+0x01004b45c5  xor       ecx, ecx
+0x01004b45c7  lea       rdx, [rsp + 0x48]
+0x01004b45cc  mov       rdi, qword ptr [rsp + 0x18]
+0x01004b45d1  call      0x1004b47d0  ; __ZNSt3__111__introsortINS_17_ClassicAlgPolicyERN4juce21SortFunctionConverterI14PlaylistSorterEEP12PlaylistItemEEvT1_S9_T0_NS_15iterator_traitsIS9_E15difference_typeE |
+0x01004b45d6  mov       eax, dword ptr [rsp + 0x24]
+0x01004b45da  and       eax, 0xff0000
+0x01004b45df  mov       dword ptr [rsp + 0x28], eax
+0x01004b45e3  mov       rax, r12
+0x01004b45e6  mov       r14d, eax
+0x01004b45e9  mov       rax, qword ptr [rsp + 0x18]
+0x01004b45ee  lea       rbx, [rax + 0x18]
+0x01004b45f2  mov       r13, r14
+0x01004b45f5  jmp       0x1004b460d
+0x01004b45f7  nop       word ptr [rax + rax]
+0x01004b4600  add       rbx, 0x20
+0x01004b4604  dec       r13
+0x01004b4607  je        0x1004b4769
+0x01004b460d  call      0x1004a6b90  ; __Z21dsqlIsGetListCanceledv |
+0x01004b4612  test      eax, eax
+0x01004b4614  js        0x1004b4711
+0x01004b461a  mov       eax, dword ptr [rbx - 0x14]
+0x01004b461d  cmp       eax, 0x2710
+0x01004b4622  jg        0x1004b46c0
+0x01004b4628  mov       ecx, dword ptr [rbx - 0x18]
+0x01004b462b  mov       r8d, dword ptr [rbx - 0x10]
+0x01004b462f  mov       rsi, qword ptr [rbx]
+0x01004b4632  cmp       byte ptr [rbx - 8], 1
+0x01004b4636  mov       edi, 8
+0x01004b463b  mov       edx, 1
+0x01004b4640  cmove     edi, edx
+0x01004b4643  mov       byte ptr [rsp + 0x84], dil
+0x01004b464b  mov       dword ptr [rsp + 0x60], ecx
+0x01004b464f  mov       dword ptr [rsp + 0x80], eax
+0x01004b4656  mov       dword ptr [rsp + 0x68], r8d
+0x01004b465b  mov       qword ptr [rsp + 0x70], rsi
+0x01004b4660  mov       dword ptr [rsp + 0x98], r15d
+0x01004b4668  mov       edi, dword ptr [rsp + 0x24]
+0x01004b466c  lea       rsi, [rsp + 0x60]
+0x01004b4671  call      0x10249cd50  ; __Z18DsqlListBuf_InsertjPK18_st_listbuf_record |
+0x01004b4676  test      eax, eax
+0x01004b4678  jne       0x1004b4769
+0x01004b467e  mov       rdi, qword ptr [rbx]
+0x01004b4681  test      rdi, rdi
+0x01004b4684  je        0x1004b4692
+0x01004b4686  call      0x102325ce0  ; __Z7djrfreePv |
+0x01004b468b  mov       qword ptr [rbx], 0
+0x01004b4692  mov       rax, r15
+0x01004b4695  inc       r15d
+0x01004b4698  cmp       dword ptr [rsp + 0x28], 0x20000
+0x01004b46a0  jne       0x1004b4600
+0x01004b46a6  cmp       eax, 0xf
+0x01004b46a9  jl        0x1004b4600
+0x01004b46af  jmp       0x1004b46ec
+0x01004b46b1  nop       word ptr cs:[rax + rax]
+0x01004b46c0  mov       rdi, qword ptr [rbx]
+0x01004b46c3  test      rdi, rdi
+0x01004b46c6  je        0x1004b4600
+0x01004b46cc  call      0x102325ce0  ; __Z7djrfreePv |
+0x01004b46d1  mov       qword ptr [rbx], 0
+0x01004b46d8  jmp       0x1004b4600
+0x01004b46dd  nop       dword ptr [rax]
+0x01004b46e0  mov       rax, r14
+0x01004b46e3  inc       rax
+0x01004b46e6  cmp       rax, 1
+0x01004b46ea  jle       0x1004b4769
+0x01004b46ec  dec       r14
+0x01004b46ef  cmp       r12d, r14d
+0x01004b46f2  jbe       0x1004b46e0
+0x01004b46f4  mov       eax, r14d
+0x01004b46f7  shl       rax, 5
+0x01004b46fb  mov       rcx, qword ptr [rsp + 0x18]
+0x01004b4700  mov       rdi, qword ptr [rcx + rax + 0x18]
+0x01004b4705  test      rdi, rdi
+0x01004b4708  je        0x1004b46e0
+0x01004b470a  call      0x102325ce0  ; __Z7djrfreePv |
+0x01004b470f  jmp       0x1004b46e0
+0x01004b4711  mov       edi, dword ptr [rsp + 0x24]
+0x01004b4715  mov       esi, 1
+0x01004b471a  call      0x10249cf40  ; __Z17DsqlListBuf_Clearji |
+0x01004b471f  jmp       0x1004b473c
+0x01004b4721  nop       word ptr cs:[rax + rax]
+0x01004b4730  mov       rax, r14
+0x01004b4733  inc       rax
+0x01004b4736  cmp       rax, 1
+0x01004b473a  jle       0x1004b4761
+0x01004b473c  dec       r14
+0x01004b473f  cmp       r12d, r14d
+0x01004b4742  jbe       0x1004b4730
+0x01004b4744  mov       eax, r14d
+0x01004b4747  shl       rax, 5
+0x01004b474b  mov       rcx, qword ptr [rsp + 0x18]
+0x01004b4750  mov       rdi, qword ptr [rcx + rax + 0x18]
+0x01004b4755  test      rdi, rdi
+0x01004b4758  je        0x1004b4730
+0x01004b475a  call      0x102325ce0  ; __Z7djrfreePv |
+0x01004b475f  jmp       0x1004b4730
+0x01004b4761  mov       r15d, 0xfffffffd
+0x01004b4767  jmp       0x1004b4769
+0x01004b4769  mov       edi, 1
+0x01004b476e  call      0x10249cfc0  ; __Z18DsqlListBuf_InsEndi |
+0x01004b4773  cmp       eax, -2
+0x01004b4776  mov       eax, 0xfffffffd
+0x01004b477b  cmove     r15d, eax
+0x01004b477f  movsxd    rbx, r15d
+0x01004b4782  mov       rdi, qword ptr [rsp + 0x18]
+0x01004b4787  call      0x1038c402e
+0x01004b478c  mov       rax, rbx
+0x01004b478f  lea       rsp, [rbp - 0x28]
+0x01004b4793  pop       rbx
+0x01004b4794  pop       r12
+0x01004b4796  pop       r13
+0x01004b4798  pop       r14
+0x01004b479a  pop       r15
+0x01004b479c  pop       rbp
+0x01004b479d  ret
+0x01004b479e  jmp       0x1004b47b6
+0x01004b47a0  jmp       0x1004b47b6
+0x01004b47a2  jmp       0x1004b47b6
+0x01004b47a4  jmp       0x1004b47b6
+0x01004b47a6  jmp       0x1004b47b6
+0x01004b47a8  jmp       0x1004b47b6
+0x01004b47aa  jmp       0x1004b47b6
+0x01004b47ac  jmp       0x1004b47b6
+0x01004b47ae  jmp       0x1004b47b6
+0x01004b47b0  jmp       0x1004b47b6
+0x01004b47b2  jmp       0x1004b47b6
+0x01004b47b4  jmp       0x1004b47b6
+0x01004b47b6  mov       rbx, rax
+0x01004b47b9  mov       rdi, qword ptr [rsp + 0x18]
+0x01004b47be  call      0x1038c402e
+0x01004b47c3  mov       rdi, rbx
+0x01004b47c6  call      0x1038c3812
+0x01004b47cb  nop       dword ptr [rax + rax]
+
+## __ZN2db28dsqlGetPlaylistTrackOrderMaxE9RbDBIndexRj | 
+address=0x101ba82b0 size=0x1f0
+0x0101ba82b0  push      rbp
+0x0101ba82b1  mov       rbp, rsp
+0x0101ba82b4  push      r15
+0x0101ba82b6  push      r14
+0x0101ba82b8  push      r12
+0x0101ba82ba  push      rbx
+0x0101ba82bb  sub       rsp, 0x40
+0x0101ba82bf  mov       r14, rsi
+0x0101ba82c2  mov       ebx, edi
+0x0101ba82c4  mov       dword ptr [rsi], 0
+0x0101ba82ca  xor       edi, edi
+0x0101ba82cc  call      0x1000d2f10  ; _edb_dyn_CriticalSectionOn_ |
+0x0101ba82d1  mov       dword ptr [rbp - 0x28], eax
+0x0101ba82d4  test      eax, eax
+0x0101ba82d6  je        0x101ba8335
+0x0101ba82d8  mov       r12d, eax
+0x0101ba82db  lea       rsi, [rip + 0x37e57b4]  ; 'dsqlGetPlaylistTrackOrderMax'
+0x0101ba82e2  lea       rdi, [rbp - 0x48]
+0x0101ba82e6  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba82eb  lea       rsi, [rip + 0x37bcf8c]  ; 'edb_dyn_CriticalSectionOn ERROR'
+0x0101ba82f2  lea       rdi, [rbp - 0x30]
+0x0101ba82f6  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba82fb  lea       rdi, [rbp - 0x38]
+0x0101ba82ff  lea       rsi, [rbp - 0x48]
+0x0101ba8303  lea       rdx, [rbp - 0x30]
+0x0101ba8307  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101ba830c  lea       rdi, [rbp - 0x38]
+0x0101ba8310  call      0x1027a0f80  ; __ZN4juce6Logger17outputDebugStringERKNS_6StringE |
+0x0101ba8315  lea       rdi, [rbp - 0x38]
+0x0101ba8319  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba831e  lea       rdi, [rbp - 0x30]
+0x0101ba8322  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba8327  lea       rdi, [rbp - 0x48]
+0x0101ba832b  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba8330  jmp       0x101ba8437
+0x0101ba8335  mov       edi, ebx
+0x0101ba8337  mov       esi, 9
+0x0101ba833c  call      0x10145f100  ; __ZN2db12getTableNameE9RbDBIndex12TableNameKey |
+0x0101ba8341  mov       qword ptr [rsp + 8], 0
+0x0101ba834a  mov       dword ptr [rsp], 0
+0x0101ba8351  xor       r12d, r12d
+0x0101ba8354  lea       rdi, [rbp - 0x28]
+0x0101ba8358  mov       rsi, rax
+0x0101ba835b  xor       edx, edx
+0x0101ba835d  xor       ecx, ecx
+0x0101ba835f  xor       r8d, r8d
+0x0101ba8362  xor       r9d, r9d
+0x0101ba8365  call      0x1000d2e10  ; _edb_dyn_SelectMaterialized_ |
+0x0101ba836a  test      rax, rax
+0x0101ba836d  je        0x101ba83d1
+0x0101ba836f  cmp       dword ptr [rbp - 0x28], 0
+0x0101ba8373  jne       0x101ba83d1
+0x0101ba8375  mov       r15, rax
+0x0101ba8378  mov       dword ptr [rbp - 0x38], 2
+0x0101ba837f  mov       byte ptr [rbp - 0x30], 0
+0x0101ba8383  lea       rdx, [rbp - 0x38]
+0x0101ba8387  lea       rcx, [rbp - 0x30]
+0x0101ba838b  mov       rdi, rax
+0x0101ba838e  mov       esi, 1
+0x0101ba8393  call      0x1000d2e30  ; _edb_dyn_SortRowSet_ |
+0x0101ba8398  lea       rsi, [rbp - 0x28]
+0x0101ba839c  mov       rdi, r15
+0x0101ba839f  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x0101ba83a4  test      rax, rax
+0x0101ba83a7  je        0x101ba83c9
+0x0101ba83a9  cmp       dword ptr [rbp - 0x28], 0
+0x0101ba83ad  jne       0x101ba83c9
+0x0101ba83af  mov       byte ptr [rbp - 0x21], 0
+0x0101ba83b3  lea       rdx, [rbp - 0x21]
+0x0101ba83b7  mov       rdi, rax
+0x0101ba83ba  mov       esi, 2
+0x0101ba83bf  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba83c4  mov       eax, dword ptr [rax]
+0x0101ba83c6  mov       dword ptr [r14], eax
+0x0101ba83c9  mov       rdi, r15
+0x0101ba83cc  call      0x1000d2e40  ; _edb_dyn_CloseRowSet_ |
+0x0101ba83d1  xor       edi, edi
+0x0101ba83d3  call      0x1000d2f20  ; _edb_dyn_CriticalSectionOff_ |
+0x0101ba83d8  cmp       dword ptr [rbp - 0x28], 0
+0x0101ba83dc  je        0x101ba8437
+0x0101ba83de  lea       rsi, [rip + 0x37e56b1]  ; 'dsqlGetPlaylistTrackOrderMax'
+0x0101ba83e5  lea       rdi, [rbp - 0x40]
+0x0101ba83e9  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba83ee  lea       rsi, [rip + 0x37a3bef]  ; ' Select ERROR'
+0x0101ba83f5  lea       rdi, [rbp - 0x30]
+0x0101ba83f9  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba83fe  lea       rdi, [rbp - 0x38]
+0x0101ba8402  lea       rsi, [rbp - 0x40]
+0x0101ba8406  lea       rdx, [rbp - 0x30]
+0x0101ba840a  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101ba840f  lea       rdi, [rbp - 0x38]
+0x0101ba8413  call      0x1027a0f80  ; __ZN4juce6Logger17outputDebugStringERKNS_6StringE |
+0x0101ba8418  lea       rdi, [rbp - 0x38]
+0x0101ba841c  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba8421  lea       rdi, [rbp - 0x30]
+0x0101ba8425  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba842a  lea       rdi, [rbp - 0x40]
+0x0101ba842e  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba8433  mov       r12d, dword ptr [rbp - 0x28]
+0x0101ba8437  mov       eax, r12d
+0x0101ba843a  add       rsp, 0x40
+0x0101ba843e  pop       rbx
+0x0101ba843f  pop       r12
+0x0101ba8441  pop       r14
+0x0101ba8443  pop       r15
+0x0101ba8445  pop       rbp
+0x0101ba8446  ret
+0x0101ba8447  mov       rbx, rax
+0x0101ba844a  lea       rdi, [rbp - 0x38]
+0x0101ba844e  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba8453  jmp       0x101ba8458
+0x0101ba8455  mov       rbx, rax
+0x0101ba8458  lea       rdi, [rbp - 0x30]
+0x0101ba845c  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba8461  jmp       0x101ba8466
+0x0101ba8463  mov       rbx, rax
+0x0101ba8466  lea       rdi, [rbp - 0x40]
+0x0101ba846a  jmp       0x101ba848f
+0x0101ba846c  mov       rbx, rax
+0x0101ba846f  lea       rdi, [rbp - 0x38]
+0x0101ba8473  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba8478  jmp       0x101ba847d
+0x0101ba847a  mov       rbx, rax
+0x0101ba847d  lea       rdi, [rbp - 0x30]
+0x0101ba8481  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba8486  jmp       0x101ba848b
+0x0101ba8488  mov       rbx, rax
+0x0101ba848b  lea       rdi, [rbp - 0x48]
+0x0101ba848f  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba8494  mov       rdi, rbx
+0x0101ba8497  call      0x1038c3812
+0x0101ba849c  nop       dword ptr [rax]
+
+## __ZN2db19dsqlGetPlaylistDataE9RbDBIndexjRNS_16ListDataPlaylistE | 
+address=0x101ba84a0 size=0x340
+0x0101ba84a0  push      rbp
+0x0101ba84a1  mov       rbp, rsp
+0x0101ba84a4  push      r15
+0x0101ba84a6  push      r14
+0x0101ba84a8  push      r13
+0x0101ba84aa  push      r12
+0x0101ba84ac  push      rbx
+0x0101ba84ad  sub       rsp, 0x48
+0x0101ba84b1  mov       r13, rdx
+0x0101ba84b4  mov       r14d, edi
+0x0101ba84b7  mov       dword ptr [rbp - 0x44], esi
+0x0101ba84ba  xor       edi, edi
+0x0101ba84bc  call      0x1000d2f10  ; _edb_dyn_CriticalSectionOn_ |
+0x0101ba84c1  mov       dword ptr [rbp - 0x34], eax
+0x0101ba84c4  test      eax, eax
+0x0101ba84c6  je        0x101ba8524
+0x0101ba84c8  mov       ebx, eax
+0x0101ba84ca  lea       rsi, [rip + 0x37e55e2]  ; 'dsqlGetPlaylistData'
+0x0101ba84d1  lea       rdi, [rbp - 0x58]
+0x0101ba84d5  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba84da  lea       rsi, [rip + 0x37bcd9d]  ; 'edb_dyn_CriticalSectionOn ERROR'
+0x0101ba84e1  lea       rdi, [rbp - 0x40]
+0x0101ba84e5  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba84ea  lea       rdi, [rbp - 0x30]
+0x0101ba84ee  lea       rsi, [rbp - 0x58]
+0x0101ba84f2  lea       rdx, [rbp - 0x40]
+0x0101ba84f6  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101ba84fb  lea       rdi, [rbp - 0x30]
+0x0101ba84ff  call      0x1027a0f80  ; __ZN4juce6Logger17outputDebugStringERKNS_6StringE |
+0x0101ba8504  lea       rdi, [rbp - 0x30]
+0x0101ba8508  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba850d  lea       rdi, [rbp - 0x40]
+0x0101ba8511  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba8516  lea       rdi, [rbp - 0x58]
+0x0101ba851a  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba851f  jmp       0x101ba8767
+0x0101ba8524  mov       edi, r14d
+0x0101ba8527  mov       esi, 8
+0x0101ba852c  call      0x10145f100  ; __ZN2db12getTableNameE9RbDBIndex12TableNameKey |
+0x0101ba8531  mov       rbx, rax
+0x0101ba8534  mov       edi, r14d
+0x0101ba8537  mov       esi, 8
+0x0101ba853c  xor       edx, edx
+0x0101ba853e  call      0x10145f110  ; __ZN2db12getIndexNameE9RbDBIndex12TableNameKey8FieldKey |
+0x0101ba8543  test      rax, rax
+0x0101ba8546  je        0x101ba8582
+0x0101ba8548  cmp       byte ptr [rax], 0
+0x0101ba854b  je        0x101ba8582
+0x0101ba854d  lea       rcx, [rbp - 0x44]
+0x0101ba8551  mov       qword ptr [rbp - 0x30], rcx
+0x0101ba8555  lea       rcx, [rbp - 0x30]
+0x0101ba8559  mov       qword ptr [rsp + 0x10], rcx
+0x0101ba855e  lea       rcx, [rip + 0x380b0a7]
+0x0101ba8565  mov       qword ptr [rsp], rcx
+0x0101ba8569  mov       dword ptr [rsp + 8], 1
+0x0101ba8571  lea       rdi, [rbp - 0x34]
+0x0101ba8575  mov       rsi, rbx
+0x0101ba8578  mov       rdx, rax
+0x0101ba857b  xor       ecx, ecx
+0x0101ba857d  xor       r8d, r8d
+0x0101ba8580  jmp       0x101ba85af
+0x0101ba8582  mov       qword ptr [rsp + 0x10], 0
+0x0101ba858b  mov       dword ptr [rsp + 8], 0
+0x0101ba8593  mov       qword ptr [rsp], 0
+0x0101ba859b  lea       rcx, [rip - 0xaa12]  ; __ZN2db18wherefunc_selectIDEPvS0_ |
+0x0101ba85a2  lea       rdi, [rbp - 0x34]
+0x0101ba85a6  lea       r8, [rbp - 0x44]
+0x0101ba85aa  mov       rsi, rbx
+0x0101ba85ad  xor       edx, edx
+0x0101ba85af  xor       r9d, r9d
+0x0101ba85b2  call      0x1000d2e20  ; _edb_dyn_Select_ |
+0x0101ba85b7  mov       r15, rax
+0x0101ba85ba  cmp       dword ptr [rbp - 0x34], 0
+0x0101ba85be  jne       0x101ba86e1
+0x0101ba85c4  test      r15, r15
+0x0101ba85c7  je        0x101ba86e1
+0x0101ba85cd  lea       rsi, [rbp - 0x34]
+0x0101ba85d1  mov       rdi, r15
+0x0101ba85d4  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x0101ba85d9  mov       byte ptr [rbp - 0x40], 0
+0x0101ba85dd  cmp       dword ptr [rbp - 0x34], 0
+0x0101ba85e1  jne       0x101ba86d9
+0x0101ba85e7  mov       r12, rax
+0x0101ba85ea  test      rax, rax
+0x0101ba85ed  je        0x101ba86d9
+0x0101ba85f3  lea       rbx, [rbp - 0x40]
+0x0101ba85f7  mov       rdi, r12
+0x0101ba85fa  xor       esi, esi
+0x0101ba85fc  mov       rdx, rbx
+0x0101ba85ff  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba8604  mov       eax, dword ptr [rax]
+0x0101ba8606  mov       dword ptr [r13 + 8], eax
+0x0101ba860a  mov       rdi, r12
+0x0101ba860d  mov       esi, 1
+0x0101ba8612  mov       rdx, rbx
+0x0101ba8615  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba861a  mov       eax, dword ptr [rax]
+0x0101ba861c  mov       dword ptr [r13 + 0x90], eax
+0x0101ba8623  mov       byte ptr [rbp - 0x40], 0
+0x0101ba8627  mov       rdi, r12
+0x0101ba862a  mov       esi, 2
+0x0101ba862f  mov       rdx, rbx
+0x0101ba8632  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba8637  mov       rbx, rax
+0x0101ba863a  lea       rdi, [rbp - 0x30]
+0x0101ba863e  test      rax, rax
+0x0101ba8641  je        0x101ba864d
+0x0101ba8643  mov       rsi, rbx
+0x0101ba8646  call      0x1027b3590  ; __ZN4juce6StringC1ENS_17CharPointer_UTF16E |
+0x0101ba864b  jmp       0x101ba8652
+0x0101ba864d  call      0x10278c8d0  ; __ZN4juce6StringC1Ev |
+0x0101ba8652  lea       rdi, [r13 + 0x20]
+0x0101ba8656  lea       rsi, [rbp - 0x30]
+0x0101ba865a  call      0x1027912e0  ; __ZN4juce6StringaSERKS0_ |
+0x0101ba865f  test      byte ptr [r13 + 0x18], 1
+0x0101ba8664  je        0x101ba8673
+0x0101ba8666  lea       rdi, [r13 + 0x18]
+0x0101ba866a  lea       rsi, [rbp - 0x30]
+0x0101ba866e  call      0x100986800  ; __ZN18MultipurposeString15formatForSearchERKN4juce6StringE |
+0x0101ba8673  lea       rdi, [rbp - 0x30]
+0x0101ba8677  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba867c  cmp       byte ptr [rbp - 0x40], 1
+0x0101ba8680  jne       0x101ba868a
+0x0101ba8682  mov       rdi, rbx
+0x0101ba8685  call      0x1013cbb30  ; __Z13DeleteDllHeapPv |
+0x0101ba868a  lea       rbx, [rbp - 0x40]
+0x0101ba868e  mov       rdi, r12
+0x0101ba8691  mov       esi, 3
+0x0101ba8696  mov       rdx, rbx
+0x0101ba8699  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba869e  mov       eax, dword ptr [rax]
+0x0101ba86a0  mov       dword ptr [r13 + 0x9c], eax
+0x0101ba86a7  mov       rdi, r12
+0x0101ba86aa  mov       esi, 4
+0x0101ba86af  mov       rdx, rbx
+0x0101ba86b2  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba86b7  mov       al, byte ptr [rax]
+0x0101ba86b9  mov       byte ptr [r13 + 0x94], al
+0x0101ba86c0  mov       rdi, r12
+0x0101ba86c3  mov       esi, 5
+0x0101ba86c8  mov       rdx, rbx
+0x0101ba86cb  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba86d0  mov       eax, dword ptr [rax]
+0x0101ba86d2  mov       dword ptr [r13 + 0x98], eax
+0x0101ba86d9  mov       rdi, r15
+0x0101ba86dc  call      0x1000d2e40  ; _edb_dyn_CloseRowSet_ |
+0x0101ba86e1  xor       edi, edi
+0x0101ba86e3  call      0x1000d2f20  ; _edb_dyn_CriticalSectionOff_ |
+0x0101ba86e8  cmp       dword ptr [rbp - 0x34], 0
+0x0101ba86ec  je        0x101ba8743
+0x0101ba86ee  lea       rsi, [rip + 0x37e53be]  ; 'dsqlGetPlaylistData'
+0x0101ba86f5  lea       rdi, [rbp - 0x50]
+0x0101ba86f9  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba86fe  lea       rsi, [rip + 0x37a38df]  ; ' Select ERROR'
+0x0101ba8705  lea       rdi, [rbp - 0x40]
+0x0101ba8709  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba870e  lea       rdi, [rbp - 0x30]
+0x0101ba8712  lea       rsi, [rbp - 0x50]
+0x0101ba8716  lea       rdx, [rbp - 0x40]
+0x0101ba871a  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101ba871f  lea       rdi, [rbp - 0x30]
+0x0101ba8723  call      0x1027a0f80  ; __ZN4juce6Logger17outputDebugStringERKNS_6StringE |
+0x0101ba8728  lea       rdi, [rbp - 0x30]
+0x0101ba872c  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba8731  lea       rdi, [rbp - 0x40]
+0x0101ba8735  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba873a  lea       rdi, [rbp - 0x50]
+0x0101ba873e  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba8743  mov       esi, dword ptr [r13 + 0x9c]
+0x0101ba874a  test      esi, esi
+0x0101ba874c  je        0x101ba8764
+0x0101ba874e  add       r13, 0xa0
+0x0101ba8755  mov       edi, r14d
+0x0101ba8758  mov       rdx, r13
+0x0101ba875b  call      0x101b9e2c0  ; __ZN2db19dsql_get_image_pathE9RbDBIndexjRN4juce6StringE |
+0x0101ba8760  mov       ebx, eax
+0x0101ba8762  jmp       0x101ba8767
+0x0101ba8764  mov       ebx, dword ptr [rbp - 0x34]
+0x0101ba8767  mov       eax, ebx
+0x0101ba8769  add       rsp, 0x48
+0x0101ba876d  pop       rbx
+0x0101ba876e  pop       r12
+0x0101ba8770  pop       r13
+0x0101ba8772  pop       r14
+0x0101ba8774  pop       r15
+0x0101ba8776  pop       rbp
+0x0101ba8777  ret
+0x0101ba8778  mov       rbx, rax
+0x0101ba877b  lea       rdi, [rbp - 0x30]
+0x0101ba877f  jmp       0x101ba87cd
+0x0101ba8781  mov       rbx, rax
+0x0101ba8784  lea       rdi, [rbp - 0x30]
+0x0101ba8788  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba878d  jmp       0x101ba8792
+0x0101ba878f  mov       rbx, rax
+0x0101ba8792  lea       rdi, [rbp - 0x40]
+0x0101ba8796  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba879b  lea       rdi, [rbp - 0x50]
+0x0101ba879f  jmp       0x101ba87cd
+0x0101ba87a1  mov       rbx, rax
+0x0101ba87a4  lea       rdi, [rbp - 0x50]
+0x0101ba87a8  jmp       0x101ba87cd
+0x0101ba87aa  mov       rbx, rax
+0x0101ba87ad  lea       rdi, [rbp - 0x30]
+0x0101ba87b1  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba87b6  jmp       0x101ba87bb
+0x0101ba87b8  mov       rbx, rax
+0x0101ba87bb  lea       rdi, [rbp - 0x40]
+0x0101ba87bf  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba87c4  jmp       0x101ba87c9
+0x0101ba87c6  mov       rbx, rax
+0x0101ba87c9  lea       rdi, [rbp - 0x58]
+0x0101ba87cd  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba87d2  mov       rdi, rbx
+0x0101ba87d5  call      0x1038c3812
+0x0101ba87da  nop       word ptr [rax + rax]
+
+## __ZN2db19dsqlGetPlaylistItemE9RbDBIndexjRN4juce10OwnedArrayINS_16ListDataPlaylistENS1_20DummyCriticalSectionEEE | 
+address=0x101ba9290 size=0x1c0
+0x0101ba9290  push      rbp
+0x0101ba9291  mov       rbp, rsp
+0x0101ba9294  push      r15
+0x0101ba9296  push      r14
+0x0101ba9298  push      r13
+0x0101ba929a  push      r12
+0x0101ba929c  push      rbx
+0x0101ba929d  sub       rsp, 0x38
+0x0101ba92a1  mov       r12, rdx
+0x0101ba92a4  mov       ebx, esi
+0x0101ba92a6  mov       r15d, edi
+0x0101ba92a9  cmp       dword ptr [rdx + 0xc], 0
+0x0101ba92ad  je        0x101ba93d2
+0x0101ba92b3  lea       rsi, [rip + 0x37e4824]  ; 'dsqlGetPlaylistItem'
+0x0101ba92ba  lea       rdi, [rbp - 0x40]
+0x0101ba92be  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba92c3  lea       rsi, [rip + 0x37e4828]  ; ' Warning:Playlist is not empty'
+0x0101ba92ca  lea       rdi, [rbp - 0x38]
+0x0101ba92ce  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba92d3  lea       rdi, [rbp - 0x48]
+0x0101ba92d7  lea       rsi, [rbp - 0x40]
+0x0101ba92db  lea       rdx, [rbp - 0x38]
+0x0101ba92df  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101ba92e4  test      r15d, r15d
+0x0101ba92e7  lea       rax, [rip + 0x37a1d27]  ; 'Master'
+0x0101ba92ee  lea       rsi, [rip + 0x37b8b4b]  ; 'Device'
+0x0101ba92f5  cmove     rsi, rax
+0x0101ba92f9  lea       rdi, [rbp - 0x30]
+0x0101ba92fd  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba9302  lea       rdi, [rbp - 0x50]
+0x0101ba9306  lea       rsi, [rbp - 0x48]
+0x0101ba930a  lea       rdx, [rbp - 0x30]
+0x0101ba930e  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101ba9313  mov       dword ptr [rbp - 0x54], ebx
+0x0101ba9316  lea       rdi, [rbp - 0x50]
+0x0101ba931a  call      0x1027a0f80  ; __ZN4juce6Logger17outputDebugStringERKNS_6StringE |
+0x0101ba931f  lea       rdi, [rbp - 0x50]
+0x0101ba9323  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9328  lea       rdi, [rbp - 0x30]
+0x0101ba932c  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9331  lea       rdi, [rbp - 0x48]
+0x0101ba9335  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba933a  lea       rdi, [rbp - 0x38]
+0x0101ba933e  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9343  lea       rdi, [rbp - 0x40]
+0x0101ba9347  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba934c  mov       eax, dword ptr [r12 + 0xc]
+0x0101ba9351  test      eax, eax
+0x0101ba9353  jle       0x101ba93ad
+0x0101ba9355  mov       r13d, eax
+0x0101ba9358  neg       r13d
+0x0101ba935b  mov       r14, rax
+0x0101ba935e  nop
+0x0101ba9360  lea       ecx, [r14 - 1]
+0x0101ba9364  mov       rdx, qword ptr [r12]
+0x0101ba9368  lea       rdi, [rdx + rcx*8]
+0x0101ba936c  mov       rbx, qword ptr [rdx + rcx*8]
+0x0101ba9370  add       eax, r13d
+0x0101ba9373  lea       rsi, [rdx + rcx*8]
+0x0101ba9377  add       rsi, 8
+0x0101ba937b  movsxd    rdx, eax
+0x0101ba937e  shl       rdx, 3
+0x0101ba9382  call      0x1038c42b6
+0x0101ba9387  dec       dword ptr [r12 + 0xc]
+0x0101ba938c  test      rbx, rbx
+0x0101ba938f  je        0x101ba939a
+0x0101ba9391  mov       rax, qword ptr [rbx]
+0x0101ba9394  mov       rdi, rbx
+0x0101ba9397  call      qword ptr [rax + 8]
+0x0101ba939a  cmp       r14, 2
+0x0101ba939e  jb        0x101ba93ad
+0x0101ba93a0  mov       eax, dword ptr [r12 + 0xc]
+0x0101ba93a5  inc       r13d
+0x0101ba93a8  dec       r14
+0x0101ba93ab  jmp       0x101ba9360
+0x0101ba93ad  cmp       dword ptr [r12 + 8], 0
+0x0101ba93b3  je        0x101ba93c6
+0x0101ba93b5  mov       rdi, qword ptr [r12]
+0x0101ba93b9  call      0x1038c402e
+0x0101ba93be  mov       qword ptr [r12], 0
+0x0101ba93c6  mov       dword ptr [r12 + 8], 0
+0x0101ba93cf  mov       ebx, dword ptr [rbp - 0x54]
+0x0101ba93d2  mov       edi, r15d
+0x0101ba93d5  mov       esi, 2
+0x0101ba93da  mov       edx, ebx
+0x0101ba93dc  mov       rcx, r12
+0x0101ba93df  mov       r8d, 1
+0x0101ba93e5  mov       r9d, 1
+0x0101ba93eb  call      0x101ba87e0  ; __ZN2db22dsql_get_list_childrenE9RbDBIndexNS_10_list_typeEjRN4juce10OwnedArrayINS_16ListDataPlaylistENS2_20DummyCriticalSectionEEEbb |
+0x0101ba93f0  add       rsp, 0x38
+0x0101ba93f4  pop       rbx
+0x0101ba93f5  pop       r12
+0x0101ba93f7  pop       r13
+0x0101ba93f9  pop       r14
+0x0101ba93fb  pop       r15
+0x0101ba93fd  pop       rbp
+0x0101ba93fe  ret
+0x0101ba93ff  mov       rbx, rax
+0x0101ba9402  lea       rdi, [rbp - 0x50]
+0x0101ba9406  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba940b  jmp       0x101ba9410
+0x0101ba940d  mov       rbx, rax
+0x0101ba9410  lea       rdi, [rbp - 0x30]
+0x0101ba9414  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9419  jmp       0x101ba941e
+0x0101ba941b  mov       rbx, rax
+0x0101ba941e  lea       rdi, [rbp - 0x48]
+0x0101ba9422  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9427  jmp       0x101ba942c
+0x0101ba9429  mov       rbx, rax
+0x0101ba942c  lea       rdi, [rbp - 0x38]
+0x0101ba9430  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9435  jmp       0x101ba943a
+0x0101ba9437  mov       rbx, rax
+0x0101ba943a  lea       rdi, [rbp - 0x40]
+0x0101ba943e  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9443  mov       rdi, rbx
+0x0101ba9446  call      0x1038c3812
+0x0101ba944b  nop       dword ptr [rax + rax]
+
+## __ZN2db20dsqlGetPlaylistTrackE9RbDBIndexjRjPN4juce5ArrayIjNS2_20DummyCriticalSectionELi0EEE | 
+address=0x101ba9720 size=0x330
+0x0101ba9720  push      rbp
+0x0101ba9721  mov       rbp, rsp
+0x0101ba9724  push      r15
+0x0101ba9726  push      r14
+0x0101ba9728  push      r13
+0x0101ba972a  push      r12
+0x0101ba972c  push      rbx
+0x0101ba972d  sub       rsp, 0x58
+0x0101ba9731  mov       r13, rcx
+0x0101ba9734  mov       r14, rdx
+0x0101ba9737  mov       ebx, edi
+0x0101ba9739  mov       dword ptr [rbp - 0x4c], esi
+0x0101ba973c  xor       edi, edi
+0x0101ba973e  call      0x1000d2f10  ; _edb_dyn_CriticalSectionOn_ |
+0x0101ba9743  mov       dword ptr [rbp - 0x2c], eax
+0x0101ba9746  test      eax, eax
+0x0101ba9748  je        0x101ba97a7
+0x0101ba974a  mov       r15d, eax
+0x0101ba974d  lea       rsi, [rip + 0x37e43d1]  ; 'dsqlGetPlaylistTrack'
+0x0101ba9754  lea       rdi, [rbp - 0x60]
+0x0101ba9758  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba975d  lea       rsi, [rip + 0x37bbb1a]  ; 'edb_dyn_CriticalSectionOn ERROR'
+0x0101ba9764  lea       rdi, [rbp - 0x48]
+0x0101ba9768  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba976d  lea       rdi, [rbp - 0x38]
+0x0101ba9771  lea       rsi, [rbp - 0x60]
+0x0101ba9775  lea       rdx, [rbp - 0x48]
+0x0101ba9779  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101ba977e  lea       rdi, [rbp - 0x38]
+0x0101ba9782  call      0x1027a0f80  ; __ZN4juce6Logger17outputDebugStringERKNS_6StringE |
+0x0101ba9787  lea       rdi, [rbp - 0x38]
+0x0101ba978b  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9790  lea       rdi, [rbp - 0x48]
+0x0101ba9794  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9799  lea       rdi, [rbp - 0x60]
+0x0101ba979d  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba97a2  jmp       0x101ba99e7
+0x0101ba97a7  mov       dword ptr [rbp - 0x3c], 0
+0x0101ba97ae  mov       edi, ebx
+0x0101ba97b0  mov       esi, 9
+0x0101ba97b5  call      0x10145f100  ; __ZN2db12getTableNameE9RbDBIndex12TableNameKey |
+0x0101ba97ba  mov       r15, rax
+0x0101ba97bd  mov       edi, ebx
+0x0101ba97bf  mov       esi, 9
+0x0101ba97c4  xor       edx, edx
+0x0101ba97c6  call      0x10145f110  ; __ZN2db12getIndexNameE9RbDBIndex12TableNameKey8FieldKey |
+0x0101ba97cb  test      rax, rax
+0x0101ba97ce  je        0x101ba9805
+0x0101ba97d0  cmp       byte ptr [rax], 0
+0x0101ba97d3  je        0x101ba9805
+0x0101ba97d5  lea       rcx, [rbp - 0x4c]
+0x0101ba97d9  mov       qword ptr [rbp - 0x38], rcx
+0x0101ba97dd  lea       rcx, [rbp - 0x38]
+0x0101ba97e1  mov       qword ptr [rsp + 8], rcx
+0x0101ba97e6  mov       dword ptr [rsp], 1
+0x0101ba97ed  lea       r9, [rip + 0x3809e18]
+0x0101ba97f4  lea       rdi, [rbp - 0x2c]
+0x0101ba97f8  mov       rsi, r15
+0x0101ba97fb  mov       rdx, rax
+0x0101ba97fe  xor       ecx, ecx
+0x0101ba9800  xor       r8d, r8d
+0x0101ba9803  jmp       0x101ba982c
+0x0101ba9805  mov       qword ptr [rsp + 8], 0
+0x0101ba980e  mov       dword ptr [rsp], 0
+0x0101ba9815  lea       rcx, [rip - 0xbc8c]  ; __ZN2db18wherefunc_selectIDEPvS0_ |
+0x0101ba981c  lea       rdi, [rbp - 0x2c]
+0x0101ba9820  lea       r8, [rbp - 0x4c]
+0x0101ba9824  mov       rsi, r15
+0x0101ba9827  xor       edx, edx
+0x0101ba9829  xor       r9d, r9d
+0x0101ba982c  call      0x1000d2e10  ; _edb_dyn_SelectMaterialized_ |
+0x0101ba9831  mov       r12, rax
+0x0101ba9834  xor       r15d, r15d
+0x0101ba9837  mov       eax, 0
+0x0101ba983c  test      r12, r12
+0x0101ba983f  je        0x101ba997e
+0x0101ba9845  cmp       dword ptr [rbp - 0x2c], 0
+0x0101ba9849  mov       eax, 0
+0x0101ba984e  jne       0x101ba997e
+0x0101ba9854  mov       qword ptr [rbp - 0x68], r14
+0x0101ba9858  lea       rsi, [rbp - 0x3c]
+0x0101ba985c  mov       rdi, r12
+0x0101ba985f  call      0x1000d2e60  ; _edb_dyn_CountRowSet_ |
+0x0101ba9864  mov       dword ptr [rbp - 0x2c], eax
+0x0101ba9867  test      r13, r13
+0x0101ba986a  je        0x101ba996f
+0x0101ba9870  test      eax, eax
+0x0101ba9872  jne       0x101ba996f
+0x0101ba9878  cmp       dword ptr [rbp - 0x3c], 0
+0x0101ba987c  je        0x101ba996f
+0x0101ba9882  jle       0x101ba996f
+0x0101ba9888  mov       dword ptr [rbp - 0x38], 2
+0x0101ba988f  mov       byte ptr [rbp - 0x48], 1
+0x0101ba9893  lea       rdx, [rbp - 0x38]
+0x0101ba9897  lea       rcx, [rbp - 0x48]
+0x0101ba989b  mov       rdi, r12
+0x0101ba989e  mov       esi, 1
+0x0101ba98a3  call      0x1000d2e30  ; _edb_dyn_SortRowSet_ |
+0x0101ba98a8  cmp       dword ptr [rbp - 0x3c], 0
+0x0101ba98ac  jle       0x101ba996f
+0x0101ba98b2  xor       ebx, ebx
+0x0101ba98b4  mov       qword ptr [rbp - 0x70], r12
+0x0101ba98b8  jmp       0x101ba98f4
+0x0101ba98ba  mov       rdi, qword ptr [r13]
+0x0101ba98be  call      0x1038c402e
+0x0101ba98c3  mov       qword ptr [r13], 0
+0x0101ba98cb  nop       dword ptr [rax + rax]
+0x0101ba98d0  mov       dword ptr [r13 + 8], r12d
+0x0101ba98d4  mov       eax, dword ptr [r13 + 0xc]
+0x0101ba98d8  mov       r12, qword ptr [rbp - 0x70]
+0x0101ba98dc  lea       ecx, [rax + 1]
+0x0101ba98df  mov       dword ptr [r13 + 0xc], ecx
+0x0101ba98e3  mov       rcx, qword ptr [r13]
+0x0101ba98e7  cdqe
+0x0101ba98e9  mov       dword ptr [rcx + rax*4], r14d
+0x0101ba98ed  inc       ebx
+0x0101ba98ef  cmp       ebx, dword ptr [rbp - 0x3c]
+0x0101ba98f2  jge       0x101ba996f
+0x0101ba98f4  mov       rdi, r12
+0x0101ba98f7  lea       rsi, [rbp - 0x2c]
+0x0101ba98fb  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x0101ba9900  cmp       dword ptr [rbp - 0x2c], 0
+0x0101ba9904  jne       0x101ba996f
+0x0101ba9906  test      rax, rax
+0x0101ba9909  je        0x101ba996f
+0x0101ba990b  mov       byte ptr [rbp - 0x38], 0
+0x0101ba990f  mov       rdi, rax
+0x0101ba9912  mov       esi, 1
+0x0101ba9917  lea       rdx, [rbp - 0x38]
+0x0101ba991b  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba9920  mov       r14d, dword ptr [rax]
+0x0101ba9923  mov       ecx, dword ptr [r13 + 8]
+0x0101ba9927  mov       eax, dword ptr [r13 + 0xc]
+0x0101ba992b  cmp       ecx, eax
+0x0101ba992d  jg        0x101ba98dc
+0x0101ba992f  mov       edx, eax
+0x0101ba9931  inc       edx
+0x0101ba9933  shr       edx, 0x1f
+0x0101ba9936  add       edx, eax
+0x0101ba9938  inc       edx
+0x0101ba993a  sar       edx, 1
+0x0101ba993c  lea       r12d, [rax + rdx]
+0x0101ba9940  add       r12d, 9
+0x0101ba9944  and       r12d, 0xfffffff8
+0x0101ba9948  cmp       ecx, r12d
+0x0101ba994b  je        0x101ba98d0
+0x0101ba994d  test      r12d, r12d
+0x0101ba9950  jle       0x101ba98ba
+0x0101ba9956  mov       esi, r12d
+0x0101ba9959  shl       rsi, 2
+0x0101ba995d  mov       rdi, qword ptr [r13]
+0x0101ba9961  call      0x1038c44b4
+0x0101ba9966  mov       qword ptr [r13], rax
+0x0101ba996a  jmp       0x101ba98d0
+0x0101ba996f  mov       rdi, r12
+0x0101ba9972  call      0x1000d2e40  ; _edb_dyn_CloseRowSet_ |
+0x0101ba9977  mov       eax, dword ptr [rbp - 0x3c]
+0x0101ba997a  mov       r14, qword ptr [rbp - 0x68]
+0x0101ba997e  mov       dword ptr [r14], eax
+0x0101ba9981  xor       edi, edi
+0x0101ba9983  call      0x1000d2f20  ; _edb_dyn_CriticalSectionOff_ |
+0x0101ba9988  cmp       dword ptr [rbp - 0x2c], 0
+0x0101ba998c  je        0x101ba99e7
+0x0101ba998e  lea       rsi, [rip + 0x37e4190]  ; 'dsqlGetPlaylistTrack'
+0x0101ba9995  lea       rdi, [rbp - 0x58]
+0x0101ba9999  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba999e  lea       rsi, [rip + 0x37a263f]  ; ' Select ERROR'
+0x0101ba99a5  lea       rdi, [rbp - 0x48]
+0x0101ba99a9  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba99ae  lea       rdi, [rbp - 0x38]
+0x0101ba99b2  lea       rsi, [rbp - 0x58]
+0x0101ba99b6  lea       rdx, [rbp - 0x48]
+0x0101ba99ba  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101ba99bf  lea       rdi, [rbp - 0x38]
+0x0101ba99c3  call      0x1027a0f80  ; __ZN4juce6Logger17outputDebugStringERKNS_6StringE |
+0x0101ba99c8  lea       rdi, [rbp - 0x38]
+0x0101ba99cc  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba99d1  lea       rdi, [rbp - 0x48]
+0x0101ba99d5  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba99da  lea       rdi, [rbp - 0x58]
+0x0101ba99de  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba99e3  mov       r15d, dword ptr [rbp - 0x2c]
+0x0101ba99e7  mov       eax, r15d
+0x0101ba99ea  add       rsp, 0x58
+0x0101ba99ee  pop       rbx
+0x0101ba99ef  pop       r12
+0x0101ba99f1  pop       r13
+0x0101ba99f3  pop       r14
+0x0101ba99f5  pop       r15
+0x0101ba99f7  pop       rbp
+0x0101ba99f8  ret
+0x0101ba99f9  mov       rbx, rax
+0x0101ba99fc  lea       rdi, [rbp - 0x38]
+0x0101ba9a00  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9a05  jmp       0x101ba9a0a
+0x0101ba9a07  mov       rbx, rax
+0x0101ba9a0a  lea       rdi, [rbp - 0x48]
+0x0101ba9a0e  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9a13  jmp       0x101ba9a18
+0x0101ba9a15  mov       rbx, rax
+0x0101ba9a18  lea       rdi, [rbp - 0x58]
+0x0101ba9a1c  jmp       0x101ba9a41
+0x0101ba9a1e  mov       rbx, rax
+0x0101ba9a21  lea       rdi, [rbp - 0x38]
+0x0101ba9a25  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9a2a  jmp       0x101ba9a2f
+0x0101ba9a2c  mov       rbx, rax
+0x0101ba9a2f  lea       rdi, [rbp - 0x48]
+0x0101ba9a33  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9a38  jmp       0x101ba9a3d
+0x0101ba9a3a  mov       rbx, rax
+0x0101ba9a3d  lea       rdi, [rbp - 0x60]
+0x0101ba9a41  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9a46  mov       rdi, rbx
+0x0101ba9a49  call      0x1038c3812
+0x0101ba9a4e  nop
+
+## __ZN2db27dsqlGetPlaylistItemWithNameE9RbDBIndexRKN4juce6StringERNS1_10OwnedArrayINS_16ListDataPlaylistENS1_20DummyCriticalSectionEEE | 
+address=0x101ba9a50 size=0x470
+0x0101ba9a50  push      rbp
+0x0101ba9a51  mov       rbp, rsp
+0x0101ba9a54  push      r15
+0x0101ba9a56  push      r14
+0x0101ba9a58  push      r13
+0x0101ba9a5a  push      r12
+0x0101ba9a5c  push      rbx
+0x0101ba9a5d  sub       rsp, 0x68
+0x0101ba9a61  mov       rbx, rdx
+0x0101ba9a64  mov       r14, rsi
+0x0101ba9a67  mov       r12d, edi
+0x0101ba9a6a  xor       edi, edi
+0x0101ba9a6c  call      0x1000d2f10  ; _edb_dyn_CriticalSectionOn_ |
+0x0101ba9a71  mov       dword ptr [rbp - 0x2c], eax
+0x0101ba9a74  test      eax, eax
+0x0101ba9a76  je        0x101ba9ad5
+0x0101ba9a78  lea       rsi, [rip + 0x37e40bb]  ; 'dsqlGetPlaylistItemWithName'
+0x0101ba9a7f  lea       rdi, [rbp - 0x68]
+0x0101ba9a83  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba9a88  lea       rsi, [rip + 0x37bb7ef]  ; 'edb_dyn_CriticalSectionOn ERROR'
+0x0101ba9a8f  lea       rdi, [rbp - 0x40]
+0x0101ba9a93  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba9a98  lea       rdi, [rbp - 0x50]
+0x0101ba9a9c  lea       rsi, [rbp - 0x68]
+0x0101ba9aa0  lea       rdx, [rbp - 0x40]
+0x0101ba9aa4  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101ba9aa9  lea       rdi, [rbp - 0x50]
+0x0101ba9aad  call      0x1027a0f80  ; __ZN4juce6Logger17outputDebugStringERKNS_6StringE |
+0x0101ba9ab2  lea       rdi, [rbp - 0x50]
+0x0101ba9ab6  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9abb  lea       rdi, [rbp - 0x40]
+0x0101ba9abf  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9ac4  lea       rdi, [rbp - 0x68]
+0x0101ba9ac8  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9acd  mov       ebx, dword ptr [rbp - 0x2c]
+0x0101ba9ad0  jmp       0x101ba9e19
+0x0101ba9ad5  mov       qword ptr [rbp - 0x48], rbx
+0x0101ba9ad9  lea       rdi, [rbp - 0x50]
+0x0101ba9add  mov       rsi, r14
+0x0101ba9ae0  call      0x10278c2c0  ; __ZN4juce6StringC1ERKS0_ |
+0x0101ba9ae5  mov       edi, r12d
+0x0101ba9ae8  mov       esi, 8
+0x0101ba9aed  call      0x10145f100  ; __ZN2db12getTableNameE9RbDBIndex12TableNameKey |
+0x0101ba9af2  mov       r15, rax
+0x0101ba9af5  mov       rdi, r14
+0x0101ba9af8  call      0x1027ba620  ; __ZNK4juce6String7toUTF16Ev |
+0x0101ba9afd  mov       qword ptr [rsp + 0x10], 0
+0x0101ba9b06  mov       dword ptr [rsp + 8], 0
+0x0101ba9b0e  mov       qword ptr [rsp], 0
+0x0101ba9b16  lea       rcx, [rip - 0xbe5d]  ; __ZN2db24wherefunc_selectListNameEPvS0_ |
+0x0101ba9b1d  lea       rdi, [rbp - 0x2c]
+0x0101ba9b21  mov       rsi, r15
+0x0101ba9b24  xor       edx, edx
+0x0101ba9b26  mov       r8, rax
+0x0101ba9b29  xor       r9d, r9d
+0x0101ba9b2c  call      0x1000d2e20  ; _edb_dyn_Select_ |
+0x0101ba9b31  mov       qword ptr [rbp - 0x58], rax
+0x0101ba9b35  cmp       dword ptr [rbp - 0x2c], 0
+0x0101ba9b39  mov       dword ptr [rbp - 0x6c], r12d
+0x0101ba9b3d  mov       rdi, qword ptr [rbp - 0x58]
+0x0101ba9b41  jne       0x101ba9d37
+0x0101ba9b47  test      rdi, rdi
+0x0101ba9b4a  je        0x101ba9d37
+0x0101ba9b50  mov       dword ptr [rbp - 0x40], 1
+0x0101ba9b57  mov       byte ptr [rbp - 0x38], 1
+0x0101ba9b5b  lea       rdx, [rbp - 0x40]
+0x0101ba9b5f  lea       rcx, [rbp - 0x38]
+0x0101ba9b63  mov       esi, 1
+0x0101ba9b68  call      0x1000d2e30  ; _edb_dyn_SortRowSet_ |
+0x0101ba9b6d  mov       byte ptr [rbp - 0x38], 0
+0x0101ba9b71  lea       r13, [rbp - 0x40]
+0x0101ba9b75  jmp       0x101ba9ba5
+0x0101ba9b77  mov       esi, ebx
+0x0101ba9b79  shl       rsi, 3
+0x0101ba9b7d  mov       r15, qword ptr [rbp - 0x48]
+0x0101ba9b81  mov       rdi, qword ptr [r15]
+0x0101ba9b84  call      0x1038c44b4
+0x0101ba9b89  mov       qword ptr [r15], rax
+0x0101ba9b8c  mov       rdx, qword ptr [rbp - 0x48]
+0x0101ba9b90  mov       dword ptr [rdx + 8], ebx
+0x0101ba9b93  mov       eax, dword ptr [rdx + 0xc]
+0x0101ba9b96  lea       ecx, [rax + 1]
+0x0101ba9b99  mov       dword ptr [rdx + 0xc], ecx
+0x0101ba9b9c  mov       rcx, qword ptr [rdx]
+0x0101ba9b9f  cdqe
+0x0101ba9ba1  mov       qword ptr [rcx + rax*8], r14
+0x0101ba9ba5  mov       rdi, qword ptr [rbp - 0x58]
+0x0101ba9ba9  lea       rsi, [rbp - 0x2c]
+0x0101ba9bad  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x0101ba9bb2  cmp       dword ptr [rbp - 0x2c], 0
+0x0101ba9bb6  jne       0x101ba9d2e
+0x0101ba9bbc  mov       r15, rax
+0x0101ba9bbf  test      rax, rax
+0x0101ba9bc2  je        0x101ba9d2e
+0x0101ba9bc8  mov       edi, 0x150
+0x0101ba9bcd  call      0x1038c3cd4
+0x0101ba9bd2  mov       r14, rax
+0x0101ba9bd5  mov       rdi, rax
+0x0101ba9bd8  call      0x10003cec0  ; __ZN2db16ListDataPlaylistC2Ev |
+0x0101ba9bdd  mov       rdi, r15
+0x0101ba9be0  xor       esi, esi
+0x0101ba9be2  lea       rdx, [rbp - 0x38]
+0x0101ba9be6  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba9beb  mov       eax, dword ptr [rax]
+0x0101ba9bed  mov       dword ptr [r14 + 8], eax
+0x0101ba9bf1  mov       rdi, r15
+0x0101ba9bf4  mov       esi, 1
+0x0101ba9bf9  lea       rdx, [rbp - 0x38]
+0x0101ba9bfd  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba9c02  mov       eax, dword ptr [rax]
+0x0101ba9c04  mov       dword ptr [r14 + 0x90], eax
+0x0101ba9c0b  mov       byte ptr [rbp - 0x38], 0
+0x0101ba9c0f  mov       rdi, r15
+0x0101ba9c12  mov       esi, 2
+0x0101ba9c17  lea       rdx, [rbp - 0x38]
+0x0101ba9c1b  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba9c20  mov       r12, rax
+0x0101ba9c23  test      rax, rax
+0x0101ba9c26  je        0x101ba9c40
+0x0101ba9c28  mov       rbx, r13
+0x0101ba9c2b  mov       rdi, r13
+0x0101ba9c2e  mov       rsi, r12
+0x0101ba9c31  call      0x1027b3590  ; __ZN4juce6StringC1ENS_17CharPointer_UTF16E |
+0x0101ba9c36  jmp       0x101ba9c4b
+0x0101ba9c38  nop       dword ptr [rax + rax]
+0x0101ba9c40  mov       rbx, r13
+0x0101ba9c43  mov       rdi, r13
+0x0101ba9c46  call      0x10278c8d0  ; __ZN4juce6StringC1Ev |
+0x0101ba9c4b  lea       rdi, [r14 + 0x20]
+0x0101ba9c4f  mov       rsi, rbx
+0x0101ba9c52  call      0x1027912e0  ; __ZN4juce6StringaSERKS0_ |
+0x0101ba9c57  test      byte ptr [r14 + 0x18], 1
+0x0101ba9c5c  je        0x101ba9c6d
+0x0101ba9c5e  mov       rdi, r14
+0x0101ba9c61  add       rdi, 0x18
+0x0101ba9c65  mov       rsi, rbx
+0x0101ba9c68  call      0x100986800  ; __ZN18MultipurposeString15formatForSearchERKN4juce6StringE |
+0x0101ba9c6d  mov       rdi, rbx
+0x0101ba9c70  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9c75  cmp       byte ptr [rbp - 0x38], 1
+0x0101ba9c79  jne       0x101ba9c83
+0x0101ba9c7b  mov       rdi, r12
+0x0101ba9c7e  call      0x1013cbb30  ; __Z13DeleteDllHeapPv |
+0x0101ba9c83  mov       rdi, r15
+0x0101ba9c86  mov       esi, 3
+0x0101ba9c8b  lea       rdx, [rbp - 0x38]
+0x0101ba9c8f  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba9c94  mov       eax, dword ptr [rax]
+0x0101ba9c96  mov       dword ptr [r14 + 0x9c], eax
+0x0101ba9c9d  mov       rdi, r15
+0x0101ba9ca0  mov       esi, 4
+0x0101ba9ca5  lea       rdx, [rbp - 0x38]
+0x0101ba9ca9  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba9cae  movzx     eax, byte ptr [rax]
+0x0101ba9cb1  mov       byte ptr [r14 + 0x94], al
+0x0101ba9cb8  mov       rdi, r15
+0x0101ba9cbb  mov       esi, 5
+0x0101ba9cc0  lea       rdx, [rbp - 0x38]
+0x0101ba9cc4  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101ba9cc9  mov       eax, dword ptr [rax]
+0x0101ba9ccb  mov       dword ptr [r14 + 0x98], eax
+0x0101ba9cd2  mov       rax, qword ptr [rbp - 0x48]
+0x0101ba9cd6  mov       ecx, dword ptr [rax + 8]
+0x0101ba9cd9  mov       eax, dword ptr [rax + 0xc]
+0x0101ba9cdc  cmp       ecx, eax
+0x0101ba9cde  jle       0x101ba9cf0
+0x0101ba9ce0  mov       rdx, qword ptr [rbp - 0x48]
+0x0101ba9ce4  jmp       0x101ba9b96
+0x0101ba9ce9  nop       dword ptr [rax]
+0x0101ba9cf0  mov       edx, eax
+0x0101ba9cf2  inc       edx
+0x0101ba9cf4  shr       edx, 0x1f
+0x0101ba9cf7  add       edx, eax
+0x0101ba9cf9  inc       edx
+0x0101ba9cfb  sar       edx, 1
+0x0101ba9cfd  lea       ebx, [rax + rdx]
+0x0101ba9d00  add       ebx, 9
+0x0101ba9d03  and       ebx, 0xfffffff8
+0x0101ba9d06  cmp       ecx, ebx
+0x0101ba9d08  je        0x101ba9b8c
+0x0101ba9d0e  test      ebx, ebx
+0x0101ba9d10  jg        0x101ba9b77
+0x0101ba9d16  mov       r15, qword ptr [rbp - 0x48]
+0x0101ba9d1a  mov       rdi, qword ptr [r15]
+0x0101ba9d1d  call      0x1038c402e
+0x0101ba9d22  mov       qword ptr [r15], 0
+0x0101ba9d29  jmp       0x101ba9b8c
+0x0101ba9d2e  mov       rdi, qword ptr [rbp - 0x58]
+0x0101ba9d32  call      0x1000d2e40  ; _edb_dyn_CloseRowSet_ |
+0x0101ba9d37  xor       edi, edi
+0x0101ba9d39  call      0x1000d2f20  ; _edb_dyn_CriticalSectionOff_ |
+0x0101ba9d3e  cmp       dword ptr [rbp - 0x2c], 0
+0x0101ba9d42  je        0x101ba9d99
+0x0101ba9d44  lea       rsi, [rip + 0x37e3def]  ; 'dsqlGetPlaylistItemWithName'
+0x0101ba9d4b  lea       rdi, [rbp - 0x60]
+0x0101ba9d4f  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba9d54  lea       rsi, [rip + 0x37a2289]  ; ' Select ERROR'
+0x0101ba9d5b  lea       rdi, [rbp - 0x38]
+0x0101ba9d5f  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101ba9d64  lea       rdi, [rbp - 0x40]
+0x0101ba9d68  lea       rsi, [rbp - 0x60]
+0x0101ba9d6c  lea       rdx, [rbp - 0x38]
+0x0101ba9d70  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101ba9d75  lea       rdi, [rbp - 0x40]
+0x0101ba9d79  call      0x1027a0f80  ; __ZN4juce6Logger17outputDebugStringERKNS_6StringE |
+0x0101ba9d7e  lea       rdi, [rbp - 0x40]
+0x0101ba9d82  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9d87  lea       rdi, [rbp - 0x38]
+0x0101ba9d8b  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9d90  lea       rdi, [rbp - 0x60]
+0x0101ba9d94  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9d99  mov       rax, qword ptr [rbp - 0x48]
+0x0101ba9d9d  mov       eax, dword ptr [rax + 0xc]
+0x0101ba9da0  test      eax, eax
+0x0101ba9da2  jle       0x101ba9e0d
+0x0101ba9da4  xor       ebx, ebx
+0x0101ba9da6  jmp       0x101ba9dc5
+0x0101ba9da8  nop       dword ptr [rax + rax]
+0x0101ba9db0  mov       dword ptr [rbp - 0x2c], eax
+0x0101ba9db3  mov       rax, qword ptr [rbp - 0x48]
+0x0101ba9db7  mov       eax, dword ptr [rax + 0xc]
+0x0101ba9dba  inc       rbx
+0x0101ba9dbd  movsxd    rcx, eax
+0x0101ba9dc0  cmp       rbx, rcx
+0x0101ba9dc3  jge       0x101ba9e0d
+0x0101ba9dc5  mov       ecx, eax
+0x0101ba9dc7  cmp       rbx, rcx
+0x0101ba9dca  jae       0x101ba9df0
+0x0101ba9dcc  mov       rcx, qword ptr [rbp - 0x48]
+0x0101ba9dd0  mov       rcx, qword ptr [rcx]
+0x0101ba9dd3  mov       rdx, qword ptr [rcx + rbx*8]
+0x0101ba9dd7  mov       esi, dword ptr [rdx + 0x9c]
+0x0101ba9ddd  test      esi, esi
+0x0101ba9ddf  jne       0x101ba9dfc
+0x0101ba9de1  jmp       0x101ba9dba
+0x0101ba9de3  nop       word ptr cs:[rax + rax]
+0x0101ba9df0  xor       edx, edx
+0x0101ba9df2  mov       esi, dword ptr [rdx + 0x9c]
+0x0101ba9df8  test      esi, esi
+0x0101ba9dfa  je        0x101ba9dba
+0x0101ba9dfc  add       rdx, 0xa0
+0x0101ba9e03  mov       edi, dword ptr [rbp - 0x6c]
+0x0101ba9e06  call      0x101b9e2c0  ; __ZN2db19dsql_get_image_pathE9RbDBIndexjRN4juce6StringE |
+0x0101ba9e0b  jmp       0x101ba9db0
+0x0101ba9e0d  mov       ebx, dword ptr [rbp - 0x2c]
+0x0101ba9e10  lea       rdi, [rbp - 0x50]
+0x0101ba9e14  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9e19  mov       eax, ebx
+0x0101ba9e1b  add       rsp, 0x68
+0x0101ba9e1f  pop       rbx
+0x0101ba9e20  pop       r12
+0x0101ba9e22  pop       r13
+0x0101ba9e24  pop       r14
+0x0101ba9e26  pop       r15
+0x0101ba9e28  pop       rbp
+0x0101ba9e29  ret
+0x0101ba9e2a  jmp       0x101ba9eaa
+0x0101ba9e2c  jmp       0x101ba9eaa
+0x0101ba9e2e  mov       rbx, rax
+0x0101ba9e31  lea       rdi, [rbp - 0x40]
+0x0101ba9e35  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9e3a  jmp       0x101ba9e3f
+0x0101ba9e3c  mov       rbx, rax
+0x0101ba9e3f  lea       rdi, [rbp - 0x38]
+0x0101ba9e43  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9e48  jmp       0x101ba9e4d
+0x0101ba9e4a  mov       rbx, rax
+0x0101ba9e4d  lea       rdi, [rbp - 0x60]
+0x0101ba9e51  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9e56  jmp       0x101ba9ead
+0x0101ba9e58  jmp       0x101ba9eaa
+0x0101ba9e5a  jmp       0x101ba9eaa
+0x0101ba9e5c  jmp       0x101ba9eaa
+0x0101ba9e5e  mov       rbx, rax
+0x0101ba9e61  lea       rdi, [rbp - 0x50]
+0x0101ba9e65  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9e6a  jmp       0x101ba9e6f
+0x0101ba9e6c  mov       rbx, rax
+0x0101ba9e6f  lea       rdi, [rbp - 0x40]
+0x0101ba9e73  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9e78  lea       rdi, [rbp - 0x68]
+0x0101ba9e7c  jmp       0x101ba9eb1
+0x0101ba9e7e  mov       rbx, rax
+0x0101ba9e81  lea       rdi, [rbp - 0x68]
+0x0101ba9e85  jmp       0x101ba9eb1
+0x0101ba9e87  jmp       0x101ba9eaa
+0x0101ba9e89  mov       rbx, rax
+0x0101ba9e8c  lea       rdi, [rbp - 0x40]
+0x0101ba9e90  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9e95  jmp       0x101ba9ead
+0x0101ba9e97  jmp       0x101ba9eaa
+0x0101ba9e99  jmp       0x101ba9eaa
+0x0101ba9e9b  mov       rbx, rax
+0x0101ba9e9e  mov       rdi, r14
+0x0101ba9ea1  call      0x1038c3cc8
+0x0101ba9ea6  jmp       0x101ba9ead
+0x0101ba9ea8  jmp       0x101ba9eaa
+0x0101ba9eaa  mov       rbx, rax
+0x0101ba9ead  lea       rdi, [rbp - 0x50]
+0x0101ba9eb1  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101ba9eb6  mov       rdi, rbx
+0x0101ba9eb9  call      0x1038c3812
+0x0101ba9ebe  nop
+
+## __ZN2db23dsqlGetPlaylistDataLiteE9RbDBIndexjRNS_16ListDataPlaylistE | 
+address=0x101bb2720 size=0x3a0
+0x0101bb2720  push      rbp
+0x0101bb2721  mov       rbp, rsp
+0x0101bb2724  push      r15
+0x0101bb2726  push      r14
+0x0101bb2728  push      r13
+0x0101bb272a  push      r12
+0x0101bb272c  push      rbx
+0x0101bb272d  sub       rsp, 0x48
+0x0101bb2731  mov       r13, rdx
+0x0101bb2734  mov       ebx, edi
+0x0101bb2736  mov       dword ptr [rbp - 0x40], esi
+0x0101bb2739  xor       edi, edi
+0x0101bb273b  call      0x1000d2f10  ; _edb_dyn_CriticalSectionOn_ |
+0x0101bb2740  mov       dword ptr [rbp - 0x3c], eax
+0x0101bb2743  test      eax, eax
+0x0101bb2745  je        0x101bb27a1
+0x0101bb2747  lea       rsi, [rip + 0x37db74b]  ; 'dsqlGetPlaylistDataLite'
+0x0101bb274e  lea       rdi, [rbp - 0x58]
+0x0101bb2752  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101bb2757  lea       rsi, [rip + 0x37b2b20]  ; 'edb_dyn_CriticalSectionOn ERROR'
+0x0101bb275e  lea       rdi, [rbp - 0x38]
+0x0101bb2762  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101bb2767  lea       rdi, [rbp - 0x30]
+0x0101bb276b  lea       rsi, [rbp - 0x58]
+0x0101bb276f  lea       rdx, [rbp - 0x38]
+0x0101bb2773  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101bb2778  lea       rdi, [rbp - 0x30]
+0x0101bb277c  call      0x1027a0f80  ; __ZN4juce6Logger17outputDebugStringERKNS_6StringE |
+0x0101bb2781  lea       rdi, [rbp - 0x30]
+0x0101bb2785  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb278a  lea       rdi, [rbp - 0x38]
+0x0101bb278e  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb2793  lea       rdi, [rbp - 0x58]
+0x0101bb2797  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb279c  jmp       0x101bb2a1e
+0x0101bb27a1  mov       edi, ebx
+0x0101bb27a3  mov       esi, 8
+0x0101bb27a8  call      0x10145f100  ; __ZN2db12getTableNameE9RbDBIndex12TableNameKey |
+0x0101bb27ad  mov       r14, rax
+0x0101bb27b0  mov       edi, ebx
+0x0101bb27b2  mov       esi, 8
+0x0101bb27b7  xor       edx, edx
+0x0101bb27b9  call      0x10145f110  ; __ZN2db12getIndexNameE9RbDBIndex12TableNameKey8FieldKey |
+0x0101bb27be  test      rax, rax
+0x0101bb27c1  je        0x101bb27fd
+0x0101bb27c3  cmp       byte ptr [rax], 0
+0x0101bb27c6  je        0x101bb27fd
+0x0101bb27c8  lea       rcx, [rbp - 0x40]
+0x0101bb27cc  mov       qword ptr [rbp - 0x30], rcx
+0x0101bb27d0  lea       rcx, [rbp - 0x30]
+0x0101bb27d4  mov       qword ptr [rsp + 0x10], rcx
+0x0101bb27d9  lea       rcx, [rip + 0x3800e2c]
+0x0101bb27e0  mov       qword ptr [rsp], rcx
+0x0101bb27e4  mov       dword ptr [rsp + 8], 1
+0x0101bb27ec  lea       rdi, [rbp - 0x3c]
+0x0101bb27f0  mov       rsi, r14
+0x0101bb27f3  mov       rdx, rax
+0x0101bb27f6  xor       ecx, ecx
+0x0101bb27f8  xor       r8d, r8d
+0x0101bb27fb  jmp       0x101bb282a
+0x0101bb27fd  mov       qword ptr [rsp + 0x10], 0
+0x0101bb2806  mov       dword ptr [rsp + 8], 0
+0x0101bb280e  mov       qword ptr [rsp], 0
+0x0101bb2816  lea       rcx, [rip - 0x14c8d]  ; __ZN2db18wherefunc_selectIDEPvS0_ |
+0x0101bb281d  lea       rdi, [rbp - 0x3c]
+0x0101bb2821  lea       r8, [rbp - 0x40]
+0x0101bb2825  mov       rsi, r14
+0x0101bb2828  xor       edx, edx
+0x0101bb282a  xor       r9d, r9d
+0x0101bb282d  call      0x1000d2e20  ; _edb_dyn_Select_ |
+0x0101bb2832  mov       r14, rax
+0x0101bb2835  cmp       dword ptr [rbp - 0x3c], 0
+0x0101bb2839  jne       0x101bb28cf
+0x0101bb283f  test      r14, r14
+0x0101bb2842  je        0x101bb28cf
+0x0101bb2848  lea       rsi, [rbp - 0x3c]
+0x0101bb284c  mov       rdi, r14
+0x0101bb284f  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x0101bb2854  cmp       dword ptr [rbp - 0x3c], 0
+0x0101bb2858  jne       0x101bb2929
+0x0101bb285e  mov       r15, rax
+0x0101bb2861  test      rax, rax
+0x0101bb2864  je        0x101bb2929
+0x0101bb286a  mov       byte ptr [rbp - 0x38], 0
+0x0101bb286e  lea       rbx, [rbp - 0x38]
+0x0101bb2872  mov       rdi, r15
+0x0101bb2875  xor       esi, esi
+0x0101bb2877  mov       rdx, rbx
+0x0101bb287a  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101bb287f  mov       eax, dword ptr [rax]
+0x0101bb2881  mov       dword ptr [r13 + 8], eax
+0x0101bb2885  mov       rdi, r15
+0x0101bb2888  mov       esi, 1
+0x0101bb288d  mov       rdx, rbx
+0x0101bb2890  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101bb2895  mov       eax, dword ptr [rax]
+0x0101bb2897  mov       dword ptr [r13 + 0x90], eax
+0x0101bb289e  mov       byte ptr [rbp - 0x38], 0
+0x0101bb28a2  mov       rdi, r15
+0x0101bb28a5  mov       esi, 2
+0x0101bb28aa  mov       rdx, rbx
+0x0101bb28ad  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101bb28b2  mov       r12, rax
+0x0101bb28b5  lea       rdi, [rbp - 0x30]
+0x0101bb28b9  test      rax, rax
+0x0101bb28bc  je        0x101bb2983
+0x0101bb28c2  mov       rsi, r12
+0x0101bb28c5  call      0x1027b3590  ; __ZN4juce6StringC1ENS_17CharPointer_UTF16E |
+0x0101bb28ca  jmp       0x101bb2988
+0x0101bb28cf  lea       rsi, [rip + 0x37db5c3]  ; 'dsqlGetPlaylistDataLite'
+0x0101bb28d6  lea       rdi, [rbp - 0x48]
+0x0101bb28da  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101bb28df  lea       rsi, [rip + 0x37996fe]  ; ' Select ERROR'
+0x0101bb28e6  lea       rdi, [rbp - 0x38]
+0x0101bb28ea  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101bb28ef  lea       rdi, [rbp - 0x30]
+0x0101bb28f3  lea       rsi, [rbp - 0x48]
+0x0101bb28f7  lea       rdx, [rbp - 0x38]
+0x0101bb28fb  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101bb2900  lea       rdi, [rbp - 0x30]
+0x0101bb2904  call      0x1027a0f80  ; __ZN4juce6Logger17outputDebugStringERKNS_6StringE |
+0x0101bb2909  lea       rdi, [rbp - 0x30]
+0x0101bb290d  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb2912  lea       rdi, [rbp - 0x38]
+0x0101bb2916  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb291b  lea       rdi, [rbp - 0x48]
+0x0101bb291f  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb2924  jmp       0x101bb2a17
+0x0101bb2929  lea       rsi, [rip + 0x37db569]  ; 'dsqlGetPlaylistDataLite'
+0x0101bb2930  lea       rdi, [rbp - 0x50]
+0x0101bb2934  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101bb2939  lea       rsi, [rip + 0x37996a4]  ; ' Select ERROR'
+0x0101bb2940  lea       rdi, [rbp - 0x38]
+0x0101bb2944  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101bb2949  lea       rdi, [rbp - 0x30]
+0x0101bb294d  lea       rsi, [rbp - 0x50]
+0x0101bb2951  lea       rdx, [rbp - 0x38]
+0x0101bb2955  call      0x10278f2d0  ; __ZN4juceplENS_6StringERKS0_ |
+0x0101bb295a  lea       rdi, [rbp - 0x30]
+0x0101bb295e  call      0x1027a0f80  ; __ZN4juce6Logger17outputDebugStringERKNS_6StringE |
+0x0101bb2963  lea       rdi, [rbp - 0x30]
+0x0101bb2967  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb296c  lea       rdi, [rbp - 0x38]
+0x0101bb2970  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb2975  lea       rdi, [rbp - 0x50]
+0x0101bb2979  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb297e  jmp       0x101bb2a0f
+0x0101bb2983  call      0x10278c8d0  ; __ZN4juce6StringC1Ev |
+0x0101bb2988  lea       rdi, [r13 + 0x20]
+0x0101bb298c  lea       rsi, [rbp - 0x30]
+0x0101bb2990  call      0x1027912e0  ; __ZN4juce6StringaSERKS0_ |
+0x0101bb2995  test      byte ptr [r13 + 0x18], 1
+0x0101bb299a  je        0x101bb29a9
+0x0101bb299c  lea       rdi, [r13 + 0x18]
+0x0101bb29a0  lea       rsi, [rbp - 0x30]
+0x0101bb29a4  call      0x100986800  ; __ZN18MultipurposeString15formatForSearchERKN4juce6StringE |
+0x0101bb29a9  lea       rdi, [rbp - 0x30]
+0x0101bb29ad  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb29b2  cmp       byte ptr [rbp - 0x38], 1
+0x0101bb29b6  jne       0x101bb29c0
+0x0101bb29b8  mov       rdi, r12
+0x0101bb29bb  call      0x1013cbb30  ; __Z13DeleteDllHeapPv |
+0x0101bb29c0  lea       rbx, [rbp - 0x38]
+0x0101bb29c4  mov       rdi, r15
+0x0101bb29c7  mov       esi, 3
+0x0101bb29cc  mov       rdx, rbx
+0x0101bb29cf  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101bb29d4  mov       eax, dword ptr [rax]
+0x0101bb29d6  mov       dword ptr [r13 + 0x9c], eax
+0x0101bb29dd  mov       rdi, r15
+0x0101bb29e0  mov       esi, 4
+0x0101bb29e5  mov       rdx, rbx
+0x0101bb29e8  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101bb29ed  mov       al, byte ptr [rax]
+0x0101bb29ef  mov       byte ptr [r13 + 0x94], al
+0x0101bb29f6  mov       rdi, r15
+0x0101bb29f9  mov       esi, 5
+0x0101bb29fe  mov       rdx, rbx
+0x0101bb2a01  call      0x1000d2e80  ; _edb_dyn_GetColumnValue_ |
+0x0101bb2a06  mov       eax, dword ptr [rax]
+0x0101bb2a08  mov       dword ptr [r13 + 0x98], eax
+0x0101bb2a0f  mov       rdi, r14
+0x0101bb2a12  call      0x1000d2e40  ; _edb_dyn_CloseRowSet_ |
+0x0101bb2a17  xor       edi, edi
+0x0101bb2a19  call      0x1000d2f20  ; _edb_dyn_CriticalSectionOff_ |
+0x0101bb2a1e  mov       eax, dword ptr [rbp - 0x3c]
+0x0101bb2a21  add       rsp, 0x48
+0x0101bb2a25  pop       rbx
+0x0101bb2a26  pop       r12
+0x0101bb2a28  pop       r13
+0x0101bb2a2a  pop       r14
+0x0101bb2a2c  pop       r15
+0x0101bb2a2e  pop       rbp
+0x0101bb2a2f  ret
+0x0101bb2a30  mov       rbx, rax
+0x0101bb2a33  lea       rdi, [rbp - 0x30]
+0x0101bb2a37  jmp       0x101bb2aae
+0x0101bb2a39  mov       rbx, rax
+0x0101bb2a3c  lea       rdi, [rbp - 0x30]
+0x0101bb2a40  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb2a45  jmp       0x101bb2a4a
+0x0101bb2a47  mov       rbx, rax
+0x0101bb2a4a  lea       rdi, [rbp - 0x38]
+0x0101bb2a4e  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb2a53  lea       rdi, [rbp - 0x50]
+0x0101bb2a57  jmp       0x101bb2aae
+0x0101bb2a59  mov       rbx, rax
+0x0101bb2a5c  lea       rdi, [rbp - 0x50]
+0x0101bb2a60  jmp       0x101bb2aae
+0x0101bb2a62  mov       rbx, rax
+0x0101bb2a65  lea       rdi, [rbp - 0x30]
+0x0101bb2a69  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb2a6e  jmp       0x101bb2a73
+0x0101bb2a70  mov       rbx, rax
+0x0101bb2a73  lea       rdi, [rbp - 0x38]
+0x0101bb2a77  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb2a7c  lea       rdi, [rbp - 0x48]
+0x0101bb2a80  jmp       0x101bb2aae
+0x0101bb2a82  mov       rbx, rax
+0x0101bb2a85  lea       rdi, [rbp - 0x48]
+0x0101bb2a89  jmp       0x101bb2aae
+0x0101bb2a8b  mov       rbx, rax
+0x0101bb2a8e  lea       rdi, [rbp - 0x30]
+0x0101bb2a92  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb2a97  jmp       0x101bb2a9c
+0x0101bb2a99  mov       rbx, rax
+0x0101bb2a9c  lea       rdi, [rbp - 0x38]
+0x0101bb2aa0  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb2aa5  jmp       0x101bb2aaa
+0x0101bb2aa7  mov       rbx, rax
+0x0101bb2aaa  lea       rdi, [rbp - 0x58]
+0x0101bb2aae  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101bb2ab3  mov       rdi, rbx
+0x0101bb2ab6  call      0x1038c3812
+0x0101bb2abb  nop       dword ptr [rax + rax]
+
+## __ZN2db24dsqlGetSongPlaylistCountE9RbDBIndexj | 
+address=0x101bb8240 size=0x20
+0x0101bb8240  push      rbp
+0x0101bb8241  mov       rbp, rsp
+0x0101bb8244  mov       eax, edi
+0x0101bb8246  mov       edi, esi
+0x0101bb8248  test      eax, eax
+0x0101bb824a  je        0x101bb8253
+0x0101bb824c  call      0x1013cb1a0  ; __Z24DevGetSongPlaylistCount_l |
+0x0101bb8251  pop       rbp
+0x0101bb8252  ret
+0x0101bb8253  call      0x1013cb710  ; __Z24MstGetSongPlaylistCount_l |
+0x0101bb8258  pop       rbp
+0x0101bb8259  ret
+0x0101bb825a  nop       word ptr [rax + rax]
+

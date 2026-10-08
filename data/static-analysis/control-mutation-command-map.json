@@ -1,0 +1,3114 @@
+{
+  "format": 1,
+  "product": "rekordbox 7.2.19",
+  "scope": "Every request in the 0x2x05 write, 0x2x07 database-modification, and 0x3xxx control/state namespaces, joined to recovered XDJ-RR callers.",
+  "sources": {
+    "rekordbox_request_vocabulary": {
+      "path": "data/static-analysis/link-export-request-vocabulary.json",
+      "sha256": "6a3c0a4a9d050daebd68a12a991305e84d86920a6b23f5149e0a80ab708f2ce9"
+    },
+    "xdj_rr_client_navigation": {
+      "path": "data/static-analysis/xdj-rr-client-navigation.json",
+      "sha256": "c63073803c2cd450d647180af3fc3e9e91ca4c7d32183b9d240c5c308cb6756b",
+      "call_site_source_base": "parent workspace directory"
+    }
+  },
+  "summary": {
+    "command_count": 54,
+    "effect_classes": {
+      "list-buffer-render": 1,
+      "mutation-or-state-write": 20,
+      "recognized-log-only": 3,
+      "recognized-static-route": 10,
+      "rejected": 8,
+      "state-query": 12
+    },
+    "coverage_classes": {
+      "real-rekordbox-menu-oracle": 4,
+      "rekordbox-recognized-log-only": 3,
+      "rekordbox-static-dispatch": 39,
+      "rekordbox-static-rejected": 8
+    },
+    "commands_with_xdj_rr_direct_callers": 30,
+    "xdj_rr_direct_call_site_count": 97
+  },
+  "commands": [
+    {
+      "kind": "2005",
+      "name": "CMD_SAV_WAVE",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnWriteCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnWriteCmd",
+          "PSvDBMain::SavWave"
+        ],
+        "target": "PSvDBMain::SavWave",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": {
+          "database": [
+            "djmdContent.AnalysisDataPath"
+          ],
+          "filesystem": "SavWave resolves the analysis path and writes 400 loud-wave samples plus 100 dot-wave bytes through MstStoreLoudWave and MstStoreDotWave."
+        }
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 2,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_RegDiscWave",
+          "dbcl_RegSdUsbWave"
+        ],
+        "callers": [
+          "ReqRegistWave"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "2005",
+            "wrapper": "dbcl_RegDiscWave",
+            "caller": "ReqRegistWave",
+            "caller_address": "0x001ffc0c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 10802,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          },
+          {
+            "request_kind": "2005",
+            "wrapper": "dbcl_RegSdUsbWave",
+            "caller": "ReqRegistWave",
+            "caller_address": "0x001ffc0c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 10812,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "2105",
+      "name": "CMD_SAV_USB_CUE",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnWriteCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnWriteCmd",
+          "PSvDBMain::SavUsbCue"
+        ],
+        "target": "PSvDBMain::SavUsbCue",
+        "reply_kind": "4702",
+        "rejection_reason": null,
+        "dependencies": {
+          "database": [
+            "djmdCue and cue-option rows"
+          ],
+          "filesystem": "No audio decoding is visible; the legacy cue writer mutates cue records and returns the resulting 4702 cue set."
+        }
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 2,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_DelUsbSdCue",
+          "dbcl_RegUdbSdCue"
+        ],
+        "callers": [
+          "DbDeleteUsbSdCue",
+          "DbRegistUsbSdCue"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "2105",
+            "wrapper": "dbcl_RegUdbSdCue",
+            "caller": "DbRegistUsbSdCue",
+            "caller_address": "0x001f9e6c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 6728,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          },
+          {
+            "request_kind": "2105",
+            "wrapper": "dbcl_DelUsbSdCue",
+            "caller": "DbDeleteUsbSdCue",
+            "caller_address": "0x001fa1e8",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 6917,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "2107",
+      "name": "CMD_MOD_TRACK_RATE",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnDbModCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnDbModCmd",
+          "PSvAppSyncDBIF::modTrackRate via database-interface vtable +0x2A0"
+        ],
+        "target": "PSvAppSyncDBIF::modTrackRate via database-interface vtable +0x2A0",
+        "reply_kind": "4000",
+        "rejection_reason": null,
+        "dependencies": {
+          "database": [
+            "djmdContent.Rating"
+          ],
+          "filesystem": "No filesystem access is visible; modTrackRate reads the current Rating and updates it by content ID only when the byte value changes."
+        }
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          1
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_SetRateValue2Track"
+        ],
+        "callers": [
+          "SetRateValue2Track"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "2107",
+            "wrapper": "dbcl_SetRateValue2Track",
+            "caller": "SetRateValue2Track",
+            "caller_address": "0x0020f34c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 12545,
+            "location_argument": "1",
+            "location_source": "wrapper-fixed",
+            "literal_location": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "2205",
+      "name": "CMD_SAV_VBR_INFO",
+      "effect_class": "recognized-static-route",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnWriteCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnWriteCmd",
+          "PSvDBMain::SavVbrInf (constant-success stub)"
+        ],
+        "target": "PSvDBMain::SavVbrInf (constant-success stub)",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": {
+          "database": [],
+          "filesystem": "SavVbrInf is a constant-success stub in Rekordbox 7.2.19 and does not inspect its message."
+        }
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_RegVBRInfo"
+        ],
+        "callers": [
+          "RegVbrInfo"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "2205",
+            "wrapper": "dbcl_RegVBRInfo",
+            "caller": "RegVbrInfo",
+            "caller_address": "0x001fa7bc",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 7183,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "2207",
+      "name": "CMD_CHG_KUVO_STATUS",
+      "effect_class": "rejected",
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnDbModCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnDbModCmd",
+          "PSvDBMain::OnUnknownClientCmd"
+        ],
+        "target": null,
+        "reply_kind": "4003",
+        "rejection_reason": "PSvDBMain::OnDbModCmd recognizes only 2107, 2507",
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "2305",
+      "name": "CMD_SAV_DISC_CUE",
+      "effect_class": "recognized-log-only",
+      "coverage": "rekordbox-recognized-log-only",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnWriteCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnWriteCmd",
+          "recognized-log-only"
+        ],
+        "target": "recognized-log-only",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": {
+          "database": [],
+          "filesystem": "Rekordbox recognizes and logs this disc-cue write kind but invokes no writer and sends no reply."
+        }
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 2,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_DelDiscCue",
+          "dbcl_RegDiscCue"
+        ],
+        "callers": [
+          "DbDeleteDiscCue",
+          "DbRegistDiscCue"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "2305",
+            "wrapper": "dbcl_RegDiscCue",
+            "caller": "DbRegistDiscCue",
+            "caller_address": "0x001fa0b4",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 6850,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          },
+          {
+            "request_kind": "2305",
+            "wrapper": "dbcl_DelDiscCue",
+            "caller": "DbDeleteDiscCue",
+            "caller_address": "0x001fa33c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 6990,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "2405",
+      "name": "CMD_DEL_ALL_DISC_CUE",
+      "effect_class": "recognized-log-only",
+      "coverage": "rekordbox-recognized-log-only",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnWriteCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnWriteCmd",
+          "recognized-log-only"
+        ],
+        "target": "recognized-log-only",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": {
+          "database": [],
+          "filesystem": "Rekordbox recognizes and logs this delete-all-disc-cue kind but invokes no writer and sends no reply."
+        }
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 2,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_DelAllCue",
+          "dbcl_DelAllCueOfAllDisc"
+        ],
+        "callers": [
+          "DbDeleteAllDiscCue",
+          "DbDeleteDiscAllCue"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "2405",
+            "wrapper": "dbcl_DelAllCue",
+            "caller": "DbDeleteDiscAllCue",
+            "caller_address": "0x001fa470",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 7031,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          },
+          {
+            "request_kind": "2405",
+            "wrapper": "dbcl_DelAllCueOfAllDisc",
+            "caller": "DbDeleteAllDiscCue",
+            "caller_address": "0x001fa540",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 7062,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "2505",
+      "name": "CMD_REG_DISCID",
+      "effect_class": "recognized-log-only",
+      "coverage": "rekordbox-recognized-log-only",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnWriteCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnWriteCmd",
+          "recognized-log-only"
+        ],
+        "target": "recognized-log-only",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": {
+          "database": [],
+          "filesystem": "Rekordbox recognizes and logs this disc-ID registration kind but invokes no writer and sends no reply."
+        }
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_ReqRegDiscID"
+        ],
+        "callers": [
+          "ReqRegistDiscID"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "2505",
+            "wrapper": "dbcl_ReqRegDiscID",
+            "caller": "ReqRegistDiscID",
+            "caller_address": "0x001fa6a0",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 7141,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "2507",
+      "name": "REKORDBOX_STATIC_PSVAPPSYNCDBIF::MODTRACKBPM VIA DATABASE_INTERFACE VTABLE +0X2A8",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnDbModCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnDbModCmd",
+          "PSvAppSyncDBIF::modTrackBPM via database-interface vtable +0x2A8"
+        ],
+        "target": "PSvAppSyncDBIF::modTrackBPM via database-interface vtable +0x2A8",
+        "reply_kind": "4000",
+        "rejection_reason": null,
+        "dependencies": {
+          "database": [
+            "djmdContent.BPM"
+          ],
+          "filesystem": "No filesystem access is visible; modTrackBPM reads the current BPM and updates it by content ID only when the value changes."
+        }
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "2605",
+      "name": "CMD_SAV_QTZ_OFFSET",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnWriteCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnWriteCmd",
+          "PSvDBMain::SavQtzOfs"
+        ],
+        "target": "PSvDBMain::SavQtzOfs",
+        "reply_kind": "4000",
+        "rejection_reason": null,
+        "dependencies": {
+          "database": [
+            "djmdContent.AnalysisDataPath",
+            "djmdContent.ContentLink"
+          ],
+          "filesystem": "SavQtzOfs writes the quantize offset to the analysis path, then mirrors its nonzero state into ContentLink bit zero."
+        }
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          1
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_RegQtzOfsInfo"
+        ],
+        "callers": [
+          "RegQtzOfsInfo"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "2605",
+            "wrapper": "dbcl_RegQtzOfsInfo",
+            "caller": "RegQtzOfsInfo",
+            "caller_address": "0x001fa970",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 7280,
+            "location_argument": "1",
+            "location_source": "wrapper-fixed",
+            "literal_location": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "2705",
+      "name": "CMD_SAV_USB_CUE2",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnWriteCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnWriteCmd",
+          "PSvDBMain::SavUsbCueExt"
+        ],
+        "target": "PSvDBMain::SavUsbCueExt",
+        "reply_kind": "4E02",
+        "rejection_reason": null,
+        "dependencies": {
+          "database": [
+            "djmdCue and cue-option rows"
+          ],
+          "filesystem": "No audio decoding is visible; SavUsbCueExt applies the extended cue mutation and replies through RetNewCueToClient (4E02)."
+        }
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_SaveUdbSdCue_Ext"
+        ],
+        "callers": [
+          "DbUpdateUsbSdCue_Ext"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "2705",
+            "wrapper": "dbcl_SaveUdbSdCue_Ext",
+            "caller": "DbUpdateUsbSdCue_Ext",
+            "caller_address": "0x001fab68",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 7632,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "2805",
+      "name": "CMD_SAV_SPECIFIED_ATOM_INFO",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnWriteCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnWriteCmd",
+          "PSvDBMain::SaveSpecifiedAtomInfo"
+        ],
+        "target": "PSvDBMain::SaveSpecifiedAtomInfo",
+        "reply_kind": "4000",
+        "rejection_reason": null,
+        "dependencies": {
+          "database": [
+            "djmdContent.AnalysisDataPath"
+          ],
+          "filesystem": "SaveSpecifiedAtomInfo validates the atom and extension, derives a sibling analysis file, and writes it through MstSaveAtomData."
+        }
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "2905",
+      "name": "CMD_UPD_SPECIFIED_ATOM_INFO",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnWriteCmd",
+        "route": [
+          "PSvDBMain::OnMAnlzClientCmd",
+          "PSvDBMain::OnWriteCmd",
+          "PSvDBMain::UpdateSpecifiedAtomInfo"
+        ],
+        "target": "PSvDBMain::UpdateSpecifiedAtomInfo",
+        "reply_kind": "4000",
+        "rejection_reason": null,
+        "dependencies": {
+          "database": [
+            "djmdContent.AnalysisDataPath"
+          ],
+          "filesystem": "UpdateSpecifiedAtomInfo accepts PQT2 only, derives a sibling analysis file, and updates it through MstUpdateAtomData."
+        }
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3000",
+      "name": "CMD_LEFT_BUF",
+      "effect_class": "list-buffer-render",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnListBuffCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnListBuffCmd",
+          "PSvDBMain::GetListBufContents"
+        ],
+        "target": "PSvDBMain::GetListBufContents",
+        "reply_kind": "4001/4101/4201",
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 27,
+        "literal_locations": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "has_dynamic_location": true,
+        "wrappers": [
+          "dbcl_GetLeftBuf"
+        ],
+        "callers": [
+          "AddPrepare",
+          "DbReqCueBankDragDrop",
+          "GetAllPrepRecFromDB",
+          "GetAllRecFromDB",
+          "GetCdda_1stMusicID",
+          "GetCdrom_1stMusicID",
+          "GetFileAttr",
+          "GetFileAttr.constprop.0",
+          "GetLeftInfomationRec",
+          "GetLeftInfomationRec.constprop.8",
+          "GetLeftPrepareJump",
+          "GetListAfterJump2Char",
+          "GetLoadedMusicData",
+          "GetMusicIDRenew",
+          "GetOffsetInCate",
+          "GetOneData_SongInfo",
+          "GetRightBrowseOneData",
+          "GetRightPrepareList",
+          "GetRootCateItems",
+          "GetSortMenuList",
+          "GetTrack2MusicID",
+          "InfoJumpSetDepth0",
+          "ReloadCateBrws",
+          "ReloadCatePac",
+          "SetLoadSearchDepth0"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetRootCateItems",
+            "caller_address": "0x001690e4",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 6363,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetAllPrepRecFromDB",
+            "caller_address": "0x0016aea0",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 7679,
+            "location_argument": "6",
+            "location_source": "call-argument-2",
+            "literal_location": 6
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetLeftPrepareJump",
+            "caller_address": "0x0016b914",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 8115,
+            "location_argument": "6",
+            "location_source": "call-argument-2",
+            "literal_location": 6
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetRightPrepareList",
+            "caller_address": "0x0016c948",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 8811,
+            "location_argument": "2",
+            "location_source": "call-argument-2",
+            "literal_location": 2
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "AddPrepare",
+            "caller_address": "0x0016d05c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 9009,
+            "location_argument": "1",
+            "location_source": "call-argument-2",
+            "literal_location": 1
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "AddPrepare",
+            "caller_address": "0x0016d05c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 9065,
+            "location_argument": "6",
+            "location_source": "call-argument-2",
+            "literal_location": 6
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetAllRecFromDB",
+            "caller_address": "0x00173ee0",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+            "line": 2601,
+            "location_argument": "1",
+            "location_source": "call-argument-2",
+            "literal_location": 1
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetListAfterJump2Char",
+            "caller_address": "0x00174728",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+            "line": 2917,
+            "location_argument": "1",
+            "location_source": "call-argument-2",
+            "literal_location": 1
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetRightBrowseOneData",
+            "caller_address": "0x0017ab24",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+            "line": 7552,
+            "location_argument": "2",
+            "location_source": "call-argument-2",
+            "literal_location": 2
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "DbReqCueBankDragDrop",
+            "caller_address": "0x001f9a14",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 6521,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetSortMenuList",
+            "caller_address": "0x001fcc5c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 8918,
+            "location_argument": "5",
+            "location_source": "call-argument-2",
+            "literal_location": 5
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetOffsetInCate",
+            "caller_address": "0x0020b674",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 10142,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "InfoJumpSetDepth0",
+            "caller_address": "0x0020c024",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 10604,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetLeftInfomationRec.constprop.8",
+            "caller_address": "0x0020d368",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 11266,
+            "location_argument": "1",
+            "location_source": "call-argument-2",
+            "literal_location": 1
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetLeftInfomationRec",
+            "caller_address": "0x0020e6d0",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 12046,
+            "location_argument": "param_3",
+            "location_source": "call-argument-2",
+            "literal_location": null
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetOneData_SongInfo",
+            "caller_address": "0x0020f3d4",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 12655,
+            "location_argument": "5",
+            "location_source": "call-argument-2",
+            "literal_location": 5
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "SetLoadSearchDepth0",
+            "caller_address": "0x00210a54",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 492,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetCdda_1stMusicID",
+            "caller_address": "0x00210cd0",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 621,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetCdrom_1stMusicID",
+            "caller_address": "0x00211008",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 769,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetLoadedMusicData",
+            "caller_address": "0x002116e4",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 1264,
+            "location_argument": "4",
+            "location_source": "call-argument-2",
+            "literal_location": 4
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetLoadedMusicData",
+            "caller_address": "0x002116e4",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 1267,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetFileAttr.constprop.0",
+            "caller_address": "0x002127bc",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 1699,
+            "location_argument": "8",
+            "location_source": "call-argument-2",
+            "literal_location": 8
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetFileAttr",
+            "caller_address": "0x00212b38",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 1812,
+            "location_argument": "8",
+            "location_source": "call-argument-2",
+            "literal_location": 8
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetTrack2MusicID",
+            "caller_address": "0x00214148",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 2840,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "GetMusicIDRenew",
+            "caller_address": "0x00214544",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 3021,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "ReloadCateBrws",
+            "caller_address": "0x00214c8c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 3292,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          },
+          {
+            "request_kind": "3000",
+            "wrapper": "dbcl_GetLeftBuf",
+            "caller": "ReloadCatePac",
+            "caller_address": "0x00215228",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 3473,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3001",
+      "name": "CMD_INSERT_HISTORY",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnHistoryCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnHistoryCmd",
+          "insert-history"
+        ],
+        "target": "insert-history",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 3,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_InsertSong2History"
+        ],
+        "callers": [
+          "ReqAddHistory",
+          "ReqAddPlayHistory",
+          "SelectRightMenu"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3001",
+            "wrapper": "dbcl_InsertSong2History",
+            "caller": "SelectRightMenu",
+            "caller_address": "0x001fe73c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 10308,
+            "location_argument": "8",
+            "location_source": "call-argument-2",
+            "literal_location": 8
+          },
+          {
+            "request_kind": "3001",
+            "wrapper": "dbcl_InsertSong2History",
+            "caller": "ReqAddHistory",
+            "caller_address": "0x00213ab0",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 2473,
+            "location_argument": "8",
+            "location_source": "call-argument-2",
+            "literal_location": 8
+          },
+          {
+            "request_kind": "3001",
+            "wrapper": "dbcl_InsertSong2History",
+            "caller": "ReqAddPlayHistory",
+            "caller_address": "0x00214b04",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 3107,
+            "location_argument": "8",
+            "location_source": "call-argument-2",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3002",
+      "name": "CMD_ADD_PREPARE",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnPrepareCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnPrepareCmd",
+          "add-prepare"
+        ],
+        "target": "add-prepare",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 4,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_AddPrepare"
+        ],
+        "callers": [
+          "AddPrepare"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3002",
+            "wrapper": "dbcl_AddPrepare",
+            "caller": "AddPrepare",
+            "caller_address": "0x0016d05c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 8995,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          },
+          {
+            "request_kind": "3002",
+            "wrapper": "dbcl_AddPrepare",
+            "caller": "AddPrepare",
+            "caller_address": "0x0016d05c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 9029,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          },
+          {
+            "request_kind": "3002",
+            "wrapper": "dbcl_AddPrepare",
+            "caller": "AddPrepare",
+            "caller_address": "0x0016d05c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 9055,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          },
+          {
+            "request_kind": "3002",
+            "wrapper": "dbcl_AddPrepare",
+            "caller": "AddPrepare",
+            "caller_address": "0x0016d05c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 9074,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3003",
+      "name": "CMD_COLOR_CODE",
+      "effect_class": "recognized-static-route",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "color-code"
+        ],
+        "target": "color-code",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3005",
+      "name": "CMD_CHK_NEWCMD_ENBL",
+      "effect_class": "rejected",
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherClientCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "unsupported-low-byte",
+          "PSvDBMain::OnUnknownClientCmd"
+        ],
+        "target": null,
+        "reply_kind": "4003",
+        "rejection_reason": "other-client-low-byte routes low byte 0x05 to unsupported-low-byte",
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3006",
+      "name": "CMD_GET_USER_INFO",
+      "effect_class": "state-query",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnUserCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnUserCmd",
+          "PSvDBMain::GetDJID"
+        ],
+        "target": "PSvDBMain::GetDJID",
+        "reply_kind": "4D02",
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3007",
+      "name": "CMD_SET_FILTER_ONOFF",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnFilterCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnFilterCmd",
+          "set-filter-onoff"
+        ],
+        "target": "set-filter-onoff",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3008",
+      "name": "CMD_GET_BPM",
+      "effect_class": "state-query",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOther2Cmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOther2Cmd",
+          "database-interface vtable +0x228"
+        ],
+        "target": "database-interface vtable +0x228",
+        "reply_kind": "4000",
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3100",
+      "name": "CMD_GET_OFFSET_CONTENTID",
+      "effect_class": "state-query",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnListBuffCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnListBuffCmd",
+          "PSvDBMain::GetListBufOffset"
+        ],
+        "target": "PSvDBMain::GetListBufOffset",
+        "reply_kind": "4000",
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 26,
+        "literal_locations": [
+          1,
+          3,
+          4,
+          6,
+          7
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_GetOffsetCID",
+          "dbcl_GetOffsetCID2"
+        ],
+        "callers": [
+          "ExecInfoJumpBrwsLocal",
+          "ExecInfoJumpPrepare",
+          "ExecInformationJump",
+          "GetCdda_1stMusicID",
+          "GetCdrom_1stMusicID",
+          "GetFileAttrMusicID",
+          "GetFileAttrMusicID2",
+          "GetListFromDBWithLastPos",
+          "GetListOfPlaying",
+          "GetLoadedMusicData",
+          "GetMusicIDRenew",
+          "InfoJumpSetDepth0",
+          "ReLoadIfLoadInPreare",
+          "SelectRightMenu",
+          "SendSortedBrwsList",
+          "SetLoadSearchDepth0"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "ReLoadIfLoadInPreare",
+            "caller_address": "0x0016cf80",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 8942,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "GetListFromDBWithLastPos",
+            "caller_address": "0x00174530",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+            "line": 2803,
+            "location_argument": "1",
+            "location_source": "call-argument-2",
+            "literal_location": 1
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "GetListOfPlaying",
+            "caller_address": "0x0019b7fc",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+            "line": 8553,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "GetListOfPlaying",
+            "caller_address": "0x0019b7fc",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+            "line": 8639,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "GetListOfPlaying",
+            "caller_address": "0x0019b7fc",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+            "line": 8751,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "GetListOfPlaying",
+            "caller_address": "0x0019b7fc",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+            "line": 8905,
+            "location_argument": "4",
+            "location_source": "call-argument-2",
+            "literal_location": 4
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "GetListOfPlaying",
+            "caller_address": "0x0019b7fc",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+            "line": 8957,
+            "location_argument": "4",
+            "location_source": "call-argument-2",
+            "literal_location": 4
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID",
+            "caller": "SendSortedBrwsList",
+            "caller_address": "0x001fb8d4",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 8189,
+            "location_argument": "1",
+            "location_source": "call-argument-2",
+            "literal_location": 1
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "SelectRightMenu",
+            "caller_address": "0x001fe73c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 10465,
+            "location_argument": "6",
+            "location_source": "call-argument-2",
+            "literal_location": 6
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "ExecInfoJumpPrepare",
+            "caller_address": "0x0020b810",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 10280,
+            "location_argument": "6",
+            "location_source": "call-argument-2",
+            "literal_location": 6
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID",
+            "caller": "InfoJumpSetDepth0",
+            "caller_address": "0x0020c024",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 10582,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "ExecInfoJumpBrwsLocal",
+            "caller_address": "0x0020c1b8",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 10750,
+            "location_argument": "1",
+            "location_source": "call-argument-2",
+            "literal_location": 1
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "ExecInformationJump",
+            "caller_address": "0x0020c60c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 10950,
+            "location_argument": "1",
+            "location_source": "call-argument-2",
+            "literal_location": 1
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "ExecInformationJump",
+            "caller_address": "0x0020c60c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 11193,
+            "location_argument": "1",
+            "location_source": "call-argument-2",
+            "literal_location": 1
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID",
+            "caller": "SetLoadSearchDepth0",
+            "caller_address": "0x00210a54",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 462,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID",
+            "caller": "SetLoadSearchDepth0",
+            "caller_address": "0x00210a54",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 465,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID",
+            "caller": "SetLoadSearchDepth0",
+            "caller_address": "0x00210a54",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 475,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID",
+            "caller": "GetCdda_1stMusicID",
+            "caller_address": "0x00210cd0",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 612,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID",
+            "caller": "GetCdrom_1stMusicID",
+            "caller_address": "0x00211008",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 827,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID",
+            "caller": "GetLoadedMusicData",
+            "caller_address": "0x002116e4",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 1308,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID",
+            "caller": "GetFileAttrMusicID",
+            "caller_address": "0x00212ec8",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 1966,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "GetFileAttrMusicID2",
+            "caller_address": "0x00213d3c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 2609,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "GetFileAttrMusicID2",
+            "caller_address": "0x00213d3c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 2635,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "GetMusicIDRenew",
+            "caller_address": "0x00214544",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 2993,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "GetMusicIDRenew",
+            "caller_address": "0x00214544",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 3001,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          },
+          {
+            "request_kind": "3100",
+            "wrapper": "dbcl_GetOffsetCID2",
+            "caller": "GetMusicIDRenew",
+            "caller_address": "0x00214544",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 3063,
+            "location_argument": "3",
+            "location_source": "call-argument-2",
+            "literal_location": 3
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3101",
+      "name": "CMD_DEL_HISTORY",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnHistoryCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnHistoryCmd",
+          "delete-history"
+        ],
+        "target": "delete-history",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_DelHistory"
+        ],
+        "callers": [
+          "DBC_ReqDelHistory"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3101",
+            "wrapper": "dbcl_DelHistory",
+            "caller": "DBC_ReqDelHistory",
+            "caller_address": "0x001fe16c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 9765,
+            "location_argument": "8",
+            "location_source": "call-argument-2",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3102",
+      "name": "CMD_ADD_TAGLIST_PLAYLIST",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnPrepareCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnPrepareCmd",
+          "add-taglist-playlist"
+        ],
+        "target": "add-taglist-playlist",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          6
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_AddTaglist2Playlist"
+        ],
+        "callers": [
+          "DbReqTaglist2Playlist"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3102",
+            "wrapper": "dbcl_AddTaglist2Playlist",
+            "caller": "DbReqTaglist2Playlist",
+            "caller_address": "0x002161a4",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 4049,
+            "location_argument": "6",
+            "location_source": "wrapper-fixed",
+            "literal_location": 6
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3103",
+      "name": "REKORDBOX_STATIC_UNLISTED_STATIC_ARM",
+      "effect_class": "recognized-static-route",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "unlisted-static-arm"
+        ],
+        "target": "unlisted-static-arm",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3104",
+      "name": "CMD_DEL_PLAYLIST",
+      "effect_class": "recognized-static-route",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherClientCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "special-0x3104-only",
+          "recognized zero-result special case"
+        ],
+        "target": "recognized zero-result special case",
+        "reply_kind": "4000",
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_DelPlaylist"
+        ],
+        "callers": [
+          "DBC_ReqUdPlaylist"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3104",
+            "wrapper": "dbcl_DelPlaylist",
+            "caller": "DBC_ReqUdPlaylist",
+            "caller_address": "0x001fe428",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 9899,
+            "location_argument": "8",
+            "location_source": "call-argument-2",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3107",
+      "name": "CMD_GET_FILTER_CONDITION_PROPERTY",
+      "effect_class": "state-query",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnFilterCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnFilterCmd",
+          "get-filter-condition-property"
+        ],
+        "target": "get-filter-condition-property",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3201",
+      "name": "CMD_SET_ONAIR",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnHistoryCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnHistoryCmd",
+          "set-onair"
+        ],
+        "target": "set-onair",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_SetOnAir"
+        ],
+        "callers": [
+          "ReqRegistOnAir"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3201",
+            "wrapper": "dbcl_SetOnAir",
+            "caller": "ReqRegistOnAir",
+            "caller_address": "0x00213cac",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 2518,
+            "location_argument": "8",
+            "location_source": "call-argument-2",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3202",
+      "name": "REKORDBOX_STATIC_UNLISTED_STATIC_ARM",
+      "effect_class": "recognized-static-route",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnPrepareCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnPrepareCmd",
+          "unlisted-static-arm"
+        ],
+        "target": "unlisted-static-arm",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          6
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_DelAllTaglist"
+        ],
+        "callers": [
+          "DbReqAllDelTaglist"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3202",
+            "wrapper": "dbcl_DelAllTaglist",
+            "caller": "DbReqAllDelTaglist",
+            "caller_address": "0x00216504",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 4258,
+            "location_argument": "6",
+            "location_source": "wrapper-fixed",
+            "literal_location": 6
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3203",
+      "name": "CMD_GET_DB_FIRM_VER",
+      "effect_class": "state-query",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "get-db-firmware-version"
+        ],
+        "target": "get-db-firmware-version",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3207",
+      "name": "CMD_SET_FILTER_CONDITION_PROPERTY",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnFilterCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnFilterCmd",
+          "set-filter-condition-property"
+        ],
+        "target": "set-filter-condition-property",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3301",
+      "name": "CMD_DEL_HISTORY_REPLY",
+      "effect_class": "recognized-static-route",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnHistoryCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnHistoryCmd",
+          "delete-history-reply"
+        ],
+        "target": "delete-history-reply",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3302",
+      "name": "CMD_CHG_TAGLIST_ORDER",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnPrepareCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnPrepareCmd",
+          "change-taglist-order"
+        ],
+        "target": "change-taglist-order",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3303",
+      "name": "CMD_GET_BRWS_TYPE",
+      "effect_class": "state-query",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "get-browse-type"
+        ],
+        "target": "get-browse-type",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 5,
+        "literal_locations": [
+          2
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_GetBrowseType"
+        ],
+        "callers": [
+          "ExecInfoJumpPrepare",
+          "GetBrowseKind",
+          "GetLeftPrepareList",
+          "GetRightPrepareList"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3303",
+            "wrapper": "dbcl_GetBrowseType",
+            "caller": "GetBrowseKind",
+            "caller_address": "0x001690b4",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 6323,
+            "location_argument": "2",
+            "location_source": "wrapper-fixed",
+            "literal_location": 2
+          },
+          {
+            "request_kind": "3303",
+            "wrapper": "dbcl_GetBrowseType",
+            "caller": "GetLeftPrepareList",
+            "caller_address": "0x0016c46c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 8578,
+            "location_argument": "2",
+            "location_source": "wrapper-fixed",
+            "literal_location": 2
+          },
+          {
+            "request_kind": "3303",
+            "wrapper": "dbcl_GetBrowseType",
+            "caller": "GetLeftPrepareList",
+            "caller_address": "0x0016c46c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 8623,
+            "location_argument": "2",
+            "location_source": "wrapper-fixed",
+            "literal_location": 2
+          },
+          {
+            "request_kind": "3303",
+            "wrapper": "dbcl_GetBrowseType",
+            "caller": "GetRightPrepareList",
+            "caller_address": "0x0016c948",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 8858,
+            "location_argument": "2",
+            "location_source": "wrapper-fixed",
+            "literal_location": 2
+          },
+          {
+            "request_kind": "3303",
+            "wrapper": "dbcl_GetBrowseType",
+            "caller": "ExecInfoJumpPrepare",
+            "caller_address": "0x0020b810",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 10263,
+            "location_argument": "2",
+            "location_source": "wrapper-fixed",
+            "literal_location": 2
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3307",
+      "name": "CMD_SET_FILTER_CONDITION_MYTAG",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnFilterCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnFilterCmd",
+          "set-filter-condition-mytag"
+        ],
+        "target": "set-filter-condition-mytag",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3401",
+      "name": "CMD_DEL_HISTORY_TRACK",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "real-rekordbox-menu-oracle",
+      "evidence": [
+        "ALPHA",
+        "OBS",
+        "DB",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnHistoryCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnHistoryCmd",
+          "delete-history-track"
+        ],
+        "target": "delete-history-track",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          1
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_DelTrackHistory"
+        ],
+        "callers": [
+          "SelectRightMenu"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3401",
+            "wrapper": "dbcl_DelTrackHistory",
+            "caller": "SelectRightMenu",
+            "caller_address": "0x001fe73c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 10311,
+            "location_argument": "1",
+            "location_source": "wrapper-fixed",
+            "literal_location": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3402",
+      "name": "CMD_IS_TAGLIST_PLAYLIST",
+      "effect_class": "state-query",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnPrepareCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnPrepareCmd",
+          "is-taglist-playlist"
+        ],
+        "target": "is-taglist-playlist",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          6
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_CheckIsDBTrackExist"
+        ],
+        "callers": [
+          "GetTaglistMenuList"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3402",
+            "wrapper": "dbcl_CheckIsDBTrackExist",
+            "caller": "GetTaglistMenuList",
+            "caller_address": "0x001fc1ec",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 8455,
+            "location_argument": "6",
+            "location_source": "wrapper-fixed",
+            "literal_location": 6
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3403",
+      "name": "REKORDBOX_STATIC_UNLISTED_STATIC_ARM",
+      "effect_class": "recognized-static-route",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "unlisted-static-arm"
+        ],
+        "target": "unlisted-static-arm",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3407",
+      "name": "CMD_ADD_FILTER_MYTAG_ITEM",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnFilterCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnFilterCmd",
+          "add-filter-mytag-item"
+        ],
+        "target": "add-filter-mytag-item",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3501",
+      "name": "CMD_GET_CURRENT_HISTORY_ID",
+      "effect_class": "rejected",
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnHistoryCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnHistoryCmd",
+          "PSvDBMain::OnUnknownClientCmd"
+        ],
+        "target": null,
+        "reply_kind": "4003",
+        "rejection_reason": "3501 is outside history-high-byte",
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3503",
+      "name": "CMD_INFO_UNPLAYABLE",
+      "effect_class": "recognized-static-route",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "info-unplayable"
+        ],
+        "target": "info-unplayable",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_SetUnplayable"
+        ],
+        "callers": [
+          "SetUnPlayable"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3503",
+            "wrapper": "dbcl_SetUnplayable",
+            "caller": "SetUnPlayable",
+            "caller_address": "0x001fa87c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 7212,
+            "location_argument": "8",
+            "location_source": "call-argument-2",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3602",
+      "name": "CMD_REPLACE_TAGLIST",
+      "effect_class": "rejected",
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnPrepareCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnPrepareCmd",
+          "PSvDBMain::OnUnknownClientCmd"
+        ],
+        "target": null,
+        "reply_kind": "4003",
+        "rejection_reason": "3602 is outside prepare-high-byte",
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3603",
+      "name": "CMD_GET_DB_HIERARCHY",
+      "effect_class": "state-query",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "get-db-hierarchy"
+        ],
+        "target": "get-db-hierarchy",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 2,
+        "literal_locations": [
+          7
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_GetDBHierachy"
+        ],
+        "callers": [
+          "GetOffsetInCate",
+          "ReloadCateBrws"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3603",
+            "wrapper": "dbcl_GetDBHierachy",
+            "caller": "GetOffsetInCate",
+            "caller_address": "0x0020b674",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 10129,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          },
+          {
+            "request_kind": "3603",
+            "wrapper": "dbcl_GetDBHierachy",
+            "caller": "ReloadCateBrws",
+            "caller_address": "0x00214c8c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+            "line": 3281,
+            "location_argument": "7",
+            "location_source": "call-argument-2",
+            "literal_location": 7
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3703",
+      "name": "REKORDBOX_STATIC_UNLISTED_STATIC_ARM",
+      "effect_class": "recognized-static-route",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "unlisted-static-arm"
+        ],
+        "target": "unlisted-static-arm",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3704",
+      "name": "CMD_APPEND_PLAYLIST",
+      "effect_class": "rejected",
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "special-0x3104-only",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "special-0x3104-only",
+          "PSvDBMain::OnUnknownClientCmd"
+        ],
+        "target": null,
+        "reply_kind": "4003",
+        "rejection_reason": "special-0x3104-only recognizes only 3104",
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3803",
+      "name": "REKORDBOX_STATIC_UNLISTED_STATIC_ARM",
+      "effect_class": "recognized-static-route",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "unlisted-static-arm"
+        ],
+        "target": "unlisted-static-arm",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3804",
+      "name": "CMD_REPLACE_PLAYLIST_TRACK",
+      "effect_class": "rejected",
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "special-0x3104-only",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "special-0x3104-only",
+          "PSvDBMain::OnUnknownClientCmd"
+        ],
+        "target": null,
+        "reply_kind": "4003",
+        "rejection_reason": "special-0x3104-only recognizes only 3104",
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": false,
+        "direct_call_site_count": 0,
+        "literal_locations": [],
+        "has_dynamic_location": false,
+        "wrappers": [],
+        "callers": [],
+        "call_sites": []
+      }
+    },
+    {
+      "kind": "3903",
+      "name": "CMD_PROPERTY_TABLE",
+      "effect_class": "state-query",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "property-table"
+        ],
+        "target": "property-table",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 2,
+        "literal_locations": [
+          8
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_GetPropTbl"
+        ],
+        "callers": [
+          "UpDateDevProperty",
+          "UpDateDevProperty_BroadCast"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3903",
+            "wrapper": "dbcl_GetPropTbl",
+            "caller": "UpDateDevProperty",
+            "caller_address": "0x0016a4dc",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 7191,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          },
+          {
+            "request_kind": "3903",
+            "wrapper": "dbcl_GetPropTbl",
+            "caller": "UpDateDevProperty_BroadCast",
+            "caller_address": "0x0016a578",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 7248,
+            "location_argument": "8",
+            "location_source": "wrapper-fixed",
+            "literal_location": 8
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3A03",
+      "name": "CMD_TRANS_NEWKEY",
+      "effect_class": "state-query",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "translate-new-key"
+        ],
+        "target": "translate-new-key",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          1
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_TransNewKeyID"
+        ],
+        "callers": [
+          "ExecInformationJump"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3A03",
+            "wrapper": "dbcl_TransNewKeyID",
+            "caller": "ExecInformationJump",
+            "caller_address": "0x0020c60c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+            "line": 11065,
+            "location_argument": "1",
+            "location_source": "wrapper-fixed",
+            "literal_location": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3B03",
+      "name": "CMD_GET_PLAYSTATE",
+      "effect_class": "state-query",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "get-play-state"
+        ],
+        "target": "get-play-state",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          1
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_GetTrackPlayState"
+        ],
+        "callers": [
+          "SendBrowseMenu"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3B03",
+            "wrapper": "dbcl_GetTrackPlayState",
+            "caller": "SendBrowseMenu",
+            "caller_address": "0x001fd1d4",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 9284,
+            "location_argument": "1",
+            "location_source": "wrapper-fixed",
+            "literal_location": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3C03",
+      "name": "CMD_SET_MY_SETTING_FLG",
+      "effect_class": "mutation-or-state-write",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "set-my-setting-flag"
+        ],
+        "target": "set-my-setting-flag",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          1
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_UpdateMySettingFileExist"
+        ],
+        "callers": [
+          "ReqUpdate_MySettingFileExist"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3C03",
+            "wrapper": "dbcl_UpdateMySettingFileExist",
+            "caller": "ReqUpdate_MySettingFileExist",
+            "caller_address": "0x0016a734",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 7320,
+            "location_argument": "1",
+            "location_source": "wrapper-fixed",
+            "literal_location": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3D03",
+      "name": "CMD_GET_NEW_KEY_ID",
+      "effect_class": "state-query",
+      "coverage": "rekordbox-static-dispatch",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "get-new-key-id"
+        ],
+        "target": "get-new-key-id",
+        "reply_kind": null,
+        "rejection_reason": null,
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          1
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_GetNewKeyID"
+        ],
+        "callers": [
+          "UpdateTrafficLightKeySet.part.0"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3D03",
+            "wrapper": "dbcl_GetNewKeyID",
+            "caller": "UpdateTrafficLightKeySet.part.0",
+            "caller_address": "0x00179e70",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+            "line": 6812,
+            "location_argument": "1",
+            "location_source": "wrapper-fixed",
+            "literal_location": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3E03",
+      "name": "CMD_GET_IS_RBM_MOUNT",
+      "effect_class": "rejected",
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "PSvDBMain::OnUnknownClientCmd"
+        ],
+        "target": null,
+        "reply_kind": "4003",
+        "rejection_reason": "3E03 is outside other-command-high-byte",
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 1,
+        "literal_locations": [
+          1
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_GetIsRekordboxMobile"
+        ],
+        "callers": [
+          "DBC_NfsAnalysisStart"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3E03",
+            "wrapper": "dbcl_GetIsRekordboxMobile",
+            "caller": "DBC_NfsAnalysisStart",
+            "caller_address": "0x0016932c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+            "line": 6494,
+            "location_argument": "1",
+            "location_source": "wrapper-fixed",
+            "literal_location": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "3F03",
+      "name": "CMD_SET_BACKGROUND_COLOR",
+      "effect_class": "rejected",
+      "coverage": "rekordbox-static-rejected",
+      "evidence": [
+        "ALPHA",
+        "DEC"
+      ],
+      "server": {
+        "dispatcher": "PSvDBMain::OnOtherCmd",
+        "route": [
+          "PSvDBMain::OnOtherClientCmd",
+          "PSvDBMain::OnOtherCmd",
+          "PSvDBMain::OnUnknownClientCmd"
+        ],
+        "target": null,
+        "reply_kind": "4003",
+        "rejection_reason": "3F03 is outside other-command-high-byte",
+        "dependencies": null
+      },
+      "xdj_rr_client": {
+        "has_request_kind": true,
+        "direct_call_site_count": 2,
+        "literal_locations": [
+          1
+        ],
+        "has_dynamic_location": false,
+        "wrappers": [
+          "dbcl_SetBackGroundColor"
+        ],
+        "callers": [
+          "SelectRightMenu",
+          "SendBrowseMenu"
+        ],
+        "call_sites": [
+          {
+            "request_kind": "3F03",
+            "wrapper": "dbcl_SetBackGroundColor",
+            "caller": "SendBrowseMenu",
+            "caller_address": "0x001fd1d4",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 9526,
+            "location_argument": "1",
+            "location_source": "wrapper-fixed",
+            "literal_location": 1
+          },
+          {
+            "request_kind": "3F03",
+            "wrapper": "dbcl_SetBackGroundColor",
+            "caller": "SelectRightMenu",
+            "caller_address": "0x001fe73c",
+            "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+            "line": 10181,
+            "location_argument": "1",
+            "location_source": "wrapper-fixed",
+            "literal_location": 1
+          }
+        ]
+      }
+    }
+  ],
+  "interpretation_boundary": {
+    "rekordbox": "Server dispatch and effects come from the pinned Rekordbox vocabulary and its static/live evidence tiers.",
+    "xdj_rr": "Client call sites describe the pinned XDJ-RR source only. No direct caller does not imply that other player models never emit the command.",
+    "effect_class": "The coarse class aids navigation; route, target, dependencies, rejection reason, and evidence remain authoritative."
+  }
+}

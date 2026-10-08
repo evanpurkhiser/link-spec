@@ -1,0 +1,913 @@
+{
+  "name": "rx3-track-sort-secondary-render-7",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "00-default-gate-zero",
+      "description": "RX3 Default track sort followed by seven-argument rendering with gate zero",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "01-alphabet-gate-zero",
+      "description": "RX3 Alphabet track sort followed by seven-argument rendering with gate zero",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "02-artist-gate-zero",
+      "description": "RX3 Artist track sort followed by seven-argument rendering with gate zero",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 2
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "03-album-gate-zero",
+      "description": "RX3 Album track sort followed by seven-argument rendering with gate zero",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "04-bpm-gate-zero",
+      "description": "RX3 Bpm track sort followed by seven-argument rendering with gate zero",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "05-rating-gate-zero",
+      "description": "RX3 Rating track sort followed by seven-argument rendering with gate zero",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "06-genre-gate-zero",
+      "description": "RX3 Genre track sort followed by seven-argument rendering with gate zero",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "10-label-gate-zero",
+      "description": "RX3 Label track sort followed by seven-argument rendering with gate zero",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 10
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "12-key-gate-zero",
+      "description": "RX3 Key track sort followed by seven-argument rendering with gate zero",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "17-date-added-gate-zero",
+      "description": "RX3 Date Added track sort followed by seven-argument rendering with gate zero",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 17
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "16-dj-play-count-gate-zero",
+      "description": "RX3 Dj Play Count track sort followed by seven-argument rendering with gate zero",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 16
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "00-default-gate-one",
+      "description": "RX3 Default track sort followed by seven-argument rendering with gate one",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "01-alphabet-gate-one",
+      "description": "RX3 Alphabet track sort followed by seven-argument rendering with gate one",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "02-artist-gate-one",
+      "description": "RX3 Artist track sort followed by seven-argument rendering with gate one",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 2
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "03-album-gate-one",
+      "description": "RX3 Album track sort followed by seven-argument rendering with gate one",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "04-bpm-gate-one",
+      "description": "RX3 Bpm track sort followed by seven-argument rendering with gate one",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "05-rating-gate-one",
+      "description": "RX3 Rating track sort followed by seven-argument rendering with gate one",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "06-genre-gate-one",
+      "description": "RX3 Genre track sort followed by seven-argument rendering with gate one",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "10-label-gate-one",
+      "description": "RX3 Label track sort followed by seven-argument rendering with gate one",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 10
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "12-key-gate-one",
+      "description": "RX3 Key track sort followed by seven-argument rendering with gate one",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "17-date-added-gate-one",
+      "description": "RX3 Date Added track sort followed by seven-argument rendering with gate one",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 17
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "16-dj-play-count-gate-one",
+      "description": "RX3 Dj Play Count track sort followed by seven-argument rendering with gate one",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 16
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "00-default-gate-maximum",
+      "description": "RX3 Default track sort followed by seven-argument rendering with gate maximum",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        "0xffffffff"
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "01-alphabet-gate-maximum",
+      "description": "RX3 Alphabet track sort followed by seven-argument rendering with gate maximum",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        "0xffffffff"
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "02-artist-gate-maximum",
+      "description": "RX3 Artist track sort followed by seven-argument rendering with gate maximum",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 2
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        "0xffffffff"
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "03-album-gate-maximum",
+      "description": "RX3 Album track sort followed by seven-argument rendering with gate maximum",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        "0xffffffff"
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "04-bpm-gate-maximum",
+      "description": "RX3 Bpm track sort followed by seven-argument rendering with gate maximum",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 4
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        "0xffffffff"
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "05-rating-gate-maximum",
+      "description": "RX3 Rating track sort followed by seven-argument rendering with gate maximum",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        "0xffffffff"
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "06-genre-gate-maximum",
+      "description": "RX3 Genre track sort followed by seven-argument rendering with gate maximum",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        "0xffffffff"
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "10-label-gate-maximum",
+      "description": "RX3 Label track sort followed by seven-argument rendering with gate maximum",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 10
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        "0xffffffff"
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "12-key-gate-maximum",
+      "description": "RX3 Key track sort followed by seven-argument rendering with gate maximum",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        "0xffffffff"
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "17-date-added-gate-maximum",
+      "description": "RX3 Date Added track sort followed by seven-argument rendering with gate maximum",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 17
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        "0xffffffff"
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    },
+    {
+      "id": "16-dj-play-count-gate-maximum",
+      "description": "RX3 Dj Play Count track sort followed by seven-argument rendering with gate maximum",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 16
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        "0xffffffff"
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "item_type_low_byte": "0x04"
+      }
+    }
+  ]
+}

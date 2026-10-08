@@ -1,0 +1,118 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "First count with the high bit set, isolated to establish signed-limit behavior and process health",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 8193
+              },
+              {
+                "type": "number",
+                "value": 0
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "count-high-bit",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9012
+            },
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 2147483648
+            }
+          ],
+          "kind": 8193
+        },
+        "rows": [],
+        "total": 0
+      }
+    ],
+    "fixture": {
+      "fingerprint": "718db45aea9624ec7f8c6cd70140ec6ba4b99d0cae4739aa3830ca4d0528b9b7",
+      "profile": "hot-cue-banks",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 1
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "hot-cue-bank-count-high-bit"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "066cfa954e435346f80e5abac35dac7631ac4e3023e662d12e0080382f6041dc",
+    "fixture_fingerprint": "718db45aea9624ec7f8c6cd70140ec6ba4b99d0cae4739aa3830ca4d0528b9b7",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 3,
+      "mac": "02:00:00:60:00:50",
+      "model": "XDJ-RX3",
+      "model_code": 0,
+      "packet_sha256": "da12196004059977cdbcd83b9e0ae22366a2daf50320ed1a7b033c1d7ab157d4",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 11,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-rx3-player-11.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/hot-cue-banks/manifest.json",
+    "recorded_unix_seconds": 1790912940,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/suites/hot-cue-bank-count-high-bit.json",
+    "suite_sha256": "54fd042dc5d5a183e4773ecb1eb60b70ec782ad7ffe5062509c00532700b4d0b"
+  }
+}

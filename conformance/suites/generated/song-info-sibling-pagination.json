@@ -1,0 +1,434 @@
+{
+  "name": "song-info-sibling-pagination",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "play-one-row-pages",
+      "description": "Play Song Info pagination: one-row-pages",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      },
+      "page_size": 1
+    },
+    {
+      "id": "play-single-complete-page",
+      "description": "Play Song Info pagination: single-complete-page",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      },
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": "$total"
+        }
+      ]
+    },
+    {
+      "id": "play-last-row",
+      "description": "Play Song Info pagination: last-row",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      },
+      "render_pages": [
+        {
+          "offset": 6,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "play-zero-count",
+      "description": "Play Song Info pagination: zero-count",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      },
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "play-at-end",
+      "description": "Play Song Info pagination: at-end",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      },
+      "render_pages": [
+        {
+          "offset": "$total",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "play-past-end",
+      "description": "Play Song Info pagination: past-end",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      },
+      "render_pages": [
+        {
+          "offset": 8,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "play-overrun",
+      "description": "Play Song Info pagination: overrun",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      },
+      "render_pages": [
+        {
+          "offset": 6,
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "play-overlap",
+      "description": "Play Song Info pagination: overlap",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      },
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": 3
+        },
+        {
+          "offset": 2,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "play-maximum-offset",
+      "description": "Play Song Info pagination: maximum-offset",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 7
+      },
+      "render_pages": [
+        {
+          "offset": "0xffffffff",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "delivery-one-row-pages",
+      "description": "Delivery Song Info pagination: one-row-pages",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      },
+      "page_size": 1
+    },
+    {
+      "id": "delivery-single-complete-page",
+      "description": "Delivery Song Info pagination: single-complete-page",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      },
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": "$total"
+        }
+      ]
+    },
+    {
+      "id": "delivery-last-row",
+      "description": "Delivery Song Info pagination: last-row",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      },
+      "render_pages": [
+        {
+          "offset": 12,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "delivery-zero-count",
+      "description": "Delivery Song Info pagination: zero-count",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      },
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "delivery-at-end",
+      "description": "Delivery Song Info pagination: at-end",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      },
+      "render_pages": [
+        {
+          "offset": "$total",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "delivery-past-end",
+      "description": "Delivery Song Info pagination: past-end",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      },
+      "render_pages": [
+        {
+          "offset": 14,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "delivery-overrun",
+      "description": "Delivery Song Info pagination: overrun",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      },
+      "render_pages": [
+        {
+          "offset": 12,
+          "count": 15
+        }
+      ]
+    },
+    {
+      "id": "delivery-overlap",
+      "description": "Delivery Song Info pagination: overlap",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      },
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": 3
+        },
+        {
+          "offset": 2,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "delivery-maximum-offset",
+      "description": "Delivery Song Info pagination: maximum-offset",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      },
+      "render_pages": [
+        {
+          "offset": "0xffffffff",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

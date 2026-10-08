@@ -1,0 +1,578 @@
+## __ZN21PSvLinkNormalInterval18isSupportMysettingEh | 
+address=0x100b76530 size=0x50
+0x0100b76530  lea       eax, [rsi - 9]
+0x0100b76533  cmp       al, 3
+0x0100b76535  ja        0x100b7654f
+0x0100b76537  add       esi, -9
+0x0100b7653a  movsxd    rax, esi
+0x0100b7653d  imul      rax, rax, 0xb8
+0x0100b76544  add       rax, rdi
+0x0100b76547  add       rax, 0xe33
+0x0100b7654d  jmp       0x100b76564
+0x0100b7654f  dec       esi
+0x0100b76551  movsxd    rax, esi
+0x0100b76554  imul      rax, rax, 0xb8
+0x0100b7655b  add       rax, rdi
+0x0100b7655e  add       rax, 0x2b3
+0x0100b76564  push      rbp
+0x0100b76565  mov       rbp, rsp
+0x0100b76568  mov       al, byte ptr [rax]
+0x0100b7656a  and       al, 8
+0x0100b7656c  shr       al, 3
+0x0100b7656f  pop       rbp
+0x0100b76570  ret
+0x0100b76571  nop       word ptr cs:[rax + rax]
+
+## __ZN21PSvLinkNormalInterval22isSupportDuplicationv2Eh | 
+address=0x100b76580 size=0x50
+0x0100b76580  lea       eax, [rsi - 9]
+0x0100b76583  cmp       al, 3
+0x0100b76585  ja        0x100b7659f
+0x0100b76587  add       esi, -9
+0x0100b7658a  movsxd    rax, esi
+0x0100b7658d  imul      rax, rax, 0xb8
+0x0100b76594  add       rax, rdi
+0x0100b76597  add       rax, 0xe33
+0x0100b7659d  jmp       0x100b765b4
+0x0100b7659f  dec       esi
+0x0100b765a1  movsxd    rax, esi
+0x0100b765a4  imul      rax, rax, 0xb8
+0x0100b765ab  add       rax, rdi
+0x0100b765ae  add       rax, 0x2b3
+0x0100b765b4  push      rbp
+0x0100b765b5  mov       rbp, rsp
+0x0100b765b8  mov       al, byte ptr [rax]
+0x0100b765ba  and       al, 4
+0x0100b765bc  shr       al, 2
+0x0100b765bf  pop       rbp
+0x0100b765c0  ret
+0x0100b765c1  nop       word ptr cs:[rax + rax]
+
+## __ZN21PSvLinkNormalInterval22isSupportDeviceSettingEh | 
+address=0x100b765d0 size=0x40
+0x0100b765d0  lea       eax, [rsi - 9]
+0x0100b765d3  cmp       al, 3
+0x0100b765d5  ja        0x100b765ef
+0x0100b765d7  add       esi, -9
+0x0100b765da  movsxd    rax, esi
+0x0100b765dd  imul      rax, rax, 0xb8
+0x0100b765e4  add       rax, rdi
+0x0100b765e7  add       rax, 0xe33
+0x0100b765ed  jmp       0x100b76604
+0x0100b765ef  dec       esi
+0x0100b765f1  movsxd    rax, esi
+0x0100b765f4  imul      rax, rax, 0xb8
+0x0100b765fb  add       rax, rdi
+0x0100b765fe  add       rax, 0x2b3
+0x0100b76604  push      rbp
+0x0100b76605  mov       rbp, rsp
+0x0100b76608  mov       al, byte ptr [rax]
+0x0100b7660a  shr       al, 7
+0x0100b7660d  pop       rbp
+0x0100b7660e  ret
+0x0100b7660f  nop
+
+## __ZN9prodjlink9ProDJLink12isCDJNetworkEv | 
+address=0x100ca72b0 size=0x10
+0x0100ca72b0  push      rbp
+0x0100ca72b1  mov       rbp, rsp
+0x0100ca72b4  mov       rax, qword ptr [rdi + 0x10]
+0x0100ca72b8  mov       rax, qword ptr [rax]
+0x0100ca72bb  mov       al, byte ptr [rax + 0x25]
+0x0100ca72be  pop       rbp
+0x0100ca72bf  ret
+
+## __ZN9prodjlink9ProDJLink15isSpecificModelEiPKc | 
+address=0x100ca9380 size=0x70
+0x0100ca9380  push      rbp
+0x0100ca9381  mov       rbp, rsp
+0x0100ca9384  push      r14
+0x0100ca9386  push      rbx
+0x0100ca9387  sub       rsp, 0x20
+0x0100ca938b  mov       rbx, rdx
+0x0100ca938e  mov       edi, esi
+0x0100ca9390  mov       rax, qword ptr [rip + 0x4853be1]
+0x0100ca9397  mov       rax, qword ptr [rax]
+0x0100ca939a  mov       qword ptr [rbp - 0x18], rax
+0x0100ca939e  vxorps    xmm0, xmm0, xmm0
+0x0100ca93a2  vmovaps   xmmword ptr [rbp - 0x30], xmm0
+0x0100ca93a7  mov       dword ptr [rbp - 0x20], 0
+0x0100ca93ae  lea       r14, [rbp - 0x30]
+0x0100ca93b2  mov       rsi, r14
+0x0100ca93b5  mov       edx, 0x14
+0x0100ca93ba  call      0x100e39670  ; __ZN9prodjlink9LinkProxy12getModelNameEjPcj |
+0x0100ca93bf  mov       rdi, r14
+0x0100ca93c2  mov       rsi, rbx
+0x0100ca93c5  call      0x1038c4670
+0x0100ca93ca  test      eax, eax
+0x0100ca93cc  sete      al
+0x0100ca93cf  mov       rcx, qword ptr [rip + 0x4853ba2]
+0x0100ca93d6  mov       rcx, qword ptr [rcx]
+0x0100ca93d9  cmp       rcx, qword ptr [rbp - 0x18]
+0x0100ca93dd  jne       0x100ca93e8
+0x0100ca93df  add       rsp, 0x20
+0x0100ca93e3  pop       rbx
+0x0100ca93e4  pop       r14
+0x0100ca93e6  pop       rbp
+0x0100ca93e7  ret
+0x0100ca93e8  call      0x1038c3da0
+0x0100ca93ed  nop       dword ptr [rax]
+
+## __ZN9prodjlink9ProDJLink13getModelNamesERN4juce11StringArrayE | 
+address=0x100ca93f0 size=0x110
+0x0100ca93f0  push      rbp
+0x0100ca93f1  mov       rbp, rsp
+0x0100ca93f4  push      r15
+0x0100ca93f6  push      r14
+0x0100ca93f8  push      r12
+0x0100ca93fa  push      rbx
+0x0100ca93fb  sub       rsp, 0x40
+0x0100ca93ff  mov       r14, rsi
+0x0100ca9402  mov       rax, qword ptr [rip + 0x4853b6f]
+0x0100ca9409  mov       rax, qword ptr [rax]
+0x0100ca940c  mov       qword ptr [rbp - 0x28], rax
+0x0100ca9410  vxorps    xmm0, xmm0, xmm0
+0x0100ca9414  vmovaps   xmmword ptr [rbp - 0x50], xmm0
+0x0100ca9419  mov       rdi, qword ptr [rdi + 0x10]
+0x0100ca941d  lea       rsi, [rbp - 0x50]
+0x0100ca9421  call      0x102058b80  ; __ZN9prodjlink17LinkDeviceManager18getLinkedPlayerIDsERN4juce5ArrayIjNS1_20DummyCriticalSectionELi0EEE |
+0x0100ca9426  mov       eax, dword ptr [rbp - 0x44]
+0x0100ca9429  test      eax, eax
+0x0100ca942b  jle       0x100ca94a2
+0x0100ca942d  xor       ebx, ebx
+0x0100ca942f  lea       r15, [rbp - 0x40]
+0x0100ca9433  lea       r12, [rbp - 0x58]
+0x0100ca9437  jmp       0x100ca944c
+0x0100ca9439  nop       dword ptr [rax]
+0x0100ca9440  inc       rbx
+0x0100ca9443  movsxd    rax, dword ptr [rbp - 0x44]
+0x0100ca9447  cmp       rbx, rax
+0x0100ca944a  jge       0x100ca94a2
+0x0100ca944c  vxorps    xmm0, xmm0, xmm0
+0x0100ca9450  vmovaps   xmmword ptr [rbp - 0x40], xmm0
+0x0100ca9455  mov       dword ptr [rbp - 0x30], 0
+0x0100ca945c  mov       eax, eax
+0x0100ca945e  mov       edi, 0
+0x0100ca9463  cmp       rbx, rax
+0x0100ca9466  jae       0x100ca946f
+0x0100ca9468  mov       rax, qword ptr [rbp - 0x50]
+0x0100ca946c  mov       edi, dword ptr [rax + rbx*4]
+0x0100ca946f  mov       rsi, r15
+0x0100ca9472  mov       edx, 0x14
+0x0100ca9477  call      0x100e39670  ; __ZN9prodjlink9LinkProxy12getModelNameEjPcj |
+0x0100ca947c  cmp       byte ptr [rbp - 0x40], 0
+0x0100ca9480  je        0x100ca9440
+0x0100ca9482  mov       rdi, r12
+0x0100ca9485  mov       rsi, r15
+0x0100ca9488  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0100ca948d  mov       rdi, r14
+0x0100ca9490  mov       rsi, r12
+0x0100ca9493  call      0x1027ab360  ; __ZN4juce11StringArray3addENS_6StringE |
+0x0100ca9498  mov       rdi, r12
+0x0100ca949b  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0100ca94a0  jmp       0x100ca9440
+0x0100ca94a2  mov       dword ptr [rbp - 0x44], 0
+0x0100ca94a9  mov       rdi, qword ptr [rbp - 0x50]
+0x0100ca94ad  call      0x1038c402e
+0x0100ca94b2  mov       rax, qword ptr [rip + 0x4853abf]
+0x0100ca94b9  mov       rax, qword ptr [rax]
+0x0100ca94bc  cmp       rax, qword ptr [rbp - 0x28]
+0x0100ca94c0  jne       0x100ca94cf
+0x0100ca94c2  add       rsp, 0x40
+0x0100ca94c6  pop       rbx
+0x0100ca94c7  pop       r12
+0x0100ca94c9  pop       r14
+0x0100ca94cb  pop       r15
+0x0100ca94cd  pop       rbp
+0x0100ca94ce  ret
+0x0100ca94cf  call      0x1038c3da0
+0x0100ca94d4  jmp       0x100ca94e4
+0x0100ca94d6  mov       rbx, rax
+0x0100ca94d9  lea       rdi, [rbp - 0x58]
+0x0100ca94dd  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0100ca94e2  jmp       0x100ca94e7
+0x0100ca94e4  mov       rbx, rax
+0x0100ca94e7  mov       dword ptr [rbp - 0x44], 0
+0x0100ca94ee  mov       rdi, qword ptr [rbp - 0x50]
+0x0100ca94f2  call      0x1038c402e
+0x0100ca94f7  mov       rdi, rbx
+0x0100ca94fa  call      0x1038c3812
+0x0100ca94ff  nop
+
+## __ZN9prodjlink9ProDJLink12getModelNameEi | 
+address=0x100ca9500 size=0x90
+0x0100ca9500  push      rbp
+0x0100ca9501  mov       rbp, rsp
+0x0100ca9504  push      rbx
+0x0100ca9505  sub       rsp, 0x28
+0x0100ca9509  mov       rbx, rdi
+0x0100ca950c  mov       rax, qword ptr [rip + 0x4853a65]
+0x0100ca9513  mov       rax, qword ptr [rax]
+0x0100ca9516  mov       qword ptr [rbp - 0x10], rax
+0x0100ca951a  vxorps    xmm0, xmm0, xmm0
+0x0100ca951e  vmovaps   xmmword ptr [rbp - 0x30], xmm0
+0x0100ca9523  mov       dword ptr [rbp - 0x20], 0
+0x0100ca952a  lea       rsi, [rbp - 0x30]
+0x0100ca952e  mov       edi, edx
+0x0100ca9530  mov       edx, 0x14
+0x0100ca9535  call      0x100e39670  ; __ZN9prodjlink9LinkProxy12getModelNameEjPcj |
+0x0100ca953a  cmp       byte ptr [rbp - 0x30], 0
+0x0100ca953e  je        0x100ca9566
+0x0100ca9540  lea       rsi, [rbp - 0x30]
+0x0100ca9544  mov       rdi, rbx
+0x0100ca9547  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0100ca954c  mov       rax, qword ptr [rip + 0x4853a25]
+0x0100ca9553  mov       rax, qword ptr [rax]
+0x0100ca9556  cmp       rax, qword ptr [rbp - 0x10]
+0x0100ca955a  jne       0x100ca957e
+0x0100ca955c  mov       rax, rbx
+0x0100ca955f  add       rsp, 0x28
+0x0100ca9563  pop       rbx
+0x0100ca9564  pop       rbp
+0x0100ca9565  ret
+0x0100ca9566  mov       rdi, rbx
+0x0100ca9569  call      0x10278c8d0  ; __ZN4juce6StringC1Ev |
+0x0100ca956e  mov       rax, qword ptr [rip + 0x4853a03]
+0x0100ca9575  mov       rax, qword ptr [rax]
+0x0100ca9578  cmp       rax, qword ptr [rbp - 0x10]
+0x0100ca957c  je        0x100ca955c
+0x0100ca957e  call      0x1038c3da0
+0x0100ca9583  nop       word ptr cs:[rax + rax]
+
+## __Z30DsqlContent_GetNewCDJSupportedj | 
+address=0x102256b20 size=0xe0
+0x0102256b20  push      rbp
+0x0102256b21  mov       rbp, rsp
+0x0102256b24  push      r15
+0x0102256b26  push      r14
+0x0102256b28  push      rbx
+0x0102256b29  sub       rsp, 0x18
+0x0102256b2d  mov       dword ptr [rbp - 0x24], edi
+0x0102256b30  mov       dword ptr [rbp - 0x20], 0
+0x0102256b37  lea       rax, [rbp - 0x24]
+0x0102256b3b  mov       qword ptr [rbp - 0x30], rax
+0x0102256b3f  sub       rsp, 8
+0x0102256b43  lea       rax, [rbp - 0x30]
+0x0102256b47  lea       rbx, [rip + 0x315cabe]
+0x0102256b4e  lea       rsi, [rip + 0x198be6b]  ; __ZL15cContentTblName; 'djmdContent'
+0x0102256b55  lea       rdx, [rip + 0x198be70]  ; __ZL17cContentIDIdxName; 'idxMasContent'
+0x0102256b5c  lea       rdi, [rbp - 0x20]
+0x0102256b60  xor       ecx, ecx
+0x0102256b62  xor       r8d, r8d
+0x0102256b65  xor       r9d, r9d
+0x0102256b68  push      rax
+0x0102256b69  push      1
+0x0102256b6b  push      rbx
+0x0102256b6c  call      0x10325ddb0  ; _edb_dyn_Select
+0x0102256b71  add       rsp, 0x20
+0x0102256b75  cmp       dword ptr [rbp - 0x20], 0
+0x0102256b79  mov       bl, 1
+0x0102256b7b  jne       0x102256bf3
+0x0102256b7d  test      rax, rax
+0x0102256b80  je        0x102256bf3
+0x0102256b82  lea       rsi, [rbp - 0x20]
+0x0102256b86  mov       rdi, rax
+0x0102256b89  call      0x10325e900  ; _edb_dyn_GetNextRow
+0x0102256b8e  cmp       dword ptr [rbp - 0x20], 0
+0x0102256b92  jne       0x102256bf3
+0x0102256b94  mov       r14, rax
+0x0102256b97  test      rax, rax
+0x0102256b9a  je        0x102256bf3
+0x0102256b9c  mov       byte ptr [rbp - 0x19], 0
+0x0102256ba0  lea       r15, [rbp - 0x19]
+0x0102256ba4  mov       rdi, r14
+0x0102256ba7  mov       esi, 0xe
+0x0102256bac  mov       rdx, r15
+0x0102256baf  call      0x10325e9f0  ; _edb_dyn_GetColumnValue
+0x0102256bb4  movsx     ebx, byte ptr [rax]
+0x0102256bb7  mov       rdi, r14
+0x0102256bba  mov       esi, 0x21
+0x0102256bbf  mov       rdx, r15
+0x0102256bc2  call      0x10325e9f0  ; _edb_dyn_GetColumnValue
+0x0102256bc7  lea       ecx, [rbx - 0xb]
+0x0102256bca  cmp       ecx, 2
+0x0102256bcd  jb        0x102256bdb
+0x0102256bcf  add       ebx, -5
+0x0102256bd2  cmp       ebx, 1
+0x0102256bd5  ja        0x102256bf1
+0x0102256bd7  xor       ebx, ebx
+0x0102256bd9  jmp       0x102256bf3
+0x0102256bdb  mov       eax, dword ptr [rax]
+0x0102256bdd  cmp       eax, 0xbb80
+0x0102256be2  sete      cl
+0x0102256be5  cmp       eax, 0xac44
+0x0102256bea  sete      bl
+0x0102256bed  or        bl, cl
+0x0102256bef  jmp       0x102256bf3
+0x0102256bf1  mov       bl, 1
+0x0102256bf3  mov       eax, ebx
+0x0102256bf5  add       rsp, 0x18
+0x0102256bf9  pop       rbx
+0x0102256bfa  pop       r14
+0x0102256bfc  pop       r15
+0x0102256bfe  pop       rbp
+0x0102256bff  ret
+
+## __ZN9PSvDBMain11clearAIOMapEh | 
+address=0x102520860 size=0x100
+0x0102520860  push      rbp
+0x0102520861  mov       rbp, rsp
+0x0102520864  push      r15
+0x0102520866  push      r14
+0x0102520868  push      r12
+0x010252086a  push      rbx
+0x010252086b  mov       r12d, esi
+0x010252086e  mov       r15, rdi
+0x0102520871  lea       r14, [rdi + 0x758]
+0x0102520878  mov       rdi, r14
+0x010252087b  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x0102520880  mov       rdi, qword ptr [r15 + 0x748]
+0x0102520887  test      rdi, rdi
+0x010252088a  je        0x102520947
+0x0102520890  lea       rax, [r15 + 0x748]
+0x0102520897  mov       rcx, rdi
+0x010252089a  jmp       0x1025208b0
+0x010252089c  nop       dword ptr [rax]
+0x01025208a0  add       rcx, 8
+0x01025208a4  mov       rcx, qword ptr [rcx]
+0x01025208a7  test      rcx, rcx
+0x01025208aa  je        0x102520947
+0x01025208b0  cmp       byte ptr [rcx + 0x19], r12b
+0x01025208b4  ja        0x1025208a4
+0x01025208b6  jb        0x1025208a0
+0x01025208b8  mov       rbx, rax
+0x01025208bb  mov       rcx, rdi
+0x01025208be  nop
+0x01025208c0  xor       edx, edx
+0x01025208c2  cmp       byte ptr [rcx + 0x19], r12b
+0x01025208c6  setb      dl
+0x01025208c9  cmovae    rbx, rcx
+0x01025208cd  mov       rcx, qword ptr [rcx + rdx*8]
+0x01025208d1  test      rcx, rcx
+0x01025208d4  jne       0x1025208c0
+0x01025208d6  cmp       rbx, rax
+0x01025208d9  je        0x102520947
+0x01025208db  cmp       byte ptr [rbx + 0x19], r12b
+0x01025208df  ja        0x102520947
+0x01025208e1  mov       rcx, qword ptr [rbx + 8]
+0x01025208e5  test      rcx, rcx
+0x01025208e8  je        0x1025208fd
+0x01025208ea  nop       word ptr [rax + rax]
+0x01025208f0  mov       rax, rcx
+0x01025208f3  mov       rcx, qword ptr [rcx]
+0x01025208f6  test      rcx, rcx
+0x01025208f9  jne       0x1025208f0
+0x01025208fb  jmp       0x102520920
+0x01025208fd  mov       rax, qword ptr [rbx + 0x10]
+0x0102520901  cmp       qword ptr [rax], rbx
+0x0102520904  je        0x102520920
+0x0102520906  lea       rcx, [rbx + 0x10]
+0x010252090a  nop       word ptr [rax + rax]
+0x0102520910  mov       rdx, qword ptr [rcx]
+0x0102520913  lea       rcx, [rdx + 0x10]
+0x0102520917  mov       rax, qword ptr [rdx + 0x10]
+0x010252091b  cmp       qword ptr [rax], rdx
+0x010252091e  jne       0x102520910
+0x0102520920  cmp       qword ptr [r15 + 0x740], rbx
+0x0102520927  jne       0x102520930
+0x0102520929  mov       qword ptr [r15 + 0x740], rax
+0x0102520930  dec       qword ptr [r15 + 0x750]
+0x0102520937  mov       rsi, rbx
+0x010252093a  call      0x100126b60  ; __ZNSt3__113__tree_removeIPNS_16__tree_node_baseIPvEEEEvT_S5_ |
+0x010252093f  mov       rdi, rbx
+0x0102520942  call      0x1038c3cc8
+0x0102520947  mov       rdi, r14
+0x010252094a  pop       rbx
+0x010252094b  pop       r12
+0x010252094d  pop       r14
+0x010252094f  pop       r15
+0x0102520951  pop       rbp
+0x0102520952  jmp       0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x0102520957  nop       word ptr [rax + rax]
+
+## __ZN9PSvDBMain5isAIOEh | 
+address=0x102521e80 size=0x2b0
+0x0102521e80  push      rbp
+0x0102521e81  mov       rbp, rsp
+0x0102521e84  push      r15
+0x0102521e86  push      r14
+0x0102521e88  push      r13
+0x0102521e8a  push      r12
+0x0102521e8c  push      rbx
+0x0102521e8d  sub       rsp, 0x38
+0x0102521e91  mov       r15d, esi
+0x0102521e94  mov       rbx, rdi
+0x0102521e97  add       rdi, 0x758
+0x0102521e9e  mov       qword ptr [rbp - 0x48], rdi
+0x0102521ea2  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x0102521ea7  mov       qword ptr [rbp - 0x38], rbx
+0x0102521eab  mov       rbx, qword ptr [rbx + 0x748]
+0x0102521eb2  test      rbx, rbx
+0x0102521eb5  je        0x102521f22
+0x0102521eb7  mov       rax, rbx
+0x0102521eba  jmp       0x102521ecc
+0x0102521ebc  nop       dword ptr [rax]
+0x0102521ec0  add       rax, 8
+0x0102521ec4  mov       rax, qword ptr [rax]
+0x0102521ec7  test      rax, rax
+0x0102521eca  je        0x102521f22
+0x0102521ecc  cmp       byte ptr [rax + 0x19], r15b
+0x0102521ed0  ja        0x102521ec4
+0x0102521ed2  jb        0x102521ec0
+0x0102521ed4  mov       rax, qword ptr [rbp - 0x38]
+0x0102521ed8  lea       r12, [rax + 0x748]
+0x0102521edf  cmp       byte ptr [rbx + 0x19], r15b
+0x0102521ee3  jbe       0x102521f00
+0x0102521ee5  nop       word ptr cs:[rax + rax]
+0x0102521ef0  mov       rax, qword ptr [rbx]
+0x0102521ef3  mov       r12, rbx
+0x0102521ef6  test      rax, rax
+0x0102521ef9  jne       0x102521f17
+0x0102521efb  jmp       0x102522019
+0x0102521f00  jae       0x102522019
+0x0102521f06  lea       r12, [rbx + 8]
+0x0102521f0a  mov       rax, qword ptr [rbx + 8]
+0x0102521f0e  test      rax, rax
+0x0102521f11  je        0x102522019
+0x0102521f17  mov       rbx, rax
+0x0102521f1a  cmp       byte ptr [rbx + 0x19], r15b
+0x0102521f1e  jbe       0x102521f00
+0x0102521f20  jmp       0x102521ef0
+0x0102521f22  lea       rdi, [rip + 0x35b027f]  ; __ZN9prodjlink9ProDJLink15singletonHolderE
+0x0102521f29  call      0x1000b8f30  ; __ZN4juce15SingletonHolderIN9prodjlink9ProDJLinkENS_15CriticalSectionELb0EE3getEv |
+0x0102521f2e  movzx     r13d, r15b
+0x0102521f32  lea       rdi, [rbp - 0x40]
+0x0102521f36  mov       rsi, rax
+0x0102521f39  mov       edx, r13d
+0x0102521f3c  call      0x100ca9500  ; __ZN9prodjlink9ProDJLink12getModelNameEi |
+0x0102521f41  lea       rsi, [rip + 0x2e8a0a5]
+0x0102521f48  lea       rdi, [rbp - 0x58]
+0x0102521f4c  call      0x10278ad70  ; __ZN4juce9StringRefC1EPKc |
+0x0102521f51  mov       rsi, qword ptr [rbp - 0x58]
+0x0102521f55  lea       r14, [rbp - 0x40]
+0x0102521f59  mov       rdi, r14
+0x0102521f5c  call      0x10278ad20  ; __ZNK4juce6String10startsWithENS_9StringRefE |
+0x0102521f61  mov       r12d, eax
+0x0102521f64  mov       rdi, r14
+0x0102521f67  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0102521f6c  lea       rdi, [rip + 0x35b0235]  ; __ZN9prodjlink9ProDJLink15singletonHolderE
+0x0102521f73  call      0x1000b8f30  ; __ZN4juce15SingletonHolderIN9prodjlink9ProDJLinkENS_15CriticalSectionELb0EE3getEv |
+0x0102521f78  mov       rbx, qword ptr [rbp - 0x38]
+0x0102521f7c  lea       rdi, [rbp - 0x40]
+0x0102521f80  mov       rsi, rax
+0x0102521f83  mov       edx, r13d
+0x0102521f86  call      0x100ca9500  ; __ZN9prodjlink9ProDJLink12getModelNameEi |
+0x0102521f8b  lea       r13, [rbx + 0x748]
+0x0102521f92  lea       rsi, [rip + 0x2e151aa]  ; 'XDJ-AZ'
+0x0102521f99  lea       rdi, [rbp - 0x50]
+0x0102521f9d  call      0x10278ad70  ; __ZN4juce9StringRefC1EPKc |
+0x0102521fa2  mov       rsi, qword ptr [rbp - 0x50]
+0x0102521fa6  lea       r14, [rbp - 0x40]
+0x0102521faa  mov       rdi, r14
+0x0102521fad  call      0x10278ad20  ; __ZNK4juce6String10startsWithENS_9StringRefE |
+0x0102521fb2  mov       byte ptr [rbp - 0x29], al
+0x0102521fb5  mov       rdi, r14
+0x0102521fb8  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0102521fbd  mov       rax, qword ptr [r13]
+0x0102521fc1  test      rax, rax
+0x0102521fc4  je        0x102522008
+0x0102521fc6  add       rbx, 0x748
+0x0102521fcd  jmp       0x102521fe2
+0x0102521fcf  nop
+0x0102521fd0  mov       rcx, qword ptr [rax]
+0x0102521fd3  mov       rbx, rax
+0x0102521fd6  test      rcx, rcx
+0x0102521fd9  je        0x10252206b
+0x0102521fdf  mov       rax, rcx
+0x0102521fe2  cmp       byte ptr [rax + 0x19], r15b
+0x0102521fe6  ja        0x102521fd0
+0x0102521fe8  jae       0x102521ff7
+0x0102521fea  lea       rbx, [rax + 8]
+0x0102521fee  mov       rcx, qword ptr [rax + 8]
+0x0102521ff2  test      rcx, rcx
+0x0102521ff5  jne       0x102521fdf
+0x0102521ff7  mov       r13, rax
+0x0102521ffa  mov       r14, qword ptr [rbx]
+0x0102521ffd  test      r14, r14
+0x0102522000  jne       0x1025220d2
+0x0102522006  jmp       0x102522079
+0x0102522008  mov       rbx, r13
+0x010252200b  mov       r14, qword ptr [rbx]
+0x010252200e  test      r14, r14
+0x0102522011  jne       0x1025220d2
+0x0102522017  jmp       0x102522079
+0x0102522019  mov       r14, qword ptr [r12]
+0x010252201d  test      r14, r14
+0x0102522020  jne       0x1025220f2
+0x0102522026  mov       edi, 0x20
+0x010252202b  call      0x1038c3cd4
+0x0102522030  mov       r14, rax
+0x0102522033  mov       byte ptr [rax + 0x19], r15b
+0x0102522037  mov       byte ptr [rax + 0x1a], 0
+0x010252203b  vxorps    xmm0, xmm0, xmm0
+0x010252203f  vmovups   xmmword ptr [rax], xmm0
+0x0102522043  mov       qword ptr [rax + 0x10], rbx
+0x0102522047  mov       qword ptr [r12], rax
+0x010252204b  mov       rbx, qword ptr [rbp - 0x38]
+0x010252204f  mov       rax, qword ptr [rbx + 0x740]
+0x0102522056  mov       rax, qword ptr [rax]
+0x0102522059  test      rax, rax
+0x010252205c  je        0x1025220dc
+0x010252205e  mov       qword ptr [rbx + 0x740], rax
+0x0102522065  mov       rsi, qword ptr [r12]
+0x0102522069  jmp       0x1025220df
+0x010252206b  mov       r13, rax
+0x010252206e  mov       rbx, rax
+0x0102522071  mov       r14, qword ptr [rbx]
+0x0102522074  test      r14, r14
+0x0102522077  jne       0x1025220d2
+0x0102522079  mov       edi, 0x20
+0x010252207e  call      0x1038c3cd4
+0x0102522083  mov       r14, rax
+0x0102522086  mov       byte ptr [rax + 0x19], r15b
+0x010252208a  mov       byte ptr [rax + 0x1a], 0
+0x010252208e  vxorps    xmm0, xmm0, xmm0
+0x0102522092  vmovups   xmmword ptr [rax], xmm0
+0x0102522096  mov       qword ptr [rax + 0x10], r13
+0x010252209a  mov       qword ptr [rbx], rax
+0x010252209d  mov       r15, qword ptr [rbp - 0x38]
+0x01025220a1  mov       rax, qword ptr [r15 + 0x740]
+0x01025220a8  mov       rax, qword ptr [rax]
+0x01025220ab  test      rax, rax
+0x01025220ae  je        0x1025220bc
+0x01025220b0  mov       qword ptr [r15 + 0x740], rax
+0x01025220b7  mov       rsi, qword ptr [rbx]
+0x01025220ba  jmp       0x1025220bf
+0x01025220bc  mov       rsi, r14
+0x01025220bf  mov       rdi, qword ptr [r15 + 0x748]
+0x01025220c6  call      0x10004d380  ; __ZNSt3__127__tree_balance_after_insertIPNS_16__tree_node_baseIPvEEEEvT_S5_ |
+0x01025220cb  inc       qword ptr [r15 + 0x750]
+0x01025220d2  or        r12b, byte ptr [rbp - 0x29]
+0x01025220d6  mov       byte ptr [r14 + 0x1a], r12b
+0x01025220da  jmp       0x1025220fb
+0x01025220dc  mov       rsi, r14
+0x01025220df  mov       rdi, qword ptr [rbx + 0x748]
+0x01025220e6  call      0x10004d380  ; __ZNSt3__127__tree_balance_after_insertIPNS_16__tree_node_baseIPvEEEEvT_S5_ |
+0x01025220eb  inc       qword ptr [rbx + 0x750]
+0x01025220f2  cmp       byte ptr [r14 + 0x1a], 0
+0x01025220f7  setne     r12b
+0x01025220fb  mov       rdi, qword ptr [rbp - 0x48]
+0x01025220ff  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x0102522104  mov       eax, r12d
+0x0102522107  add       rsp, 0x38
+0x010252210b  pop       rbx
+0x010252210c  pop       r12
+0x010252210e  pop       r13
+0x0102522110  pop       r14
+0x0102522112  pop       r15
+0x0102522114  pop       rbp
+0x0102522115  ret
+0x0102522116  jmp       0x10252211a
+0x0102522118  jmp       0x10252211a
+0x010252211a  mov       rbx, rax
+0x010252211d  mov       rdi, qword ptr [rbp - 0x48]
+0x0102522121  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x0102522126  mov       rdi, rbx
+0x0102522129  call      0x1038c3812
+0x010252212e  nop
+

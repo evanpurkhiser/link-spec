@@ -1,0 +1,185 @@
+{
+  "name": "link-played-state",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-process-restart-settings-snapshot",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 8,
+    "render_arguments": [0, "$total", 12, 1, 0],
+    "read_timeout_ms": 3000
+  },
+  "cases": [
+    {
+      "id": "baseline-tracks",
+      "description": "Track rows before any Link-history mutation",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    },
+    {
+      "id": "baseline-first-state",
+      "description": "Play-state scalar for the first track before mutation",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.first"}],
+      "render": false,
+      "direct_response": true,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "baseline-second-state",
+      "description": "Play-state scalar for the second track before mutation",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.second"}],
+      "render": false,
+      "direct_response": true,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "insert-first",
+      "description": "Player inserts the first track into Link history",
+      "request_kind": "0x3001",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.track.first"}],
+      "render": false,
+      "send_only": true,
+      "expect": {"outcome": "sent"}
+    },
+    {
+      "id": "root-after-first",
+      "description": "Current Link-history root after the first insertion",
+      "request_kind": "0x1012",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "fresh_connection": true,
+      "delay_before_connection_ms": 500,
+      "expect": {"outcome": "menu", "total": 1, "row_count": 1}
+    },
+    {
+      "id": "first-state-after-insert",
+      "description": "Play-state scalar for the inserted first track",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.first"}],
+      "render": false,
+      "direct_response": true,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "tracks-after-first",
+      "description": "Track rows after inserting the first track",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    },
+    {
+      "id": "insert-second",
+      "description": "Player inserts the second track into Link history",
+      "request_kind": "0x3001",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.track.second"}],
+      "render": false,
+      "send_only": true,
+      "expect": {"outcome": "sent"}
+    },
+    {
+      "id": "first-state-after-second-insert",
+      "description": "First-track play-state after inserting the second track",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.first"}],
+      "render": false,
+      "direct_response": true,
+      "fresh_connection": true,
+      "delay_before_connection_ms": 500,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "second-state-after-insert",
+      "description": "Second-track play-state after its insertion",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.second"}],
+      "render": false,
+      "direct_response": true,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "tracks-after-second",
+      "description": "Track rows after inserting both tracks",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    },
+    {
+      "id": "remove-first",
+      "description": "Player removes the first track from Link history",
+      "request_kind": "0x3401",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.track.first"}],
+      "render": false,
+      "expect": {"outcome": "menu", "total": 0, "row_count": 0}
+    },
+    {
+      "id": "first-state-after-remove",
+      "description": "First-track play-state after its history removal",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.first"}],
+      "render": false,
+      "direct_response": true,
+      "fresh_connection": true,
+      "delay_before_connection_ms": 500,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "second-state-after-first-remove",
+      "description": "Second-track play-state after removing only the first track",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.second"}],
+      "render": false,
+      "direct_response": true,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "tracks-after-first-remove",
+      "description": "Track rows after removing only the first track",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    },
+    {
+      "id": "delete-history",
+      "description": "Player deletes the current Link history",
+      "request_kind": "0x3101",
+      "arguments": [
+        {"number": "$context"},
+        {"case_item": {"case": "root-after-first", "canonicalize": true}}
+      ],
+      "render": false,
+      "send_only": true,
+      "expect": {"outcome": "sent"}
+    },
+    {
+      "id": "second-state-after-history-delete",
+      "description": "Second-track play-state after deleting the whole Link history",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.second"}],
+      "render": false,
+      "direct_response": true,
+      "fresh_connection": true,
+      "delay_before_connection_ms": 500,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "tracks-after-history-delete",
+      "description": "Track rows after deleting the whole Link history",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    },
+    {
+      "id": "final-root",
+      "description": "Link-history root after deleting the current history",
+      "request_kind": "0x1012",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 0, "row_count": 0}
+    }
+  ]
+}

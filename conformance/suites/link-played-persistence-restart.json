@@ -1,0 +1,43 @@
+{
+  "name": "link-played-persistence-restart",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "same-database-clean-process-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 8,
+    "render_arguments": [0, "$total", 12, 1, 0],
+    "read_timeout_ms": 3000
+  },
+  "cases": [
+    {
+      "id": "first-state-after-restart",
+      "description": "Primed first-track scalar after clean process restart",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.first"}],
+      "render": false,
+      "direct_response": true,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "second-state-after-restart",
+      "description": "Unprimed second-track scalar after clean process restart",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.second"}],
+      "render": false,
+      "direct_response": true,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "tracks-after-restart",
+      "description": "Track rows after clean process restart",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    }
+  ]
+}

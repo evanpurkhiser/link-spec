@@ -1,0 +1,1137 @@
+## __ZN9PSvDBComm3runEv | 
+address=0x1013f4940 size=0x9f0
+0x01013f4940  push      rbp
+0x01013f4941  mov       rbp, rsp
+0x01013f4944  push      r15
+0x01013f4946  push      r14
+0x01013f4948  push      r13
+0x01013f494a  push      r12
+0x01013f494c  push      rbx
+0x01013f494d  sub       rsp, 0x28
+0x01013f4951  mov       r12, rdi
+0x01013f4954  call      0x10278f030  ; __ZNK4juce6Thread16threadShouldExitEv |
+0x01013f4959  xor       r13d, r13d
+0x01013f495c  test      al, al
+0x01013f495e  je        0x1013f4a67
+0x01013f4964  xor       eax, eax
+0x01013f4966  mov       qword ptr [rbp - 0x30], rax
+0x01013f496a  lea       r15, [rip + 0x3f84756]  ; 'PSvDBConnection::Drop() called in PSvDBComm::OnDropped.    PID:%d'
+0x01013f4971  mov       r14d, 0x1d8
+0x01013f4977  xor       ebx, ebx
+0x01013f4979  jmp       0x1013f49a8
+0x01013f497b  nop       dword ptr [rax + rax]
+0x01013f4980  mov       qword ptr [r12 + rbx*8 + 0x248], 0
+0x01013f498c  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4994  add       rdi, r14
+0x01013f4997  movzx     esi, bl
+0x01013f499a  call      0x10261f490  ; __ZN14PSvDBCancelBox22ClearPlayerCancelEntryEh |
+0x01013f499f  inc       rbx
+0x01013f49a2  cmp       rbx, 0xd
+0x01013f49a6  je        0x1013f4a0b
+0x01013f49a8  cmp       qword ptr [r12 + rbx*8 + 0x248], 0
+0x01013f49b1  je        0x1013f499f
+0x01013f49b3  lea       rdi, [rip + 0x3f8465f]  ; 'PSvDBComm::OnDropped(%d) called in PSvDBComm::run.'
+0x01013f49ba  mov       esi, ebx
+0x01013f49bc  xor       eax, eax
+0x01013f49be  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f49c3  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f49cb  call      0x1025207d0  ; __ZN9PSvDBMain17GetLocalLinkUpFlgEv |
+0x01013f49d0  mov       rdi, r15
+0x01013f49d3  mov       esi, ebx
+0x01013f49d5  xor       eax, eax
+0x01013f49d7  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f49dc  mov       rdi, qword ptr [r12 + rbx*8 + 0x248]
+0x01013f49e4  call      0x10143aea0  ; __ZN15PSvDBConnection4DropEv |
+0x01013f49e9  mov       r13, qword ptr [r12 + rbx*8 + 0x248]
+0x01013f49f1  test      r13, r13
+0x01013f49f4  je        0x1013f4980
+0x01013f49f6  mov       rdi, r13
+0x01013f49f9  call      0x10143af90  ; __ZN15PSvDBConnectionD1Ev |
+0x01013f49fe  mov       rdi, r13
+0x01013f4a01  call      0x1038c3cc8
+0x01013f4a06  jmp       0x1013f4980
+0x01013f4a0b  mov       rbx, qword ptr [rbp - 0x30]
+0x01013f4a0f  test      rbx, rbx
+0x01013f4a12  je        0x1013f4a3a
+0x01013f4a14  lea       rdi, [rip + 0x3f84631]  ; 'PSvDBConnection::Drop() called in PSvDBComm::run.'
+0x01013f4a1b  xor       eax, eax
+0x01013f4a1d  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f4a22  mov       rdi, rbx
+0x01013f4a25  call      0x10143aea0  ; __ZN15PSvDBConnection4DropEv |
+0x01013f4a2a  mov       rdi, rbx
+0x01013f4a2d  call      0x10143af90  ; __ZN15PSvDBConnectionD1Ev |
+0x01013f4a32  mov       rdi, rbx
+0x01013f4a35  call      0x1038c3cc8
+0x01013f4a3a  mov       rdi, qword ptr [r12 + 0x1e0]
+0x01013f4a42  test      rdi, rdi
+0x01013f4a45  je        0x1013f4a58
+0x01013f4a47  call      0x10328bca0  ; _edb_agent_close
+0x01013f4a4c  mov       qword ptr [r12 + 0x1e0], 0
+0x01013f4a58  add       rsp, 0x28
+0x01013f4a5c  pop       rbx
+0x01013f4a5d  pop       r12
+0x01013f4a5f  pop       r13
+0x01013f4a61  pop       r14
+0x01013f4a63  pop       r15
+0x01013f4a65  pop       rbp
+0x01013f4a66  ret
+0x01013f4a67  lea       r15, [r12 + 0x1f8]
+0x01013f4a6f  lea       rax, [r12 + 0x1e0]
+0x01013f4a77  mov       qword ptr [rbp - 0x48], rax
+0x01013f4a7b  xor       eax, eax
+0x01013f4a7d  mov       qword ptr [rbp - 0x30], rax
+0x01013f4a81  jmp       0x1013f4a98
+0x01013f4a83  call      0x1038c3cc8
+0x01013f4a88  nop       dword ptr [rax + rax]
+0x01013f4a90  mov       rdi, r14
+0x01013f4a93  call      0x1038c3cc8
+0x01013f4a98  mov       rdi, r15
+0x01013f4a9b  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x01013f4aa0  mov       ebx, dword ptr [r12 + 0x244]
+0x01013f4aa8  mov       rdi, r15
+0x01013f4aab  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x01013f4ab0  test      ebx, ebx
+0x01013f4ab2  jle       0x1013f4d12
+0x01013f4ab8  mov       rdi, r15
+0x01013f4abb  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x01013f4ac0  mov       eax, dword ptr [r12 + 0x244]
+0x01013f4ac8  test      eax, eax
+0x01013f4aca  je        0x1013f4bb0
+0x01013f4ad0  mov       rdi, qword ptr [r12 + 0x238]
+0x01013f4ad8  mov       r14, qword ptr [rdi]
+0x01013f4adb  dec       eax
+0x01013f4add  lea       rsi, [rdi + 8]
+0x01013f4ae1  movsxd    rdx, eax
+0x01013f4ae4  shl       rdx, 3
+0x01013f4ae8  call      0x1038c42b6
+0x01013f4aed  mov       eax, dword ptr [r12 + 0x240]
+0x01013f4af5  mov       ecx, dword ptr [r12 + 0x244]
+0x01013f4afd  lea       ebx, [rcx - 1]
+0x01013f4b00  mov       dword ptr [r12 + 0x244], ebx
+0x01013f4b08  add       ecx, ecx
+0x01013f4b0a  add       ecx, -2
+0x01013f4b0d  test      ecx, ecx
+0x01013f4b0f  cmovle    ecx, r13d
+0x01013f4b13  cmp       eax, ecx
+0x01013f4b15  jle       0x1013f4b49
+0x01013f4b17  cmp       ebx, 9
+0x01013f4b1a  mov       ecx, 8
+0x01013f4b1f  cmovl     ebx, ecx
+0x01013f4b22  cmp       eax, ebx
+0x01013f4b24  jle       0x1013f4b49
+0x01013f4b26  mov       esi, ebx
+0x01013f4b28  shl       rsi, 3
+0x01013f4b2c  mov       rdi, qword ptr [r12 + 0x238]
+0x01013f4b34  call      0x1038c44b4
+0x01013f4b39  mov       qword ptr [r12 + 0x238], rax
+0x01013f4b41  mov       dword ptr [r12 + 0x240], ebx
+0x01013f4b49  mov       rdi, r15
+0x01013f4b4c  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x01013f4b51  test      r14, r14
+0x01013f4b54  je        0x1013f4a98
+0x01013f4b5a  mov       rax, qword ptr [r14 + 0x18]
+0x01013f4b5e  test      rax, rax
+0x01013f4b61  je        0x1013f4bbd
+0x01013f4b63  movzx     ecx, word ptr [rax + 4]
+0x01013f4b67  cmp       ecx, 0x4002
+0x01013f4b6d  jne       0x1013f4b7f
+0x01013f4b6f  mov       esi, dword ptr [rax]
+0x01013f4b71  lea       rdi, [rip + 0x3f843bc]
+0x01013f4b78  xor       eax, eax
+0x01013f4b7a  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f4b7f  movsx     eax, word ptr [r14 + 0xc]
+0x01013f4b84  dec       eax
+0x01013f4b86  cmp       eax, 5
+0x01013f4b89  ja        0x1013f4bd7
+0x01013f4b8b  lea       rcx, [rip + 0x786]
+0x01013f4b92  movsxd    rax, dword ptr [rcx + rax*4]
+0x01013f4b96  add       rax, rcx
+0x01013f4b99  jmp       rax
+0x01013f4b9b  mov       al, byte ptr [r14 + 0xf]
+0x01013f4b9f  mov       byte ptr [r12 + 0x1e8], al
+0x01013f4ba7  jmp       0x1013f4e80
+0x01013f4bac  nop       dword ptr [rax]
+0x01013f4bb0  mov       rdi, r15
+0x01013f4bb3  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x01013f4bb8  jmp       0x1013f4a98
+0x01013f4bbd  lea       rdi, [rip + 0x3f8434f]
+0x01013f4bc4  xor       eax, eax
+0x01013f4bc6  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f4bcb  movsx     eax, word ptr [r14 + 0xc]
+0x01013f4bd0  dec       eax
+0x01013f4bd2  cmp       eax, 5
+0x01013f4bd5  jbe       0x1013f4b8b
+0x01013f4bd7  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4bdf  movzx     esi, byte ptr [r14 + 0xf]
+0x01013f4be4  mov       edx, 0x1010350
+0x01013f4be9  jmp       0x1013f4cdb
+0x01013f4bee  mov       byte ptr [r12 + 0x1e8], 0xff
+0x01013f4bf7  xor       r13d, r13d
+0x01013f4bfa  jmp       0x1013f4c32
+0x01013f4bfc  nop       dword ptr [rax]
+0x01013f4c00  mov       qword ptr [r12 + r13*8 + 0x248], 0
+0x01013f4c0c  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4c14  mov       eax, 0x1d8
+0x01013f4c19  add       rdi, rax
+0x01013f4c1c  movzx     esi, r13b
+0x01013f4c20  call      0x10261f490  ; __ZN14PSvDBCancelBox22ClearPlayerCancelEntryEh |
+0x01013f4c25  inc       r13
+0x01013f4c28  cmp       r13, 0xd
+0x01013f4c2c  je        0x1013f4ce7
+0x01013f4c32  cmp       qword ptr [r12 + r13*8 + 0x248], 0
+0x01013f4c3b  je        0x1013f4c25
+0x01013f4c3d  movzx     esi, byte ptr [r14 + 0xf]
+0x01013f4c42  dec       esi
+0x01013f4c44  lea       rdi, [rip + 0x3f8454b]  ; 'PSvDBComm::OnDropped(%d) called in PSvDBComm::OnLinkDown.'
+0x01013f4c4b  xor       eax, eax
+0x01013f4c4d  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f4c52  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4c5a  call      0x1025207d0  ; __ZN9PSvDBMain17GetLocalLinkUpFlgEv |
+0x01013f4c5f  lea       rdi, [rip + 0x3f84461]  ; 'PSvDBConnection::Drop() called in PSvDBComm::OnDropped.    PID:%d'
+0x01013f4c66  mov       esi, r13d
+0x01013f4c69  xor       eax, eax
+0x01013f4c6b  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f4c70  mov       rdi, qword ptr [r12 + r13*8 + 0x248]
+0x01013f4c78  call      0x10143aea0  ; __ZN15PSvDBConnection4DropEv |
+0x01013f4c7d  mov       rbx, qword ptr [r12 + r13*8 + 0x248]
+0x01013f4c85  test      rbx, rbx
+0x01013f4c88  je        0x1013f4c00
+0x01013f4c8e  mov       rdi, rbx
+0x01013f4c91  call      0x10143af90  ; __ZN15PSvDBConnectionD1Ev |
+0x01013f4c96  mov       rdi, rbx
+0x01013f4c99  call      0x1038c3cc8
+0x01013f4c9e  jmp       0x1013f4c00
+0x01013f4ca3  movzx     esi, byte ptr [r14 + 0xf]
+0x01013f4ca8  cmp       esi, 0xd
+0x01013f4cab  jb        0x1013f4d91
+0x01013f4cb1  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4cb9  mov       edx, 0x101034f
+0x01013f4cbe  jmp       0x1013f4cdb
+0x01013f4cc0  movzx     esi, byte ptr [r14 + 0xf]
+0x01013f4cc5  cmp       esi, 0xd
+0x01013f4cc8  jb        0x1013f4dc6
+0x01013f4cce  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4cd6  mov       edx, 0x1010351
+0x01013f4cdb  xor       ecx, ecx
+0x01013f4cdd  call      0x102520ec0  ; __ZN9PSvDBMain12DeliverErrorEijt |
+0x01013f4ce2  jmp       0x1013f4e80
+0x01013f4ce7  mov       rax, qword ptr [rbp - 0x48]
+0x01013f4ceb  mov       rdi, qword ptr [rax]
+0x01013f4cee  test      rdi, rdi
+0x01013f4cf1  mov       r13d, 0
+0x01013f4cf7  je        0x1013f4e80
+0x01013f4cfd  call      0x10328bca0  ; _edb_agent_close
+0x01013f4d02  mov       rax, qword ptr [rbp - 0x48]
+0x01013f4d06  mov       qword ptr [rax], 0
+0x01013f4d0d  jmp       0x1013f4e80
+0x01013f4d12  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4d1a  call      0x1025207d0  ; __ZN9PSvDBMain17GetLocalLinkUpFlgEv |
+0x01013f4d1f  vmovsd    xmm0, qword ptr [rip + 0x271b761]
+0x01013f4d27  test      eax, eax
+0x01013f4d29  je        0x1013f4f9f
+0x01013f4d2f  mov       rbx, qword ptr [rbp - 0x48]
+0x01013f4d33  mov       rsi, qword ptr [rbx]
+0x01013f4d36  test      rsi, rsi
+0x01013f4d39  je        0x1013f4eae
+0x01013f4d3f  mov       edi, 0x2710
+0x01013f4d44  call      0x10328d4b0  ; _edb_agent_wait
+0x01013f4d49  test      eax, eax
+0x01013f4d4b  jle       0x1013f4fa7
+0x01013f4d51  mov       rbx, qword ptr [rbp - 0x30]
+0x01013f4d55  test      rbx, rbx
+0x01013f4d58  je        0x1013f4f1c
+0x01013f4d5e  mov       rdi, rbx
+0x01013f4d61  call      0x10143b100  ; __ZN15PSvDBConnection6ListenEv |
+0x01013f4d66  test      eax, eax
+0x01013f4d68  jne       0x1013f4fe8
+0x01013f4d6e  movzx     esi, byte ptr [rbx]
+0x01013f4d71  cmp       esi, 0xe
+0x01013f4d74  jb        0x1013f4fc2
+0x01013f4d7a  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4d82  mov       edx, 0x101034c
+0x01013f4d87  mov       ecx, 2
+0x01013f4d8c  jmp       0x1013f4fe3
+0x01013f4d91  mov       eax, esi
+0x01013f4d93  mov       rdi, qword ptr [r12 + rax*8 + 0x248]
+0x01013f4d9b  test      rdi, rdi
+0x01013f4d9e  je        0x1013f4eee
+0x01013f4da4  mov       rsi, qword ptr [r14 + 0x18]
+0x01013f4da8  call      0x10143bb60  ; __ZN15PSvDBConnection11SendCommandEP19_struct_db_comm_cmd |
+0x01013f4dad  cmp       eax, -2
+0x01013f4db0  jne       0x1013f4e80
+0x01013f4db6  movzx     esi, byte ptr [r14 + 0xf]
+0x01013f4dbb  dec       esi
+0x01013f4dbd  lea       rdi, [rip + 0x3f8437b]  ; 'PSvDBComm::OnDropped(%d) called in PSvDBComm::OnSend cause SendCommand returns DROPED.'
+0x01013f4dc4  jmp       0x1013f4df4
+0x01013f4dc6  mov       eax, esi
+0x01013f4dc8  mov       rdi, qword ptr [r12 + rax*8 + 0x248]
+0x01013f4dd0  test      rdi, rdi
+0x01013f4dd3  je        0x1013f4f05
+0x01013f4dd9  call      0x10143b420  ; __ZN15PSvDBConnection11IsConnectedEv |
+0x01013f4dde  test      al, al
+0x01013f4de0  je        0x1013f4e80
+0x01013f4de6  movzx     esi, byte ptr [r14 + 0xf]
+0x01013f4deb  dec       esi
+0x01013f4ded  lea       rdi, [rip + 0x3f84315]  ; 'PSvDBComm::OnDropped(%d) called in PSvDBComm::OnDrop.'
+0x01013f4df4  xor       eax, eax
+0x01013f4df6  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f4dfb  movzx     ebx, byte ptr [r14 + 0xf]
+0x01013f4e00  cmp       ebx, 0xc
+0x01013f4e03  ja        0x1013f4e80
+0x01013f4e05  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4e0d  call      0x1025207d0  ; __ZN9PSvDBMain17GetLocalLinkUpFlgEv |
+0x01013f4e12  lea       rdi, [rip + 0x3f842ae]  ; 'PSvDBConnection::Drop() called in PSvDBComm::OnDropped.    PID:%d'
+0x01013f4e19  mov       esi, ebx
+0x01013f4e1b  xor       eax, eax
+0x01013f4e1d  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f4e22  mov       rdi, qword ptr [r12 + rbx*8 + 0x248]
+0x01013f4e2a  call      0x10143aea0  ; __ZN15PSvDBConnection4DropEv |
+0x01013f4e2f  mov       r13, qword ptr [r12 + rbx*8 + 0x248]
+0x01013f4e37  test      r13, r13
+0x01013f4e3a  je        0x1013f4e4c
+0x01013f4e3c  mov       rdi, r13
+0x01013f4e3f  call      0x10143af90  ; __ZN15PSvDBConnectionD1Ev |
+0x01013f4e44  mov       rdi, r13
+0x01013f4e47  call      0x1038c3cc8
+0x01013f4e4c  mov       qword ptr [r12 + rbx*8 + 0x248], 0
+0x01013f4e58  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4e60  mov       eax, 0x1d8
+0x01013f4e65  add       rdi, rax
+0x01013f4e68  mov       esi, ebx
+0x01013f4e6a  call      0x10261f490  ; __ZN14PSvDBCancelBox22ClearPlayerCancelEntryEh |
+0x01013f4e6f  xor       r13d, r13d
+0x01013f4e72  nop       word ptr cs:[rax + rax]
+0x01013f4e80  mov       rdi, qword ptr [r14 + 0x18]
+0x01013f4e84  test      rdi, rdi
+0x01013f4e87  je        0x1013f4a90
+0x01013f4e8d  test      byte ptr [r14 + 0xe], 1
+0x01013f4e92  jne       0x1013f4a90
+0x01013f4e98  cmp       word ptr [r14 + 0xc], 3
+0x01013f4e9e  jne       0x1013f4a83
+0x01013f4ea4  call      0x10049ddd0  ; __Z11DBCCmd_FreePK19_struct_db_comm_cmd |
+0x01013f4ea9  jmp       0x1013f4a90
+0x01013f4eae  mov       rdi, qword ptr [rip + 0x43bcae3]  ; _cstrDatStrmBufSize
+0x01013f4eb5  call      0x1032900c0  ; _edb_socket_service
+0x01013f4eba  mov       qword ptr [r12 + 0x1d8], rax
+0x01013f4ec2  mov       rdi, qword ptr [rip + 0x43bcac7]  ; _cstrRemoteSrvName
+0x01013f4ec9  mov       rsi, rax
+0x01013f4ecc  mov       rdx, rbx
+0x01013f4ecf  call      0x10328ba30  ; _edb_agent_open
+0x01013f4ed4  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4edc  test      eax, eax
+0x01013f4ede  jle       0x1013f4f86
+0x01013f4ee4  call      0x1025207d0  ; __ZN9PSvDBMain17GetLocalLinkUpFlgEv |
+0x01013f4ee9  jmp       0x1013f4f97
+0x01013f4eee  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4ef6  mov       edx, 0x101034f
+0x01013f4efb  mov       ecx, 1
+0x01013f4f00  jmp       0x1013f4cdd
+0x01013f4f05  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4f0d  mov       edx, 0x1010351
+0x01013f4f12  mov       ecx, 1
+0x01013f4f17  jmp       0x1013f4cdd
+0x01013f4f1c  mov       edi, 0x40
+0x01013f4f21  call      0x1038c3cd4
+0x01013f4f26  mov       rbx, rax
+0x01013f4f29  mov       rdi, rax
+0x01013f4f2c  call      0x10143ad80  ; __ZN15PSvDBConnectionC1Ev |
+0x01013f4f31  mov       rsi, qword ptr [r12 + 0x1d8]
+0x01013f4f39  mov       rdx, qword ptr [r12 + 0x1e0]
+0x01013f4f41  mov       rcx, qword ptr [r12 + 0x1f0]
+0x01013f4f49  mov       rdi, rbx
+0x01013f4f4c  call      0x10143afa0  ; __ZN15PSvDBConnection10InitializeEPvS0_P9PSvDBMain |
+0x01013f4f51  test      eax, eax
+0x01013f4f53  je        0x1013f4fbc
+0x01013f4f55  mov       rdi, rbx
+0x01013f4f58  call      0x10143af90  ; __ZN15PSvDBConnectionD1Ev |
+0x01013f4f5d  mov       rdi, rbx
+0x01013f4f60  call      0x1038c3cc8
+0x01013f4f65  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4f6d  xor       esi, esi
+0x01013f4f6f  mov       edx, 0x101034c
+0x01013f4f74  mov       ecx, 1
+0x01013f4f79  call      0x102520ec0  ; __ZN9PSvDBMain12DeliverErrorEijt |
+0x01013f4f7e  xor       eax, eax
+0x01013f4f80  mov       qword ptr [rbp - 0x30], rax
+0x01013f4f84  jmp       0x1013f4fe8
+0x01013f4f86  xor       esi, esi
+0x01013f4f88  mov       edx, 0x101034e
+0x01013f4f8d  mov       ecx, 1
+0x01013f4f92  call      0x102520ec0  ; __ZN9PSvDBMain12DeliverErrorEijt |
+0x01013f4f97  vmovsd    xmm0, qword ptr [rip + 0x275bbb9]
+0x01013f4f9f  mov       rdi, r12
+0x01013f4fa2  call      0x1027c3980  ; __ZNK4juce6Thread4waitEd |
+0x01013f4fa7  mov       rdi, r12
+0x01013f4faa  call      0x10278f030  ; __ZNK4juce6Thread16threadShouldExitEv |
+0x01013f4faf  test      al, al
+0x01013f4fb1  je        0x1013f4a98
+0x01013f4fb7  jmp       0x1013f496a
+0x01013f4fbc  mov       qword ptr [rbp - 0x30], rbx
+0x01013f4fc0  jmp       0x1013f4fe8
+0x01013f4fc2  cmp       qword ptr [r12 + rsi*8 + 0x248], 0
+0x01013f4fcb  je        0x1013f52f5
+0x01013f4fd1  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f4fd9  mov       edx, 0x101034c
+0x01013f4fde  mov       ecx, 3
+0x01013f4fe3  call      0x102520ec0  ; __ZN9PSvDBMain12DeliverErrorEijt |
+0x01013f4fe8  xor       r14d, r14d
+0x01013f4feb  jmp       0x1013f501d
+0x01013f4fed  mov       rcx, qword ptr [rbp - 0x30]
+0x01013f4ff1  mov       qword ptr [r12 + rax*8 + 0x248], rcx
+0x01013f4ff9  mov       rdi, qword ptr [rbp - 0x40]
+0x01013f4ffd  call      0x10049ddd0  ; __Z11DBCCmd_FreePK19_struct_db_comm_cmd |
+0x01013f5002  dec       r14d
+0x01013f5005  xor       eax, eax
+0x01013f5007  mov       qword ptr [rbp - 0x30], rax
+0x01013f500b  nop       dword ptr [rax + rax]
+0x01013f5010  lea       eax, [r14 + 1]
+0x01013f5014  cmp       r14d, 0xc
+0x01013f5018  mov       r14d, eax
+0x01013f501b  jge       0x1013f4fa7
+0x01013f501d  movsxd    rbx, r14d
+0x01013f5020  mov       rdi, qword ptr [r12 + rbx*8 + 0x248]
+0x01013f5028  test      rdi, rdi
+0x01013f502b  je        0x1013f5010
+0x01013f502d  mov       qword ptr [rbp - 0x40], 0
+0x01013f5035  lea       rsi, [rbp - 0x40]
+0x01013f5039  xor       edx, edx
+0x01013f503b  call      0x10143b430  ; __ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb |
+0x01013f5040  test      eax, eax
+0x01013f5042  je        0x1013f5130
+0x01013f5048  cmp       eax, -2
+0x01013f504b  jne       0x1013f5010
+0x01013f504d  lea       rdi, [rip + 0x3f83f26]  ; 'PSvDBComm::OnDropped(%d) called in PSvDBComm::run cause ReceiveCommand failed.'
+0x01013f5054  mov       esi, r14d
+0x01013f5057  xor       eax, eax
+0x01013f5059  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f505e  cmp       r14d, 0xc
+0x01013f5062  ja        0x1013f50d7
+0x01013f5064  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f506c  call      0x1025207d0  ; __ZN9PSvDBMain17GetLocalLinkUpFlgEv |
+0x01013f5071  lea       rdi, [rip + 0x3f8404f]  ; 'PSvDBConnection::Drop() called in PSvDBComm::OnDropped.    PID:%d'
+0x01013f5078  mov       esi, r14d
+0x01013f507b  xor       eax, eax
+0x01013f507d  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f5082  mov       r13d, r14d
+0x01013f5085  mov       rdi, qword ptr [r12 + r13*8 + 0x248]
+0x01013f508d  call      0x10143aea0  ; __ZN15PSvDBConnection4DropEv |
+0x01013f5092  mov       rbx, qword ptr [r12 + r13*8 + 0x248]
+0x01013f509a  test      rbx, rbx
+0x01013f509d  je        0x1013f50af
+0x01013f509f  mov       rdi, rbx
+0x01013f50a2  call      0x10143af90  ; __ZN15PSvDBConnectionD1Ev |
+0x01013f50a7  mov       rdi, rbx
+0x01013f50aa  call      0x1038c3cc8
+0x01013f50af  mov       qword ptr [r12 + r13*8 + 0x248], 0
+0x01013f50bb  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f50c3  mov       eax, 0x1d8
+0x01013f50c8  add       rdi, rax
+0x01013f50cb  movzx     esi, r14b
+0x01013f50cf  call      0x10261f490  ; __ZN14PSvDBCancelBox22ClearPlayerCancelEntryEh |
+0x01013f50d4  xor       r13d, r13d
+0x01013f50d7  mov       rbx, qword ptr [rbp - 0x30]
+0x01013f50db  test      rbx, rbx
+0x01013f50de  je        0x1013f5005
+0x01013f50e4  mov       rdi, rbx
+0x01013f50e7  call      0x10143b420  ; __ZN15PSvDBConnection11IsConnectedEv |
+0x01013f50ec  test      al, al
+0x01013f50ee  je        0x1013f5010
+0x01013f50f4  movzx     eax, byte ptr [rbx]
+0x01013f50f7  cmp       eax, 0xd
+0x01013f50fa  ja        0x1013f5010
+0x01013f5100  cmp       r14d, eax
+0x01013f5103  jne       0x1013f5010
+0x01013f5109  cmp       qword ptr [r12 + rax*8 + 0x248], 0
+0x01013f5112  jne       0x1013f5010
+0x01013f5118  mov       rcx, qword ptr [rbp - 0x30]
+0x01013f511c  mov       qword ptr [r12 + rax*8 + 0x248], rcx
+0x01013f5124  jmp       0x1013f5002
+0x01013f5129  nop       dword ptr [rax]
+0x01013f5130  mov       r13, qword ptr [rbp - 0x40]
+0x01013f5134  mov       esi, dword ptr [r13]
+0x01013f5138  cmp       esi, -2
+0x01013f513b  jne       0x1013f5227
+0x01013f5141  movzx     eax, word ptr [r13 + 4]
+0x01013f5146  cmp       eax, 0x100
+0x01013f514b  jne       0x1013f5281
+0x01013f5151  lea       rdi, [rip + 0x3f83e71]  ; 'PSvDBComm::OnDropped(%d) called in PSvDBComm::run cause receives CMD_INFO_DROP.'
+0x01013f5158  mov       esi, r14d
+0x01013f515b  xor       eax, eax
+0x01013f515d  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f5162  cmp       r14d, 0xc
+0x01013f5166  ja        0x1013f51d8
+0x01013f5168  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f5170  call      0x1025207d0  ; __ZN9PSvDBMain17GetLocalLinkUpFlgEv |
+0x01013f5175  lea       rdi, [rip + 0x3f83f4b]  ; 'PSvDBConnection::Drop() called in PSvDBComm::OnDropped.    PID:%d'
+0x01013f517c  mov       esi, r14d
+0x01013f517f  xor       eax, eax
+0x01013f5181  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f5186  mov       r13d, r14d
+0x01013f5189  mov       rdi, qword ptr [r12 + r13*8 + 0x248]
+0x01013f5191  call      0x10143aea0  ; __ZN15PSvDBConnection4DropEv |
+0x01013f5196  mov       rbx, qword ptr [r12 + r13*8 + 0x248]
+0x01013f519e  test      rbx, rbx
+0x01013f51a1  je        0x1013f51b3
+0x01013f51a3  mov       rdi, rbx
+0x01013f51a6  call      0x10143af90  ; __ZN15PSvDBConnectionD1Ev |
+0x01013f51ab  mov       rdi, rbx
+0x01013f51ae  call      0x1038c3cc8
+0x01013f51b3  mov       qword ptr [r12 + r13*8 + 0x248], 0
+0x01013f51bf  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f51c7  mov       eax, 0x1d8
+0x01013f51cc  add       rdi, rax
+0x01013f51cf  movzx     esi, r14b
+0x01013f51d3  call      0x10261f490  ; __ZN14PSvDBCancelBox22ClearPlayerCancelEntryEh |
+0x01013f51d8  cmp       qword ptr [rbp - 0x30], 0
+0x01013f51dd  mov       r13d, 0
+0x01013f51e3  je        0x1013f52a6
+0x01013f51e9  mov       rdi, qword ptr [rbp - 0x30]
+0x01013f51ed  call      0x10143b420  ; __ZN15PSvDBConnection11IsConnectedEv |
+0x01013f51f2  test      al, al
+0x01013f51f4  je        0x1013f52a6
+0x01013f51fa  mov       rax, qword ptr [rbp - 0x30]
+0x01013f51fe  movzx     eax, byte ptr [rax]
+0x01013f5201  cmp       eax, 0xd
+0x01013f5204  ja        0x1013f52a6
+0x01013f520a  cmp       r14d, eax
+0x01013f520d  jne       0x1013f52a6
+0x01013f5213  cmp       qword ptr [r12 + rax*8 + 0x248], 0
+0x01013f521c  jne       0x1013f52a6
+0x01013f5222  jmp       0x1013f4fed
+0x01013f5227  mov       rax, qword ptr [r12 + rbx*8 + 0x248]
+0x01013f522f  movzx     eax, byte ptr [rax]
+0x01013f5232  xor       ebx, ebx
+0x01013f5234  cmp       al, 0xff
+0x01013f5236  sete      dl
+0x01013f5239  movzx     ecx, word ptr [r13 + 4]
+0x01013f523e  cmp       ecx, 0x2003
+0x01013f5244  je        0x1013f52b4
+0x01013f5246  cmp       cx, 1
+0x01013f524a  jne       0x1013f52c9
+0x01013f524c  cmp       al, 0xff
+0x01013f524e  movzx     eax, al
+0x01013f5251  mov       ecx, 0
+0x01013f5256  cmove     eax, ecx
+0x01013f5259  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f5261  mov       ecx, 0x1d8
+0x01013f5266  add       rdi, rcx
+0x01013f5269  movzx     edx, al
+0x01013f526c  call      0x10261f200  ; __ZN14PSvDBCancelBox16WriteCancelEntryEjh |
+0x01013f5271  mov       rdi, r13
+0x01013f5274  xor       r13d, r13d
+0x01013f5277  call      0x10049ddd0  ; __Z11DBCCmd_FreePK19_struct_db_comm_cmd |
+0x01013f527c  jmp       0x1013f5010
+0x01013f5281  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f5289  mov       rax, qword ptr [r12 + rbx*8 + 0x248]
+0x01013f5291  movzx     esi, byte ptr [rax]
+0x01013f5294  mov       edx, 0x101034c
+0x01013f5299  mov       ecx, 5
+0x01013f529e  call      0x102520ec0  ; __ZN9PSvDBMain12DeliverErrorEijt |
+0x01013f52a3  xor       r13d, r13d
+0x01013f52a6  mov       rdi, qword ptr [rbp - 0x40]
+0x01013f52aa  call      0x10049ddd0  ; __Z11DBCCmd_FreePK19_struct_db_comm_cmd |
+0x01013f52af  jmp       0x1013f5010
+0x01013f52b4  lea       rdi, [rip + 0x3f83dc3]
+0x01013f52bb  xor       eax, eax
+0x01013f52bd  mov       byte ptr [rbp - 0x31], dl
+0x01013f52c0  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01013f52c5  movzx     edx, byte ptr [rbp - 0x31]
+0x01013f52c9  mov       rdi, qword ptr [r12 + 0x1f0]
+0x01013f52d1  mov       bl, dl
+0x01013f52d3  mov       dword ptr [rsp], ebx
+0x01013f52d6  mov       esi, 1
+0x01013f52db  xor       edx, edx
+0x01013f52dd  mov       ecx, 0x98
+0x01013f52e2  mov       r8, r13
+0x01013f52e5  xor       r9d, r9d
+0x01013f52e8  call      0x102520de0  ; __ZN9PSvDBMain11AddMsgToQueEshjPvP11_dbs_req_idh |
+0x01013f52ed  xor       r13d, r13d
+0x01013f52f0  jmp       0x1013f5010
+0x01013f52f5  mov       qword ptr [r12 + rsi*8 + 0x248], rbx
+0x01013f52fd  jmp       0x1013f4f7e
+0x01013f5302  mov       r14, rax
+0x01013f5305  mov       rdi, rbx
+0x01013f5308  call      0x1038c3cc8
+0x01013f530d  mov       rdi, r14
+0x01013f5310  call      0x1038c3812
+0x01013f5315  nop       dword ptr [rax]
+0x01013f5318  cmp       eax, -1
+0x01013f531b  call      rsi
+0x01013f531d  clc
+
+## __ZN9PSvDBComm11PostMessageEP16_struct_dbsc_msg | 
+address=0x1013f5490 size=0xc0
+0x01013f5490  push      rbp
+0x01013f5491  mov       rbp, rsp
+0x01013f5494  push      r15
+0x01013f5496  push      r14
+0x01013f5498  push      r12
+0x01013f549a  push      rbx
+0x01013f549b  mov       r14, rsi
+0x01013f549e  mov       rbx, rdi
+0x01013f54a1  lea       r15, [rdi + 0x1f8]
+0x01013f54a8  mov       rdi, r15
+0x01013f54ab  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x01013f54b0  mov       ecx, dword ptr [rbx + 0x240]
+0x01013f54b6  mov       eax, dword ptr [rbx + 0x244]
+0x01013f54bc  cmp       ecx, eax
+0x01013f54be  jg        0x1013f5523
+0x01013f54c0  mov       edx, eax
+0x01013f54c2  inc       edx
+0x01013f54c4  shr       edx, 0x1f
+0x01013f54c7  add       edx, eax
+0x01013f54c9  inc       edx
+0x01013f54cb  sar       edx, 1
+0x01013f54cd  lea       r12d, [rax + rdx]
+0x01013f54d1  add       r12d, 9
+0x01013f54d5  and       r12d, 0xfffffff8
+0x01013f54d9  cmp       ecx, r12d
+0x01013f54dc  je        0x1013f5516
+0x01013f54de  test      r12d, r12d
+0x01013f54e1  jle       0x1013f54ff
+0x01013f54e3  mov       esi, r12d
+0x01013f54e6  shl       rsi, 3
+0x01013f54ea  mov       rdi, qword ptr [rbx + 0x238]
+0x01013f54f1  call      0x1038c44b4
+0x01013f54f6  mov       qword ptr [rbx + 0x238], rax
+0x01013f54fd  jmp       0x1013f5516
+0x01013f54ff  mov       rdi, qword ptr [rbx + 0x238]
+0x01013f5506  call      0x1038c402e
+0x01013f550b  mov       qword ptr [rbx + 0x238], 0
+0x01013f5516  mov       dword ptr [rbx + 0x240], r12d
+0x01013f551d  mov       eax, dword ptr [rbx + 0x244]
+0x01013f5523  lea       ecx, [rax + 1]
+0x01013f5526  mov       dword ptr [rbx + 0x244], ecx
+0x01013f552c  mov       rcx, qword ptr [rbx + 0x238]
+0x01013f5533  cdqe
+0x01013f5535  mov       qword ptr [rcx + rax*8], r14
+0x01013f5539  mov       rdi, r15
+0x01013f553c  pop       rbx
+0x01013f553d  pop       r12
+0x01013f553f  pop       r14
+0x01013f5541  pop       r15
+0x01013f5543  pop       rbp
+0x01013f5544  jmp       0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x01013f5549  nop       dword ptr [rax]
+
+## __ZN11PSvDBServer10DisconnectEh | 
+address=0x101c5b1d0 size=0x30
+0x0101c5b1d0  push      rbp
+0x0101c5b1d1  mov       rbp, rsp
+0x0101c5b1d4  mov       rdi, qword ptr [rdi]
+0x0101c5b1d7  test      rdi, rdi
+0x0101c5b1da  je        0x101c5b1f0
+0x0101c5b1dc  movzx     esi, sil
+0x0101c5b1e0  call      0x102520820  ; __ZN9PSvDBMain10DisconnectEh |
+0x0101c5b1e5  mov       ecx, eax
+0x0101c5b1e7  xor       eax, eax
+0x0101c5b1e9  test      ecx, ecx
+0x0101c5b1eb  setle     al
+0x0101c5b1ee  pop       rbp
+0x0101c5b1ef  ret
+0x0101c5b1f0  xor       eax, eax
+0x0101c5b1f2  pop       rbp
+0x0101c5b1f3  ret
+0x0101c5b1f4  nop       word ptr cs:[rax + rax]
+
+## __ZN9PSvDBMain3runEv | 
+address=0x102520030 size=0x3a0
+0x0102520030  push      rbp
+0x0102520031  mov       rbp, rsp
+0x0102520034  push      r15
+0x0102520036  push      r14
+0x0102520038  push      r13
+0x010252003a  push      r12
+0x010252003c  push      rbx
+0x010252003d  sub       rsp, 0x28
+0x0102520041  mov       r14, rdi
+0x0102520044  lea       rdi, [rip + 0x2e8be11]  ; 'Enter PSvDBMain::run'
+0x010252004b  xor       eax, eax
+0x010252004d  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x0102520052  lea       rax, [r14 + 0x238]
+0x0102520059  mov       qword ptr [rbp - 0x48], rax
+0x010252005d  lea       r15, [r14 + 0x570]
+0x0102520064  lea       rax, [r14 + 0x4f0]
+0x010252006b  mov       qword ptr [rbp - 0x40], rax
+0x010252006f  lea       r13, [r14 + 0x1d8]
+0x0102520076  mov       byte ptr [rbp - 0x29], 1
+0x010252007a  jmp       0x102520093
+0x010252007c  nop       dword ptr [rax]
+0x0102520080  mov       rdi, qword ptr [rbp - 0x40]
+0x0102520084  call      0x1027ea3d0  ; __ZNK4juce13WaitableEvent5resetEv |
+0x0102520089  test      byte ptr [rbp - 0x29], 1
+0x010252008d  je        0x1025202b0
+0x0102520093  mov       rdi, r14
+0x0102520096  call      0x10278f030  ; __ZNK4juce6Thread16threadShouldExitEv |
+0x010252009b  test      al, al
+0x010252009d  je        0x1025200bb
+0x010252009f  lea       rdi, [rip + 0x2e8bdcb]  ; 'PSvDBMain::run:threadShouldExit'
+0x01025200a6  xor       eax, eax
+0x01025200a8  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01025200ad  mov       rdi, qword ptr [rbp - 0x48]
+0x01025200b1  call      0x1013f48e0  ; __ZN9PSvDBComm4StopEv |
+0x01025200b6  xor       al, 1
+0x01025200b8  mov       byte ptr [rbp - 0x29], al
+0x01025200bb  mov       rdi, r15
+0x01025200be  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x01025200c3  cmp       dword ptr [r14 + 0x5bc], 0
+0x01025200cb  mov       r12d, 0x1f4
+0x01025200d1  mov       eax, 0
+0x01025200d6  cmovg     r12d, eax
+0x01025200da  mov       rdi, r15
+0x01025200dd  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x01025200e2  mov       dword ptr [r14 + 0x4e8], r12d
+0x01025200e9  vcvtsi2sd xmm0, xmm1, r12d
+0x01025200ee  mov       rdi, qword ptr [rbp - 0x40]
+0x01025200f2  call      0x1027c1ef0  ; __ZNK4juce13WaitableEvent4waitEd |
+0x01025200f7  mov       rdi, r15
+0x01025200fa  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x01025200ff  mov       r12d, dword ptr [r14 + 0x5bc]
+0x0102520106  mov       rdi, r15
+0x0102520109  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x010252010e  test      r12d, r12d
+0x0102520111  jne       0x102520147
+0x0102520113  jmp       0x102520080
+0x0102520118  nop       dword ptr [rax + rax]
+0x0102520120  mov       rdi, r15
+0x0102520123  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x0102520128  mov       rdi, r15
+0x010252012b  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x0102520130  mov       ebx, dword ptr [r14 + 0x5bc]
+0x0102520137  mov       rdi, r15
+0x010252013a  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x010252013f  test      ebx, ebx
+0x0102520141  je        0x102520080
+0x0102520147  mov       rdi, r15
+0x010252014a  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x010252014f  cmp       dword ptr [r14 + 0x5bc], 0
+0x0102520157  je        0x102520120
+0x0102520159  mov       rax, qword ptr [r14 + 0x5b0]
+0x0102520160  mov       r12, qword ptr [rax]
+0x0102520163  mov       rdi, r15
+0x0102520166  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x010252016b  test      r12, r12
+0x010252016e  je        0x102520128
+0x0102520170  mov       rax, qword ptr [r12 + 0x20]
+0x0102520175  movzx     ecx, word ptr [rax + 4]
+0x0102520179  cmp       ecx, 0x2003
+0x010252017f  jne       0x102520191
+0x0102520181  mov       esi, dword ptr [rax]
+0x0102520183  lea       rdi, [rip + 0x2e8bd07]
+0x010252018a  xor       eax, eax
+0x010252018c  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x0102520191  movzx     eax, word ptr [r12 + 0x10]
+0x0102520197  cmp       ax, 1
+0x010252019b  jne       0x1025201be
+0x010252019d  mov       rax, qword ptr [r12 + 0x20]
+0x01025201a2  mov       esi, dword ptr [rax]
+0x01025201a4  movzx     edx, byte ptr [rax + 0x1b]
+0x01025201a8  mov       rdi, r13
+0x01025201ab  call      0x10261f3b0  ; __ZN14PSvDBCancelBox16CheckCancelEntryEjh |
+0x01025201b0  test      eax, eax
+0x01025201b2  jne       0x1025202a0
+0x01025201b8  movzx     eax, word ptr [r12 + 0x10]
+0x01025201be  mov       ecx, eax
+0x01025201c0  and       cx, 0xf000
+0x01025201c5  je        0x102520257
+0x01025201cb  movzx     ecx, cx
+0x01025201ce  cmp       ecx, 0x2000
+0x01025201d4  je        0x102520128
+0x01025201da  cmp       ecx, 0x1000
+0x01025201e0  jne       0x102520267
+0x01025201e6  cwde
+0x01025201e7  add       eax, 0xffffefff
+0x01025201ec  cmp       eax, 8
+0x01025201ef  jb        0x102520220
+0x01025201f1  test      byte ptr [r14 + 0x5c8], 1
+0x01025201f9  je        0x102520220
+0x01025201fb  mov       rdi, qword ptr [r14 + 0x5c0]
+0x0102520202  test      rdi, rdi
+0x0102520205  je        0x102520220
+0x0102520207  mov       dword ptr [rbp - 0x38], 0x101033d
+0x010252020e  mov       word ptr [rbp - 0x34], 0
+0x0102520214  mov       rax, qword ptr [rdi]
+0x0102520217  xor       esi, esi
+0x0102520219  lea       rdx, [rbp - 0x38]
+0x010252021d  call      qword ptr [rax + 0x10]
+0x0102520220  movzx     eax, byte ptr [r12 + 0x13]
+0x0102520226  cmp       al, 4
+0x0102520228  je        0x102520128
+0x010252022e  cmp       al, 6
+0x0102520230  je        0x1025202a0
+0x0102520232  test      byte ptr [r14 + 0x5c8], 1
+0x010252023a  je        0x1025202a0
+0x010252023c  mov       rdi, qword ptr [r14 + 0x5c0]
+0x0102520243  test      rdi, rdi
+0x0102520246  je        0x1025202a0
+0x0102520248  mov       dword ptr [rbp - 0x38], 0x101033d
+0x010252024f  mov       word ptr [rbp - 0x34], 1
+0x0102520255  jmp       0x10252028a
+0x0102520257  mov       rdi, r14
+0x010252025a  mov       rsi, r12
+0x010252025d  call      0x102521340  ; __ZN9PSvDBMain11OnClientReqEP16_struct_dbsm_msg |
+0x0102520262  jmp       0x102520128
+0x0102520267  test      byte ptr [r14 + 0x5c8], 1
+0x010252026f  je        0x1025202a0
+0x0102520271  mov       rdi, qword ptr [r14 + 0x5c0]
+0x0102520278  test      rdi, rdi
+0x010252027b  je        0x1025202a0
+0x010252027d  mov       dword ptr [rbp - 0x38], 0x101033c
+0x0102520284  mov       word ptr [rbp - 0x34], 0
+0x010252028a  mov       rax, qword ptr [rdi]
+0x010252028d  xor       esi, esi
+0x010252028f  lea       rdx, [rbp - 0x38]
+0x0102520293  call      qword ptr [rax + 0x10]
+0x0102520296  nop       word ptr cs:[rax + rax]
+0x01025202a0  mov       rdi, r14
+0x01025202a3  mov       rsi, r12
+0x01025202a6  call      0x1025203d0  ; __ZN9PSvDBMain13DeleteMessageEP16_struct_dbsm_msg |
+0x01025202ab  jmp       0x102520128
+0x01025202b0  mov       rdi, r15
+0x01025202b3  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x01025202b8  mov       ebx, dword ptr [r14 + 0x5bc]
+0x01025202bf  mov       rdi, r15
+0x01025202c2  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x01025202c7  test      ebx, ebx
+0x01025202c9  je        0x1025203a6
+0x01025202cf  mov       r13w, 0xf000
+0x01025202d4  jmp       0x102520307
+0x01025202d6  nop       word ptr cs:[rax + rax]
+0x01025202e0  mov       rdi, r15
+0x01025202e3  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x01025202e8  mov       rdi, r15
+0x01025202eb  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x01025202f0  mov       ebx, dword ptr [r14 + 0x5bc]
+0x01025202f7  mov       rdi, r15
+0x01025202fa  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x01025202ff  test      ebx, ebx
+0x0102520301  je        0x1025203a6
+0x0102520307  mov       rdi, r15
+0x010252030a  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x010252030f  cmp       dword ptr [r14 + 0x5bc], 0
+0x0102520317  jle       0x1025202e0
+0x0102520319  mov       rax, qword ptr [r14 + 0x5b0]
+0x0102520320  mov       r12, qword ptr [rax]
+0x0102520323  mov       rdi, r15
+0x0102520326  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x010252032b  test      r12, r12
+0x010252032e  je        0x1025202e8
+0x0102520330  movzx     eax, word ptr [r12 + 0x10]
+0x0102520336  and       ax, r13w
+0x010252033a  je        0x10252035a
+0x010252033c  movzx     eax, ax
+0x010252033f  cmp       eax, 0x2000
+0x0102520344  je        0x1025202e8
+0x0102520346  cmp       eax, 0x1000
+0x010252034b  jne       0x102520367
+0x010252034d  mov       rdi, r14
+0x0102520350  mov       rsi, r12
+0x0102520353  call      0x102521280  ; __ZN9PSvDBMain9OnSysInfoEP16_struct_dbsm_msg |
+0x0102520358  jmp       0x1025202e8
+0x010252035a  mov       rdi, r14
+0x010252035d  mov       rsi, r12
+0x0102520360  call      0x102521340  ; __ZN9PSvDBMain11OnClientReqEP16_struct_dbsm_msg |
+0x0102520365  jmp       0x1025202e8
+0x0102520367  test      byte ptr [r14 + 0x5c8], 1
+0x010252036f  je        0x102520396
+0x0102520371  mov       rdi, qword ptr [r14 + 0x5c0]
+0x0102520378  test      rdi, rdi
+0x010252037b  je        0x102520396
+0x010252037d  mov       dword ptr [rbp - 0x38], 0x101033c
+0x0102520384  mov       word ptr [rbp - 0x34], 0
+0x010252038a  mov       rax, qword ptr [rdi]
+0x010252038d  xor       esi, esi
+0x010252038f  lea       rdx, [rbp - 0x38]
+0x0102520393  call      qword ptr [rax + 0x10]
+0x0102520396  mov       rdi, r14
+0x0102520399  mov       rsi, r12
+0x010252039c  call      0x1025203d0  ; __ZN9PSvDBMain13DeleteMessageEP16_struct_dbsm_msg |
+0x01025203a1  jmp       0x1025202e8
+0x01025203a6  lea       rdi, [rip + 0x2e8bb2a]  ; 'Leave PSvDBMain::run'
+0x01025203ad  xor       eax, eax
+0x01025203af  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x01025203b4  add       rsp, 0x28
+0x01025203b8  pop       rbx
+0x01025203b9  pop       r12
+0x01025203bb  pop       r13
+0x01025203bd  pop       r14
+0x01025203bf  pop       r15
+0x01025203c1  pop       rbp
+0x01025203c2  ret
+0x01025203c3  nop       word ptr cs:[rax + rax]
+
+## __ZN9PSvDBMain10DisconnectEh | 
+address=0x102520820 size=0x40
+0x0102520820  push      rbp
+0x0102520821  mov       rbp, rsp
+0x0102520824  push      r14
+0x0102520826  push      rbx
+0x0102520827  mov       r14d, esi
+0x010252082a  mov       rbx, rdi
+0x010252082d  call      0x1020e1530  ; __ZN9PSvDBMain29ClearFilterConditionForPlayerEh |
+0x0102520832  mov       rdi, rbx
+0x0102520835  mov       esi, r14d
+0x0102520838  call      0x102520860  ; __ZN9PSvDBMain11clearAIOMapEh |
+0x010252083d  add       rbx, 0x238
+0x0102520844  mov       rdi, rbx
+0x0102520847  mov       esi, r14d
+0x010252084a  pop       rbx
+0x010252084b  pop       r14
+0x010252084d  pop       rbp
+0x010252084e  jmp       0x1013f5390  ; __ZN9PSvDBComm13RequestToDropEh |
+0x0102520853  nop       word ptr cs:[rax + rax]
+
+## __ZN9PSvDBMain17PostServerMessageEP16_struct_dbsm_msg | 
+address=0x102520d10 size=0xd0
+0x0102520d10  push      rbp
+0x0102520d11  mov       rbp, rsp
+0x0102520d14  push      r15
+0x0102520d16  push      r14
+0x0102520d18  push      r12
+0x0102520d1a  push      rbx
+0x0102520d1b  mov       r15, rsi
+0x0102520d1e  mov       rbx, rdi
+0x0102520d21  lea       r14, [rdi + 0x570]
+0x0102520d28  mov       rdi, r14
+0x0102520d2b  call      0x1027a81d0  ; __ZNK4juce15CriticalSection5enterEv |
+0x0102520d30  mov       ecx, dword ptr [rbx + 0x5b8]
+0x0102520d36  mov       eax, dword ptr [rbx + 0x5bc]
+0x0102520d3c  cmp       ecx, eax
+0x0102520d3e  jg        0x102520da3
+0x0102520d40  mov       edx, eax
+0x0102520d42  inc       edx
+0x0102520d44  shr       edx, 0x1f
+0x0102520d47  add       edx, eax
+0x0102520d49  inc       edx
+0x0102520d4b  sar       edx, 1
+0x0102520d4d  lea       r12d, [rax + rdx]
+0x0102520d51  add       r12d, 9
+0x0102520d55  and       r12d, 0xfffffff8
+0x0102520d59  cmp       ecx, r12d
+0x0102520d5c  je        0x102520d96
+0x0102520d5e  test      r12d, r12d
+0x0102520d61  jle       0x102520d7f
+0x0102520d63  mov       esi, r12d
+0x0102520d66  shl       rsi, 3
+0x0102520d6a  mov       rdi, qword ptr [rbx + 0x5b0]
+0x0102520d71  call      0x1038c44b4
+0x0102520d76  mov       qword ptr [rbx + 0x5b0], rax
+0x0102520d7d  jmp       0x102520d96
+0x0102520d7f  mov       rdi, qword ptr [rbx + 0x5b0]
+0x0102520d86  call      0x1038c402e
+0x0102520d8b  mov       qword ptr [rbx + 0x5b0], 0
+0x0102520d96  mov       dword ptr [rbx + 0x5b8], r12d
+0x0102520d9d  mov       eax, dword ptr [rbx + 0x5bc]
+0x0102520da3  lea       ecx, [rax + 1]
+0x0102520da6  mov       dword ptr [rbx + 0x5bc], ecx
+0x0102520dac  mov       rcx, qword ptr [rbx + 0x5b0]
+0x0102520db3  cdqe
+0x0102520db5  mov       qword ptr [rcx + rax*8], r15
+0x0102520db9  mov       rdi, r14
+0x0102520dbc  call      0x1027a8210  ; __ZNK4juce15CriticalSection4exitEv |
+0x0102520dc1  add       rbx, 0x4f0
+0x0102520dc8  mov       rdi, rbx
+0x0102520dcb  pop       rbx
+0x0102520dcc  pop       r12
+0x0102520dce  pop       r14
+0x0102520dd0  pop       r15
+0x0102520dd2  pop       rbp
+0x0102520dd3  jmp       0x1027c2360  ; __ZNK4juce13WaitableEvent6signalEv |
+0x0102520dd8  nop       dword ptr [rax + rax]
+
+## __ZN9PSvDBMain17RequestToSendDataEhP19_struct_db_comm_cmd | 
+address=0x102521160 size=0x120
+0x0102521160  push      rbp
+0x0102521161  mov       rbp, rsp
+0x0102521164  push      r15
+0x0102521166  push      r14
+0x0102521168  push      r12
+0x010252116a  push      rbx
+0x010252116b  sub       rsp, 0x10
+0x010252116f  mov       r15, rdi
+0x0102521172  test      rdx, rdx
+0x0102521175  je        0x1025211ba
+0x0102521177  mov       rbx, rdx
+0x010252117a  mov       r12d, esi
+0x010252117d  mov       rdi, rdx
+0x0102521180  call      0x10049d090  ; __Z19DBCFmt_GetCmdPrmFmtP19_struct_db_comm_cmd |
+0x0102521185  cmp       eax, 0xd
+0x0102521188  jl        0x1025211f9
+0x010252118a  xor       r14d, r14d
+0x010252118d  test      byte ptr [r15 + 0x5c8], 1
+0x0102521195  je        0x102521265
+0x010252119b  mov       rdi, qword ptr [r15 + 0x5c0]
+0x01025211a2  test      rdi, rdi
+0x01025211a5  je        0x102521265
+0x01025211ab  mov       dword ptr [rbp - 0x28], 0x101033b
+0x01025211b2  mov       word ptr [rbp - 0x24], 1
+0x01025211b8  jmp       0x1025211e8
+0x01025211ba  xor       r14d, r14d
+0x01025211bd  test      byte ptr [r15 + 0x5c8], 1
+0x01025211c5  je        0x102521265
+0x01025211cb  mov       rdi, qword ptr [r15 + 0x5c0]
+0x01025211d2  test      rdi, rdi
+0x01025211d5  je        0x102521265
+0x01025211db  mov       dword ptr [rbp - 0x28], 0x101033b
+0x01025211e2  mov       word ptr [rbp - 0x24], 0
+0x01025211e8  mov       rax, qword ptr [rdi]
+0x01025211eb  xor       r14d, r14d
+0x01025211ee  lea       rdx, [rbp - 0x28]
+0x01025211f2  xor       esi, esi
+0x01025211f4  call      qword ptr [rax + 0x10]
+0x01025211f7  jmp       0x102521265
+0x01025211f9  mov       edi, 0x20
+0x01025211fe  call      0x1038c3cd4
+0x0102521203  mov       r14, rax
+0x0102521206  vxorps    xmm0, xmm0, xmm0
+0x010252120a  vmovups   xmmword ptr [rax], xmm0
+0x010252120e  mov       qword ptr [rax + 0x10], 0
+0x0102521216  mov       dword ptr [rax + 8], 0x397abe
+0x010252121d  mov       word ptr [rax + 0xc], 3
+0x0102521223  mov       byte ptr [rax + 0xf], r12b
+0x0102521227  mov       dword ptr [rax + 0x10], 0x98
+0x010252122e  mov       qword ptr [rax + 0x18], rbx
+0x0102521232  movzx     eax, word ptr [rbx + 4]
+0x0102521236  cmp       eax, 0x4002
+0x010252123b  jne       0x10252124d
+0x010252123d  mov       esi, dword ptr [rbx]
+0x010252123f  lea       rdi, [rip + 0x2e8ad58]
+0x0102521246  xor       eax, eax
+0x0102521248  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010252124d  add       r15, 0x238
+0x0102521254  mov       rdi, r15
+0x0102521257  mov       rsi, r14
+0x010252125a  call      0x1013f5490  ; __ZN9PSvDBComm11PostMessageEP16_struct_dbsc_msg |
+0x010252125f  mov       r14d, 1
+0x0102521265  mov       eax, r14d
+0x0102521268  add       rsp, 0x10
+0x010252126c  pop       rbx
+0x010252126d  pop       r12
+0x010252126f  pop       r14
+0x0102521271  pop       r15
+0x0102521273  pop       rbp
+0x0102521274  ret
+0x0102521275  nop       word ptr cs:[rax + rax]
+
+## __ZN9PSvDBMain11OnClientReqEP16_struct_dbsm_msg | 
+address=0x102521340 size=0x1c0
+0x0102521340  push      rbp
+0x0102521341  mov       rbp, rsp
+0x0102521344  push      r15
+0x0102521346  push      r14
+0x0102521348  push      rbx
+0x0102521349  push      rax
+0x010252134a  mov       r14, rdi
+0x010252134d  mov       rax, qword ptr [rsi + 0x20]
+0x0102521351  test      rax, rax
+0x0102521354  je        0x1025213ec
+0x010252135a  cmp       dword ptr [rax + 0x90], 0x872349ae
+0x0102521364  jne       0x1025213ec
+0x010252136a  mov       rbx, rsi
+0x010252136d  mov       ecx, dword ptr [rax]
+0x010252136f  mov       dword ptr [rsi + 0x14], ecx
+0x0102521372  mov       word ptr [rsi + 0x18], 0
+0x0102521378  movsx     ecx, word ptr [rax + 4]
+0x010252137c  sar       ecx, 0xc
+0x010252137f  cmp       ecx, 3
+0x0102521382  je        0x10252142e
+0x0102521388  cmp       ecx, 2
+0x010252138b  je        0x102521443
+0x0102521391  cmp       ecx, 1
+0x0102521394  jne       0x102521458
+0x010252139a  movzx     eax, byte ptr [rax + 0x18]
+0x010252139e  add       eax, -3
+0x01025213a1  cmp       eax, 1
+0x01025213a4  ja        0x102521489
+0x01025213aa  xor       r15d, r15d
+0x01025213ad  test      byte ptr [r14 + 0x5c8], 1
+0x01025213b5  je        0x1025214aa
+0x01025213bb  mov       rdi, qword ptr [r14 + 0x5c0]
+0x01025213c2  test      rdi, rdi
+0x01025213c5  je        0x1025214aa
+0x01025213cb  mov       dword ptr [rbp - 0x20], 0x1010334
+0x01025213d2  mov       word ptr [rbp - 0x1c], 1
+0x01025213d8  mov       rax, qword ptr [rdi]
+0x01025213db  xor       r15d, r15d
+0x01025213de  lea       rdx, [rbp - 0x20]
+0x01025213e2  xor       esi, esi
+0x01025213e4  call      qword ptr [rax + 0x10]
+0x01025213e7  jmp       0x1025214aa
+0x01025213ec  xor       r15d, r15d
+0x01025213ef  test      byte ptr [r14 + 0x5c8], 1
+0x01025213f7  je        0x1025214ef
+0x01025213fd  mov       rdi, qword ptr [r14 + 0x5c0]
+0x0102521404  test      rdi, rdi
+0x0102521407  je        0x1025214ef
+0x010252140d  mov       dword ptr [rbp - 0x20], 0x1010334
+0x0102521414  mov       word ptr [rbp - 0x1c], 0
+0x010252141a  mov       rax, qword ptr [rdi]
+0x010252141d  xor       r15d, r15d
+0x0102521420  lea       rdx, [rbp - 0x20]
+0x0102521424  xor       esi, esi
+0x0102521426  call      qword ptr [rax + 0x10]
+0x0102521429  jmp       0x1025214ef
+0x010252142e  mov       rdi, r14
+0x0102521431  mov       rsi, rbx
+0x0102521434  call      0x101d2fd30  ; __ZN9PSvDBMain16OnOtherClientCmdEP16_struct_dbsm_msg |
+0x0102521439  mov       r15d, eax
+0x010252143c  cmp       eax, -2
+0x010252143f  je        0x10252149c
+0x0102521441  jmp       0x1025214aa
+0x0102521443  mov       rdi, r14
+0x0102521446  mov       rsi, rbx
+0x0102521449  call      0x101d2e6b0  ; __ZN9PSvDBMain16OnMAnlzClientCmdEP16_struct_dbsm_msg |
+0x010252144e  mov       r15d, eax
+0x0102521451  cmp       eax, -2
+0x0102521454  je        0x10252149c
+0x0102521456  jmp       0x1025214aa
+0x0102521458  test      byte ptr [r14 + 0x5c8], 1
+0x0102521460  je        0x10252149c
+0x0102521462  mov       rdi, qword ptr [r14 + 0x5c0]
+0x0102521469  test      rdi, rdi
+0x010252146c  je        0x10252149c
+0x010252146e  mov       dword ptr [rbp - 0x20], 0x1010334
+0x0102521475  mov       word ptr [rbp - 0x1c], 4
+0x010252147b  mov       rax, qword ptr [rdi]
+0x010252147e  lea       rdx, [rbp - 0x20]
+0x0102521482  xor       esi, esi
+0x0102521484  call      qword ptr [rax + 0x10]
+0x0102521487  jmp       0x10252149c
+0x0102521489  mov       rdi, r14
+0x010252148c  mov       rsi, rbx
+0x010252148f  call      0x101d2bb80  ; __ZN9PSvDBMain15OnListClientCmdEP16_struct_dbsm_msg |
+0x0102521494  mov       r15d, eax
+0x0102521497  cmp       eax, -2
+0x010252149a  jne       0x1025214aa
+0x010252149c  mov       rdi, r14
+0x010252149f  mov       rsi, rbx
+0x01025214a2  call      0x102521500  ; __ZN9PSvDBMain18OnUnknownClientCmdEP16_struct_dbsm_msg |
+0x01025214a7  mov       r15d, eax
+0x01025214aa  mov       al, byte ptr [rbx + 0x13]
+0x01025214ad  cmp       al, 4
+0x01025214af  je        0x1025214ef
+0x01025214b1  cmp       al, 6
+0x01025214b3  je        0x1025214e4
+0x01025214b5  test      byte ptr [r14 + 0x5c8], 1
+0x01025214bd  je        0x1025214e4
+0x01025214bf  mov       rdi, qword ptr [r14 + 0x5c0]
+0x01025214c6  test      rdi, rdi
+0x01025214c9  je        0x1025214e4
+0x01025214cb  mov       dword ptr [rbp - 0x20], 0x1010334
+0x01025214d2  mov       word ptr [rbp - 0x1c], 5
+0x01025214d8  mov       rax, qword ptr [rdi]
+0x01025214db  lea       rdx, [rbp - 0x20]
+0x01025214df  xor       esi, esi
+0x01025214e1  call      qword ptr [rax + 0x10]
+0x01025214e4  mov       rdi, r14
+0x01025214e7  mov       rsi, rbx
+0x01025214ea  call      0x1025203d0  ; __ZN9PSvDBMain13DeleteMessageEP16_struct_dbsm_msg |
+0x01025214ef  mov       eax, r15d
+0x01025214f2  add       rsp, 8
+0x01025214f6  pop       rbx
+0x01025214f7  pop       r14
+0x01025214f9  pop       r15
+0x01025214fb  pop       rbp
+0x01025214fc  ret
+0x01025214fd  nop       dword ptr [rax]
+

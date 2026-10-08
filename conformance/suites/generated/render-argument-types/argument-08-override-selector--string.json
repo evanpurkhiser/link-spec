@@ -1,0 +1,78 @@
+{
+  "name": "track-render-argument-08-override-selector--string",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "warm-track-list",
+      "description": "Materialize a valid Default track list before the isolated render argument 8 string probe",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8
+      }
+    },
+    {
+      "id": "argument-08-override-selector--string",
+      "description": "Eight-argument 0x3000 with string in position 8 (override-selector)",
+      "request_kind": "0x3000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        },
+        {
+          "number": 12
+        },
+        {
+          "number": 1
+        },
+        {
+          "string": "wrong-type"
+        }
+      ],
+      "render": false,
+      "direct_response": true,
+      "raw_read_ms": 3000,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

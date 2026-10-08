@@ -1,0 +1,598 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "Play Song Info: Display request with no arguments",
+        "header": [],
+        "id": "play-no-arguments",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Play Song Info: Display request with content ID omitted",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 8450
+              },
+              {
+                "type": "number",
+                "value": 0
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "play-missing-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": 0
+      },
+      {
+        "description": "Play Song Info: Display request with an extra number",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 8450
+              },
+              {
+                "type": "number",
+                "value": 7
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "play-extra-argument",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 10001
+            },
+            {
+              "type": "number",
+              "value": 3735928559
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": 7
+      },
+      {
+        "description": "Play Song Info: Display request with string context",
+        "header": [
+          {
+            "arguments": [],
+            "kind": 256
+          }
+        ],
+        "id": "play-string-context",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "string",
+              "value": "wrong-type"
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Play Song Info: Display request with blob context",
+        "header": [
+          {
+            "arguments": [],
+            "kind": 256
+          }
+        ],
+        "id": "play-blob-context",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "hex": "01020304",
+              "type": "blob"
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Play Song Info: Display request with string content ID",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 8450
+              },
+              {
+                "type": "number",
+                "value": 0
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "play-string-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "string",
+              "value": "wrong-type"
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": 0
+      },
+      {
+        "description": "Play Song Info: Display request with blob content ID",
+        "header": [
+          {
+            "arguments": [],
+            "kind": 256
+          }
+        ],
+        "id": "play-blob-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "hex": "01020304",
+              "type": "blob"
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Play Song Info: Display request with zero context",
+        "header": [],
+        "id": "play-zero-context",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Play Song Info: Display request at menu location 2",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 8450
+              },
+              {
+                "type": "number",
+                "value": 7
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "play-alternate-location",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16909057
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": 7
+      },
+      {
+        "description": "Delivery Song Info: Display request with no arguments",
+        "header": [],
+        "id": "delivery-no-arguments",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Delivery Song Info: Display request with content ID omitted",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 9730
+              },
+              {
+                "type": "number",
+                "value": 0
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "delivery-missing-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": 0
+      },
+      {
+        "description": "Delivery Song Info: Display request with an extra number",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 9730
+              },
+              {
+                "type": "number",
+                "value": 13
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "delivery-extra-argument",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 10001
+            },
+            {
+              "type": "number",
+              "value": 3735928559
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": 13
+      },
+      {
+        "description": "Delivery Song Info: Display request with string context",
+        "header": [
+          {
+            "arguments": [],
+            "kind": 256
+          }
+        ],
+        "id": "delivery-string-context",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "string",
+              "value": "wrong-type"
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Delivery Song Info: Display request with blob context",
+        "header": [
+          {
+            "arguments": [],
+            "kind": 256
+          }
+        ],
+        "id": "delivery-blob-context",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "hex": "01020304",
+              "type": "blob"
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Delivery Song Info: Display request with string content ID",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 9730
+              },
+              {
+                "type": "number",
+                "value": 0
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "delivery-string-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "string",
+              "value": "wrong-type"
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": 0
+      },
+      {
+        "description": "Delivery Song Info: Display request with blob content ID",
+        "header": [
+          {
+            "arguments": [],
+            "kind": 256
+          }
+        ],
+        "id": "delivery-blob-content",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "hex": "01020304",
+              "type": "blob"
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Delivery Song Info: Display request with zero context",
+        "header": [],
+        "id": "delivery-zero-context",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Delivery Song Info: Display request at menu location 2",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 9730
+              },
+              {
+                "type": "number",
+                "value": 13
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "delivery-alternate-location",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16909057
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": 13
+      }
+    ],
+    "fixture": {
+      "fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+      "profile": "full",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 1
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "song-info-sibling-errors"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "e8c45a7020a70103d6a15d5cf9aaa32a3d8c758c6c1f3f33b2a8d80872f7c812",
+    "fixture_fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 3,
+      "mac": "02:00:00:60:00:50",
+      "model": "XDJ-RX3",
+      "model_code": 0,
+      "packet_sha256": "49dd1bbbac4a0f254d02362f396026f9623cf623fdb90fcae5549665475b3ddb",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 1,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-rx3-player-1.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/full/manifest.json",
+    "recorded_unix_seconds": 1790828078,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/suites/generated/song-info-sibling-errors.json",
+    "suite_sha256": "3ccb2524b2265d8cd04f4c09a497c87f13edd3c03251b72f7b36db7d9ea95a90"
+  }
+}

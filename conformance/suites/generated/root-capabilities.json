@@ -1,0 +1,611 @@
+{
+  "name": "root-capability-bit-sweep",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "none",
+      "description": "Root capability mask 0x00000000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-01",
+      "description": "Root capability mask 0x00000001",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000001"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-02",
+      "description": "Root capability mask 0x00000002",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000002"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-03",
+      "description": "Root capability mask 0x00000004",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000004"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-04",
+      "description": "Root capability mask 0x00000008",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000008"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-05",
+      "description": "Root capability mask 0x00000010",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000010"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-06",
+      "description": "Root capability mask 0x00000020",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000020"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-07",
+      "description": "Root capability mask 0x00000040",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000040"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-08",
+      "description": "Root capability mask 0x00000080",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000080"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-09",
+      "description": "Root capability mask 0x00000100",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000100"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-10",
+      "description": "Root capability mask 0x00000200",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000200"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-11",
+      "description": "Root capability mask 0x00000400",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000400"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-12",
+      "description": "Root capability mask 0x00000800",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00000800"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-13",
+      "description": "Root capability mask 0x00001000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00001000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-14",
+      "description": "Root capability mask 0x00002000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00002000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-15",
+      "description": "Root capability mask 0x00004000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00004000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-16",
+      "description": "Root capability mask 0x00008000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00008000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-17",
+      "description": "Root capability mask 0x00010000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00010000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-18",
+      "description": "Root capability mask 0x00020000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00020000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-19",
+      "description": "Root capability mask 0x00040000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00040000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-20",
+      "description": "Root capability mask 0x00080000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00080000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-21",
+      "description": "Root capability mask 0x00100000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00100000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-22",
+      "description": "Root capability mask 0x01000000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x01000000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-23",
+      "description": "Root capability mask 0x00400000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00400000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-24",
+      "description": "Root capability mask 0x00800000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00800000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-25",
+      "description": "Root capability mask 0x01000000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x01000000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-26",
+      "description": "Root capability mask 0x02000000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x02000000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "menu-item-27",
+      "description": "Root capability mask 0x04000000",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x04000000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "legacy-mask",
+      "description": "Root capability mask 0x00ffffff",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x00ffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "captured-mask",
+      "description": "Root capability mask 0x05cfffff",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0x05cfffff"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "all-bits",
+      "description": "Root capability mask 0xffffffff",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    }
+  ]
+}

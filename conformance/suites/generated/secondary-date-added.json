@@ -1,0 +1,91 @@
+{
+  "name": "secondary-column-date-added",
+  "fixture_profile": "settings",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "sort-menu",
+      "description": "Sort visibility with date-added selected as the secondary column",
+      "request_kind": "0x1400",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-rows",
+      "description": "Complete track rendering with date-added secondary values",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16,
+        "row_argument_any_of": {
+          "0": [
+            "$fixture.track.first",
+            "$fixture.track.second",
+            "$fixture.track.third",
+            "$fixture.track.fourth",
+            "$fixture.track.fifth",
+            "$fixture.track.sixth",
+            "$fixture.track.seventh",
+            "$fixture.track.eighth"
+          ],
+          "10": [
+            "0x00000100",
+            "0x00000101"
+          ],
+          "12": [
+            "$fixture.key.am",
+            "$fixture.key.c"
+          ],
+          "15": [
+            12000,
+            12050,
+            12100,
+            12150,
+            12200,
+            12250,
+            12300,
+            12350
+          ]
+        }
+      }
+    }
+  ],
+  "fixture_variant": "secondary-date-added"
+}

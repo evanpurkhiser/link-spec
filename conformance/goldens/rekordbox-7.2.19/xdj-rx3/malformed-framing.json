@@ -1,0 +1,206 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "Complete zero-argument frame with an invalid protocol magic",
+        "header": [],
+        "id": "bad-magic",
+        "outcome": "raw_reply",
+        "pages": [],
+        "raw_response": {
+          "decoded_bytes": 20,
+          "error_kind": null,
+          "messages": [
+            {
+              "arguments": [],
+              "kind": 256
+            }
+          ],
+          "outcome": "raw_reply",
+          "raw_hex": "11872349ae11fffffffe1001000f001400000000"
+        },
+        "request": {
+          "raw_hex": "110000000011000000011010040f001400000000",
+          "read_ms": 500
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Frame ending before kind, count, and tag-list fields",
+        "header": [],
+        "id": "truncated-header",
+        "outcome": "timeout",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "WouldBlock",
+          "messages": [],
+          "outcome": "timeout",
+          "raw_hex": ""
+        },
+        "request": {
+          "raw_hex": "11872349ae1100000001",
+          "read_ms": 500
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Header declares 33 arguments and a 33-byte tag list",
+        "header": [],
+        "id": "too-many-arguments",
+        "outcome": "raw_reply",
+        "pages": [],
+        "raw_response": {
+          "decoded_bytes": 20,
+          "error_kind": null,
+          "messages": [
+            {
+              "arguments": [],
+              "kind": 256
+            }
+          ],
+          "outcome": "raw_reply",
+          "raw_hex": "11872349ae11fffffffe1001000f001400000000"
+        },
+        "request": {
+          "raw_hex": "11872349ae11000000011010040f211400000021000000000000000000000000000000000000000000000000000000000000000000",
+          "read_ms": 500
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Number declared in the tag list but encoded with field tag ff",
+        "header": [],
+        "id": "unknown-field-tag",
+        "outcome": "raw_reply",
+        "pages": [],
+        "raw_response": {
+          "decoded_bytes": 20,
+          "error_kind": null,
+          "messages": [
+            {
+              "arguments": [],
+              "kind": 256
+            }
+          ],
+          "outcome": "raw_reply",
+          "raw_hex": "11872349ae11fffffffe1001000f001400000000"
+        },
+        "request": {
+          "raw_hex": "11872349ae11000000011010040f01140000000106ff",
+          "read_ms": 500
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "One argument declared with a zero-length tag list",
+        "header": [],
+        "id": "tag-list-too-short",
+        "outcome": "timeout",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "WouldBlock",
+          "messages": [],
+          "outcome": "timeout",
+          "raw_hex": ""
+        },
+        "request": {
+          "raw_hex": "11872349ae11000000011010040f011400000000",
+          "read_ms": 500
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Blob field declares the maximum unsigned length with no body",
+        "header": [],
+        "id": "oversized-blob",
+        "outcome": "timeout",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "WouldBlock",
+          "messages": [],
+          "outcome": "timeout",
+          "raw_hex": ""
+        },
+        "request": {
+          "raw_hex": "11872349ae11000000011010040f0114000000010314ffffffff",
+          "read_ms": 500
+        },
+        "rows": [],
+        "total": null
+      }
+    ],
+    "fixture": {
+      "fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+      "profile": "full",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 1
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "malformed-framing"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "e8c45a7020a70103d6a15d5cf9aaa32a3d8c758c6c1f3f33b2a8d80872f7c812",
+    "fixture_fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 3,
+      "mac": "02:00:00:60:00:50",
+      "model": "XDJ-RX3",
+      "model_code": 0,
+      "packet_sha256": "da12196004059977cdbcd83b9e0ae22366a2daf50320ed1a7b033c1d7ab157d4",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 11,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0
+    },
+    "identity_path": "runs/xdj-rx3-player-11.json",
+    "manifest_path": "fixtures/generated/full/manifest.json",
+    "recorded_unix_seconds": 1790796015,
+    "suite_path": "suites/malformed-framing.json",
+    "suite_sha256": "d011bab6fe560ff1c24ebd880e2ff78fae592d5b3a6db97499f8fd32e7de5b4b"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "name": "display-song-info-unicode-boundaries",
+  "fixture_profile": "unicode-boundaries",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "track-01",
+      "description": "Display Song Info supplementary-Unicode Comment and Date Added boundary track 1",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-02",
+      "description": "Display Song Info supplementary-Unicode Comment and Date Added boundary track 2",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-03",
+      "description": "Display Song Info supplementary-Unicode Comment and Date Added boundary track 3",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.third"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-04",
+      "description": "Display Song Info supplementary-Unicode Comment and Date Added boundary track 4",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.fourth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-05",
+      "description": "Display Song Info supplementary-Unicode Comment and Date Added boundary track 5",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.fifth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-06",
+      "description": "Display Song Info supplementary-Unicode Comment and Date Added boundary track 6",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.sixth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-07",
+      "description": "Display Song Info supplementary-Unicode Comment and Date Added boundary track 7",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.seventh"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "track-08",
+      "description": "Display Song Info supplementary-Unicode Comment and Date Added boundary track 8",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.eighth"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

@@ -1,0 +1,486 @@
+Pinned binary SHA-256: 07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244
+Generated with tools/audit_streaming_provider_registry.py.
+
+## streaming::StreamingManager::StreamingManager
+address=0x1030d76f0
+0x01030d76f0  push      rbp
+0x01030d76f1  mov       rbp, rsp
+0x01030d76f4  push      r15
+0x01030d76f6  push      r14
+0x01030d76f8  push      r13
+0x01030d76fa  push      r12
+0x01030d76fc  push      rbx
+0x01030d76fd  push      rax
+0x01030d76fe  mov       r12, rdi
+0x01030d7701  call      0x102811d90  ; __ZN4juce17DeletedAtShutdownC2Ev
+0x01030d7706  lea       rax, [rip + 0x269d8bb]
+0x01030d770d  mov       qword ptr [r12], rax
+0x01030d7711  lea       r13, [r12 + 8]
+0x01030d7716  lea       r14, [r12 + 0x50]
+0x01030d771b  vxorps    xmm0, xmm0, xmm0
+0x01030d771f  vmovups   ymmword ptr [r12 + 8], ymm0
+0x01030d7726  vmovups   ymmword ptr [r12 + 0x28], ymm0
+0x01030d772d  mov       rdi, r14
+0x01030d7730  mov       esi, 1
+0x01030d7735  xor       edx, edx
+0x01030d7737  xor       ecx, ecx
+0x01030d7739  vzeroupper
+0x01030d773c  call      0x1027c44d0  ; __ZN4juce10ThreadPoolC2EimNS_6Thread8PriorityE
+0x01030d7741  lea       rax, [rip + 0x269db50]
+0x01030d7748  mov       qword ptr [r12 + 0x48], rax
+0x01030d774d  vxorps    xmm0, xmm0, xmm0
+0x01030d7751  vmovups   xmmword ptr [r12 + 0x130], xmm0
+0x01030d775b  mov       qword ptr [r12 + 0x140], 0
+0x01030d7767  mov       edi, 0x118
+0x01030d776c  call      0x1038c3cd4
+0x01030d7771  mov       rbx, rax
+0x01030d7774  mov       rdi, rax
+0x01030d7777  call      0x103042ff0  ; __ZN9streaming17SoundCloudServiceC1Ev
+0x01030d777c  mov       rdi, qword ptr [r13]
+0x01030d7780  mov       qword ptr [r13], rbx
+0x01030d7784  test      rdi, rdi
+0x01030d7787  je        0x1030d778f
+0x01030d7789  mov       rax, qword ptr [rdi]
+0x01030d778c  call      qword ptr [rax + 8]
+0x01030d778f  mov       ecx, dword ptr [r12 + 0x140]
+0x01030d7797  mov       eax, dword ptr [r12 + 0x144]
+0x01030d779f  cmp       ecx, eax
+0x01030d77a1  jg        0x1030d7807
+0x01030d77a3  mov       edx, eax
+0x01030d77a5  inc       edx
+0x01030d77a7  shr       edx, 0x1f
+0x01030d77aa  add       edx, eax
+0x01030d77ac  inc       edx
+0x01030d77ae  sar       edx, 1
+0x01030d77b0  lea       ebx, [rax + rdx]
+0x01030d77b3  add       ebx, 9
+0x01030d77b6  and       ebx, 0xfffffff8
+0x01030d77b9  cmp       ecx, ebx
+0x01030d77bb  je        0x1030d77f7
+0x01030d77bd  test      ebx, ebx
+0x01030d77bf  jle       0x1030d77de
+0x01030d77c1  mov       esi, ebx
+0x01030d77c3  shl       rsi, 2
+0x01030d77c7  mov       rdi, qword ptr [r12 + 0x138]
+0x01030d77cf  call      0x1038c44b4
+0x01030d77d4  mov       qword ptr [r12 + 0x138], rax
+0x01030d77dc  jmp       0x1030d77f7
+0x01030d77de  mov       rdi, qword ptr [r12 + 0x138]
+0x01030d77e6  call      0x1038c402e
+0x01030d77eb  mov       qword ptr [r12 + 0x138], 0
+0x01030d77f7  mov       dword ptr [r12 + 0x140], ebx
+0x01030d77ff  mov       eax, dword ptr [r12 + 0x144]
+0x01030d7807  lea       ecx, [rax + 1]
+0x01030d780a  mov       dword ptr [r12 + 0x144], ecx
+0x01030d7812  mov       rcx, qword ptr [r12 + 0x138]
+0x01030d781a  cdqe
+0x01030d781c  mov       dword ptr [rcx + rax*4], 1
+0x01030d7823  mov       edi, 0xd0
+0x01030d7828  call      0x1038c3cd4
+0x01030d782d  mov       rbx, rax
+0x01030d7830  mov       rdi, rax
+0x01030d7833  call      0x102fcf910  ; __ZN9streaming15BeatportServiceC1Ev
+0x01030d7838  mov       rdi, qword ptr [r12 + 0x10]
+0x01030d783d  mov       qword ptr [r12 + 0x10], rbx
+0x01030d7842  test      rdi, rdi
+0x01030d7845  je        0x1030d784d
+0x01030d7847  mov       rax, qword ptr [rdi]
+0x01030d784a  call      qword ptr [rax + 8]
+0x01030d784d  mov       ecx, dword ptr [r12 + 0x140]
+0x01030d7855  mov       eax, dword ptr [r12 + 0x144]
+0x01030d785d  cmp       ecx, eax
+0x01030d785f  jg        0x1030d78c5
+0x01030d7861  mov       edx, eax
+0x01030d7863  inc       edx
+0x01030d7865  shr       edx, 0x1f
+0x01030d7868  add       edx, eax
+0x01030d786a  inc       edx
+0x01030d786c  sar       edx, 1
+0x01030d786e  lea       ebx, [rax + rdx]
+0x01030d7871  add       ebx, 9
+0x01030d7874  and       ebx, 0xfffffff8
+0x01030d7877  cmp       ecx, ebx
+0x01030d7879  je        0x1030d78b5
+0x01030d787b  test      ebx, ebx
+0x01030d787d  jle       0x1030d789c
+0x01030d787f  mov       esi, ebx
+0x01030d7881  shl       rsi, 2
+0x01030d7885  mov       rdi, qword ptr [r12 + 0x138]
+0x01030d788d  call      0x1038c44b4
+0x01030d7892  mov       qword ptr [r12 + 0x138], rax
+0x01030d789a  jmp       0x1030d78b5
+0x01030d789c  mov       rdi, qword ptr [r12 + 0x138]
+0x01030d78a4  call      0x1038c402e
+0x01030d78a9  mov       qword ptr [r12 + 0x138], 0
+0x01030d78b5  mov       dword ptr [r12 + 0x140], ebx
+0x01030d78bd  mov       eax, dword ptr [r12 + 0x144]
+0x01030d78c5  lea       ecx, [rax + 1]
+0x01030d78c8  mov       dword ptr [r12 + 0x144], ecx
+0x01030d78d0  mov       rcx, qword ptr [r12 + 0x138]
+0x01030d78d8  cdqe
+0x01030d78da  mov       dword ptr [rcx + rax*4], 2
+0x01030d78e1  mov       edi, 0x1a8
+0x01030d78e6  call      0x1038c3cd4
+0x01030d78eb  mov       rbx, rax
+0x01030d78ee  mov       rdi, rax
+0x01030d78f1  call      0x1030bb180  ; __ZN9streaming5tidal7ServiceC1Ev
+0x01030d78f6  mov       rdi, qword ptr [r12 + 0x20]
+0x01030d78fb  mov       qword ptr [r12 + 0x20], rbx
+0x01030d7900  test      rdi, rdi
+0x01030d7903  je        0x1030d790b
+0x01030d7905  mov       rax, qword ptr [rdi]
+0x01030d7908  call      qword ptr [rax + 8]
+0x01030d790b  mov       ecx, dword ptr [r12 + 0x140]
+0x01030d7913  mov       eax, dword ptr [r12 + 0x144]
+0x01030d791b  cmp       ecx, eax
+0x01030d791d  jg        0x1030d7983
+0x01030d791f  mov       edx, eax
+0x01030d7921  inc       edx
+0x01030d7923  shr       edx, 0x1f
+0x01030d7926  add       edx, eax
+0x01030d7928  inc       edx
+0x01030d792a  sar       edx, 1
+0x01030d792c  lea       ebx, [rax + rdx]
+0x01030d792f  add       ebx, 9
+0x01030d7932  and       ebx, 0xfffffff8
+0x01030d7935  cmp       ecx, ebx
+0x01030d7937  je        0x1030d7973
+0x01030d7939  test      ebx, ebx
+0x01030d793b  jle       0x1030d795a
+0x01030d793d  mov       esi, ebx
+0x01030d793f  shl       rsi, 2
+0x01030d7943  mov       rdi, qword ptr [r12 + 0x138]
+0x01030d794b  call      0x1038c44b4
+0x01030d7950  mov       qword ptr [r12 + 0x138], rax
+0x01030d7958  jmp       0x1030d7973
+0x01030d795a  mov       rdi, qword ptr [r12 + 0x138]
+0x01030d7962  call      0x1038c402e
+0x01030d7967  mov       qword ptr [r12 + 0x138], 0
+0x01030d7973  mov       dword ptr [r12 + 0x140], ebx
+0x01030d797b  mov       eax, dword ptr [r12 + 0x144]
+0x01030d7983  lea       ecx, [rax + 1]
+0x01030d7986  mov       dword ptr [r12 + 0x144], ecx
+0x01030d798e  mov       rcx, qword ptr [r12 + 0x138]
+0x01030d7996  cdqe
+0x01030d7998  mov       dword ptr [rcx + rax*4], 4
+0x01030d799f  mov       edi, 0x318
+0x01030d79a4  call      0x1038c3cd4
+0x01030d79a9  mov       rbx, rax
+0x01030d79ac  mov       rdi, rax
+0x01030d79af  call      0x103084220  ; __ZN9streaming7spotify7ServiceC1Ev
+0x01030d79b4  mov       rdi, qword ptr [r12 + 0x38]
+0x01030d79b9  mov       qword ptr [r12 + 0x38], rbx
+0x01030d79be  test      rdi, rdi
+0x01030d79c1  je        0x1030d79c9
+0x01030d79c3  mov       rax, qword ptr [rdi]
+0x01030d79c6  call      qword ptr [rax + 8]
+0x01030d79c9  mov       ecx, dword ptr [r12 + 0x140]
+0x01030d79d1  mov       eax, dword ptr [r12 + 0x144]
+0x01030d79d9  cmp       ecx, eax
+0x01030d79db  jg        0x1030d7a41
+0x01030d79dd  mov       edx, eax
+0x01030d79df  inc       edx
+0x01030d79e1  shr       edx, 0x1f
+0x01030d79e4  add       edx, eax
+0x01030d79e6  inc       edx
+0x01030d79e8  sar       edx, 1
+0x01030d79ea  lea       ebx, [rax + rdx]
+0x01030d79ed  add       ebx, 9
+0x01030d79f0  and       ebx, 0xfffffff8
+0x01030d79f3  cmp       ecx, ebx
+0x01030d79f5  je        0x1030d7a31
+0x01030d79f7  test      ebx, ebx
+0x01030d79f9  jle       0x1030d7a18
+0x01030d79fb  mov       esi, ebx
+0x01030d79fd  shl       rsi, 2
+0x01030d7a01  mov       rdi, qword ptr [r12 + 0x138]
+0x01030d7a09  call      0x1038c44b4
+0x01030d7a0e  mov       qword ptr [r12 + 0x138], rax
+0x01030d7a16  jmp       0x1030d7a31
+0x01030d7a18  mov       rdi, qword ptr [r12 + 0x138]
+0x01030d7a20  call      0x1038c402e
+0x01030d7a25  mov       qword ptr [r12 + 0x138], 0
+0x01030d7a31  mov       dword ptr [r12 + 0x140], ebx
+0x01030d7a39  mov       eax, dword ptr [r12 + 0x144]
+0x01030d7a41  lea       ecx, [rax + 1]
+0x01030d7a44  mov       dword ptr [r12 + 0x144], ecx
+0x01030d7a4c  mov       rcx, qword ptr [r12 + 0x138]
+0x01030d7a54  cdqe
+0x01030d7a56  mov       dword ptr [rcx + rax*4], 7
+0x01030d7a5d  mov       edi, 0x348
+0x01030d7a62  call      0x1038c3cd4
+0x01030d7a67  mov       rbx, rax
+0x01030d7a6a  mov       rdi, rax
+0x01030d7a6d  call      0x102f7f560  ; __ZN9streaming11apple_music7ServiceC1Ev
+0x01030d7a72  mov       rdi, qword ptr [r12 + 0x40]
+0x01030d7a77  mov       qword ptr [r12 + 0x40], rbx
+0x01030d7a7c  test      rdi, rdi
+0x01030d7a7f  je        0x1030d7a87
+0x01030d7a81  mov       rax, qword ptr [rdi]
+0x01030d7a84  call      qword ptr [rax + 8]
+0x01030d7a87  mov       ecx, dword ptr [r12 + 0x140]
+0x01030d7a8f  mov       eax, dword ptr [r12 + 0x144]
+0x01030d7a97  cmp       ecx, eax
+0x01030d7a99  jg        0x1030d7aff
+0x01030d7a9b  mov       edx, eax
+0x01030d7a9d  inc       edx
+0x01030d7a9f  shr       edx, 0x1f
+0x01030d7aa2  add       edx, eax
+0x01030d7aa4  inc       edx
+0x01030d7aa6  sar       edx, 1
+0x01030d7aa8  lea       ebx, [rax + rdx]
+0x01030d7aab  add       ebx, 9
+0x01030d7aae  and       ebx, 0xfffffff8
+0x01030d7ab1  cmp       ecx, ebx
+0x01030d7ab3  je        0x1030d7aef
+0x01030d7ab5  test      ebx, ebx
+0x01030d7ab7  jle       0x1030d7ad6
+0x01030d7ab9  mov       esi, ebx
+0x01030d7abb  shl       rsi, 2
+0x01030d7abf  mov       rdi, qword ptr [r12 + 0x138]
+0x01030d7ac7  call      0x1038c44b4
+0x01030d7acc  mov       qword ptr [r12 + 0x138], rax
+0x01030d7ad4  jmp       0x1030d7aef
+0x01030d7ad6  mov       rdi, qword ptr [r12 + 0x138]
+0x01030d7ade  call      0x1038c402e
+0x01030d7ae3  mov       qword ptr [r12 + 0x138], 0
+0x01030d7aef  mov       dword ptr [r12 + 0x140], ebx
+0x01030d7af7  mov       eax, dword ptr [r12 + 0x144]
+0x01030d7aff  lea       ecx, [rax + 1]
+0x01030d7b02  mov       dword ptr [r12 + 0x144], ecx
+0x01030d7b0a  mov       rcx, qword ptr [r12 + 0x138]
+0x01030d7b12  cdqe
+0x01030d7b14  mov       dword ptr [rcx + rax*4], 8
+0x01030d7b1b  add       rsp, 8
+0x01030d7b1f  pop       rbx
+0x01030d7b20  pop       r12
+0x01030d7b22  pop       r13
+0x01030d7b24  pop       r14
+0x01030d7b26  pop       r15
+0x01030d7b28  pop       rbp
+0x01030d7b29  ret
+
+## streaming::StreamingManager::isStreamingProtocol
+address=0x1030d8610
+0x01030d8610  push      rbp
+0x01030d8611  mov       rbp, rsp
+0x01030d8614  push      r14
+0x01030d8616  push      rbx
+0x01030d8617  mov       r14, rsi
+0x01030d861a  mov       rbx, rdi
+0x01030d861d  mov       rdi, qword ptr [rdi + 8]
+0x01030d8621  test      rdi, rdi
+0x01030d8624  je        0x1030d8637
+0x01030d8626  mov       rax, qword ptr [rdi]
+0x01030d8629  mov       rsi, r14
+0x01030d862c  call      qword ptr [rax + 0x30]
+0x01030d862f  mov       ecx, eax
+0x01030d8631  mov       al, 1
+0x01030d8633  test      cl, cl
+0x01030d8635  jne       0x1030d86b3
+0x01030d8637  mov       rax, qword ptr [rip + 0x2a10742]
+0x01030d863e  test      rax, rax
+0x01030d8641  je        0x1030d865d
+0x01030d8643  mov       rdi, qword ptr [rax + 0x10]
+0x01030d8647  test      rdi, rdi
+0x01030d864a  je        0x1030d865d
+0x01030d864c  mov       rax, qword ptr [rdi]
+0x01030d864f  mov       rsi, r14
+0x01030d8652  call      qword ptr [rax + 0x30]
+0x01030d8655  mov       ecx, eax
+0x01030d8657  mov       al, 1
+0x01030d8659  test      cl, cl
+0x01030d865b  jne       0x1030d86b3
+0x01030d865d  mov       rax, qword ptr [rip + 0x2a1071c]
+0x01030d8664  mov       rdi, qword ptr [rbx + 0x20]
+0x01030d8668  test      rdi, rdi
+0x01030d866b  je        0x1030d867e
+0x01030d866d  mov       rax, qword ptr [rdi]
+0x01030d8670  mov       rsi, r14
+0x01030d8673  call      qword ptr [rax + 0x30]
+0x01030d8676  mov       ecx, eax
+0x01030d8678  mov       al, 1
+0x01030d867a  test      cl, cl
+0x01030d867c  jne       0x1030d86b3
+0x01030d867e  mov       rdi, qword ptr [rbx + 0x38]
+0x01030d8682  test      rdi, rdi
+0x01030d8685  je        0x1030d8698
+0x01030d8687  mov       rax, qword ptr [rdi]
+0x01030d868a  mov       rsi, r14
+0x01030d868d  call      qword ptr [rax + 0x30]
+0x01030d8690  mov       ecx, eax
+0x01030d8692  mov       al, 1
+0x01030d8694  test      cl, cl
+0x01030d8696  jne       0x1030d86b3
+0x01030d8698  mov       rdi, qword ptr [rbx + 0x40]
+0x01030d869c  test      rdi, rdi
+0x01030d869f  je        0x1030d86b1
+0x01030d86a1  mov       rax, qword ptr [rdi]
+0x01030d86a4  mov       rax, qword ptr [rax + 0x30]
+0x01030d86a8  mov       rsi, r14
+0x01030d86ab  pop       rbx
+0x01030d86ac  pop       r14
+0x01030d86ae  pop       rbp
+0x01030d86af  jmp       rax
+0x01030d86b1  xor       eax, eax
+0x01030d86b3  pop       rbx
+0x01030d86b4  pop       r14
+0x01030d86b6  pop       rbp
+0x01030d86b7  ret
+
+## streaming::isStreamingProtocol
+address=0x1030d8820
+0x01030d8820  push      rbp
+0x01030d8821  mov       rbp, rsp
+0x01030d8824  push      rbx
+0x01030d8825  push      rax
+0x01030d8826  mov       rbx, rdi
+0x01030d8829  mov       rax, qword ptr [rip + 0x2a10550]
+0x01030d8830  test      rax, rax
+0x01030d8833  je        0x1030d8853
+0x01030d8835  mov       rdi, qword ptr [rax + 8]
+0x01030d8839  test      rdi, rdi
+0x01030d883c  je        0x1030d8853
+0x01030d883e  mov       rax, qword ptr [rdi]
+0x01030d8841  mov       rsi, rbx
+0x01030d8844  call      qword ptr [rax + 0x30]
+0x01030d8847  mov       ecx, eax
+0x01030d8849  mov       al, 1
+0x01030d884b  test      cl, cl
+0x01030d884d  jne       0x1030d8907
+0x01030d8853  mov       rax, qword ptr [rip + 0x2a10526]
+0x01030d885a  test      rax, rax
+0x01030d885d  je        0x1030d887d
+0x01030d885f  mov       rdi, qword ptr [rax + 0x10]
+0x01030d8863  test      rdi, rdi
+0x01030d8866  je        0x1030d887d
+0x01030d8868  mov       rax, qword ptr [rdi]
+0x01030d886b  mov       rsi, rbx
+0x01030d886e  call      qword ptr [rax + 0x30]
+0x01030d8871  mov       ecx, eax
+0x01030d8873  mov       al, 1
+0x01030d8875  test      cl, cl
+0x01030d8877  jne       0x1030d8907
+0x01030d887d  mov       rax, qword ptr [rip + 0x2a104fc]
+0x01030d8884  mov       rax, qword ptr [rip + 0x2a104f5]
+0x01030d888b  test      rax, rax
+0x01030d888e  je        0x1030d88aa
+0x01030d8890  mov       rdi, qword ptr [rax + 0x20]
+0x01030d8894  test      rdi, rdi
+0x01030d8897  je        0x1030d88aa
+0x01030d8899  mov       rax, qword ptr [rdi]
+0x01030d889c  mov       rsi, rbx
+0x01030d889f  call      qword ptr [rax + 0x30]
+0x01030d88a2  mov       ecx, eax
+0x01030d88a4  mov       al, 1
+0x01030d88a6  test      cl, cl
+0x01030d88a8  jne       0x1030d8907
+0x01030d88aa  mov       rax, qword ptr [rip + 0x2a104cf]
+0x01030d88b1  mov       rax, qword ptr [rip + 0x2a104c8]
+0x01030d88b8  mov       rax, qword ptr [rip + 0x2a104c1]
+0x01030d88bf  test      rax, rax
+0x01030d88c2  je        0x1030d88de
+0x01030d88c4  mov       rdi, qword ptr [rax + 0x38]
+0x01030d88c8  test      rdi, rdi
+0x01030d88cb  je        0x1030d88de
+0x01030d88cd  mov       rax, qword ptr [rdi]
+0x01030d88d0  mov       rsi, rbx
+0x01030d88d3  call      qword ptr [rax + 0x30]
+0x01030d88d6  mov       ecx, eax
+0x01030d88d8  mov       al, 1
+0x01030d88da  test      cl, cl
+0x01030d88dc  jne       0x1030d8907
+0x01030d88de  mov       rax, qword ptr [rip + 0x2a1049b]
+0x01030d88e5  test      rax, rax
+0x01030d88e8  je        0x1030d8905
+0x01030d88ea  mov       rdi, qword ptr [rax + 0x40]
+0x01030d88ee  test      rdi, rdi
+0x01030d88f1  je        0x1030d8905
+0x01030d88f3  mov       rax, qword ptr [rdi]
+0x01030d88f6  mov       rax, qword ptr [rax + 0x30]
+0x01030d88fa  mov       rsi, rbx
+0x01030d88fd  add       rsp, 8
+0x01030d8901  pop       rbx
+0x01030d8902  pop       rbp
+0x01030d8903  jmp       rax
+0x01030d8905  xor       eax, eax
+0x01030d8907  add       rsp, 8
+0x01030d890b  pop       rbx
+0x01030d890c  pop       rbp
+0x01030d890d  ret
+
+## streaming::StreamingManager::isStreamingLoggedIn
+address=0x1030d8910
+0x01030d8910  push      rbp
+0x01030d8911  mov       rbp, rsp
+0x01030d8914  dec       esi
+0x01030d8916  cmp       esi, 7
+0x01030d8919  ja        0x1030d8989
+0x01030d891b  lea       rax, [rip + 0x6e]
+0x01030d8922  movsxd    rcx, dword ptr [rax + rsi*4]
+0x01030d8926  add       rcx, rax
+0x01030d8929  jmp       rcx
+0x01030d892b  mov       rdi, qword ptr [rdi + 8]
+0x01030d892f  test      rdi, rdi
+0x01030d8932  jne       0x1030d8976
+0x01030d8934  jmp       0x1030d8989
+0x01030d8936  mov       rdi, qword ptr [rdi + 0x10]
+0x01030d893a  test      rdi, rdi
+0x01030d893d  jne       0x1030d8976
+0x01030d893f  jmp       0x1030d8989
+0x01030d8941  mov       rdi, qword ptr [rdi + 0x18]
+0x01030d8945  test      rdi, rdi
+0x01030d8948  jne       0x1030d8976
+0x01030d894a  jmp       0x1030d8989
+0x01030d894c  mov       rdi, qword ptr [rdi + 0x20]
+0x01030d8950  test      rdi, rdi
+0x01030d8953  jne       0x1030d8976
+0x01030d8955  jmp       0x1030d8989
+0x01030d8957  mov       rdi, qword ptr [rdi + 0x28]
+0x01030d895b  test      rdi, rdi
+0x01030d895e  jne       0x1030d8976
+0x01030d8960  jmp       0x1030d8989
+0x01030d8962  mov       rdi, qword ptr [rdi + 0x30]
+0x01030d8966  test      rdi, rdi
+0x01030d8969  jne       0x1030d8976
+0x01030d896b  jmp       0x1030d8989
+0x01030d896d  mov       rdi, qword ptr [rdi + 0x38]
+0x01030d8971  test      rdi, rdi
+0x01030d8974  je        0x1030d8989
+0x01030d8976  mov       rax, qword ptr [rdi]
+0x01030d8979  pop       rbp
+0x01030d897a  jmp       qword ptr [rax + 0xc8]
+0x01030d8980  mov       rdi, qword ptr [rdi + 0x40]
+0x01030d8984  test      rdi, rdi
+0x01030d8987  jne       0x1030d8976
+0x01030d8989  xor       eax, eax
+0x01030d898b  pop       rbp
+0x01030d898c  ret
+
+## streaming::isBeatsourceProtocol
+address=0x1030d8200
+0x01030d8200  push      rbp
+0x01030d8201  mov       rbp, rsp
+0x01030d8204  mov       rax, qword ptr [rip + 0x2a10b75]
+0x01030d820b  xor       eax, eax
+0x01030d820d  pop       rbp
+0x01030d820e  ret
+
+## BeatportService protocol predicate
+address=0x102fcfc10
+0x0102fcfc10  push      rbp
+0x0102fcfc11  mov       rbp, rsp
+0x0102fcfc14  push      rbx
+0x0102fcfc15  push      rax
+0x0102fcfc16  mov       rbx, rsi
+0x0102fcfc19  lea       rsi, [rip + 0x23e38b2]
+0x0102fcfc20  lea       rdi, [rbp - 0x10]
+0x0102fcfc24  call      0x10278ad70  ; __ZN4juce9StringRefC1EPKc
+0x0102fcfc29  mov       rsi, qword ptr [rbp - 0x10]
+0x0102fcfc2d  mov       rdi, rbx
+0x0102fcfc30  call      0x10279e250  ; __ZNK4juce6String8containsENS_9StringRefE
+0x0102fcfc35  add       rsp, 8
+0x0102fcfc39  pop       rbx
+0x0102fcfc3a  pop       rbp
+0x0102fcfc3b  ret
+

@@ -1,0 +1,574 @@
+{
+  "behavior": {
+    "conversion_domains": {
+      "bpm": "signed integer with negative-domain row exclusion",
+      "play_count_duration_year": "shared unsigned-like behavior",
+      "rating": "signed low-byte behavior"
+    },
+    "missing_range_endpoint_coerces_to_zero": true,
+    "missing_value_left_coerces_to_zero": true,
+    "property_results": {
+      "bpm": {
+        "equal-half": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "uint32_plus_one"
+        ],
+        "equal-int32-max": [
+          "int32_max"
+        ],
+        "equal-int32-plus-one": [
+          "int32_max"
+        ],
+        "equal-uint32-max": [
+          "int32_max"
+        ],
+        "equal-uint32-plus-one": [
+          "int32_max"
+        ],
+        "equal-zero": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "uint32_plus_one"
+        ],
+        "greater-half": [
+          "one_half",
+          "int32_max"
+        ],
+        "greater-int32-max": [],
+        "greater-zero": [
+          "one_half",
+          "int32_max"
+        ],
+        "less-half": [],
+        "less-zero": [],
+        "missing-left-equal": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "uint32_plus_one"
+        ],
+        "missing-left-not-equal": [
+          "one_half",
+          "int32_max"
+        ],
+        "not-equal-half": [
+          "one_half",
+          "int32_max"
+        ],
+        "not-equal-zero": [
+          "one_half",
+          "int32_max"
+        ],
+        "range-both-missing": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "uint32_plus_one"
+        ],
+        "range-half-to-one-half": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "uint32_plus_one"
+        ],
+        "range-minus-one-to-one": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "uint32_plus_one"
+        ],
+        "range-missing-left": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "uint32_plus_one"
+        ],
+        "range-missing-right": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "uint32_plus_one"
+        ]
+      },
+      "duration": {
+        "equal-half": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "equal-int32-max": [],
+        "equal-int32-plus-one": [],
+        "equal-uint32-max": [],
+        "equal-uint32-plus-one": [],
+        "equal-zero": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "greater-half": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "greater-int32-max": [],
+        "greater-zero": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "less-half": [],
+        "less-zero": [],
+        "missing-left-equal": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "missing-left-not-equal": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "not-equal-half": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "not-equal-zero": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "range-both-missing": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-half-to-one-half": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-minus-one-to-one": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-missing-left": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-missing-right": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ]
+      },
+      "play-count": {
+        "equal-half": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "equal-int32-max": [],
+        "equal-int32-plus-one": [],
+        "equal-uint32-max": [],
+        "equal-uint32-plus-one": [],
+        "equal-zero": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "greater-half": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "greater-int32-max": [],
+        "greater-zero": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "less-half": [],
+        "less-zero": [],
+        "missing-left-equal": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "missing-left-not-equal": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "not-equal-half": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "not-equal-zero": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "range-both-missing": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-half-to-one-half": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-minus-one-to-one": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-missing-left": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-missing-right": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ]
+      },
+      "rating": {
+        "equal-half": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "equal-int32-max": [],
+        "equal-int32-plus-one": [],
+        "equal-uint32-max": [],
+        "equal-uint32-plus-one": [],
+        "equal-zero": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "greater-half": [
+          "one_half"
+        ],
+        "greater-int32-max": [],
+        "greater-zero": [
+          "one_half"
+        ],
+        "less-half": [
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "less-zero": [
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "missing-left-equal": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "missing-left-not-equal": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "not-equal-half": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "not-equal-zero": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "range-both-missing": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-half-to-one-half": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-minus-one-to-one": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "minus_one",
+          "int32_max",
+          "int32_plus_one",
+          "uint32_max",
+          "uint32_plus_one"
+        ],
+        "range-missing-left": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-missing-right": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "minus_one",
+          "int32_max",
+          "int32_plus_one",
+          "uint32_max",
+          "uint32_plus_one"
+        ]
+      },
+      "year": {
+        "equal-half": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "equal-int32-max": [],
+        "equal-int32-plus-one": [],
+        "equal-uint32-max": [],
+        "equal-uint32-plus-one": [],
+        "equal-zero": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "greater-half": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "greater-int32-max": [],
+        "greater-zero": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "less-half": [],
+        "less-zero": [],
+        "missing-left-equal": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "missing-left-not-equal": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "not-equal-half": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "not-equal-zero": [
+          "one_half",
+          "minus_one",
+          "int32_max",
+          "uint32_max"
+        ],
+        "range-both-missing": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-half-to-one-half": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-minus-one-to-one": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-missing-left": [
+          "null",
+          "zero",
+          "half",
+          "one_half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ],
+        "range-missing-right": [
+          "null",
+          "zero",
+          "half",
+          "minus_half",
+          "int32_plus_one",
+          "uint32_plus_one"
+        ]
+      }
+    },
+    "rule_fractional_half_coerces_to_zero": true
+  },
+  "fixture": {
+    "database_sha256": "e24f385099f67721702afa49fd57beaa35ff5fdc87a834480920bbe23f78b93e",
+    "fingerprint": "49d85459ca4f01d7020eb3821b6d4fc0897f7d2dea6fe36706c90562f8ca5240",
+    "profile": "smart-numeric-boundaries",
+    "sqlite_storage_values": {
+      "half": 0.5,
+      "int32_max": 2147483647,
+      "int32_plus_one": 2147483648,
+      "minus_half": -0.5,
+      "minus_one": -1,
+      "null": null,
+      "one_half": 1.5,
+      "uint32_max": 4294967295,
+      "uint32_plus_one": 4294967296,
+      "zero": 0
+    },
+    "tracks": 10
+  },
+  "format": "rekordbox-link-export-smart-numeric-boundaries-v1",
+  "oracle": {
+    "cases": 100,
+    "golden_sha256": "0e6ef4eaef8a70b17a0c1a6e614fb5b31b0c0c8e234edfc8b3b344c7459b629b",
+    "immediate_repeat_verified": true,
+    "suite_sha256": "3b164381f318591bfcc0724cd43065559e5216ba2fdabd601a12816399484bc4"
+  },
+  "rbxport": {
+    "cases": 100,
+    "different": 71,
+    "exact": 29,
+    "same_outcome_total_row_count": 29,
+    "version": "c144f19+tree.80e87ec8aace"
+  }
+}

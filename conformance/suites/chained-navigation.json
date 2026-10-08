@@ -1,0 +1,187 @@
+{
+  "name": "returned-id-navigation",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "genres",
+      "description": "Genre selectors used by later cases",
+      "request_kind": "0x1001",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 2, "row_count": 2}
+    },
+    {
+      "id": "genre-artists",
+      "description": "Artists under the first returned genre",
+      "request_kind": "0x1101",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"case_item": {"case": "genres", "row": 0}}
+      ],
+      "expect": {"outcome": "menu", "total": 3, "row_count": 3}
+    },
+    {
+      "id": "genre-albums-all-artists",
+      "description": "Albums under the first returned genre and ALL artists",
+      "request_kind": "0x1201",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"case_item": {"case": "genres", "row": 0}},
+        {"number": "0xffffffff"}
+      ],
+      "expect": {"outcome": "menu", "total": 3, "row_count": 3}
+    },
+    {
+      "id": "genre-tracks-all",
+      "description": "Tracks under the first returned genre with both wildcards",
+      "request_kind": "0x1301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"case_item": {"case": "genres", "row": 0}},
+        {"number": "0xffffffff"},
+        {"number": "0xffffffff"}
+      ],
+      "expect": {"outcome": "menu", "total": 4, "row_count": 4}
+    },
+    {
+      "id": "genre-albums-selected-artist",
+      "description": "Albums under returned genre and returned concrete artist",
+      "request_kind": "0x1201",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"case_item": {"case": "genres", "row": 0}},
+        {"case_item": {"case": "genre-artists", "row": 1}}
+      ],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "genre-tracks-selected-album",
+      "description": "Tracks under returned genre, artist, and album",
+      "request_kind": "0x1301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"case_item": {"case": "genres", "row": 0}},
+        {"case_item": {"case": "genre-artists", "row": 1}},
+        {"case_item": {"case": "genre-albums-selected-artist", "row": 1}}
+      ],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "artists",
+      "description": "Artist selectors used by later cases",
+      "request_kind": "0x1002",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 2, "row_count": 2}
+    },
+    {
+      "id": "artist-albums",
+      "description": "Albums under the first returned artist",
+      "request_kind": "0x1102",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"case_item": {"case": "artists", "row": 0}}
+      ],
+      "expect": {"outcome": "menu", "total": 3, "row_count": 3}
+    },
+    {
+      "id": "artist-tracks-all-albums",
+      "description": "Tracks under the returned artist and ALL albums",
+      "request_kind": "0x1202",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"case_item": {"case": "artists", "row": 0}},
+        {"number": "0xffffffff"}
+      ],
+      "expect": {"outcome": "menu", "total": 5, "row_count": 5}
+    },
+    {
+      "id": "artist-tracks-selected-album",
+      "description": "Tracks under returned artist and returned concrete album",
+      "request_kind": "0x1202",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"case_item": {"case": "artists", "row": 0}},
+        {"case_item": {"case": "artist-albums", "row": 1}}
+      ],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "albums",
+      "description": "Album selectors used by a later case",
+      "request_kind": "0x1003",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 3, "row_count": 3}
+    },
+    {
+      "id": "album-tracks",
+      "description": "Tracks under the first returned album",
+      "request_kind": "0x1103",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"case_item": {"case": "albums", "row": 0}}
+      ],
+      "expect": {"outcome": "menu", "total": 3, "row_count": 3}
+    },
+    {
+      "id": "labels",
+      "description": "Label selectors used by later cases",
+      "request_kind": "0x100a",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 2, "row_count": 2}
+    },
+    {
+      "id": "label-artists",
+      "description": "Artists under the first returned label",
+      "request_kind": "0x110a",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"case_item": {"case": "labels", "row": 0}}
+      ],
+      "expect": {"outcome": "menu", "total": 3, "row_count": 3}
+    },
+    {
+      "id": "label-albums-all-artists",
+      "description": "Albums under returned label and ALL artists",
+      "request_kind": "0x120a",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"case_item": {"case": "labels", "row": 0}},
+        {"number": "0xffffffff"}
+      ],
+      "expect": {"outcome": "menu"}
+    },
+    {
+      "id": "label-tracks-all",
+      "description": "Tracks under returned label with both wildcards",
+      "request_kind": "0x130a",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"case_item": {"case": "labels", "row": 0}},
+        {"number": "0xffffffff"},
+        {"number": "0xffffffff"}
+      ],
+      "expect": {"outcome": "menu", "total": 4, "row_count": 4}
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "format": 1,
+  "dimensions": {
+    "model_name": [
+      "CDJ-2000NXS2",
+      "CDJ-3000",
+      "XDJ-RX3",
+      "XDJ-XZ",
+      "XDJ-AZ",
+      "XDJ-1000MK2",
+      "UNKNOWN-FIXTURE"
+    ],
+    "player_number": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "device_type": [
+      "cdj",
+      "mixer",
+      "djm",
+      "type7"
+    ],
+    "generation": [
+      0,
+      2,
+      3
+    ],
+    "setup": [
+      "legacy",
+      "extended"
+    ],
+    "root_capabilities": [
+      "0x00ffffff",
+      "0x05cfffff",
+      "0xffffffff"
+    ],
+    "render_arity": [
+      5,
+      6,
+      8
+    ]
+  },
+  "pairwise_default": true,
+  "full_cross_product_required_for": [
+    "model_name x setup",
+    "model_name x root_capabilities",
+    "model_name x render_arity",
+    "model_name x device_type",
+    "model_name x generation"
+  ],
+  "notes": [
+    "Model name is supplied by the discovery/keepalive identity, not the dbserver setup message.",
+    "Device type and generation are independent keepalive fields and are varied even for synthetic combinations.",
+    "Run model cases only on the isolated synthetic-player L2 segment.",
+    "Record identical menu, sort, track-row, unsupported-command, and compatibility cases per identity.",
+    "Record display-song-info item order: XDJ-prefixed AIO identities place Comment before Key; non-AIO identities place Comment after Stock Date."
+  ]
+}

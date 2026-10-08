@@ -1,0 +1,2395 @@
+{
+  "name": "smart-serving-crosses",
+  "fixture_profile": "smart-rule-matrix",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "sort-00",
+      "description": "SmartList serving cross: track root with requested sort ID 0",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-01",
+      "description": "SmartList serving cross: track root with requested sort ID 1",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.eighth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-02",
+      "description": "SmartList serving cross: track root with requested sort ID 2",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 2
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-03",
+      "description": "SmartList serving cross: track root with requested sort ID 3",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 3
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.sixth",
+          "$fixture.track.eighth",
+          "$fixture.track.second",
+          "$fixture.track.fifth",
+          "$fixture.track.seventh"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-04",
+      "description": "SmartList serving cross: track root with requested sort ID 4",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 4
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-05",
+      "description": "SmartList serving cross: track root with requested sort ID 5",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 5
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.sixth",
+          "$fixture.track.fifth",
+          "$fixture.track.fourth",
+          "$fixture.track.third",
+          "$fixture.track.second",
+          "$fixture.track.eighth",
+          "$fixture.track.first",
+          "$fixture.track.seventh"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-06",
+      "description": "SmartList serving cross: track root with requested sort ID 6",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 6
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.third",
+          "$fixture.track.fifth",
+          "$fixture.track.seventh",
+          "$fixture.track.second",
+          "$fixture.track.fourth",
+          "$fixture.track.sixth",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-07",
+      "description": "SmartList serving cross: track root with requested sort ID 7",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 7
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-08",
+      "description": "SmartList serving cross: track root with requested sort ID 8",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 8
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.eighth",
+          "$fixture.track.seventh",
+          "$fixture.track.sixth",
+          "$fixture.track.fifth",
+          "$fixture.track.fourth",
+          "$fixture.track.third",
+          "$fixture.track.second",
+          "$fixture.track.first"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-09",
+      "description": "SmartList serving cross: track root with requested sort ID 9",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 9
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-10",
+      "description": "SmartList serving cross: track root with requested sort ID 10",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 10
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.third",
+          "$fixture.track.fifth",
+          "$fixture.track.seventh",
+          "$fixture.track.second",
+          "$fixture.track.fourth",
+          "$fixture.track.sixth",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-11",
+      "description": "SmartList serving cross: track root with requested sort ID 11",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 11
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-12",
+      "description": "SmartList serving cross: track root with requested sort ID 12",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.third",
+          "$fixture.track.fifth",
+          "$fixture.track.seventh",
+          "$fixture.track.second",
+          "$fixture.track.fourth",
+          "$fixture.track.sixth",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-13",
+      "description": "SmartList serving cross: track root with requested sort ID 13",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 13
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.eighth",
+          "$fixture.track.seventh",
+          "$fixture.track.sixth",
+          "$fixture.track.fifth",
+          "$fixture.track.fourth",
+          "$fixture.track.third",
+          "$fixture.track.second",
+          "$fixture.track.first"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-14",
+      "description": "SmartList serving cross: track root with requested sort ID 14",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 14
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.eighth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-15",
+      "description": "SmartList serving cross: track root with requested sort ID 15",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 15
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-16",
+      "description": "SmartList serving cross: track root with requested sort ID 16",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 16
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.eighth",
+          "$fixture.track.seventh",
+          "$fixture.track.sixth",
+          "$fixture.track.fifth",
+          "$fixture.track.fourth",
+          "$fixture.track.third",
+          "$fixture.track.second",
+          "$fixture.track.first"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "sort-17",
+      "description": "SmartList serving cross: track root with requested sort ID 17",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 17
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.fourth",
+          "$fixture.track.eighth",
+          "$fixture.track.third",
+          "$fixture.track.seventh",
+          "$fixture.track.second",
+          "$fixture.track.sixth",
+          "$fixture.track.first",
+          "$fixture.track.fifth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-database-selection-zero-gate",
+      "description": "SmartList serving cross: a zero override gate retains the database-selected secondary column",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0,
+        0
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-disabled-with-zero-gate",
+      "description": "SmartList serving cross: a zero gate ignores a nonzero override and retains the database selection",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        0,
+        7
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-database-selection",
+      "description": "SmartList serving cross: eight-argument render uses the database-selected Key column",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        0
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-02",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 2",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        2
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-03",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 3",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        3
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-04",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 4",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        4
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-05",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 5",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        5
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-06",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 6",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        6
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-07",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 7",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        7
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-08",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 8",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        8
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-09",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 9",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        9
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-10",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 10",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        10
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-11",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 11",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        11
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-12",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 12",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        12
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-13",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 13",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        13
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-14",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 14",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        14
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-15",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 15",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        15
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-16",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 16",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        16
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "render-override-17",
+      "description": "SmartList serving cross: render argument 8 overrides the secondary selector with sort ID 17",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        17
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "page-one-row-pages",
+      "description": "SmartList serving cross: complete menu fetched one row at a time",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "page_size": 1,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "page-single-complete-page",
+      "description": "SmartList serving cross: complete menu fetched in one exact-size page",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": "$total"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "page-last-row",
+      "description": "SmartList serving cross: one row requested at the final valid offset",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 7,
+          "count": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "page-zero-count",
+      "description": "SmartList serving cross: zero rows requested at the first offset",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.first"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "page-at-end",
+      "description": "SmartList serving cross: one row requested exactly at total",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": "$total",
+          "count": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "page-past-end",
+      "description": "SmartList serving cross: one row requested beyond total",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 9,
+          "count": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "page-overrun",
+      "description": "SmartList serving cross: a page begins at the final row and requests beyond total",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 7,
+          "count": 10
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "page-overlap",
+      "description": "SmartList serving cross: two explicitly overlapping page windows preserve repeated wire rows",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": 3
+        },
+        {
+          "offset": 2,
+          "count": 3
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "page-maximum-offset",
+      "description": "SmartList serving cross: maximum unsigned render offset",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": "0xffffffff",
+          "count": 1
+        }
+      ],
+      "expect": {
+        "outcome": "render_timeout",
+        "total": 8
+      }
+    },
+    {
+      "id": "context-player-1",
+      "description": "SmartList serving cross: requester/player byte 1",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-player-2",
+      "description": "SmartList serving cross: requester/player byte 2",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x02010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "timeout"
+      }
+    },
+    {
+      "id": "context-player-3",
+      "description": "SmartList serving cross: requester/player byte 3",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x03010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "timeout"
+      }
+    },
+    {
+      "id": "context-player-4",
+      "description": "SmartList serving cross: requester/player byte 4",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x04010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "timeout"
+      }
+    },
+    {
+      "id": "context-player-5",
+      "description": "SmartList serving cross: requester/player byte 5",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x05010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "timeout"
+      }
+    },
+    {
+      "id": "context-player-6",
+      "description": "SmartList serving cross: requester/player byte 6",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x06010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "timeout"
+      }
+    },
+    {
+      "id": "context-location-1",
+      "description": "SmartList serving cross: menu-location candidate byte 1",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-location-2",
+      "description": "SmartList serving cross: menu-location candidate byte 2",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01020301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-location-3",
+      "description": "SmartList serving cross: menu-location candidate byte 3",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01030301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-location-4",
+      "description": "SmartList serving cross: menu-location candidate byte 4",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01040301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-location-5",
+      "description": "SmartList serving cross: menu-location candidate byte 5",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01050301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-location-6",
+      "description": "SmartList serving cross: menu-location candidate byte 6",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01060301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-location-7",
+      "description": "SmartList serving cross: menu-location candidate byte 7",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01070301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-location-8",
+      "description": "SmartList serving cross: menu-location candidate byte 8",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01080301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-slot-0",
+      "description": "SmartList serving cross: media-slot candidate byte 0",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010001"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-slot-1",
+      "description": "SmartList serving cross: media-slot candidate byte 1",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010101"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-slot-2",
+      "description": "SmartList serving cross: media-slot candidate byte 2",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010201"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-slot-3",
+      "description": "SmartList serving cross: media-slot candidate byte 3",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    },
+    {
+      "id": "context-slot-4",
+      "description": "SmartList serving cross: media-slot candidate byte 4",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010401"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh",
+          "$fixture.track.eighth"
+        ],
+        "argument_count": 16
+      }
+    }
+  ]
+}

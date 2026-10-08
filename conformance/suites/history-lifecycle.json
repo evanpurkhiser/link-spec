@@ -1,0 +1,27 @@
+{
+  "name": "link-history-lifecycle",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"initial-root","description":"History root before current-session mutation","request_kind":"0x1012","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu"}},
+    {"id":"insert-first","description":"Player adds the first fixture track without awaiting a response","request_kind":"0x3001","arguments":[{"number":"$context"},{"number":"$fixture.track.first"}],"render":false,"send_only":true,"expect":{"outcome":"sent"}},
+    {"id":"root-after-first","description":"History root after the first current-session insertion","request_kind":"0x1012","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu"}},
+    {"id":"tracks-after-first","description":"Tracks in the current history selected by its returned row ID","request_kind":"0x1112","arguments":[{"number":"$context"},{"number":"$sort"},{"case_item":{"case":"root-after-first","canonicalize":true}}],"expect":{"outcome":"menu"}},
+    {"id":"insert-second","description":"Player appends the second fixture track without awaiting a response","request_kind":"0x3001","arguments":[{"number":"$context"},{"number":"$fixture.track.second"}],"render":false,"send_only":true,"expect":{"outcome":"sent"}},
+    {"id":"tracks-after-second","description":"Current history after a second insertion","request_kind":"0x1112","arguments":[{"number":"$context"},{"number":"$sort"},{"case_item":{"case":"root-after-first","canonicalize":true}}],"expect":{"outcome":"menu"}},
+    {"id":"remove-first","description":"Player removes the first fixture track from current history","request_kind":"0x3401","arguments":[{"number":"$context"},{"number":"$fixture.track.first"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"tracks-after-remove","description":"Current history after track removal","request_kind":"0x1112","arguments":[{"number":"$context"},{"number":"$sort"},{"case_item":{"case":"root-after-first","canonicalize":true}}],"expect":{"outcome":"menu"}},
+    {"id":"delete-history","description":"Player deletes the returned current history without awaiting a response","request_kind":"0x3101","arguments":[{"number":"$context"},{"case_item":{"case":"root-after-first","canonicalize":true}}],"render":false,"send_only":true,"expect":{"outcome":"sent"}},
+    {"id":"final-root","description":"History root after deleting the current session history","request_kind":"0x1012","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu"}}
+  ]
+}

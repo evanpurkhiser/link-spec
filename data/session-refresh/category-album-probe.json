@@ -1,0 +1,43 @@
+{
+  "name": "same-process-category-album-probe",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 64,
+    "render_arguments": [
+      0,
+      "$total",
+      64,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "root-after-album-disabled",
+      "description": "Root menu after moving Album from Active to Inactive Categories while Link is inactive",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$root_capabilities"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 19,
+        "row_count": 19
+      }
+    }
+  ]
+}

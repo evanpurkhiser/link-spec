@@ -1,0 +1,79 @@
+{
+  "name": "link-played-persistence-prime",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "fresh-fixture-settings-process-per-run",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 8,
+    "render_arguments": [0, "$total", 12, 1, 0],
+    "read_timeout_ms": 3000
+  },
+  "cases": [
+    {
+      "id": "baseline-tracks",
+      "description": "Track rows before priming the Link-played snapshot",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    },
+    {
+      "id": "baseline-first-state",
+      "description": "First-track scalar before priming",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.first"}],
+      "render": false,
+      "direct_response": true,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "baseline-second-state",
+      "description": "Second-track scalar before priming",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.second"}],
+      "render": false,
+      "direct_response": true,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "insert-first",
+      "description": "Insert the first track into Link history",
+      "request_kind": "0x3001",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.track.first"}],
+      "render": false,
+      "send_only": true,
+      "expect": {"outcome": "sent"}
+    },
+    {
+      "id": "first-state-after-insert",
+      "description": "First-track scalar after priming",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.first"}],
+      "render": false,
+      "direct_response": true,
+      "fresh_connection": true,
+      "delay_before_connection_ms": 500,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "second-state-after-insert",
+      "description": "Uninserted second-track scalar after priming",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.second"}],
+      "render": false,
+      "direct_response": true,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "tracks-after-insert",
+      "description": "Track rows after priming the first Link-played ID",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    }
+  ]
+}

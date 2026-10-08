@@ -1,0 +1,35 @@
+{
+  "name": "search-track-large-sort-probe",
+  "fixture_profile": "search-track-large",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 64,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"ordinary-searchstr-control","description":"Ordinary Search control for a token present only in SearchStr","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":0},{"utf16_bytes":"SORT00"},{"string":"SORT00"},{"number":0}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-00","description":"Cache-independent 10,005-row Search Track total with sort ID 0","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":0},{"utf16_bytes":"SORT00"},{"string":"SORT00"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-01","description":"Cache-independent 10,005-row Search Track total with sort ID 1","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":1},{"utf16_bytes":"SORT01"},{"string":"SORT01"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-02","description":"Cache-independent 10,005-row Search Track total with sort ID 2","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":2},{"utf16_bytes":"SORT02"},{"string":"SORT02"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-03","description":"Cache-independent 10,005-row Search Track total with sort ID 3","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":3},{"utf16_bytes":"SORT03"},{"string":"SORT03"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-04","description":"Cache-independent 10,005-row Search Track total with sort ID 4","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":4},{"utf16_bytes":"SORT04"},{"string":"SORT04"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-05","description":"Cache-independent 10,005-row Search Track total with sort ID 5","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":5},{"utf16_bytes":"SORT05"},{"string":"SORT05"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-06","description":"Cache-independent 10,005-row Search Track total with sort ID 6","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":6},{"utf16_bytes":"SORT06"},{"string":"SORT06"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-07","description":"Cache-independent 10,005-row Search Track total with sort ID 7","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":7},{"utf16_bytes":"SORT07"},{"string":"SORT07"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-08","description":"Cache-independent 10,005-row Search Track total with sort ID 8","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":8},{"utf16_bytes":"SORT08"},{"string":"SORT08"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-09","description":"Cache-independent 10,005-row Search Track total with sort ID 9","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":9},{"utf16_bytes":"SORT09"},{"string":"SORT09"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-10","description":"Cache-independent 10,005-row Search Track total with sort ID 10","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":10},{"utf16_bytes":"SORT10"},{"string":"SORT10"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-11","description":"Cache-independent 10,005-row Search Track total with sort ID 11","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":11},{"utf16_bytes":"SORT11"},{"string":"SORT11"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-12","description":"Cache-independent 10,005-row Search Track total with sort ID 12","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":12},{"utf16_bytes":"SORT12"},{"string":"SORT12"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-13","description":"Cache-independent 10,005-row Search Track total with sort ID 13","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":13},{"utf16_bytes":"SORT13"},{"string":"SORT13"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-14","description":"Cache-independent 10,005-row Search Track total with sort ID 14","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":14},{"utf16_bytes":"SORT14"},{"string":"SORT14"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-15","description":"Cache-independent 10,005-row Search Track total with sort ID 15","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":15},{"utf16_bytes":"SORT15"},{"string":"SORT15"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-16","description":"Cache-independent 10,005-row Search Track total with sort ID 16","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":16},{"utf16_bytes":"SORT16"},{"string":"SORT16"}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"sort-17","description":"Cache-independent 10,005-row Search Track total with sort ID 17","request_kind":"0x1500","arguments":[{"number":"$context"},{"number":17},{"utf16_bytes":"SORT17"},{"string":"SORT17"}],"render":false,"expect":{"outcome":"any"}}
+  ]
+}

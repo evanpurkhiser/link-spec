@@ -1,0 +1,177 @@
+{
+  "name": "display-song-info-errors",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "no-arguments",
+      "description": "Display request with no arguments",
+      "request_kind": "0x2002",
+      "arguments": [],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "missing-content",
+      "description": "Display request with content ID omitted",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "extra-argument",
+      "description": "Display request with an extra number",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0xdeadbeef"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "string-context",
+      "description": "Display request with string context",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "string": "wrong-type"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "blob-context",
+      "description": "Display request with blob context",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "blob_hex": "01020304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "string-content",
+      "description": "Display request with string content ID",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "string": "wrong-type"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "blob-content",
+      "description": "Display request with blob content ID",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "blob_hex": "01020304"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "zero-context",
+      "description": "Display request with zero context",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": 0
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "alternate-location",
+      "description": "Display request at menu location 2",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "0x01020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+readonly script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+readonly state_dir="$script_dir/state"
+readonly identity="$state_dir/id_ed25519"
+readonly known_hosts="$state_dir/known_hosts"
+readonly guest="Research@172.31.96.96"
+
+usage() {
+  cat >&2 <<'EOF'
+usage: guestctl keygen
+       guestctl public-key
+       guestctl wait [seconds]
+       guestctl powershell <command>
+       guestctl shell
+       guestctl copy-to <local-path> <windows-destination>
+       guestctl copy-from <windows-source> <local-path>
+EOF
+  exit 2
+}
+
+require_key() {
+  if [[ ! -f "$identity" ]]; then
+    echo "missing lab key; run: $0 keygen" >&2
+    exit 1
+  fi
+}
+
+ssh_options=(
+  -F /dev/null
+  -o IdentityAgent=none
+  -o IdentitiesOnly=yes
+  -o "IdentityFile=$identity"
+  -o "UserKnownHostsFile=$known_hosts"
+  -o BindAddress=172.31.96.50
+  -o StrictHostKeyChecking=accept-new
+  -o ConnectTimeout=5
+)
+
+case "${1:-}" in
+  keygen)
+    mkdir -p "$state_dir"
+    chmod 0700 "$state_dir"
+    if [[ -e "$identity" || -e "$identity.pub" ]]; then
+      echo "lab key already exists: $identity" >&2
+      exit 1
+    fi
+    ssh-keygen -q -t ed25519 -N '' -C rekordbox-link-export-lab -f "$identity"
+    chmod 0600 "$identity"
+    echo "created $identity"
+    ;;
+  public-key)
+    require_key
+    cat "$identity.pub"
+    ;;
+  wait)
+    require_key
+    deadline=$((SECONDS + ${2:-120}))
+    until ssh "${ssh_options[@]}" -o BatchMode=yes "$guest" exit 2>/dev/null; do
+      if (( SECONDS >= deadline )); then
+        echo "timed out waiting for $guest" >&2
+        exit 1
+      fi
+      sleep 2
+    done
+    echo "$guest is ready"
+    ;;
+  powershell)
+    require_key
+    shift
+    [[ $# -gt 0 ]] || usage
+    local_script=$(mktemp --tmpdir rekordbox-guestctl.XXXXXXXX.ps1)
+    remote_script="C:/Users/Research/AppData/Local/Temp/rekordbox-guestctl-$$-$RANDOM.ps1"
+    trap 'rm -f "$local_script"' EXIT
+    printf '%s\n%s\n%s\n' \
+      '$ProgressPreference = "SilentlyContinue"' \
+      '$ErrorActionPreference = "Stop"' \
+      "$*" >"$local_script"
+    scp "${ssh_options[@]}" -q -- "$local_script" "$guest:$remote_script"
+    set +e
+    ssh "${ssh_options[@]}" -o BatchMode=yes "$guest" \
+      powershell.exe -NoLogo -NoProfile -NonInteractive \
+      -ExecutionPolicy Bypass -File "$remote_script"
+    status=$?
+    set -e
+    ssh "${ssh_options[@]}" -o BatchMode=yes "$guest" \
+      cmd.exe /d /c del /f /q "$remote_script" >/dev/null 2>&1 || true
+    exit "$status"
+    ;;
+  shell)
+    require_key
+    exec ssh "${ssh_options[@]}" "$guest" powershell.exe -NoLogo -NoProfile
+    ;;
+  copy-to)
+    require_key
+    [[ $# -eq 3 ]] || usage
+    exec scp "${ssh_options[@]}" -- "$2" "$guest:$3"
+    ;;
+  copy-from)
+    require_key
+    [[ $# -eq 3 ]] || usage
+    exec scp "${ssh_options[@]}" -- "$guest:$2" "$3"
+    ;;
+  *) usage ;;
+esac

@@ -1,0 +1,166 @@
+{
+  "architecture": "x86_64",
+  "authority_boundary": "Static decoding proves widths and dispatch inputs. Real Rekordbox record/repeat determines serialized row fields and transport behavior.",
+  "executable_sha256": "07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244",
+  "findings": {
+    "argument_7_canonicalized_to_boolean": true,
+    "argument_7_read_width_bits": 32,
+    "argument_8_nonzero_replaces_persisted_selection": true,
+    "argument_8_read_width_bits": 32,
+    "argument_8_zero_uses_persisted_selection": true,
+    "icon_dispatch_uses_low_8_bits": true,
+    "subcategory_dispatch_uses_full_32_bits": true,
+    "subcategory_valid_interval_inclusive": [
+      2,
+      17
+    ]
+  },
+  "format": 1,
+  "validated_instruction_count": 24,
+  "validated_instructions": [
+    {
+      "address": "0x100fa116d",
+      "mnemonic": "cmp",
+      "operands": "dword ptr [r14 + 0x48], 0",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    {
+      "address": "0x100fa1172",
+      "mnemonic": "setne",
+      "operands": "dl",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    {
+      "address": "0x100fa1175",
+      "mnemonic": "mov",
+      "operands": "ecx, dword ptr [r14 + 0x50]",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    {
+      "address": "0x100fa1181",
+      "mnemonic": "mov",
+      "operands": "dword ptr [rbp - 0x2c], edx",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    {
+      "address": "0x100fa1188",
+      "mnemonic": "mov",
+      "operands": "qword ptr [rbp - 0x78], rcx",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    {
+      "address": "0x100fa131f",
+      "mnemonic": "movzx",
+      "operands": "ecx, byte ptr [rbp - 0x2c]",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    {
+      "address": "0x100fa133f",
+      "mnemonic": "push",
+      "operands": "qword ptr [rbp - 0x78]",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    {
+      "address": "0x100fa1342",
+      "mnemonic": "push",
+      "operands": "r12",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    {
+      "address": "0x100fa1347",
+      "mnemonic": "call",
+      "operands": "0x100f9fe40",
+      "symbol": "__ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg"
+    },
+    {
+      "address": "0x100fa093a",
+      "mnemonic": "mov",
+      "operands": "r12d, dword ptr [rbp + 0x18]",
+      "symbol": "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+    },
+    {
+      "address": "0x100fa093e",
+      "mnemonic": "mov",
+      "operands": "r13b, byte ptr [rbp + 0x10]",
+      "symbol": "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+    },
+    {
+      "address": "0x100fa0945",
+      "mnemonic": "test",
+      "operands": "r12d, r12d",
+      "symbol": "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+    },
+    {
+      "address": "0x100fa094a",
+      "mnemonic": "test",
+      "operands": "r13b, r13b",
+      "symbol": "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+    },
+    {
+      "address": "0x100fa09c9",
+      "mnemonic": "test",
+      "operands": "r13b, r13b",
+      "symbol": "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+    },
+    {
+      "address": "0x100fa09d2",
+      "mnemonic": "test",
+      "operands": "r12d, r12d",
+      "symbol": "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+    },
+    {
+      "address": "0x100fa09d5",
+      "mnemonic": "cmovne",
+      "operands": "r14d, r12d",
+      "symbol": "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+    },
+    {
+      "address": "0x100fa09d9",
+      "mnemonic": "movsx",
+      "operands": "edi, r14b",
+      "symbol": "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+    },
+    {
+      "address": "0x100fa09dd",
+      "mnemonic": "call",
+      "operands": "0x1004dbb90",
+      "symbol": "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+    },
+    {
+      "address": "0x100fa09e2",
+      "mnemonic": "test",
+      "operands": "r14d, r14d",
+      "symbol": "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+    },
+    {
+      "address": "0x100fa0a85",
+      "mnemonic": "mov",
+      "operands": "edi, r14d",
+      "symbol": "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+    },
+    {
+      "address": "0x100fa0a88",
+      "mnemonic": "call",
+      "operands": "0x1016b7bc0",
+      "symbol": "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+    },
+    {
+      "address": "0x1016b7bec",
+      "mnemonic": "add",
+      "operands": "ebx, -2",
+      "symbol": "__Z20Get_SubCategoryValuejN4juce3varERhRjPPt"
+    },
+    {
+      "address": "0x1016b7bef",
+      "mnemonic": "cmp",
+      "operands": "ebx, 0xf",
+      "symbol": "__Z20Get_SubCategoryValuejN4juce3varERhRjPPt"
+    },
+    {
+      "address": "0x1016b7bf2",
+      "mnemonic": "ja",
+      "operands": "0x1016b80fc",
+      "symbol": "__Z20Get_SubCategoryValuejN4juce3varERhRjPPt"
+    }
+  ]
+}

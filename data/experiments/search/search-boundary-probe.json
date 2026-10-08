@@ -1,0 +1,32 @@
+{
+  "name": "search-boundary-probe",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 64,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"beta-searchstr-off","description":"Beta without SearchStr domain","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"BETA"},{"string":"BETA"},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"beta-searchstr-one","description":"Beta with SearchStr domain value one","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"BETA"},{"string":"BETA"},{"number":1}],"expect":{"outcome":"any"}},
+    {"id":"beta-searchstr-max","description":"Beta with maximum trailing field","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"BETA"},{"string":"BETA"},{"number":"0xffffffff"}],"expect":{"outcome":"any"}},
+    {"id":"leading-space","description":"Leading delimiters are ignored","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"  ALPHA ONE"},{"string":"  ALPHA ONE"},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"trailing-space","description":"Trailing delimiters are ignored","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"ALPHA ONE  "},{"string":"ALPHA ONE  "},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"spaces-only","description":"Delimiter-only query has no tokens","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"   "},{"string":"   "},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"length-one","description":"Odd undersized declared byte length","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"number":1},{"string":"FIXTURE"},{"number":0}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"length-fourteen","description":"Declared byte length one code unit short","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"number":14},{"string":"FIXTURE"},{"number":0}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"length-fifteen","description":"Odd declared byte length one byte short","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"number":15},{"string":"FIXTURE"},{"number":0}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"length-sixteen","description":"Exact declared byte length","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"number":16},{"string":"FIXTURE"},{"number":0}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"length-seventeen","description":"Odd declared byte length one byte long","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"number":17},{"string":"FIXTURE"},{"number":0}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"length-eighteen","description":"Declared byte length one code unit long","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"number":18},{"string":"FIXTURE"},{"number":0}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"length-256","description":"Oversized but bounded declared byte length","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"number":256},{"string":"FIXTURE"},{"number":0}],"render":false,"fresh_connection":true,"expect":{"outcome":"any"}},
+    {"id":"search-overlap-pages","description":"Overlapping Search render windows preserve repeated rows","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"FIXTURE"},{"string":"FIXTURE"},{"number":0}],"render_pages":[{"offset":0,"count":4},{"offset":3,"count":4}],"expect":{"outcome":"any"}},
+    {"id":"search-zero-page","description":"Zero-count Search render request","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"FIXTURE"},{"string":"FIXTURE"},{"number":0}],"render_pages":[{"offset":0,"count":0}],"expect":{"outcome":"any"}},
+    {"id":"search-past-end","description":"Search render request beyond total","request_kind":"0x1300","arguments":[{"number":"$context"},{"number":"$sort"},{"utf16_bytes":"FIXTURE"},{"string":"FIXTURE"},{"number":0}],"render_pages":[{"offset":11,"count":1}],"expect":{"outcome":"any"}}
+  ]
+}

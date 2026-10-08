@@ -1,0 +1,98 @@
+{
+  "artifacts": {
+    "diagnostic_invalid_smart_golden_sha256": "6c11ca894bf514f52d9b3798f27c7a3c91d4b93b6efefd5fe812e912a90ccb77",
+    "golden_sha256": "5bb2ca9f86fedc15f0d59c8b065cf4ddb69dd3aa70cb8ddc2d8c83e600b37f4b",
+    "suite_sha256": "c6ce0c87c7db921f355c5cea9f83af06302a54439bc2f0d88ae775e851f86a9d"
+  },
+  "behavior": {
+    "false_positive_controls_visible": {
+      "10008": "unknown:tracks:fixture-8",
+      "10009": "SOUNDCLOUD:TRACKS:fixture-9",
+      "10010": "Z:/tracks/soundcloud:tracks:fixture-10.wav",
+      "10011": "soundcloudish:tracks:fixture-11",
+      "10012": "",
+      "10013": null
+    },
+    "filtered_content_ids": [
+      10002,
+      10005,
+      10006,
+      10007
+    ],
+    "filtered_paths": {
+      "10002": "soundcloud:tracks:fixture-2",
+      "10005": "tidal:tracks:fixture-5",
+      "10006": "spotify:track:fixture-6",
+      "10007": "apple-music:tracks:fixture-7"
+    },
+    "history_content_ids": [
+      10001,
+      10002,
+      10003,
+      10004,
+      10005,
+      10006,
+      10007,
+      10008,
+      10009,
+      10010,
+      10011,
+      10012,
+      10013,
+      10014
+    ],
+    "nonmatching_provider_syntax_controls": {
+      "10003": "beatport:tracks:fixture-3",
+      "10004": "beatsource:tracks:fixture-4"
+    },
+    "same_filtered_membership_cases": [
+      "collection-default",
+      "collection-key-sort",
+      "file-name",
+      "ordinary-playlist",
+      "smart-playlist",
+      "search"
+    ],
+    "visible_content_ids": [
+      10001,
+      10003,
+      10004,
+      10008,
+      10009,
+      10010,
+      10011,
+      10012,
+      10013,
+      10014
+    ]
+  },
+  "fixture": {
+    "database_sha256": "a8fb80c9797cd7fd8ccacf6c69e69ada80048db0f9a8d8c7dc511c25472f7496",
+    "fixture_fingerprint": "9975fba58e7a0a36de29dc15709de254b68b4e8276d10b987ed2fe9d645dc342",
+    "manifest_sha256": "7047249cf0c100c5fffb9f8950692e5cc8aa6ae2f2d181cd042d93fe377345f2",
+    "profile": "link-visibility",
+    "track_count": 14,
+    "version": 1
+  },
+  "format": "rekordbox-link-export-visibility-v1",
+  "oracle": {
+    "backend": "rekordbox",
+    "cases": 7,
+    "restart_repeat_verified": true,
+    "version": "7.2.19"
+  },
+  "rbxport": {
+    "different": 7,
+    "exact": 0,
+    "same_outcome_total_row_count": 1,
+    "version": "c144f19+tree.80e87ec8aace"
+  },
+  "static_evidence": {
+    "direct_xrefs": "data/static-analysis/link-export-visibility-xrefs.txt",
+    "direct_xrefs_sha256": "f1979492bd59245ea10df9a1d3dd271f9a7ffd9a5898c5f430bb281fca9db4ef",
+    "predicate_disassembly": "data/static-analysis/link-export-visibility.disasm.txt",
+    "predicate_disassembly_sha256": "bb36297db074cd52cfd9341b0ddc8b4ed78beaeea4d57abf49b0f2e7b21cb725",
+    "provider_registry": "data/static-analysis/streaming-provider-registry.json",
+    "provider_registry_sha256": "3de1b9d6820e6f780923baf6ac813eef4eeaaa7ccbf403db2010db06ea70d180"
+  }
+}

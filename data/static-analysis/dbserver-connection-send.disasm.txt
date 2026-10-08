@@ -1,0 +1,2113 @@
+## __ZN15PSvDBConnectionC1Ev | 
+address=0x10143ad80 size=0x40
+0x010143ad80  push      rbp
+0x010143ad81  mov       rbp, rsp
+0x010143ad84  mov       byte ptr [rdi], 0
+0x010143ad87  mov       qword ptr [rdi + 0x38], 0
+0x010143ad8f  vxorps    xmm0, xmm0, xmm0
+0x010143ad93  vmovups   xmmword ptr [rdi + 0x18], xmm0
+0x010143ad98  mov       dword ptr [rdi + 0x27], 0
+0x010143ad9f  mov       dword ptr [rdi + 0x34], 0xc
+0x010143ada6  vmovups   xmmword ptr [rdi + 8], xmm0
+0x010143adab  mov       eax, 0xffffffff
+0x010143adb0  mov       qword ptr [rdi + 0x2c], rax
+0x010143adb4  pop       rbp
+0x010143adb5  ret
+0x010143adb6  nop       word ptr cs:[rax + rax]
+
+## __ZN15PSvDBConnectionD2Ev | 
+address=0x10143adc0 size=0xe0
+0x010143adc0  push      rbp
+0x010143adc1  mov       rbp, rsp
+0x010143adc4  push      rbx
+0x010143adc5  and       rsp, 0xffffffffffffffe0
+0x010143adc9  sub       rsp, 0xc0
+0x010143add0  mov       rbx, rdi
+0x010143add3  mov       rax, qword ptr [rip + 0x40c219e]
+0x010143adda  mov       rax, qword ptr [rax]
+0x010143addd  mov       qword ptr [rsp + 0xa0], rax
+0x010143ade5  movzx     esi, byte ptr [rdi]
+0x010143ade8  lea       rdi, [rip + 0x3f3ea31]  ; 'PSvDBConnection::Drop() called in PSvDBConnection::~PSvDBConnection.    PID:%d'
+0x010143adef  xor       eax, eax
+0x010143adf1  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143adf6  cmp       byte ptr [rbx + 0x28], 0
+0x010143adfa  je        0x10143ae77
+0x010143adfc  cmp       byte ptr [rbx + 0x29], 0
+0x010143ae00  jne       0x10143ae4c
+0x010143ae02  mov       rdi, qword ptr [rbx + 0x38]
+0x010143ae06  call      0x1025207d0  ; __ZN9PSvDBMain17GetLocalLinkUpFlgEv |
+0x010143ae0b  test      eax, eax
+0x010143ae0d  je        0x10143ae4c
+0x010143ae0f  vxorps    xmm0, xmm0, xmm0
+0x010143ae13  vmovaps   ymmword ptr [rsp], ymm0
+0x010143ae18  vmovups   ymmword ptr [rsp + 0x78], ymm0
+0x010143ae1e  vmovaps   ymmword ptr [rsp + 0x60], ymm0
+0x010143ae24  vmovaps   ymmword ptr [rsp + 0x40], ymm0
+0x010143ae2a  vmovaps   ymmword ptr [rsp + 0x20], ymm0
+0x010143ae30  mov       dword ptr [rsp], 0xfffffffe
+0x010143ae37  mov       word ptr [rsp + 4], 0x100
+0x010143ae3e  mov       rsi, rsp
+0x010143ae41  mov       rdi, rbx
+0x010143ae44  vzeroupper
+0x010143ae47  call      0x10143bb60  ; __ZN15PSvDBConnection11SendCommandEP19_struct_db_comm_cmd |
+0x010143ae4c  lea       rdi, [rbx + 8]
+0x010143ae50  call      0x10328c140  ; _edb_agent_drop
+0x010143ae55  mov       dword ptr [rbx + 0x30], eax
+0x010143ae58  xor       ecx, ecx
+0x010143ae5a  test      eax, eax
+0x010143ae5c  setle     cl
+0x010143ae5f  mov       rdi, qword ptr [rbx + 0x38]
+0x010143ae63  movzx     esi, byte ptr [rbx]
+0x010143ae66  neg       rcx
+0x010143ae69  mov       edx, 0xfffe0003
+0x010143ae6e  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143ae73  mov       byte ptr [rbx + 0x28], 0
+0x010143ae77  mov       rax, qword ptr [rip + 0x40c20fa]
+0x010143ae7e  mov       rax, qword ptr [rax]
+0x010143ae81  cmp       rax, qword ptr [rsp + 0xa0]
+0x010143ae89  jne       0x10143ae92
+0x010143ae8b  lea       rsp, [rbp - 8]
+0x010143ae8f  pop       rbx
+0x010143ae90  pop       rbp
+0x010143ae91  ret
+0x010143ae92  call      0x1038c3da0
+0x010143ae97  mov       rdi, rax
+0x010143ae9a  call      0x1000088e0  ; ___clang_call_terminate |
+0x010143ae9f  nop
+
+## __ZN15PSvDBConnection4DropEv | 
+address=0x10143aea0 size=0xf0
+0x010143aea0  push      rbp
+0x010143aea1  mov       rbp, rsp
+0x010143aea4  push      r14
+0x010143aea6  push      rbx
+0x010143aea7  and       rsp, 0xffffffffffffffe0
+0x010143aeab  sub       rsp, 0xa0
+0x010143aeb2  mov       rax, qword ptr [rip + 0x40c20bf]
+0x010143aeb9  mov       rax, qword ptr [rax]
+0x010143aebc  mov       qword ptr [rsp + 0x98], rax
+0x010143aec4  cmp       byte ptr [rdi + 0x28], 0
+0x010143aec8  je        0x10143af73
+0x010143aece  mov       r14, rdi
+0x010143aed1  cmp       byte ptr [rdi + 0x29], 0
+0x010143aed5  jne       0x10143af21
+0x010143aed7  mov       rdi, qword ptr [r14 + 0x38]
+0x010143aedb  call      0x1025207d0  ; __ZN9PSvDBMain17GetLocalLinkUpFlgEv |
+0x010143aee0  test      eax, eax
+0x010143aee2  je        0x10143af21
+0x010143aee4  vxorps    xmm0, xmm0, xmm0
+0x010143aee8  vmovaps   ymmword ptr [rsp], ymm0
+0x010143aeed  vmovups   ymmword ptr [rsp + 0x78], ymm0
+0x010143aef3  vmovaps   ymmword ptr [rsp + 0x60], ymm0
+0x010143aef9  vmovaps   ymmword ptr [rsp + 0x40], ymm0
+0x010143aeff  vmovaps   ymmword ptr [rsp + 0x20], ymm0
+0x010143af05  mov       dword ptr [rsp], 0xfffffffe
+0x010143af0c  mov       word ptr [rsp + 4], 0x100
+0x010143af13  mov       rsi, rsp
+0x010143af16  mov       rdi, r14
+0x010143af19  vzeroupper
+0x010143af1c  call      0x10143bb60  ; __ZN15PSvDBConnection11SendCommandEP19_struct_db_comm_cmd |
+0x010143af21  lea       rdi, [r14 + 8]
+0x010143af25  call      0x10328c140  ; _edb_agent_drop
+0x010143af2a  mov       dword ptr [r14 + 0x30], eax
+0x010143af2e  xor       ebx, ebx
+0x010143af30  test      eax, eax
+0x010143af32  setle     bl
+0x010143af35  mov       rdi, qword ptr [r14 + 0x38]
+0x010143af39  movzx     esi, byte ptr [r14]
+0x010143af3d  mov       rcx, rbx
+0x010143af40  neg       rcx
+0x010143af43  neg       ebx
+0x010143af45  mov       edx, 0xfffe0003
+0x010143af4a  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143af4f  mov       byte ptr [r14 + 0x28], 0
+0x010143af54  mov       rax, qword ptr [rip + 0x40c201d]
+0x010143af5b  mov       rax, qword ptr [rax]
+0x010143af5e  cmp       rax, qword ptr [rsp + 0x98]
+0x010143af66  jne       0x10143af89
+0x010143af68  mov       eax, ebx
+0x010143af6a  lea       rsp, [rbp - 0x10]
+0x010143af6e  pop       rbx
+0x010143af6f  pop       r14
+0x010143af71  pop       rbp
+0x010143af72  ret
+0x010143af73  xor       ebx, ebx
+0x010143af75  mov       rax, qword ptr [rip + 0x40c1ffc]
+0x010143af7c  mov       rax, qword ptr [rax]
+0x010143af7f  cmp       rax, qword ptr [rsp + 0x98]
+0x010143af87  je        0x10143af68
+0x010143af89  call      0x1038c3da0
+0x010143af8e  nop
+
+## __ZN15PSvDBConnectionD1Ev | 
+address=0x10143af90 size=0x10
+0x010143af90  push      rbp
+0x010143af91  mov       rbp, rsp
+0x010143af94  pop       rbp
+0x010143af95  jmp       0x10143adc0  ; __ZN15PSvDBConnectionD2Ev |
+0x010143af9a  nop       word ptr [rax + rax]
+
+## __ZN15PSvDBConnection10InitializeEPvS0_P9PSvDBMain | 
+address=0x10143afa0 size=0x160
+0x010143afa0  push      rbp
+0x010143afa1  mov       rbp, rsp
+0x010143afa4  push      r15
+0x010143afa6  push      r14
+0x010143afa8  push      r13
+0x010143afaa  push      r12
+0x010143afac  push      rbx
+0x010143afad  and       rsp, 0xffffffffffffffe0
+0x010143afb1  sub       rsp, 0xc0
+0x010143afb8  mov       rax, qword ptr [rip + 0x40c1fb9]
+0x010143afbf  mov       rax, qword ptr [rax]
+0x010143afc2  mov       qword ptr [rsp + 0xa0], rax
+0x010143afca  mov       r14d, 0xffffffff
+0x010143afd0  test      rsi, rsi
+0x010143afd3  je        0x10143b0a3
+0x010143afd9  mov       r12, rdx
+0x010143afdc  test      rdx, rdx
+0x010143afdf  je        0x10143b0a3
+0x010143afe5  mov       r15, rcx
+0x010143afe8  test      rcx, rcx
+0x010143afeb  je        0x10143b0a3
+0x010143aff1  mov       r13, rsi
+0x010143aff4  mov       rbx, rdi
+0x010143aff7  cmp       byte ptr [rdi + 0x28], 0
+0x010143affb  je        0x10143b08a
+0x010143b001  cmp       byte ptr [rbx + 0x29], 0
+0x010143b005  jne       0x10143b051
+0x010143b007  mov       rdi, qword ptr [rbx + 0x38]
+0x010143b00b  call      0x1025207d0  ; __ZN9PSvDBMain17GetLocalLinkUpFlgEv |
+0x010143b010  test      eax, eax
+0x010143b012  je        0x10143b051
+0x010143b014  vxorps    xmm0, xmm0, xmm0
+0x010143b018  vmovaps   ymmword ptr [rsp], ymm0
+0x010143b01d  vmovups   ymmword ptr [rsp + 0x78], ymm0
+0x010143b023  vmovaps   ymmword ptr [rsp + 0x60], ymm0
+0x010143b029  vmovaps   ymmword ptr [rsp + 0x40], ymm0
+0x010143b02f  vmovaps   ymmword ptr [rsp + 0x20], ymm0
+0x010143b035  mov       dword ptr [rsp], 0xfffffffe
+0x010143b03c  mov       word ptr [rsp + 4], 0x100
+0x010143b043  mov       rsi, rsp
+0x010143b046  mov       rdi, rbx
+0x010143b049  vzeroupper
+0x010143b04c  call      0x10143bb60  ; __ZN15PSvDBConnection11SendCommandEP19_struct_db_comm_cmd |
+0x010143b051  lea       rdi, [rbx + 8]
+0x010143b055  call      0x10328c140  ; _edb_agent_drop
+0x010143b05a  mov       r14d, eax
+0x010143b05d  mov       dword ptr [rbx + 0x30], eax
+0x010143b060  xor       ecx, ecx
+0x010143b062  test      eax, eax
+0x010143b064  setle     cl
+0x010143b067  mov       rdi, qword ptr [rbx + 0x38]
+0x010143b06b  movzx     esi, byte ptr [rbx]
+0x010143b06e  neg       rcx
+0x010143b071  mov       edx, 0xfffe0003
+0x010143b076  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143b07b  mov       byte ptr [rbx + 0x28], 0
+0x010143b07f  test      r14d, r14d
+0x010143b082  mov       r14d, 0xffffffff
+0x010143b088  jle       0x10143b0c9
+0x010143b08a  mov       byte ptr [rbx], 0xff
+0x010143b08d  mov       qword ptr [rbx + 0x18], r13
+0x010143b091  mov       qword ptr [rbx + 0x20], r12
+0x010143b095  mov       dword ptr [rbx + 0x34], 0xc
+0x010143b09c  mov       qword ptr [rbx + 0x38], r15
+0x010143b0a0  xor       r14d, r14d
+0x010143b0a3  mov       rax, qword ptr [rip + 0x40c1ece]
+0x010143b0aa  mov       rax, qword ptr [rax]
+0x010143b0ad  cmp       rax, qword ptr [rsp + 0xa0]
+0x010143b0b5  jne       0x10143b0ee
+0x010143b0b7  mov       eax, r14d
+0x010143b0ba  lea       rsp, [rbp - 0x28]
+0x010143b0be  pop       rbx
+0x010143b0bf  pop       r12
+0x010143b0c1  pop       r13
+0x010143b0c3  pop       r14
+0x010143b0c5  pop       r15
+0x010143b0c7  pop       rbp
+0x010143b0c8  ret
+0x010143b0c9  movzx     esi, byte ptr [rbx]
+0x010143b0cc  lea       rdi, [rip + 0x3f3e79c]  ; 'PSvDBConnection::Drop() failed in PSvDBConnection::Initialize.    PID:%d'
+0x010143b0d3  xor       eax, eax
+0x010143b0d5  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143b0da  mov       rax, qword ptr [rip + 0x40c1e97]
+0x010143b0e1  mov       rax, qword ptr [rax]
+0x010143b0e4  cmp       rax, qword ptr [rsp + 0xa0]
+0x010143b0ec  je        0x10143b0b7
+0x010143b0ee  call      0x1038c3da0
+0x010143b0f3  nop       word ptr cs:[rax + rax]
+
+## __ZN15PSvDBConnection6ListenEv | 
+address=0x10143b100 size=0x320
+0x010143b100  push      rbp
+0x010143b101  mov       rbp, rsp
+0x010143b104  push      r15
+0x010143b106  push      r14
+0x010143b108  push      rbx
+0x010143b109  and       rsp, 0xffffffffffffffe0
+0x010143b10d  sub       rsp, 0xe0
+0x010143b114  mov       rax, qword ptr [rip + 0x40c1e5d]
+0x010143b11b  mov       rax, qword ptr [rax]
+0x010143b11e  mov       qword ptr [rsp + 0xd0], rax
+0x010143b126  mov       qword ptr [rsp + 0x18], 0
+0x010143b12f  cmp       byte ptr [rdi + 0x28], 0
+0x010143b133  je        0x10143b15d
+0x010143b135  mov       eax, 0xffffffff
+0x010143b13a  mov       rcx, qword ptr [rip + 0x40c1e37]
+0x010143b141  mov       rcx, qword ptr [rcx]
+0x010143b144  cmp       rcx, qword ptr [rsp + 0xd0]
+0x010143b14c  jne       0x10143b410
+0x010143b152  lea       rsp, [rbp - 0x18]
+0x010143b156  pop       rbx
+0x010143b157  pop       r14
+0x010143b159  pop       r15
+0x010143b15b  pop       rbp
+0x010143b15c  ret
+0x010143b15d  mov       rbx, rdi
+0x010143b160  mov       rdi, qword ptr [rdi + 0x20]
+0x010143b164  call      0x10328d700  ; _edb_agent_test
+0x010143b169  test      eax, eax
+0x010143b16b  jle       0x10143b2aa
+0x010143b171  lea       rdi, [rip + 0x3f3e740]  ; 'PSvDBConnection::Listen:edb_agent_test found event.'
+0x010143b178  xor       eax, eax
+0x010143b17a  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143b17f  mov       rdi, qword ptr [rbx + 0x20]
+0x010143b183  lea       r14, [rbx + 8]
+0x010143b187  mov       rsi, r14
+0x010143b18a  call      0x10328be10  ; _edb_agent_listen
+0x010143b18f  mov       dword ptr [rbx + 0x30], eax
+0x010143b192  test      eax, eax
+0x010143b194  jle       0x10143b2b4
+0x010143b19a  lea       rdi, [rip + 0x3f3e77c]  ; 'PSvDBConnection::Listen:edb_agent_listen success.'
+0x010143b1a1  xor       eax, eax
+0x010143b1a3  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143b1a8  mov       rdi, qword ptr [rbx + 0x38]
+0x010143b1ac  xor       esi, esi
+0x010143b1ae  mov       edx, 0xfffe0002
+0x010143b1b3  xor       ecx, ecx
+0x010143b1b5  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143b1ba  mov       byte ptr [rbx + 0x28], 1
+0x010143b1be  lea       rsi, [rsp + 0x18]
+0x010143b1c3  mov       rdi, rbx
+0x010143b1c6  mov       edx, 1
+0x010143b1cb  call      0x10143b430  ; __ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb |
+0x010143b1d0  test      eax, eax
+0x010143b1d2  je        0x10143b2de
+0x010143b1d8  xor       r15d, r15d
+0x010143b1db  mov       edi, 0x1000205
+0x010143b1e0  mov       esi, 3
+0x010143b1e5  xor       edx, edx
+0x010143b1e7  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143b1ec  mov       rdi, qword ptr [rsp + 0x18]
+0x010143b1f1  test      rdi, rdi
+0x010143b1f4  je        0x10143b1fb
+0x010143b1f6  call      0x10049ddd0  ; __Z11DBCCmd_FreePK19_struct_db_comm_cmd |
+0x010143b1fb  xor       eax, eax
+0x010143b1fd  test      r15b, r15b
+0x010143b200  jne       0x10143b13a
+0x010143b206  movzx     esi, byte ptr [rbx]
+0x010143b209  lea       rdi, [rip + 0x3f3e773]  ; 'PSvDBConnection::Drop() called in PSvDBConnection::Listen.    PID:%d'
+0x010143b210  xor       eax, eax
+0x010143b212  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143b217  cmp       byte ptr [rbx + 0x28], 0
+0x010143b21b  je        0x10143b135
+0x010143b221  cmp       byte ptr [rbx + 0x29], 0
+0x010143b225  jne       0x10143b27b
+0x010143b227  mov       rdi, qword ptr [rbx + 0x38]
+0x010143b22b  call      0x1025207d0  ; __ZN9PSvDBMain17GetLocalLinkUpFlgEv |
+0x010143b230  test      eax, eax
+0x010143b232  je        0x10143b27b
+0x010143b234  vxorps    xmm0, xmm0, xmm0
+0x010143b238  vmovaps   ymmword ptr [rsp + 0x20], ymm0
+0x010143b23e  vmovups   ymmword ptr [rsp + 0x98], ymm0
+0x010143b247  vmovaps   ymmword ptr [rsp + 0x80], ymm0
+0x010143b250  vmovaps   ymmword ptr [rsp + 0x60], ymm0
+0x010143b256  vmovaps   ymmword ptr [rsp + 0x40], ymm0
+0x010143b25c  mov       dword ptr [rsp + 0x20], 0xfffffffe
+0x010143b264  mov       word ptr [rsp + 0x24], 0x100
+0x010143b26b  lea       rsi, [rsp + 0x20]
+0x010143b270  mov       rdi, rbx
+0x010143b273  vzeroupper
+0x010143b276  call      0x10143bb60  ; __ZN15PSvDBConnection11SendCommandEP19_struct_db_comm_cmd |
+0x010143b27b  mov       rdi, r14
+0x010143b27e  call      0x10328c140  ; _edb_agent_drop
+0x010143b283  mov       dword ptr [rbx + 0x30], eax
+0x010143b286  xor       ecx, ecx
+0x010143b288  test      eax, eax
+0x010143b28a  setle     cl
+0x010143b28d  mov       rdi, qword ptr [rbx + 0x38]
+0x010143b291  movzx     esi, byte ptr [rbx]
+0x010143b294  neg       rcx
+0x010143b297  mov       edx, 0xfffe0003
+0x010143b29c  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143b2a1  mov       byte ptr [rbx + 0x28], 0
+0x010143b2a5  jmp       0x10143b135
+0x010143b2aa  mov       eax, 0xfffffffd
+0x010143b2af  jmp       0x10143b13a
+0x010143b2b4  lea       rdi, [rip + 0x3f3e631]  ; 'PSvDBConnection::Listen:edb_agent_listen failed.'
+0x010143b2bb  xor       eax, eax
+0x010143b2bd  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143b2c2  mov       rdi, qword ptr [rbx + 0x38]
+0x010143b2c6  xor       esi, esi
+0x010143b2c8  mov       edx, 0xfffe0002
+0x010143b2cd  mov       rcx, 0xffffffffffffffff
+0x010143b2d4  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143b2d9  jmp       0x10143b135
+0x010143b2de  mov       rax, qword ptr [rsp + 0x18]
+0x010143b2e3  test      rax, rax
+0x010143b2e6  je        0x10143b319
+0x010143b2e8  cmp       dword ptr [rax], -2
+0x010143b2eb  movzx     ecx, word ptr [rax + 4]
+0x010143b2ef  jne       0x10143b32b
+0x010143b2f1  test      cx, cx
+0x010143b2f4  jne       0x10143b32b
+0x010143b2f6  mov       rsi, qword ptr [rax + 0x18]
+0x010143b2fa  cmp       rsi, 0xd
+0x010143b2fe  jb        0x10143b346
+0x010143b300  cmp       rsi, 0xff
+0x010143b307  je        0x10143b346
+0x010143b309  mov       rdx, qword ptr [rax + 0x20]
+0x010143b30d  mov       edi, 0x1000205
+0x010143b312  mov       esi, 6
+0x010143b317  jmp       0x10143b339
+0x010143b319  xor       r15d, r15d
+0x010143b31c  mov       edi, 0x1000205
+0x010143b321  mov       esi, 4
+0x010143b326  jmp       0x10143b1e5
+0x010143b32b  movsx     rdx, cx
+0x010143b32f  mov       edi, 0x1000205
+0x010143b334  mov       esi, 5
+0x010143b339  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143b33e  xor       r15d, r15d
+0x010143b341  jmp       0x10143b1ec
+0x010143b346  lea       rdi, [rip + 0x3f3e602]  ; 'PSvDBConnection::Listen:ReceiveCommand(%d) success.'
+0x010143b34d  xor       eax, eax
+0x010143b34f  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143b354  mov       rax, qword ptr [rsp + 0x18]
+0x010143b359  mov       cl, byte ptr [rax + 0x18]
+0x010143b35c  mov       byte ptr [rbx], cl
+0x010143b35e  mov       ecx, dword ptr [rax + 0x20]
+0x010143b361  cmp       dword ptr [rbx + 0x34], ecx
+0x010143b364  jae       0x10143b369
+0x010143b366  mov       dword ptr [rbx + 0x34], ecx
+0x010143b369  vxorps    xmm0, xmm0, xmm0
+0x010143b36d  vmovups   ymmword ptr [rsp + 0x98], ymm0
+0x010143b376  vmovaps   ymmword ptr [rsp + 0x80], ymm0
+0x010143b37f  vmovaps   ymmword ptr [rsp + 0x60], ymm0
+0x010143b385  vmovaps   ymmword ptr [rsp + 0x40], ymm0
+0x010143b38b  vmovaps   ymmword ptr [rsp + 0x20], ymm0
+0x010143b391  cmp       dword ptr [rax + 0x20], 0
+0x010143b395  je        0x10143b3b6
+0x010143b397  mov       eax, dword ptr [rax]
+0x010143b399  mov       dword ptr [rsp + 0x20], eax
+0x010143b39d  mov       rdi, qword ptr [rbx + 0x38]
+0x010143b3a1  vzeroupper
+0x010143b3a4  call      0x102520810  ; __ZN9PSvDBMain16GetLocalPlayerNoEv |
+0x010143b3a9  movzx     eax, al
+0x010143b3ac  mov       qword ptr [rsp + 0x38], rax
+0x010143b3b1  mov       eax, dword ptr [rbx + 0x34]
+0x010143b3b4  jmp       0x10143b3d4
+0x010143b3b6  mov       dword ptr [rsp + 0x20], 0xfffffffe
+0x010143b3be  mov       word ptr [rsp + 0x24], 0x4000
+0x010143b3c5  mov       rdi, qword ptr [rbx + 0x38]
+0x010143b3c9  vzeroupper
+0x010143b3cc  call      0x102520810  ; __ZN9PSvDBMain16GetLocalPlayerNoEv |
+0x010143b3d1  movzx     eax, al
+0x010143b3d4  mov       qword ptr [rsp + 0x40], rax
+0x010143b3d9  lea       r15, [rsp + 0x20]
+0x010143b3de  mov       rdi, r15
+0x010143b3e1  call      0x10049d090  ; __Z19DBCFmt_GetCmdPrmFmtP19_struct_db_comm_cmd |
+0x010143b3e6  mov       rdi, rbx
+0x010143b3e9  mov       rsi, r15
+0x010143b3ec  call      0x10143bb60  ; __ZN15PSvDBConnection11SendCommandEP19_struct_db_comm_cmd |
+0x010143b3f1  test      eax, eax
+0x010143b3f3  je        0x10143b408
+0x010143b3f5  movsxd    rdx, dword ptr [rbx + 0x30]
+0x010143b3f9  mov       edi, 0x1000205
+0x010143b3fe  mov       esi, 8
+0x010143b403  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143b408  mov       r15b, 1
+0x010143b40b  jmp       0x10143b1ec
+0x010143b410  call      0x1038c3da0
+0x010143b415  nop       word ptr cs:[rax + rax]
+
+## __ZN15PSvDBConnection11IsConnectedEv | 
+address=0x10143b420 size=0x10
+0x010143b420  push      rbp
+0x010143b421  mov       rbp, rsp
+0x010143b424  movzx     eax, byte ptr [rdi + 0x28]
+0x010143b428  pop       rbp
+0x010143b429  ret
+0x010143b42a  nop       word ptr [rax + rax]
+
+## __ZN15PSvDBConnection14ReceiveCommandEPP19_struct_db_comm_cmdb | 
+address=0x10143b430 size=0x730
+0x010143b430  push      rbp
+0x010143b431  mov       rbp, rsp
+0x010143b434  push      r15
+0x010143b436  push      r14
+0x010143b438  push      r13
+0x010143b43a  push      r12
+0x010143b43c  push      rbx
+0x010143b43d  sub       rsp, 0x38
+0x010143b441  mov       r14d, edx
+0x010143b444  mov       qword ptr [rbp - 0x40], rsi
+0x010143b448  mov       r15, rdi
+0x010143b44b  mov       edi, 0x98
+0x010143b450  call      0x1038c3cd4
+0x010143b455  mov       r12, rax
+0x010143b458  vxorps    xmm0, xmm0, xmm0
+0x010143b45c  vmovups   ymmword ptr [rax], ymm0
+0x010143b460  vmovups   ymmword ptr [rax + 0x20], ymm0
+0x010143b465  vmovups   ymmword ptr [rax + 0x40], ymm0
+0x010143b46a  vmovups   ymmword ptr [rax + 0x60], ymm0
+0x010143b46f  vmovups   ymmword ptr [rax + 0x78], ymm0
+0x010143b474  mov       rsi, qword ptr [r15 + 0x20]
+0x010143b478  mov       edi, 0x3e8
+0x010143b47d  vzeroupper
+0x010143b480  call      0x10328d4b0  ; _edb_agent_wait
+0x010143b485  mov       ebx, eax
+0x010143b487  test      eax, eax
+0x010143b489  js        0x10143b53a
+0x010143b48f  lea       r13, [r12 + 0x90]
+0x010143b497  mov       rdi, qword ptr [r15 + 8]
+0x010143b49b  call      0x10328d760  ; _edb_comm_test
+0x010143b4a0  test      eax, eax
+0x010143b4a2  js        0x10143b55b
+0x010143b4a8  test      r14b, r14b
+0x010143b4ab  jne       0x10143b4ba
+0x010143b4ad  mov       ecx, 0xffffdb5c
+0x010143b4b2  test      eax, eax
+0x010143b4b4  je        0x10143b53c
+0x010143b4ba  test      r14b, r14b
+0x010143b4bd  jne       0x10143b5c1
+0x010143b4c3  test      eax, eax
+0x010143b4c5  jne       0x10143b5c1
+0x010143b4cb  lea       r14, [r15 + 0x30]
+0x010143b4cf  mov       dword ptr [r15 + 0x30], ebx
+0x010143b4d3  test      ebx, ebx
+0x010143b4d5  jle       0x10143b582
+0x010143b4db  mov       edx, dword ptr [r13]
+0x010143b4df  mov       eax, 0x872349ae
+0x010143b4e4  cmp       rdx, rax
+0x010143b4e7  jne       0x10143b5a9
+0x010143b4ed  mov       rsi, qword ptr [r15 + 0x20]
+0x010143b4f1  mov       edi, 0x3e8
+0x010143b4f6  call      0x10328d4b0  ; _edb_agent_wait
+0x010143b4fb  mov       ebx, eax
+0x010143b4fd  test      eax, eax
+0x010143b4ff  js        0x10143b644
+0x010143b505  mov       rdi, qword ptr [r15 + 8]
+0x010143b509  call      0x10328d760  ; _edb_comm_test
+0x010143b50e  test      eax, eax
+0x010143b510  js        0x10143b5e1
+0x010143b516  je        0x10143b63f
+0x010143b51c  mov       rsi, qword ptr [r15 + 8]
+0x010143b520  mov       rdi, r12
+0x010143b523  call      0x10328cda0  ; _edb_comm_uint32
+0x010143b528  mov       ebx, eax
+0x010143b52a  mov       dword ptr [r14], ebx
+0x010143b52d  test      ebx, ebx
+0x010143b52f  jg        0x10143b5ff
+0x010143b535  jmp       0x10143b647
+0x010143b53a  mov       ecx, ebx
+0x010143b53c  mov       dword ptr [r15 + 0x30], ecx
+0x010143b540  add       r15, 0x30
+0x010143b544  mov       r14, r15
+0x010143b547  mov       ebx, ecx
+0x010143b549  cmp       ebx, 0xffffdb5c
+0x010143b54f  mov       r15, qword ptr [rbp - 0x40]
+0x010143b553  je        0x10143b776
+0x010143b559  jmp       0x10143b592
+0x010143b55b  mov       rdi, qword ptr [r15 + 0x38]
+0x010143b55f  xor       esi, esi
+0x010143b561  mov       edx, 0xfffe0010
+0x010143b566  mov       rcx, 0xffffffffffffffff
+0x010143b56d  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143b572  lea       r14, [r15 + 0x30]
+0x010143b576  mov       dword ptr [r15 + 0x30], ebx
+0x010143b57a  test      ebx, ebx
+0x010143b57c  jg        0x10143b4db
+0x010143b582  cmp       ebx, 0xffffdb5c
+0x010143b588  mov       r15, qword ptr [rbp - 0x40]
+0x010143b58c  je        0x10143b776
+0x010143b592  movsxd    rdx, ebx
+0x010143b595  mov       edi, 0x1000207
+0x010143b59a  mov       esi, 2
+0x010143b59f  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143b5a4  jmp       0x10143b776
+0x010143b5a9  mov       edi, 0x1000207
+0x010143b5ae  mov       esi, 0xf
+0x010143b5b3  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143b5b8  mov       r15, qword ptr [rbp - 0x40]
+0x010143b5bc  jmp       0x10143bae1
+0x010143b5c1  mov       rsi, qword ptr [r15 + 8]
+0x010143b5c5  mov       rdi, r13
+0x010143b5c8  call      0x10328cda0  ; _edb_comm_uint32
+0x010143b5cd  mov       ebx, eax
+0x010143b5cf  lea       r14, [r15 + 0x30]
+0x010143b5d3  mov       dword ptr [r15 + 0x30], ebx
+0x010143b5d7  test      ebx, ebx
+0x010143b5d9  jg        0x10143b4db
+0x010143b5df  jmp       0x10143b582
+0x010143b5e1  mov       rdi, qword ptr [r15 + 0x38]
+0x010143b5e5  xor       esi, esi
+0x010143b5e7  mov       edx, 0xfffe0010
+0x010143b5ec  mov       rcx, 0xffffffffffffffff
+0x010143b5f3  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143b5f8  mov       dword ptr [r14], ebx
+0x010143b5fb  test      ebx, ebx
+0x010143b5fd  jle       0x10143b647
+0x010143b5ff  mov       rsi, qword ptr [r15 + 0x20]
+0x010143b603  mov       edi, 0x3e8
+0x010143b608  call      0x10328d4b0  ; _edb_agent_wait
+0x010143b60d  mov       ebx, eax
+0x010143b60f  test      eax, eax
+0x010143b611  js        0x10143b6bc
+0x010143b617  lea       r13, [r12 + 4]
+0x010143b61c  mov       rdi, qword ptr [r15 + 8]
+0x010143b620  call      0x10328d760  ; _edb_comm_test
+0x010143b625  test      eax, eax
+0x010143b627  js        0x10143b659
+0x010143b629  je        0x10143b6b7
+0x010143b62f  mov       rsi, qword ptr [r15 + 8]
+0x010143b633  mov       rdi, r13
+0x010143b636  call      0x10328cd70  ; _edb_comm_uint16
+0x010143b63b  mov       ebx, eax
+0x010143b63d  jmp       0x10143b670
+0x010143b63f  mov       ebx, 0xffffdb5c
+0x010143b644  mov       dword ptr [r14], ebx
+0x010143b647  movsxd    rdx, ebx
+0x010143b64a  mov       edi, 0x1000207
+0x010143b64f  mov       esi, 3
+0x010143b654  jmp       0x10143b76d
+0x010143b659  mov       rdi, qword ptr [r15 + 0x38]
+0x010143b65d  xor       esi, esi
+0x010143b65f  mov       edx, 0xfffe0010
+0x010143b664  mov       rcx, 0xffffffffffffffff
+0x010143b66b  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143b670  mov       dword ptr [r14], ebx
+0x010143b673  test      ebx, ebx
+0x010143b675  jle       0x10143b6bf
+0x010143b677  mov       rsi, qword ptr [r15 + 0x20]
+0x010143b67b  mov       edi, 0x3e8
+0x010143b680  call      0x10328d4b0  ; _edb_agent_wait
+0x010143b685  mov       ebx, eax
+0x010143b687  test      eax, eax
+0x010143b689  js        0x10143b75d
+0x010143b68f  lea       r13, [r12 + 7]
+0x010143b694  mov       rdi, qword ptr [r15 + 8]
+0x010143b698  call      0x10328d760  ; _edb_comm_test
+0x010143b69d  test      eax, eax
+0x010143b69f  js        0x10143b6d1
+0x010143b6a1  je        0x10143b758
+0x010143b6a7  mov       rsi, qword ptr [r15 + 8]
+0x010143b6ab  mov       rdi, r13
+0x010143b6ae  call      0x10328cd40  ; _edb_comm_uint8
+0x010143b6b3  mov       ebx, eax
+0x010143b6b5  jmp       0x10143b6e8
+0x010143b6b7  mov       ebx, 0xffffdb5c
+0x010143b6bc  mov       dword ptr [r14], ebx
+0x010143b6bf  movsxd    rdx, ebx
+0x010143b6c2  mov       edi, 0x1000207
+0x010143b6c7  mov       esi, 4
+0x010143b6cc  jmp       0x10143b76d
+0x010143b6d1  mov       rdi, qword ptr [r15 + 0x38]
+0x010143b6d5  xor       esi, esi
+0x010143b6d7  mov       edx, 0xfffe0010
+0x010143b6dc  mov       rcx, 0xffffffffffffffff
+0x010143b6e3  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143b6e8  mov       dword ptr [r14], ebx
+0x010143b6eb  test      ebx, ebx
+0x010143b6ed  jle       0x10143b760
+0x010143b6ef  movzx     edx, byte ptr [r13]
+0x010143b6f4  cmp       rdx, 0xd
+0x010143b6f8  jb        0x10143b709
+0x010143b6fa  mov       edi, 0x1000207
+0x010143b6ff  mov       esi, 6
+0x010143b704  jmp       0x10143b5b3
+0x010143b709  mov       dword ptr [rbp - 0x2c], 0xc
+0x010143b710  mov       rsi, qword ptr [r15 + 0x20]
+0x010143b714  mov       edi, 0x3e8
+0x010143b719  call      0x10328d4b0  ; _edb_agent_wait
+0x010143b71e  mov       ebx, eax
+0x010143b720  test      eax, eax
+0x010143b722  js        0x10143bb17
+0x010143b728  mov       qword ptr [rbp - 0x58], r13
+0x010143b72c  lea       r13, [r12 + 8]
+0x010143b731  mov       rdi, qword ptr [r15 + 8]
+0x010143b735  call      0x10328d760  ; _edb_comm_test
+0x010143b73a  test      eax, eax
+0x010143b73c  js        0x10143b799
+0x010143b73e  je        0x10143bb12
+0x010143b744  mov       rdx, qword ptr [r15 + 8]
+0x010143b748  lea       rsi, [rbp - 0x2c]
+0x010143b74c  mov       rdi, r13
+0x010143b74f  call      0x10328e020  ; _edb_comm_bytes
+0x010143b754  mov       ebx, eax
+0x010143b756  jmp       0x10143b7b0
+0x010143b758  mov       ebx, 0xffffdb5c
+0x010143b75d  mov       dword ptr [r14], ebx
+0x010143b760  movsxd    rdx, ebx
+0x010143b763  mov       edi, 0x1000207
+0x010143b768  mov       esi, 5
+0x010143b76d  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143b772  mov       r15, qword ptr [rbp - 0x40]
+0x010143b776  cmp       dword ptr [r14], 0
+0x010143b77a  jle       0x10143bae1
+0x010143b780  xor       eax, eax
+0x010143b782  test      r15, r15
+0x010143b785  je        0x10143b78a
+0x010143b787  mov       qword ptr [r15], r12
+0x010143b78a  add       rsp, 0x38
+0x010143b78e  pop       rbx
+0x010143b78f  pop       r12
+0x010143b791  pop       r13
+0x010143b793  pop       r14
+0x010143b795  pop       r15
+0x010143b797  pop       rbp
+0x010143b798  ret
+0x010143b799  mov       rdi, qword ptr [r15 + 0x38]
+0x010143b79d  xor       esi, esi
+0x010143b79f  mov       edx, 0xfffe0010
+0x010143b7a4  mov       rcx, 0xffffffffffffffff
+0x010143b7ab  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143b7b0  mov       dword ptr [r14], ebx
+0x010143b7b3  test      ebx, ebx
+0x010143b7b5  jle       0x10143bb1a
+0x010143b7bb  cmp       byte ptr [r12 + 7], 0
+0x010143b7c1  je        0x10143bb2c
+0x010143b7c7  mov       ebx, 0x18
+0x010143b7cc  xor       r13d, r13d
+0x010143b7cf  xor       eax, eax
+0x010143b7d1  mov       qword ptr [rbp - 0x50], rax
+0x010143b7d5  movzx     eax, byte ptr [r12 + r13 + 8]
+0x010143b7db  lea       ecx, [rax - 1]
+0x010143b7de  cmp       cl, 5
+0x010143b7e1  mov       qword ptr [rbp - 0x60], rbx
+0x010143b7e5  ja        0x10143b854
+0x010143b7e7  movzx     ecx, cl
+0x010143b7ea  lea       rdx, [rip + 0x34f]
+0x010143b7f1  movsxd    rcx, dword ptr [rdx + rcx*4]
+0x010143b7f5  add       rcx, rdx
+0x010143b7f8  jmp       rcx
+0x010143b7fa  lea       rdx, [r12 + rbx]
+0x010143b7fe  movzx     esi, al
+0x010143b801  xor       ebx, ebx
+0x010143b803  mov       rdi, r15
+0x010143b806  xor       ecx, ecx
+0x010143b808  xor       r8d, r8d
+0x010143b80b  call      0x10143c3d0  ; __ZN15PSvDBConnection11ReceiveItemEhPvib |
+0x010143b810  mov       dword ptr [r15 + 0x30], eax
+0x010143b814  mov       ecx, 1
+0x010143b819  test      eax, eax
+0x010143b81b  jg        0x10143ba77
+0x010143b821  jmp       0x10143ba63
+0x010143b826  test      r13, r13
+0x010143b829  je        0x10143b83c
+0x010143b82b  mov       rax, qword ptr [r12 + r13*8 + 0x10]
+0x010143b830  cmp       rax, 0x201
+0x010143b836  jb        0x10143b8d5
+0x010143b83c  mov       edi, 0x1000207
+0x010143b841  mov       esi, 0xd
+0x010143b846  mov       rdx, r13
+0x010143b849  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143b84e  mov       al, 1
+0x010143b850  mov       qword ptr [rbp - 0x50], rax
+0x010143b854  mov       ebx, 1
+0x010143b859  cmp       dword ptr [r14], 0
+0x010143b85d  mov       ecx, 1
+0x010143b862  jg        0x10143ba77
+0x010143b868  jmp       0x10143ba63
+0x010143b86d  test      r13, r13
+0x010143b870  je        0x10143b883
+0x010143b872  mov       rax, qword ptr [r12 + r13*8 + 0x10]
+0x010143b877  cmp       rax, 0x201
+0x010143b87d  jb        0x10143b937
+0x010143b883  lea       rbx, [r13 - 1]
+0x010143b887  mov       edi, 0x1000207
+0x010143b88c  mov       esi, 8
+0x010143b891  mov       rdx, r13
+0x010143b894  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143b899  mov       rax, qword ptr [r12 + r13*8 + 0x10]
+0x010143b89e  mov       cl, 1
+0x010143b8a0  mov       dword ptr [rbp - 0x48], ecx
+0x010143b8a3  jmp       0x10143b942
+0x010143b8a8  test      r13, r13
+0x010143b8ab  je        0x10143b8be
+0x010143b8ad  mov       rax, qword ptr [r12 + r13*8 + 0x10]
+0x010143b8b2  cmp       rax, 0x500000
+0x010143b8b8  jb        0x10143b9b6
+0x010143b8be  mov       edi, 0x1000207
+0x010143b8c3  mov       esi, 0xa
+0x010143b8c8  mov       rdx, r13
+0x010143b8cb  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143b8d0  jmp       0x10143ba61
+0x010143b8d5  mov       rdi, rax
+0x010143b8d8  mov       qword ptr [rbp - 0x38], rax
+0x010143b8dc  call      0x1038c3cce
+0x010143b8e1  mov       qword ptr [rbp - 0x48], rax
+0x010143b8e5  mov       qword ptr [r12 + r13*8 + 0x18], rax
+0x010143b8ea  mov       rax, qword ptr [rbp - 0x38]
+0x010143b8ee  mov       dword ptr [rbp - 0x2c], eax
+0x010143b8f1  mov       rsi, qword ptr [r15 + 0x20]
+0x010143b8f5  mov       edi, 0x3e8
+0x010143b8fa  call      0x10328d4b0  ; _edb_agent_wait
+0x010143b8ff  test      eax, eax
+0x010143b901  js        0x10143ba0c
+0x010143b907  mov       dword ptr [rbp - 0x38], eax
+0x010143b90a  mov       rdi, qword ptr [r15 + 8]
+0x010143b90e  call      0x10328d760  ; _edb_comm_test
+0x010143b913  test      eax, eax
+0x010143b915  js        0x10143ba98
+0x010143b91b  je        0x10143ba07
+0x010143b921  mov       rdx, qword ptr [r15 + 8]
+0x010143b925  mov       rdi, qword ptr [rbp - 0x48]
+0x010143b929  lea       rsi, [rbp - 0x2c]
+0x010143b92d  call      0x10328e020  ; _edb_comm_bytes
+0x010143b932  jmp       0x10143bab2
+0x010143b937  lea       rbx, [r13 - 1]
+0x010143b93b  mov       dword ptr [rbp - 0x48], 0
+0x010143b942  mov       ecx, 4
+0x010143b947  mul       rcx
+0x010143b94a  mov       rcx, 0xffffffffffffffff
+0x010143b951  cmovo     rax, rcx
+0x010143b955  mov       rdi, rax
+0x010143b958  call      0x1038c3cce
+0x010143b95d  mov       qword ptr [rbp - 0x38], rax
+0x010143b961  mov       qword ptr [r12 + r13*8 + 0x18], rax
+0x010143b966  mov       rax, qword ptr [r12 + rbx*8 + 0x18]
+0x010143b96b  shr       rax, 1
+0x010143b96e  mov       dword ptr [rbp - 0x2c], eax
+0x010143b971  mov       rsi, qword ptr [r15 + 0x20]
+0x010143b975  mov       edi, 0x3e8
+0x010143b97a  call      0x10328d4b0  ; _edb_agent_wait
+0x010143b97f  mov       ebx, eax
+0x010143b981  test      eax, eax
+0x010143b983  js        0x10143ba55
+0x010143b989  mov       rdi, qword ptr [r15 + 8]
+0x010143b98d  call      0x10328d760  ; _edb_comm_test
+0x010143b992  test      eax, eax
+0x010143b994  js        0x10143ba15
+0x010143b996  je        0x10143ba50
+0x010143b99c  mov       rcx, qword ptr [r15 + 8]
+0x010143b9a0  mov       edi, 0x26
+0x010143b9a5  mov       rsi, qword ptr [rbp - 0x38]
+0x010143b9a9  lea       rdx, [rbp - 0x2c]
+0x010143b9ad  call      0x10328c640  ; _edb_comm_array
+0x010143b9b2  mov       ebx, eax
+0x010143b9b4  jmp       0x10143ba2c
+0x010143b9b6  test      rax, rax
+0x010143b9b9  je        0x10143b854
+0x010143b9bf  mov       rdi, rax
+0x010143b9c2  mov       qword ptr [rbp - 0x38], rax
+0x010143b9c6  call      0x1038c3cce
+0x010143b9cb  mov       qword ptr [rbp - 0x48], rax
+0x010143b9cf  mov       qword ptr [r12 + r13*8 + 0x18], rax
+0x010143b9d4  mov       rax, qword ptr [rbp - 0x38]
+0x010143b9d8  mov       dword ptr [rbp - 0x2c], eax
+0x010143b9db  mov       rsi, qword ptr [r15 + 0x20]
+0x010143b9df  mov       edi, 0x3e8
+0x010143b9e4  call      0x10328d4b0  ; _edb_agent_wait
+0x010143b9e9  test      eax, eax
+0x010143b9eb  js        0x10143ba0c
+0x010143b9ed  mov       dword ptr [rbp - 0x38], eax
+0x010143b9f0  mov       rdi, qword ptr [r15 + 8]
+0x010143b9f4  call      0x10328d760  ; _edb_comm_test
+0x010143b9f9  test      eax, eax
+0x010143b9fb  js        0x10143ba98
+0x010143ba01  jne       0x10143b921
+0x010143ba07  mov       eax, 0xffffdb5c
+0x010143ba0c  mov       dword ptr [r14], eax
+0x010143ba0f  mov       rdi, qword ptr [rbp - 0x48]
+0x010143ba13  jmp       0x10143ba5c
+0x010143ba15  mov       rdi, qword ptr [r15 + 0x38]
+0x010143ba19  xor       esi, esi
+0x010143ba1b  mov       edx, 0xfffe0010
+0x010143ba20  mov       rcx, 0xffffffffffffffff
+0x010143ba27  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143ba2c  mov       dword ptr [r14], ebx
+0x010143ba2f  test      ebx, ebx
+0x010143ba31  jle       0x10143ba58
+0x010143ba33  movzx     eax, byte ptr [r12 + 6]
+0x010143ba39  and       al, 0xfc
+0x010143ba3b  or        al, 1
+0x010143ba3d  mov       byte ptr [r12 + 6], al
+0x010143ba42  xor       ebx, ebx
+0x010143ba44  cmp       byte ptr [rbp - 0x48], 0
+0x010143ba48  je        0x10143b854
+0x010143ba4e  jmp       0x10143ba63
+0x010143ba50  mov       ebx, 0xffffdb5c
+0x010143ba55  mov       dword ptr [r14], ebx
+0x010143ba58  mov       rdi, qword ptr [rbp - 0x38]
+0x010143ba5c  call      0x1038c3cc2
+0x010143ba61  xor       ebx, ebx
+0x010143ba63  movsxd    rdx, dword ptr [r14]
+0x010143ba66  mov       edi, 0x1000207
+0x010143ba6b  mov       esi, 0xc
+0x010143ba70  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143ba75  mov       ecx, ebx
+0x010143ba77  test      ecx, ecx
+0x010143ba79  mov       rbx, qword ptr [rbp - 0x60]
+0x010143ba7d  je        0x10143bad3
+0x010143ba7f  inc       r13
+0x010143ba82  add       rbx, 8
+0x010143ba86  mov       rax, qword ptr [rbp - 0x58]
+0x010143ba8a  movzx     eax, byte ptr [rax]
+0x010143ba8d  cmp       r13, rax
+0x010143ba90  jb        0x10143b7d5
+0x010143ba96  jmp       0x10143bad3
+0x010143ba98  mov       rdi, qword ptr [r15 + 0x38]
+0x010143ba9c  xor       esi, esi
+0x010143ba9e  mov       edx, 0xfffe0010
+0x010143baa3  mov       rcx, 0xffffffffffffffff
+0x010143baaa  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143baaf  mov       eax, dword ptr [rbp - 0x38]
+0x010143bab2  mov       dword ptr [r14], eax
+0x010143bab5  test      eax, eax
+0x010143bab7  jle       0x10143bacd
+0x010143bab9  movzx     eax, byte ptr [r12 + 6]
+0x010143babf  and       al, 0xfc
+0x010143bac1  or        al, 1
+0x010143bac3  mov       byte ptr [r12 + 6], al
+0x010143bac8  jmp       0x10143b854
+0x010143bacd  mov       rdi, qword ptr [rbp - 0x48]
+0x010143bad1  jmp       0x10143ba5c
+0x010143bad3  cmp       byte ptr [rbp - 0x50], 0
+0x010143bad7  mov       r15, qword ptr [rbp - 0x40]
+0x010143badb  je        0x10143b776
+0x010143bae1  mov       rdi, r12
+0x010143bae4  call      0x10049ddd0  ; __Z11DBCCmd_FreePK19_struct_db_comm_cmd |
+0x010143bae9  mov       eax, dword ptr [r14]
+0x010143baec  test      eax, eax
+0x010143baee  setg      cl
+0x010143baf1  cmp       eax, 0xffffdb5c
+0x010143baf6  sete      al
+0x010143baf9  or        al, cl
+0x010143bafb  movzx     eax, al
+0x010143bafe  or        eax, 0xfffffffe
+0x010143bb01  xor       r12d, r12d
+0x010143bb04  test      r15, r15
+0x010143bb07  jne       0x10143b787
+0x010143bb0d  jmp       0x10143b78a
+0x010143bb12  mov       ebx, 0xffffdb5c
+0x010143bb17  mov       dword ptr [r14], ebx
+0x010143bb1a  movsxd    rdx, ebx
+0x010143bb1d  mov       edi, 0x1000207
+0x010143bb22  mov       esi, 7
+0x010143bb27  jmp       0x10143b76d
+0x010143bb2c  xor       eax, eax
+0x010143bb2e  mov       r15, qword ptr [rbp - 0x40]
+0x010143bb32  test      r15, r15
+0x010143bb35  jne       0x10143b787
+0x010143bb3b  jmp       0x10143b78a
+0x010143bb40  out       0xfc, al
+
+## __ZN15PSvDBConnection11SendCommandEP19_struct_db_comm_cmd | 
+address=0x10143bb60 size=0x870
+0x010143bb60  push      rbp
+0x010143bb61  mov       rbp, rsp
+0x010143bb64  push      r15
+0x010143bb66  push      r14
+0x010143bb68  push      r13
+0x010143bb6a  push      r12
+0x010143bb6c  push      rbx
+0x010143bb6d  sub       rsp, 0xc8
+0x010143bb74  mov       r13, rsi
+0x010143bb77  mov       r14, rdi
+0x010143bb7a  mov       rax, qword ptr [rip + 0x40c13f7]
+0x010143bb81  mov       rax, qword ptr [rax]
+0x010143bb84  mov       qword ptr [rbp - 0x30], rax
+0x010143bb88  mov       dword ptr [rbp - 0xe0], 0x872349ae
+0x010143bb92  mov       dword ptr [rbp - 0xec], 0
+0x010143bb9c  movzx     eax, word ptr [rsi + 4]
+0x010143bba0  add       rsi, 7
+0x010143bba4  cmp       eax, 0x4101
+0x010143bba9  jne       0x10143bc07
+0x010143bbab  cmp       dword ptr [r14 + 0x34], 0xc
+0x010143bbb0  jbe       0x10143bc07
+0x010143bbb2  mov       byte ptr [rbp - 0xc1], 0x10
+0x010143bbb9  mov       eax, dword ptr [r13 + 0x10]
+0x010143bbbd  mov       dword ptr [rbp - 0x38], eax
+0x010143bbc0  mov       rax, qword ptr [r13 + 8]
+0x010143bbc4  mov       qword ptr [rbp - 0x40], rax
+0x010143bbc8  mov       dword ptr [rbp - 0x34], 0x6020606
+0x010143bbcf  mov       al, 1
+0x010143bbd1  cmp       byte ptr [rbp - 0x3b], 2
+0x010143bbd5  je        0x10143bc2f
+0x010143bbd7  lea       rcx, [r13 + 0x18]
+0x010143bbdb  vmovups   ymm0, ymmword ptr [rcx]
+0x010143bbdf  vmovups   ymm1, ymmword ptr [rcx + 0x20]
+0x010143bbe4  vmovups   ymm2, ymmword ptr [rcx + 0x40]
+0x010143bbe9  vmovups   ymmword ptr [rbp - 0x80], ymm2
+0x010143bbee  vmovups   ymmword ptr [rbp - 0xa0], ymm1
+0x010143bbf6  vmovups   ymmword ptr [rbp - 0xc0], ymm0
+0x010143bbfe  test      al, al
+0x010143bc00  jne       0x10143bc7e
+0x010143bc02  jmp       0x10143bcb7
+0x010143bc07  mov       al, byte ptr [r13 + 7]
+0x010143bc0b  mov       byte ptr [rbp - 0xc1], al
+0x010143bc11  mov       dword ptr [rbp - 0x34], 0
+0x010143bc18  mov       rax, qword ptr [r13 + 8]
+0x010143bc1c  mov       qword ptr [rbp - 0x40], rax
+0x010143bc20  mov       eax, dword ptr [r13 + 0x10]
+0x010143bc24  mov       dword ptr [rbp - 0x38], eax
+0x010143bc27  xor       eax, eax
+0x010143bc29  cmp       byte ptr [rbp - 0x3b], 2
+0x010143bc2d  jne       0x10143bbd7
+0x010143bc2f  vmovups   ymm0, ymmword ptr [r13 + 0x18]
+0x010143bc35  vmovups   ymmword ptr [rbp - 0xc0], ymm0
+0x010143bc3d  mov       rcx, qword ptr [r13 + 0x38]
+0x010143bc41  mov       qword ptr [rbp - 0xa0], rcx
+0x010143bc48  mov       rcx, qword ptr [r13 + 0x40]
+0x010143bc4c  test      rcx, rcx
+0x010143bc4f  lea       rdx, [rbp - 0xec]
+0x010143bc56  cmovne    rdx, rcx
+0x010143bc5a  mov       qword ptr [rbp - 0x98], rdx
+0x010143bc61  vmovups   ymm0, ymmword ptr [r13 + 0x48]
+0x010143bc67  vmovups   ymmword ptr [rbp - 0x90], ymm0
+0x010143bc6f  vmovups   xmm0, xmmword ptr [r13 + 0x68]
+0x010143bc75  vmovaps   xmmword ptr [rbp - 0x70], xmm0
+0x010143bc7a  test      al, al
+0x010143bc7c  je        0x10143bcb7
+0x010143bc7e  mov       eax, dword ptr [r13 + 0x78]
+0x010143bc82  mov       qword ptr [rbp - 0x60], rax
+0x010143bc86  test      rax, rax
+0x010143bc89  je        0x10143bc98
+0x010143bc8b  mov       eax, dword ptr [r13 + 0x7c]
+0x010143bc8f  mov       rcx, qword ptr [r13 + 0x80]
+0x010143bc96  jmp       0x10143bca4
+0x010143bc98  lea       rcx, [rbp - 0xec]
+0x010143bc9f  mov       eax, 2
+0x010143bca4  mov       qword ptr [rbp - 0x58], rax
+0x010143bca8  mov       qword ptr [rbp - 0x50], rcx
+0x010143bcac  mov       eax, dword ptr [r13 + 0x88]
+0x010143bcb3  mov       qword ptr [rbp - 0x48], rax
+0x010143bcb7  lea       r12, [r13 + 4]
+0x010143bcbb  mov       r15d, 0xfffffffe
+0x010143bcc1  cmp       byte ptr [r14 + 0x28], 0
+0x010143bcc6  je        0x10143be7f
+0x010143bccc  mov       qword ptr [rbp - 0xe8], rsi
+0x010143bcd3  vzeroupper
+0x010143bcd6  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143bcdb  mov       r15, rax
+0x010143bcde  mov       rsi, qword ptr [r14 + 0x10]
+0x010143bce2  lea       rdi, [rbp - 0xe0]
+0x010143bce9  call      0x10328cda0  ; _edb_comm_uint32
+0x010143bcee  mov       ebx, eax
+0x010143bcf0  test      eax, eax
+0x010143bcf2  mov       qword ptr [rbp - 0xd8], r12
+0x010143bcf9  js        0x10143bd44
+0x010143bcfb  lea       r12, [rbp - 0xe0]
+0x010143bd02  nop       word ptr cs:[rax + rax]
+0x010143bd10  test      ebx, ebx
+0x010143bd12  jne       0x10143bd69
+0x010143bd14  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143bd19  sub       rax, r15
+0x010143bd1c  cmp       rax, 0x3e8
+0x010143bd22  jg        0x10143bde5
+0x010143bd28  mov       edi, 0x14
+0x010143bd2d  call      0x1027c8580  ; __ZN4juce4Time25waitForMillisecondCounterEj |
+0x010143bd32  mov       rsi, qword ptr [r14 + 0x10]
+0x010143bd36  mov       rdi, r12
+0x010143bd39  call      0x10328cda0  ; _edb_comm_uint32
+0x010143bd3e  mov       ebx, eax
+0x010143bd40  test      eax, eax
+0x010143bd42  jns       0x10143bd10
+0x010143bd44  mov       rdx, qword ptr [r14 + 0x10]
+0x010143bd48  movzx     ecx, byte ptr [r14]
+0x010143bd4c  lea       rdi, [rip + 0x3f3dcd2]
+0x010143bd53  lea       rsi, [rbp - 0xe0]
+0x010143bd5a  mov       r8d, ebx
+0x010143bd5d  xor       eax, eax
+0x010143bd5f  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143bd64  jmp       0x10143bdea
+0x010143bd69  mov       dword ptr [r14 + 0x30], ebx
+0x010143bd6d  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143bd72  mov       r15, rax
+0x010143bd75  mov       rsi, qword ptr [r14 + 0x10]
+0x010143bd79  mov       rdi, r13
+0x010143bd7c  call      0x10328cda0  ; _edb_comm_uint32
+0x010143bd81  mov       ebx, eax
+0x010143bd83  test      eax, eax
+0x010143bd85  mov       r12, qword ptr [rbp - 0xd8]
+0x010143bd8c  js        0x10143bdc4
+0x010143bd8e  nop
+0x010143bd90  test      ebx, ebx
+0x010143bd92  jne       0x10143be09
+0x010143bd94  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143bd99  sub       rax, r15
+0x010143bd9c  cmp       rax, 0x3e8
+0x010143bda2  jg        0x10143be5e
+0x010143bda8  mov       edi, 0x14
+0x010143bdad  call      0x1027c8580  ; __ZN4juce4Time25waitForMillisecondCounterEj |
+0x010143bdb2  mov       rsi, qword ptr [r14 + 0x10]
+0x010143bdb6  mov       rdi, r13
+0x010143bdb9  call      0x10328cda0  ; _edb_comm_uint32
+0x010143bdbe  mov       ebx, eax
+0x010143bdc0  test      eax, eax
+0x010143bdc2  jns       0x10143bd90
+0x010143bdc4  mov       rdx, qword ptr [r14 + 0x10]
+0x010143bdc8  movzx     ecx, byte ptr [r14]
+0x010143bdcc  lea       rdi, [rip + 0x3f3dc52]
+0x010143bdd3  mov       rsi, r13
+0x010143bdd6  mov       r8d, ebx
+0x010143bdd9  xor       eax, eax
+0x010143bddb  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143bde0  jmp       0x10143be63
+0x010143bde5  mov       ebx, 0xfffe149a
+0x010143bdea  mov       dword ptr [r14 + 0x30], ebx
+0x010143bdee  movsxd    rdx, ebx
+0x010143bdf1  mov       edi, 0x1000208
+0x010143bdf6  mov       esi, 1
+0x010143bdfb  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143be00  mov       r12, qword ptr [rbp - 0xd8]
+0x010143be07  jmp       0x10143be79
+0x010143be09  mov       dword ptr [r14 + 0x30], ebx
+0x010143be0d  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143be12  mov       r15, rax
+0x010143be15  nop       word ptr cs:[rax + rax]
+0x010143be20  mov       rsi, qword ptr [r14 + 0x10]
+0x010143be24  mov       rdi, r12
+0x010143be27  call      0x10328cd70  ; _edb_comm_uint16
+0x010143be2c  mov       ebx, eax
+0x010143be2e  test      eax, eax
+0x010143be30  js        0x10143bf52
+0x010143be36  test      ebx, ebx
+0x010143be38  jne       0x10143bf70
+0x010143be3e  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143be43  sub       rax, r15
+0x010143be46  cmp       rax, 0x3e8
+0x010143be4c  jg        0x10143bf9e
+0x010143be52  mov       edi, 0x14
+0x010143be57  call      0x1027c8580  ; __ZN4juce4Time25waitForMillisecondCounterEj |
+0x010143be5c  jmp       0x10143be20
+0x010143be5e  mov       ebx, 0xfffe149a
+0x010143be63  mov       dword ptr [r14 + 0x30], ebx
+0x010143be67  movsxd    rdx, ebx
+0x010143be6a  mov       edi, 0x1000208
+0x010143be6f  mov       esi, 2
+0x010143be74  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143be79  mov       r15d, 0xfffffffe
+0x010143be7f  movsx     esi, word ptr [r12]
+0x010143be84  lea       rbx, [rbp - 0xd0]
+0x010143be8b  mov       rdi, rbx
+0x010143be8e  cmp       esi, 0x4000
+0x010143be94  jne       0x10143bedf
+0x010143be96  mov       esi, 0x4000
+0x010143be9b  vzeroupper
+0x010143be9e  call      0x1017ceb40  ; __Z14GetCommandNamei |
+0x010143bea3  mov       rdi, rbx
+0x010143bea6  call      0x10279d310  ; __ZNK4juce6String9toRawUTF8Ev |
+0x010143beab  movzx     edx, byte ptr [r14]
+0x010143beaf  mov       ecx, dword ptr [r13]
+0x010143beb3  mov       r8, qword ptr [r13 + 0x20]
+0x010143beb7  test      r15d, r15d
+0x010143beba  lea       rsi, [rip + 0x3f3db31]  ; 'Success.'
+0x010143bec1  lea       r9, [rip + 0x3f3db33]  ; 'Failed.'
+0x010143bec8  cmove     r9, rsi
+0x010143becc  lea       rdi, [rip + 0x3f3daf5]
+0x010143bed3  mov       rsi, rax
+0x010143bed6  xor       eax, eax
+0x010143bed8  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143bedd  jmp       0x10143bf1d
+0x010143bedf  vzeroupper
+0x010143bee2  call      0x1017ceb40  ; __Z14GetCommandNamei |
+0x010143bee7  mov       rdi, rbx
+0x010143beea  call      0x10279d310  ; __ZNK4juce6String9toRawUTF8Ev |
+0x010143beef  movzx     edx, byte ptr [r14]
+0x010143bef3  mov       ecx, dword ptr [r13]
+0x010143bef7  test      r15d, r15d
+0x010143befa  lea       rsi, [rip + 0x3f3daf1]  ; 'Success.'
+0x010143bf01  lea       r8, [rip + 0x3f3daf3]  ; 'Failed.'
+0x010143bf08  cmove     r8, rsi
+0x010143bf0c  lea       rdi, [rip + 0x3f3daf0]
+0x010143bf13  mov       rsi, rax
+0x010143bf16  xor       eax, eax
+0x010143bf18  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143bf1d  lea       rdi, [rbp - 0xd0]
+0x010143bf24  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x010143bf29  mov       rax, qword ptr [rip + 0x40c1048]
+0x010143bf30  mov       rax, qword ptr [rax]
+0x010143bf33  cmp       rax, qword ptr [rbp - 0x30]
+0x010143bf37  jne       0x10143c39a
+0x010143bf3d  mov       eax, r15d
+0x010143bf40  add       rsp, 0xc8
+0x010143bf47  pop       rbx
+0x010143bf48  pop       r12
+0x010143bf4a  pop       r13
+0x010143bf4c  pop       r14
+0x010143bf4e  pop       r15
+0x010143bf50  pop       rbp
+0x010143bf51  ret
+0x010143bf52  mov       rdx, qword ptr [r14 + 0x10]
+0x010143bf56  movzx     ecx, byte ptr [r14]
+0x010143bf5a  lea       rdi, [rip + 0x3f3db7e]
+0x010143bf61  mov       rsi, r12
+0x010143bf64  mov       r8d, ebx
+0x010143bf67  xor       eax, eax
+0x010143bf69  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143bf6e  jmp       0x10143bfa3
+0x010143bf70  mov       dword ptr [r14 + 0x30], ebx
+0x010143bf74  mov       rax, qword ptr [rbp - 0xe8]
+0x010143bf7b  movzx     edx, byte ptr [rax]
+0x010143bf7e  cmp       rdx, 0xd
+0x010143bf82  jb        0x10143bfb9
+0x010143bf84  mov       edi, 0x1000208
+0x010143bf89  mov       esi, 4
+0x010143bf8e  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143bf93  mov       r15d, 0xffffffff
+0x010143bf99  jmp       0x10143be7f
+0x010143bf9e  mov       ebx, 0xfffe149a
+0x010143bfa3  mov       dword ptr [r14 + 0x30], ebx
+0x010143bfa7  movsxd    rdx, ebx
+0x010143bfaa  mov       edi, 0x1000208
+0x010143bfaf  mov       esi, 3
+0x010143bfb4  jmp       0x10143be74
+0x010143bfb9  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143bfbe  mov       r15, rax
+0x010143bfc1  mov       rsi, qword ptr [r14 + 0x10]
+0x010143bfc5  lea       rdi, [rbp - 0xc1]
+0x010143bfcc  call      0x10328cd40  ; _edb_comm_uint8
+0x010143bfd1  mov       ebx, eax
+0x010143bfd3  test      eax, eax
+0x010143bfd5  js        0x10143bffb
+0x010143bfd7  test      ebx, ebx
+0x010143bfd9  jne       0x10143c01d
+0x010143bfdb  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143bfe0  sub       rax, r15
+0x010143bfe3  cmp       rax, 0x3e8
+0x010143bfe9  jg        0x10143c074
+0x010143bfef  mov       edi, 0x14
+0x010143bff4  call      0x1027c8580  ; __ZN4juce4Time25waitForMillisecondCounterEj |
+0x010143bff9  jmp       0x10143bfc1
+0x010143bffb  mov       rdx, qword ptr [r14 + 0x10]
+0x010143bfff  movzx     ecx, byte ptr [r14]
+0x010143c003  lea       rdi, [rip + 0x3f3daa6]
+0x010143c00a  lea       rsi, [rbp - 0xc1]
+0x010143c011  mov       r8d, ebx
+0x010143c014  xor       eax, eax
+0x010143c016  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143c01b  jmp       0x10143c079
+0x010143c01d  mov       dword ptr [r14 + 0x30], ebx
+0x010143c021  movzx     eax, byte ptr [rbp - 0xc1]
+0x010143c028  mov       dword ptr [rbp - 0xd0], eax
+0x010143c02e  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143c033  mov       r15, rax
+0x010143c036  mov       rdx, qword ptr [r14 + 0x10]
+0x010143c03a  lea       rdi, [rbp - 0x40]
+0x010143c03e  lea       rsi, [rbp - 0xd0]
+0x010143c045  call      0x10328e020  ; _edb_comm_bytes
+0x010143c04a  mov       ebx, eax
+0x010143c04c  test      eax, eax
+0x010143c04e  js        0x10143c08f
+0x010143c050  test      ebx, ebx
+0x010143c052  jne       0x10143c0ac
+0x010143c054  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143c059  sub       rax, r15
+0x010143c05c  cmp       rax, 0x3e8
+0x010143c062  jg        0x10143c2de
+0x010143c068  mov       edi, 0x14
+0x010143c06d  call      0x1027c8580  ; __ZN4juce4Time25waitForMillisecondCounterEj |
+0x010143c072  jmp       0x10143c036
+0x010143c074  mov       ebx, 0xfffe149a
+0x010143c079  mov       dword ptr [r14 + 0x30], ebx
+0x010143c07d  movsxd    rdx, ebx
+0x010143c080  mov       edi, 0x1000208
+0x010143c085  mov       esi, 5
+0x010143c08a  jmp       0x10143be74
+0x010143c08f  mov       rsi, qword ptr [r14 + 0x10]
+0x010143c093  movzx     edx, byte ptr [r14]
+0x010143c097  lea       rdi, [rip + 0x3f3d9e5]
+0x010143c09e  mov       ecx, ebx
+0x010143c0a0  xor       eax, eax
+0x010143c0a2  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143c0a7  jmp       0x10143c2e3
+0x010143c0ac  mov       dword ptr [r14 + 0x30], ebx
+0x010143c0b0  cmp       byte ptr [rbp - 0xc1], 0
+0x010143c0b7  je        0x10143c2f9
+0x010143c0bd  mov       dword ptr [rbp - 0xdc], 0xfffffffe
+0x010143c0c7  xor       r15d, r15d
+0x010143c0ca  movzx     eax, byte ptr [rbp + r15 - 0x40]
+0x010143c0d0  lea       ecx, [rax - 1]
+0x010143c0d3  cmp       cl, 5
+0x010143c0d6  ja        0x10143c10d
+0x010143c0d8  movzx     ecx, cl
+0x010143c0db  lea       rdx, [rip + 0x2d6]
+0x010143c0e2  movsxd    rcx, dword ptr [rdx + rcx*4]
+0x010143c0e6  add       rcx, rdx
+0x010143c0e9  jmp       rcx
+0x010143c0eb  lea       rdx, [r15*8 - 0xc0]
+0x010143c0f3  add       rdx, rbp
+0x010143c0f6  mov       rdi, r14
+0x010143c0f9  mov       esi, eax
+0x010143c0fb  xor       ecx, ecx
+0x010143c0fd  call      0x10143c500  ; __ZN15PSvDBConnection8SendItemEhPvi |
+0x010143c102  mov       ebx, eax
+0x010143c104  mov       dword ptr [r14 + 0x30], eax
+0x010143c108  jmp       0x10143c2c5
+0x010143c10d  mov       edi, 0x1000208
+0x010143c112  mov       esi, 0xc
+0x010143c117  mov       rdx, rax
+0x010143c11a  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143c11f  mov       ebx, dword ptr [r14 + 0x30]
+0x010143c123  mov       dword ptr [rbp - 0xdc], 0xffffffff
+0x010143c12d  jmp       0x10143c2c5
+0x010143c132  mov       ax, 0xd
+0x010143c136  test      r15, r15
+0x010143c139  je        0x10143c34d
+0x010143c13f  mov       rcx, qword ptr [rbp + r15*8 - 0xc8]
+0x010143c147  cmp       rcx, 0x200
+0x010143c14e  ja        0x10143c34d
+0x010143c154  mov       r12, qword ptr [rbp + r15*8 - 0xc0]
+0x010143c15c  mov       dword ptr [rbp - 0xd0], ecx
+0x010143c162  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143c167  mov       qword ptr [rbp - 0xe8], rax
+0x010143c16e  mov       rdx, qword ptr [r14 + 0x10]
+0x010143c172  mov       rdi, r12
+0x010143c175  lea       rsi, [rbp - 0xd0]
+0x010143c17c  call      0x10328e020  ; _edb_comm_bytes
+0x010143c181  mov       ebx, eax
+0x010143c183  test      eax, eax
+0x010143c185  js        0x10143c28a
+0x010143c18b  test      ebx, ebx
+0x010143c18d  jne       0x10143c2ba
+0x010143c193  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143c198  sub       rax, qword ptr [rbp - 0xe8]
+0x010143c19f  cmp       rax, 0x3e8
+0x010143c1a5  jg        0x10143c2b5
+0x010143c1ab  mov       edi, 0x14
+0x010143c1b0  call      0x1027c8580  ; __ZN4juce4Time25waitForMillisecondCounterEj |
+0x010143c1b5  jmp       0x10143c16e
+0x010143c1b7  mov       ax, 8
+0x010143c1bb  test      r15, r15
+0x010143c1be  je        0x10143c34d
+0x010143c1c4  mov       rcx, qword ptr [rbp + r15*8 - 0xc8]
+0x010143c1cc  cmp       rcx, 0x200
+0x010143c1d3  ja        0x10143c34d
+0x010143c1d9  mov       rbx, qword ptr [rbp + r15*8 - 0xc0]
+0x010143c1e1  shr       ecx, 1
+0x010143c1e3  mov       dword ptr [rbp - 0xd0], ecx
+0x010143c1e9  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143c1ee  mov       qword ptr [rbp - 0xe8], rax
+0x010143c1f5  mov       rcx, qword ptr [r14 + 0x10]
+0x010143c1f9  mov       edi, 0x26
+0x010143c1fe  mov       r12, rbx
+0x010143c201  mov       rsi, rbx
+0x010143c204  lea       rdx, [rbp - 0xd0]
+0x010143c20b  call      0x10328c640  ; _edb_comm_array
+0x010143c210  mov       ebx, eax
+0x010143c212  test      eax, eax
+0x010143c214  js        0x10143c29b
+0x010143c21a  test      ebx, ebx
+0x010143c21c  jne       0x10143c2ba
+0x010143c222  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143c227  sub       rax, qword ptr [rbp - 0xe8]
+0x010143c22e  cmp       rax, 0x3e8
+0x010143c234  jg        0x10143c2b5
+0x010143c236  mov       edi, 0x14
+0x010143c23b  call      0x1027c8580  ; __ZN4juce4Time25waitForMillisecondCounterEj |
+0x010143c240  mov       rcx, qword ptr [r14 + 0x10]
+0x010143c244  mov       edi, 0x26
+0x010143c249  mov       rsi, r12
+0x010143c24c  jmp       0x10143c204
+0x010143c24e  mov       ax, 9
+0x010143c252  test      r15, r15
+0x010143c255  je        0x10143c34d
+0x010143c25b  mov       rcx, qword ptr [rbp + r15*8 - 0xc8]
+0x010143c263  cmp       rcx, 0x4fffff
+0x010143c26a  ja        0x10143c34d
+0x010143c270  test      rcx, rcx
+0x010143c273  je        0x10143c2c9
+0x010143c275  mov       rdx, qword ptr [rbp + r15*8 - 0xc0]
+0x010143c27d  mov       rdi, r14
+0x010143c280  mov       esi, 3
+0x010143c285  jmp       0x10143c0fd
+0x010143c28a  mov       rsi, qword ptr [r14 + 0x10]
+0x010143c28e  movzx     edx, byte ptr [r14]
+0x010143c292  lea       rdi, [rip + 0x3f3d7ea]
+0x010143c299  jmp       0x10143c2aa
+0x010143c29b  mov       rsi, qword ptr [r14 + 0x10]
+0x010143c29f  movzx     edx, byte ptr [r14]
+0x010143c2a3  lea       rdi, [rip + 0x3f3d7ac]
+0x010143c2aa  mov       ecx, ebx
+0x010143c2ac  xor       eax, eax
+0x010143c2ae  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143c2b3  jmp       0x10143c2ba
+0x010143c2b5  mov       ebx, 0xfffe149a
+0x010143c2ba  mov       dword ptr [r14 + 0x30], ebx
+0x010143c2be  mov       r12, qword ptr [rbp - 0xd8]
+0x010143c2c5  test      ebx, ebx
+0x010143c2c7  jle       0x10143c305
+0x010143c2c9  inc       r15
+0x010143c2cc  movzx     eax, byte ptr [rbp - 0xc1]
+0x010143c2d3  cmp       r15, rax
+0x010143c2d6  jb        0x10143c0ca
+0x010143c2dc  jmp       0x10143c31e
+0x010143c2de  mov       ebx, 0xfffe149a
+0x010143c2e3  mov       dword ptr [r14 + 0x30], ebx
+0x010143c2e7  movsxd    rdx, ebx
+0x010143c2ea  mov       edi, 0x1000208
+0x010143c2ef  mov       esi, 6
+0x010143c2f4  jmp       0x10143be74
+0x010143c2f9  mov       dword ptr [rbp - 0xdc], 0xfffffffe
+0x010143c303  jmp       0x10143c31e
+0x010143c305  movsxd    rdx, ebx
+0x010143c308  mov       edi, 0x1000208
+0x010143c30d  mov       esi, 0xa
+0x010143c312  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143c317  cmp       dword ptr [r14 + 0x30], 0
+0x010143c31c  jle       0x10143c37c
+0x010143c31e  test      byte ptr [r13 + 6], 4
+0x010143c323  jne       0x10143c37c
+0x010143c325  mov       rdi, r14
+0x010143c328  call      0x10143c6e0  ; __ZN15PSvDBConnection11FlushStreamEv |
+0x010143c32d  mov       dword ptr [r14 + 0x30], eax
+0x010143c331  test      eax, eax
+0x010143c333  jg        0x10143c375
+0x010143c335  mov       rcx, qword ptr [rbp - 0xd8]
+0x010143c33c  movzx     ecx, word ptr [rcx]
+0x010143c33f  cmp       ecx, 0x100
+0x010143c345  je        0x10143c375
+0x010143c347  mov       cx, 0xb
+0x010143c34b  jmp       0x10143c365
+0x010143c34d  mov       edx, r15d
+0x010143c350  movzx     esi, ax
+0x010143c353  mov       edi, 0x1000208
+0x010143c358  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143c35d  mov       eax, dword ptr [r14 + 0x30]
+0x010143c361  mov       cx, 0xa
+0x010143c365  movsxd    rdx, eax
+0x010143c368  movzx     esi, cx
+0x010143c36b  mov       edi, 0x1000208
+0x010143c370  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x010143c375  mov       r12, qword ptr [rbp - 0xd8]
+0x010143c37c  xor       r15d, r15d
+0x010143c37f  mov       eax, dword ptr [rbp - 0xdc]
+0x010143c385  cmp       eax, -1
+0x010143c388  cmove     r15d, eax
+0x010143c38c  cmp       dword ptr [r14 + 0x30], 0
+0x010143c391  cmovle    r15d, eax
+0x010143c395  jmp       0x10143be7f
+0x010143c39a  call      0x1038c3da0
+0x010143c39f  jmp       0x10143c3a1
+0x010143c3a1  mov       rbx, rax
+0x010143c3a4  lea       rdi, [rbp - 0xd0]
+0x010143c3ab  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x010143c3b0  mov       rdi, rbx
+0x010143c3b3  call      0x1038c3812
+0x010143c3b8  jp        0x10143c3b7
+
+## __ZN15PSvDBConnection11ReceiveItemEhPvib | 
+address=0x10143c3d0 size=0x130
+0x010143c3d0  push      rbp
+0x010143c3d1  mov       rbp, rsp
+0x010143c3d4  push      r15
+0x010143c3d6  push      r14
+0x010143c3d8  push      r13
+0x010143c3da  push      r12
+0x010143c3dc  push      rbx
+0x010143c3dd  push      rax
+0x010143c3de  mov       r13d, r8d
+0x010143c3e1  mov       r14, rdx
+0x010143c3e4  mov       r12d, esi
+0x010143c3e7  mov       r15, rdi
+0x010143c3ea  mov       dword ptr [rbp - 0x2c], ecx
+0x010143c3ed  mov       rsi, qword ptr [rdi + 0x20]
+0x010143c3f1  mov       edi, 0x3e8
+0x010143c3f6  call      0x10328d4b0  ; _edb_agent_wait
+0x010143c3fb  mov       ebx, eax
+0x010143c3fd  test      eax, eax
+0x010143c3ff  js        0x10143c46f
+0x010143c401  mov       rdi, qword ptr [r15 + 8]
+0x010143c405  call      0x10328d760  ; _edb_comm_test
+0x010143c40a  test      eax, eax
+0x010143c40c  js        0x10143c458
+0x010143c40e  mov       ecx, eax
+0x010143c410  test      r13b, r13b
+0x010143c413  jne       0x10143c41e
+0x010143c415  mov       eax, 0xffffdb5c
+0x010143c41a  test      ecx, ecx
+0x010143c41c  je        0x10143c471
+0x010143c41e  test      r13b, r13b
+0x010143c421  jne       0x10143c427
+0x010143c423  test      ecx, ecx
+0x010143c425  je        0x10143c46f
+0x010143c427  dec       r12b
+0x010143c42a  mov       eax, ebx
+0x010143c42c  cmp       r12b, 5
+0x010143c430  ja        0x10143c471
+0x010143c432  movzx     eax, r12b
+0x010143c436  lea       rcx, [rip + 0xab]
+0x010143c43d  movsxd    rax, dword ptr [rcx + rax*4]
+0x010143c441  add       rax, rcx
+0x010143c444  jmp       rax
+0x010143c446  mov       rdx, qword ptr [r15 + 8]
+0x010143c44a  lea       rsi, [rbp - 0x2c]
+0x010143c44e  mov       rdi, r14
+0x010143c451  call      0x10328e020  ; _edb_comm_bytes
+0x010143c456  jmp       0x10143c471
+0x010143c458  mov       rdi, qword ptr [r15 + 0x38]
+0x010143c45c  xor       esi, esi
+0x010143c45e  mov       edx, 0xfffe0010
+0x010143c463  mov       rcx, 0xffffffffffffffff
+0x010143c46a  call      0x102520f00  ; __ZN9PSvDBMain17DeliverAgentEventEijm |
+0x010143c46f  mov       eax, ebx
+0x010143c471  add       rsp, 8
+0x010143c475  pop       rbx
+0x010143c476  pop       r12
+0x010143c478  pop       r13
+0x010143c47a  pop       r14
+0x010143c47c  pop       r15
+0x010143c47e  pop       rbp
+0x010143c47f  ret
+0x010143c480  mov       rcx, qword ptr [r15 + 8]
+0x010143c484  lea       rdx, [rbp - 0x2c]
+0x010143c488  mov       edi, 0x26
+0x010143c48d  mov       rsi, r14
+0x010143c490  call      0x10328c640  ; _edb_comm_array
+0x010143c495  jmp       0x10143c471
+0x010143c497  mov       rsi, qword ptr [r15 + 8]
+0x010143c49b  mov       rdi, r14
+0x010143c49e  add       rsp, 8
+0x010143c4a2  pop       rbx
+0x010143c4a3  pop       r12
+0x010143c4a5  pop       r13
+0x010143c4a7  pop       r14
+0x010143c4a9  pop       r15
+0x010143c4ab  pop       rbp
+0x010143c4ac  jmp       0x10328cd40  ; _edb_comm_uint8
+0x010143c4b1  mov       rsi, qword ptr [r15 + 8]
+0x010143c4b5  mov       rdi, r14
+0x010143c4b8  add       rsp, 8
+0x010143c4bc  pop       rbx
+0x010143c4bd  pop       r12
+0x010143c4bf  pop       r13
+0x010143c4c1  pop       r14
+0x010143c4c3  pop       r15
+0x010143c4c5  pop       rbp
+0x010143c4c6  jmp       0x10328cd70  ; _edb_comm_uint16
+0x010143c4cb  mov       rsi, qword ptr [r15 + 8]
+0x010143c4cf  mov       rdi, r14
+0x010143c4d2  add       rsp, 8
+0x010143c4d6  pop       rbx
+0x010143c4d7  pop       r12
+0x010143c4d9  pop       r13
+0x010143c4db  pop       r14
+0x010143c4dd  pop       r15
+0x010143c4df  pop       rbp
+0x010143c4e0  jmp       0x10328cda0  ; _edb_comm_uint32
+0x010143c4e5  nop       dword ptr [rax]
+0x010143c4e8  pop       rsi
+
+## __ZN15PSvDBConnection8SendItemEhPvi | 
+address=0x10143c500 size=0x1e0
+0x010143c500  push      rbp
+0x010143c501  mov       rbp, rsp
+0x010143c504  push      r15
+0x010143c506  push      r14
+0x010143c508  push      r13
+0x010143c50a  push      r12
+0x010143c50c  push      rbx
+0x010143c50d  sub       rsp, 0x18
+0x010143c511  mov       qword ptr [rbp - 0x38], rdx
+0x010143c515  mov       r12d, esi
+0x010143c518  mov       qword ptr [rbp - 0x30], rdi
+0x010143c51c  mov       dword ptr [rbp - 0x3c], ecx
+0x010143c51f  mov       ebx, 0xfffff63e
+0x010143c524  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143c529  mov       r13, rax
+0x010143c52c  dec       r12b
+0x010143c52f  movzx     r14d, r12b
+0x010143c533  lea       r15, [rip + 0x18a]
+0x010143c53a  cmp       r12b, 5
+0x010143c53e  ja        0x10143c600
+0x010143c544  nop       word ptr cs:[rax + rax]
+0x010143c550  movsxd    rax, dword ptr [r15 + r14*4]
+0x010143c554  add       rax, r15
+0x010143c557  jmp       rax
+0x010143c559  mov       rax, qword ptr [rbp - 0x30]
+0x010143c55d  mov       rdx, qword ptr [rax + 0x10]
+0x010143c561  mov       rdi, qword ptr [rbp - 0x38]
+0x010143c565  lea       rsi, [rbp - 0x3c]
+0x010143c569  call      0x10328e020  ; _edb_comm_bytes
+0x010143c56e  mov       ebx, eax
+0x010143c570  test      eax, eax
+0x010143c572  jns       0x10143c600
+0x010143c578  jmp       0x10143c637
+0x010143c57d  mov       rax, qword ptr [rbp - 0x30]
+0x010143c581  mov       rcx, qword ptr [rax + 0x10]
+0x010143c585  mov       edi, 0x26
+0x010143c58a  mov       rsi, qword ptr [rbp - 0x38]
+0x010143c58e  lea       rdx, [rbp - 0x3c]
+0x010143c592  call      0x10328c640  ; _edb_comm_array
+0x010143c597  mov       ebx, eax
+0x010143c599  test      eax, eax
+0x010143c59b  jns       0x10143c600
+0x010143c59d  jmp       0x10143c64b
+0x010143c5a2  mov       rax, qword ptr [rbp - 0x30]
+0x010143c5a6  mov       rsi, qword ptr [rax + 0x10]
+0x010143c5aa  mov       rdi, qword ptr [rbp - 0x38]
+0x010143c5ae  call      0x10328cd40  ; _edb_comm_uint8
+0x010143c5b3  mov       ebx, eax
+0x010143c5b5  test      eax, eax
+0x010143c5b7  jns       0x10143c600
+0x010143c5b9  jmp       0x10143c668
+0x010143c5be  mov       rax, qword ptr [rbp - 0x30]
+0x010143c5c2  mov       rsi, qword ptr [rax + 0x10]
+0x010143c5c6  mov       rdi, qword ptr [rbp - 0x38]
+0x010143c5ca  call      0x10328cd70  ; _edb_comm_uint16
+0x010143c5cf  mov       ebx, eax
+0x010143c5d1  test      eax, eax
+0x010143c5d3  jns       0x10143c600
+0x010143c5d5  jmp       0x10143c67c
+0x010143c5da  mov       rax, qword ptr [rbp - 0x30]
+0x010143c5de  mov       rsi, qword ptr [rax + 0x10]
+0x010143c5e2  mov       rdi, qword ptr [rbp - 0x38]
+0x010143c5e6  call      0x10328cda0  ; _edb_comm_uint32
+0x010143c5eb  mov       ebx, eax
+0x010143c5ed  test      eax, eax
+0x010143c5ef  js        0x10143c690
+0x010143c5f5  nop       word ptr cs:[rax + rax]
+0x010143c600  test      ebx, ebx
+0x010143c602  jne       0x10143c6b0
+0x010143c608  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143c60d  sub       rax, r13
+0x010143c610  cmp       rax, 0x3e8
+0x010143c616  jg        0x10143c630
+0x010143c618  mov       edi, 0x14
+0x010143c61d  call      0x1027c8580  ; __ZN4juce4Time25waitForMillisecondCounterEj |
+0x010143c622  xor       ebx, ebx
+0x010143c624  cmp       r12b, 5
+0x010143c628  jbe       0x10143c550
+0x010143c62e  jmp       0x10143c600
+0x010143c630  mov       ebx, 0xfffe149a
+0x010143c635  jmp       0x10143c6b0
+0x010143c637  mov       rax, qword ptr [rbp - 0x30]
+0x010143c63b  mov       rsi, qword ptr [rax + 0x10]
+0x010143c63f  movzx     edx, byte ptr [rax]
+0x010143c642  lea       rdi, [rip + 0x3f3d43a]
+0x010143c649  jmp       0x10143c65d
+0x010143c64b  mov       rax, qword ptr [rbp - 0x30]
+0x010143c64f  mov       rsi, qword ptr [rax + 0x10]
+0x010143c653  movzx     edx, byte ptr [rax]
+0x010143c656  lea       rdi, [rip + 0x3f3d3f9]
+0x010143c65d  mov       ecx, ebx
+0x010143c65f  xor       eax, eax
+0x010143c661  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143c666  jmp       0x10143c6b0
+0x010143c668  mov       rax, qword ptr [rbp - 0x30]
+0x010143c66c  mov       rdx, qword ptr [rax + 0x10]
+0x010143c670  movzx     ecx, byte ptr [rax]
+0x010143c673  lea       rdi, [rip + 0x3f3d436]
+0x010143c67a  jmp       0x10143c6a2
+0x010143c67c  mov       rax, qword ptr [rbp - 0x30]
+0x010143c680  mov       rdx, qword ptr [rax + 0x10]
+0x010143c684  movzx     ecx, byte ptr [rax]
+0x010143c687  lea       rdi, [rip + 0x3f3d451]
+0x010143c68e  jmp       0x10143c6a2
+0x010143c690  mov       rax, qword ptr [rbp - 0x30]
+0x010143c694  mov       rdx, qword ptr [rax + 0x10]
+0x010143c698  movzx     ecx, byte ptr [rax]
+0x010143c69b  lea       rdi, [rip + 0x3f3d383]
+0x010143c6a2  mov       rsi, qword ptr [rbp - 0x38]
+0x010143c6a6  mov       r8d, ebx
+0x010143c6a9  xor       eax, eax
+0x010143c6ab  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010143c6b0  mov       eax, ebx
+0x010143c6b2  add       rsp, 0x18
+0x010143c6b6  pop       rbx
+0x010143c6b7  pop       r12
+0x010143c6b9  pop       r13
+0x010143c6bb  pop       r14
+0x010143c6bd  pop       r15
+0x010143c6bf  pop       rbp
+0x010143c6c0  ret
+0x010143c6c1  nop       dword ptr [rax]
+0x010143c6c4  xchg      ebp, eax
+
+## __ZN15PSvDBConnection11FlushStreamEv | 
+address=0x10143c6e0 size=0x60
+0x010143c6e0  push      rbp
+0x010143c6e1  mov       rbp, rsp
+0x010143c6e4  push      r14
+0x010143c6e6  push      rbx
+0x010143c6e7  mov       rbx, rdi
+0x010143c6ea  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143c6ef  mov       r14, rax
+0x010143c6f2  mov       rdi, qword ptr [rbx + 0x10]
+0x010143c6f6  call      0x10328d240  ; _edb_comm_flush
+0x010143c6fb  test      eax, eax
+0x010143c6fd  jne       0x10143c727
+0x010143c6ff  nop
+0x010143c700  call      0x1027a5760  ; __ZN4juce4Time17currentTimeMillisEv |
+0x010143c705  sub       rax, r14
+0x010143c708  cmp       rax, 0x3e8
+0x010143c70e  jg        0x10143c72c
+0x010143c710  mov       edi, 0x14
+0x010143c715  call      0x1027c8580  ; __ZN4juce4Time25waitForMillisecondCounterEj |
+0x010143c71a  mov       rdi, qword ptr [rbx + 0x10]
+0x010143c71e  call      0x10328d240  ; _edb_comm_flush
+0x010143c723  test      eax, eax
+0x010143c725  je        0x10143c700
+0x010143c727  pop       rbx
+0x010143c728  pop       r14
+0x010143c72a  pop       rbp
+0x010143c72b  ret
+0x010143c72c  mov       eax, 0xffff473e
+0x010143c731  pop       rbx
+0x010143c732  pop       r14
+0x010143c734  pop       rbp
+0x010143c735  ret
+0x010143c736  nop
+0x010143c737  nop
+0x010143c738  nop
+0x010143c739  nop
+0x010143c73a  nop
+0x010143c73b  nop
+0x010143c73c  nop
+0x010143c73d  nop
+0x010143c73e  nop
+0x010143c73f  nop
+
+## __GLOBAL__sub_I_PSvDBConnection.cpp | 
+address=0x10143cf10 size=0x990
+0x010143cf10  push      rbp
+0x010143cf11  mov       rbp, rsp
+0x010143cf14  lea       rdi, [rip + 0x44dc0dd]  ; __ZN4juceL27compileUnitMismatchSentinelE
+0x010143cf1b  call      0x102789920  ; __ZN4juce78this_will_fail_to_link_if_some_of_your_compile_units_are_built_in_release_modeC1Ev |
+0x010143cf20  lea       rdi, [rip + 0x44dc0d5]  ; __ZN4juce7ColoursL16transparentBlackE
+0x010143cf27  xor       esi, esi
+0x010143cf29  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cf2e  lea       rdi, [rip + 0x44dc0cb]  ; __ZN4juce7ColoursL16transparentWhiteE
+0x010143cf35  mov       esi, 0xffffff
+0x010143cf3a  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cf3f  lea       rdi, [rip + 0x44dc0be]  ; __ZN4juce7ColoursL9aliceblueE
+0x010143cf46  mov       esi, 0xfff0f8ff
+0x010143cf4b  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cf50  lea       rdi, [rip + 0x44dc0b1]  ; __ZN4juce7ColoursL12antiquewhiteE
+0x010143cf57  mov       esi, 0xfffaebd7
+0x010143cf5c  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cf61  lea       rdi, [rip + 0x44dc0a4]  ; __ZN4juce7ColoursL4aquaE
+0x010143cf68  mov       esi, 0xff00ffff
+0x010143cf6d  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cf72  lea       rdi, [rip + 0x44dc097]  ; __ZN4juce7ColoursL10aquamarineE
+0x010143cf79  mov       esi, 0xff7fffd4
+0x010143cf7e  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cf83  lea       rdi, [rip + 0x44dc08a]  ; __ZN4juce7ColoursL5azureE
+0x010143cf8a  mov       esi, 0xfff0ffff
+0x010143cf8f  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cf94  lea       rdi, [rip + 0x44dc07d]  ; __ZN4juce7ColoursL5beigeE
+0x010143cf9b  mov       esi, 0xfff5f5dc
+0x010143cfa0  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cfa5  lea       rdi, [rip + 0x44dc070]  ; __ZN4juce7ColoursL6bisqueE
+0x010143cfac  mov       esi, 0xffffe4c4
+0x010143cfb1  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cfb6  lea       rdi, [rip + 0x44dc063]  ; __ZN4juce7ColoursL5blackE
+0x010143cfbd  mov       esi, 0xff000000
+0x010143cfc2  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cfc7  lea       rdi, [rip + 0x44dc056]  ; __ZN4juce7ColoursL14blanchedalmondE
+0x010143cfce  mov       esi, 0xffffebcd
+0x010143cfd3  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cfd8  lea       rdi, [rip + 0x44dc049]  ; __ZN4juce7ColoursL4blueE
+0x010143cfdf  mov       esi, 0xff0000ff
+0x010143cfe4  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cfe9  lea       rdi, [rip + 0x44dc03c]  ; __ZN4juce7ColoursL10bluevioletE
+0x010143cff0  mov       esi, 0xff8a2be2
+0x010143cff5  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143cffa  lea       rdi, [rip + 0x44dc02f]  ; __ZN4juce7ColoursL5brownE
+0x010143d001  mov       esi, 0xffa52a2a
+0x010143d006  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d00b  lea       rdi, [rip + 0x44dc022]  ; __ZN4juce7ColoursL9burlywoodE
+0x010143d012  mov       esi, 0xffdeb887
+0x010143d017  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d01c  lea       rdi, [rip + 0x44dc015]  ; __ZN4juce7ColoursL9cadetblueE
+0x010143d023  mov       esi, 0xff5f9ea0
+0x010143d028  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d02d  lea       rdi, [rip + 0x44dc008]  ; __ZN4juce7ColoursL10chartreuseE
+0x010143d034  mov       esi, 0xff7fff00
+0x010143d039  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d03e  lea       rdi, [rip + 0x44dbffb]  ; __ZN4juce7ColoursL9chocolateE
+0x010143d045  mov       esi, 0xffd2691e
+0x010143d04a  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d04f  lea       rdi, [rip + 0x44dbfee]  ; __ZN4juce7ColoursL5coralE
+0x010143d056  mov       esi, 0xffff7f50
+0x010143d05b  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d060  lea       rdi, [rip + 0x44dbfe1]  ; __ZN4juce7ColoursL14cornflowerblueE
+0x010143d067  mov       esi, 0xff6495ed
+0x010143d06c  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d071  lea       rdi, [rip + 0x44dbfd4]  ; __ZN4juce7ColoursL8cornsilkE
+0x010143d078  mov       esi, 0xfffff8dc
+0x010143d07d  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d082  lea       rdi, [rip + 0x44dbfc7]  ; __ZN4juce7ColoursL7crimsonE
+0x010143d089  mov       esi, 0xffdc143c
+0x010143d08e  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d093  lea       rdi, [rip + 0x44dbfba]  ; __ZN4juce7ColoursL4cyanE
+0x010143d09a  mov       esi, 0xff00ffff
+0x010143d09f  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d0a4  lea       rdi, [rip + 0x44dbfad]  ; __ZN4juce7ColoursL8darkblueE
+0x010143d0ab  mov       esi, 0xff00008b
+0x010143d0b0  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d0b5  lea       rdi, [rip + 0x44dbfa0]  ; __ZN4juce7ColoursL8darkcyanE
+0x010143d0bc  mov       esi, 0xff008b8b
+0x010143d0c1  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d0c6  lea       rdi, [rip + 0x44dbf93]  ; __ZN4juce7ColoursL13darkgoldenrodE
+0x010143d0cd  mov       esi, 0xffb8860b
+0x010143d0d2  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d0d7  lea       rdi, [rip + 0x44dbf86]  ; __ZN4juce7ColoursL8darkgreyE
+0x010143d0de  mov       esi, 0xff555555
+0x010143d0e3  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d0e8  lea       rdi, [rip + 0x44dbf79]  ; __ZN4juce7ColoursL9darkgreenE
+0x010143d0ef  mov       esi, 0xff006400
+0x010143d0f4  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d0f9  lea       rdi, [rip + 0x44dbf6c]  ; __ZN4juce7ColoursL9darkkhakiE
+0x010143d100  mov       esi, 0xffbdb76b
+0x010143d105  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d10a  lea       rdi, [rip + 0x44dbf5f]  ; __ZN4juce7ColoursL11darkmagentaE
+0x010143d111  mov       esi, 0xff8b008b
+0x010143d116  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d11b  lea       rdi, [rip + 0x44dbf52]  ; __ZN4juce7ColoursL14darkolivegreenE
+0x010143d122  mov       esi, 0xff556b2f
+0x010143d127  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d12c  lea       rdi, [rip + 0x44dbf45]  ; __ZN4juce7ColoursL10darkorangeE
+0x010143d133  mov       esi, 0xffff8c00
+0x010143d138  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d13d  lea       rdi, [rip + 0x44dbf38]  ; __ZN4juce7ColoursL10darkorchidE
+0x010143d144  mov       esi, 0xff9932cc
+0x010143d149  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d14e  lea       rdi, [rip + 0x44dbf2b]  ; __ZN4juce7ColoursL7darkredE
+0x010143d155  mov       esi, 0xff8b0000
+0x010143d15a  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d15f  lea       rdi, [rip + 0x44dbf1e]  ; __ZN4juce7ColoursL10darksalmonE
+0x010143d166  mov       esi, 0xffe9967a
+0x010143d16b  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d170  lea       rdi, [rip + 0x44dbf11]  ; __ZN4juce7ColoursL12darkseagreenE
+0x010143d177  mov       esi, 0xff8fbc8f
+0x010143d17c  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d181  lea       rdi, [rip + 0x44dbf04]  ; __ZN4juce7ColoursL13darkslateblueE
+0x010143d188  mov       esi, 0xff483d8b
+0x010143d18d  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d192  lea       rdi, [rip + 0x44dbef7]  ; __ZN4juce7ColoursL13darkslategreyE
+0x010143d199  mov       esi, 0xff2f4f4f
+0x010143d19e  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d1a3  lea       rdi, [rip + 0x44dbeea]  ; __ZN4juce7ColoursL13darkturquoiseE
+0x010143d1aa  mov       esi, 0xff00ced1
+0x010143d1af  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d1b4  lea       rdi, [rip + 0x44dbedd]  ; __ZN4juce7ColoursL10darkvioletE
+0x010143d1bb  mov       esi, 0xff9400d3
+0x010143d1c0  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d1c5  lea       rdi, [rip + 0x44dbed0]  ; __ZN4juce7ColoursL8deeppinkE
+0x010143d1cc  mov       esi, 0xffff1493
+0x010143d1d1  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d1d6  lea       rdi, [rip + 0x44dbec3]  ; __ZN4juce7ColoursL11deepskyblueE
+0x010143d1dd  mov       esi, 0xff00bfff
+0x010143d1e2  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d1e7  lea       rdi, [rip + 0x44dbeb6]  ; __ZN4juce7ColoursL7dimgreyE
+0x010143d1ee  mov       esi, 0xff696969
+0x010143d1f3  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d1f8  lea       rdi, [rip + 0x44dbea9]  ; __ZN4juce7ColoursL10dodgerblueE
+0x010143d1ff  mov       esi, 0xff1e90ff
+0x010143d204  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d209  lea       rdi, [rip + 0x44dbe9c]  ; __ZN4juce7ColoursL9firebrickE
+0x010143d210  mov       esi, 0xffb22222
+0x010143d215  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d21a  lea       rdi, [rip + 0x44dbe8f]  ; __ZN4juce7ColoursL11floralwhiteE
+0x010143d221  mov       esi, 0xfffffaf0
+0x010143d226  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d22b  lea       rdi, [rip + 0x44dbe82]  ; __ZN4juce7ColoursL11forestgreenE
+0x010143d232  mov       esi, 0xff228b22
+0x010143d237  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d23c  lea       rdi, [rip + 0x44dbe75]  ; __ZN4juce7ColoursL7fuchsiaE
+0x010143d243  mov       esi, 0xffff00ff
+0x010143d248  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d24d  lea       rdi, [rip + 0x44dbe68]  ; __ZN4juce7ColoursL9gainsboroE
+0x010143d254  mov       esi, 0xffdcdcdc
+0x010143d259  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d25e  lea       rdi, [rip + 0x44dbe5b]  ; __ZN4juce7ColoursL10ghostwhiteE
+0x010143d265  mov       esi, 0xfff8f8ff
+0x010143d26a  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d26f  lea       rdi, [rip + 0x44dbe4e]  ; __ZN4juce7ColoursL4goldE
+0x010143d276  mov       esi, 0xffffd700
+0x010143d27b  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d280  lea       rdi, [rip + 0x44dbe41]  ; __ZN4juce7ColoursL9goldenrodE
+0x010143d287  mov       esi, 0xffdaa520
+0x010143d28c  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d291  lea       rdi, [rip + 0x44dbe34]  ; __ZN4juce7ColoursL4greyE
+0x010143d298  mov       esi, 0xff808080
+0x010143d29d  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d2a2  lea       rdi, [rip + 0x44dbe27]  ; __ZN4juce7ColoursL5greenE
+0x010143d2a9  mov       esi, 0xff008000
+0x010143d2ae  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d2b3  lea       rdi, [rip + 0x44dbe1a]  ; __ZN4juce7ColoursL11greenyellowE
+0x010143d2ba  mov       esi, 0xffadff2f
+0x010143d2bf  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d2c4  lea       rdi, [rip + 0x44dbe0d]  ; __ZN4juce7ColoursL8honeydewE
+0x010143d2cb  mov       esi, 0xfff0fff0
+0x010143d2d0  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d2d5  lea       rdi, [rip + 0x44dbe00]  ; __ZN4juce7ColoursL7hotpinkE
+0x010143d2dc  mov       esi, 0xffff69b4
+0x010143d2e1  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d2e6  lea       rdi, [rip + 0x44dbdf3]  ; __ZN4juce7ColoursL9indianredE
+0x010143d2ed  mov       esi, 0xffcd5c5c
+0x010143d2f2  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d2f7  lea       rdi, [rip + 0x44dbde6]  ; __ZN4juce7ColoursL6indigoE
+0x010143d2fe  mov       esi, 0xff4b0082
+0x010143d303  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d308  lea       rdi, [rip + 0x44dbdd9]  ; __ZN4juce7ColoursL5ivoryE
+0x010143d30f  mov       esi, 0xfffffff0
+0x010143d314  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d319  lea       rdi, [rip + 0x44dbdcc]  ; __ZN4juce7ColoursL5khakiE
+0x010143d320  mov       esi, 0xfff0e68c
+0x010143d325  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d32a  lea       rdi, [rip + 0x44dbdbf]  ; __ZN4juce7ColoursL8lavenderE
+0x010143d331  mov       esi, 0xffe6e6fa
+0x010143d336  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d33b  lea       rdi, [rip + 0x44dbdb2]  ; __ZN4juce7ColoursL13lavenderblushE
+0x010143d342  mov       esi, 0xfffff0f5
+0x010143d347  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d34c  lea       rdi, [rip + 0x44dbda5]  ; __ZN4juce7ColoursL9lawngreenE
+0x010143d353  mov       esi, 0xff7cfc00
+0x010143d358  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d35d  lea       rdi, [rip + 0x44dbd98]  ; __ZN4juce7ColoursL12lemonchiffonE
+0x010143d364  mov       esi, 0xfffffacd
+0x010143d369  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d36e  lea       rdi, [rip + 0x44dbd8b]  ; __ZN4juce7ColoursL9lightblueE
+0x010143d375  mov       esi, 0xffadd8e6
+0x010143d37a  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d37f  lea       rdi, [rip + 0x44dbd7e]  ; __ZN4juce7ColoursL10lightcoralE
+0x010143d386  mov       esi, 0xfff08080
+0x010143d38b  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d390  lea       rdi, [rip + 0x44dbd71]  ; __ZN4juce7ColoursL9lightcyanE
+0x010143d397  mov       esi, 0xffe0ffff
+0x010143d39c  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d3a1  lea       rdi, [rip + 0x44dbd64]  ; __ZN4juce7ColoursL20lightgoldenrodyellowE
+0x010143d3a8  mov       esi, 0xfffafad2
+0x010143d3ad  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d3b2  lea       rdi, [rip + 0x44dbd57]  ; __ZN4juce7ColoursL10lightgreenE
+0x010143d3b9  mov       esi, 0xff90ee90
+0x010143d3be  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d3c3  lea       rdi, [rip + 0x44dbd4a]  ; __ZN4juce7ColoursL9lightgreyE
+0x010143d3ca  mov       esi, 0xffd3d3d3
+0x010143d3cf  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d3d4  lea       rdi, [rip + 0x44dbd3d]  ; __ZN4juce7ColoursL9lightpinkE
+0x010143d3db  mov       esi, 0xffffb6c1
+0x010143d3e0  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d3e5  lea       rdi, [rip + 0x44dbd30]  ; __ZN4juce7ColoursL11lightsalmonE
+0x010143d3ec  mov       esi, 0xffffa07a
+0x010143d3f1  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d3f6  lea       rdi, [rip + 0x44dbd23]  ; __ZN4juce7ColoursL13lightseagreenE
+0x010143d3fd  mov       esi, 0xff20b2aa
+0x010143d402  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d407  lea       rdi, [rip + 0x44dbd16]  ; __ZN4juce7ColoursL12lightskyblueE
+0x010143d40e  mov       esi, 0xff87cefa
+0x010143d413  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d418  lea       rdi, [rip + 0x44dbd09]  ; __ZN4juce7ColoursL14lightslategreyE
+0x010143d41f  mov       esi, 0xff778899
+0x010143d424  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d429  lea       rdi, [rip + 0x44dbcfc]  ; __ZN4juce7ColoursL14lightsteelblueE
+0x010143d430  mov       esi, 0xffb0c4de
+0x010143d435  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d43a  lea       rdi, [rip + 0x44dbcef]  ; __ZN4juce7ColoursL11lightyellowE
+0x010143d441  mov       esi, 0xffffffe0
+0x010143d446  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d44b  lea       rdi, [rip + 0x44dbce2]  ; __ZN4juce7ColoursL4limeE
+0x010143d452  mov       esi, 0xff00ff00
+0x010143d457  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d45c  lea       rdi, [rip + 0x44dbcd5]  ; __ZN4juce7ColoursL9limegreenE
+0x010143d463  mov       esi, 0xff32cd32
+0x010143d468  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d46d  lea       rdi, [rip + 0x44dbcc8]  ; __ZN4juce7ColoursL5linenE
+0x010143d474  mov       esi, 0xfffaf0e6
+0x010143d479  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d47e  lea       rdi, [rip + 0x44dbcbb]  ; __ZN4juce7ColoursL7magentaE
+0x010143d485  mov       esi, 0xffff00ff
+0x010143d48a  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d48f  lea       rdi, [rip + 0x44dbcae]  ; __ZN4juce7ColoursL6maroonE
+0x010143d496  mov       esi, 0xff800000
+0x010143d49b  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d4a0  lea       rdi, [rip + 0x44dbca1]  ; __ZN4juce7ColoursL16mediumaquamarineE
+0x010143d4a7  mov       esi, 0xff66cdaa
+0x010143d4ac  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d4b1  lea       rdi, [rip + 0x44dbc94]  ; __ZN4juce7ColoursL10mediumblueE
+0x010143d4b8  mov       esi, 0xff0000cd
+0x010143d4bd  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d4c2  lea       rdi, [rip + 0x44dbc87]  ; __ZN4juce7ColoursL12mediumorchidE
+0x010143d4c9  mov       esi, 0xffba55d3
+0x010143d4ce  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d4d3  lea       rdi, [rip + 0x44dbc7a]  ; __ZN4juce7ColoursL12mediumpurpleE
+0x010143d4da  mov       esi, 0xff9370db
+0x010143d4df  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d4e4  lea       rdi, [rip + 0x44dbc6d]  ; __ZN4juce7ColoursL14mediumseagreenE
+0x010143d4eb  mov       esi, 0xff3cb371
+0x010143d4f0  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d4f5  lea       rdi, [rip + 0x44dbc60]  ; __ZN4juce7ColoursL15mediumslateblueE
+0x010143d4fc  mov       esi, 0xff7b68ee
+0x010143d501  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d506  lea       rdi, [rip + 0x44dbc53]  ; __ZN4juce7ColoursL17mediumspringgreenE
+0x010143d50d  mov       esi, 0xff00fa9a
+0x010143d512  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d517  lea       rdi, [rip + 0x44dbc46]  ; __ZN4juce7ColoursL15mediumturquoiseE
+0x010143d51e  mov       esi, 0xff48d1cc
+0x010143d523  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d528  lea       rdi, [rip + 0x44dbc39]  ; __ZN4juce7ColoursL15mediumvioletredE
+0x010143d52f  mov       esi, 0xffc71585
+0x010143d534  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d539  lea       rdi, [rip + 0x44dbc2c]  ; __ZN4juce7ColoursL12midnightblueE
+0x010143d540  mov       esi, 0xff191970
+0x010143d545  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d54a  lea       rdi, [rip + 0x44dbc1f]  ; __ZN4juce7ColoursL9mintcreamE
+0x010143d551  mov       esi, 0xfff5fffa
+0x010143d556  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d55b  lea       rdi, [rip + 0x44dbc12]  ; __ZN4juce7ColoursL9mistyroseE
+0x010143d562  mov       esi, 0xffffe4e1
+0x010143d567  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d56c  lea       rdi, [rip + 0x44dbc05]  ; __ZN4juce7ColoursL8moccasinE
+0x010143d573  mov       esi, 0xffffe4b5
+0x010143d578  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d57d  lea       rdi, [rip + 0x44dbbf8]  ; __ZN4juce7ColoursL11navajowhiteE
+0x010143d584  mov       esi, 0xffffdead
+0x010143d589  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d58e  lea       rdi, [rip + 0x44dbbeb]  ; __ZN4juce7ColoursL4navyE
+0x010143d595  mov       esi, 0xff000080
+0x010143d59a  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d59f  lea       rdi, [rip + 0x44dbbde]  ; __ZN4juce7ColoursL7oldlaceE
+0x010143d5a6  mov       esi, 0xfffdf5e6
+0x010143d5ab  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d5b0  lea       rdi, [rip + 0x44dbbd1]  ; __ZN4juce7ColoursL5oliveE
+0x010143d5b7  mov       esi, 0xff808000
+0x010143d5bc  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d5c1  lea       rdi, [rip + 0x44dbbc4]  ; __ZN4juce7ColoursL9olivedrabE
+0x010143d5c8  mov       esi, 0xff6b8e23
+0x010143d5cd  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d5d2  lea       rdi, [rip + 0x44dbbb7]  ; __ZN4juce7ColoursL6orangeE
+0x010143d5d9  mov       esi, 0xffffa500
+0x010143d5de  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d5e3  lea       rdi, [rip + 0x44dbbaa]  ; __ZN4juce7ColoursL9orangeredE
+0x010143d5ea  mov       esi, 0xffff4500
+0x010143d5ef  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d5f4  lea       rdi, [rip + 0x44dbb9d]  ; __ZN4juce7ColoursL6orchidE
+0x010143d5fb  mov       esi, 0xffda70d6
+0x010143d600  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d605  lea       rdi, [rip + 0x44dbb90]  ; __ZN4juce7ColoursL13palegoldenrodE
+0x010143d60c  mov       esi, 0xffeee8aa
+0x010143d611  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d616  lea       rdi, [rip + 0x44dbb83]  ; __ZN4juce7ColoursL9palegreenE
+0x010143d61d  mov       esi, 0xff98fb98
+0x010143d622  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d627  lea       rdi, [rip + 0x44dbb76]  ; __ZN4juce7ColoursL13paleturquoiseE
+0x010143d62e  mov       esi, 0xffafeeee
+0x010143d633  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d638  lea       rdi, [rip + 0x44dbb69]  ; __ZN4juce7ColoursL13palevioletredE
+0x010143d63f  mov       esi, 0xffdb7093
+0x010143d644  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d649  lea       rdi, [rip + 0x44dbb5c]  ; __ZN4juce7ColoursL10papayawhipE
+0x010143d650  mov       esi, 0xffffefd5
+0x010143d655  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d65a  lea       rdi, [rip + 0x44dbb4f]  ; __ZN4juce7ColoursL9peachpuffE
+0x010143d661  mov       esi, 0xffffdab9
+0x010143d666  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d66b  lea       rdi, [rip + 0x44dbb42]  ; __ZN4juce7ColoursL4peruE
+0x010143d672  mov       esi, 0xffcd853f
+0x010143d677  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d67c  lea       rdi, [rip + 0x44dbb35]  ; __ZN4juce7ColoursL4pinkE
+0x010143d683  mov       esi, 0xffffc0cb
+0x010143d688  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d68d  lea       rdi, [rip + 0x44dbb28]  ; __ZN4juce7ColoursL4plumE
+0x010143d694  mov       esi, 0xffdda0dd
+0x010143d699  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d69e  lea       rdi, [rip + 0x44dbb1b]  ; __ZN4juce7ColoursL10powderblueE
+0x010143d6a5  mov       esi, 0xffb0e0e6
+0x010143d6aa  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d6af  lea       rdi, [rip + 0x44dbb0e]  ; __ZN4juce7ColoursL6purpleE
+0x010143d6b6  mov       esi, 0xff800080
+0x010143d6bb  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d6c0  lea       rdi, [rip + 0x44dbb01]  ; __ZN4juce7ColoursL13rebeccapurpleE
+0x010143d6c7  mov       esi, 0xff663399
+0x010143d6cc  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d6d1  lea       rdi, [rip + 0x44dbaf4]  ; __ZN4juce7ColoursL3redE
+0x010143d6d8  mov       esi, 0xffff0000
+0x010143d6dd  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d6e2  lea       rdi, [rip + 0x44dbae7]  ; __ZN4juce7ColoursL9rosybrownE
+0x010143d6e9  mov       esi, 0xffbc8f8f
+0x010143d6ee  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d6f3  lea       rdi, [rip + 0x44dbada]  ; __ZN4juce7ColoursL9royalblueE
+0x010143d6fa  mov       esi, 0xff4169e1
+0x010143d6ff  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d704  lea       rdi, [rip + 0x44dbacd]  ; __ZN4juce7ColoursL11saddlebrownE
+0x010143d70b  mov       esi, 0xff8b4513
+0x010143d710  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d715  lea       rdi, [rip + 0x44dbac0]  ; __ZN4juce7ColoursL6salmonE
+0x010143d71c  mov       esi, 0xfffa8072
+0x010143d721  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d726  lea       rdi, [rip + 0x44dbab3]  ; __ZN4juce7ColoursL10sandybrownE
+0x010143d72d  mov       esi, 0xfff4a460
+0x010143d732  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d737  lea       rdi, [rip + 0x44dbaa6]  ; __ZN4juce7ColoursL8seagreenE
+0x010143d73e  mov       esi, 0xff2e8b57
+0x010143d743  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d748  lea       rdi, [rip + 0x44dba99]  ; __ZN4juce7ColoursL8seashellE
+0x010143d74f  mov       esi, 0xfffff5ee
+0x010143d754  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d759  lea       rdi, [rip + 0x44dba8c]  ; __ZN4juce7ColoursL6siennaE
+0x010143d760  mov       esi, 0xffa0522d
+0x010143d765  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d76a  lea       rdi, [rip + 0x44dba7f]  ; __ZN4juce7ColoursL6silverE
+0x010143d771  mov       esi, 0xffc0c0c0
+0x010143d776  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d77b  lea       rdi, [rip + 0x44dba72]  ; __ZN4juce7ColoursL7skyblueE
+0x010143d782  mov       esi, 0xff87ceeb
+0x010143d787  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d78c  lea       rdi, [rip + 0x44dba65]  ; __ZN4juce7ColoursL9slateblueE
+0x010143d793  mov       esi, 0xff6a5acd
+0x010143d798  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d79d  lea       rdi, [rip + 0x44dba58]  ; __ZN4juce7ColoursL9slategreyE
+0x010143d7a4  mov       esi, 0xff708090
+0x010143d7a9  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d7ae  lea       rdi, [rip + 0x44dba4b]  ; __ZN4juce7ColoursL4snowE
+0x010143d7b5  mov       esi, 0xfffffafa
+0x010143d7ba  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d7bf  lea       rdi, [rip + 0x44dba3e]  ; __ZN4juce7ColoursL11springgreenE
+0x010143d7c6  mov       esi, 0xff00ff7f
+0x010143d7cb  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d7d0  lea       rdi, [rip + 0x44dba31]  ; __ZN4juce7ColoursL9steelblueE
+0x010143d7d7  mov       esi, 0xff4682b4
+0x010143d7dc  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d7e1  lea       rdi, [rip + 0x44dba24]  ; __ZN4juce7ColoursL3tanE
+0x010143d7e8  mov       esi, 0xffd2b48c
+0x010143d7ed  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d7f2  lea       rdi, [rip + 0x44dba17]  ; __ZN4juce7ColoursL4tealE
+0x010143d7f9  mov       esi, 0xff008080
+0x010143d7fe  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d803  lea       rdi, [rip + 0x44dba0a]  ; __ZN4juce7ColoursL7thistleE
+0x010143d80a  mov       esi, 0xffd8bfd8
+0x010143d80f  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d814  lea       rdi, [rip + 0x44db9fd]  ; __ZN4juce7ColoursL6tomatoE
+0x010143d81b  mov       esi, 0xffff6347
+0x010143d820  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d825  lea       rdi, [rip + 0x44db9f0]  ; __ZN4juce7ColoursL9turquoiseE
+0x010143d82c  mov       esi, 0xff40e0d0
+0x010143d831  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d836  lea       rdi, [rip + 0x44db9e3]  ; __ZN4juce7ColoursL6violetE
+0x010143d83d  mov       esi, 0xffee82ee
+0x010143d842  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d847  lea       rdi, [rip + 0x44db9d6]  ; __ZN4juce7ColoursL5wheatE
+0x010143d84e  mov       esi, 0xfff5deb3
+0x010143d853  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d858  lea       rdi, [rip + 0x44db9c9]  ; __ZN4juce7ColoursL5whiteE
+0x010143d85f  mov       esi, 0xffffffff
+0x010143d864  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d869  lea       rdi, [rip + 0x44db9bc]  ; __ZN4juce7ColoursL10whitesmokeE
+0x010143d870  mov       esi, 0xfff5f5f5
+0x010143d875  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d87a  lea       rdi, [rip + 0x44db9af]  ; __ZN4juce7ColoursL6yellowE
+0x010143d881  mov       esi, 0xffffff00
+0x010143d886  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d88b  lea       rdi, [rip + 0x44db9a2]  ; __ZN4juce7ColoursL11yellowgreenE
+0x010143d892  mov       esi, 0xff9acd32
+0x010143d897  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x010143d89c  pop       rbp
+0x010143d89d  ret
+0x010143d89e  nop
+0x010143d89f  nop
+

@@ -1,0 +1,843 @@
+{
+  "name": "search-track-conformance",
+  "fixture_profile": "search-text",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 64,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "ordinary-search-control",
+      "description": "Ordinary 0x1300 Search control for the same text",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "PRECOMPOSED"
+        },
+        {
+          "string": "PRECOMPOSED"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "mode-0",
+      "description": "Search Track with mode byte zero",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "PRECOMPOSED"
+        },
+        {
+          "string": "PRECOMPOSED"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "mode-1",
+      "description": "Search Track with mode byte one",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        },
+        {
+          "utf16_bytes": "PRECOMPOSED"
+        },
+        {
+          "string": "PRECOMPOSED"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "mode-2",
+      "description": "Search Track with mode byte two",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 2
+        },
+        {
+          "utf16_bytes": "PRECOMPOSED"
+        },
+        {
+          "string": "PRECOMPOSED"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "mode-3",
+      "description": "Search Track with mode byte three",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 3
+        },
+        {
+          "utf16_bytes": "PRECOMPOSED"
+        },
+        {
+          "string": "PRECOMPOSED"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "mode-127",
+      "description": "Largest positive signed mode byte",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 127
+        },
+        {
+          "utf16_bytes": "PRECOMPOSED"
+        },
+        {
+          "string": "PRECOMPOSED"
+        }
+      ],
+      "expect": {
+        "outcome": "error",
+        "total": 4294967295,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "mode-128",
+      "description": "First mode byte sign-extended as negative internally",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 128
+        },
+        {
+          "utf16_bytes": "PRECOMPOSED"
+        },
+        {
+          "string": "PRECOMPOSED"
+        }
+      ],
+      "expect": {
+        "outcome": "error",
+        "total": 4294967295,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "mode-255",
+      "description": "All-bits-set mode byte",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 255
+        },
+        {
+          "utf16_bytes": "PRECOMPOSED"
+        },
+        {
+          "string": "PRECOMPOSED"
+        }
+      ],
+      "expect": {
+        "outcome": "error",
+        "total": 4294967295,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "mode-256-low-byte-alias",
+      "description": "Mode value whose low byte aliases zero",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 256
+        },
+        {
+          "utf16_bytes": "PRECOMPOSED"
+        },
+        {
+          "string": "PRECOMPOSED"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2
+      }
+    },
+    {
+      "id": "mode-0-lowercase",
+      "description": "Mode zero preserves ordinary non-ASCII case behavior",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "PRECOMPOSED éCLAIR"
+        },
+        {
+          "string": "PRECOMPOSED éCLAIR"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "mode-1-no-match",
+      "description": "Mode one with a valid query that matches no row",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        },
+        {
+          "utf16_bytes": "DOES NOT EXIST"
+        },
+        {
+          "string": "DOES NOT EXIST"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "mode-1-empty",
+      "description": "Mode one with an empty UTF-16 string",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        },
+        {
+          "utf16_bytes": ""
+        },
+        {
+          "string": ""
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "sort-00",
+      "description": "Search Track sort ID 0 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-01",
+      "description": "Search Track sort ID 1 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-02",
+      "description": "Search Track sort ID 2 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 2
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-03",
+      "description": "Search Track sort ID 3 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 3
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-04",
+      "description": "Search Track sort ID 4 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 4
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-05",
+      "description": "Search Track sort ID 5 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 5
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-06",
+      "description": "Search Track sort ID 6 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 6
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-07",
+      "description": "Search Track sort ID 7 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 7
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-08",
+      "description": "Search Track sort ID 8 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 8
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-09",
+      "description": "Search Track sort ID 9 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 9
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-10",
+      "description": "Search Track sort ID 10 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 10
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-11",
+      "description": "Search Track sort ID 11 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 11
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-12",
+      "description": "Search Track sort ID 12 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-13",
+      "description": "Search Track sort ID 13 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 13
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-14",
+      "description": "Search Track sort ID 14 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 14
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-15",
+      "description": "Search Track sort ID 15 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 15
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-16",
+      "description": "Search Track sort ID 16 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 16
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "sort-17",
+      "description": "Search Track sort ID 17 over all fixture rows",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 17
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "declared-length-zero",
+      "description": "String supplied with a zero declared UTF-16 byte length",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        },
+        {
+          "string": "PRECOMPOSED"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "declared-length-short",
+      "description": "String supplied with a truncated declared UTF-16 byte length",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 4
+        },
+        {
+          "string": "PRECOMPOSED"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "three-arguments",
+      "description": "Required string argument omitted",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 2
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 0
+      }
+    },
+    {
+      "id": "five-arguments",
+      "description": "Ordinary Search trailing flag appended to Search Track",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 1
+        },
+        {
+          "utf16_bytes": "PRECOMPOSED"
+        },
+        {
+          "string": "PRECOMPOSED"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "menu",
+        "total": 2
+      }
+    }
+  ]
+}

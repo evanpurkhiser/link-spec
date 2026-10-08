@@ -1,0 +1,395 @@
+{
+  "name": "context-hot-cue-legacy-setter-status-player-11-legacy",
+  "fixture_profile": "hot-cue-bank-legacy-ordinals",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "legacy",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "type-00--set-rejected",
+      "description": "Track type 0x00: player-11 status-backed legacy D Hot Cue Bank mutation",
+      "request_kind": "0x2201",
+      "arguments": [
+        {
+          "number": "0x0b010300"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 36
+        },
+        {
+          "blob_hex": "000104001127000000000000111111112222222233333333444444445555555566666666"
+        },
+        {
+          "number": 8
+        },
+        {
+          "blob_hex": "7777777788888888"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--read-after-rejected-setter",
+      "description": "Type-1 six-slot membership read after player-11 type 0x00 rejected setter",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "raw_reply"
+      }
+    },
+    {
+      "id": "type-02--set-rejected",
+      "description": "Track type 0x02: player-11 status-backed legacy D Hot Cue Bank mutation",
+      "request_kind": "0x2201",
+      "arguments": [
+        {
+          "number": "0x0b010302"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 36
+        },
+        {
+          "blob_hex": "000104001127000000000000111111112222222233333333444444445555555566666666"
+        },
+        {
+          "number": 8
+        },
+        {
+          "blob_hex": "7777777788888888"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--read-after-rejected-setter",
+      "description": "Type-1 six-slot membership read after player-11 type 0x02 rejected setter",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "raw_reply"
+      }
+    },
+    {
+      "id": "type-03--set-rejected",
+      "description": "Track type 0x03: player-11 status-backed legacy D Hot Cue Bank mutation",
+      "request_kind": "0x2201",
+      "arguments": [
+        {
+          "number": "0x0b010303"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 36
+        },
+        {
+          "blob_hex": "000104001127000000000000111111112222222233333333444444445555555566666666"
+        },
+        {
+          "number": 8
+        },
+        {
+          "blob_hex": "7777777788888888"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--read-after-rejected-setter",
+      "description": "Type-1 six-slot membership read after player-11 type 0x03 rejected setter",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "raw_reply"
+      }
+    },
+    {
+      "id": "type-04--set-rejected",
+      "description": "Track type 0x04: player-11 status-backed legacy D Hot Cue Bank mutation",
+      "request_kind": "0x2201",
+      "arguments": [
+        {
+          "number": "0x0b010304"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 36
+        },
+        {
+          "blob_hex": "000104001127000000000000111111112222222233333333444444445555555566666666"
+        },
+        {
+          "number": 8
+        },
+        {
+          "blob_hex": "7777777788888888"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--read-after-rejected-setter",
+      "description": "Type-1 six-slot membership read after player-11 type 0x04 rejected setter",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "raw_reply"
+      }
+    },
+    {
+      "id": "type-05--set-rejected",
+      "description": "Track type 0x05: player-11 status-backed legacy D Hot Cue Bank mutation",
+      "request_kind": "0x2201",
+      "arguments": [
+        {
+          "number": "0x0b010305"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 36
+        },
+        {
+          "blob_hex": "000104001127000000000000111111112222222233333333444444445555555566666666"
+        },
+        {
+          "number": 8
+        },
+        {
+          "blob_hex": "7777777788888888"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--read-after-rejected-setter",
+      "description": "Type-1 six-slot membership read after player-11 type 0x05 rejected setter",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "raw_reply"
+      }
+    },
+    {
+      "id": "type-06--set-rejected",
+      "description": "Track type 0x06: player-11 status-backed legacy D Hot Cue Bank mutation",
+      "request_kind": "0x2201",
+      "arguments": [
+        {
+          "number": "0x0b010306"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 36
+        },
+        {
+          "blob_hex": "000104001127000000000000111111112222222233333333444444445555555566666666"
+        },
+        {
+          "number": 8
+        },
+        {
+          "blob_hex": "7777777788888888"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--read-after-rejected-setter",
+      "description": "Type-1 six-slot membership read after player-11 type 0x06 rejected setter",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "raw_reply"
+      }
+    },
+    {
+      "id": "type-01--set-accepted",
+      "description": "Track type 0x01: player-11 status-backed legacy D Hot Cue Bank mutation",
+      "request_kind": "0x2201",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 36
+        },
+        {
+          "blob_hex": "000104001127000000000000111111112222222233333333444444445555555566666666"
+        },
+        {
+          "number": 8
+        },
+        {
+          "blob_hex": "7777777788888888"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--read-after-accepted-setter",
+      "description": "Type-1 six-slot membership read after player-11 type 0x01 accepted setter",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 6
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "raw_reply"
+      }
+    }
+  ]
+}

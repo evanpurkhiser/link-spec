@@ -1,0 +1,327 @@
+## __Z28dsqlIsLinkExportVisibleTrackj | 
+address=0x101f3ed50 size=0xa0
+0x0101f3ed50  push      rbp
+0x0101f3ed51  mov       rbp, rsp
+0x0101f3ed54  push      r14
+0x0101f3ed56  push      rbx
+0x0101f3ed57  sub       rsp, 0x40
+0x0101f3ed5b  mov       rax, qword ptr [rip + 0x35be216]
+0x0101f3ed62  mov       rax, qword ptr [rax]
+0x0101f3ed65  mov       qword ptr [rbp - 0x18], rax
+0x0101f3ed69  lea       rax, [rip + 0x37736c8]
+0x0101f3ed70  mov       qword ptr [rbp - 0x50], rax
+0x0101f3ed74  mov       dword ptr [rbp - 0x48], edi
+0x0101f3ed77  lea       r14, [rbp - 0x50]
+0x0101f3ed7b  mov       qword ptr [rbp - 0x30], r14
+0x0101f3ed7f  mov       rdi, r14
+0x0101f3ed82  call      0x101f3efd0  ; __ZN26DsqlCommonFunctionInternal17_isStreamingTrackENSt3__18functionIFbRN2db14DsqlTableFieldEEEE |
+0x0101f3ed87  mov       ebx, eax
+0x0101f3ed89  mov       rdi, qword ptr [rbp - 0x30]
+0x0101f3ed8d  cmp       r14, rdi
+0x0101f3ed90  je        0x101f3ed9f
+0x0101f3ed92  test      rdi, rdi
+0x0101f3ed95  je        0x101f3eda5
+0x0101f3ed97  mov       rax, qword ptr [rdi]
+0x0101f3ed9a  call      qword ptr [rax + 0x28]
+0x0101f3ed9d  jmp       0x101f3eda5
+0x0101f3ed9f  mov       rax, qword ptr [rdi]
+0x0101f3eda2  call      qword ptr [rax + 0x20]
+0x0101f3eda5  mov       rax, qword ptr [rip + 0x35be1cc]
+0x0101f3edac  mov       rax, qword ptr [rax]
+0x0101f3edaf  cmp       rax, qword ptr [rbp - 0x18]
+0x0101f3edb3  jne       0x101f3edc3
+0x0101f3edb5  xor       bl, 1
+0x0101f3edb8  mov       eax, ebx
+0x0101f3edba  add       rsp, 0x40
+0x0101f3edbe  pop       rbx
+0x0101f3edbf  pop       r14
+0x0101f3edc1  pop       rbp
+0x0101f3edc2  ret
+0x0101f3edc3  call      0x1038c3da0
+0x0101f3edc8  mov       rbx, rax
+0x0101f3edcb  mov       rdi, qword ptr [rbp - 0x30]
+0x0101f3edcf  cmp       r14, rdi
+0x0101f3edd2  je        0x101f3ede1
+0x0101f3edd4  call      0x1038ba5f0  ; __Z28dsqlIsLinkExportVisibleTrackj.cold.1 |
+0x0101f3edd9  mov       rdi, rbx
+0x0101f3eddc  call      0x1038c3812
+0x0101f3ede1  mov       rax, qword ptr [rdi]
+0x0101f3ede4  call      qword ptr [rax + 0x20]
+0x0101f3ede7  mov       rdi, rbx
+0x0101f3edea  call      0x1038c3812
+0x0101f3edef  nop
+
+## __Z28dsqlIsLinkExportVisibleTrackPv | 
+address=0x101f3edf0 size=0xa0
+0x0101f3edf0  push      rbp
+0x0101f3edf1  mov       rbp, rsp
+0x0101f3edf4  push      r14
+0x0101f3edf6  push      rbx
+0x0101f3edf7  sub       rsp, 0x40
+0x0101f3edfb  mov       rax, qword ptr [rip + 0x35be176]
+0x0101f3ee02  mov       rax, qword ptr [rax]
+0x0101f3ee05  mov       qword ptr [rbp - 0x18], rax
+0x0101f3ee09  lea       rax, [rip + 0x37736b8]
+0x0101f3ee10  mov       qword ptr [rbp - 0x50], rax
+0x0101f3ee14  mov       qword ptr [rbp - 0x48], rdi
+0x0101f3ee18  lea       r14, [rbp - 0x50]
+0x0101f3ee1c  mov       qword ptr [rbp - 0x30], r14
+0x0101f3ee20  mov       rdi, r14
+0x0101f3ee23  call      0x101f3efd0  ; __ZN26DsqlCommonFunctionInternal17_isStreamingTrackENSt3__18functionIFbRN2db14DsqlTableFieldEEEE |
+0x0101f3ee28  mov       ebx, eax
+0x0101f3ee2a  mov       rdi, qword ptr [rbp - 0x30]
+0x0101f3ee2e  cmp       r14, rdi
+0x0101f3ee31  je        0x101f3ee40
+0x0101f3ee33  test      rdi, rdi
+0x0101f3ee36  je        0x101f3ee46
+0x0101f3ee38  mov       rax, qword ptr [rdi]
+0x0101f3ee3b  call      qword ptr [rax + 0x28]
+0x0101f3ee3e  jmp       0x101f3ee46
+0x0101f3ee40  mov       rax, qword ptr [rdi]
+0x0101f3ee43  call      qword ptr [rax + 0x20]
+0x0101f3ee46  mov       rax, qword ptr [rip + 0x35be12b]
+0x0101f3ee4d  mov       rax, qword ptr [rax]
+0x0101f3ee50  cmp       rax, qword ptr [rbp - 0x18]
+0x0101f3ee54  jne       0x101f3ee64
+0x0101f3ee56  xor       bl, 1
+0x0101f3ee59  mov       eax, ebx
+0x0101f3ee5b  add       rsp, 0x40
+0x0101f3ee5f  pop       rbx
+0x0101f3ee60  pop       r14
+0x0101f3ee62  pop       rbp
+0x0101f3ee63  ret
+0x0101f3ee64  call      0x1038c3da0
+0x0101f3ee69  mov       rbx, rax
+0x0101f3ee6c  mov       rdi, qword ptr [rbp - 0x30]
+0x0101f3ee70  cmp       r14, rdi
+0x0101f3ee73  je        0x101f3ee82
+0x0101f3ee75  call      0x1038ba610  ; __Z28dsqlIsLinkExportVisibleTrackPv.cold.1 |
+0x0101f3ee7a  mov       rdi, rbx
+0x0101f3ee7d  call      0x1038c3812
+0x0101f3ee82  mov       rax, qword ptr [rdi]
+0x0101f3ee85  call      qword ptr [rax + 0x20]
+0x0101f3ee88  mov       rdi, rbx
+0x0101f3ee8b  call      0x1038c3812
+
+## __ZN26DsqlCommonFunctionInternal17_isStreamingTrackENSt3__18functionIFbRN2db14DsqlTableFieldEEEE | 
+address=0x101f3efd0 size=0xe0
+0x0101f3efd0  push      rbp
+0x0101f3efd1  mov       rbp, rsp
+0x0101f3efd4  push      r15
+0x0101f3efd6  push      r14
+0x0101f3efd8  push      r12
+0x0101f3efda  push      rbx
+0x0101f3efdb  sub       rsp, 0x30
+0x0101f3efdf  mov       r15, rdi
+0x0101f3efe2  lea       rbx, [rbp - 0x50]
+0x0101f3efe6  mov       rdi, rbx
+0x0101f3efe9  call      0x10278c8d0  ; __ZN4juce6StringC1Ev |
+0x0101f3efee  lea       r12, [rip + 0x36c5373]
+0x0101f3eff5  mov       qword ptr [rbp - 0x38], r12
+0x0101f3eff9  lea       r14, [rbp - 0x30]
+0x0101f3effd  mov       rdi, r14
+0x0101f3f000  mov       rsi, rbx
+0x0101f3f003  call      0x10278c2c0  ; __ZN4juce6StringC1ERKS0_ |
+0x0101f3f008  mov       rdi, rbx
+0x0101f3f00b  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101f3f010  mov       dword ptr [rbp - 0x48], 1
+0x0101f3f017  lea       rax, [rbp - 0x38]
+0x0101f3f01b  mov       qword ptr [rbp - 0x40], rax
+0x0101f3f01f  mov       rdi, qword ptr [r15 + 0x20]
+0x0101f3f023  test      rdi, rdi
+0x0101f3f026  je        0x101f3f077
+0x0101f3f028  mov       rax, qword ptr [rdi]
+0x0101f3f02b  lea       rsi, [rbp - 0x48]
+0x0101f3f02f  call      qword ptr [rax + 0x30]
+0x0101f3f032  test      al, al
+0x0101f3f034  je        0x101f3f05a
+0x0101f3f036  lea       rbx, [rbp - 0x28]
+0x0101f3f03a  mov       rdi, rbx
+0x0101f3f03d  mov       rsi, r14
+0x0101f3f040  call      0x10278c2c0  ; __ZN4juce6StringC1ERKS0_ |
+0x0101f3f045  mov       rdi, rbx
+0x0101f3f048  call      0x1030d8820  ; __ZN9streaming19isStreamingProtocolERKN4juce6StringE |
+0x0101f3f04d  mov       ebx, eax
+0x0101f3f04f  lea       rdi, [rbp - 0x28]
+0x0101f3f053  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101f3f058  jmp       0x101f3f05c
+0x0101f3f05a  xor       ebx, ebx
+0x0101f3f05c  mov       qword ptr [rbp - 0x38], r12
+0x0101f3f060  mov       rdi, r14
+0x0101f3f063  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101f3f068  mov       eax, ebx
+0x0101f3f06a  add       rsp, 0x30
+0x0101f3f06e  pop       rbx
+0x0101f3f06f  pop       r12
+0x0101f3f071  pop       r14
+0x0101f3f073  pop       r15
+0x0101f3f075  pop       rbp
+0x0101f3f076  ret
+0x0101f3f077  call      0x10004d7c0  ; __ZNSt3__125__throw_bad_function_callB6v15006Ev |
+0x0101f3f07c  ud2
+0x0101f3f07e  mov       rbx, rax
+0x0101f3f081  lea       rdi, [rbp - 0x28]
+0x0101f3f085  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101f3f08a  jmp       0x101f3f08f
+0x0101f3f08c  mov       rbx, rax
+0x0101f3f08f  mov       qword ptr [rbp - 0x38], r12
+0x0101f3f093  mov       rdi, r14
+0x0101f3f096  call      0x10278b1e0  ; __ZN4juce6StringD1Ev |
+0x0101f3f09b  mov       rdi, rbx
+0x0101f3f09e  call      0x1038c3812
+0x0101f3f0a3  nop       word ptr cs:[rax + rax]
+
+## __ZNSt3__110__function6__funcIZN26DsqlCommonFunctionInternal31_methodGetFieldFromContentTableEjEUlRN2db14DsqlTableFieldEE_NS_9allocatorIS6_EEFbS5_EEclES5_ | 
+address=0x101f3f140 size=0x20
+0x0101f3f140  push      rbp
+0x0101f3f141  mov       rbp, rsp
+0x0101f3f144  mov       rdx, rsi
+0x0101f3f147  mov       edi, dword ptr [rdi + 8]
+0x0101f3f14a  xor       esi, esi
+0x0101f3f14c  call      0x10145f430  ; __ZN2db33dsql_get_value_from_content_tableEj9RbDBIndexRNS_14DsqlTableFieldE |
+0x0101f3f151  test      eax, eax
+0x0101f3f153  sete      al
+0x0101f3f156  pop       rbp
+0x0101f3f157  ret
+0x0101f3f158  nop       dword ptr [rax + rax]
+
+## __ZNSt3__110__function6__funcIZN26DsqlCommonFunctionInternal31_methodGetFieldFromContentTableEPvEUlRN2db14DsqlTableFieldEE_NS_9allocatorIS7_EEFbS6_EEclES6_ | 
+address=0x101f3f220 size=0x30
+0x0101f3f220  push      rbp
+0x0101f3f221  mov       rbp, rsp
+0x0101f3f224  push      rbx
+0x0101f3f225  push      rax
+0x0101f3f226  mov       rbx, qword ptr [rdi + 8]
+0x0101f3f22a  mov       qword ptr [rbp - 0x10], rbx
+0x0101f3f22e  test      rbx, rbx
+0x0101f3f231  je        0x101f3f23c
+0x0101f3f233  lea       rdi, [rbp - 0x10]
+0x0101f3f237  call      0x10145eeb0  ; __ZN2db7DsqlRow13getFieldValueERNS_14DsqlTableFieldE |
+0x0101f3f23c  test      rbx, rbx
+0x0101f3f23f  setne     al
+0x0101f3f242  add       rsp, 8
+0x0101f3f246  pop       rbx
+0x0101f3f247  pop       rbp
+0x0101f3f248  ret
+0x0101f3f249  nop       dword ptr [rax]
+
+## __ZN9streaming19isStreamingProtocolERKN4juce6StringE | 
+address=0x1030d8820 size=0xf0
+0x01030d8820  push      rbp
+0x01030d8821  mov       rbp, rsp
+0x01030d8824  push      rbx
+0x01030d8825  push      rax
+0x01030d8826  mov       rbx, rdi
+0x01030d8829  mov       rax, qword ptr [rip + 0x2a10550]
+0x01030d8830  test      rax, rax
+0x01030d8833  je        0x1030d8853
+0x01030d8835  mov       rdi, qword ptr [rax + 8]
+0x01030d8839  test      rdi, rdi
+0x01030d883c  je        0x1030d8853
+0x01030d883e  mov       rax, qword ptr [rdi]
+0x01030d8841  mov       rsi, rbx
+0x01030d8844  call      qword ptr [rax + 0x30]
+0x01030d8847  mov       ecx, eax
+0x01030d8849  mov       al, 1
+0x01030d884b  test      cl, cl
+0x01030d884d  jne       0x1030d8907
+0x01030d8853  mov       rax, qword ptr [rip + 0x2a10526]
+0x01030d885a  test      rax, rax
+0x01030d885d  je        0x1030d887d
+0x01030d885f  mov       rdi, qword ptr [rax + 0x10]
+0x01030d8863  test      rdi, rdi
+0x01030d8866  je        0x1030d887d
+0x01030d8868  mov       rax, qword ptr [rdi]
+0x01030d886b  mov       rsi, rbx
+0x01030d886e  call      qword ptr [rax + 0x30]
+0x01030d8871  mov       ecx, eax
+0x01030d8873  mov       al, 1
+0x01030d8875  test      cl, cl
+0x01030d8877  jne       0x1030d8907
+0x01030d887d  mov       rax, qword ptr [rip + 0x2a104fc]
+0x01030d8884  mov       rax, qword ptr [rip + 0x2a104f5]
+0x01030d888b  test      rax, rax
+0x01030d888e  je        0x1030d88aa
+0x01030d8890  mov       rdi, qword ptr [rax + 0x20]
+0x01030d8894  test      rdi, rdi
+0x01030d8897  je        0x1030d88aa
+0x01030d8899  mov       rax, qword ptr [rdi]
+0x01030d889c  mov       rsi, rbx
+0x01030d889f  call      qword ptr [rax + 0x30]
+0x01030d88a2  mov       ecx, eax
+0x01030d88a4  mov       al, 1
+0x01030d88a6  test      cl, cl
+0x01030d88a8  jne       0x1030d8907
+0x01030d88aa  mov       rax, qword ptr [rip + 0x2a104cf]
+0x01030d88b1  mov       rax, qword ptr [rip + 0x2a104c8]
+0x01030d88b8  mov       rax, qword ptr [rip + 0x2a104c1]
+0x01030d88bf  test      rax, rax
+0x01030d88c2  je        0x1030d88de
+0x01030d88c4  mov       rdi, qword ptr [rax + 0x38]
+0x01030d88c8  test      rdi, rdi
+0x01030d88cb  je        0x1030d88de
+0x01030d88cd  mov       rax, qword ptr [rdi]
+0x01030d88d0  mov       rsi, rbx
+0x01030d88d3  call      qword ptr [rax + 0x30]
+0x01030d88d6  mov       ecx, eax
+0x01030d88d8  mov       al, 1
+0x01030d88da  test      cl, cl
+0x01030d88dc  jne       0x1030d8907
+0x01030d88de  mov       rax, qword ptr [rip + 0x2a1049b]
+0x01030d88e5  test      rax, rax
+0x01030d88e8  je        0x1030d8905
+0x01030d88ea  mov       rdi, qword ptr [rax + 0x40]
+0x01030d88ee  test      rdi, rdi
+0x01030d88f1  je        0x1030d8905
+0x01030d88f3  mov       rax, qword ptr [rdi]
+0x01030d88f6  mov       rax, qword ptr [rax + 0x30]
+0x01030d88fa  mov       rsi, rbx
+0x01030d88fd  add       rsp, 8
+0x01030d8901  pop       rbx
+0x01030d8902  pop       rbp
+0x01030d8903  jmp       rax
+0x01030d8905  xor       eax, eax
+0x01030d8907  add       rsp, 8
+0x01030d890b  pop       rbx
+0x01030d890c  pop       rbp
+0x01030d890d  ret
+0x01030d890e  nop
+
+## __Z28dsqlIsLinkExportVisibleTrackj.cold.1 | 
+address=0x1038ba5f0 size=0x20
+0x01038ba5f0  test      rdi, rdi
+0x01038ba5f3  je        0x1038ba600
+0x01038ba5f5  push      rbp
+0x01038ba5f6  mov       rbp, rsp
+0x01038ba5f9  mov       rax, qword ptr [rdi]
+0x01038ba5fc  call      qword ptr [rax + 0x28]
+0x01038ba5ff  pop       rbp
+0x01038ba600  ret
+0x01038ba601  nop       word ptr cs:[rax + rax]
+
+## __Z28dsqlIsLinkExportVisibleTrackPv.cold.1 | 
+address=0x1038ba610 size=0x20
+0x01038ba610  test      rdi, rdi
+0x01038ba613  je        0x1038ba620
+0x01038ba615  push      rbp
+0x01038ba616  mov       rbp, rsp
+0x01038ba619  mov       rax, qword ptr [rdi]
+0x01038ba61c  call      qword ptr [rax + 0x28]
+0x01038ba61f  pop       rbp
+0x01038ba620  ret
+0x01038ba621  nop
+0x01038ba622  nop
+0x01038ba623  nop
+0x01038ba624  nop
+0x01038ba625  nop
+0x01038ba626  nop
+0x01038ba627  nop
+0x01038ba628  nop
+0x01038ba629  nop
+0x01038ba62a  nop
+0x01038ba62b  nop
+0x01038ba62c  nop
+0x01038ba62d  nop
+0x01038ba62e  nop
+0x01038ba62f  nop
+

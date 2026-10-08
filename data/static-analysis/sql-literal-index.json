@@ -1,0 +1,1353 @@
+{
+  "format": 1,
+  "product": "rekordbox 7.2.19",
+  "scope": "Exact SQL literals beginning with SELECT, UPDATE, INSERT, or DELETE in retained Link Export disassembly evidence.",
+  "summary": {
+    "scanned_source_count": 84,
+    "sources_with_literals": 19,
+    "unique_literal_count": 36,
+    "occurrence_count": 79,
+    "complete_statement_count": 33,
+    "fragment_count": 3
+  },
+  "literals": [
+    {
+      "literal": "select * from djmdAlbum where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 2,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/search-result-implementation.disasm.txt",
+          "line": 1752,
+          "address": "0x01016d9809",
+          "function": "function 0x1016d9390",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/search-result-implementation.disasm.txt",
+          "line": 4820,
+          "address": "0x01016dc83a",
+          "function": "function 0x1016dc7e0",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select * from djmdArtist where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 2,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/search-result-implementation.disasm.txt",
+          "line": 1623,
+          "address": "0x01016d95a8",
+          "function": "function 0x1016d9390",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/search-result-implementation.disasm.txt",
+          "line": 4490,
+          "address": "0x01016dc314",
+          "function": "function 0x1016dc2b0",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select * from djmdCategory where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/search-result-implementation.disasm.txt",
+          "line": 1218,
+          "address": "0x01016d8ee6",
+          "function": "function 0x1016d8c40",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select * from djmdContent where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/search-result-implementation.disasm.txt",
+          "line": 3520,
+          "address": "0x01016db440",
+          "function": "function 0x1016db3d0",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select * from djmdContent where rb_local_deleted = 0 and ID = %lu",
+      "classification": "complete-statement",
+      "occurrence_count": 9,
+      "platforms": [
+        "macos-x86_64",
+        "windows-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/client-and-render.disasm.txt",
+          "line": 942,
+          "address": "0x0100fa08e0",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/context-track-type.disasm.txt",
+          "line": 674,
+          "address": "0x0100fa08e0",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/device-identity-paths.disasm.txt",
+          "line": 1368,
+          "address": "0x0100fa08e0",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/device-identity-paths.disasm.txt",
+          "line": 2189,
+          "address": "0x01016c01fe",
+          "function": "function 0x1016c01b0",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/display-song-info-dispatch.disasm.txt",
+          "line": 1082,
+          "address": "0x01016c01fe",
+          "function": "function 0x1016c01b0",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/song-info-siblings.disasm.txt",
+          "line": 22,
+          "address": "0x01016c1528",
+          "function": "function 0x1016c14e0",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/song-info-siblings.disasm.txt",
+          "line": 1011,
+          "address": "0x01016cdc32",
+          "function": "function 0x1016cdc00",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+          "line": 28,
+          "address": "0x0142361f86",
+          "function": "function 0x142361f30",
+          "platform": "windows-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-history.disasm.txt",
+          "line": 112,
+          "address": "0x014236c84a",
+          "function": "function 0x14236c690",
+          "platform": "windows-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select * from djmdContent where rb_local_deleted = 0 and ID in(__CONTENT_IDs__)",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/smart-xml-parser.disasm.txt",
+          "line": 122,
+          "address": "0x01016c4a17",
+          "function": "function 0x1016c47f0",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select * from djmdHotCueBankList where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/hot-cue-bank.disasm.txt",
+          "line": 800,
+          "address": "0x01016d1ca9",
+          "function": "function 0x1016d1c60",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select * from djmdKey where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/source-only-client-db-effects.disasm.txt",
+          "line": 247,
+          "address": "0x01016c98ff",
+          "function": "function 0x1016c98c0",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select * from djmdLabel where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/search-result-implementation.disasm.txt",
+          "line": 1879,
+          "address": "0x01016d9a4c",
+          "function": "function 0x1016d9390",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select * from djmdSongHotCueBanklist where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 5,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/hot-cue-bank-membership-resolver.disasm.txt",
+          "line": 14,
+          "address": "0x01016d2d8a",
+          "function": "function 0x1016d2d70",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/hot-cue-bank-mutations.disasm.txt",
+          "line": 359,
+          "address": "0x01016d301b",
+          "function": "function 0x1016d2f20",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/hot-cue-bank.disasm.txt",
+          "line": 1442,
+          "address": "0x01016d261c",
+          "function": "function 0x1016d2600",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/hot-cue-bank.disasm.txt",
+          "line": 1685,
+          "address": "0x01016d301b",
+          "function": "function 0x1016d2f20",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/hot-cue-seek-fault.disasm.txt",
+          "line": 139,
+          "address": "0x01016d301b",
+          "function": "function 0x1016d2f20",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select * from djmdSongTagList where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 3,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/client-and-render.disasm.txt",
+          "line": 439,
+          "address": "0x0100fa0093",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/context-track-type.disasm.txt",
+          "line": 171,
+          "address": "0x0100fa0093",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/device-identity-paths.disasm.txt",
+          "line": 865,
+          "address": "0x0100fa0093",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select * from djmdSort where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/right-column-precompute.disasm.txt",
+          "line": 963,
+          "address": "0x01016bc5b6",
+          "function": "function 0x1016bc5a0",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select * from djmdSort where rb_local_deleted = 0 order by Seq",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/subcolumn-controller-paths.disasm.txt",
+          "line": 1529,
+          "address": "0x0100b1c865",
+          "function": "function 0x100b1c740",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select AnalysisDataPath from djmdContent where rb_local_deleted = 0 and ID = %lu",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/source-only-client-db-effects.disasm.txt",
+          "line": 14,
+          "address": "0x01016c242d",
+          "function": "function 0x1016c2410",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select Bpm from djmdContent where rb_local_deleted = 0 and ID = %lu",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/source-only-client-db-effects.disasm.txt",
+          "line": 850,
+          "address": "0x01016d5737",
+          "function": "function 0x1016d5720",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select ContentLink from djmdContent where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/source-only-client-db-effects.disasm.txt",
+          "line": 976,
+          "address": "0x01016d8a65",
+          "function": "function 0x1016d8a50",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select DBID from djmdProperty",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/song-info-siblings.disasm.txt",
+          "line": 390,
+          "address": "0x01016c1aa9",
+          "function": "function 0x1016c14e0",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select DBID from djmdProperty where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/song-info-siblings.disasm.txt",
+          "line": 1049,
+          "address": "0x01016cdcf4",
+          "function": "function 0x1016cdc00",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select FileType, SampleRate from djmdContent where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 4,
+      "platforms": [
+        "macos-x86_64",
+        "windows-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/client-and-render.disasm.txt",
+          "line": 600,
+          "address": "0x0100fa0326",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/context-track-type.disasm.txt",
+          "line": 332,
+          "address": "0x0100fa0326",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/device-identity-paths.disasm.txt",
+          "line": 1026,
+          "address": "0x0100fa0326",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/get-list-row-content-compatibility.disasm.txt",
+          "line": 5,
+          "address": "0x014238ca7f",
+          "function": "function 0x14238ca79",
+          "platform": "windows-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select HotCueAutoLoad from djmdContent where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 3,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/client-and-render.disasm.txt",
+          "line": 728,
+          "address": "0x0100fa0544",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/context-track-type.disasm.txt",
+          "line": 460,
+          "address": "0x0100fa0544",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/device-identity-paths.disasm.txt",
+          "line": 1154,
+          "address": "0x0100fa0544",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select ID from djmdSort",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/subcolumn-controller-paths.disasm.txt",
+          "line": 2143,
+          "address": "0x0100b4adf2",
+          "function": "function 0x100b4ac50",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select ID from djmdSort where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/subcolumn-controller-paths.disasm.txt",
+          "line": 1872,
+          "address": "0x0100b4a9ea",
+          "function": "function 0x100b4a890",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select ID from djmdSort where rb_local_deleted = 0 and (Disable & 2) = 2",
+      "classification": "complete-statement",
+      "occurrence_count": 3,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/client-and-render.disasm.txt",
+          "line": 972,
+          "address": "0x0100fa0958",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/context-track-type.disasm.txt",
+          "line": 704,
+          "address": "0x0100fa0958",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/device-identity-paths.disasm.txt",
+          "line": 1398,
+          "address": "0x0100fa0958",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select ImagePath from __TABLE_NAME__ where rb_local_deleted = 0 and ID = %lu",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/adjacent-payload-loaders.disasm.txt",
+          "line": 90,
+          "address": "0x01016c553b",
+          "function": "function 0x1016c5520",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select KeyID from djmdContent where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 3,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/client-and-render.disasm.txt",
+          "line": 798,
+          "address": "0x0100fa0660",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/context-track-type.disasm.txt",
+          "line": 530,
+          "address": "0x0100fa0660",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/device-identity-paths.disasm.txt",
+          "line": 1224,
+          "address": "0x0100fa0660",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select MenuItemID from djmdCategory where rb_local_deleted = 0 and ID = %lu",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/right-column-precompute.disasm.txt",
+          "line": 341,
+          "address": "0x01016b8cf1",
+          "function": "function 0x1016b8790",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select MenuItemID from djmdSort where rb_local_deleted = 0 and ID = %lu",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/right-column-precompute.disasm.txt",
+          "line": 399,
+          "address": "0x01016b8e0e",
+          "function": "function 0x1016b8790",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select MenuItemID, Disable from djmdCategory where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 2,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/device-identity-paths.disasm.txt",
+          "line": 2224,
+          "address": "0x01016c029e",
+          "function": "function 0x1016c01b0",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/display-song-info-dispatch.disasm.txt",
+          "line": 1117,
+          "address": "0x01016c029e",
+          "function": "function 0x1016c01b0",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select Rating from djmdContent where rb_local_deleted = 0 and ID = %lu",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/source-only-client-db-effects.disasm.txt",
+          "line": 718,
+          "address": "0x01016d555a",
+          "function": "function 0x1016d5540",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select ScaleName from djmdKey where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 3,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/client-and-render.disasm.txt",
+          "line": 851,
+          "address": "0x0100fa074b",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/context-track-type.disasm.txt",
+          "line": 583,
+          "address": "0x0100fa074b",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/device-identity-paths.disasm.txt",
+          "line": 1277,
+          "address": "0x0100fa074b",
+          "function": "function 0x100f9fe40",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "update djmdSort set Disable = (Disable & ~0x02), rb_data_status = case when usn != 0 then 257 else 0 end, rb_local_usn = __RB_LOCAL_USN__, updated_at = CURRENT_TIMESTAMP",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/subcolumn-controller-paths.disasm.txt",
+          "line": 1801,
+          "address": "0x0100b4a8b3",
+          "function": "function 0x100b4a890",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "update djmdSort set Disable = (Disable | 0x02), rb_data_status = case when usn != 0 then 257 else 0 end, rb_local_usn = __RB_LOCAL_USN__, updated_at = CURRENT_TIMESTAMP where rb_local_deleted = 0",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/subcolumn-controller-paths.disasm.txt",
+          "line": 2065,
+          "address": "0x0100b4ac89",
+          "function": "function 0x100b4ac50",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "update djmdSort set rb_local_usn = __RB_LOCAL_USN__",
+      "classification": "complete-statement",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/subcolumn-controller-paths.disasm.txt",
+          "line": 1931,
+          "address": "0x0100b4aabb",
+          "function": "function 0x100b4a890",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select",
+      "classification": "fragment",
+      "occurrence_count": 16,
+      "platforms": [
+        "macos-x86_64",
+        "windows-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/device-identity-paths.disasm.txt",
+          "line": 3271,
+          "address": "0x01016c12ea",
+          "function": "function 0x1016c1250",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/display-song-info-dispatch.disasm.txt",
+          "line": 2164,
+          "address": "0x01016c12ea",
+          "function": "function 0x1016c1250",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/predicates-and-mapping.disasm.txt",
+          "line": 616,
+          "address": "0x01016b841a",
+          "function": "function 0x1016b8380",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/right-column-precompute.disasm.txt",
+          "line": 462,
+          "address": "0x01016b8f40",
+          "function": "function 0x1016b8790",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/song-info-siblings.disasm.txt",
+          "line": 2666,
+          "address": "0x01016cf518",
+          "function": "function 0x1016cf4c0",
+          "platform": "macos-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+          "line": 172,
+          "address": "0x01423621db",
+          "function": "function 0x142361f30",
+          "platform": "windows-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+          "line": 342,
+          "address": "0x0142362494",
+          "function": "function 0x142361f30",
+          "platform": "windows-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+          "line": 671,
+          "address": "0x01423629ba",
+          "function": "function 0x142361f30",
+          "platform": "windows-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+          "line": 901,
+          "address": "0x0142362d58",
+          "function": "function 0x142361f30",
+          "platform": "windows-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+          "line": 1071,
+          "address": "0x0142363011",
+          "function": "function 0x142361f30",
+          "platform": "windows-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+          "line": 1290,
+          "address": "0x0142363386",
+          "function": "function 0x142361f30",
+          "platform": "windows-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+          "line": 1520,
+          "address": "0x0142363723",
+          "function": "function 0x142361f30",
+          "platform": "windows-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+          "line": 1691,
+          "address": "0x01423639df",
+          "function": "function 0x142361f30",
+          "platform": "windows-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+          "line": 2064,
+          "address": "0x0142363fb3",
+          "function": "function 0x142361f30",
+          "platform": "windows-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+          "line": 2235,
+          "address": "0x014236426f",
+          "function": "function 0x142361f30",
+          "platform": "windows-x86_64"
+        },
+        {
+          "source": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+          "line": 2406,
+          "address": "0x014236452f",
+          "function": "function 0x142361f30",
+          "platform": "windows-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "select djmdContent.*, djmdArtist.Name as ArtistName, djmdSongHotCueBanklist.TrackNo as HcblTrackNo",
+      "classification": "fragment",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/hot-cue-bank.disasm.txt",
+          "line": 827,
+          "address": "0x01016d1d20",
+          "function": "function 0x1016d1c60",
+          "platform": "macos-x86_64"
+        }
+      ]
+    },
+    {
+      "literal": "update djmdSort",
+      "classification": "fragment",
+      "occurrence_count": 1,
+      "platforms": [
+        "macos-x86_64"
+      ],
+      "occurrences": [
+        {
+          "source": "data/static-analysis/subcolumn-controller-paths.disasm.txt",
+          "line": 2217,
+          "address": "0x0100b4af1c",
+          "function": "function 0x100b4ac50",
+          "platform": "macos-x86_64"
+        }
+      ]
+    }
+  ],
+  "scanned_sources": [
+    {
+      "path": "data/static-analysis/adjacent-link-export-dispatch.disasm.txt",
+      "sha256": "7c336feb4c379dd3f9443a0a945eea373315a2225e80bfce96b94381f6fc7e12",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/adjacent-payload-loaders.disasm.txt",
+      "sha256": "bafdcab4663a327dbbe7d4eb46e022677e3d8ea7e7b6f5a2416b88edf3ce4d1b",
+      "literal_occurrence_count": 1
+    },
+    {
+      "path": "data/static-analysis/adjacent-payload-parser-loaders.disasm.txt",
+      "sha256": "d1bfcd405e62815234bb29c258a8ce0263f26e6205b6893342907f0d82491050",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/bpm-tolerance-boundaries.disasm.txt",
+      "sha256": "a8d1fc3ef2fc43844815af716a1d155eb4cee2256f0388e7d0fa7ca9c0dc0dbc",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/category-configuration-fields.disasm.txt",
+      "sha256": "630affef3e78ecb68cb91c15a58dde428d30181b0e21bd7ac4ad49c9519e9ad7",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/client-and-render.disasm.txt",
+      "sha256": "75fec6a0a34802c465f40063a586e19cce0013e9eaae73afb23612c8d3f144b0",
+      "literal_occurrence_count": 7
+    },
+    {
+      "path": "data/static-analysis/context-track-type-routing.disasm.txt",
+      "sha256": "6dde2e506bb52f84a121c19bcc527193076c98d006bd5211f61b7836bbff2f1e",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/context-track-type.disasm.txt",
+      "sha256": "6fdc36560135ba42923c92f6d8897ec6e0383db951aca391c1cb2ea49c8a62b8",
+      "literal_occurrence_count": 7
+    },
+    {
+      "path": "data/static-analysis/cue-seek-value-parser.disasm.txt",
+      "sha256": "253b380d9094d6ac21381dcd5e439857963b6bb443fdad6bbb27629a84993b18",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/cue-time-conversion.disasm.txt",
+      "sha256": "fd54459da1a92c374a1390681803796eed5ef777e8c41465b37399da2781be6f",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/db-interface-selection.disasm.txt",
+      "sha256": "e8b839ca02d3d57204b62917f705868b7fa006e0c13e045b53b2e42eb6a69df8",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/dbserver-command-free.disasm.txt",
+      "sha256": "66a315ed675b7ed1eaed8e96ae7aec09caed3d6b46099ba4f268e58c4aacd132",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/dbserver-command-parser.disasm.txt",
+      "sha256": "f6066519e7fd9585f4790c655b03e6b162d128e30e143fe4eb0f94b072fb2c08",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/dbserver-connection-send.disasm.txt",
+      "sha256": "83a760f7cd60ae954fe2d88888d118ad4a0ef7023f42de33c234806f6f006578",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/device-and-dispatch.disasm.txt",
+      "sha256": "acb833755e28ab93bd435bae326e1e2cdfb77b94e5f81e41302473c8ac2090d0",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/device-identity-paths.disasm.txt",
+      "sha256": "d53255d1b8a89ef931554b15b58742fa1108ca2468c8ace7a19d2e782e92c2a2",
+      "literal_occurrence_count": 10
+    },
+    {
+      "path": "data/static-analysis/device-key-style.disasm.txt",
+      "sha256": "0c281710d4359ba0711f0038fafe2ee366cdb1730904a898b3dc844ed28a18bb",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/device-model-callers.disasm.txt",
+      "sha256": "c668a5b2077687824748e043c5dbaf562f82d60f000a40e63cd27eb9f7ce7fb9",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/device-predicate-bodies.disasm.txt",
+      "sha256": "1307f912526c0117025d0b6c0204b6529faf21a984152050956c7f659d2549ff",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/display-song-info-dispatch.disasm.txt",
+      "sha256": "bb9a4b48b987252b6af078591b155592a0be917ce9342d82838f1acc80308285",
+      "literal_occurrence_count": 3
+    },
+    {
+      "path": "data/static-analysis/hot-cue-bank-legacy-setter.disasm.txt",
+      "sha256": "62032e5bee91a48db2d5f1e7fb386fbdc54a14924125e472c6854cac6c51b931",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/hot-cue-bank-master-mutations.disasm.txt",
+      "sha256": "2f90697ec88a22604d4a6d36a88eac227e9268f4befb2dcd3ddb643184b4ab26",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/hot-cue-bank-membership-resolver.disasm.txt",
+      "sha256": "8219d7382092bacf56def12e6259fbed1f09d35fe7f4065a94f11dcaec41efac",
+      "literal_occurrence_count": 1
+    },
+    {
+      "path": "data/static-analysis/hot-cue-bank-mutations.disasm.txt",
+      "sha256": "18e2b750da7417a788af526cd723d1bb2942d75630ef0c62d6271639623ff3d8",
+      "literal_occurrence_count": 1
+    },
+    {
+      "path": "data/static-analysis/hot-cue-bank-notification-callback.disasm.txt",
+      "sha256": "80782047c29dc1344cf6b03a8e0edb4e54c3552f48409048d5377d975db746ad",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/hot-cue-bank-notifications.disasm.txt",
+      "sha256": "ba966e5ef304dc2ee647e86959cb6776bdbd8fe4305e57f58ef94176070970ac",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/hot-cue-bank.disasm.txt",
+      "sha256": "addb840902c28b94fa6dd4b28cc07a9d01344acd683cae19175de02415e02a42",
+      "literal_occurrence_count": 4
+    },
+    {
+      "path": "data/static-analysis/hot-cue-reply-routing.disasm.txt",
+      "sha256": "df7bdcabc54d86823e098373084a1daba09c74c2faed4aef759130c69c236a7f",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/hot-cue-seek-fault.disasm.txt",
+      "sha256": "df7500baec745f9dd6451815e2d51d9ef1fa9271168fb2cc3e364a7732d44617",
+      "literal_occurrence_count": 1
+    },
+    {
+      "path": "data/static-analysis/key-notation-settings.disasm.txt",
+      "sha256": "220bc642b167af6083ed992b782f64630c5499e6f529e7d6fe1bb682839d28e4",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/link-export-visibility.disasm.txt",
+      "sha256": "bb36297db074cd52cfd9341b0ddc8b4ed78beaeea4d57abf49b0f2e7b21cb725",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/list-buffer-location.disasm.txt",
+      "sha256": "8dd20bd9babad82795c302d981d6640cad5439dbacb284cde7edde4c56fb17be",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/listbuf-insert.disasm.txt",
+      "sha256": "b4fdc1ed96e12250c5433c79d4233f434e74ee6aa6749194ab738eae5413ffe8",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/listbuf-layout.disasm.txt",
+      "sha256": "d668e7d37c9c56ef1d6b17e0d900dc54a09f83e8a1b966bee20ad0803387be68",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/listbuf-transaction-state.disasm.txt",
+      "sha256": "63f1a9ac373ced1438fa1c063388a9c90aabf7b82f50cb072e1b103898e5b5e4",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/menu-query-functions.disasm.txt",
+      "sha256": "2999c067163e6cb4aa46467fea32431ed496a908f4043c5ccc62b1ec1c3f1e7a",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/model-name-state-path.disasm.txt",
+      "sha256": "30575763a1dfa96c6504cd1de22648cfc65780454728114e534acbd0a6944035",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/mytag-prepare-queries.disasm.txt",
+      "sha256": "b2ef7967065d834157d873c523c9fe7fe3f2d1e8af7ce65df365aa1577e1d88c",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/other-client-dispatch.disasm.txt",
+      "sha256": "3fd43a27d50dfe9375e05c0948470fe459c6045c29f05e6405873b7533e88b73",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/play-path-conversion.disasm.txt",
+      "sha256": "03c74fafff81e2a2bec60ac592587cdad056cb453c854412975a0e4af275e5e3",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/play-song-info-cloud-paths.disasm.txt",
+      "sha256": "e695ab2bf5f35f5116c62957d416e855fb3372a7caa6f0d7782db532b97de36d",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/played-track-cache.disasm.txt",
+      "sha256": "cd9488cd8837d043e56213cd45bfe0b3e58b0c52eadd0e0123862e45d0311672",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/played-track-producers.disasm.txt",
+      "sha256": "6adfbb8f9a1e73a8a005e202c670957e6f7100d779d39516fa573fb662a62861",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/playlist-queries.disasm.txt",
+      "sha256": "29d2bbd3d2ca0e90fa892e3e0b4ef2beab190b5002269f95f471a6c9a618be83",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/predicates-and-mapping.disasm.txt",
+      "sha256": "280b4a38dccb2e0f6e3a272a83284e0119beb5d711bbcf2747e8b3698645cf0e",
+      "literal_occurrence_count": 1
+    },
+    {
+      "path": "data/static-analysis/render-argument-types-parser.disasm.txt",
+      "sha256": "8435a81b362acb66e7eff10e6d6cac7f59af8472ce9e21b6eb7fc05bdd025470",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/render-arity-underflow-parser.disasm.txt",
+      "sha256": "8435a81b362acb66e7eff10e6d6cac7f59af8472ce9e21b6eb7fc05bdd025470",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/render-numeric-fields.disasm.txt",
+      "sha256": "859bb35465aecd9b9220ae6c72f84f021f5359c0bdbdfda0f98b353373a0784e",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/render-override-controls.disasm.txt",
+      "sha256": "18f51bcb20d5bb387f948e4352694c57f8cf76fb50548d511707addf4453737b",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/request-1500.disasm.txt",
+      "sha256": "66b7fed91efbeea3ea232e181053b52fd36cf4b54970329d4e1c8a208102a242",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/right-column-precompute.disasm.txt",
+      "sha256": "fa83eef49e1c44c6b4bcbf7ddaf118513147aff6c9c1aca9dcf499f343bdf619",
+      "literal_occurrence_count": 4
+    },
+    {
+      "path": "data/static-analysis/root-sort-menu.disasm.txt",
+      "sha256": "d9358784942b80e5ca3954626f2cb7812bdfe07a1fb71002cd9beb19a356d0e0",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/rowset-builders.disasm.txt",
+      "sha256": "cbd551174272246a9c55d918a35e1c8d649fbbd09af26226a6c871f2d589b5c1",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/search-query.disasm.txt",
+      "sha256": "77e18d8d0fc695d297e8811ab8775e3df708de88e8fe8fe6665951a6da983493",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/search-result-implementation.disasm.txt",
+      "sha256": "0f4c04e9a17b00b14a2e7675ad7b1b80e54a60d620e222f6f2859a9534c679aa",
+      "literal_occurrence_count": 7
+    },
+    {
+      "path": "data/static-analysis/settings-and-menu.disasm.txt",
+      "sha256": "c46ff5ece08aad196f179298a267ea4e6439fbd9dc2d56b18ef4a275a710cc65",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/smart-collation.disasm.txt",
+      "sha256": "194cf690ed1a2b50c11a449dd14837f11103f0d76662664d77242d3850210af9",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/smart-condition-evaluator.disasm.txt",
+      "sha256": "1872c1a20d5c9802b90af834dfc29508d34502ca63124bc6a6edbca1b98539df",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/smart-date-conversion.disasm.txt",
+      "sha256": "e483b9f355399f43e87982adb7f7de286c6c93c7519938109c0a1933f4629bdb",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/smart-playlist-paths.disasm.txt",
+      "sha256": "9092c24f0ed46cc63d14e74b7239dfe835d65f03909859706a8ee60dbd9b273f",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/smart-xml-parser.disasm.txt",
+      "sha256": "166003b9aace032d6276524f470b40c5a02d02195824a6b9a29738542a6be41d",
+      "literal_occurrence_count": 1
+    },
+    {
+      "path": "data/static-analysis/song-info-command-lifecycle.disasm.txt",
+      "sha256": "1e638aca270d3ff395e027feee2f30ddb6f58927b76bbe0a7875fcca9b199738",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/song-info-siblings.disasm.txt",
+      "sha256": "8ce57138c09dfe7fc7a612b898323c266b7607ee9137aeeca4b2d907440e8c90",
+      "literal_occurrence_count": 5
+    },
+    {
+      "path": "data/static-analysis/source-only-client-db-effects.disasm.txt",
+      "sha256": "09e0a8971371f219cb3ff3234e9a4c0adcba83035daf8a9cf58b88a00a3fb4f9",
+      "literal_occurrence_count": 5
+    },
+    {
+      "path": "data/static-analysis/source-only-client-handlers.disasm.txt",
+      "sha256": "5d6ceee0b6e037ebc4eff253b9e2fd4f82cd314206ffd201be9c069fea88ee37",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/streaming-provider-registry.disasm.txt",
+      "sha256": "3ca13eca3b0522e60c2b7602a1f77eab59b41275cbb76986e64bf5e9aec264f6",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/subcolumn-controller-paths.disasm.txt",
+      "sha256": "ac1fdb12b6165e716306f9a3894dddfcf0def168e6985c78641b73ef84e937b8",
+      "literal_occurrence_count": 7
+    },
+    {
+      "path": "data/static-analysis/subcolumn-mutators.disasm.txt",
+      "sha256": "cc2bc917557c42080e5febdfbafbd1316ab202ad07a6f867de00f88fddf74882",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/subcolumn-sql.disasm.txt",
+      "sha256": "0bc193951d4cfce9ac65f7cab4a72828651e3a401e1d760c2fd0b68b0c46ff11",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/unobserved-list-handlers.disasm.txt",
+      "sha256": "f3899153b0234dfe4e236fe961f206944589c1663d978ed223753206f48ad4dc",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/user-info-djid.disasm.txt",
+      "sha256": "0e0b35ec5557d9cb483a3883175e137a6b90638e8fca509f8987da468a4c91b1",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+      "sha256": "d1b6fb7d4f3dcb3a0168a18ae3672f90742204fc827e8141498c339e5e945e6e",
+      "literal_occurrence_count": 12
+    },
+    {
+      "path": "data/static-analysis/windows/appsync-history.disasm.txt",
+      "sha256": "571dfaf264ba6de5c28366dccb011c11d7954418c49d1a40a0e7ecd1af3ee453",
+      "literal_occurrence_count": 1
+    },
+    {
+      "path": "data/static-analysis/windows/clear-aio-map.disasm.txt",
+      "sha256": "02d4d9913d090e1485415a0f089ff181f4b8c9f341b0591bf4f5d3d047985e62",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/windows/content-compatibility.disasm.txt",
+      "sha256": "572e25115fb283d69dfb87176c826f33a3adb7da6a751b80f6d545a966405e86",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/windows/disconnect-aio-cache.disasm.txt",
+      "sha256": "11041a8cb0727855ffca0ccd632ee12f6947c7c225148ef80bca29de561fa060",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/windows/display-song-info-wrapper.disasm.txt",
+      "sha256": "4f7c1bb9851e04edc10e4c06394b2aac80237c4b37e6507692ccf9770a7312c9",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/windows/exchange-key-name.disasm.txt",
+      "sha256": "749e9e0ecd808840aca13e53e4099873899d945ce42d59f5b3c4701d3755b439",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/windows/get-list-row-content-compatibility.disasm.txt",
+      "sha256": "8eec48a18327947caf37cf4d0bd36a6d1c659b60c23f395642f567d72d1d91cf",
+      "literal_occurrence_count": 1
+    },
+    {
+      "path": "data/static-analysis/windows/is-aio.disasm.txt",
+      "sha256": "c030179961d615becec5329fd3acadbfb28a803d2cc8692e5bfa5eb04a184224",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/windows/local-key-style.disasm.txt",
+      "sha256": "bd513665a5910cf625dd0a2aead377a9f0a1783726e605acbc5ed7b8096834fd",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/windows/request-1112-dispatch.disasm.txt",
+      "sha256": "aad4296b6a4fe77972efbbf031c57cb6169279050242765f90c991c1587cc9aa",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/windows/song-info-dispatch.disasm.txt",
+      "sha256": "7fb425a9f6c5b8a2acb99db434d5086e57fda126c1cda61723f501eac74aa7e4",
+      "literal_occurrence_count": 0
+    },
+    {
+      "path": "data/static-analysis/year-list-handler.disasm.txt",
+      "sha256": "6f7a0ff14a71ff978cb156948f298bcdec3d3dcd0337cac6fcaa14cad6737053",
+      "literal_occurrence_count": 0
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+## __ZN9PSvDBMain17RequestToSendDataEhP19_struct_db_comm_cmd | 
+address=0x102521160 size=0x120
+0x0102521160  push      rbp
+0x0102521161  mov       rbp, rsp
+0x0102521164  push      r15
+0x0102521166  push      r14
+0x0102521168  push      r12
+0x010252116a  push      rbx
+0x010252116b  sub       rsp, 0x10
+0x010252116f  mov       r15, rdi
+0x0102521172  test      rdx, rdx
+0x0102521175  je        0x1025211ba
+0x0102521177  mov       rbx, rdx
+0x010252117a  mov       r12d, esi
+0x010252117d  mov       rdi, rdx
+0x0102521180  call      0x10049d090  ; __Z19DBCFmt_GetCmdPrmFmtP19_struct_db_comm_cmd |
+0x0102521185  cmp       eax, 0xd
+0x0102521188  jl        0x1025211f9
+0x010252118a  xor       r14d, r14d
+0x010252118d  test      byte ptr [r15 + 0x5c8], 1
+0x0102521195  je        0x102521265
+0x010252119b  mov       rdi, qword ptr [r15 + 0x5c0]
+0x01025211a2  test      rdi, rdi
+0x01025211a5  je        0x102521265
+0x01025211ab  mov       dword ptr [rbp - 0x28], 0x101033b
+0x01025211b2  mov       word ptr [rbp - 0x24], 1
+0x01025211b8  jmp       0x1025211e8
+0x01025211ba  xor       r14d, r14d
+0x01025211bd  test      byte ptr [r15 + 0x5c8], 1
+0x01025211c5  je        0x102521265
+0x01025211cb  mov       rdi, qword ptr [r15 + 0x5c0]
+0x01025211d2  test      rdi, rdi
+0x01025211d5  je        0x102521265
+0x01025211db  mov       dword ptr [rbp - 0x28], 0x101033b
+0x01025211e2  mov       word ptr [rbp - 0x24], 0
+0x01025211e8  mov       rax, qword ptr [rdi]
+0x01025211eb  xor       r14d, r14d
+0x01025211ee  lea       rdx, [rbp - 0x28]
+0x01025211f2  xor       esi, esi
+0x01025211f4  call      qword ptr [rax + 0x10]
+0x01025211f7  jmp       0x102521265
+0x01025211f9  mov       edi, 0x20
+0x01025211fe  call      0x1038c3cd4
+0x0102521203  mov       r14, rax
+0x0102521206  vxorps    xmm0, xmm0, xmm0
+0x010252120a  vmovups   xmmword ptr [rax], xmm0
+0x010252120e  mov       qword ptr [rax + 0x10], 0
+0x0102521216  mov       dword ptr [rax + 8], 0x397abe
+0x010252121d  mov       word ptr [rax + 0xc], 3
+0x0102521223  mov       byte ptr [rax + 0xf], r12b
+0x0102521227  mov       dword ptr [rax + 0x10], 0x98
+0x010252122e  mov       qword ptr [rax + 0x18], rbx
+0x0102521232  movzx     eax, word ptr [rbx + 4]
+0x0102521236  cmp       eax, 0x4002
+0x010252123b  jne       0x10252124d
+0x010252123d  mov       esi, dword ptr [rbx]
+0x010252123f  lea       rdi, [rip + 0x2e8ad58]
+0x0102521246  xor       eax, eax
+0x0102521248  call      0x10138eec0  ; __Z14printDBSLoggerPKcz |
+0x010252124d  add       r15, 0x238
+0x0102521254  mov       rdi, r15
+0x0102521257  mov       rsi, r14
+0x010252125a  call      0x1013f5490  ; __ZN9PSvDBComm11PostMessageEP16_struct_dbsc_msg |
+0x010252125f  mov       r14d, 1
+0x0102521265  mov       eax, r14d
+0x0102521268  add       rsp, 0x10
+0x010252126c  pop       rbx
+0x010252126d  pop       r12
+0x010252126f  pop       r14
+0x0102521271  pop       r15
+0x0102521273  pop       rbp
+0x0102521274  ret
+0x0102521275  nop       word ptr cs:[rax + rax]
+
+## __ZN9PSvDBMain17RetNewCueToClientEP19_struct_db_comm_cmdPciihi | 
+address=0x102521920 size=0xf0
+0x0102521920  push      rbp
+0x0102521921  mov       rbp, rsp
+0x0102521924  push      r15
+0x0102521926  push      r14
+0x0102521928  push      r13
+0x010252192a  push      r12
+0x010252192c  push      rbx
+0x010252192d  sub       rsp, 0x18
+0x0102521931  mov       dword ptr [rbp - 0x2c], r8d
+0x0102521935  mov       r13d, ecx
+0x0102521938  mov       qword ptr [rbp - 0x40], rdx
+0x010252193c  mov       r15, rsi
+0x010252193f  mov       r14, rdi
+0x0102521942  mov       r12b, 0xff
+0x0102521945  test      r9d, r9d
+0x0102521948  jne       0x10252194e
+0x010252194a  mov       r12b, byte ptr [r15 + 0x1b]
+0x010252194e  mov       edi, 0x98
+0x0102521953  call      0x1038c3cd4
+0x0102521958  mov       rbx, rax
+0x010252195b  vxorps    xmm0, xmm0, xmm0
+0x010252195f  vmovups   ymmword ptr [rax], ymm0
+0x0102521963  vmovups   ymmword ptr [rax + 0x20], ymm0
+0x0102521968  vmovups   ymmword ptr [rax + 0x40], ymm0
+0x010252196d  vmovups   ymmword ptr [rax + 0x60], ymm0
+0x0102521972  vmovups   ymmword ptr [rax + 0x78], ymm0
+0x0102521977  mov       eax, dword ptr [r15]
+0x010252197a  mov       dword ptr [rbx], eax
+0x010252197c  mov       word ptr [rbx + 4], 0x4e02
+0x0102521982  mov       byte ptr [rbx + 6], 1
+0x0102521986  movsx     rax, word ptr [r15 + 4]
+0x010252198b  mov       qword ptr [rbx + 0x18], rax
+0x010252198f  movsxd    rax, dword ptr [rbp + 0x10]
+0x0102521993  mov       qword ptr [rbx + 0x20], rax
+0x0102521997  movsxd    rax, r13d
+0x010252199a  mov       qword ptr [rbx + 0x28], rax
+0x010252199e  mov       rax, qword ptr [rbp - 0x40]
+0x01025219a2  mov       qword ptr [rbx + 0x30], rax
+0x01025219a6  movsxd    rax, dword ptr [rbp - 0x2c]
+0x01025219aa  mov       qword ptr [rbx + 0x38], rax
+0x01025219ae  movzx     esi, r12b
+0x01025219b2  mov       rdi, r14
+0x01025219b5  mov       rdx, rbx
+0x01025219b8  vzeroupper
+0x01025219bb  call      0x102521160  ; __ZN9PSvDBMain17RequestToSendDataEhP19_struct_db_comm_cmd |
+0x01025219c0  cmp       eax, 1
+0x01025219c3  je        0x1025219fc
+0x01025219c5  test      byte ptr [r14 + 0x5c8], 1
+0x01025219cd  je        0x1025219f4
+0x01025219cf  mov       rdi, qword ptr [r14 + 0x5c0]
+0x01025219d6  test      rdi, rdi
+0x01025219d9  je        0x1025219f4
+0x01025219db  mov       dword ptr [rbp - 0x38], 0x1010354
+0x01025219e2  mov       word ptr [rbp - 0x34], 1
+0x01025219e8  mov       rax, qword ptr [rdi]
+0x01025219eb  lea       rdx, [rbp - 0x38]
+0x01025219ef  xor       esi, esi
+0x01025219f1  call      qword ptr [rax + 0x10]
+0x01025219f4  mov       rdi, rbx
+0x01025219f7  call      0x10049ddd0  ; __Z11DBCCmd_FreePK19_struct_db_comm_cmd |
+0x01025219fc  add       rsp, 0x18
+0x0102521a00  pop       rbx
+0x0102521a01  pop       r12
+0x0102521a03  pop       r13
+0x0102521a05  pop       r14
+0x0102521a07  pop       r15
+0x0102521a09  pop       rbp
+0x0102521a0a  ret
+0x0102521a0b  nop       dword ptr [rax + rax]
+

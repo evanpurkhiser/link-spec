@@ -1,0 +1,206 @@
+{
+  "format": 3,
+  "scope": "Rekordbox 7.2.19 Windows PE static extracts",
+  "source": {
+    "guest_path": "C:/Program Files/rekordbox/rekordbox 7.2.19/rekordbox.exe",
+    "temporary_host_path": "/tmp/rekordbox-7.2.19-windows.exe",
+    "sha256": "c9ed23e974c51c75e2ec069fbd2679a3dbe606be9e79e9cbbd13d6418ab11c37",
+    "size": 103540656,
+    "machine": "MACHINE_TYPES.AMD64",
+    "installer_path": "../rekordbox-windows/shared/Install_rekordbox_x64_7_2_19.exe",
+    "installer_sha256": "290bfaa2bbab6d4b650d9e8982b5a8eeaaa86ad168eb8dc3f3d506c11310f862",
+    "installer_member": "rekordbox.exe",
+    "installer_format": "NSIS-3 Unicode, LZMA:23 solid archive"
+  },
+  "producers": {
+    "tools/analyze_windows_pe.py": "6d76fd9174b1a56a27146812b46763cf5c48c477a0e85e3dd913eecfed5854a0",
+    "tools/generate_windows_device_predicate_audit.py": "c9d8483eb4c991d639b4f68f7c102cecd898137320922c7808ba138b7f320a5f",
+    "tools/audit_windows_device_semantics.py": "c266803e1572d042cc653fabf63c0b05afbe6bf5d3e1d21d31f57fd41001ccbb"
+  },
+  "artifacts": [
+    {
+      "path": "data/static-analysis/windows/rekordbox-metadata.json",
+      "sha256": "22cce379bccddcea46ca5da86407ed4b641ee1510018fd235711546bda767ce4",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "metadata"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/request-1112-immediates.json",
+      "sha256": "60042f528f4ca91763a85facb6b932283abb7dd8d4b27db3a708169d19b6b040",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "immediate",
+        "0x1112"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/request-1112-dispatch.disasm.txt",
+      "sha256": "aad4296b6a4fe77972efbbf031c57cb6169279050242765f90c991c1587cc9aa",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "function",
+        "0x142385970"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/appsync-history-vtable.json",
+      "sha256": "3cb95f3d2e456a0906598385dd747d21133499d6eb20c3b1cd2d1a38f8a9f7b0",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "vtable",
+        "PSvAppSyncDBIF",
+        "--start",
+        "0x200",
+        "--end",
+        "0x248"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/appsync-history.disasm.txt",
+      "sha256": "571dfaf264ba6de5c28366dccb011c11d7954418c49d1a40a0e7ecd1af3ee453",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "function",
+        "0x14236c690"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/request-2002-immediates.json",
+      "sha256": "c61643503a0ad1c8cf75bff103d95a4237fd501e44d8444f93103fd58bcf51e2",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "immediate",
+        "0x2002"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/song-info-dispatch.disasm.txt",
+      "sha256": "7fb425a9f6c5b8a2acb99db434d5086e57fda126c1cda61723f501eac74aa7e4",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "function",
+        "0x142386ad0"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/display-song-info-wrapper.disasm.txt",
+      "sha256": "4f7c1bb9851e04edc10e4c06394b2aac80237c4b37e6507692ccf9770a7312c9",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "function",
+        "0x14238e3e0"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/appsync-display-vtable.json",
+      "sha256": "50720ac606e5396ebd5763317fb706df2184c609d8004cc196aa6e60695ec87b",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "vtable",
+        "PSvAppSyncDBIF",
+        "--start",
+        "0x140",
+        "--end",
+        "0x190"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/appsync-display-song-info.disasm.txt",
+      "sha256": "d1b6fb7d4f3dcb3a0168a18ae3672f90742204fc827e8141498c339e5e945e6e",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "function",
+        "0x142361f30"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/is-aio.disasm.txt",
+      "sha256": "c030179961d615becec5329fd3acadbfb28a803d2cc8692e5bfa5eb04a184224",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "function",
+        "0x1423815c0"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/exchange-key-name.disasm.txt",
+      "sha256": "749e9e0ecd808840aca13e53e4099873899d945ce42d59f5b3c4701d3755b439",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "function",
+        "0x14235e5e0"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/local-key-style.disasm.txt",
+      "sha256": "bd513665a5910cf625dd0a2aead377a9f0a1783726e605acbc5ed7b8096834fd",
+      "producer": "tools/analyze_windows_pe.py",
+      "producer_arguments": [
+        "function",
+        "0x141c5f780"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/device-predicate-audit.json",
+      "sha256": "4f2f650da6be461e330fc8570d106b456cfcb6d3f1cabb32c8e0bd7e01e129df",
+      "producer": "tools/generate_windows_device_predicate_audit.py",
+      "producer_arguments": [
+        "<rekordbox.exe>"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/device-predicate-audit.md",
+      "sha256": "9e483eda18ea619ee0543d9136b42dc4bbf6a43a9f1c9c294e0a5d1a58f5b47a",
+      "producer": "tools/generate_windows_device_predicate_audit.py",
+      "producer_arguments": [
+        "<rekordbox.exe>"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/disconnect-aio-cache.disasm.txt",
+      "sha256": "11041a8cb0727855ffca0ccd632ee12f6947c7c225148ef80bca29de561fa060",
+      "producer": "tools/generate_windows_device_predicate_audit.py",
+      "producer_arguments": [
+        "<rekordbox.exe>"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/clear-aio-map.disasm.txt",
+      "sha256": "02d4d9913d090e1485415a0f089ff181f4b8c9f341b0591bf4f5d3d047985e62",
+      "producer": "tools/generate_windows_device_predicate_audit.py",
+      "producer_arguments": [
+        "<rekordbox.exe>"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/content-compatibility.disasm.txt",
+      "sha256": "572e25115fb283d69dfb87176c826f33a3adb7da6a751b80f6d545a966405e86",
+      "producer": "tools/generate_windows_device_predicate_audit.py",
+      "producer_arguments": [
+        "<rekordbox.exe>"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/get-list-row-content-compatibility.disasm.txt",
+      "sha256": "8eec48a18327947caf37cf4d0bd36a6d1c659b60c23f395642f567d72d1d91cf",
+      "producer": "tools/generate_windows_device_predicate_audit.py",
+      "producer_arguments": [
+        "<rekordbox.exe>"
+      ]
+    },
+    {
+      "path": "data/static-analysis/windows/device-semantic-audit.json",
+      "sha256": "457df10c41515a1b1d734e4be6acc9babd13c4718c4ddf124b74a9ace044a238",
+      "producer": "tools/audit_windows_device_semantics.py",
+      "producer_arguments": [
+        "<rekordbox.exe>"
+      ]
+    }
+  ],
+  "cleanup": {
+    "temporary_host_copy_retained": false,
+    "canonical_copy": "retained installer member and installed guest disk"
+  }
+}

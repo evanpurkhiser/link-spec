@@ -1,0 +1,398 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "New-format cue request with a zero slot count",
+        "header": [],
+        "id": "count-zero",
+        "outcome": "raw_reply",
+        "pages": [],
+        "raw_response": {
+          "decoded_bytes": 45,
+          "error_kind": null,
+          "messages": [
+            {
+              "arguments": [
+                {
+                  "type": "number",
+                  "value": 8961
+                },
+                {
+                  "type": "number",
+                  "value": 1
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "hex": "",
+                  "type": "blob"
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                }
+              ],
+              "kind": 19970
+            }
+          ],
+          "outcome": "raw_reply",
+          "raw_hex": "11872349ae1100000001104e020f05140000000506060603061100002301110000000111000000001100000000"
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9041
+            },
+            {
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8961
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "New-format cue request through slot one",
+        "header": [],
+        "id": "count-one",
+        "outcome": "timeout",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "WouldBlock",
+          "messages": [],
+          "outcome": "timeout",
+          "raw_hex": ""
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9041
+            },
+            {
+              "type": "number",
+              "value": 1
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8961
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "New-format cue request through slot two",
+        "header": [],
+        "id": "count-two",
+        "outcome": "disconnect",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "ConnectionReset",
+          "messages": [],
+          "outcome": "disconnect",
+          "raw_hex": ""
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9041
+            },
+            {
+              "type": "number",
+              "value": 2
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8961
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "New-format cue request through all three bank slots",
+        "header": [],
+        "id": "count-three",
+        "outcome": "disconnect",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "BrokenPipe",
+          "messages": [],
+          "outcome": "disconnect",
+          "raw_hex": ""
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9041
+            },
+            {
+              "type": "number",
+              "value": 3
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8961
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "New-format cue request one slot beyond populated data",
+        "header": [],
+        "id": "count-four",
+        "outcome": "disconnect",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "BrokenPipe",
+          "messages": [],
+          "outcome": "disconnect",
+          "raw_hex": ""
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9041
+            },
+            {
+              "type": "number",
+              "value": 4
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8961
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "New-format cue request through the player hot-cue ceiling",
+        "header": [],
+        "id": "count-eight",
+        "outcome": "disconnect",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "BrokenPipe",
+          "messages": [],
+          "outcome": "disconnect",
+          "raw_hex": ""
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9041
+            },
+            {
+              "type": "number",
+              "value": 8
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8961
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Three-slot request using the XDJ fixed twelve-slot tag area",
+        "header": [],
+        "id": "count-three-fixed-tags",
+        "outcome": "disconnect",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "BrokenPipe",
+          "messages": [],
+          "outcome": "disconnect",
+          "raw_hex": ""
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9041
+            },
+            {
+              "type": "number",
+              "value": 3
+            }
+          ],
+          "fixed_tag_slots": 12,
+          "kind": 8961
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "New-format cue request using a folder selector",
+        "header": [],
+        "id": "folder-selector",
+        "outcome": "disconnect",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "BrokenPipe",
+          "messages": [],
+          "outcome": "disconnect",
+          "raw_hex": ""
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9001
+            },
+            {
+              "type": "number",
+              "value": 3
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8961
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "New-format cue request using an unknown bank selector",
+        "header": [],
+        "id": "unknown-selector",
+        "outcome": "disconnect",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "BrokenPipe",
+          "messages": [],
+          "outcome": "disconnect",
+          "raw_hex": ""
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 4294967294
+            },
+            {
+              "type": "number",
+              "value": 3
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8961
+        },
+        "rows": [],
+        "total": null
+      }
+    ],
+    "fixture": {
+      "fingerprint": "e66ce7280727577a6fdb42c08585df9c821aa48431c026f86464c4052474f47f",
+      "profile": "hot-cue-bank-cue-fields",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 1
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "hot-cue-bank-cues-extended"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "ed68121b4370c714db33686c9d3aa0d18007378df14108541c3254744f13252b",
+    "fixture_fingerprint": "e66ce7280727577a6fdb42c08585df9c821aa48431c026f86464c4052474f47f",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 3,
+      "mac": "02:00:00:60:00:50",
+      "model": "XDJ-RX3",
+      "model_code": 0,
+      "packet_sha256": "da12196004059977cdbcd83b9e0ae22366a2daf50320ed1a7b033c1d7ab157d4",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 11,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-rx3-player-11.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/hot-cue-bank-cue-fields/manifest.json",
+    "recorded_unix_seconds": 1790902211,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/suites/hot-cue-bank-cues-extended.json",
+    "suite_sha256": "7a3c267b046e7fc657f28e2d439ebe6a175f5286afb23b59b907a6237c5b23b7"
+  }
+}

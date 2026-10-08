@@ -1,0 +1,31 @@
+{
+  "name": "invalid-database-values",
+  "fixture_profile": "invalid",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"tracks","description":"Track rendering across null, empty, dangling, negative, and invalid-enum rows","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"genres","description":"Genre root with a dangling genre reference","request_kind":"0x1001","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"artists","description":"Artist root with null and dangling artist references","request_kind":"0x1002","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"albums","description":"Album root with dangling album references","request_kind":"0x1003","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"bpm","description":"BPM grouping with a negative stored value","request_kind":"0x1006","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"ratings","description":"Rating grouping with an out-of-range value","request_kind":"0x1007","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"decades","description":"Year grouping with a negative stored value","request_kind":"0x1008","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"labels","description":"Label root with dangling label references","request_kind":"0x100a","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"colors","description":"Color root with an out-of-range color reference","request_kind":"0x100d","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"times","description":"Duration grouping with a negative stored value","request_kind":"0x1010","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"bitrates","description":"Bitrate grouping with zero and maximum signed values","request_kind":"0x1011","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"filenames","description":"Filename rendering with null and empty names and paths","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"keys","description":"Key root with dangling key references","request_kind":"0x1014","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"original-artists","description":"Original Artist root with dangling references","request_kind":"0x1302","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}},
+    {"id":"remixers","description":"Remixer root with dangling references","request_kind":"0x1602","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"any"}}
+  ]
+}

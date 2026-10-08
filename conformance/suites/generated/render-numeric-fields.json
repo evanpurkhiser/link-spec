@@ -1,0 +1,1072 @@
+{
+  "name": "track-render-numeric-fields",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "control",
+      "description": "Normal eight-argument Default Track render",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-one",
+      "description": "Render first-row seek key 1",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        1,
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-two",
+      "description": "Render first-row seek key 2",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        2,
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-space",
+      "description": "Render first-row seek key 0x00000020",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x00000020",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-digit-zero",
+      "description": "Render first-row seek key 0x00000030",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x00000030",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-before-a",
+      "description": "Render first-row seek key 0x00000040",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x00000040",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-a",
+      "description": "Render first-row seek key 0x00000041",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x00000041",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-b",
+      "description": "Render first-row seek key 0x00000042",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x00000042",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-m",
+      "description": "Render first-row seek key 0x0000004d",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x0000004d",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-u",
+      "description": "Render first-row seek key 0x00000055",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x00000055",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-z",
+      "description": "Render first-row seek key 0x0000005a",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x0000005a",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-lowercase-a",
+      "description": "Render first-row seek key 0x00000061",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x00000061",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-low-fffe",
+      "description": "Render first-row seek key 0x0000fffe",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x0000fffe",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-low-ffff",
+      "description": "Render first-row seek key 0x0000ffff",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x0000ffff",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-high-only",
+      "description": "Render first-row seek key 0x00010000",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x00010000",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "first-row-seek-high-plus-a",
+      "description": "Render first-row seek key 0x00010041",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        "0x00010041",
+        8,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "client-total-0",
+      "description": "Render client-reported total 0",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        0,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "client-total-1",
+      "description": "Render client-reported total 1",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        1,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "client-total-7",
+      "description": "Render client-reported total 7",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        7,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "client-total-9",
+      "description": "Render client-reported total 9",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        9,
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "client-total-0000ffff",
+      "description": "Render client-reported total 0x0000ffff",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "0x0000ffff",
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "client-total-ffffffff",
+      "description": "Render client-reported total 0xffffffff",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        "0xffffffff",
+        12,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-0",
+      "description": "Render category ID 0",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        0,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-1",
+      "description": "Render category ID 1",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        1,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-7",
+      "description": "Render category ID 7",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        7,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-15",
+      "description": "Render category ID 15",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        15,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-20",
+      "description": "Render category ID 20",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        20,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-24",
+      "description": "Render category ID 24",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        24,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-25",
+      "description": "Render category ID 25",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        25,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-29",
+      "description": "Render category ID 29",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        29,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-30",
+      "description": "Render category ID 30",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        30,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-32",
+      "description": "Render category ID 32",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        32,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-33",
+      "description": "Render category ID 33",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        33,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-39",
+      "description": "Render category ID 39",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        39,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-40",
+      "description": "Render category ID 40",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        40,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-49",
+      "description": "Render category ID 49",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        49,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-50",
+      "description": "Render category ID 50",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        50,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-51",
+      "description": "Render category ID 51",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        51,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-52",
+      "description": "Render category ID 52",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        52,
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-0000ffff",
+      "description": "Render category ID 0x0000ffff",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        "0x0000ffff",
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-0001000c",
+      "description": "Render category ID 0x0001000c",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        "0x0001000c",
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "category-id-ffffffff",
+      "description": "Render category ID 0xffffffff",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_arguments": [
+        0,
+        8,
+        "0xffffffff",
+        1,
+        0
+      ],
+      "fresh_connection": true,
+      "page_size": 8,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

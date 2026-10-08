@@ -1,0 +1,169 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "Display Song Info populated row order for xdj-1000mk2",
+        "header": [],
+        "id": "populated-track",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 184615681
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 8194
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Display Song Info deleted content for xdj-1000mk2",
+        "header": [],
+        "id": "deleted-track",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 184615681
+            },
+            {
+              "type": "number",
+              "value": 10999
+            }
+          ],
+          "kind": 8194
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Display Song Info zero content ID for xdj-1000mk2",
+        "header": [],
+        "id": "zero-content-id",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 184615681
+            },
+            {
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "kind": 8194
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Display Song Info unknown content for xdj-1000mk2",
+        "header": [],
+        "id": "unknown-content-id",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 184615681
+            },
+            {
+              "type": "number",
+              "value": 4294967294
+            }
+          ],
+          "kind": 8194
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      }
+    ],
+    "fixture": {
+      "fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+      "profile": "full",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 1
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "display-song-info-status-xdj-1000mk2"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "e8c45a7020a70103d6a15d5cf9aaa32a3d8c758c6c1f3f33b2a8d80872f7c812",
+    "fixture_fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "cdj",
+      "generation": 2,
+      "mac": "02:00:00:60:00:55",
+      "model": "XDJ-1000MK2",
+      "model_code": 100,
+      "packet_sha256": "128c520a6fdf245538cbd2875d26b42b4c3bdc59317b698637f1ed976d864ae0",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 11,
+      "port": 50000,
+      "presence": 1,
+      "source_port": 0,
+      "status_packet_sha256": "05cf87eef69f3bef0f210d8161ba75b7a7afe116badac8c6116aedc16e183b4e",
+      "status_port": 50002,
+      "status_template": "rx3-captured"
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-1000mk2-player-11-status.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/full/manifest.json",
+    "recorded_unix_seconds": 1790826861,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/suites/generated/display-song-info-status-xdj-1000mk2.json",
+    "suite_sha256": "682ba4043d575440b47b9f75ca8aeec7d91849cf42e5b99e3a93dd0141da9dfe"
+  }
+}

@@ -1,0 +1,5087 @@
+{
+  "format": 1,
+  "scope": "All direct named calls from non-dbcl functions to request-kind-bearing dbcl wrappers in the decompiled XDJ-RR application. Each wrapper's actual SetHeader/dbcl_GetRoot/dbcl_GetULong location expression is propagated to its callers; expressions are retained verbatim and only plain integer literals are classified.",
+  "limitations": [
+    "Indirect calls through function pointers are outside this direct-call inventory.",
+    "A client call site proves firmware reachability, not Rekordbox server support.",
+    "Dynamic location expressions require caller-state analysis before assigning a value."
+  ],
+  "source": {
+    "repository": "alphatheta-docs",
+    "commit": "a70aeefb202ffddd2900e7b40e339a47ac077057",
+    "files": [
+      {
+        "path": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+        "sha256": "8448578a2bbc0437249b42e2e4d538e3d4eb919fe9e66eaac5cdac4d08a729ad"
+      },
+      {
+        "path": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+        "sha256": "d41d6a78d4d1e720f3c90540be71ff7c285b1d301a4e0699965c705e62b0e1ef"
+      },
+      {
+        "path": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+        "sha256": "6a6a8a07e4b07a7603cc26c10286755159573d82bd86ac8f5be1bd41b3e9d1f1"
+      },
+      {
+        "path": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+        "sha256": "396ae41b523900949c3107c5a55f75eeae362f3fd89fa595f4aa4e6a5d58ab7a"
+      },
+      {
+        "path": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+        "sha256": "19f21423a1a9feec6db033bf4533647fc2d7e293445f07a929d48740beeb312b"
+      },
+      {
+        "path": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+        "sha256": "09c10f8a845eaa4d8b22b453da543ebc4bf1eae7eaaf1de84d3c84646daf3b65"
+      }
+    ]
+  },
+  "summary": {
+    "source_file_count": 6,
+    "request_wrapper_count": 121,
+    "request_kind_count": 116,
+    "direct_call_site_count": 304,
+    "direct_call_request_kind_count": 102,
+    "literal_locations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "dynamic_location_call_site_count": 62
+  },
+  "wrappers": [
+    {
+      "name": "dbcl_GetRootMenuItems",
+      "request_kind": "1000",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetGenre_Root",
+      "request_kind": "1001",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetArtist_Root",
+      "request_kind": "1002",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetAlbum_Root",
+      "request_kind": "1003",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_Root",
+      "request_kind": "1004",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetBPM_Root",
+      "request_kind": "1006",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetRating_Root",
+      "request_kind": "1007",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetReleaseyear10_Root",
+      "request_kind": "1008",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetLabel_Root",
+      "request_kind": "100A",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetKey_Root",
+      "request_kind": "100B",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetColor_Root",
+      "request_kind": "100D",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetPrepare_Root",
+      "request_kind": "100F",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetLength_Root",
+      "request_kind": "1010",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetBitrate_Root",
+      "request_kind": "1011",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetHistory_Root",
+      "request_kind": "1012",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetFileName_Root",
+      "request_kind": "1013",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetNewKey_Root",
+      "request_kind": "1014",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetMyTag",
+      "request_kind": "1015",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetMatchingTrack",
+      "request_kind": "1017",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetArtist_Genre",
+      "request_kind": "1101",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetAlbum_Artist",
+      "request_kind": "1102",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_Album",
+      "request_kind": "1103",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_Playlist",
+      "request_kind": "1105",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetBPMRange_BPM",
+      "request_kind": "1106",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_Rating",
+      "request_kind": "1107",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetReleaseyear_Releaseyear10",
+      "request_kind": "1108",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetArtist_Label",
+      "request_kind": "110A",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_Key",
+      "request_kind": "110B",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_Color",
+      "request_kind": "110D",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_Length",
+      "request_kind": "1110",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_Bitrate",
+      "request_kind": "1111",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_History",
+      "request_kind": "1112",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetKeyRange_NewKey",
+      "request_kind": "1114",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_Content",
+      "request_kind": "1200",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetAlbum_GenreArtist",
+      "request_kind": "1201",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_ArtistAlbum",
+      "request_kind": "1202",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_BPMRange",
+      "request_kind": "1206",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_Releaseyear",
+      "request_kind": "1208",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetAlbum_LabelArtist",
+      "request_kind": "120A",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_KeyRange",
+      "request_kind": "1214",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_Search",
+      "request_kind": "1300",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_GenreArtistAlbum",
+      "request_kind": "1301",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetORGArtist_Root",
+      "request_kind": "1302",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_LabelArtistAlbum",
+      "request_kind": "130A",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetCueTrack_Root",
+      "request_kind": "130C",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetRightMenu",
+      "request_kind": "1400",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetAlbum_ORGArtist",
+      "request_kind": "1402",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_ORGArtistAlbum",
+      "request_kind": "1502",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetRemix_Root",
+      "request_kind": "1602",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetAlbum_Remix",
+      "request_kind": "1702",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetTrack_RemixAlbum",
+      "request_kind": "1802",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetHotCueBank",
+      "request_kind": "2001",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetSongData_Track",
+      "request_kind": "2002",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetImage",
+      "request_kind": "2003",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetWaveData",
+      "request_kind": "2004",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_RegDiscWave",
+      "request_kind": "2005",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_RegSdUsbWave",
+      "request_kind": "2005",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetFolder",
+      "request_kind": "2006",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetHotCueBankInfo",
+      "request_kind": "2101",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetSongData_Track2",
+      "request_kind": "2102",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetImage2",
+      "request_kind": "2103",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetUsbSdCueInfo",
+      "request_kind": "2104",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_DelUsbSdCue",
+      "request_kind": "2105",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_RegUdbSdCue",
+      "request_kind": "2105",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetCdrom1stSong",
+      "request_kind": "2106",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_SetRateValue2Track",
+      "request_kind": "2107",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_ChangeHotCueBank",
+      "request_kind": "2201",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetCacheContent_Track",
+      "request_kind": "2202",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetQuantizeData",
+      "request_kind": "2204",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_RegVBRInfo",
+      "request_kind": "2205",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetFolderHierachy",
+      "request_kind": "2206",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetPcmodeMusicInfo",
+      "request_kind": "2302",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_DelDiscCue",
+      "request_kind": "2305",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_RegDiscCue",
+      "request_kind": "2305",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetDecodeInfo",
+      "request_kind": "2402",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetDiscCueInfo",
+      "request_kind": "2404",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_DelAllCue",
+      "request_kind": "2405",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_DelAllCueOfAllDisc",
+      "request_kind": "2405",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_RegTrackLength",
+      "request_kind": "2502",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetVBRInfo",
+      "request_kind": "2504",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_ReqRegDiscID",
+      "request_kind": "2505",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetDeliverySongInfo",
+      "request_kind": "2602",
+      "location_expression": "9",
+      "location_parameter": null,
+      "fixed_location": 9
+    },
+    {
+      "name": "dbcl_RegQtzOfsInfo",
+      "request_kind": "2605",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_ReqInqDiscID",
+      "request_kind": "2704",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_SaveUdbSdCue_Ext",
+      "request_kind": "2705",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetQtzOfsInfo",
+      "request_kind": "2804",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_SaveSpecifiedAtomInfo",
+      "request_kind": "2805",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_GetParWaveData",
+      "request_kind": "2904",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_UpdateSpecifiedAtomInfo",
+      "request_kind": "2905",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_GetUsbSdCueInfo_Ext",
+      "request_kind": "2B04",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetSpecifiedAtomInfo",
+      "request_kind": "2C04",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_GetLeftBuf",
+      "request_kind": "3000",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_InsertSong2History",
+      "request_kind": "3001",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_AddPrepare",
+      "request_kind": "3002",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_GetColorCode",
+      "request_kind": "3003",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_ChkIsNewCmdEnable",
+      "request_kind": "3005",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_GetDJInfo",
+      "request_kind": "3006",
+      "location_expression": "7",
+      "location_parameter": null,
+      "fixed_location": 7
+    },
+    {
+      "name": "dbcl_SetFilterOnOff",
+      "request_kind": "3007",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_GetOffsetCID",
+      "request_kind": "3100",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetOffsetCID2",
+      "request_kind": "3100",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_DelHistory",
+      "request_kind": "3101",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_AddTaglist2Playlist",
+      "request_kind": "3102",
+      "location_expression": "6",
+      "location_parameter": null,
+      "fixed_location": 6
+    },
+    {
+      "name": "dbcl_DelPlaylist",
+      "request_kind": "3104",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetCondition_Property",
+      "request_kind": "3107",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_SetOnAir",
+      "request_kind": "3201",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_DelAllTaglist",
+      "request_kind": "3202",
+      "location_expression": "6",
+      "location_parameter": null,
+      "fixed_location": 6
+    },
+    {
+      "name": "dbcl_SetCondition_Property",
+      "request_kind": "3207",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_GetBrowseType",
+      "request_kind": "3303",
+      "location_expression": "2",
+      "location_parameter": null,
+      "fixed_location": 2
+    },
+    {
+      "name": "dbcl_SetCondition_MyTag",
+      "request_kind": "3307",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_DelTrackHistory",
+      "request_kind": "3401",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_CheckIsDBTrackExist",
+      "request_kind": "3402",
+      "location_expression": "6",
+      "location_parameter": null,
+      "fixed_location": 6
+    },
+    {
+      "name": "dbcl_AddFilterMyTagItem",
+      "request_kind": "3407",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_SetUnplayable",
+      "request_kind": "3503",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetDBHierachy",
+      "request_kind": "3603",
+      "location_expression": "param_2",
+      "location_parameter": 2,
+      "fixed_location": null
+    },
+    {
+      "name": "dbcl_GetPropTbl",
+      "request_kind": "3903",
+      "location_expression": "8",
+      "location_parameter": null,
+      "fixed_location": 8
+    },
+    {
+      "name": "dbcl_TransNewKeyID",
+      "request_kind": "3A03",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_GetTrackPlayState",
+      "request_kind": "3B03",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_UpdateMySettingFileExist",
+      "request_kind": "3C03",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_GetNewKeyID",
+      "request_kind": "3D03",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_GetIsRekordboxMobile",
+      "request_kind": "3E03",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    },
+    {
+      "name": "dbcl_SetBackGroundColor",
+      "request_kind": "3F03",
+      "location_expression": "1",
+      "location_parameter": null,
+      "fixed_location": 1
+    }
+  ],
+  "request_kinds": [
+    {
+      "request_kind": "1000",
+      "direct_call_site_count": 4,
+      "literal_locations": [
+        7
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1001",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1002",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1003",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1004",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1006",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1007",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1008",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "100A",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "100B",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "100D",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "100F",
+      "direct_call_site_count": 12,
+      "literal_locations": [
+        3,
+        6
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1010",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1011",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1012",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1013",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1014",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1017",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1101",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1102",
+      "direct_call_site_count": 4,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1103",
+      "direct_call_site_count": 4,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1105",
+      "direct_call_site_count": 6,
+      "literal_locations": [
+        2,
+        3
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1106",
+      "direct_call_site_count": 1,
+      "literal_locations": [],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1107",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1108",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "110A",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "110B",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "110D",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1110",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1111",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1112",
+      "direct_call_site_count": 6,
+      "literal_locations": [
+        2,
+        3
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1114",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1200",
+      "direct_call_site_count": 4,
+      "literal_locations": [
+        3
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "1201",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1202",
+      "direct_call_site_count": 4,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1206",
+      "direct_call_site_count": 3,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1208",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "120A",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1214",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1300",
+      "direct_call_site_count": 1,
+      "literal_locations": [],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1301",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1302",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "130A",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "130C",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1400",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        5
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "1402",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1502",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1602",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1702",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "1802",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "2001",
+      "direct_call_site_count": 6,
+      "literal_locations": [
+        2,
+        3,
+        7
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "2002",
+      "direct_call_site_count": 26,
+      "literal_locations": [
+        1,
+        2,
+        5
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "2003",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2004",
+      "direct_call_site_count": 3,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2005",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2006",
+      "direct_call_site_count": 11,
+      "literal_locations": [
+        2,
+        3,
+        4,
+        7
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "2101",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2102",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2103",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2104",
+      "direct_call_site_count": 3,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2105",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2106",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        7
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2107",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2201",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2202",
+      "direct_call_site_count": 6,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "2204",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2205",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2206",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        7
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2302",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2305",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2404",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2405",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2504",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2505",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2605",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2704",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2705",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2804",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2904",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2B04",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "2C04",
+      "direct_call_site_count": 5,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3000",
+      "direct_call_site_count": 27,
+      "literal_locations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "has_dynamic_location": true
+    },
+    {
+      "request_kind": "3001",
+      "direct_call_site_count": 3,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3002",
+      "direct_call_site_count": 4,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3100",
+      "direct_call_site_count": 26,
+      "literal_locations": [
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3101",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3102",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        6
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3104",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3201",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3202",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        6
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3303",
+      "direct_call_site_count": 5,
+      "literal_locations": [
+        2
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3401",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3402",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        6
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3503",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3603",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        7
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3903",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        8
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3A03",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3B03",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3C03",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3D03",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3E03",
+      "direct_call_site_count": 1,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    },
+    {
+      "request_kind": "3F03",
+      "direct_call_site_count": 2,
+      "literal_locations": [
+        1
+      ],
+      "has_dynamic_location": false
+    }
+  ],
+  "call_sites": [
+    {
+      "request_kind": "1000",
+      "wrapper": "dbcl_GetRootMenuItems",
+      "caller": "GetRootCateItems",
+      "caller_address": "0x001690e4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 6362,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "1000",
+      "wrapper": "dbcl_GetRootMenuItems",
+      "caller": "GetLeftRootMenuList",
+      "caller_address": "0x00177b68",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5064,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1000",
+      "wrapper": "dbcl_GetRootMenuItems",
+      "caller": "InfoJumpSetDepth0",
+      "caller_address": "0x0020c024",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 10576,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "1000",
+      "wrapper": "dbcl_GetRootMenuItems",
+      "caller": "SetLoadSearchDepth0",
+      "caller_address": "0x00210a54",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 460,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "1001",
+      "wrapper": "dbcl_GetGenre_Root",
+      "caller": "GetLeftGenreList",
+      "caller_address": "0x00177be8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5115,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1001",
+      "wrapper": "dbcl_GetGenre_Root",
+      "caller": "GetRightGenreList",
+      "caller_address": "0x0017bc20",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 7933,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1002",
+      "wrapper": "dbcl_GetArtist_Root",
+      "caller": "GetLeftArtistList",
+      "caller_address": "0x00177ddc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5211,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1002",
+      "wrapper": "dbcl_GetArtist_Root",
+      "caller": "GetRightArtistList",
+      "caller_address": "0x0017bd7c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 7999,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1003",
+      "wrapper": "dbcl_GetAlbum_Root",
+      "caller": "GetLeftAlbumnList",
+      "caller_address": "0x00177f70",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5269,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1003",
+      "wrapper": "dbcl_GetAlbum_Root",
+      "caller": "GetRightAlbumnList",
+      "caller_address": "0x0017bea4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8073,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1004",
+      "wrapper": "dbcl_GetTrack_Root",
+      "caller": "GetLeftTrackList",
+      "caller_address": "0x001780a4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5333,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1004",
+      "wrapper": "dbcl_GetTrack_Root",
+      "caller": "GetRightTrackList",
+      "caller_address": "0x0017bfa4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8096,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1006",
+      "wrapper": "dbcl_GetBPM_Root",
+      "caller": "GetLeftBPMList",
+      "caller_address": "0x001782f4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5477,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1006",
+      "wrapper": "dbcl_GetBPM_Root",
+      "caller": "GetRightBPMList",
+      "caller_address": "0x0017c190",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8183,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1007",
+      "wrapper": "dbcl_GetRating_Root",
+      "caller": "GetLeftRatingList",
+      "caller_address": "0x00178498",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5520,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1007",
+      "wrapper": "dbcl_GetRating_Root",
+      "caller": "GetRightRatingList",
+      "caller_address": "0x0017c29c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8244,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1008",
+      "wrapper": "dbcl_GetReleaseyear10_Root",
+      "caller": "GetLeftYearList",
+      "caller_address": "0x001785d0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5609,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1008",
+      "wrapper": "dbcl_GetReleaseyear10_Root",
+      "caller": "GetRightYearList",
+      "caller_address": "0x0017c35c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8276,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "100A",
+      "wrapper": "dbcl_GetLabel_Root",
+      "caller": "GetLeftLabelList",
+      "caller_address": "0x001788e0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5720,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "100A",
+      "wrapper": "dbcl_GetLabel_Root",
+      "caller": "GetRightLabelList",
+      "caller_address": "0x0017c57c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8395,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "100B",
+      "wrapper": "dbcl_GetKey_Root",
+      "caller": "GetLeftKeyList",
+      "caller_address": "0x00178c68",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5880,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "100B",
+      "wrapper": "dbcl_GetKey_Root",
+      "caller": "GetRightKeyList",
+      "caller_address": "0x0017c800",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8536,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "100D",
+      "wrapper": "dbcl_GetColor_Root",
+      "caller": "GetLeftColorList",
+      "caller_address": "0x00178e68",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5989,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "100D",
+      "wrapper": "dbcl_GetColor_Root",
+      "caller": "GetRightColorList",
+      "caller_address": "0x0017c988",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8602,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "100F",
+      "wrapper": "dbcl_GetPrepare_Root",
+      "caller": "GetPrepListFromDB",
+      "caller_address": "0x0016b364",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 7813,
+      "location_argument": "6",
+      "location_source": "call-argument-2",
+      "literal_location": 6
+    },
+    {
+      "request_kind": "100F",
+      "wrapper": "dbcl_GetPrepare_Root",
+      "caller": "GetPrepareTrackList",
+      "caller_address": "0x0016c900",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 8690,
+      "location_argument": "param_3",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "100F",
+      "wrapper": "dbcl_GetPrepare_Root",
+      "caller": "GetRightPrepareList",
+      "caller_address": "0x0016c948",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 8873,
+      "location_argument": "6",
+      "location_source": "call-argument-2",
+      "literal_location": 6
+    },
+    {
+      "request_kind": "100F",
+      "wrapper": "dbcl_GetPrepare_Root",
+      "caller": "ReLoadIfLoadInPreare",
+      "caller_address": "0x0016cf80",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 8938,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "100F",
+      "wrapper": "dbcl_GetPrepare_Root",
+      "caller": "GetListOfPlaying",
+      "caller_address": "0x0019b7fc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+      "line": 8745,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "100F",
+      "wrapper": "dbcl_GetPrepare_Root",
+      "caller": "ExecInfoJumpPrepare",
+      "caller_address": "0x0020b810",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 10276,
+      "location_argument": "6",
+      "location_source": "call-argument-2",
+      "literal_location": 6
+    },
+    {
+      "request_kind": "100F",
+      "wrapper": "dbcl_GetPrepare_Root",
+      "caller": "SendRightInfo",
+      "caller_address": "0x0020ee88",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 12393,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "100F",
+      "wrapper": "dbcl_GetPrepare_Root",
+      "caller": "GetLoadedMusicList",
+      "caller_address": "0x00211fcc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1418,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "100F",
+      "wrapper": "dbcl_GetPrepare_Root",
+      "caller": "GetFileAttrMusicID2",
+      "caller_address": "0x00213d3c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2607,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "100F",
+      "wrapper": "dbcl_GetPrepare_Root",
+      "caller": "GetTrack2MusicID",
+      "caller_address": "0x00214148",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2747,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "100F",
+      "wrapper": "dbcl_GetPrepare_Root",
+      "caller": "GetMusicIDRenew",
+      "caller_address": "0x00214544",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3061,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "100F",
+      "wrapper": "dbcl_GetPrepare_Root",
+      "caller": "ReloadCatePac",
+      "caller_address": "0x00215228",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3624,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "1010",
+      "wrapper": "dbcl_GetLength_Root",
+      "caller": "GetLeftTimeList",
+      "caller_address": "0x0017916c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6146,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1010",
+      "wrapper": "dbcl_GetLength_Root",
+      "caller": "GetRightTimeList",
+      "caller_address": "0x0017cb78",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8713,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1011",
+      "wrapper": "dbcl_GetBitrate_Root",
+      "caller": "GetLeftBitRateList",
+      "caller_address": "0x00179294",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6208,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1011",
+      "wrapper": "dbcl_GetBitrate_Root",
+      "caller": "GetRightBitRateList",
+      "caller_address": "0x0017cc38",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8754,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1012",
+      "wrapper": "dbcl_GetHistory_Root",
+      "caller": "GetLeftHistoryList",
+      "caller_address": "0x001794b0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6322,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1012",
+      "wrapper": "dbcl_GetHistory_Root",
+      "caller": "GetRightHistoryList",
+      "caller_address": "0x0017cd8c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8828,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1013",
+      "wrapper": "dbcl_GetFileName_Root",
+      "caller": "GetLeftFileNameList",
+      "caller_address": "0x001793bc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6280,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1013",
+      "wrapper": "dbcl_GetFileName_Root",
+      "caller": "GetRightFileNameList",
+      "caller_address": "0x0017ccf8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8784,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1014",
+      "wrapper": "dbcl_GetNewKey_Root",
+      "caller": "GetLeftNewKeyList",
+      "caller_address": "0x001799c8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6613,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1014",
+      "wrapper": "dbcl_GetNewKey_Root",
+      "caller": "GetRightNewKeyList",
+      "caller_address": "0x0017d0f0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8983,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1017",
+      "wrapper": "dbcl_GetMatchingTrack",
+      "caller": "GetLeftMatchingList",
+      "caller_address": "0x00179b64",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6703,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1017",
+      "wrapper": "dbcl_GetMatchingTrack",
+      "caller": "GetRightMatchingList",
+      "caller_address": "0x0017d228",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 9050,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1101",
+      "wrapper": "dbcl_GetArtist_Genre",
+      "caller": "GetLeftGenreList",
+      "caller_address": "0x00177be8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5126,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1101",
+      "wrapper": "dbcl_GetArtist_Genre",
+      "caller": "GetRightGenreList",
+      "caller_address": "0x0017bc20",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 7939,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1102",
+      "wrapper": "dbcl_GetAlbum_Artist",
+      "caller": "GetLeftArtistList",
+      "caller_address": "0x00177ddc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5199,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1102",
+      "wrapper": "dbcl_GetAlbum_Artist",
+      "caller": "GetLeftSearchList",
+      "caller_address": "0x00179740",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6504,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1102",
+      "wrapper": "dbcl_GetAlbum_Artist",
+      "caller": "GetRightArtistList",
+      "caller_address": "0x0017bd7c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8005,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1102",
+      "wrapper": "dbcl_GetAlbum_Artist",
+      "caller": "GetRightSearchList",
+      "caller_address": "0x0017ceec",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8931,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1103",
+      "wrapper": "dbcl_GetTrack_Album",
+      "caller": "GetLeftAlbumnList",
+      "caller_address": "0x00177f70",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5288,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1103",
+      "wrapper": "dbcl_GetTrack_Album",
+      "caller": "GetLeftSearchList",
+      "caller_address": "0x00179740",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6490,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1103",
+      "wrapper": "dbcl_GetTrack_Album",
+      "caller": "GetRightAlbumnList",
+      "caller_address": "0x0017bea4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8056,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1103",
+      "wrapper": "dbcl_GetTrack_Album",
+      "caller": "GetRightSearchList",
+      "caller_address": "0x0017ceec",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8913,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1105",
+      "wrapper": "dbcl_GetTrack_Playlist",
+      "caller": "GetLeftPlayList",
+      "caller_address": "0x00178180",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5396,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1105",
+      "wrapper": "dbcl_GetTrack_Playlist",
+      "caller": "GetLeftPlayList",
+      "caller_address": "0x00178180",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5408,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1105",
+      "wrapper": "dbcl_GetTrack_Playlist",
+      "caller": "GetRightPlayList",
+      "caller_address": "0x0017c038",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8130,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1105",
+      "wrapper": "dbcl_GetTrack_Playlist",
+      "caller": "GetRightPlayList",
+      "caller_address": "0x0017c038",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8155,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1105",
+      "wrapper": "dbcl_GetTrack_Playlist",
+      "caller": "SendRightInfo",
+      "caller_address": "0x0020ee88",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 12411,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "1105",
+      "wrapper": "dbcl_GetTrack_Playlist",
+      "caller": "GetMusicIDRenew",
+      "caller_address": "0x00214544",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2998,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "1106",
+      "wrapper": "dbcl_GetBPMRange_BPM",
+      "caller": "GetLeftBPMList",
+      "caller_address": "0x001782f4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5445,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1107",
+      "wrapper": "dbcl_GetTrack_Rating",
+      "caller": "GetLeftRatingList",
+      "caller_address": "0x00178498",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5540,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1107",
+      "wrapper": "dbcl_GetTrack_Rating",
+      "caller": "GetRightRatingList",
+      "caller_address": "0x0017c29c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8234,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1108",
+      "wrapper": "dbcl_GetReleaseyear_Releaseyear10",
+      "caller": "GetLeftYearList",
+      "caller_address": "0x001785d0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5578,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1108",
+      "wrapper": "dbcl_GetReleaseyear_Releaseyear10",
+      "caller": "GetRightYearList",
+      "caller_address": "0x0017c35c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8284,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "110A",
+      "wrapper": "dbcl_GetArtist_Label",
+      "caller": "GetLeftLabelList",
+      "caller_address": "0x001788e0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5731,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "110A",
+      "wrapper": "dbcl_GetArtist_Label",
+      "caller": "GetRightLabelList",
+      "caller_address": "0x0017c57c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8401,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "110B",
+      "wrapper": "dbcl_GetTrack_Key",
+      "caller": "GetLeftKeyList",
+      "caller_address": "0x00178c68",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5900,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "110B",
+      "wrapper": "dbcl_GetTrack_Key",
+      "caller": "GetRightKeyList",
+      "caller_address": "0x0017c800",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8519,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "110D",
+      "wrapper": "dbcl_GetTrack_Color",
+      "caller": "GetLeftColorList",
+      "caller_address": "0x00178e68",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6009,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "110D",
+      "wrapper": "dbcl_GetTrack_Color",
+      "caller": "GetRightColorList",
+      "caller_address": "0x0017c988",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8592,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1110",
+      "wrapper": "dbcl_GetTrack_Length",
+      "caller": "GetLeftTimeList",
+      "caller_address": "0x0017916c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6166,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1110",
+      "wrapper": "dbcl_GetTrack_Length",
+      "caller": "GetRightTimeList",
+      "caller_address": "0x0017cb78",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8703,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1111",
+      "wrapper": "dbcl_GetTrack_Bitrate",
+      "caller": "GetLeftBitRateList",
+      "caller_address": "0x00179294",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6228,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1111",
+      "wrapper": "dbcl_GetTrack_Bitrate",
+      "caller": "GetRightBitRateList",
+      "caller_address": "0x0017cc38",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8744,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1112",
+      "wrapper": "dbcl_GetTrack_History",
+      "caller": "GetLeftHistoryList",
+      "caller_address": "0x001794b0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6346,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1112",
+      "wrapper": "dbcl_GetTrack_History",
+      "caller": "GetRightHistoryList",
+      "caller_address": "0x0017cd8c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8818,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1112",
+      "wrapper": "dbcl_GetTrack_History",
+      "caller": "GetListOfPlaying",
+      "caller_address": "0x0019b7fc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+      "line": 8628,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "1112",
+      "wrapper": "dbcl_GetTrack_History",
+      "caller": "SendRightInfo",
+      "caller_address": "0x0020ee88",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 12405,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "1112",
+      "wrapper": "dbcl_GetTrack_History",
+      "caller": "GetTrack2MusicID",
+      "caller_address": "0x00214148",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2779,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "1112",
+      "wrapper": "dbcl_GetTrack_History",
+      "caller": "GetMusicIDRenew",
+      "caller_address": "0x00214544",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3008,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "1114",
+      "wrapper": "dbcl_GetKeyRange_NewKey",
+      "caller": "GetLeftNewKeyList",
+      "caller_address": "0x001799c8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6575,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1114",
+      "wrapper": "dbcl_GetKeyRange_NewKey",
+      "caller": "GetRightNewKeyList",
+      "caller_address": "0x0017d0f0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8989,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1200",
+      "wrapper": "dbcl_GetTrack_Content",
+      "caller": "GetLoadedMusicData",
+      "caller_address": "0x002116e4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1152,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "1200",
+      "wrapper": "dbcl_GetTrack_Content",
+      "caller": "GetLoadedMusicData",
+      "caller_address": "0x002116e4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1163,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "1200",
+      "wrapper": "dbcl_GetTrack_Content",
+      "caller": "GetLoadedMusicList",
+      "caller_address": "0x00211fcc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1415,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "1200",
+      "wrapper": "dbcl_GetTrack_Content",
+      "caller": "ReloadCateBrws",
+      "caller_address": "0x00214c8c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3366,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "1201",
+      "wrapper": "dbcl_GetAlbum_GenreArtist",
+      "caller": "GetLeftGenreList",
+      "caller_address": "0x00177be8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5136,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1201",
+      "wrapper": "dbcl_GetAlbum_GenreArtist",
+      "caller": "GetRightGenreList",
+      "caller_address": "0x0017bc20",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 7945,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1202",
+      "wrapper": "dbcl_GetTrack_ArtistAlbum",
+      "caller": "GetLeftArtistList",
+      "caller_address": "0x00177ddc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5235,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1202",
+      "wrapper": "dbcl_GetTrack_ArtistAlbum",
+      "caller": "GetLeftSearchList",
+      "caller_address": "0x00179740",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6530,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1202",
+      "wrapper": "dbcl_GetTrack_ArtistAlbum",
+      "caller": "GetRightArtistList",
+      "caller_address": "0x0017bd7c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8012,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1202",
+      "wrapper": "dbcl_GetTrack_ArtistAlbum",
+      "caller": "GetRightSearchList",
+      "caller_address": "0x0017ceec",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8941,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1206",
+      "wrapper": "dbcl_GetTrack_BPMRange",
+      "caller": "GetLeftBPMList",
+      "caller_address": "0x001782f4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5467,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1206",
+      "wrapper": "dbcl_GetTrack_BPMRange",
+      "caller": "GetRightBPMList",
+      "caller_address": "0x0017c190",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8190,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1206",
+      "wrapper": "dbcl_GetTrack_BPMRange",
+      "caller": "GetRightBPMList",
+      "caller_address": "0x0017c190",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8198,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1208",
+      "wrapper": "dbcl_GetTrack_Releaseyear",
+      "caller": "GetLeftYearList",
+      "caller_address": "0x001785d0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5597,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1208",
+      "wrapper": "dbcl_GetTrack_Releaseyear",
+      "caller": "GetRightYearList",
+      "caller_address": "0x0017c35c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8291,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "120A",
+      "wrapper": "dbcl_GetAlbum_LabelArtist",
+      "caller": "GetLeftLabelList",
+      "caller_address": "0x001788e0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5741,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "120A",
+      "wrapper": "dbcl_GetAlbum_LabelArtist",
+      "caller": "GetRightLabelList",
+      "caller_address": "0x0017c57c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8407,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1214",
+      "wrapper": "dbcl_GetTrack_KeyRange",
+      "caller": "GetLeftNewKeyList",
+      "caller_address": "0x001799c8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6598,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1214",
+      "wrapper": "dbcl_GetTrack_KeyRange",
+      "caller": "GetRightNewKeyList",
+      "caller_address": "0x0017d0f0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8997,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1300",
+      "wrapper": "dbcl_Search",
+      "caller": "GetLeftSearchList",
+      "caller_address": "0x00179740",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6459,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1301",
+      "wrapper": "dbcl_GetTrack_GenreArtistAlbum",
+      "caller": "GetLeftGenreList",
+      "caller_address": "0x00177be8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5159,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1301",
+      "wrapper": "dbcl_GetTrack_GenreArtistAlbum",
+      "caller": "GetRightGenreList",
+      "caller_address": "0x0017bc20",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 7956,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1302",
+      "wrapper": "dbcl_GetORGArtist_Root",
+      "caller": "GetLeftOrgArtistList",
+      "caller_address": "0x00178ad4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5816,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1302",
+      "wrapper": "dbcl_GetORGArtist_Root",
+      "caller": "GetRightOrgArtistList",
+      "caller_address": "0x0017c6d8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8462,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "130A",
+      "wrapper": "dbcl_GetTrack_LabelArtistAlbum",
+      "caller": "GetLeftLabelList",
+      "caller_address": "0x001788e0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5764,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "130A",
+      "wrapper": "dbcl_GetTrack_LabelArtistAlbum",
+      "caller": "GetRightLabelList",
+      "caller_address": "0x0017c57c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8418,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "130C",
+      "wrapper": "dbcl_GetCueTrack_Root",
+      "caller": "GetLeftCueList",
+      "caller_address": "0x00178d90",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5949,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "130C",
+      "wrapper": "dbcl_GetCueTrack_Root",
+      "caller": "GetRightCueList",
+      "caller_address": "0x0017c900",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8558,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1400",
+      "wrapper": "dbcl_GetRightMenu",
+      "caller": "GetSortMenuList",
+      "caller_address": "0x001fcc5c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 8911,
+      "location_argument": "5",
+      "location_source": "call-argument-2",
+      "literal_location": 5
+    },
+    {
+      "request_kind": "1402",
+      "wrapper": "dbcl_GetAlbum_ORGArtist",
+      "caller": "GetLeftOrgArtistList",
+      "caller_address": "0x00178ad4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5804,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1402",
+      "wrapper": "dbcl_GetAlbum_ORGArtist",
+      "caller": "GetRightOrgArtistList",
+      "caller_address": "0x0017c6d8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8468,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1502",
+      "wrapper": "dbcl_GetTrack_ORGArtistAlbum",
+      "caller": "GetLeftOrgArtistList",
+      "caller_address": "0x00178ad4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5840,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1502",
+      "wrapper": "dbcl_GetTrack_ORGArtistAlbum",
+      "caller": "GetRightOrgArtistList",
+      "caller_address": "0x0017c6d8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8475,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1602",
+      "wrapper": "dbcl_GetRemix_Root",
+      "caller": "GetLeftRemixList",
+      "caller_address": "0x0017874c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5659,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1602",
+      "wrapper": "dbcl_GetRemix_Root",
+      "caller": "GetRightRemixList",
+      "caller_address": "0x0017c454",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8335,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1702",
+      "wrapper": "dbcl_GetAlbum_Remix",
+      "caller": "GetLeftRemixList",
+      "caller_address": "0x0017874c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5647,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1702",
+      "wrapper": "dbcl_GetAlbum_Remix",
+      "caller": "GetRightRemixList",
+      "caller_address": "0x0017c454",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8341,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "1802",
+      "wrapper": "dbcl_GetTrack_RemixAlbum",
+      "caller": "GetLeftRemixList",
+      "caller_address": "0x0017874c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 5683,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "1802",
+      "wrapper": "dbcl_GetTrack_RemixAlbum",
+      "caller": "GetRightRemixList",
+      "caller_address": "0x0017c454",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8348,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2001",
+      "wrapper": "dbcl_GetHotCueBank",
+      "caller": "GetLeftHotCueBankList",
+      "caller_address": "0x001795f4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6411,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "2001",
+      "wrapper": "dbcl_GetHotCueBank",
+      "caller": "GetLeftHotCueBankList",
+      "caller_address": "0x001795f4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6420,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "2001",
+      "wrapper": "dbcl_GetHotCueBank",
+      "caller": "GetRightHotCueBankList",
+      "caller_address": "0x0017ce4c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8857,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2001",
+      "wrapper": "dbcl_GetHotCueBank",
+      "caller": "GetRightHotCueBankList",
+      "caller_address": "0x0017ce4c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8865,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2001",
+      "wrapper": "dbcl_GetHotCueBank",
+      "caller": "DbReqCueBankDragDrop",
+      "caller_address": "0x001f9a14",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 6507,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "2001",
+      "wrapper": "dbcl_GetHotCueBank",
+      "caller": "GetMusicIDRenew",
+      "caller_address": "0x00214544",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3014,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightPrepareList",
+      "caller_address": "0x0016c948",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 8801,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightGenreList",
+      "caller_address": "0x0017bc20",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 7963,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightArtistList",
+      "caller_address": "0x0017bd7c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8020,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightAlbumnList",
+      "caller_address": "0x0017bea4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8064,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightTrackList",
+      "caller_address": "0x0017bfa4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8106,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightPlayList",
+      "caller_address": "0x0017c038",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8148,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightBPMList",
+      "caller_address": "0x0017c190",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8206,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightRatingList",
+      "caller_address": "0x0017c29c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8251,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightYearList",
+      "caller_address": "0x0017c35c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8299,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightRemixList",
+      "caller_address": "0x0017c454",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8356,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightLabelList",
+      "caller_address": "0x0017c57c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8425,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightOrgArtistList",
+      "caller_address": "0x0017c6d8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8483,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightKeyList",
+      "caller_address": "0x0017c800",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8527,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightCueList",
+      "caller_address": "0x0017c900",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8568,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightColorList",
+      "caller_address": "0x0017c988",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8609,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightTimeList",
+      "caller_address": "0x0017cb78",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8720,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightBitRateList",
+      "caller_address": "0x0017cc38",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8761,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightFileNameList",
+      "caller_address": "0x0017ccf8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8794,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightHistoryList",
+      "caller_address": "0x0017cd8c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8835,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightSearchList",
+      "caller_address": "0x0017ceec",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8922,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightNewKeyList",
+      "caller_address": "0x0017d0f0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 9005,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetRightMatchingList",
+      "caller_address": "0x0017d228",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 9068,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "SendLeftInfo",
+      "caller_address": "0x0020df38",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 11814,
+      "location_argument": "1",
+      "location_source": "call-argument-2",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "SendLeftInfo.constprop.7",
+      "caller_address": "0x0020e2e4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 11938,
+      "location_argument": "1",
+      "location_source": "call-argument-2",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetLeftInfomationList",
+      "caller_address": "0x0020e670",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 12007,
+      "location_argument": "param_3",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "2002",
+      "wrapper": "dbcl_GetSongData_Track",
+      "caller": "GetOneData_SongInfo",
+      "caller_address": "0x0020f3d4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 12650,
+      "location_argument": "5",
+      "location_source": "call-argument-2",
+      "literal_location": 5
+    },
+    {
+      "request_kind": "2003",
+      "wrapper": "dbcl_GetImage",
+      "caller": "DbReqJpegData",
+      "caller_address": "0x002105d0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 281,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2003",
+      "wrapper": "dbcl_GetImage",
+      "caller": "DbReqJpegData",
+      "caller_address": "0x002105d0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 325,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2004",
+      "wrapper": "dbcl_GetWaveData",
+      "caller": "ReqLoadWave",
+      "caller_address": "0x001ffd78",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 10888,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2004",
+      "wrapper": "dbcl_GetWaveData",
+      "caller": "ReqLoadWave",
+      "caller_address": "0x001ffd78",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 10914,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2004",
+      "wrapper": "dbcl_GetWaveData",
+      "caller": "ReqLoadDiscWave",
+      "caller_address": "0x00213524",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2222,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2005",
+      "wrapper": "dbcl_RegDiscWave",
+      "caller": "ReqRegistWave",
+      "caller_address": "0x001ffc0c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 10802,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2005",
+      "wrapper": "dbcl_RegSdUsbWave",
+      "caller": "ReqRegistWave",
+      "caller_address": "0x001ffc0c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 10812,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2006",
+      "wrapper": "dbcl_GetFolder",
+      "caller": "GetLeftFolderList",
+      "caller_address": "0x00178f90",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6099,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "2006",
+      "wrapper": "dbcl_GetFolder",
+      "caller": "GetLeftFolderList",
+      "caller_address": "0x00178f90",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6106,
+      "location_argument": "param_4",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "2006",
+      "wrapper": "dbcl_GetFolder",
+      "caller": "GetRightFolderList",
+      "caller_address": "0x0017ca48",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8664,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2006",
+      "wrapper": "dbcl_GetFolder",
+      "caller": "GetRightFolderList",
+      "caller_address": "0x0017ca48",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8672,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2006",
+      "wrapper": "dbcl_GetFolder",
+      "caller": "GetCdda_1stMusicID",
+      "caller_address": "0x00210cd0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 585,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "2006",
+      "wrapper": "dbcl_GetFolder",
+      "caller": "GetCdda_1stMusicID",
+      "caller_address": "0x00210cd0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 675,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "2006",
+      "wrapper": "dbcl_GetFolder",
+      "caller": "GetCdrom_1stMusicID",
+      "caller_address": "0x00211008",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 792,
+      "location_argument": "4",
+      "location_source": "call-argument-2",
+      "literal_location": 4
+    },
+    {
+      "request_kind": "2006",
+      "wrapper": "dbcl_GetFolder",
+      "caller": "GetCdrom_1stMusicID",
+      "caller_address": "0x00211008",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 793,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "2006",
+      "wrapper": "dbcl_GetFolder",
+      "caller": "GetLoadedMusicList",
+      "caller_address": "0x00211fcc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1422,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "2006",
+      "wrapper": "dbcl_GetFolder",
+      "caller": "GetLoadedMusicList",
+      "caller_address": "0x00211fcc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1423,
+      "location_argument": "4",
+      "location_source": "call-argument-2",
+      "literal_location": 4
+    },
+    {
+      "request_kind": "2006",
+      "wrapper": "dbcl_GetFolder",
+      "caller": "ReloadCatePac",
+      "caller_address": "0x00215228",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3570,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "2101",
+      "wrapper": "dbcl_GetHotCueBankInfo",
+      "caller": "DbReqCueBank",
+      "caller_address": "0x001f9674",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 6358,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2101",
+      "wrapper": "dbcl_GetHotCueBankInfo",
+      "caller": "DbReqCueBankDragDrop",
+      "caller_address": "0x001f9a14",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 6549,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2102",
+      "wrapper": "dbcl_GetSongData_Track2",
+      "caller": "GetFileAttr.constprop.0",
+      "caller_address": "0x002127bc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1693,
+      "location_argument": "8",
+      "location_source": "call-argument-2",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2102",
+      "wrapper": "dbcl_GetSongData_Track2",
+      "caller": "GetFileAttr",
+      "caller_address": "0x00212b38",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1806,
+      "location_argument": "8",
+      "location_source": "call-argument-2",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2103",
+      "wrapper": "dbcl_GetImage2",
+      "caller": "DbReqJpegData2",
+      "caller_address": "0x002104b4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 205,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2104",
+      "wrapper": "dbcl_GetUsbSdCueInfo",
+      "caller": "GetListFromDBMemoryCue",
+      "caller_address": "0x00173574",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 2320,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2104",
+      "wrapper": "dbcl_GetUsbSdCueInfo",
+      "caller": "DbReqUsbSdCue",
+      "caller_address": "0x001f9408",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 6233,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2104",
+      "wrapper": "dbcl_GetUsbSdCueInfo",
+      "caller": "DbDeleteUsbSdCue",
+      "caller_address": "0x001fa1e8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 6920,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2105",
+      "wrapper": "dbcl_RegUdbSdCue",
+      "caller": "DbRegistUsbSdCue",
+      "caller_address": "0x001f9e6c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 6728,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2105",
+      "wrapper": "dbcl_DelUsbSdCue",
+      "caller": "DbDeleteUsbSdCue",
+      "caller_address": "0x001fa1e8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 6917,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2106",
+      "wrapper": "dbcl_GetCdrom1stSong",
+      "caller": "GetCdrom_1stMusicID",
+      "caller_address": "0x00211008",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 738,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "2107",
+      "wrapper": "dbcl_SetRateValue2Track",
+      "caller": "SetRateValue2Track",
+      "caller_address": "0x0020f34c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 12545,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "2201",
+      "wrapper": "dbcl_ChangeHotCueBank",
+      "caller": "DbRegistBankCue",
+      "caller_address": "0x001f9fa4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 6782,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2202",
+      "wrapper": "dbcl_GetCacheContent_Track",
+      "caller": "GetRightPrepareList",
+      "caller_address": "0x0016c948",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 8804,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2202",
+      "wrapper": "dbcl_GetCacheContent_Track",
+      "caller": "GetRightFolderList",
+      "caller_address": "0x0017ca48",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 8676,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "2202",
+      "wrapper": "dbcl_GetCacheContent_Track",
+      "caller": "SendLeftInfo",
+      "caller_address": "0x0020df38",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 11810,
+      "location_argument": "param_2",
+      "location_source": "wrapper-expression",
+      "literal_location": null
+    },
+    {
+      "request_kind": "2202",
+      "wrapper": "dbcl_GetCacheContent_Track",
+      "caller": "SendLeftInfo.constprop.7",
+      "caller_address": "0x0020e2e4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 11934,
+      "location_argument": "param_2",
+      "location_source": "wrapper-expression",
+      "literal_location": null
+    },
+    {
+      "request_kind": "2202",
+      "wrapper": "dbcl_GetCacheContent_Track",
+      "caller": "GetLeftInfomationList",
+      "caller_address": "0x0020e670",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 12001,
+      "location_argument": "param_2",
+      "location_source": "wrapper-expression",
+      "literal_location": null
+    },
+    {
+      "request_kind": "2202",
+      "wrapper": "dbcl_GetCacheContent_Track",
+      "caller": "GetOneData_SongInfo",
+      "caller_address": "0x0020f3d4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 12646,
+      "location_argument": "param_2",
+      "location_source": "wrapper-expression",
+      "literal_location": null
+    },
+    {
+      "request_kind": "2204",
+      "wrapper": "dbcl_GetQuantizeData",
+      "caller": "GetFileAttrMusicID",
+      "caller_address": "0x00212ec8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2012,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2204",
+      "wrapper": "dbcl_GetQuantizeData",
+      "caller": "GetQuantizeData",
+      "caller_address": "0x00213348",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2144,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2205",
+      "wrapper": "dbcl_RegVBRInfo",
+      "caller": "RegVbrInfo",
+      "caller_address": "0x001fa7bc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 7183,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2206",
+      "wrapper": "dbcl_GetFolderHierachy",
+      "caller": "GetCdrom_1stMusicID",
+      "caller_address": "0x00211008",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 741,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "2206",
+      "wrapper": "dbcl_GetFolderHierachy",
+      "caller": "ReloadCatePac",
+      "caller_address": "0x00215228",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3468,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "2302",
+      "wrapper": "dbcl_GetPcmodeMusicInfo",
+      "caller": "SendInfoPcmode.constprop.6",
+      "caller_address": "0x0020d664",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 11388,
+      "location_argument": "1",
+      "location_source": "call-argument-2",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "2305",
+      "wrapper": "dbcl_RegDiscCue",
+      "caller": "DbRegistDiscCue",
+      "caller_address": "0x001fa0b4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 6850,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2305",
+      "wrapper": "dbcl_DelDiscCue",
+      "caller": "DbDeleteDiscCue",
+      "caller_address": "0x001fa33c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 6990,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2404",
+      "wrapper": "dbcl_GetDiscCueInfo",
+      "caller": "DbReqDiscCue",
+      "caller_address": "0x001f954c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 6298,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2405",
+      "wrapper": "dbcl_DelAllCue",
+      "caller": "DbDeleteDiscAllCue",
+      "caller_address": "0x001fa470",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 7031,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2405",
+      "wrapper": "dbcl_DelAllCueOfAllDisc",
+      "caller": "DbDeleteAllDiscCue",
+      "caller_address": "0x001fa540",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 7062,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2504",
+      "wrapper": "dbcl_GetVBRInfo",
+      "caller": "GetFileAttrMusicID",
+      "caller_address": "0x00212ec8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1983,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2505",
+      "wrapper": "dbcl_ReqRegDiscID",
+      "caller": "ReqRegistDiscID",
+      "caller_address": "0x001fa6a0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 7141,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2605",
+      "wrapper": "dbcl_RegQtzOfsInfo",
+      "caller": "RegQtzOfsInfo",
+      "caller_address": "0x001fa970",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 7280,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "2704",
+      "wrapper": "dbcl_ReqInqDiscID",
+      "caller": "ReqInquireDiscID",
+      "caller_address": "0x001fa5bc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 7099,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2705",
+      "wrapper": "dbcl_SaveUdbSdCue_Ext",
+      "caller": "DbUpdateUsbSdCue_Ext",
+      "caller_address": "0x001fab68",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 7632,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2804",
+      "wrapper": "dbcl_GetQtzOfsInfo",
+      "caller": "GetQtzOfsInfo",
+      "caller_address": "0x001fa8d8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 7241,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "2904",
+      "wrapper": "dbcl_GetParWaveData",
+      "caller": "GetParWaveData",
+      "caller_address": "0x002001f0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 27,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "2B04",
+      "wrapper": "dbcl_GetUsbSdCueInfo_Ext",
+      "caller": "GetListFromDBMemoryCue",
+      "caller_address": "0x00173574",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 2302,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2B04",
+      "wrapper": "dbcl_GetUsbSdCueInfo_Ext",
+      "caller": "DbReqUsbSdCue_Ext",
+      "caller_address": "0x001faa14",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 7345,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "2C04",
+      "wrapper": "dbcl_GetSpecifiedAtomInfo",
+      "caller": "ReqLoadWave",
+      "caller_address": "0x001ffd78",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 10926,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "2C04",
+      "wrapper": "dbcl_GetSpecifiedAtomInfo",
+      "caller": "GetRGBParWaveData",
+      "caller_address": "0x00200430",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 125,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "2C04",
+      "wrapper": "dbcl_GetSpecifiedAtomInfo",
+      "caller": "GetRGBWaveData",
+      "caller_address": "0x00200650",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 236,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "2C04",
+      "wrapper": "dbcl_GetSpecifiedAtomInfo",
+      "caller": "GetFileAttrMusicID",
+      "caller_address": "0x00212ec8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2025,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "2C04",
+      "wrapper": "dbcl_GetSpecifiedAtomInfo",
+      "caller": "GetQuantizeData",
+      "caller_address": "0x00213348",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2166,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetRootCateItems",
+      "caller_address": "0x001690e4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 6363,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetAllPrepRecFromDB",
+      "caller_address": "0x0016aea0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 7679,
+      "location_argument": "6",
+      "location_source": "call-argument-2",
+      "literal_location": 6
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetLeftPrepareJump",
+      "caller_address": "0x0016b914",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 8115,
+      "location_argument": "6",
+      "location_source": "call-argument-2",
+      "literal_location": 6
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetRightPrepareList",
+      "caller_address": "0x0016c948",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 8811,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "AddPrepare",
+      "caller_address": "0x0016d05c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 9009,
+      "location_argument": "1",
+      "location_source": "call-argument-2",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "AddPrepare",
+      "caller_address": "0x0016d05c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 9065,
+      "location_argument": "6",
+      "location_source": "call-argument-2",
+      "literal_location": 6
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetAllRecFromDB",
+      "caller_address": "0x00173ee0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 2601,
+      "location_argument": "1",
+      "location_source": "call-argument-2",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetListAfterJump2Char",
+      "caller_address": "0x00174728",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 2917,
+      "location_argument": "1",
+      "location_source": "call-argument-2",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetRightBrowseOneData",
+      "caller_address": "0x0017ab24",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 7552,
+      "location_argument": "2",
+      "location_source": "call-argument-2",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "DbReqCueBankDragDrop",
+      "caller_address": "0x001f9a14",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 6521,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetSortMenuList",
+      "caller_address": "0x001fcc5c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 8918,
+      "location_argument": "5",
+      "location_source": "call-argument-2",
+      "literal_location": 5
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetOffsetInCate",
+      "caller_address": "0x0020b674",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 10142,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "InfoJumpSetDepth0",
+      "caller_address": "0x0020c024",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 10604,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetLeftInfomationRec.constprop.8",
+      "caller_address": "0x0020d368",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 11266,
+      "location_argument": "1",
+      "location_source": "call-argument-2",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetLeftInfomationRec",
+      "caller_address": "0x0020e6d0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 12046,
+      "location_argument": "param_3",
+      "location_source": "call-argument-2",
+      "literal_location": null
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetOneData_SongInfo",
+      "caller_address": "0x0020f3d4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 12655,
+      "location_argument": "5",
+      "location_source": "call-argument-2",
+      "literal_location": 5
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "SetLoadSearchDepth0",
+      "caller_address": "0x00210a54",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 492,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetCdda_1stMusicID",
+      "caller_address": "0x00210cd0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 621,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetCdrom_1stMusicID",
+      "caller_address": "0x00211008",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 769,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetLoadedMusicData",
+      "caller_address": "0x002116e4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1264,
+      "location_argument": "4",
+      "location_source": "call-argument-2",
+      "literal_location": 4
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetLoadedMusicData",
+      "caller_address": "0x002116e4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1267,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetFileAttr.constprop.0",
+      "caller_address": "0x002127bc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1699,
+      "location_argument": "8",
+      "location_source": "call-argument-2",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetFileAttr",
+      "caller_address": "0x00212b38",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1812,
+      "location_argument": "8",
+      "location_source": "call-argument-2",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetTrack2MusicID",
+      "caller_address": "0x00214148",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2840,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "GetMusicIDRenew",
+      "caller_address": "0x00214544",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3021,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "ReloadCateBrws",
+      "caller_address": "0x00214c8c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3292,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3000",
+      "wrapper": "dbcl_GetLeftBuf",
+      "caller": "ReloadCatePac",
+      "caller_address": "0x00215228",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3473,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3001",
+      "wrapper": "dbcl_InsertSong2History",
+      "caller": "SelectRightMenu",
+      "caller_address": "0x001fe73c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 10308,
+      "location_argument": "8",
+      "location_source": "call-argument-2",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3001",
+      "wrapper": "dbcl_InsertSong2History",
+      "caller": "ReqAddHistory",
+      "caller_address": "0x00213ab0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2473,
+      "location_argument": "8",
+      "location_source": "call-argument-2",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3001",
+      "wrapper": "dbcl_InsertSong2History",
+      "caller": "ReqAddPlayHistory",
+      "caller_address": "0x00214b04",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3107,
+      "location_argument": "8",
+      "location_source": "call-argument-2",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3002",
+      "wrapper": "dbcl_AddPrepare",
+      "caller": "AddPrepare",
+      "caller_address": "0x0016d05c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 8995,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3002",
+      "wrapper": "dbcl_AddPrepare",
+      "caller": "AddPrepare",
+      "caller_address": "0x0016d05c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 9029,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3002",
+      "wrapper": "dbcl_AddPrepare",
+      "caller": "AddPrepare",
+      "caller_address": "0x0016d05c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 9055,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3002",
+      "wrapper": "dbcl_AddPrepare",
+      "caller": "AddPrepare",
+      "caller_address": "0x0016d05c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 9074,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "ReLoadIfLoadInPreare",
+      "caller_address": "0x0016cf80",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 8942,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "GetListFromDBWithLastPos",
+      "caller_address": "0x00174530",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 2803,
+      "location_argument": "1",
+      "location_source": "call-argument-2",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "GetListOfPlaying",
+      "caller_address": "0x0019b7fc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+      "line": 8553,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "GetListOfPlaying",
+      "caller_address": "0x0019b7fc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+      "line": 8639,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "GetListOfPlaying",
+      "caller_address": "0x0019b7fc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+      "line": 8751,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "GetListOfPlaying",
+      "caller_address": "0x0019b7fc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+      "line": 8905,
+      "location_argument": "4",
+      "location_source": "call-argument-2",
+      "literal_location": 4
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "GetListOfPlaying",
+      "caller_address": "0x0019b7fc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0019.c",
+      "line": 8957,
+      "location_argument": "4",
+      "location_source": "call-argument-2",
+      "literal_location": 4
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID",
+      "caller": "SendSortedBrwsList",
+      "caller_address": "0x001fb8d4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 8189,
+      "location_argument": "1",
+      "location_source": "call-argument-2",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "SelectRightMenu",
+      "caller_address": "0x001fe73c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 10465,
+      "location_argument": "6",
+      "location_source": "call-argument-2",
+      "literal_location": 6
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "ExecInfoJumpPrepare",
+      "caller_address": "0x0020b810",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 10280,
+      "location_argument": "6",
+      "location_source": "call-argument-2",
+      "literal_location": 6
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID",
+      "caller": "InfoJumpSetDepth0",
+      "caller_address": "0x0020c024",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 10582,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "ExecInfoJumpBrwsLocal",
+      "caller_address": "0x0020c1b8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 10750,
+      "location_argument": "1",
+      "location_source": "call-argument-2",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "ExecInformationJump",
+      "caller_address": "0x0020c60c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 10950,
+      "location_argument": "1",
+      "location_source": "call-argument-2",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "ExecInformationJump",
+      "caller_address": "0x0020c60c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 11193,
+      "location_argument": "1",
+      "location_source": "call-argument-2",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID",
+      "caller": "SetLoadSearchDepth0",
+      "caller_address": "0x00210a54",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 462,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID",
+      "caller": "SetLoadSearchDepth0",
+      "caller_address": "0x00210a54",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 465,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID",
+      "caller": "SetLoadSearchDepth0",
+      "caller_address": "0x00210a54",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 475,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID",
+      "caller": "GetCdda_1stMusicID",
+      "caller_address": "0x00210cd0",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 612,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID",
+      "caller": "GetCdrom_1stMusicID",
+      "caller_address": "0x00211008",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 827,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID",
+      "caller": "GetLoadedMusicData",
+      "caller_address": "0x002116e4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1308,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID",
+      "caller": "GetFileAttrMusicID",
+      "caller_address": "0x00212ec8",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 1966,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "GetFileAttrMusicID2",
+      "caller_address": "0x00213d3c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2609,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "GetFileAttrMusicID2",
+      "caller_address": "0x00213d3c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2635,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "GetMusicIDRenew",
+      "caller_address": "0x00214544",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2993,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "GetMusicIDRenew",
+      "caller_address": "0x00214544",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3001,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3100",
+      "wrapper": "dbcl_GetOffsetCID2",
+      "caller": "GetMusicIDRenew",
+      "caller_address": "0x00214544",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3063,
+      "location_argument": "3",
+      "location_source": "call-argument-2",
+      "literal_location": 3
+    },
+    {
+      "request_kind": "3101",
+      "wrapper": "dbcl_DelHistory",
+      "caller": "DBC_ReqDelHistory",
+      "caller_address": "0x001fe16c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 9765,
+      "location_argument": "8",
+      "location_source": "call-argument-2",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3102",
+      "wrapper": "dbcl_AddTaglist2Playlist",
+      "caller": "DbReqTaglist2Playlist",
+      "caller_address": "0x002161a4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 4049,
+      "location_argument": "6",
+      "location_source": "wrapper-fixed",
+      "literal_location": 6
+    },
+    {
+      "request_kind": "3104",
+      "wrapper": "dbcl_DelPlaylist",
+      "caller": "DBC_ReqUdPlaylist",
+      "caller_address": "0x001fe428",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 9899,
+      "location_argument": "8",
+      "location_source": "call-argument-2",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3201",
+      "wrapper": "dbcl_SetOnAir",
+      "caller": "ReqRegistOnAir",
+      "caller_address": "0x00213cac",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 2518,
+      "location_argument": "8",
+      "location_source": "call-argument-2",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3202",
+      "wrapper": "dbcl_DelAllTaglist",
+      "caller": "DbReqAllDelTaglist",
+      "caller_address": "0x00216504",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 4258,
+      "location_argument": "6",
+      "location_source": "wrapper-fixed",
+      "literal_location": 6
+    },
+    {
+      "request_kind": "3303",
+      "wrapper": "dbcl_GetBrowseType",
+      "caller": "GetBrowseKind",
+      "caller_address": "0x001690b4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 6323,
+      "location_argument": "2",
+      "location_source": "wrapper-fixed",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "3303",
+      "wrapper": "dbcl_GetBrowseType",
+      "caller": "GetLeftPrepareList",
+      "caller_address": "0x0016c46c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 8578,
+      "location_argument": "2",
+      "location_source": "wrapper-fixed",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "3303",
+      "wrapper": "dbcl_GetBrowseType",
+      "caller": "GetLeftPrepareList",
+      "caller_address": "0x0016c46c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 8623,
+      "location_argument": "2",
+      "location_source": "wrapper-fixed",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "3303",
+      "wrapper": "dbcl_GetBrowseType",
+      "caller": "GetRightPrepareList",
+      "caller_address": "0x0016c948",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 8858,
+      "location_argument": "2",
+      "location_source": "wrapper-fixed",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "3303",
+      "wrapper": "dbcl_GetBrowseType",
+      "caller": "ExecInfoJumpPrepare",
+      "caller_address": "0x0020b810",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 10263,
+      "location_argument": "2",
+      "location_source": "wrapper-fixed",
+      "literal_location": 2
+    },
+    {
+      "request_kind": "3401",
+      "wrapper": "dbcl_DelTrackHistory",
+      "caller": "SelectRightMenu",
+      "caller_address": "0x001fe73c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 10311,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3402",
+      "wrapper": "dbcl_CheckIsDBTrackExist",
+      "caller": "GetTaglistMenuList",
+      "caller_address": "0x001fc1ec",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 8455,
+      "location_argument": "6",
+      "location_source": "wrapper-fixed",
+      "literal_location": 6
+    },
+    {
+      "request_kind": "3503",
+      "wrapper": "dbcl_SetUnplayable",
+      "caller": "SetUnPlayable",
+      "caller_address": "0x001fa87c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 7212,
+      "location_argument": "8",
+      "location_source": "call-argument-2",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3603",
+      "wrapper": "dbcl_GetDBHierachy",
+      "caller": "GetOffsetInCate",
+      "caller_address": "0x0020b674",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 10129,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3603",
+      "wrapper": "dbcl_GetDBHierachy",
+      "caller": "ReloadCateBrws",
+      "caller_address": "0x00214c8c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0021.c",
+      "line": 3281,
+      "location_argument": "7",
+      "location_source": "call-argument-2",
+      "literal_location": 7
+    },
+    {
+      "request_kind": "3903",
+      "wrapper": "dbcl_GetPropTbl",
+      "caller": "UpDateDevProperty",
+      "caller_address": "0x0016a4dc",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 7191,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3903",
+      "wrapper": "dbcl_GetPropTbl",
+      "caller": "UpDateDevProperty_BroadCast",
+      "caller_address": "0x0016a578",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 7248,
+      "location_argument": "8",
+      "location_source": "wrapper-fixed",
+      "literal_location": 8
+    },
+    {
+      "request_kind": "3A03",
+      "wrapper": "dbcl_TransNewKeyID",
+      "caller": "ExecInformationJump",
+      "caller_address": "0x0020c60c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0020.c",
+      "line": 11065,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3B03",
+      "wrapper": "dbcl_GetTrackPlayState",
+      "caller": "SendBrowseMenu",
+      "caller_address": "0x001fd1d4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 9284,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3C03",
+      "wrapper": "dbcl_UpdateMySettingFileExist",
+      "caller": "ReqUpdate_MySettingFileExist",
+      "caller_address": "0x0016a734",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 7320,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3D03",
+      "wrapper": "dbcl_GetNewKeyID",
+      "caller": "UpdateTrafficLightKeySet.part.0",
+      "caller_address": "0x00179e70",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0017.c",
+      "line": 6812,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3E03",
+      "wrapper": "dbcl_GetIsRekordboxMobile",
+      "caller": "DBC_NfsAnalysisStart",
+      "caller_address": "0x0016932c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_0016.c",
+      "line": 6494,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3F03",
+      "wrapper": "dbcl_SetBackGroundColor",
+      "caller": "SendBrowseMenu",
+      "caller_address": "0x001fd1d4",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 9526,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    },
+    {
+      "request_kind": "3F03",
+      "wrapper": "dbcl_SetBackGroundColor",
+      "caller": "SelectRightMenu",
+      "caller_address": "0x001fe73c",
+      "source": "alphatheta-docs/devices/xdj-rr/application/assets/decompiled/_unattributed/chunk_001f.c",
+      "line": 10181,
+      "location_argument": "1",
+      "location_source": "wrapper-fixed",
+      "literal_location": 1
+    }
+  ]
+}

@@ -1,0 +1,886 @@
+{
+  "binary": {
+    "architecture": "x86_64",
+    "path": "/home/evan/workspace/rx3-research/artifacts/rekordbox/7.2.19/extracted/app-root/rekordbox.app/Contents/MacOS/rekordbox",
+    "sha256": "07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244"
+  },
+  "excluded_symbol_families": [
+    "djplay::DeviceDefs audio/HID/MIDI controller classification",
+    "removable-storage and database-device classification",
+    "rendering and audio-device type predicates"
+  ],
+  "format": "rekordbox-link-export-device-predicate-audit-v1",
+  "method": {
+    "branch_kinds": [
+      "direct rel32 call",
+      "direct rel32 jump"
+    ],
+    "instruction_validation": "linear disassembly from owning symbol",
+    "limits": [
+      "indirect calls",
+      "vtables",
+      "function pointers",
+      "inlined predicates",
+      "arm64-only behavior"
+    ]
+  },
+  "summary": {
+    "database_serving_reference_count": 5,
+    "direct_reference_count": 67,
+    "target_count": 23
+  },
+  "targets": [
+    {
+      "address": "0x1003dd5f0",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 1,
+      "direct_references": [
+        {
+          "address": "0x1003dae87",
+          "branch": "call",
+          "owner_address": "0x1003dad50",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN12InnerLinkAPI8linkProcEv"
+          ]
+        }
+      ],
+      "group": "identity-ingress",
+      "id": "receive-link-member-inner",
+      "relevance": "Parses the link-member payload before notifying ProDJLink.",
+      "symbol": "__ZN12InnerLinkAPI17receiveLinkMemberEjPKv"
+    },
+    {
+      "address": "0x1003df6d0",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 1,
+      "direct_references": [
+        {
+          "address": "0x1003db68c",
+          "branch": "call",
+          "owner_address": "0x1003dad50",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN12InnerLinkAPI8linkProcEv"
+          ]
+        }
+      ],
+      "group": "identity-ingress",
+      "id": "detect-link-device-inner",
+      "relevance": "Notifies the application that a link device is available.",
+      "symbol": "__ZN12InnerLinkAPI16detectLinkDeviceEh"
+    },
+    {
+      "address": "0x100ca8180",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 0,
+      "direct_references": [],
+      "group": "identity-ingress",
+      "id": "receive-link-member",
+      "relevance": "Carries the decoded device type into LinkDeviceManager.",
+      "symbol": "__ZN9prodjlink9ProDJLink17receiveLinkMemberEjN13PSvLinkCommon17PSvLinkDeviceTypeEb"
+    },
+    {
+      "address": "0x1020581b0",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 2,
+      "direct_references": [
+        {
+          "address": "0x100ca81f6",
+          "branch": "call",
+          "owner_address": "0x100ca8180",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN9prodjlink9ProDJLink17receiveLinkMemberEjN13PSvLinkCommon17PSvLinkDeviceTypeEb"
+          ]
+        },
+        {
+          "address": "0x1020586c6",
+          "branch": "call",
+          "owner_address": "0x102058640",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN9prodjlink17LinkDeviceManager21addNotFoundLinkDeviceEj"
+          ]
+        }
+      ],
+      "group": "identity-ingress",
+      "id": "add-link-device",
+      "relevance": "Stores device type and presence state for a discovered peer.",
+      "symbol": "__ZN9prodjlink17LinkDeviceManager13addLinkDeviceEjN13PSvLinkCommon17PSvLinkDeviceTypeEbNS1_13PSvLinkTimeSCEPKhS5_S5_"
+    },
+    {
+      "address": "0x1003e1110",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 0,
+      "direct_references": [],
+      "group": "identity-accessor",
+      "id": "get-member-info-inner",
+      "relevance": "Network-layer member timing and flag accessor.",
+      "symbol": "__ZN12InnerLinkAPI13getMemberInfoEjRN13PSvLinkCommon13PSvLinkTimeSCEPhS3_"
+    },
+    {
+      "address": "0x100e39700",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 1,
+      "direct_references": [
+        {
+          "address": "0x100ca81cd",
+          "branch": "call",
+          "owner_address": "0x100ca8180",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN9prodjlink9ProDJLink17receiveLinkMemberEjN13PSvLinkCommon17PSvLinkDeviceTypeEb"
+          ]
+        }
+      ],
+      "group": "identity-accessor",
+      "id": "get-member-info-proxy",
+      "relevance": "Proxy member-state accessor used during link-member receipt.",
+      "symbol": "__ZN9prodjlink9LinkProxy13getMemberInfoEjRN13PSvLinkCommon13PSvLinkTimeSCEPhS4_"
+    },
+    {
+      "address": "0x1003dcd70",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 0,
+      "direct_references": [],
+      "group": "model-accessor",
+      "id": "get-model-name-inner",
+      "relevance": "Network-layer model-name accessor.",
+      "symbol": "__ZN12InnerLinkAPI12getModelNameEj"
+    },
+    {
+      "address": "0x1003dcdb0",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 0,
+      "direct_references": [],
+      "group": "model-accessor",
+      "id": "get-model-name-inner-buffer",
+      "relevance": "Network-layer buffer model-name accessor.",
+      "symbol": "__ZN12InnerLinkAPI12getModelNameEjPcj"
+    },
+    {
+      "address": "0x101db4dd0",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 1,
+      "direct_references": [
+        {
+          "address": "0x1003dcd85",
+          "branch": "jmp",
+          "owner_address": "0x1003dcd70",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN12InnerLinkAPI12getModelNameEj"
+          ]
+        }
+      ],
+      "group": "model-accessor",
+      "id": "get-model-name-network",
+      "relevance": "Link-network model-name wrapper.",
+      "symbol": "__ZN20PSvLinkNetworkAccess12getModelNameEj"
+    },
+    {
+      "address": "0x101db4a40",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 1,
+      "direct_references": [
+        {
+          "address": "0x1003dcdf2",
+          "branch": "jmp",
+          "owner_address": "0x1003dcdb0",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN12InnerLinkAPI12getModelNameEjPcj"
+          ]
+        }
+      ],
+      "group": "model-accessor",
+      "id": "get-model-name-network-buffer",
+      "relevance": "Link-network buffer model-name wrapper.",
+      "symbol": "__ZN20PSvLinkNetworkAccess12getModelNameEjPcj"
+    },
+    {
+      "address": "0x100b76280",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 1,
+      "direct_references": [
+        {
+          "address": "0x101db4dd9",
+          "branch": "jmp",
+          "owner_address": "0x101db4dd0",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN20PSvLinkNetworkAccess12getModelNameEj"
+          ]
+        }
+      ],
+      "group": "model-accessor",
+      "id": "get-model-name-interval",
+      "relevance": "Keepalive-state model-name accessor.",
+      "symbol": "__ZN21PSvLinkNormalInterval12getModelNameEj"
+    },
+    {
+      "address": "0x100b76310",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 3,
+      "direct_references": [
+        {
+          "address": "0x101db4925",
+          "branch": "call",
+          "owner_address": "0x101db48d0",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN20PSvLinkNetworkAccess13instPlayMusicEhjPKhjjN13PSvLinkCommon23PSvLinkDragDropPlayModeERKNS2_16LNK_CATEGORYPACKE"
+          ]
+        },
+        {
+          "address": "0x101db4a49",
+          "branch": "jmp",
+          "owner_address": "0x101db4a40",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN20PSvLinkNetworkAccess12getModelNameEjPcj"
+          ]
+        },
+        {
+          "address": "0x101db4a9f",
+          "branch": "call",
+          "owner_address": "0x101db4a50",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN20PSvLinkNetworkAccess17instPlayMusicHCBLEhjPKhj"
+          ]
+        }
+      ],
+      "group": "model-accessor",
+      "id": "get-model-name-interval-buffer",
+      "relevance": "Keepalive-state buffer model-name accessor.",
+      "symbol": "__ZN21PSvLinkNormalInterval12getModelNameEjPcj"
+    },
+    {
+      "address": "0x100ca9500",
+      "database_serving_reference_count": 2,
+      "direct_reference_count": 4,
+      "direct_references": [
+        {
+          "address": "0x1017b21a4",
+          "branch": "call",
+          "owner_address": "0x1017b1b40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink19handleCommonMessageEPN6common13CommonMessageE"
+          ]
+        },
+        {
+          "address": "0x102270a19",
+          "branch": "call",
+          "owner_address": "0x10226f550",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink17handleSwitchEventENS_10eMessageIDENS_9eSwitchIDENS_10eOperateIDEi"
+          ]
+        },
+        {
+          "address": "0x102521f3c",
+          "branch": "call",
+          "owner_address": "0x102521e80",
+          "owner_scope": "database-serving",
+          "owner_symbols": [
+            "__ZN9PSvDBMain5isAIOEh"
+          ]
+        },
+        {
+          "address": "0x102521f86",
+          "branch": "call",
+          "owner_address": "0x102521e80",
+          "owner_scope": "database-serving",
+          "owner_symbols": [
+            "__ZN9PSvDBMain5isAIOEh"
+          ]
+        }
+      ],
+      "group": "model-accessor",
+      "id": "get-model-name",
+      "relevance": "Application-facing model-name accessor.",
+      "symbol": "__ZN9prodjlink9ProDJLink12getModelNameEi"
+    },
+    {
+      "address": "0x100ca93f0",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 2,
+      "direct_references": [
+        {
+          "address": "0x1017b6581",
+          "branch": "call",
+          "owner_address": "0x1017b5f30",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink7performERKN4juce24ApplicationCommandTarget14InvocationInfoE"
+          ]
+        },
+        {
+          "address": "0x1017b660e",
+          "branch": "call",
+          "owner_address": "0x1017b5f30",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink7performERKN4juce24ApplicationCommandTarget14InvocationInfoE"
+          ]
+        }
+      ],
+      "group": "model-accessor",
+      "id": "get-model-names",
+      "relevance": "Enumerates model names for application UI.",
+      "symbol": "__ZN9prodjlink9ProDJLink13getModelNamesERN4juce11StringArrayE"
+    },
+    {
+      "address": "0x100ca9380",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 35,
+      "direct_references": [
+        {
+          "address": "0x1005ca6b5",
+          "branch": "call",
+          "owner_address": "0x1005ca560",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay15WidgetProDJLink14displayDevicesEv"
+          ]
+        },
+        {
+          "address": "0x1005ca6d6",
+          "branch": "call",
+          "owner_address": "0x1005ca560",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay15WidgetProDJLink14displayDevicesEv"
+          ]
+        },
+        {
+          "address": "0x1005ca6f7",
+          "branch": "call",
+          "owner_address": "0x1005ca560",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay15WidgetProDJLink14displayDevicesEv"
+          ]
+        },
+        {
+          "address": "0x1005ca718",
+          "branch": "call",
+          "owner_address": "0x1005ca560",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay15WidgetProDJLink14displayDevicesEv"
+          ]
+        },
+        {
+          "address": "0x1005cab5a",
+          "branch": "call",
+          "owner_address": "0x1005ca560",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay15WidgetProDJLink14displayDevicesEv"
+          ]
+        },
+        {
+          "address": "0x1005cab7b",
+          "branch": "call",
+          "owner_address": "0x1005ca560",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay15WidgetProDJLink14displayDevicesEv"
+          ]
+        },
+        {
+          "address": "0x100cb2307",
+          "branch": "call",
+          "owner_address": "0x100cb22c0",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay15WidgetLinkMixer10setVisibleEb"
+          ]
+        },
+        {
+          "address": "0x100cb232b",
+          "branch": "call",
+          "owner_address": "0x100cb22c0",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay15WidgetLinkMixer10setVisibleEb"
+          ]
+        },
+        {
+          "address": "0x100cb234c",
+          "branch": "call",
+          "owner_address": "0x100cb22c0",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay15WidgetLinkMixer10setVisibleEb"
+          ]
+        },
+        {
+          "address": "0x100cb2390",
+          "branch": "call",
+          "owner_address": "0x100cb22c0",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay15WidgetLinkMixer10setVisibleEb"
+          ]
+        },
+        {
+          "address": "0x1014a5461",
+          "branch": "call",
+          "owner_address": "0x1014a5330",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN23DJSystemRemoteComponent6updateEv"
+          ]
+        },
+        {
+          "address": "0x1014a547c",
+          "branch": "call",
+          "owner_address": "0x1014a5330",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN23DJSystemRemoteComponent6updateEv"
+          ]
+        },
+        {
+          "address": "0x1014a5494",
+          "branch": "call",
+          "owner_address": "0x1014a5330",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN23DJSystemRemoteComponent6updateEv"
+          ]
+        },
+        {
+          "address": "0x1014a54ac",
+          "branch": "call",
+          "owner_address": "0x1014a5330",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN23DJSystemRemoteComponent6updateEv"
+          ]
+        },
+        {
+          "address": "0x1014a551e",
+          "branch": "call",
+          "owner_address": "0x1014a5330",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN23DJSystemRemoteComponent6updateEv"
+          ]
+        },
+        {
+          "address": "0x1014a5580",
+          "branch": "call",
+          "owner_address": "0x1014a5330",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN23DJSystemRemoteComponent6updateEv"
+          ]
+        },
+        {
+          "address": "0x1014df024",
+          "branch": "call",
+          "owner_address": "0x1014defe0",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay16WidgetLinkPlayer7resizedEv"
+          ]
+        },
+        {
+          "address": "0x1014df048",
+          "branch": "call",
+          "owner_address": "0x1014defe0",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay16WidgetLinkPlayer7resizedEv"
+          ]
+        },
+        {
+          "address": "0x1014df069",
+          "branch": "call",
+          "owner_address": "0x1014defe0",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay16WidgetLinkPlayer7resizedEv"
+          ]
+        },
+        {
+          "address": "0x1014df08a",
+          "branch": "call",
+          "owner_address": "0x1014defe0",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay16WidgetLinkPlayer7resizedEv"
+          ]
+        },
+        {
+          "address": "0x1017b265b",
+          "branch": "call",
+          "owner_address": "0x1017b1b40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink19handleCommonMessageEPN6common13CommonMessageE"
+          ]
+        },
+        {
+          "address": "0x1017b267c",
+          "branch": "call",
+          "owner_address": "0x1017b1b40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink19handleCommonMessageEPN6common13CommonMessageE"
+          ]
+        },
+        {
+          "address": "0x101d0bcd3",
+          "branch": "call",
+          "owner_address": "0x101d0bb40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay23RemoteSettingController9updateAllEv"
+          ]
+        },
+        {
+          "address": "0x101d0bd2d",
+          "branch": "call",
+          "owner_address": "0x101d0bb40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay23RemoteSettingController9updateAllEv"
+          ]
+        },
+        {
+          "address": "0x101d0bd80",
+          "branch": "call",
+          "owner_address": "0x101d0bb40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay23RemoteSettingController9updateAllEv"
+          ]
+        },
+        {
+          "address": "0x101d0bf3a",
+          "branch": "call",
+          "owner_address": "0x101d0bb40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay23RemoteSettingController9updateAllEv"
+          ]
+        },
+        {
+          "address": "0x101d0bf4f",
+          "branch": "call",
+          "owner_address": "0x101d0bb40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay23RemoteSettingController9updateAllEv"
+          ]
+        },
+        {
+          "address": "0x101d0bf64",
+          "branch": "call",
+          "owner_address": "0x101d0bb40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay23RemoteSettingController9updateAllEv"
+          ]
+        },
+        {
+          "address": "0x101d0bf79",
+          "branch": "call",
+          "owner_address": "0x101d0bb40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay23RemoteSettingController9updateAllEv"
+          ]
+        },
+        {
+          "address": "0x101d0c030",
+          "branch": "call",
+          "owner_address": "0x101d0bb40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay23RemoteSettingController9updateAllEv"
+          ]
+        },
+        {
+          "address": "0x101d0c170",
+          "branch": "call",
+          "owner_address": "0x101d0bb40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay23RemoteSettingController9updateAllEv"
+          ]
+        },
+        {
+          "address": "0x1022741e1",
+          "branch": "call",
+          "owner_address": "0x102274160",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink23convertLinkIDtoSwitchIDEi"
+          ]
+        },
+        {
+          "address": "0x102274251",
+          "branch": "call",
+          "owner_address": "0x102274160",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink23convertLinkIDtoSwitchIDEi"
+          ]
+        },
+        {
+          "address": "0x102274280",
+          "branch": "call",
+          "owner_address": "0x102274160",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink23convertLinkIDtoSwitchIDEi"
+          ]
+        },
+        {
+          "address": "0x1022742b6",
+          "branch": "call",
+          "owner_address": "0x102274160",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink23convertLinkIDtoSwitchIDEi"
+          ]
+        }
+      ],
+      "group": "model-predicate",
+      "id": "is-specific-model",
+      "relevance": "Compares one player's model name with a literal model.",
+      "symbol": "__ZN9prodjlink9ProDJLink15isSpecificModelEiPKc"
+    },
+    {
+      "address": "0x100ca72b0",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 5,
+      "direct_references": [
+        {
+          "address": "0x1017b23f8",
+          "branch": "call",
+          "owner_address": "0x1017b1b40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink19handleCommonMessageEPN6common13CommonMessageE"
+          ]
+        },
+        {
+          "address": "0x1017b2b80",
+          "branch": "call",
+          "owner_address": "0x1017b1b40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink19handleCommonMessageEPN6common13CommonMessageE"
+          ]
+        },
+        {
+          "address": "0x101d0bc5c",
+          "branch": "call",
+          "owner_address": "0x101d0bb40",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay23RemoteSettingController9updateAllEv"
+          ]
+        },
+        {
+          "address": "0x10227077a",
+          "branch": "call",
+          "owner_address": "0x10226f550",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink17handleSwitchEventENS_10eMessageIDENS_9eSwitchIDENS_10eOperateIDEi"
+          ]
+        },
+        {
+          "address": "0x1022707a0",
+          "branch": "call",
+          "owner_address": "0x10226f550",
+          "owner_scope": "application-ui",
+          "owner_symbols": [
+            "__ZN6djplay11UiProDJLink17handleSwitchEventENS_10eMessageIDENS_9eSwitchIDENS_10eOperateIDEi"
+          ]
+        }
+      ],
+      "group": "model-predicate",
+      "id": "is-cdj-network",
+      "relevance": "Reports whether the connected network has a CDJ-class peer.",
+      "symbol": "__ZN9prodjlink9ProDJLink12isCDJNetworkEv"
+    },
+    {
+      "address": "0x102521e80",
+      "database_serving_reference_count": 1,
+      "direct_reference_count": 1,
+      "direct_references": [
+        {
+          "address": "0x1016c0650",
+          "branch": "call",
+          "owner_address": "0x1016c01b0",
+          "owner_scope": "database-serving",
+          "owner_symbols": [
+            "__ZN14PSvAppSyncDBIF14getDispSongInfEhjj"
+          ]
+        }
+      ],
+      "group": "database-serving-predicate",
+      "id": "is-aio",
+      "relevance": "Caches an XDJ-prefix classification used by Display Song Info.",
+      "symbol": "__ZN9PSvDBMain5isAIOEh"
+    },
+    {
+      "address": "0x102520860",
+      "database_serving_reference_count": 1,
+      "direct_reference_count": 1,
+      "direct_references": [
+        {
+          "address": "0x102520838",
+          "branch": "call",
+          "owner_address": "0x102520820",
+          "owner_scope": "database-serving",
+          "owner_symbols": [
+            "__ZN9PSvDBMain10DisconnectEh"
+          ]
+        }
+      ],
+      "group": "database-serving-lifecycle",
+      "id": "clear-aio-map",
+      "relevance": "Clears a player's cached AIO classification on disconnect.",
+      "symbol": "__ZN9PSvDBMain11clearAIOMapEh"
+    },
+    {
+      "address": "0x102256b20",
+      "database_serving_reference_count": 1,
+      "direct_reference_count": 1,
+      "direct_references": [
+        {
+          "address": "0x100fa0252",
+          "branch": "call",
+          "owner_address": "0x100f9fe40",
+          "owner_scope": "database-serving",
+          "owner_symbols": [
+            "__ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt"
+          ]
+        }
+      ],
+      "group": "row-compatibility-predicate",
+      "id": "new-cdj-supported",
+      "relevance": "Computes per-track compatibility state consumed by track rows.",
+      "symbol": "__Z30DsqlContent_GetNewCDJSupportedj"
+    },
+    {
+      "address": "0x100b76530",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 2,
+      "direct_references": [
+        {
+          "address": "0x101db5733",
+          "branch": "call",
+          "owner_address": "0x101db5710",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN20PSvLinkNetworkAccess20unicastMysettingDataEhhPKhRKN16pioneerMySetting18MSDataChunkForLinkE"
+          ]
+        },
+        {
+          "address": "0x101db58f3",
+          "branch": "call",
+          "owner_address": "0x101db58d0",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN20PSvLinkNetworkAccess23unicastMysettingReadResEhhPKhRKN16pioneerMySetting18MSDataChunkForLinkEc"
+          ]
+        }
+      ],
+      "group": "device-setting-predicate",
+      "id": "support-my-setting",
+      "relevance": "Gates My Settings network messages.",
+      "symbol": "__ZN21PSvLinkNormalInterval18isSupportMysettingEh"
+    },
+    {
+      "address": "0x100b76580",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 2,
+      "direct_references": [
+        {
+          "address": "0x101db5747",
+          "branch": "call",
+          "owner_address": "0x101db5710",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN20PSvLinkNetworkAccess20unicastMysettingDataEhhPKhRKN16pioneerMySetting18MSDataChunkForLinkE"
+          ]
+        },
+        {
+          "address": "0x101db5907",
+          "branch": "call",
+          "owner_address": "0x101db58d0",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN20PSvLinkNetworkAccess23unicastMysettingReadResEhhPKhRKN16pioneerMySetting18MSDataChunkForLinkEc"
+          ]
+        }
+      ],
+      "group": "device-setting-predicate",
+      "id": "support-duplication-v2",
+      "relevance": "Gates My Settings duplication version 2.",
+      "symbol": "__ZN21PSvLinkNormalInterval22isSupportDuplicationv2Eh"
+    },
+    {
+      "address": "0x100b765d0",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 2,
+      "direct_references": [
+        {
+          "address": "0x101db6840",
+          "branch": "call",
+          "owner_address": "0x101db6820",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN20PSvLinkNetworkAccess24unicastDevsettingReadResEhhPKhRKN16cdjDeviceSetting11DSDataChunkEc"
+          ]
+        },
+        {
+          "address": "0x101db6a1a",
+          "branch": "call",
+          "owner_address": "0x101db6a00",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN20PSvLinkNetworkAccess22unicastDevsettingRenewEhhPKh"
+          ]
+        }
+      ],
+      "group": "device-setting-predicate",
+      "id": "support-device-setting",
+      "relevance": "Gates device-setting network messages.",
+      "symbol": "__ZN21PSvLinkNormalInterval22isSupportDeviceSettingEh"
+    },
+    {
+      "address": "0x10019bad0",
+      "database_serving_reference_count": 0,
+      "direct_reference_count": 1,
+      "direct_references": [
+        {
+          "address": "0x101db4999",
+          "branch": "call",
+          "owner_address": "0x101db48d0",
+          "owner_scope": "link-plumbing",
+          "owner_symbols": [
+            "__ZN20PSvLinkNetworkAccess13instPlayMusicEhjPKhjjN13PSvLinkCommon23PSvLinkDragDropPlayModeERKNS2_16LNK_CATEGORYPACKE"
+          ]
+        }
+      ],
+      "group": "drag-drop-output",
+      "id": "set-deck-aio",
+      "relevance": "Serializes the AIO deck form for drag-and-drop play.",
+      "symbol": "__ZN23PSvLinkDDIndicationInfo10setDeckAIOEj"
+    }
+  ]
+}

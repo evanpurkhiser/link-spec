@@ -1,0 +1,527 @@
+{
+  "name": "context-hot-cue-track-types",
+  "fixture_profile": "hot-cue-banks",
+  "fixture_version": 1,
+  "repeat_strategy": "reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "type-00--tree-root",
+      "description": "Track type 0x00: Hot Cue Bank root in folder-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--alpha-tracks",
+      "description": "Track type 0x00: populated Alpha Bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--empty-tracks",
+      "description": "Track type 0x00: empty bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--tree-root",
+      "description": "Track type 0x01: Hot Cue Bank root in folder-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--alpha-tracks",
+      "description": "Track type 0x01: populated Alpha Bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--empty-tracks",
+      "description": "Track type 0x01: empty bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--tree-root",
+      "description": "Track type 0x02: Hot Cue Bank root in folder-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--alpha-tracks",
+      "description": "Track type 0x02: populated Alpha Bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--empty-tracks",
+      "description": "Track type 0x02: empty bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--tree-root",
+      "description": "Track type 0x03: Hot Cue Bank root in folder-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--alpha-tracks",
+      "description": "Track type 0x03: populated Alpha Bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--empty-tracks",
+      "description": "Track type 0x03: empty bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--tree-root",
+      "description": "Track type 0x04: Hot Cue Bank root in folder-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--alpha-tracks",
+      "description": "Track type 0x04: populated Alpha Bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--empty-tracks",
+      "description": "Track type 0x04: empty bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--tree-root",
+      "description": "Track type 0x05: Hot Cue Bank root in folder-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--alpha-tracks",
+      "description": "Track type 0x05: populated Alpha Bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--empty-tracks",
+      "description": "Track type 0x05: empty bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--tree-root",
+      "description": "Track type 0x06: Hot Cue Bank root in folder-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--alpha-tracks",
+      "description": "Track type 0x06: populated Alpha Bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--empty-tracks",
+      "description": "Track type 0x06: empty bank in track-list mode",
+      "request_kind": "0x2001",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 8
+        }
+      ],
+      "render_context": "0x01010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "filename-formatting-and-sort-boundaries",
+  "fixture_profile": "filename-boundaries",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 7,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"sort-00-default","description":"Default FileNameL collation and exact primary rendering","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":0}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-01-title","description":"Title sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":1}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-02-artist","description":"Artist sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":2}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-03-album","description":"Album sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":3}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-04-bpm","description":"BPM sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":4}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-05-rating","description":"Rating sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":5}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-06-genre","description":"Genre sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":6}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-07-comment","description":"Comment sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":7}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-08-duration","description":"Duration sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":8}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-09-remixer","description":"Remixer sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":9}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-10-label","description":"Label sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":10}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-11-original-artist","description":"Original Artist sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":11}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-12-key","description":"Key sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":12}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-13-bitrate","description":"Bitrate sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":13}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-14-reserved","description":"Accepted sort ID without a persisted djmdSort row","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":14}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-15-color","description":"Color sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":15}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-16-play-count","description":"DJ Play Count sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":16}],"expect":{"outcome":"menu","total":20,"row_count":20}},
+    {"id":"sort-17-date-added","description":"Date Added sort with filename primary text","request_kind":"0x1013","arguments":[{"number":"$context"},{"number":17}],"expect":{"outcome":"menu","total":20,"row_count":20}}
+  ]
+}

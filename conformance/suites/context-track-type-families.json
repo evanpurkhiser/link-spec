@@ -1,0 +1,6953 @@
+{
+  "name": "context-track-type-families",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "type-00--root",
+      "description": "Track type 0x00: Configured root and capability mask",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$root_capabilities"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--tracks",
+      "description": "Track type 0x00: All live tracks, excluding deleted fixture",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--genres",
+      "description": "Track type 0x00: Referenced genres",
+      "request_kind": "0x1001",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--genre-artists",
+      "description": "Track type 0x00: Artists referenced under Fixture House",
+      "request_kind": "0x1101",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--genre-albums-all-artists",
+      "description": "Track type 0x00: Albums under Fixture House and ALL artists",
+      "request_kind": "0x1201",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--genre-tracks-all",
+      "description": "Track type 0x00: Tracks under Fixture House with wildcard artist and album",
+      "request_kind": "0x1301",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--artists",
+      "description": "Track type 0x00: Referenced primary artists only",
+      "request_kind": "0x1002",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--artist-albums",
+      "description": "Track type 0x00: Multiple albums cause an ALL row",
+      "request_kind": "0x1102",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--artist-tracks-all-albums",
+      "description": "Track type 0x00: Wildcard album returns every Alpha Artist track",
+      "request_kind": "0x1202",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--albums",
+      "description": "Track type 0x00: Referenced albums including concrete unknown album",
+      "request_kind": "0x1003",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--album-tracks",
+      "description": "Track type 0x00: Concrete album track numbers and ordering",
+      "request_kind": "0x1103",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--bpm",
+      "description": "Track type 0x00: Rounded and de-duplicated BPM roots",
+      "request_kind": "0x1006",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--bpm-distances",
+      "description": "Track type 0x00: BPM tolerance values zero through six",
+      "request_kind": "0x1106",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--bpm-tracks",
+      "description": "Track type 0x00: Exact BPM-range filter",
+      "request_kind": "0x1206",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--ratings",
+      "description": "Track type 0x00: All rating values zero through five",
+      "request_kind": "0x1007",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--rating-tracks",
+      "description": "Track type 0x00: Rating equality filter",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--decades",
+      "description": "Track type 0x00: Release-year decade grouping and boundaries",
+      "request_kind": "0x1008",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--years",
+      "description": "Track type 0x00: Concrete years plus ALL within the 2020s",
+      "request_kind": "0x1108",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--year-tracks-all",
+      "description": "Track type 0x00: ALL year selector within a decade",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--labels",
+      "description": "Track type 0x00: Referenced labels",
+      "request_kind": "0x100a",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--label-artists",
+      "description": "Track type 0x00: Label hierarchy inserts ALL for multiple artists",
+      "request_kind": "0x110a",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--label-albums",
+      "description": "Track type 0x00: Label/artist album hierarchy",
+      "request_kind": "0x120a",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--label-tracks",
+      "description": "Track type 0x00: Label wildcard artist and album filtering",
+      "request_kind": "0x130a",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--colors",
+      "description": "Track type 0x00: All eight configured colors are present",
+      "request_kind": "0x100d",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--color-tracks",
+      "description": "Track type 0x00: Color equality filter",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 8
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--times",
+      "description": "Track type 0x00: Minute buckets including 179 and excluding 180",
+      "request_kind": "0x1010",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--time-tracks",
+      "description": "Track type 0x00: Duration minute equality range",
+      "request_kind": "0x1110",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--bitrates",
+      "description": "Track type 0x00: Distinct bitrates including zero",
+      "request_kind": "0x1011",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--bitrate-tracks",
+      "description": "Track type 0x00: Zero bitrate is a real filter bucket",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--history",
+      "description": "Track type 0x00: Persisted history versus active Link history lifecycle",
+      "request_kind": "0x1012",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--filenames",
+      "description": "Track type 0x00: File-name primary text with ordinary track shape",
+      "request_kind": "0x1013",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--keys",
+      "description": "Track type 0x00: Normalized musical-key root",
+      "request_kind": "0x1014",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--key-distances",
+      "description": "Track type 0x00: Key-distance selector zero through two",
+      "request_kind": "0x1114",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--key-tracks",
+      "description": "Track type 0x00: Exact normalized key-distance filter",
+      "request_kind": "0x1214",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--matching-forward-reverse",
+      "description": "Track type 0x00: Both recommendation endpoints and ignored LikeRate",
+      "request_kind": "0x1017",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--hot-cue-bank",
+      "description": "Track type 0x00: Populated Hot Cue Bank dispatch behavior",
+      "request_kind": "0x1018",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--search",
+      "description": "Track type 0x00: Mixed entity/content/file-name search and UTF-16 length",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--original-artists",
+      "description": "Track type 0x00: Original Artist foreign-key root",
+      "request_kind": "0x1302",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--original-artist-albums",
+      "description": "Track type 0x00: Original Artist album hierarchy",
+      "request_kind": "0x1402",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--original-artist-tracks",
+      "description": "Track type 0x00: Original Artist concrete album tracks",
+      "request_kind": "0x1502",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--remixers",
+      "description": "Track type 0x00: Remixer foreign-key root",
+      "request_kind": "0x1602",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--remixer-albums",
+      "description": "Track type 0x00: Remixer album hierarchy",
+      "request_kind": "0x1702",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--remixer-tracks",
+      "description": "Track type 0x00: Remixer concrete album tracks",
+      "request_kind": "0x1802",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--playlist-root",
+      "description": "Track type 0x00: Folders precede playlists, with playlist rows ordered by Seq",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--playlist-folder",
+      "description": "Track type 0x00: Recursive folder child",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.folder"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--playlist-tracks",
+      "description": "Track type 0x00: Membership TrackNo controls default order",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.primary"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-00--empty-playlist",
+      "description": "Track type 0x00: Valid empty playlist returns zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010300"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.empty"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010300",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--root",
+      "description": "Track type 0x01: Configured root and capability mask",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$root_capabilities"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--tracks",
+      "description": "Track type 0x01: All live tracks, excluding deleted fixture",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--genres",
+      "description": "Track type 0x01: Referenced genres",
+      "request_kind": "0x1001",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--genre-artists",
+      "description": "Track type 0x01: Artists referenced under Fixture House",
+      "request_kind": "0x1101",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--genre-albums-all-artists",
+      "description": "Track type 0x01: Albums under Fixture House and ALL artists",
+      "request_kind": "0x1201",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--genre-tracks-all",
+      "description": "Track type 0x01: Tracks under Fixture House with wildcard artist and album",
+      "request_kind": "0x1301",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--artists",
+      "description": "Track type 0x01: Referenced primary artists only",
+      "request_kind": "0x1002",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--artist-albums",
+      "description": "Track type 0x01: Multiple albums cause an ALL row",
+      "request_kind": "0x1102",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--artist-tracks-all-albums",
+      "description": "Track type 0x01: Wildcard album returns every Alpha Artist track",
+      "request_kind": "0x1202",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--albums",
+      "description": "Track type 0x01: Referenced albums including concrete unknown album",
+      "request_kind": "0x1003",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--album-tracks",
+      "description": "Track type 0x01: Concrete album track numbers and ordering",
+      "request_kind": "0x1103",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--bpm",
+      "description": "Track type 0x01: Rounded and de-duplicated BPM roots",
+      "request_kind": "0x1006",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--bpm-distances",
+      "description": "Track type 0x01: BPM tolerance values zero through six",
+      "request_kind": "0x1106",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--bpm-tracks",
+      "description": "Track type 0x01: Exact BPM-range filter",
+      "request_kind": "0x1206",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--ratings",
+      "description": "Track type 0x01: All rating values zero through five",
+      "request_kind": "0x1007",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--rating-tracks",
+      "description": "Track type 0x01: Rating equality filter",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--decades",
+      "description": "Track type 0x01: Release-year decade grouping and boundaries",
+      "request_kind": "0x1008",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--years",
+      "description": "Track type 0x01: Concrete years plus ALL within the 2020s",
+      "request_kind": "0x1108",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--year-tracks-all",
+      "description": "Track type 0x01: ALL year selector within a decade",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--labels",
+      "description": "Track type 0x01: Referenced labels",
+      "request_kind": "0x100a",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--label-artists",
+      "description": "Track type 0x01: Label hierarchy inserts ALL for multiple artists",
+      "request_kind": "0x110a",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--label-albums",
+      "description": "Track type 0x01: Label/artist album hierarchy",
+      "request_kind": "0x120a",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--label-tracks",
+      "description": "Track type 0x01: Label wildcard artist and album filtering",
+      "request_kind": "0x130a",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--colors",
+      "description": "Track type 0x01: All eight configured colors are present",
+      "request_kind": "0x100d",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--color-tracks",
+      "description": "Track type 0x01: Color equality filter",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 8
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--times",
+      "description": "Track type 0x01: Minute buckets including 179 and excluding 180",
+      "request_kind": "0x1010",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--time-tracks",
+      "description": "Track type 0x01: Duration minute equality range",
+      "request_kind": "0x1110",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--bitrates",
+      "description": "Track type 0x01: Distinct bitrates including zero",
+      "request_kind": "0x1011",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--bitrate-tracks",
+      "description": "Track type 0x01: Zero bitrate is a real filter bucket",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--history",
+      "description": "Track type 0x01: Persisted history versus active Link history lifecycle",
+      "request_kind": "0x1012",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--filenames",
+      "description": "Track type 0x01: File-name primary text with ordinary track shape",
+      "request_kind": "0x1013",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--keys",
+      "description": "Track type 0x01: Normalized musical-key root",
+      "request_kind": "0x1014",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--key-distances",
+      "description": "Track type 0x01: Key-distance selector zero through two",
+      "request_kind": "0x1114",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--key-tracks",
+      "description": "Track type 0x01: Exact normalized key-distance filter",
+      "request_kind": "0x1214",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--matching-forward-reverse",
+      "description": "Track type 0x01: Both recommendation endpoints and ignored LikeRate",
+      "request_kind": "0x1017",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--hot-cue-bank",
+      "description": "Track type 0x01: Populated Hot Cue Bank dispatch behavior",
+      "request_kind": "0x1018",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--search",
+      "description": "Track type 0x01: Mixed entity/content/file-name search and UTF-16 length",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--original-artists",
+      "description": "Track type 0x01: Original Artist foreign-key root",
+      "request_kind": "0x1302",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--original-artist-albums",
+      "description": "Track type 0x01: Original Artist album hierarchy",
+      "request_kind": "0x1402",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--original-artist-tracks",
+      "description": "Track type 0x01: Original Artist concrete album tracks",
+      "request_kind": "0x1502",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--remixers",
+      "description": "Track type 0x01: Remixer foreign-key root",
+      "request_kind": "0x1602",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--remixer-albums",
+      "description": "Track type 0x01: Remixer album hierarchy",
+      "request_kind": "0x1702",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--remixer-tracks",
+      "description": "Track type 0x01: Remixer concrete album tracks",
+      "request_kind": "0x1802",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--playlist-root",
+      "description": "Track type 0x01: Folders precede playlists, with playlist rows ordered by Seq",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--playlist-folder",
+      "description": "Track type 0x01: Recursive folder child",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.folder"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--playlist-tracks",
+      "description": "Track type 0x01: Membership TrackNo controls default order",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.primary"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-01--empty-playlist",
+      "description": "Track type 0x01: Valid empty playlist returns zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010301"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.empty"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010301",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--root",
+      "description": "Track type 0x02: Configured root and capability mask",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$root_capabilities"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--tracks",
+      "description": "Track type 0x02: All live tracks, excluding deleted fixture",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--genres",
+      "description": "Track type 0x02: Referenced genres",
+      "request_kind": "0x1001",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--genre-artists",
+      "description": "Track type 0x02: Artists referenced under Fixture House",
+      "request_kind": "0x1101",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--genre-albums-all-artists",
+      "description": "Track type 0x02: Albums under Fixture House and ALL artists",
+      "request_kind": "0x1201",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--genre-tracks-all",
+      "description": "Track type 0x02: Tracks under Fixture House with wildcard artist and album",
+      "request_kind": "0x1301",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--artists",
+      "description": "Track type 0x02: Referenced primary artists only",
+      "request_kind": "0x1002",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--artist-albums",
+      "description": "Track type 0x02: Multiple albums cause an ALL row",
+      "request_kind": "0x1102",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--artist-tracks-all-albums",
+      "description": "Track type 0x02: Wildcard album returns every Alpha Artist track",
+      "request_kind": "0x1202",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--albums",
+      "description": "Track type 0x02: Referenced albums including concrete unknown album",
+      "request_kind": "0x1003",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--album-tracks",
+      "description": "Track type 0x02: Concrete album track numbers and ordering",
+      "request_kind": "0x1103",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--bpm",
+      "description": "Track type 0x02: Rounded and de-duplicated BPM roots",
+      "request_kind": "0x1006",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--bpm-distances",
+      "description": "Track type 0x02: BPM tolerance values zero through six",
+      "request_kind": "0x1106",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--bpm-tracks",
+      "description": "Track type 0x02: Exact BPM-range filter",
+      "request_kind": "0x1206",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--ratings",
+      "description": "Track type 0x02: All rating values zero through five",
+      "request_kind": "0x1007",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--rating-tracks",
+      "description": "Track type 0x02: Rating equality filter",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--decades",
+      "description": "Track type 0x02: Release-year decade grouping and boundaries",
+      "request_kind": "0x1008",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--years",
+      "description": "Track type 0x02: Concrete years plus ALL within the 2020s",
+      "request_kind": "0x1108",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--year-tracks-all",
+      "description": "Track type 0x02: ALL year selector within a decade",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--labels",
+      "description": "Track type 0x02: Referenced labels",
+      "request_kind": "0x100a",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--label-artists",
+      "description": "Track type 0x02: Label hierarchy inserts ALL for multiple artists",
+      "request_kind": "0x110a",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--label-albums",
+      "description": "Track type 0x02: Label/artist album hierarchy",
+      "request_kind": "0x120a",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--label-tracks",
+      "description": "Track type 0x02: Label wildcard artist and album filtering",
+      "request_kind": "0x130a",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--colors",
+      "description": "Track type 0x02: All eight configured colors are present",
+      "request_kind": "0x100d",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--color-tracks",
+      "description": "Track type 0x02: Color equality filter",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 8
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--times",
+      "description": "Track type 0x02: Minute buckets including 179 and excluding 180",
+      "request_kind": "0x1010",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--time-tracks",
+      "description": "Track type 0x02: Duration minute equality range",
+      "request_kind": "0x1110",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--bitrates",
+      "description": "Track type 0x02: Distinct bitrates including zero",
+      "request_kind": "0x1011",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--bitrate-tracks",
+      "description": "Track type 0x02: Zero bitrate is a real filter bucket",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--history",
+      "description": "Track type 0x02: Persisted history versus active Link history lifecycle",
+      "request_kind": "0x1012",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--filenames",
+      "description": "Track type 0x02: File-name primary text with ordinary track shape",
+      "request_kind": "0x1013",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--keys",
+      "description": "Track type 0x02: Normalized musical-key root",
+      "request_kind": "0x1014",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--key-distances",
+      "description": "Track type 0x02: Key-distance selector zero through two",
+      "request_kind": "0x1114",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--key-tracks",
+      "description": "Track type 0x02: Exact normalized key-distance filter",
+      "request_kind": "0x1214",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--matching-forward-reverse",
+      "description": "Track type 0x02: Both recommendation endpoints and ignored LikeRate",
+      "request_kind": "0x1017",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--hot-cue-bank",
+      "description": "Track type 0x02: Populated Hot Cue Bank dispatch behavior",
+      "request_kind": "0x1018",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--search",
+      "description": "Track type 0x02: Mixed entity/content/file-name search and UTF-16 length",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--original-artists",
+      "description": "Track type 0x02: Original Artist foreign-key root",
+      "request_kind": "0x1302",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--original-artist-albums",
+      "description": "Track type 0x02: Original Artist album hierarchy",
+      "request_kind": "0x1402",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--original-artist-tracks",
+      "description": "Track type 0x02: Original Artist concrete album tracks",
+      "request_kind": "0x1502",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--remixers",
+      "description": "Track type 0x02: Remixer foreign-key root",
+      "request_kind": "0x1602",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--remixer-albums",
+      "description": "Track type 0x02: Remixer album hierarchy",
+      "request_kind": "0x1702",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--remixer-tracks",
+      "description": "Track type 0x02: Remixer concrete album tracks",
+      "request_kind": "0x1802",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--playlist-root",
+      "description": "Track type 0x02: Folders precede playlists, with playlist rows ordered by Seq",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--playlist-folder",
+      "description": "Track type 0x02: Recursive folder child",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.folder"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--playlist-tracks",
+      "description": "Track type 0x02: Membership TrackNo controls default order",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.primary"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-02--empty-playlist",
+      "description": "Track type 0x02: Valid empty playlist returns zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010302"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.empty"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010302",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--root",
+      "description": "Track type 0x03: Configured root and capability mask",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$root_capabilities"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--tracks",
+      "description": "Track type 0x03: All live tracks, excluding deleted fixture",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--genres",
+      "description": "Track type 0x03: Referenced genres",
+      "request_kind": "0x1001",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--genre-artists",
+      "description": "Track type 0x03: Artists referenced under Fixture House",
+      "request_kind": "0x1101",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--genre-albums-all-artists",
+      "description": "Track type 0x03: Albums under Fixture House and ALL artists",
+      "request_kind": "0x1201",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--genre-tracks-all",
+      "description": "Track type 0x03: Tracks under Fixture House with wildcard artist and album",
+      "request_kind": "0x1301",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--artists",
+      "description": "Track type 0x03: Referenced primary artists only",
+      "request_kind": "0x1002",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--artist-albums",
+      "description": "Track type 0x03: Multiple albums cause an ALL row",
+      "request_kind": "0x1102",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--artist-tracks-all-albums",
+      "description": "Track type 0x03: Wildcard album returns every Alpha Artist track",
+      "request_kind": "0x1202",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--albums",
+      "description": "Track type 0x03: Referenced albums including concrete unknown album",
+      "request_kind": "0x1003",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--album-tracks",
+      "description": "Track type 0x03: Concrete album track numbers and ordering",
+      "request_kind": "0x1103",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--bpm",
+      "description": "Track type 0x03: Rounded and de-duplicated BPM roots",
+      "request_kind": "0x1006",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--bpm-distances",
+      "description": "Track type 0x03: BPM tolerance values zero through six",
+      "request_kind": "0x1106",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--bpm-tracks",
+      "description": "Track type 0x03: Exact BPM-range filter",
+      "request_kind": "0x1206",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--ratings",
+      "description": "Track type 0x03: All rating values zero through five",
+      "request_kind": "0x1007",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--rating-tracks",
+      "description": "Track type 0x03: Rating equality filter",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--decades",
+      "description": "Track type 0x03: Release-year decade grouping and boundaries",
+      "request_kind": "0x1008",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--years",
+      "description": "Track type 0x03: Concrete years plus ALL within the 2020s",
+      "request_kind": "0x1108",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--year-tracks-all",
+      "description": "Track type 0x03: ALL year selector within a decade",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--labels",
+      "description": "Track type 0x03: Referenced labels",
+      "request_kind": "0x100a",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--label-artists",
+      "description": "Track type 0x03: Label hierarchy inserts ALL for multiple artists",
+      "request_kind": "0x110a",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--label-albums",
+      "description": "Track type 0x03: Label/artist album hierarchy",
+      "request_kind": "0x120a",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--label-tracks",
+      "description": "Track type 0x03: Label wildcard artist and album filtering",
+      "request_kind": "0x130a",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--colors",
+      "description": "Track type 0x03: All eight configured colors are present",
+      "request_kind": "0x100d",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--color-tracks",
+      "description": "Track type 0x03: Color equality filter",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 8
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--times",
+      "description": "Track type 0x03: Minute buckets including 179 and excluding 180",
+      "request_kind": "0x1010",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--time-tracks",
+      "description": "Track type 0x03: Duration minute equality range",
+      "request_kind": "0x1110",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--bitrates",
+      "description": "Track type 0x03: Distinct bitrates including zero",
+      "request_kind": "0x1011",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--bitrate-tracks",
+      "description": "Track type 0x03: Zero bitrate is a real filter bucket",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--history",
+      "description": "Track type 0x03: Persisted history versus active Link history lifecycle",
+      "request_kind": "0x1012",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--filenames",
+      "description": "Track type 0x03: File-name primary text with ordinary track shape",
+      "request_kind": "0x1013",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--keys",
+      "description": "Track type 0x03: Normalized musical-key root",
+      "request_kind": "0x1014",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--key-distances",
+      "description": "Track type 0x03: Key-distance selector zero through two",
+      "request_kind": "0x1114",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--key-tracks",
+      "description": "Track type 0x03: Exact normalized key-distance filter",
+      "request_kind": "0x1214",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--matching-forward-reverse",
+      "description": "Track type 0x03: Both recommendation endpoints and ignored LikeRate",
+      "request_kind": "0x1017",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--hot-cue-bank",
+      "description": "Track type 0x03: Populated Hot Cue Bank dispatch behavior",
+      "request_kind": "0x1018",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--search",
+      "description": "Track type 0x03: Mixed entity/content/file-name search and UTF-16 length",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--original-artists",
+      "description": "Track type 0x03: Original Artist foreign-key root",
+      "request_kind": "0x1302",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--original-artist-albums",
+      "description": "Track type 0x03: Original Artist album hierarchy",
+      "request_kind": "0x1402",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--original-artist-tracks",
+      "description": "Track type 0x03: Original Artist concrete album tracks",
+      "request_kind": "0x1502",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--remixers",
+      "description": "Track type 0x03: Remixer foreign-key root",
+      "request_kind": "0x1602",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--remixer-albums",
+      "description": "Track type 0x03: Remixer album hierarchy",
+      "request_kind": "0x1702",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--remixer-tracks",
+      "description": "Track type 0x03: Remixer concrete album tracks",
+      "request_kind": "0x1802",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--playlist-root",
+      "description": "Track type 0x03: Folders precede playlists, with playlist rows ordered by Seq",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--playlist-folder",
+      "description": "Track type 0x03: Recursive folder child",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.folder"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--playlist-tracks",
+      "description": "Track type 0x03: Membership TrackNo controls default order",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.primary"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-03--empty-playlist",
+      "description": "Track type 0x03: Valid empty playlist returns zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010303"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.empty"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010303",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--root",
+      "description": "Track type 0x04: Configured root and capability mask",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$root_capabilities"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--tracks",
+      "description": "Track type 0x04: All live tracks, excluding deleted fixture",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--genres",
+      "description": "Track type 0x04: Referenced genres",
+      "request_kind": "0x1001",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--genre-artists",
+      "description": "Track type 0x04: Artists referenced under Fixture House",
+      "request_kind": "0x1101",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--genre-albums-all-artists",
+      "description": "Track type 0x04: Albums under Fixture House and ALL artists",
+      "request_kind": "0x1201",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--genre-tracks-all",
+      "description": "Track type 0x04: Tracks under Fixture House with wildcard artist and album",
+      "request_kind": "0x1301",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--artists",
+      "description": "Track type 0x04: Referenced primary artists only",
+      "request_kind": "0x1002",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--artist-albums",
+      "description": "Track type 0x04: Multiple albums cause an ALL row",
+      "request_kind": "0x1102",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--artist-tracks-all-albums",
+      "description": "Track type 0x04: Wildcard album returns every Alpha Artist track",
+      "request_kind": "0x1202",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--albums",
+      "description": "Track type 0x04: Referenced albums including concrete unknown album",
+      "request_kind": "0x1003",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--album-tracks",
+      "description": "Track type 0x04: Concrete album track numbers and ordering",
+      "request_kind": "0x1103",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--bpm",
+      "description": "Track type 0x04: Rounded and de-duplicated BPM roots",
+      "request_kind": "0x1006",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--bpm-distances",
+      "description": "Track type 0x04: BPM tolerance values zero through six",
+      "request_kind": "0x1106",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--bpm-tracks",
+      "description": "Track type 0x04: Exact BPM-range filter",
+      "request_kind": "0x1206",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--ratings",
+      "description": "Track type 0x04: All rating values zero through five",
+      "request_kind": "0x1007",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--rating-tracks",
+      "description": "Track type 0x04: Rating equality filter",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--decades",
+      "description": "Track type 0x04: Release-year decade grouping and boundaries",
+      "request_kind": "0x1008",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--years",
+      "description": "Track type 0x04: Concrete years plus ALL within the 2020s",
+      "request_kind": "0x1108",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--year-tracks-all",
+      "description": "Track type 0x04: ALL year selector within a decade",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--labels",
+      "description": "Track type 0x04: Referenced labels",
+      "request_kind": "0x100a",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--label-artists",
+      "description": "Track type 0x04: Label hierarchy inserts ALL for multiple artists",
+      "request_kind": "0x110a",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--label-albums",
+      "description": "Track type 0x04: Label/artist album hierarchy",
+      "request_kind": "0x120a",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--label-tracks",
+      "description": "Track type 0x04: Label wildcard artist and album filtering",
+      "request_kind": "0x130a",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--colors",
+      "description": "Track type 0x04: All eight configured colors are present",
+      "request_kind": "0x100d",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--color-tracks",
+      "description": "Track type 0x04: Color equality filter",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 8
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--times",
+      "description": "Track type 0x04: Minute buckets including 179 and excluding 180",
+      "request_kind": "0x1010",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--time-tracks",
+      "description": "Track type 0x04: Duration minute equality range",
+      "request_kind": "0x1110",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--bitrates",
+      "description": "Track type 0x04: Distinct bitrates including zero",
+      "request_kind": "0x1011",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--bitrate-tracks",
+      "description": "Track type 0x04: Zero bitrate is a real filter bucket",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--history",
+      "description": "Track type 0x04: Persisted history versus active Link history lifecycle",
+      "request_kind": "0x1012",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--filenames",
+      "description": "Track type 0x04: File-name primary text with ordinary track shape",
+      "request_kind": "0x1013",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--keys",
+      "description": "Track type 0x04: Normalized musical-key root",
+      "request_kind": "0x1014",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--key-distances",
+      "description": "Track type 0x04: Key-distance selector zero through two",
+      "request_kind": "0x1114",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--key-tracks",
+      "description": "Track type 0x04: Exact normalized key-distance filter",
+      "request_kind": "0x1214",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--matching-forward-reverse",
+      "description": "Track type 0x04: Both recommendation endpoints and ignored LikeRate",
+      "request_kind": "0x1017",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--hot-cue-bank",
+      "description": "Track type 0x04: Populated Hot Cue Bank dispatch behavior",
+      "request_kind": "0x1018",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--search",
+      "description": "Track type 0x04: Mixed entity/content/file-name search and UTF-16 length",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--original-artists",
+      "description": "Track type 0x04: Original Artist foreign-key root",
+      "request_kind": "0x1302",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--original-artist-albums",
+      "description": "Track type 0x04: Original Artist album hierarchy",
+      "request_kind": "0x1402",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--original-artist-tracks",
+      "description": "Track type 0x04: Original Artist concrete album tracks",
+      "request_kind": "0x1502",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--remixers",
+      "description": "Track type 0x04: Remixer foreign-key root",
+      "request_kind": "0x1602",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--remixer-albums",
+      "description": "Track type 0x04: Remixer album hierarchy",
+      "request_kind": "0x1702",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--remixer-tracks",
+      "description": "Track type 0x04: Remixer concrete album tracks",
+      "request_kind": "0x1802",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--playlist-root",
+      "description": "Track type 0x04: Folders precede playlists, with playlist rows ordered by Seq",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--playlist-folder",
+      "description": "Track type 0x04: Recursive folder child",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.folder"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--playlist-tracks",
+      "description": "Track type 0x04: Membership TrackNo controls default order",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.primary"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-04--empty-playlist",
+      "description": "Track type 0x04: Valid empty playlist returns zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010304"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.empty"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010304",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--root",
+      "description": "Track type 0x05: Configured root and capability mask",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$root_capabilities"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--tracks",
+      "description": "Track type 0x05: All live tracks, excluding deleted fixture",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--genres",
+      "description": "Track type 0x05: Referenced genres",
+      "request_kind": "0x1001",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--genre-artists",
+      "description": "Track type 0x05: Artists referenced under Fixture House",
+      "request_kind": "0x1101",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--genre-albums-all-artists",
+      "description": "Track type 0x05: Albums under Fixture House and ALL artists",
+      "request_kind": "0x1201",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--genre-tracks-all",
+      "description": "Track type 0x05: Tracks under Fixture House with wildcard artist and album",
+      "request_kind": "0x1301",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--artists",
+      "description": "Track type 0x05: Referenced primary artists only",
+      "request_kind": "0x1002",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--artist-albums",
+      "description": "Track type 0x05: Multiple albums cause an ALL row",
+      "request_kind": "0x1102",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--artist-tracks-all-albums",
+      "description": "Track type 0x05: Wildcard album returns every Alpha Artist track",
+      "request_kind": "0x1202",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--albums",
+      "description": "Track type 0x05: Referenced albums including concrete unknown album",
+      "request_kind": "0x1003",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--album-tracks",
+      "description": "Track type 0x05: Concrete album track numbers and ordering",
+      "request_kind": "0x1103",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--bpm",
+      "description": "Track type 0x05: Rounded and de-duplicated BPM roots",
+      "request_kind": "0x1006",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--bpm-distances",
+      "description": "Track type 0x05: BPM tolerance values zero through six",
+      "request_kind": "0x1106",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--bpm-tracks",
+      "description": "Track type 0x05: Exact BPM-range filter",
+      "request_kind": "0x1206",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--ratings",
+      "description": "Track type 0x05: All rating values zero through five",
+      "request_kind": "0x1007",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--rating-tracks",
+      "description": "Track type 0x05: Rating equality filter",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--decades",
+      "description": "Track type 0x05: Release-year decade grouping and boundaries",
+      "request_kind": "0x1008",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--years",
+      "description": "Track type 0x05: Concrete years plus ALL within the 2020s",
+      "request_kind": "0x1108",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--year-tracks-all",
+      "description": "Track type 0x05: ALL year selector within a decade",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--labels",
+      "description": "Track type 0x05: Referenced labels",
+      "request_kind": "0x100a",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--label-artists",
+      "description": "Track type 0x05: Label hierarchy inserts ALL for multiple artists",
+      "request_kind": "0x110a",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--label-albums",
+      "description": "Track type 0x05: Label/artist album hierarchy",
+      "request_kind": "0x120a",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--label-tracks",
+      "description": "Track type 0x05: Label wildcard artist and album filtering",
+      "request_kind": "0x130a",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--colors",
+      "description": "Track type 0x05: All eight configured colors are present",
+      "request_kind": "0x100d",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--color-tracks",
+      "description": "Track type 0x05: Color equality filter",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 8
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--times",
+      "description": "Track type 0x05: Minute buckets including 179 and excluding 180",
+      "request_kind": "0x1010",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--time-tracks",
+      "description": "Track type 0x05: Duration minute equality range",
+      "request_kind": "0x1110",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--bitrates",
+      "description": "Track type 0x05: Distinct bitrates including zero",
+      "request_kind": "0x1011",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--bitrate-tracks",
+      "description": "Track type 0x05: Zero bitrate is a real filter bucket",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--history",
+      "description": "Track type 0x05: Persisted history versus active Link history lifecycle",
+      "request_kind": "0x1012",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--filenames",
+      "description": "Track type 0x05: File-name primary text with ordinary track shape",
+      "request_kind": "0x1013",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--keys",
+      "description": "Track type 0x05: Normalized musical-key root",
+      "request_kind": "0x1014",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--key-distances",
+      "description": "Track type 0x05: Key-distance selector zero through two",
+      "request_kind": "0x1114",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--key-tracks",
+      "description": "Track type 0x05: Exact normalized key-distance filter",
+      "request_kind": "0x1214",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--matching-forward-reverse",
+      "description": "Track type 0x05: Both recommendation endpoints and ignored LikeRate",
+      "request_kind": "0x1017",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--hot-cue-bank",
+      "description": "Track type 0x05: Populated Hot Cue Bank dispatch behavior",
+      "request_kind": "0x1018",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--search",
+      "description": "Track type 0x05: Mixed entity/content/file-name search and UTF-16 length",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--original-artists",
+      "description": "Track type 0x05: Original Artist foreign-key root",
+      "request_kind": "0x1302",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--original-artist-albums",
+      "description": "Track type 0x05: Original Artist album hierarchy",
+      "request_kind": "0x1402",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--original-artist-tracks",
+      "description": "Track type 0x05: Original Artist concrete album tracks",
+      "request_kind": "0x1502",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--remixers",
+      "description": "Track type 0x05: Remixer foreign-key root",
+      "request_kind": "0x1602",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--remixer-albums",
+      "description": "Track type 0x05: Remixer album hierarchy",
+      "request_kind": "0x1702",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--remixer-tracks",
+      "description": "Track type 0x05: Remixer concrete album tracks",
+      "request_kind": "0x1802",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--playlist-root",
+      "description": "Track type 0x05: Folders precede playlists, with playlist rows ordered by Seq",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--playlist-folder",
+      "description": "Track type 0x05: Recursive folder child",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.folder"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--playlist-tracks",
+      "description": "Track type 0x05: Membership TrackNo controls default order",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.primary"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-05--empty-playlist",
+      "description": "Track type 0x05: Valid empty playlist returns zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010305"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.empty"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010305",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--root",
+      "description": "Track type 0x06: Configured root and capability mask",
+      "request_kind": "0x1000",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$root_capabilities"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--tracks",
+      "description": "Track type 0x06: All live tracks, excluding deleted fixture",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--genres",
+      "description": "Track type 0x06: Referenced genres",
+      "request_kind": "0x1001",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--genre-artists",
+      "description": "Track type 0x06: Artists referenced under Fixture House",
+      "request_kind": "0x1101",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--genre-albums-all-artists",
+      "description": "Track type 0x06: Albums under Fixture House and ALL artists",
+      "request_kind": "0x1201",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--genre-tracks-all",
+      "description": "Track type 0x06: Tracks under Fixture House with wildcard artist and album",
+      "request_kind": "0x1301",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.genre.house"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--artists",
+      "description": "Track type 0x06: Referenced primary artists only",
+      "request_kind": "0x1002",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--artist-albums",
+      "description": "Track type 0x06: Multiple albums cause an ALL row",
+      "request_kind": "0x1102",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--artist-tracks-all-albums",
+      "description": "Track type 0x06: Wildcard album returns every Alpha Artist track",
+      "request_kind": "0x1202",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.alpha"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--albums",
+      "description": "Track type 0x06: Referenced albums including concrete unknown album",
+      "request_kind": "0x1003",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--album-tracks",
+      "description": "Track type 0x06: Concrete album track numbers and ordering",
+      "request_kind": "0x1103",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--bpm",
+      "description": "Track type 0x06: Rounded and de-duplicated BPM roots",
+      "request_kind": "0x1006",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--bpm-distances",
+      "description": "Track type 0x06: BPM tolerance values zero through six",
+      "request_kind": "0x1106",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--bpm-tracks",
+      "description": "Track type 0x06: Exact BPM-range filter",
+      "request_kind": "0x1206",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 12000
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--ratings",
+      "description": "Track type 0x06: All rating values zero through five",
+      "request_kind": "0x1007",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--rating-tracks",
+      "description": "Track type 0x06: Rating equality filter",
+      "request_kind": "0x1107",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 5
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--decades",
+      "description": "Track type 0x06: Release-year decade grouping and boundaries",
+      "request_kind": "0x1008",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--years",
+      "description": "Track type 0x06: Concrete years plus ALL within the 2020s",
+      "request_kind": "0x1108",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--year-tracks-all",
+      "description": "Track type 0x06: ALL year selector within a decade",
+      "request_kind": "0x1208",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 2020
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--labels",
+      "description": "Track type 0x06: Referenced labels",
+      "request_kind": "0x100a",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--label-artists",
+      "description": "Track type 0x06: Label hierarchy inserts ALL for multiple artists",
+      "request_kind": "0x110a",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--label-albums",
+      "description": "Track type 0x06: Label/artist album hierarchy",
+      "request_kind": "0x120a",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--label-tracks",
+      "description": "Track type 0x06: Label wildcard artist and album filtering",
+      "request_kind": "0x130a",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.label.one"
+        },
+        {
+          "number": "0xffffffff"
+        },
+        {
+          "number": "0xffffffff"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--colors",
+      "description": "Track type 0x06: All eight configured colors are present",
+      "request_kind": "0x100d",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--color-tracks",
+      "description": "Track type 0x06: Color equality filter",
+      "request_kind": "0x110d",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 8
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--times",
+      "description": "Track type 0x06: Minute buckets including 179 and excluding 180",
+      "request_kind": "0x1010",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--time-tracks",
+      "description": "Track type 0x06: Duration minute equality range",
+      "request_kind": "0x1110",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--bitrates",
+      "description": "Track type 0x06: Distinct bitrates including zero",
+      "request_kind": "0x1011",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--bitrate-tracks",
+      "description": "Track type 0x06: Zero bitrate is a real filter bucket",
+      "request_kind": "0x1111",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--history",
+      "description": "Track type 0x06: Persisted history versus active Link history lifecycle",
+      "request_kind": "0x1012",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--filenames",
+      "description": "Track type 0x06: File-name primary text with ordinary track shape",
+      "request_kind": "0x1013",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--keys",
+      "description": "Track type 0x06: Normalized musical-key root",
+      "request_kind": "0x1014",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--key-distances",
+      "description": "Track type 0x06: Key-distance selector zero through two",
+      "request_kind": "0x1114",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--key-tracks",
+      "description": "Track type 0x06: Exact normalized key-distance filter",
+      "request_kind": "0x1214",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--matching-forward-reverse",
+      "description": "Track type 0x06: Both recommendation endpoints and ignored LikeRate",
+      "request_kind": "0x1017",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--hot-cue-bank",
+      "description": "Track type 0x06: Populated Hot Cue Bank dispatch behavior",
+      "request_kind": "0x1018",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--search",
+      "description": "Track type 0x06: Mixed entity/content/file-name search and UTF-16 length",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "utf16_bytes": "FIXTURE"
+        },
+        {
+          "string": "FIXTURE"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--original-artists",
+      "description": "Track type 0x06: Original Artist foreign-key root",
+      "request_kind": "0x1302",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--original-artist-albums",
+      "description": "Track type 0x06: Original Artist album hierarchy",
+      "request_kind": "0x1402",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--original-artist-tracks",
+      "description": "Track type 0x06: Original Artist concrete album tracks",
+      "request_kind": "0x1502",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.original"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--remixers",
+      "description": "Track type 0x06: Remixer foreign-key root",
+      "request_kind": "0x1602",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--remixer-albums",
+      "description": "Track type 0x06: Remixer album hierarchy",
+      "request_kind": "0x1702",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--remixer-tracks",
+      "description": "Track type 0x06: Remixer concrete album tracks",
+      "request_kind": "0x1802",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.artist.remixer"
+        },
+        {
+          "number": "$fixture.album.one"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--playlist-root",
+      "description": "Track type 0x06: Folders precede playlists, with playlist rows ordered by Seq",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--playlist-folder",
+      "description": "Track type 0x06: Recursive folder child",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.folder"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--playlist-tracks",
+      "description": "Track type 0x06: Membership TrackNo controls default order",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.primary"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    },
+    {
+      "id": "type-06--empty-playlist",
+      "description": "Track type 0x06: Valid empty playlist returns zero",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "0x01010306"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.empty"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "render_context": "0x01010306",
+      "fresh_connection": true
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "hot-cue-bank-legacy-track-cues",
+  "fixture_profile": "hot-cue-bank-legacy-mutation",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "known-content-canonical-bank",
+      "description": "Resolve track cues from the cue-record ContentID",
+      "request_kind": "0x2201",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.mutation"},
+        {"number": 36},
+        {"blob_hex": "000104001127000000000000111111112222222233333333444444445555555566666666"},
+        {"number": 8},
+        {"blob_hex": "7777777788888888"}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "known-content-unknown-bank",
+      "description": "Hold ContentID fixed while replacing the nominal bank selector",
+      "request_kind": "0x2201",
+      "arguments": [
+        {"number": "$context"},
+        {"number": 999999},
+        {"number": 36},
+        {"blob_hex": "000104001127000000000000111111112222222233333333444444445555555566666666"},
+        {"number": 8},
+        {"blob_hex": "7777777788888888"}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "unknown-content-canonical-bank",
+      "description": "Hold the nominal bank fixed while replacing the cue-record ContentID",
+      "request_kind": "0x2201",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.mutation"},
+        {"number": 36},
+        {"blob_hex": "000104003f420f0000000000111111112222222233333333444444445555555566666666"},
+        {"number": 8},
+        {"blob_hex": "7777777788888888"}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

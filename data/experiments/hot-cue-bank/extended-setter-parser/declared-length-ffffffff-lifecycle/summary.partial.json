@@ -1,0 +1,1983 @@
+{
+  "format": 1,
+  "experiment": "hot-cue-declared-length-ffffffff-lifecycle",
+  "complete": false,
+  "declared_observations": 60,
+  "completed_observations": 59,
+  "fixture_database_sha256": "9f0b8c2d4aaa1dfa6549b8f268ce3ee764392682ee1c7524644eed5cd991815e",
+  "baseline_record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0",
+  "matrix_sha256": "88c0ffda4b9353e5c9f847360a9bb10d7ec35dd804fb12c290a7a98fece1dd45",
+  "counts": {
+    "after-reconnect:0ms": {
+      "final_getter:2301": 3,
+      "first_getter:2301": 3,
+      "late:4e02-echo-2401-status-50-count-0": 2,
+      "late:timeout": 1,
+      "setter:0100": 2,
+      "setter:4e02-echo-2401-status-50-count-0": 1
+    },
+    "after-reconnect:1000ms": {
+      "final_getter:2301": 3,
+      "first_getter:2301": 3,
+      "late:4e02-echo-2401-status-50-count-0": 3,
+      "setter:0100": 3
+    },
+    "after-reconnect:100ms": {
+      "final_getter:2301": 3,
+      "first_getter:2301": 3,
+      "late:4e02-echo-2401-status-50-count-0": 1,
+      "late:timeout": 2,
+      "setter:0100": 3
+    },
+    "after-reconnect:250ms": {
+      "final_getter:2301": 3,
+      "first_getter:2301": 3,
+      "late:4e02-echo-2401-status-50-count-0": 1,
+      "late:timeout": 2,
+      "setter:0100": 3
+    },
+    "after-reconnect:3000ms": {
+      "final_getter:2301": 2,
+      "first_getter:2301": 2,
+      "late:4e02-echo-2401-status-50-count-0": 1,
+      "late:timeout": 1,
+      "setter:0100": 2
+    },
+    "after-reconnect:500ms": {
+      "final_getter:2301": 3,
+      "first_getter:2301": 3,
+      "late:4e02-echo-2401-status-50-count-0": 2,
+      "late:timeout": 1,
+      "setter:0100": 3
+    },
+    "after-reconnect:50ms": {
+      "final_getter:2301": 3,
+      "first_getter:2301": 3,
+      "late:4e02-echo-2401-status-50-count-0": 3,
+      "setter:0100": 3
+    },
+    "before-reconnect:1000ms": {
+      "final_getter:2301": 3,
+      "first_getter:2301": 3,
+      "late:timeout": 3,
+      "setter:0100": 3
+    },
+    "before-reconnect:100ms": {
+      "final_getter:2301": 3,
+      "first_getter:2301": 3,
+      "late:timeout": 3,
+      "setter:0100": 3
+    },
+    "before-reconnect:250ms": {
+      "final_getter:2301": 3,
+      "first_getter:2301": 3,
+      "late:timeout": 3,
+      "setter:0100": 3
+    },
+    "before-reconnect:3000ms": {
+      "final_getter:2301": 3,
+      "first_getter:2301": 3,
+      "late:timeout": 3,
+      "setter:0100": 3
+    },
+    "before-reconnect:500ms": {
+      "final_getter:2301": 3,
+      "first_getter:2301": 3,
+      "late:timeout": 3,
+      "setter:0100": 3
+    },
+    "before-reconnect:50ms": {
+      "final_getter:2301": 3,
+      "first_getter:2301": 3,
+      "late:timeout": 3,
+      "setter:0100": 2,
+      "setter:4e02-echo-2401-status-50-count-0": 1
+    },
+    "same-connection:0ms": {
+      "final_getter:2301": 3,
+      "first_getter:no-2301": 3,
+      "late:disconnect": 3,
+      "setter:0100": 3
+    },
+    "same-connection:1000ms": {
+      "final_getter:2301": 3,
+      "first_getter:no-2301": 3,
+      "late:disconnect": 3,
+      "setter:0100": 3
+    },
+    "same-connection:100ms": {
+      "final_getter:2301": 3,
+      "first_getter:no-2301": 3,
+      "late:disconnect": 3,
+      "setter:0100": 3
+    },
+    "same-connection:250ms": {
+      "final_getter:2301": 3,
+      "first_getter:no-2301": 3,
+      "late:disconnect": 3,
+      "setter:0100": 3
+    },
+    "same-connection:3000ms": {
+      "final_getter:2301": 3,
+      "first_getter:no-2301": 3,
+      "late:disconnect": 3,
+      "setter:0100": 3
+    },
+    "same-connection:500ms": {
+      "final_getter:2301": 3,
+      "first_getter:no-2301": 3,
+      "late:disconnect": 3,
+      "setter:0100": 3
+    },
+    "same-connection:50ms": {
+      "final_getter:2301": 3,
+      "first_getter:no-2301": 3,
+      "late:disconnect": 3,
+      "setter:0100": 3
+    }
+  },
+  "results": [
+    {
+      "id": "fresh-immediate",
+      "topology": "after-reconnect",
+      "delay_ms": 0,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-fresh-immediate.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "769cb00599010f45c668600b882cd994d654128e4e842500ac46da5870c8efef",
+      "observation_sha256": "191487d9f7f31bd17d13c32fa838668668cf3cddbd8de4e0a33dc5a05042d8ce"
+    },
+    {
+      "id": "fresh-immediate",
+      "topology": "after-reconnect",
+      "delay_ms": 0,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-fresh-immediate.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "769cb00599010f45c668600b882cd994d654128e4e842500ac46da5870c8efef",
+      "observation_sha256": "134cc8462762a203b5e3acd6fbf2306ca6229fa455f79d256e4fc74163017ef3"
+    },
+    {
+      "id": "fresh-immediate",
+      "topology": "after-reconnect",
+      "delay_ms": 0,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-fresh-immediate.json",
+      "run": 3,
+      "signatures": {
+        "setter": "4e02-echo-2401-status-50-count-0",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 1,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "769cb00599010f45c668600b882cd994d654128e4e842500ac46da5870c8efef",
+      "observation_sha256": "9037d8ecd3a580fff35dc58d7a11b6dbf13049fab24c4c2e9255321e9b65342a"
+    },
+    {
+      "id": "same-connection-0000ms",
+      "topology": "same-connection",
+      "delay_ms": 0,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0000ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6d9e15b98ce93418d269ed73fccf6686cf32e83ec02dbfb5c95752b65d2d1cbd",
+      "observation_sha256": "d420ea295c4f1b81a2bd65b6537d90e134b6ea9431f526ff95b6f99fdec54d74"
+    },
+    {
+      "id": "same-connection-0000ms",
+      "topology": "same-connection",
+      "delay_ms": 0,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0000ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6d9e15b98ce93418d269ed73fccf6686cf32e83ec02dbfb5c95752b65d2d1cbd",
+      "observation_sha256": "09a25629504c2110532520131cd0424d8b609a706e0bec170f1c29edaae574ff"
+    },
+    {
+      "id": "same-connection-0000ms",
+      "topology": "same-connection",
+      "delay_ms": 0,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0000ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6d9e15b98ce93418d269ed73fccf6686cf32e83ec02dbfb5c95752b65d2d1cbd",
+      "observation_sha256": "2c0db397c3d9b906e5d4d1ccf0dcd34b4d649382bd15ad7324688d24424b6b23"
+    },
+    {
+      "id": "same-connection-0050ms",
+      "topology": "same-connection",
+      "delay_ms": 50,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0050ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "1c038c33082834ecedd12846f7746ceec5c1ba1a71358df21d4a42beb1181087",
+      "observation_sha256": "1e50b437c834d064c50537d1a973b72a7483054d59981fd698b844e51fbcc08d"
+    },
+    {
+      "id": "same-connection-0050ms",
+      "topology": "same-connection",
+      "delay_ms": 50,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0050ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "1c038c33082834ecedd12846f7746ceec5c1ba1a71358df21d4a42beb1181087",
+      "observation_sha256": "0e80f34e3277c2e44ca0149a60a5ac71bc26e3469b5d7305e1243b5cf9572308"
+    },
+    {
+      "id": "same-connection-0050ms",
+      "topology": "same-connection",
+      "delay_ms": 50,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0050ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "1c038c33082834ecedd12846f7746ceec5c1ba1a71358df21d4a42beb1181087",
+      "observation_sha256": "87868e2b85e75fb0322f869842228eb727399807c0717ef10d9a9232023419d6"
+    },
+    {
+      "id": "same-connection-0100ms",
+      "topology": "same-connection",
+      "delay_ms": 100,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0100ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "216e07a46716327335638815a570a8f140a2897ce7c949a4ef529bfbb2522dc4",
+      "observation_sha256": "d91351c4b16b2068269b38262955a1a260728ddcfa6a0b3ce4a118d1423fdbd1"
+    },
+    {
+      "id": "same-connection-0100ms",
+      "topology": "same-connection",
+      "delay_ms": 100,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0100ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "216e07a46716327335638815a570a8f140a2897ce7c949a4ef529bfbb2522dc4",
+      "observation_sha256": "4787592ce16f76419837d3644d5b4f979401ed8ae5db8f345341b0943929d796"
+    },
+    {
+      "id": "same-connection-0100ms",
+      "topology": "same-connection",
+      "delay_ms": 100,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0100ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "216e07a46716327335638815a570a8f140a2897ce7c949a4ef529bfbb2522dc4",
+      "observation_sha256": "adbaa6df5fd947a6a38c324774dd4c9cba48a1ae4a1741a06e1227bc4b66e52a"
+    },
+    {
+      "id": "same-connection-0250ms",
+      "topology": "same-connection",
+      "delay_ms": 250,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0250ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6af7db60f3e3aa9196b29667ace7f49e9c00144626ac6005145c600e3d3b2f0e",
+      "observation_sha256": "d139cff4ad55d4200b17ac18a84cdd276f2c5c942b91ffcfc943be7c7a43fa1d"
+    },
+    {
+      "id": "same-connection-0250ms",
+      "topology": "same-connection",
+      "delay_ms": 250,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0250ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6af7db60f3e3aa9196b29667ace7f49e9c00144626ac6005145c600e3d3b2f0e",
+      "observation_sha256": "5990c065e7b0a87518673599d59c7d152f7791f7f598b9742d3132ac2269fded"
+    },
+    {
+      "id": "same-connection-0250ms",
+      "topology": "same-connection",
+      "delay_ms": 250,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0250ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6af7db60f3e3aa9196b29667ace7f49e9c00144626ac6005145c600e3d3b2f0e",
+      "observation_sha256": "804354ecc5e9d1ace298423c9ed7f95cff0e85b2e283623c2c43806f6739ff22"
+    },
+    {
+      "id": "same-connection-0500ms",
+      "topology": "same-connection",
+      "delay_ms": 500,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0500ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "7eb3cd248020a4328e52e60a5c1897479d93f21149839acf80938badd51ebce3",
+      "observation_sha256": "0581832739283aede8159d6b84870884e2ecbc28fa0aa49f8822fb97f5a1f412"
+    },
+    {
+      "id": "same-connection-0500ms",
+      "topology": "same-connection",
+      "delay_ms": 500,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0500ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "7eb3cd248020a4328e52e60a5c1897479d93f21149839acf80938badd51ebce3",
+      "observation_sha256": "ac99d258a69150826d0655fed0dc4f8a12e1a9a6f14fc8f68b85ee9ea65e62e3"
+    },
+    {
+      "id": "same-connection-0500ms",
+      "topology": "same-connection",
+      "delay_ms": 500,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-0500ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "7eb3cd248020a4328e52e60a5c1897479d93f21149839acf80938badd51ebce3",
+      "observation_sha256": "f942dd7b416a2ca98e8f7358e7e2e788d2ff89523f8f84717ec9824b6016ae17"
+    },
+    {
+      "id": "same-connection-1000ms",
+      "topology": "same-connection",
+      "delay_ms": 1000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-1000ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "02040d2281b5c47537c3fcd0594da3303a3ae0cc2cd67cce1e01d0f7cfb490fc",
+      "observation_sha256": "a611b10e87a43cf222eb09465f3fbbb1e4db59a4a679625da031afd2a4cfdf77"
+    },
+    {
+      "id": "same-connection-1000ms",
+      "topology": "same-connection",
+      "delay_ms": 1000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-1000ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "02040d2281b5c47537c3fcd0594da3303a3ae0cc2cd67cce1e01d0f7cfb490fc",
+      "observation_sha256": "ecb8adc7315633a9be5ac155b1081da63d31b907745749f445a7ad7159521c9b"
+    },
+    {
+      "id": "same-connection-1000ms",
+      "topology": "same-connection",
+      "delay_ms": 1000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-1000ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "02040d2281b5c47537c3fcd0594da3303a3ae0cc2cd67cce1e01d0f7cfb490fc",
+      "observation_sha256": "5cb344d5fe5c61cb3cda3360a46e363705472ab58769c112f91f458514f814ff"
+    },
+    {
+      "id": "same-connection-3000ms",
+      "topology": "same-connection",
+      "delay_ms": 3000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-3000ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "10c4316ab478d4b859c95b4411d16b0e418f7094bb35ba319c8b20671572881e",
+      "observation_sha256": "f6d3384ff6279408e45f5522791dc9d48da3e6691c8c52f19a09d7df3f6c31be"
+    },
+    {
+      "id": "same-connection-3000ms",
+      "topology": "same-connection",
+      "delay_ms": 3000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-3000ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "10c4316ab478d4b859c95b4411d16b0e418f7094bb35ba319c8b20671572881e",
+      "observation_sha256": "3d7cb2da6453618ff6111cb262eb5e6b66efa4b9e4ba2b1303ad0ce33636b154"
+    },
+    {
+      "id": "same-connection-3000ms",
+      "topology": "same-connection",
+      "delay_ms": 3000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-same-connection-3000ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "disconnect",
+        "database-read-after-observation": "disconnect",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": null,
+        "database-read-final": 1
+      },
+      "first_getter": null,
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "10c4316ab478d4b859c95b4411d16b0e418f7094bb35ba319c8b20671572881e",
+      "observation_sha256": "3099712028ff4b652cf88e05dbd476cfc6b0eae4027bb6d7d867af4fecab131a"
+    },
+    {
+      "id": "before-reconnect-0050ms",
+      "topology": "before-reconnect",
+      "delay_ms": 50,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-0050ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "64c3a449a9a4b30813296dc1e0faa50b4aecf53ecef3656397c81ec8c94efd39",
+      "observation_sha256": "733cd8a4676396cdb9e39a09fd9976382ee0186d000bf759687d4dd9c2a85e32"
+    },
+    {
+      "id": "before-reconnect-0050ms",
+      "topology": "before-reconnect",
+      "delay_ms": 50,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-0050ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "4e02-echo-2401-status-50-count-0",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 1,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "64c3a449a9a4b30813296dc1e0faa50b4aecf53ecef3656397c81ec8c94efd39",
+      "observation_sha256": "836c22f0c0ac0b68846f414a9272df128c419127fffe036919ac702ee2f7ad97"
+    },
+    {
+      "id": "before-reconnect-0050ms",
+      "topology": "before-reconnect",
+      "delay_ms": 50,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-0050ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "64c3a449a9a4b30813296dc1e0faa50b4aecf53ecef3656397c81ec8c94efd39",
+      "observation_sha256": "50bf03bd27efea8134711477e920821293ce01173c6f2953b6dc1d658dd4fbc0"
+    },
+    {
+      "id": "before-reconnect-0100ms",
+      "topology": "before-reconnect",
+      "delay_ms": 100,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-0100ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "90cf67936035eba59616181462a485ad688879c42ad9e0d6be0b60e06f64c108",
+      "observation_sha256": "34841975dab0309e44295bf8493dbe75721f134e699e60b91c0697942b4f0c3e"
+    },
+    {
+      "id": "before-reconnect-0100ms",
+      "topology": "before-reconnect",
+      "delay_ms": 100,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-0100ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "90cf67936035eba59616181462a485ad688879c42ad9e0d6be0b60e06f64c108",
+      "observation_sha256": "55fa09e8704a0ffefd7fdf33a77d43018479245bbfbe5d30058f3f0754daff1a"
+    },
+    {
+      "id": "before-reconnect-0100ms",
+      "topology": "before-reconnect",
+      "delay_ms": 100,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-0100ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "90cf67936035eba59616181462a485ad688879c42ad9e0d6be0b60e06f64c108",
+      "observation_sha256": "226d00e362b3a7ffd3d64b8635dfc0ae884f2c2dbadac546b3c7fea4c41f0b7f"
+    },
+    {
+      "id": "before-reconnect-0250ms",
+      "topology": "before-reconnect",
+      "delay_ms": 250,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-0250ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6fcf52f27ce29386e7a0e73dd4a45511945cefc93fa14974bb56bc2caa3e288d",
+      "observation_sha256": "7f101f477819d3342ef50b9c43320bccddc53be11fcd1b61eed40d3766fbc2ab"
+    },
+    {
+      "id": "before-reconnect-0250ms",
+      "topology": "before-reconnect",
+      "delay_ms": 250,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-0250ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6fcf52f27ce29386e7a0e73dd4a45511945cefc93fa14974bb56bc2caa3e288d",
+      "observation_sha256": "0feea30cb95eccaf79040de626b1ea4386ec4d0681c6d46480f736c883c4d17a"
+    },
+    {
+      "id": "before-reconnect-0250ms",
+      "topology": "before-reconnect",
+      "delay_ms": 250,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-0250ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6fcf52f27ce29386e7a0e73dd4a45511945cefc93fa14974bb56bc2caa3e288d",
+      "observation_sha256": "82ab25b8463726beb310b2e4232c55f593b8031af9d08caa53cb5acccec8af25"
+    },
+    {
+      "id": "before-reconnect-0500ms",
+      "topology": "before-reconnect",
+      "delay_ms": 500,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-0500ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "c9bb5e117b0ea95c013e9c02ac53d56bd630499d22352e33a18cc3aa1fc8228c",
+      "observation_sha256": "e44fc24a79e145d5aa33b1fe768b2b3cda2b3a77919a98132b9d90ba6e29345b"
+    },
+    {
+      "id": "before-reconnect-0500ms",
+      "topology": "before-reconnect",
+      "delay_ms": 500,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-0500ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "c9bb5e117b0ea95c013e9c02ac53d56bd630499d22352e33a18cc3aa1fc8228c",
+      "observation_sha256": "74882fd5a7ddf92a82d1216e3184c0596d87d41bc9350d6e6669972427ffee92"
+    },
+    {
+      "id": "before-reconnect-0500ms",
+      "topology": "before-reconnect",
+      "delay_ms": 500,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-0500ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "c9bb5e117b0ea95c013e9c02ac53d56bd630499d22352e33a18cc3aa1fc8228c",
+      "observation_sha256": "b8d02e06f88ad8d50969e9b257c5d2903aded4bbb69e9c19c30592792accd0db"
+    },
+    {
+      "id": "before-reconnect-1000ms",
+      "topology": "before-reconnect",
+      "delay_ms": 1000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-1000ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "074f21fe02c228e7409697f46502e890a548f38c06fb706d33bbee4537564bfc",
+      "observation_sha256": "da0835951f01875079c760fea8df715570bb4c3262f7809a0269360546613b37"
+    },
+    {
+      "id": "before-reconnect-1000ms",
+      "topology": "before-reconnect",
+      "delay_ms": 1000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-1000ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "074f21fe02c228e7409697f46502e890a548f38c06fb706d33bbee4537564bfc",
+      "observation_sha256": "9a3ee63032149c2c27315dabce937b984e7a5dea17ec39ade48172ac29bb4398"
+    },
+    {
+      "id": "before-reconnect-1000ms",
+      "topology": "before-reconnect",
+      "delay_ms": 1000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-1000ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "074f21fe02c228e7409697f46502e890a548f38c06fb706d33bbee4537564bfc",
+      "observation_sha256": "6716c59b140467d040d817a7542598bd343841a27b495dbf2d19c2e4845daea3"
+    },
+    {
+      "id": "before-reconnect-3000ms",
+      "topology": "before-reconnect",
+      "delay_ms": 3000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-3000ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "769a4a78794fd159baadb0daa3ce5624ad27b0d73d51ba76d97cc03494ce4fce",
+      "observation_sha256": "944ba6378cd163c482e78ef3651356d1b2c90d82907eef36f4e9c7e942a885d0"
+    },
+    {
+      "id": "before-reconnect-3000ms",
+      "topology": "before-reconnect",
+      "delay_ms": 3000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-3000ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "769a4a78794fd159baadb0daa3ce5624ad27b0d73d51ba76d97cc03494ce4fce",
+      "observation_sha256": "fa39dfa0d4ae78976eec7a456d3caec4a5e612598505f68909dec9af4efaa3ff"
+    },
+    {
+      "id": "before-reconnect-3000ms",
+      "topology": "before-reconnect",
+      "delay_ms": 3000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-before-reconnect-3000ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "769a4a78794fd159baadb0daa3ce5624ad27b0d73d51ba76d97cc03494ce4fce",
+      "observation_sha256": "9d3a4af1e77e4b48c28df3d87149c8f42b4eaeae2951c84686869aaec3a01254"
+    },
+    {
+      "id": "after-reconnect-0050ms",
+      "topology": "after-reconnect",
+      "delay_ms": 50,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-0050ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "898a5162143bd2e58e53bb730ec2bdab84560ca4602cd8d208b7de02a5b56d5e",
+      "observation_sha256": "35e0b41a7cb4f30028516e93f8f3f8eb43aa6be5e818b4ac88788dcf53a13e5e"
+    },
+    {
+      "id": "after-reconnect-0050ms",
+      "topology": "after-reconnect",
+      "delay_ms": 50,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-0050ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "898a5162143bd2e58e53bb730ec2bdab84560ca4602cd8d208b7de02a5b56d5e",
+      "observation_sha256": "c706321cfcf3932b672e4eeb4540461c5c0127309a5b6c0f8b82f06421d84f66"
+    },
+    {
+      "id": "after-reconnect-0050ms",
+      "topology": "after-reconnect",
+      "delay_ms": 50,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-0050ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "898a5162143bd2e58e53bb730ec2bdab84560ca4602cd8d208b7de02a5b56d5e",
+      "observation_sha256": "4d1bc00449f771e247d3f005ffda7d4bf5e97b4ccd88d38dd8ee098353ba630a"
+    },
+    {
+      "id": "after-reconnect-0100ms",
+      "topology": "after-reconnect",
+      "delay_ms": 100,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-0100ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6607f6b77272f73e6753329b9710255a1d1b8d404bb1b5a503a31337a3a28215",
+      "observation_sha256": "fac7b6e06f0f75d3e9990ab7881102a2277d61f55b61458894e4b5536eced215"
+    },
+    {
+      "id": "after-reconnect-0100ms",
+      "topology": "after-reconnect",
+      "delay_ms": 100,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-0100ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6607f6b77272f73e6753329b9710255a1d1b8d404bb1b5a503a31337a3a28215",
+      "observation_sha256": "c5325e1f5a702f6603e9da586470bcce583a4042b9bfdcd32d03788691b36a57"
+    },
+    {
+      "id": "after-reconnect-0100ms",
+      "topology": "after-reconnect",
+      "delay_ms": 100,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-0100ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6607f6b77272f73e6753329b9710255a1d1b8d404bb1b5a503a31337a3a28215",
+      "observation_sha256": "aa5a1bb147504ddffffd56d1ccc27cdc1150a05875a0db0a3950bfbf99eb8e4b"
+    },
+    {
+      "id": "after-reconnect-0250ms",
+      "topology": "after-reconnect",
+      "delay_ms": 250,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-0250ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6d268847148f8b4f2ca762dbc88ea4c711460164e0553e9d98ab40948e44b490",
+      "observation_sha256": "440ec1f31be3ab6bfc9fccfe1c499393eb3c6f3e04b96ad83fb964aea0f5616d"
+    },
+    {
+      "id": "after-reconnect-0250ms",
+      "topology": "after-reconnect",
+      "delay_ms": 250,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-0250ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6d268847148f8b4f2ca762dbc88ea4c711460164e0553e9d98ab40948e44b490",
+      "observation_sha256": "9d88a6c599cdda8d0404b5b71d048ac45ac4020d7dce40cf5d0694c8bac2ce12"
+    },
+    {
+      "id": "after-reconnect-0250ms",
+      "topology": "after-reconnect",
+      "delay_ms": 250,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-0250ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "6d268847148f8b4f2ca762dbc88ea4c711460164e0553e9d98ab40948e44b490",
+      "observation_sha256": "855e09257ba3fb9d0b8a2c686c8beb2acd25f6257dcbf58334ee17386abb630a"
+    },
+    {
+      "id": "after-reconnect-0500ms",
+      "topology": "after-reconnect",
+      "delay_ms": 500,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-0500ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "c26da403282e06a9298f46bafd43bcdd523570d7d952a71720efb04937eb7c75",
+      "observation_sha256": "a43333f622c1e9110150a7b4cd95de8e8ac29f65d42b3969b15acdc21d4c44d2"
+    },
+    {
+      "id": "after-reconnect-0500ms",
+      "topology": "after-reconnect",
+      "delay_ms": 500,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-0500ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "c26da403282e06a9298f46bafd43bcdd523570d7d952a71720efb04937eb7c75",
+      "observation_sha256": "945f0e40b646b901981e7c084fc9357add91f73a7bb59d543d8c60560ff16355"
+    },
+    {
+      "id": "after-reconnect-0500ms",
+      "topology": "after-reconnect",
+      "delay_ms": 500,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-0500ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "c26da403282e06a9298f46bafd43bcdd523570d7d952a71720efb04937eb7c75",
+      "observation_sha256": "4a290ad9f772ff08ec0e8fb834e6da15b985c114646ce851e97c30315fab15d4"
+    },
+    {
+      "id": "after-reconnect-1000ms",
+      "topology": "after-reconnect",
+      "delay_ms": 1000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-1000ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "bc57a55633b2ce20b85163bb3324b135c1b4ca41a4f0a56bd190f95f80720f0e",
+      "observation_sha256": "9b4b16915b9afad42d35c133f86c05945c72a44301c1dbc159b9ae1c172cd9f4"
+    },
+    {
+      "id": "after-reconnect-1000ms",
+      "topology": "after-reconnect",
+      "delay_ms": 1000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-1000ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "bc57a55633b2ce20b85163bb3324b135c1b4ca41a4f0a56bd190f95f80720f0e",
+      "observation_sha256": "44c5ffeea9065c08a7ec17941bb33b24ebe08e1c91b1f0b4400448da79c6f68e"
+    },
+    {
+      "id": "after-reconnect-1000ms",
+      "topology": "after-reconnect",
+      "delay_ms": 1000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-1000ms.json",
+      "run": 3,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "bc57a55633b2ce20b85163bb3324b135c1b4ca41a4f0a56bd190f95f80720f0e",
+      "observation_sha256": "f5007a3c65bb3af50bf57f32e8cc60cde02810c7069db4ca289c00294f61d71e"
+    },
+    {
+      "id": "after-reconnect-3000ms",
+      "topology": "after-reconnect",
+      "delay_ms": 3000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-3000ms.json",
+      "run": 1,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "timeout",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": null,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "d8980bcd8318acb71cfa108e1c8da5ab0ce4c4afb64ef8a70098a005514e3f2f",
+      "observation_sha256": "ba3f7a4e49e7f82dcf0be63399370b91e5eabc7e2fc59dd099e5b012bbc8df83"
+    },
+    {
+      "id": "after-reconnect-3000ms",
+      "topology": "after-reconnect",
+      "delay_ms": 3000,
+      "suite": "suites/generated/hot-cue-declared-length-ffffffff-lifecycle/hot-cue-declared-length-ffffffff-lifecycle-after-reconnect-3000ms.json",
+      "run": 2,
+      "signatures": {
+        "setter": "0100",
+        "late-response-observation": "4e02-echo-2401-status-50-count-0",
+        "database-read-after-observation": "4e02-echo-2301-status-0-count-1",
+        "database-read-final": "4e02-echo-2301-status-0-count-1"
+      },
+      "first_transactions": {
+        "setter": 4294967294,
+        "late-response-observation": 1,
+        "database-read-after-observation": 1,
+        "database-read-final": 1
+      },
+      "first_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "final_getter": {
+        "status": 0,
+        "record_count": 1,
+        "record_length": 124,
+        "record_sha256": "94bf967af4316fbeb78e3862ce09de2cfc57c616ed09ca882abd7c339b2589d0"
+      },
+      "suite_sha256": "d8980bcd8318acb71cfa108e1c8da5ab0ce4c4afb64ef8a70098a005514e3f2f",
+      "observation_sha256": "12b6c91d8e88cf3b71a1367c2e0763955b314a0ee9c544863796f98645fc1578"
+    }
+  ]
+}

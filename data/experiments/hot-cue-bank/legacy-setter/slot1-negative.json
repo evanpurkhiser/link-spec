@@ -1,0 +1,209 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "Resolve track cues from the cue-record ContentID",
+        "header": [],
+        "id": "known-content-canonical-bank",
+        "outcome": "timeout",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "WouldBlock",
+          "messages": [],
+          "outcome": "timeout",
+          "raw_hex": ""
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9060
+            },
+            {
+              "type": "number",
+              "value": 36
+            },
+            {
+              "hex": "000104001127000000000000111111112222222233333333444444445555555566666666",
+              "type": "blob"
+            },
+            {
+              "type": "number",
+              "value": 8
+            },
+            {
+              "hex": "7777777788888888",
+              "type": "blob"
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8705
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Hold ContentID fixed while replacing the nominal bank selector",
+        "header": [],
+        "id": "known-content-unknown-bank",
+        "outcome": "timeout",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "WouldBlock",
+          "messages": [],
+          "outcome": "timeout",
+          "raw_hex": ""
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 999999
+            },
+            {
+              "type": "number",
+              "value": 36
+            },
+            {
+              "hex": "000104001127000000000000111111112222222233333333444444445555555566666666",
+              "type": "blob"
+            },
+            {
+              "type": "number",
+              "value": 8
+            },
+            {
+              "hex": "7777777788888888",
+              "type": "blob"
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8705
+        },
+        "rows": [],
+        "total": null
+      },
+      {
+        "description": "Hold the nominal bank fixed while replacing the cue-record ContentID",
+        "header": [],
+        "id": "unknown-content-canonical-bank",
+        "outcome": "timeout",
+        "pages": [],
+        "raw_response": {
+          "error_kind": "WouldBlock",
+          "messages": [],
+          "outcome": "timeout",
+          "raw_hex": ""
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9060
+            },
+            {
+              "type": "number",
+              "value": 36
+            },
+            {
+              "hex": "000104003f420f0000000000111111112222222233333333444444445555555566666666",
+              "type": "blob"
+            },
+            {
+              "type": "number",
+              "value": 8
+            },
+            {
+              "hex": "7777777788888888",
+              "type": "blob"
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8705
+        },
+        "rows": [],
+        "total": null
+      }
+    ],
+    "fixture": {
+      "fingerprint": "281f7de3ffa966c37d40833f10197d77eebd64dc7b5ae89807654e56f36dda1f",
+      "profile": "hot-cue-bank-mutation",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 1
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "hot-cue-bank-legacy-track-cues"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "9f0b8c2d4aaa1dfa6549b8f268ce3ee764392682ee1c7524644eed5cd991815e",
+    "fixture_fingerprint": "281f7de3ffa966c37d40833f10197d77eebd64dc7b5ae89807654e56f36dda1f",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 3,
+      "mac": "02:00:00:60:00:50",
+      "model": "XDJ-RX3",
+      "model_code": 0,
+      "packet_sha256": "da12196004059977cdbcd83b9e0ae22366a2daf50320ed1a7b033c1d7ab157d4",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 11,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-rx3-player-11.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/hot-cue-bank-mutation-duplicate-slot/manifest.json",
+    "recorded_unix_seconds": 1790907819,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/suites/hot-cue-bank-legacy-track-cues.json",
+    "suite_sha256": "605dfff2d3630c99fbac50ef4f068550aff374d5bdb00afed3182910cba54232"
+  }
+}

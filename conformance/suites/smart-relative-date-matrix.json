@@ -1,0 +1,1702 @@
+{
+  "name": "smart-rule-relative-date-matrix",
+  "fixture_profile": "smart-relative-date-matrix",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "stock-date-day-operator-06",
+      "description": "stock-date in the last 1 day",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_day_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-day-operator-07",
+      "description": "stock-date not in the last 1 day",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_day_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-week-operator-06",
+      "description": "stock-date in the last 1 week",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_week_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-week-operator-07",
+      "description": "stock-date not in the last 1 week",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_week_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-month-operator-06",
+      "description": "stock-date in the last 1 month",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_month_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5,
+        "row_count": 5,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-month-operator-07",
+      "description": "stock-date not in the last 1 month",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_month_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3,
+        "item_ids": [
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-year-operator-06",
+      "description": "stock-date in the last 1 year",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_year_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-year-operator-07",
+      "description": "stock-date not in the last 1 year",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_year_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "date-created-day-operator-06",
+      "description": "date-created in the last 1 day",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_created_day_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "date-created-day-operator-07",
+      "description": "date-created not in the last 1 day",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_created_day_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "date-created-week-operator-06",
+      "description": "date-created in the last 1 week",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_created_week_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "date-created-week-operator-07",
+      "description": "date-created not in the last 1 week",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_created_week_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "date-created-month-operator-06",
+      "description": "date-created in the last 1 month",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_created_month_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5,
+        "row_count": 5,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "date-created-month-operator-07",
+      "description": "date-created not in the last 1 month",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_created_month_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3,
+        "item_ids": [
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "date-created-year-operator-06",
+      "description": "date-created in the last 1 year",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_created_year_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "date-created-year-operator-07",
+      "description": "date-created not in the last 1 year",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_created_year_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "date-released-day-operator-06",
+      "description": "date-released in the last 1 day",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_released_day_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "date-released-day-operator-07",
+      "description": "date-released not in the last 1 day",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_released_day_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "date-released-week-operator-06",
+      "description": "date-released in the last 1 week",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_released_week_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "date-released-week-operator-07",
+      "description": "date-released not in the last 1 week",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_released_week_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "date-released-month-operator-06",
+      "description": "date-released in the last 1 month",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_released_month_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5,
+        "row_count": 5,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "date-released-month-operator-07",
+      "description": "date-released not in the last 1 month",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_released_month_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3,
+        "item_ids": [
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "date-released-year-operator-06",
+      "description": "date-released in the last 1 year",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_released_year_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "date-released-year-operator-07",
+      "description": "date-released not in the last 1 year",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.date_released_year_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-days-operator-06",
+      "description": "stock-date relative operator 6 with plural days unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_days_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-days-operator-07",
+      "description": "stock-date relative operator 7 with plural days unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_days_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-weeks-operator-06",
+      "description": "stock-date relative operator 6 with plural weeks unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_weeks_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-weeks-operator-07",
+      "description": "stock-date relative operator 7 with plural weeks unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_weeks_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-months-operator-06",
+      "description": "stock-date relative operator 6 with plural months unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_months_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-months-operator-07",
+      "description": "stock-date relative operator 7 with plural months unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_months_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-years-operator-06",
+      "description": "stock-date relative operator 6 with plural years unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_years_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-years-operator-07",
+      "description": "stock-date relative operator 7 with plural years unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_years_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-uppercase-month-operator-06",
+      "description": "stock-date relative operator 6 with uppercase month unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_uppercase_month_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5,
+        "row_count": 5,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-uppercase-month-operator-07",
+      "description": "stock-date relative operator 7 with uppercase month unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_uppercase_month_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3,
+        "item_ids": [
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-empty-operator-06",
+      "description": "stock-date relative operator 6 with empty unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_empty_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-empty-operator-07",
+      "description": "stock-date relative operator 7 with empty unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_empty_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-unknown-operator-06",
+      "description": "stock-date relative operator 6 with unknown unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_unknown_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-unit-unknown-operator-07",
+      "description": "stock-date relative operator 7 with unknown unit",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_unit_unknown_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-zero-operator-06",
+      "description": "stock-date relative operator 6 with zero count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_zero_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-zero-operator-07",
+      "description": "stock-date relative operator 7 with zero count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_zero_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-negative-operator-06",
+      "description": "stock-date relative operator 6 with negative count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_negative_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-negative-operator-07",
+      "description": "stock-date relative operator 7 with negative count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_negative_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-blank-operator-06",
+      "description": "stock-date relative operator 6 with blank count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_blank_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-blank-operator-07",
+      "description": "stock-date relative operator 7 with blank count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_blank_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-invalid-operator-06",
+      "description": "stock-date relative operator 6 with invalid count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_invalid_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-invalid-operator-07",
+      "description": "stock-date relative operator 7 with invalid count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_invalid_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-fractional-operator-06",
+      "description": "stock-date relative operator 6 with fractional count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_fractional_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-fractional-operator-07",
+      "description": "stock-date relative operator 7 with fractional count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_fractional_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-two-operator-06",
+      "description": "stock-date relative operator 6 with two count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_two_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-two-operator-07",
+      "description": "stock-date relative operator 7 with two count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_two_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5,
+        "row_count": 5,
+        "item_ids": [
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-thirty-one-operator-06",
+      "description": "stock-date relative operator 6 with thirty-one count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_thirty_one_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-count-thirty-one-operator-07",
+      "description": "stock-date relative operator 7 with thirty-one count",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_count_thirty_one_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 4,
+        "row_count": 4,
+        "item_ids": [
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-month-count-two-operator-06",
+      "description": "stock-date relative operator 6 with two months",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_month_count_two_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-month-count-two-operator-07",
+      "description": "stock-date relative operator 7 with two months",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_month_count_two_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-right-31-operator-06",
+      "description": "stock-date relative operator 6 ignores ValueRight 31",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_right_31_operator_06"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.first",
+          "$fixture.track.eighth"
+        ]
+      }
+    },
+    {
+      "id": "stock-date-right-31-operator-07",
+      "description": "stock-date relative operator 7 ignores ValueRight 31",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_relative_date.stock_date_right_31_operator_07"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.second",
+          "$fixture.track.third",
+          "$fixture.track.fourth",
+          "$fixture.track.fifth",
+          "$fixture.track.sixth",
+          "$fixture.track.seventh"
+        ]
+      }
+    }
+  ]
+}

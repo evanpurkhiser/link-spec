@@ -1,0 +1,118 @@
+{
+  "name": "song-info-delayed-reply-routing--delivery-extra-argument-control--0100ms",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ],
+    "read_timeout_ms": 10000
+  },
+  "cases": [
+    {
+      "id": "first--play-extra-argument",
+      "description": "First precursor: Play Song Info with an extra number",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0xdeadbeef"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "second--delivery-extra-argument-control",
+      "description": "Second precursor: delivery-extra-argument-control",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0xdeadbeef"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "replacement-no-send",
+      "description": "Read without sending on a replacement connection after 100 ms",
+      "request_kind": 0,
+      "arguments": [],
+      "raw_hex": "",
+      "raw_read_ms": 1200,
+      "render": false,
+      "fresh_connection": true,
+      "capture_connection_setup": true,
+      "delay_before_connection_ms": 100,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-probe-observation-connection",
+      "description": "Valid location-2 Delivery on the no-send observation connection",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "delay_before_request_ms": 50,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-probe-fresh-health",
+      "description": "Valid location-2 Delivery on an independent fresh connection",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "delay_before_connection_ms": 250,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

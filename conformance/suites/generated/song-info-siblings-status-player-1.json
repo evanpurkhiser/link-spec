@@ -1,0 +1,431 @@
+{
+  "name": "song-info-siblings-status-player-1",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ],
+    "read_timeout_ms": 10000
+  },
+  "cases": [
+    {
+      "id": "play-populated-track",
+      "description": "Song-information sibling 0x2102 with populated content",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-deleted-track",
+      "description": "Song-information sibling 0x2102 with soft-deleted content",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.deleted"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-zero-content-id",
+      "description": "Song-information sibling 0x2102 with content ID zero",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-unknown-content-id",
+      "description": "Song-information sibling 0x2102 with unknown content ID",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "0xfffffffe"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "non-rekordbox-populated-track",
+      "description": "Song-information sibling 0x2202 with populated content",
+      "request_kind": "0x2202",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "non-rekordbox-deleted-track",
+      "description": "Song-information sibling 0x2202 with soft-deleted content",
+      "request_kind": "0x2202",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.deleted"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "non-rekordbox-zero-content-id",
+      "description": "Song-information sibling 0x2202 with content ID zero",
+      "request_kind": "0x2202",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "non-rekordbox-unknown-content-id",
+      "description": "Song-information sibling 0x2202 with unknown content ID",
+      "request_kind": "0x2202",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "0xfffffffe"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "recognized-23-populated-track",
+      "description": "Song-information sibling 0x2302 with populated content",
+      "request_kind": "0x2302",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "recognized-23-deleted-track",
+      "description": "Song-information sibling 0x2302 with soft-deleted content",
+      "request_kind": "0x2302",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.deleted"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "recognized-23-zero-content-id",
+      "description": "Song-information sibling 0x2302 with content ID zero",
+      "request_kind": "0x2302",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "recognized-23-unknown-content-id",
+      "description": "Song-information sibling 0x2302 with unknown content ID",
+      "request_kind": "0x2302",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "0xfffffffe"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "recognized-24-populated-track",
+      "description": "Song-information sibling 0x2402 with populated content",
+      "request_kind": "0x2402",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "recognized-24-deleted-track",
+      "description": "Song-information sibling 0x2402 with soft-deleted content",
+      "request_kind": "0x2402",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.deleted"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "recognized-24-zero-content-id",
+      "description": "Song-information sibling 0x2402 with content ID zero",
+      "request_kind": "0x2402",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "recognized-24-unknown-content-id",
+      "description": "Song-information sibling 0x2402 with unknown content ID",
+      "request_kind": "0x2402",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "0xfffffffe"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "recognized-25-populated-track",
+      "description": "Song-information sibling 0x2502 with populated content",
+      "request_kind": "0x2502",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "recognized-25-deleted-track",
+      "description": "Song-information sibling 0x2502 with soft-deleted content",
+      "request_kind": "0x2502",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.deleted"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "recognized-25-zero-content-id",
+      "description": "Song-information sibling 0x2502 with content ID zero",
+      "request_kind": "0x2502",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "recognized-25-unknown-content-id",
+      "description": "Song-information sibling 0x2502 with unknown content ID",
+      "request_kind": "0x2502",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "0xfffffffe"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-populated-track",
+      "description": "Song-information sibling 0x2602 with populated content",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-deleted-track",
+      "description": "Song-information sibling 0x2602 with soft-deleted content",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.deleted"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-zero-content-id",
+      "description": "Song-information sibling 0x2602 with content ID zero",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-unknown-content-id",
+      "description": "Song-information sibling 0x2602 with unknown content ID",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "0xfffffffe"
+        }
+      ],
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+# Hot Cue Bank mutation callback sink
+
+Pinned source:
+
+```text
+../artifacts/rekordbox/7.2.19/extracted/app-root/rekordbox.app/Contents/MacOS/rekordbox
+SHA-256 07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244
+x86-64 slice
+```
+
+This focused extract follows the callback installed by the Link Export owner.
+Addresses are virtual addresses in the pinned x86-64 Mach-O.
+
+## Callback installation
+
+`djplay::UiProDJLink::notifyLinkConnect(unsigned int)` passes its embedded
+`PSvDBServerCallback` subobject at `UiProDJLink + 0x18` to the database server:
+
+```text
+0x1017b30a7  mov  rdi, qword ptr [r13 + 0x2f0]
+0x1017b30ae  lea  rdx, [r13 + 0x18]
+0x1017b30b2  movzx esi, r14b
+0x1017b30b6  mov  rcx, r15
+0x1017b30b9  call 0x101c5afe0 ; PSvDBServer::Initialize
+```
+
+`PSvDBServer::Initialize(unsigned char, PSvDBServerCallback *, juce::String
+const &)` installs that exact pointer in its new `PSvDBMain`:
+
+```text
+0x101c5b056  mov  rdi, qword ptr [r13]
+0x101c5b05a  mov  rsi, r15
+0x101c5b05d  call 0x10251fc60 ; PSvDBMain::SetCallback
+```
+
+`PSvDBMain::SetCallback` is a single pointer store:
+
+```text
+0x10251fc64  mov  qword ptr [rdi + 0x5c0], rsi
+```
+
+## Mutation delivery
+
+`PSvDBMain::DeliverHCBankUpdate(int)` checks delivery-flag bit 1, loads the
+installed callback, and invokes virtual slot `+0x30` with update class 3, the
+resolved CueID, and zero extra data:
+
+```text
+0x102521014  test byte ptr [rdi + 0x5c8], 2
+0x10252101b  je   0x10252103c
+0x10252101d  mov  rdi, qword ptr [rdi + 0x5c0]
+0x102521024  test rdi, rdi
+0x102521027  je   0x10252103c
+0x102521029  mov  edx, esi
+0x10252102b  mov  rax, qword ptr [rdi]
+0x10252102e  mov  rax, qword ptr [rax + 0x30]
+0x102521032  mov  esi, 3
+0x102521037  xor  ecx, ecx
+0x10252103a  jmp  rax
+```
+
+The installed concrete slot is the `UiProDJLink + 0x18` adjustment thunk for
+`djplay::UiProDJLink::ReceiveUpdateEvent(PSvDBServerCallback::UpdateType,
+int, int)` at `0x1017b4ee0`. Its class jump table begins at `0x1017b4f70` for
+the thunk and has the same destinations as the unadjusted body shown below.
+
+For class 3, the unadjusted body's jump table at `0x1017b4ec0` selects
+`0x1017b4e74`, sets internal database-update type `0x1e`, clears the third
+argument, preserves the CueID in the second argument, and tail-calls the
+application database singleton:
+
+```text
+0x1017b4e30  cmp  esi, 6
+0x1017b4e4c  lea  rcx, [rip + 0x6d] ; table 0x1017b4ec0
+0x1017b4e53  movsxd rax, dword ptr [rcx + rax*4]
+0x1017b4e57  add  rax, rcx
+0x1017b4e5a  jmp  rax
+
+class-3 target:
+0x1017b4e74  xor  r15d, r15d
+0x1017b4e77  mov  ebx, 0x1e
+0x1017b4e7c  jmp  0x1017b4e9a
+
+dispatch:
+0x1017b4e9a  lea  rdi, [rip + 0x4323fcf] ; db::DatabaseIF singleton
+0x1017b4ea1  call 0x10003dac0
+0x1017b4ea6  mov  rdi, rax
+0x1017b4ea9  mov  esi, ebx
+0x1017b4eab  mov  edx, r14d
+0x1017b4eae  mov  ecx, r15d
+0x1017b4ebb  jmp  0x102357a20 ; db::DatabaseIF::notifyDBUpdated
+```
+
+The complete seven-entry class table resolves to:
+
+```text
+class 0 -> common path, internal type 0x1f, preserves both integer arguments
+class 1 -> internal type 0x22, clears extra
+class 2 -> internal type 0x1d, clears id and extra
+class 3 -> internal type 0x1e, preserves id and clears extra
+class 4 -> internal type 0x1c, clears extra
+class 5 -> internal type 0x20, clears extra
+class 6 -> internal type 0x21, clears extra
+```
+
+## Conclusion
+
+The Hot Cue Bank setter's delivery sink is an in-process application callback.
+For class 3 it becomes `DatabaseIF::notifyDBUpdated(0x1e, CueID, 0)`. No Link
+Export socket send, packet serializer, or peer-recipient selection occurs in
+this callback chain. Any UI or application work triggered later by
+`notifyDBUpdated` is downstream of the server protocol and is not a setter
+notification packet.

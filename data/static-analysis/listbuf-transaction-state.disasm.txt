@@ -1,0 +1,79 @@
+## __Z28DsqlCmn_ChangeAutoCommitStati | 
+address=0x101e1a960 size=0x80
+0x0101e1a960  push      rbp
+0x0101e1a961  mov       rbp, rsp
+0x0101e1a964  push      r14
+0x0101e1a966  push      rbx
+0x0101e1a967  sub       rsp, 0x10
+0x0101e1a96b  mov       byte ptr [rbp - 0x11], 0
+0x0101e1a96f  test      edi, edi
+0x0101e1a971  je        0x101e1a9ac
+0x0101e1a973  call      0x10325eaa0  ; _edb_dyn_CommitTransaction
+0x0101e1a978  mov       r14b, 1
+0x0101e1a97b  lea       rdi, [rbp - 0x11]
+0x0101e1a97f  call      0x10325ec90  ; _edb_dyn_GetAutoCommitState
+0x0101e1a984  test      eax, eax
+0x0101e1a986  je        0x101e1a9bc
+0x0101e1a988  mov       cx, 2
+0x0101e1a98c  movsxd    rdx, eax
+0x0101e1a98f  movzx     esi, cx
+0x0101e1a992  mov       edi, 0xfd000032
+0x0101e1a997  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x0101e1a99c  mov       ebx, 0xffffffff
+0x0101e1a9a1  mov       eax, ebx
+0x0101e1a9a3  add       rsp, 0x10
+0x0101e1a9a7  pop       rbx
+0x0101e1a9a8  pop       r14
+0x0101e1a9aa  pop       rbp
+0x0101e1a9ab  ret
+0x0101e1a9ac  xor       r14d, r14d
+0x0101e1a9af  lea       rdi, [rbp - 0x11]
+0x0101e1a9b3  call      0x10325ec90  ; _edb_dyn_GetAutoCommitState
+0x0101e1a9b8  test      eax, eax
+0x0101e1a9ba  jne       0x101e1a988
+0x0101e1a9bc  xor       ebx, ebx
+0x0101e1a9be  cmp       byte ptr [rbp - 0x11], r14b
+0x0101e1a9c2  je        0x101e1a9a1
+0x0101e1a9c4  movzx     edi, r14b
+0x0101e1a9c8  call      0x10325ec20  ; _edb_dyn_SetAutoCommitState
+0x0101e1a9cd  test      eax, eax
+0x0101e1a9cf  je        0x101e1a9a1
+0x0101e1a9d1  mov       cx, 1
+0x0101e1a9d5  jmp       0x101e1a98c
+0x0101e1a9d7  nop
+0x0101e1a9d8  nop
+0x0101e1a9d9  nop
+0x0101e1a9da  nop
+0x0101e1a9db  nop
+0x0101e1a9dc  nop
+0x0101e1a9dd  nop
+0x0101e1a9de  nop
+0x0101e1a9df  nop
+
+## __Z18DsqlListBuf_InsEndi | 
+address=0x10249cfc0 size=0x50
+0x010249cfc0  push      rbp
+0x010249cfc1  mov       rbp, rsp
+0x010249cfc4  push      rbx
+0x010249cfc5  push      rax
+0x010249cfc6  mov       ebx, edi
+0x010249cfc8  mov       byte ptr [rbp - 9], 0
+0x010249cfcc  call      0x101e1a960  ; __Z28DsqlCmn_ChangeAutoCommitStati |
+0x010249cfd1  test      ebx, ebx
+0x010249cfd3  je        0x10249d005
+0x010249cfd5  lea       rdi, [rip + 0x174e574]  ; __ZL18cLeftBufCndIdxName; 'idxMasLeftBufCond'
+0x010249cfdc  lea       rsi, [rip + 0x174e55d]  ; __ZL15cLeftBufTblName; 'djmdLeftBuf'
+0x010249cfe3  lea       rdx, [rbp - 9]
+0x010249cfe7  call      0x10325f070  ; _edb_dyn_IndexIsOpen
+0x010249cfec  cmp       byte ptr [rbp - 9], 0
+0x010249cff0  jne       0x10249d005
+0x010249cff2  lea       rdi, [rip + 0x174e557]  ; __ZL18cLeftBufCndIdxName; 'idxMasLeftBufCond'
+0x010249cff9  lea       rsi, [rip + 0x174e540]  ; __ZL15cLeftBufTblName; 'djmdLeftBuf'
+0x010249d000  call      0x10325ecf0  ; _edb_dyn_OpenIndex
+0x010249d005  xor       eax, eax
+0x010249d007  add       rsp, 8
+0x010249d00b  pop       rbx
+0x010249d00c  pop       rbp
+0x010249d00d  ret
+0x010249d00e  nop
+

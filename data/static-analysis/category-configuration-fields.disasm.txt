@@ -1,0 +1,124 @@
+# Category configuration fields and Link Export serving
+
+Pinned source:
+
+```text
+../artifacts/rekordbox/7.2.19/extracted/app-root/rekordbox.app/Contents/MacOS/rekordbox
+SHA-256 07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244
+x86-64 slice
+```
+
+This extract separates the category settings editor's raw row representation
+from the fields consumed by Link Export root serving.
+
+## Root serving
+
+`PSvDBMain::GetRootMenu(unsigned int context, unsigned int mask)` calls
+`DsqlCategory_GetEnableItem` for each position. The returned values are only
+the category ID and MenuItemID:
+
+```text
+0x1004b2482  mov  edi, r14d
+0x1004b2485  mov  esi, r12d
+0x1004b2488  lea  rdx, [rbp - 0x2e] ; category ID output
+0x1004b248c  lea  rcx, [rbp - 0x2c] ; MenuItemID output
+0x1004b2490  call 0x1010114f0 ; DsqlCategory_GetEnableItem
+```
+
+`DsqlCategory_GetEnableItem` opens `djmdCategory`, applies
+`WhereCategory_Enable`, sorts by column 2 (`Seq`), and reads columns 0 and 1:
+
+```text
+0x101011540  lea  rsi, [rip + ...] ; "djmdCategory"
+0x101011547  lea  rcx, [rip - 0x4be] ; WhereCategory_Enable
+0x10101155f  call 0x10325e170 ; edb_dyn_SelectMaterialized
+
+0x10101157f  mov  dword ptr [rbp - 0x40], 2 ; sort column Seq
+0x101011596  call 0x10325e4f0 ; edb_dyn_SortRowSet
+
+0x1010115cd  mov  rdi, rax
+0x1010115d0  xor  esi, esi ; column 0, ID
+0x1010115d5  call 0x10325e9f0 ; edb_dyn_GetColumnValue
+0x1010115dd  mov  word ptr [r15], ax
+
+0x1010115e1  mov  rdi, rbx
+0x1010115e4  mov  esi, 1 ; column 1, MenuItemID
+0x1010115ec  call 0x10325e9f0 ; edb_dyn_GetColumnValue
+0x1010115f4  mov  word ptr [r14], ax
+```
+
+`WhereCategory_Enable` reads column 3 (`Disable`) and column 1
+(`MenuItemID`), then applies the special Matching/Date Added rules and the
+request capability mask:
+
+```text
+0x10101110a4  mov  esi, 3 ; Disable
+0x10101110a9  call 0x10325ea70 ; edb_dyn_GetColumnValueInternal
+0x10101110bb  mov  esi, 1 ; MenuItemID
+0x10101110c0  call 0x10325ea70 ; edb_dyn_GetColumnValueInternal
+```
+
+No content table is opened by this root path. Category visibility therefore
+does not depend on whether the corresponding hierarchy contains rows.
+`InfoOrder`, column 4, is never read by these serving functions.
+
+## Settings-editor raw rows
+
+`db::AppSyncDBController::selectRawCategorySetting` reads all live rows ordered
+by `Seq` into an eight-byte `RawCategorySetting`. It copies:
+
+```text
+offset +0: uint16 ID
+offset +2: uint16 MenuItemID
+offset +4: uint8  Seq
+offset +5: uint8  Disable
+offset +6: uint8  InfoOrder
+```
+
+The `InfoOrder` copy is explicit:
+
+```text
+0x100b1ce2d  lea  rsi, [rip + ...] ; "InfoOrder"
+0x100b1ce34  call 0x1027caeb0 ; juce::var::operator[]
+0x100b1ce3c  call 0x1027ca8b0 ; juce::var::operator int
+0x100b1ce41  mov  byte ptr [r12 + 6], al
+```
+
+`db::AppSyncDBController::updateAllCategory` copies that byte back into the
+category entity before saving it:
+
+```text
+0x100b1d4a4  movzx ebx, byte ptr [r15 + 6]
+0x100b1d4b3  mov   rdi, qword ptr [rbp - 0xc0]
+0x100b1d4ba  mov   dword ptr [rax], ebx
+0x100b1d4bc  mov   qword ptr [rbp - 0xc0], rax
+```
+
+The ordinary settings-list reader constructs a smaller six-byte
+`CategorySetting` and consumes ID, MenuItemID, Seq, and Disable. It does not
+copy `InfoOrder`; its final display-order byte can instead be replaced by the
+static `CategoryAlphabeticalOrder` mapping.
+
+## Song Info boundary
+
+The active AppSync Display Song Info builder uses its separate query:
+
+```sql
+select MenuItemID, Disable
+from djmdCategory
+where rb_local_deleted = 0
+```
+
+It uses those pairs only to set the enabled flag on fixed metadata rows.
+Neither `Seq` nor `InfoOrder` changes the 16-row Display Song Info order.
+
+## Conclusion
+
+For Link Export menu serving in this build:
+
+- `Seq` orders root rows;
+- `Disable` and the request mask decide root visibility;
+- `ID` and `MenuItemID` identify the returned row;
+- content-table emptiness does not suppress an enabled root row;
+- `InfoOrder` is settings-editor state and has no recovered root or Display
+  Song Info wire effect.

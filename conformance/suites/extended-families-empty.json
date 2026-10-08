@@ -1,0 +1,25 @@
+{
+  "name": "static-resolved-menu-families-empty",
+  "fixture_profile": "empty",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"play-count-root","description":"Empty DJPlayCount selector","request_kind":"0x100e","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"play-count-tracks","description":"Empty play-count track filter","request_kind":"0x110e","arguments":[{"number":"$context"},{"number":"$sort"},{"number":0}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"prepare","description":"Empty djmdSongTagList","request_kind":"0x100f","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"date-added-years","description":"Empty StockDate hierarchy","request_kind":"0x1708","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"date-added-months","description":"Empty StockDate month level still emits ALL","request_kind":"0x1808","arguments":[{"number":"$context"},{"number":"$sort"},{"number":2021}],"expect":{"outcome":"menu","total":1,"row_count":1,"item_ids":["0xffffffff"],"item_type":"0x00a0"}},
+    {"id":"date-added-days","description":"Empty StockDate day level still emits ALL","request_kind":"0x1908","arguments":[{"number":"$context"},{"number":"$sort"},{"number":2021},{"number":2}],"expect":{"outcome":"menu","total":1,"row_count":1,"item_ids":["0xffffffff"],"item_type":"0x00a0"}},
+    {"id":"date-added-tracks","description":"Empty StockDate track level","request_kind":"0x1a08","arguments":[{"number":"$context"},{"number":"$sort"},{"number":2021},{"number":2},{"number":2}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"mytag-root","description":"Default My Tag groups with no fixture definitions","request_kind":"0x1015","arguments":[{"number":"$context"},{"number":"$sort"},{"number":0},{"number":0}],"expect":{"outcome":"menu","total":4,"row_count":4,"item_ids":[1,2,3,4],"item_type":"0x004a"}},
+    {"id":"mytag-on-track","description":"My Tag query for absent content","request_kind":"0x1315","arguments":[{"number":"$context"},{"number":"$sort"},{"number":10001}],"expect":{"outcome":"menu","total":0,"row_count":0}}
+  ]
+}

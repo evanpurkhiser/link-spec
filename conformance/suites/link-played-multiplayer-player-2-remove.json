@@ -1,0 +1,147 @@
+{
+  "name": "link-played-multiplayer-player-2-remove",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "fresh-fixture-process-two-simultaneous-identities",
+  "defaults": {
+    "device": 2,
+    "context": "0x02010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 8,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ],
+    "read_timeout_ms": 3000
+  },
+  "cases": [
+    {
+      "id": "first-state-before",
+      "description": "First-track scalar before player-2 removal",
+      "request_kind": "0x3b03",
+      "arguments": [
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "direct_response": true,
+      "expect": {
+        "outcome": "any"
+      },
+      "fresh_connection": true,
+      "delay_before_connection_ms": 250
+    },
+    {
+      "id": "second-state-before",
+      "description": "Second-track scalar before player-2 removal",
+      "request_kind": "0x3b03",
+      "arguments": [
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "render": false,
+      "direct_response": true,
+      "expect": {
+        "outcome": "any"
+      },
+      "fresh_connection": true,
+      "delay_before_connection_ms": 250
+    },
+    {
+      "id": "tracks-before",
+      "description": "Track rows before player-2 removal",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "fresh_connection": true,
+      "delay_before_connection_ms": 250
+    },
+    {
+      "id": "remove-second",
+      "description": "Player removes the second track in Link history",
+      "request_kind": "0x3401",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "render": false,
+      "expect": {
+        "outcome": "any"
+      },
+      "fresh_connection": true,
+      "delay_before_connection_ms": 250
+    },
+    {
+      "id": "first-state-after",
+      "description": "First-track scalar after player-2 removal",
+      "request_kind": "0x3b03",
+      "arguments": [
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "direct_response": true,
+      "expect": {
+        "outcome": "any"
+      },
+      "fresh_connection": true,
+      "delay_before_connection_ms": 250
+    },
+    {
+      "id": "second-state-after",
+      "description": "Second-track scalar after player-2 removal",
+      "request_kind": "0x3b03",
+      "arguments": [
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "render": false,
+      "direct_response": true,
+      "expect": {
+        "outcome": "any"
+      },
+      "fresh_connection": true,
+      "delay_before_connection_ms": 250
+    },
+    {
+      "id": "tracks-after",
+      "description": "Track rows after player-2 removal",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "any"
+      },
+      "fresh_connection": true,
+      "delay_before_connection_ms": 250
+    }
+  ]
+}

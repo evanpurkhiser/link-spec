@@ -1,0 +1,137 @@
+{
+  "name": "xdj-rr-location9-xdj-rx3-status-legacy",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "reset-and-restart",
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "legacy",
+    "page_size": 32,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "location-1-first-current",
+      "description": "Location 1 first-track Delivery Info rendered at location 1",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x0b010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "location-2-first-current",
+      "description": "Location 2 first-track Delivery Info rendered at location 2",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x0b020301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "location-9-second-current",
+      "description": "Source-defined location 9 second-track Delivery Info rendered at location 9",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b090301"
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "render_context": "0x0b090301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "location-1-first-render-stale-9",
+      "description": "Populate location 1 with the first track and render the prior location-9 second track",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x0b090301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "location-9-second-render-stale-1",
+      "description": "Populate location 9 with the second track and render the prior location-1 first track",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b090301"
+        },
+        {
+          "number": "$fixture.track.second"
+        }
+      ],
+      "render_context": "0x0b010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    },
+    {
+      "id": "location-9-first-current",
+      "description": "Source-defined location 9 first-track Delivery Info rendered at location 9",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b090301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x0b090301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any",
+        "total": 13
+      }
+    }
+  ]
+}

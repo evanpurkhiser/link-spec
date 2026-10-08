@@ -1,0 +1,2310 @@
+{
+  "name": "smart-string-property-matrix",
+  "fixture_profile": "smart-string-property-matrix",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 10,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "artist-alpha-equal",
+      "description": "SmartList artist string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.artist_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "artist-alpha-not-equal",
+      "description": "SmartList artist string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.artist_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "artist-alpha-contains",
+      "description": "SmartList artist string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.artist_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "artist-alpha-not-contains",
+      "description": "SmartList artist string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.artist_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "artist-alpha-starts",
+      "description": "SmartList artist string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.artist_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "artist-alpha-ends",
+      "description": "SmartList artist string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.artist_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "artist-empty-equal",
+      "description": "SmartList artist string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.artist_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "artist-empty-not-equal",
+      "description": "SmartList artist string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.artist_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-alpha-equal",
+      "description": "SmartList album string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-alpha-not-equal",
+      "description": "SmartList album string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-alpha-contains",
+      "description": "SmartList album string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-alpha-not-contains",
+      "description": "SmartList album string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-alpha-starts",
+      "description": "SmartList album string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-alpha-ends",
+      "description": "SmartList album string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-empty-equal",
+      "description": "SmartList album string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-empty-not-equal",
+      "description": "SmartList album string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-artist-alpha-equal",
+      "description": "SmartList album_artist string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_artist_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-artist-alpha-not-equal",
+      "description": "SmartList album_artist string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_artist_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-artist-alpha-contains",
+      "description": "SmartList album_artist string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_artist_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-artist-alpha-not-contains",
+      "description": "SmartList album_artist string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_artist_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-artist-alpha-starts",
+      "description": "SmartList album_artist string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_artist_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-artist-alpha-ends",
+      "description": "SmartList album_artist string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_artist_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-artist-empty-equal",
+      "description": "SmartList album_artist string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_artist_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "album-artist-empty-not-equal",
+      "description": "SmartList album_artist string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.album_artist_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "original-artist-alpha-equal",
+      "description": "SmartList original_artist string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.original_artist_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "original-artist-alpha-not-equal",
+      "description": "SmartList original_artist string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.original_artist_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "original-artist-alpha-contains",
+      "description": "SmartList original_artist string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.original_artist_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "original-artist-alpha-not-contains",
+      "description": "SmartList original_artist string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.original_artist_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "original-artist-alpha-starts",
+      "description": "SmartList original_artist string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.original_artist_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "original-artist-alpha-ends",
+      "description": "SmartList original_artist string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.original_artist_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "original-artist-empty-equal",
+      "description": "SmartList original_artist string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.original_artist_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "original-artist-empty-not-equal",
+      "description": "SmartList original_artist string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.original_artist_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "producer-alpha-equal",
+      "description": "SmartList producer string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.producer_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "producer-alpha-not-equal",
+      "description": "SmartList producer string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.producer_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "producer-alpha-contains",
+      "description": "SmartList producer string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.producer_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "producer-alpha-not-contains",
+      "description": "SmartList producer string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.producer_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "producer-alpha-starts",
+      "description": "SmartList producer string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.producer_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "producer-alpha-ends",
+      "description": "SmartList producer string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.producer_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "producer-empty-equal",
+      "description": "SmartList producer string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.producer_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "producer-empty-not-equal",
+      "description": "SmartList producer string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.producer_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "genre-alpha-equal",
+      "description": "SmartList genre string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.genre_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "genre-alpha-not-equal",
+      "description": "SmartList genre string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.genre_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "genre-alpha-contains",
+      "description": "SmartList genre string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.genre_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "genre-alpha-not-contains",
+      "description": "SmartList genre string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.genre_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "genre-alpha-starts",
+      "description": "SmartList genre string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.genre_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "genre-alpha-ends",
+      "description": "SmartList genre string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.genre_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "genre-empty-equal",
+      "description": "SmartList genre string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.genre_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "genre-empty-not-equal",
+      "description": "SmartList genre string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.genre_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "key-alpha-equal",
+      "description": "SmartList key string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.key_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "key-alpha-not-equal",
+      "description": "SmartList key string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.key_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "key-alpha-contains",
+      "description": "SmartList key string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.key_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "key-alpha-not-contains",
+      "description": "SmartList key string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.key_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "key-alpha-starts",
+      "description": "SmartList key string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.key_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "key-alpha-ends",
+      "description": "SmartList key string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.key_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "key-empty-equal",
+      "description": "SmartList key string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.key_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "key-empty-not-equal",
+      "description": "SmartList key string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.key_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "label-alpha-equal",
+      "description": "SmartList label string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.label_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "label-alpha-not-equal",
+      "description": "SmartList label string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.label_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "label-alpha-contains",
+      "description": "SmartList label string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.label_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "label-alpha-not-contains",
+      "description": "SmartList label string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.label_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "label-alpha-starts",
+      "description": "SmartList label string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.label_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "label-alpha-ends",
+      "description": "SmartList label string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.label_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "label-empty-equal",
+      "description": "SmartList label string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.label_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "label-empty-not-equal",
+      "description": "SmartList label string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.label_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "remixed-by-alpha-equal",
+      "description": "SmartList remixed_by string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.remixed_by_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "remixed-by-alpha-not-equal",
+      "description": "SmartList remixed_by string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.remixed_by_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "remixed-by-alpha-contains",
+      "description": "SmartList remixed_by string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.remixed_by_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "remixed-by-alpha-not-contains",
+      "description": "SmartList remixed_by string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.remixed_by_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "remixed-by-alpha-starts",
+      "description": "SmartList remixed_by string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.remixed_by_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "remixed-by-alpha-ends",
+      "description": "SmartList remixed_by string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.remixed_by_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "remixed-by-empty-equal",
+      "description": "SmartList remixed_by string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.remixed_by_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "remixed-by-empty-not-equal",
+      "description": "SmartList remixed_by string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.remixed_by_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "comments-alpha-equal",
+      "description": "SmartList comments string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.comments_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "comments-alpha-not-equal",
+      "description": "SmartList comments string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.comments_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "comments-alpha-contains",
+      "description": "SmartList comments string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.comments_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "comments-alpha-not-contains",
+      "description": "SmartList comments string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.comments_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "comments-alpha-starts",
+      "description": "SmartList comments string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.comments_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "comments-alpha-ends",
+      "description": "SmartList comments string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.comments_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "comments-empty-equal",
+      "description": "SmartList comments string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.comments_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "comments-empty-not-equal",
+      "description": "SmartList comments string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.comments_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "file-name-alpha-equal",
+      "description": "SmartList file_name string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.file_name_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "file-name-alpha-not-equal",
+      "description": "SmartList file_name string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.file_name_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "file-name-alpha-contains",
+      "description": "SmartList file_name string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.file_name_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "file-name-alpha-not-contains",
+      "description": "SmartList file_name string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.file_name_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "file-name-alpha-starts",
+      "description": "SmartList file_name string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.file_name_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "file-name-alpha-ends",
+      "description": "SmartList file_name string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.file_name_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "file-name-empty-equal",
+      "description": "SmartList file_name string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.file_name_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "file-name-empty-not-equal",
+      "description": "SmartList file_name string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.file_name_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "mix-name-alpha-equal",
+      "description": "SmartList mix_name string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.mix_name_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "mix-name-alpha-not-equal",
+      "description": "SmartList mix_name string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.mix_name_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "mix-name-alpha-contains",
+      "description": "SmartList mix_name string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.mix_name_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "mix-name-alpha-not-contains",
+      "description": "SmartList mix_name string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.mix_name_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "mix-name-alpha-starts",
+      "description": "SmartList mix_name string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.mix_name_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "mix-name-alpha-ends",
+      "description": "SmartList mix_name string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.mix_name_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "mix-name-empty-equal",
+      "description": "SmartList mix_name string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.mix_name_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "mix-name-empty-not-equal",
+      "description": "SmartList mix_name string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.mix_name_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "name-alpha-equal",
+      "description": "SmartList name string probe: alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.name_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "name-alpha-not-equal",
+      "description": "SmartList name string probe: alpha not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.name_alpha_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "name-alpha-contains",
+      "description": "SmartList name string probe: alpha contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.name_alpha_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "name-alpha-not-contains",
+      "description": "SmartList name string probe: alpha not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.name_alpha_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "name-alpha-starts",
+      "description": "SmartList name string probe: alpha starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.name_alpha_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "name-alpha-ends",
+      "description": "SmartList name string probe: alpha ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.name_alpha_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "name-empty-equal",
+      "description": "SmartList name string probe: empty equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.name_empty_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    },
+    {
+      "id": "name-empty-not-equal",
+      "description": "SmartList name string probe: empty not equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_string_property.name_empty_not_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu"
+      }
+    }
+  ]
+}

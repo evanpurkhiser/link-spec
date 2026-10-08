@@ -1,0 +1,343 @@
+{
+  "name": "search-track-ceiling-conformance",
+  "fixture_profile": "search-track-ceiling",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 512,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "ordinary-search-control",
+      "description": "Ordinary Search retains its 1,000-row ceiling on the larger fixture",
+      "request_kind": "0x1300",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "render": false,
+      "expect": {
+        "outcome": "menu",
+        "total": 1000
+      }
+    },
+    {
+      "id": "search-track-total",
+      "description": "Search Track broad-query total without rendering",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        }
+      ],
+      "render": false,
+      "expect": {
+        "outcome": "menu",
+        "total": 5000
+      }
+    },
+    {
+      "id": "search-track-sort-17-total",
+      "description": "Search Track ceiling with a nondefault configured sort",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 17
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        }
+      ],
+      "render": false,
+      "expect": {
+        "outcome": "menu",
+        "total": 5005
+      }
+    },
+    {
+      "id": "search-track-first",
+      "description": "First row of the Search Track result",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5000,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "search-track-last-window",
+      "description": "Final five rows wholly inside the 5,000-row result",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 4995,
+          "count": 5
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5000,
+        "row_count": 5
+      }
+    },
+    {
+      "id": "search-track-cross-boundary",
+      "description": "Render request starts inside and extends beyond the result ceiling",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 4998,
+          "count": 5
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5000,
+        "row_count": 5
+      }
+    },
+    {
+      "id": "search-track-at-cap",
+      "description": "Single-row render starts exactly at the reported count",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 5000,
+          "count": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5000,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "search-track-beyond-cap",
+      "description": "Single-row render starts beyond the reported count",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        }
+      ],
+      "render_pages": [
+        {
+          "offset": 5001,
+          "count": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5000,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "search-track-full",
+      "description": "Complete 5,000-row capped result",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "CEILING"
+        },
+        {
+          "string": "CEILING"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 5000,
+        "row_count": 5000
+      }
+    },
+    {
+      "id": "narrow-five-thousandth",
+      "description": "Narrow query proves source row 5,000 exists",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "CEILING MATCH 5000"
+        },
+        {
+          "string": "CEILING MATCH 5000"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "narrow-five-thousand-first",
+      "description": "Narrow query proves the first source row beyond the cap exists",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "CEILING MATCH 5001"
+        },
+        {
+          "string": "CEILING MATCH 5001"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    },
+    {
+      "id": "narrow-last",
+      "description": "Narrow query proves the last fixture source row exists",
+      "request_kind": "0x1500",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "utf16_bytes": "CEILING MATCH 5005"
+        },
+        {
+          "string": "CEILING MATCH 5005"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1
+      }
+    }
+  ]
+}

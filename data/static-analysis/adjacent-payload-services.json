@@ -1,0 +1,300 @@
+{
+  "format": 1,
+  "rekordbox_version": "7.2.19",
+  "scope": "server-side artwork and song-analysis request class",
+  "evidence": {
+    "data/static-analysis/adjacent-link-export-dispatch.disasm.txt": "7c336feb4c379dd3f9443a0a945eea373315a2225e80bfce96b94381f6fc7e12",
+    "data/static-analysis/adjacent-payload-loaders.disasm.txt": "bafdcab4663a327dbbe7d4eb46e022677e3d8ea7e7b6f5a2416b88edf3ce4d1b",
+    "data/static-analysis/adjacent-payload-parser-loaders.disasm.txt": "d1bfcd405e62815234bb29c258a8ce0263f26e6205b6893342907f0d82491050",
+    "data/static-analysis/link-export-request-vocabulary.json": "6a3c0a4a9d050daebd68a12a991305e84d86920a6b23f5149e0a80ab708f2ce9"
+  },
+  "services": [
+    {
+      "kind": "2003",
+      "arguments": [
+        "packed-context",
+        "image-id"
+      ],
+      "reply_kind": "4002",
+      "target": "database-interface +0x190 (getDBImgData)",
+      "database": "AppSync: select ImagePath from undeleted djmdContent by ID, then undeleted djmdPlaylist by ID; Master fallback: resolve djmdImage path by image ID",
+      "filesystem": "JPEG file, at most 1 MiB, accepted by CheckImgSize_XYE",
+      "response": "4002 binary reply; failures also emit an empty 4002 after an error",
+      "live_state": "declared",
+      "notes": [
+        "track type 1 calls the database interface",
+        "track types 3 and 4 return image error 1",
+        "track type 2 and other non-1 types return image error 2"
+      ],
+      "name": "CMD_GET_IMAGE",
+      "coverage": "rekordbox-static-dispatch"
+    },
+    {
+      "kind": "2103",
+      "arguments": [
+        "packed-context",
+        "content-id"
+      ],
+      "reply_kind": "4002",
+      "target": "database-interface +0x198 (getDBImgDataByContentID)",
+      "database": "AppSync: thin call to the same ImagePath lookup using content ID; Master fallback: DsqlContent_GetImageID then djmdImage path",
+      "filesystem": "same common JPEG loader as 2003",
+      "response": "4002 binary reply; failures also emit an empty 4002 after an error",
+      "live_state": "declared",
+      "notes": [
+        "only track type 1 is accepted; every other type returns image error 3"
+      ],
+      "name": "CMD_GET_IMAGE2",
+      "coverage": "rekordbox-static-dispatch"
+    },
+    {
+      "kind": "2004",
+      "arguments": [
+        "packed-context",
+        "constant-4",
+        "content-id",
+        "zero",
+        "declared-missing-blob"
+      ],
+      "reply_kind": "4402",
+      "target": "PSvDBMain::GetWave",
+      "database": "database-interface +0x180 analysis-path lookup by content ID",
+      "filesystem": "sequential DAT PWAV/PWV2 readers in MstLoadLoudWave/MstLoadDotWave",
+      "response": "fixed 904-byte payload: 800-byte loud preview plus 100-byte dot preview and framing",
+      "live_state": "declared",
+      "notes": [
+        "wire header declares five tags although the final zero-length blob is omitted"
+      ],
+      "name": "CMD_GET_WAVEDATA",
+      "coverage": "rekordbox-static-dispatch"
+    },
+    {
+      "kind": "2104",
+      "arguments": [
+        "packed-context",
+        "content-id"
+      ],
+      "reply_kind": "4702",
+      "target": "PSvDBMain::GetUsbCue",
+      "database": "AppSync cue callback or undeleted djmdCue rows filtered by ContentID",
+      "filesystem": null,
+      "response": "legacy fixed-width cue/loop blob with counts and auxiliary blob",
+      "live_state": "declared",
+      "notes": [],
+      "name": "CMD_GET_USB_CUE",
+      "coverage": "rekordbox-static-dispatch"
+    },
+    {
+      "kind": "2204",
+      "arguments": [
+        "packed-context",
+        "content-id"
+      ],
+      "reply_kind": "4602",
+      "target": "PSvDBMain::GetQtzInf",
+      "database": "database-interface +0x180 analysis-path lookup by content ID",
+      "filesystem": "DAT PQTZ through MstLoadBeatGrid and MstLoadBeatGridWithHeader",
+      "response": "20-byte header plus 16 bytes per beat; more than 6,248 beats is rejected",
+      "live_state": "declared",
+      "notes": [],
+      "name": "CMD_GET_QUANTIZE_DATA",
+      "coverage": "rekordbox-static-dispatch"
+    },
+    {
+      "kind": "2304",
+      "arguments": [
+        "packed-context"
+      ],
+      "reply_kind": null,
+      "target": "recognized log-only arm",
+      "database": "none recovered",
+      "filesystem": null,
+      "response": "logs the request and returns internal -2 without a payload builder",
+      "live_state": "declared",
+      "notes": [
+        "only the packed context track-type byte is read"
+      ],
+      "name": "conformance-only malformed/guessed request",
+      "coverage": "rekordbox-recognized-log-only"
+    },
+    {
+      "kind": "2404",
+      "arguments": [
+        "packed-context"
+      ],
+      "reply_kind": null,
+      "target": "recognized log-only arm",
+      "database": "none recovered",
+      "filesystem": null,
+      "response": "logs the request and returns internal -2 without a payload builder",
+      "live_state": "declared",
+      "notes": [
+        "only the packed context track-type byte is read"
+      ],
+      "name": "CMD_GET_DISC_CUE",
+      "coverage": "rekordbox-recognized-log-only"
+    },
+    {
+      "kind": "2504",
+      "arguments": [
+        "packed-context",
+        "content-id"
+      ],
+      "reply_kind": "4502",
+      "target": "PSvDBMain::GetVbrInf",
+      "database": "database-interface +0x180 analysis-path lookup by content ID",
+      "filesystem": "DAT PVBR through MstLoadVBR",
+      "response": "fixed 1,604-byte binary payload; failure emits an empty 4502",
+      "live_state": "declared",
+      "notes": [],
+      "name": "CMD_GET_VBR_INFO",
+      "coverage": "rekordbox-static-dispatch"
+    },
+    {
+      "kind": "2604",
+      "arguments": [
+        "packed-context"
+      ],
+      "reply_kind": null,
+      "target": "recognized log-only arm",
+      "database": "none recovered",
+      "filesystem": null,
+      "response": "logs the request and returns internal -2 without a payload builder",
+      "live_state": "declared",
+      "notes": [
+        "only the packed context track-type byte is read"
+      ],
+      "name": "CMD_INFO_DISC_EJECT",
+      "coverage": "rekordbox-recognized-log-only"
+    },
+    {
+      "kind": "2704",
+      "arguments": [
+        "packed-context"
+      ],
+      "reply_kind": null,
+      "target": "recognized log-only arm",
+      "database": "none recovered",
+      "filesystem": null,
+      "response": "logs the request and returns internal -2 without a payload builder",
+      "live_state": "declared",
+      "notes": [
+        "only the packed context track-type byte is read"
+      ],
+      "name": "CMD_ASK_DISCID_REGSTAT",
+      "coverage": "rekordbox-recognized-log-only"
+    },
+    {
+      "kind": "2804",
+      "arguments": [
+        "packed-context",
+        "content-id"
+      ],
+      "reply_kind": "4000",
+      "target": "PSvDBMain::GetQtzInf",
+      "database": "same beat-grid analysis-path lookup as 2204",
+      "filesystem": "same DAT PQTZ parser as 2204",
+      "response": "single four-byte quantize value rather than the beat-grid blob",
+      "live_state": "declared",
+      "notes": [],
+      "name": "CMD_GET_QTZ_OFFSET",
+      "coverage": "rekordbox-static-dispatch"
+    },
+    {
+      "kind": "2904",
+      "arguments": [
+        "packed-context",
+        "content-id",
+        "zero"
+      ],
+      "reply_kind": "4a02",
+      "target": "PSvDBMain::LoadParWav",
+      "database": "database-interface +0x180 analysis-path lookup by content ID",
+      "filesystem": "replace the analysis filename with its EXT sibling, then scan for PWV3",
+      "response": "20-byte header plus one packed height/color byte per 1/150-second segment",
+      "live_state": "declared",
+      "notes": [],
+      "name": "CMD_GET_PAR_WAVE",
+      "coverage": "rekordbox-static-dispatch"
+    },
+    {
+      "kind": "2a04",
+      "arguments": [
+        "packed-context",
+        "content-id"
+      ],
+      "reply_kind": "4c02",
+      "target": "PSvDBMain::LoadKeyInf",
+      "database": "database-interface +0x180 analysis-path lookup by content ID",
+      "filesystem": "replace the analysis filename with its EXT sibling, then scan for PKEY",
+      "response": "24-byte header plus 12 bytes per segmented-key entry",
+      "live_state": "declared",
+      "notes": [],
+      "name": "CMD_GET_KEY_INFO",
+      "coverage": "rekordbox-static-dispatch"
+    },
+    {
+      "kind": "2b04",
+      "arguments": [
+        "packed-context",
+        "content-id",
+        "zero"
+      ],
+      "reply_kind": "4e02",
+      "target": "PSvDBMain::GetUsbCueExt",
+      "database": "AppSync callback or djmdCue plus cue-option lookups by ContentID",
+      "filesystem": null,
+      "response": "variable-width extended cue records and entry count",
+      "live_state": "declared",
+      "notes": [
+        "a separate shared-content builder exists for callback-owned cue data"
+      ],
+      "name": "CMD_GET_USB_CUE2",
+      "coverage": "rekordbox-static-dispatch"
+    },
+    {
+      "kind": "2c04",
+      "arguments": [
+        "packed-context",
+        "content-id",
+        "atom-tag",
+        "analysis-extension"
+      ],
+      "reply_kind": "4f02",
+      "target": "PSvDBMain::GetSpecifiedAtomInfo",
+      "database": "database-interface +0x180 analysis-path lookup by content ID",
+      "filesystem": "replace analysis extension with uppercased EXT or 2EX, then MstLoadAtomInfo",
+      "response": "concatenated length-prefixed matching atoms plus trailing numeric zero",
+      "live_state": "declared",
+      "notes": [
+        "extensions other than EXT and 2EX return an empty 4f02",
+        "PCP2, PCPT, and PMAI are explicitly short-circuited to an empty 4f02",
+        "all other atom tags reach MstLoadAtomInfo"
+      ],
+      "name": "CMD_GET_SPECIFIED_ATOM_INFO",
+      "coverage": "rekordbox-static-dispatch"
+    },
+    {
+      "kind": "2d04",
+      "arguments": [
+        "packed-context",
+        "content-id",
+        "atom-tag",
+        "analysis-extension"
+      ],
+      "reply_kind": "4f02",
+      "target": "PSvDBMain::GetSpecifiedAtomInfo",
+      "database": "same path as 2c04",
+      "filesystem": "same path as 2c04",
+      "response": "exact handler alias of 2c04 with the original request kind echoed",
+      "live_state": "declared",
+      "notes": [
+        "extensions other than EXT and 2EX return an empty 4f02",
+        "PCP2, PCPT, and PMAI are explicitly short-circuited to an empty 4f02",
+        "all other atom tags reach MstLoadAtomInfo"
+      ],
+      "name": "CMD_GET_SPECIFIED_ATOM_INFO2",
+      "coverage": "rekordbox-static-dispatch"
+    }
+  ]
+}

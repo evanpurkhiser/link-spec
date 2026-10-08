@@ -1,0 +1,33 @@
+{
+  "name": "same-process-column-comment-probe",
+  "fixture_profile": "boundaries",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 1,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "year-zero-database-column",
+      "description": "Database-selected column after changing KEY to COMMENTS while Link is inactive",
+      "request_kind": "0x1208",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$sort"},
+        {"number": 0},
+        {"number": 0}
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_type": "0x2304"
+      }
+    }
+  ]
+}

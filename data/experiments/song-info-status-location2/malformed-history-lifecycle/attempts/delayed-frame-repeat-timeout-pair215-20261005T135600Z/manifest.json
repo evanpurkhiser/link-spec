@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "scope": "unpromoted real Rekordbox 7.2.19 malformed-history lifecycle divergence",
+  "attempt": "delayed-frame-repeat-timeout-pair215",
+  "pair": "delivery-blob-context__then__play-blob-content",
+  "pair_index": 215,
+  "failed_at": "2026-10-05T13:56:00Z",
+  "recording_generation": "z42",
+  "recording_service": "codex-rekordbox-song-info-malformed-history-lifecycle-20261005z42.service",
+  "recording_invocation_id": "f4c8dd816c3246a0ba54f0007f01306d",
+  "phase": "repeat-protocol-comparison",
+  "result": "exit-code",
+  "exit_status": 1,
+  "authority_status": "quarantined-unpromoted",
+  "difference": {
+    "case": "delivery-probe",
+    "field": "pre_request_drain",
+    "record": {
+      "outcome": "raw_reply",
+      "decoded_bytes": 32,
+      "message_kind": 16384,
+      "arguments": [8450, 0],
+      "raw_hex": "11872349ae11000000011040000f021400000002060611000021021100000000"
+    },
+    "repeat": {
+      "outcome": "timeout",
+      "error_kind": "WouldBlock",
+      "raw_hex": ""
+    }
+  },
+  "stable_results": {
+    "first": "header-without-total",
+    "second": "header-without-total",
+    "health_probe_total": 13
+  },
+  "artifacts": {
+    "record-health-after.json": {"bytes": 7619, "sha256": "effbad1eee3a5e786edfaae2f640f2b3884e4276fc153558abcae1896f22986d"},
+    "record-health-before.json": {"bytes": 6588, "sha256": "a94a4401750e5d9a04cd03eab7baf25747be40b564edb971871c0866f441b143"},
+    "record.json": {"bytes": 7870, "sha256": "b5ddb19528fb457513ebf963ee016a36457494ac7711e8df4bef1a8f9692b5a8"},
+    "repeat-health-before.json": {"bytes": 6585, "sha256": "b0af665b5a345ff2c3dec954b26e32134b994342326106a8f7a7c66579ab1b78"},
+    "repeat.actual.json": {"bytes": 7469, "sha256": "328e5860cab6f1d8183dd8ba6d6e763bb648c4a0d2dcef0c332d2a3846bbc521"},
+    "service-journal.txt": {"bytes": 56421, "sha256": "3b72b4c69057bf4d41bafb91227f845a8e0d34cab1cd3b1989c897b7f90b0c69"}
+  },
+  "suite_sha256": "a9f165a0d9da19ae3f5945fe9d899f32eb6dd8675f6780e677d001227109d327",
+  "cleanup": {
+    "active_guest_profile": "play-paths",
+    "active_guest_manifest_sha256": "0e4291d2ad92cd02b927e9e07751e1f7693aae1ad09ad996f2a8652a57622878",
+    "active_guest_database_sha256": "8f197208a18a301980b039f3b688306b558a0f7667da75096ea6c082cd7591b6",
+    "baseline_manifest_sha256": "0e4291d2ad92cd02b927e9e07751e1f7693aae1ad09ad996f2a8652a57622878",
+    "baseline_database_sha256": "8f197208a18a301980b039f3b688306b558a0f7667da75096ea6c082cd7591b6",
+    "synthetic_identity_units_active": false,
+    "isolated_vm_containers_active": false,
+    "live_pair_work_slot_empty": true
+  },
+  "recovery": {
+    "generation": "z43",
+    "service": "codex-rekordbox-song-info-malformed-history-lifecycle-20261005z43.service",
+    "invocation_id": "2edb8af02ca3481b92b708c1669ad4f0",
+    "strategy": "archive both divergent runs and perform a fourth wholly fresh record and cold repeat",
+    "result": "z43 fresh record and repeat both received the delayed frame; canonical pair promoted",
+    "canonical_golden_sha256": "139bc0e74efa5b0240a1fc663e542bffb8c0fe33fc5e28cadc2f388baa225013",
+    "canonical_receipt_sha256": "b8a75ed9ce9d0984561197e8dbe36cc0c86c11a40264c03edda4ddd9d70d7883"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "same-process-sort-comments-probe",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 64,
+    "render_arguments": [
+      0,
+      "$total",
+      64,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "sort-menu-after-comments-enabled",
+      "description": "Sort menu after moving Comments from Inactive to Active Sort Options while Link is inactive",
+      "request_kind": "0x1400",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 12,
+        "row_count": 12
+      }
+    }
+  ]
+}

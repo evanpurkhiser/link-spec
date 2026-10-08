@@ -1,0 +1,228 @@
+{
+  "name": "display-song-info-pagination",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "one-row-pages",
+      "description": "Complete display list one row at a time",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 16
+      },
+      "page_size": 1
+    },
+    {
+      "id": "single-complete-page",
+      "description": "One exact-size display page",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 16
+      },
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": "$total"
+        }
+      ]
+    },
+    {
+      "id": "last-row",
+      "description": "Final valid display row",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 16
+      },
+      "render_pages": [
+        {
+          "offset": 15,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "zero-count",
+      "description": "Zero-count display render",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 16
+      },
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "at-end",
+      "description": "Display render exactly at total",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 16
+      },
+      "render_pages": [
+        {
+          "offset": "$total",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "past-end",
+      "description": "Display render beyond total",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 16
+      },
+      "render_pages": [
+        {
+          "offset": 17,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "overrun",
+      "description": "Display render overruns from final row",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 16
+      },
+      "render_pages": [
+        {
+          "offset": 15,
+          "count": 18
+        }
+      ]
+    },
+    {
+      "id": "overlap",
+      "description": "Overlapping display windows",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 16
+      },
+      "render_pages": [
+        {
+          "offset": 0,
+          "count": 3
+        },
+        {
+          "offset": 2,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "maximum-offset",
+      "description": "Maximum unsigned display offset",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "any",
+        "total": 16
+      },
+      "render_pages": [
+        {
+          "offset": "0xffffffff",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

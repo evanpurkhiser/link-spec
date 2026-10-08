@@ -1,0 +1,67 @@
+{
+  "name": "hot-cue-legacy-setter-parser-actual-cue-length-00000003",
+  "fixture_profile": "hot-cue-bank-legacy-ordinals",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "parser_probe": {
+    "axis": "actual-cue-length",
+    "value": 3,
+    "word": null,
+    "actual_cue_length": 3,
+    "declared_cue_length": 3,
+    "actual_extension_length": 8,
+    "declared_extension_length": 8,
+    "process_isolation_required": true,
+    "post_survival_getter_required": true,
+    "live_database_capture_required": true
+  },
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "setter",
+      "description": "Legacy Hot Cue setter parser axis actual-cue-length value 0x00000003",
+      "request_kind": "0x2201",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.mutation"
+        },
+        {
+          "number": 3
+        },
+        {
+          "blob_hex": "000104"
+        },
+        {
+          "number": 8
+        },
+        {
+          "blob_hex": "7777777788888888"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

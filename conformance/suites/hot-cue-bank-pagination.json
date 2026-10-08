@@ -1,0 +1,31 @@
+{
+  "name": "hot-cue-bank-pagination",
+  "fixture_profile": "hot-cue-bank-pagination",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"one-row-pages","description":"Complete 70-row bank fetched one row at a time","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"page_size":1,"expect":{"outcome":"menu","total":70,"row_count":70}},
+    {"id":"automatic-32-row-pages","description":"Complete bank fetched using the normal 32-row page size","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"page_size":32,"expect":{"outcome":"menu","total":70,"row_count":70}},
+    {"id":"explicit-three-pages","description":"Complete bank fetched as two full pages and a six-row tail","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":0,"count":32},{"offset":32,"count":32},{"offset":64,"count":6}],"expect":{"outcome":"menu","total":70,"row_count":70}},
+    {"id":"first-page","description":"First exact 32-row page","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":0,"count":32}],"expect":{"outcome":"menu","total":70,"row_count":32}},
+    {"id":"first-boundary-cross","description":"Two rows crossing offsets 31 and 32","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":31,"count":2}],"expect":{"outcome":"menu","total":70,"row_count":2}},
+    {"id":"second-page","description":"Second exact 32-row page","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":32,"count":32}],"expect":{"outcome":"menu","total":70,"row_count":32}},
+    {"id":"second-boundary-cross","description":"Two rows crossing offsets 63 and 64","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":63,"count":2}],"expect":{"outcome":"menu","total":70,"row_count":2}},
+    {"id":"tail-page","description":"Final six-row page","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":64,"count":6}],"expect":{"outcome":"menu","total":70,"row_count":6}},
+    {"id":"final-row","description":"One row requested at the final valid offset","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":69,"count":1}],"expect":{"outcome":"menu","total":70,"row_count":1}},
+    {"id":"zero-count","description":"Zero rows requested at the first offset","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":0,"count":0}],"expect":{"outcome":"any","total":70}},
+    {"id":"at-end","description":"One row requested exactly at total","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":"$total","count":1}],"expect":{"outcome":"any","total":70}},
+    {"id":"past-end","description":"One row requested beyond total","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":71,"count":1}],"expect":{"outcome":"any","total":70}},
+    {"id":"overrun","description":"Final row requested with a ten-row window","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":69,"count":10}],"expect":{"outcome":"any","total":70}},
+    {"id":"overlap","description":"Overlapping windows preserve repeated wire rows","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":0,"count":3},{"offset":2,"count":3}],"expect":{"outcome":"menu","total":70,"row_count":6}},
+    {"id":"maximum-offset","description":"Maximum unsigned render offset","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.large"},{"number":0},{"number":70}],"render_pages":[{"offset":"0xffffffff","count":1}],"expect":{"outcome":"any","total":70}}
+  ]
+}

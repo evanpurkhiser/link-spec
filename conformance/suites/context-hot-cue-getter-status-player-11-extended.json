@@ -1,0 +1,597 @@
+{
+  "name": "context-hot-cue-getter-status-player-11-extended",
+  "fixture_profile": "hot-cue-banks",
+  "fixture_version": 1,
+  "repeat_strategy": "immediate",
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "type-00--legacy-populated",
+      "description": "Track type 0x00: player-11 status-backed Hot Cue Bank legacy populated",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010300"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--legacy-empty",
+      "description": "Track type 0x00: player-11 status-backed Hot Cue Bank legacy empty",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010300"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--extended-populated",
+      "description": "Track type 0x00: player-11 status-backed Hot Cue Bank extended populated",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010300"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-00--extended-empty",
+      "description": "Track type 0x00: player-11 status-backed Hot Cue Bank extended empty",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010300"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--legacy-populated",
+      "description": "Track type 0x01: player-11 status-backed Hot Cue Bank legacy populated",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--legacy-empty",
+      "description": "Track type 0x01: player-11 status-backed Hot Cue Bank legacy empty",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--extended-populated",
+      "description": "Track type 0x01: player-11 status-backed Hot Cue Bank extended populated",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--extended-empty",
+      "description": "Track type 0x01: player-11 status-backed Hot Cue Bank extended empty",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--legacy-populated",
+      "description": "Track type 0x02: player-11 status-backed Hot Cue Bank legacy populated",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010302"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--legacy-empty",
+      "description": "Track type 0x02: player-11 status-backed Hot Cue Bank legacy empty",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010302"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--extended-populated",
+      "description": "Track type 0x02: player-11 status-backed Hot Cue Bank extended populated",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010302"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--extended-empty",
+      "description": "Track type 0x02: player-11 status-backed Hot Cue Bank extended empty",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010302"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--legacy-populated",
+      "description": "Track type 0x03: player-11 status-backed Hot Cue Bank legacy populated",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010303"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--legacy-empty",
+      "description": "Track type 0x03: player-11 status-backed Hot Cue Bank legacy empty",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010303"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--extended-populated",
+      "description": "Track type 0x03: player-11 status-backed Hot Cue Bank extended populated",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010303"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--extended-empty",
+      "description": "Track type 0x03: player-11 status-backed Hot Cue Bank extended empty",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010303"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--legacy-populated",
+      "description": "Track type 0x04: player-11 status-backed Hot Cue Bank legacy populated",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010304"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--legacy-empty",
+      "description": "Track type 0x04: player-11 status-backed Hot Cue Bank legacy empty",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010304"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--extended-populated",
+      "description": "Track type 0x04: player-11 status-backed Hot Cue Bank extended populated",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010304"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--extended-empty",
+      "description": "Track type 0x04: player-11 status-backed Hot Cue Bank extended empty",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010304"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--legacy-populated",
+      "description": "Track type 0x05: player-11 status-backed Hot Cue Bank legacy populated",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010305"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--legacy-empty",
+      "description": "Track type 0x05: player-11 status-backed Hot Cue Bank legacy empty",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010305"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--extended-populated",
+      "description": "Track type 0x05: player-11 status-backed Hot Cue Bank extended populated",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010305"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--extended-empty",
+      "description": "Track type 0x05: player-11 status-backed Hot Cue Bank extended empty",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010305"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--legacy-populated",
+      "description": "Track type 0x06: player-11 status-backed Hot Cue Bank legacy populated",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010306"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--legacy-empty",
+      "description": "Track type 0x06: player-11 status-backed Hot Cue Bank legacy empty",
+      "request_kind": "0x2101",
+      "arguments": [
+        {
+          "number": "0x0b010306"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--extended-populated",
+      "description": "Track type 0x06: player-11 status-backed Hot Cue Bank extended populated",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010306"
+        },
+        {
+          "number": "$fixture.hotcue.bank.alpha"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--extended-empty",
+      "description": "Track type 0x06: player-11 status-backed Hot Cue Bank extended empty",
+      "request_kind": "0x2301",
+      "arguments": [
+        {
+          "number": "0x0b010306"
+        },
+        {
+          "number": "$fixture.hotcue.bank.empty"
+        },
+        {
+          "number": 3
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

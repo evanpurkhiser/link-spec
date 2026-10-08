@@ -1,0 +1,1317 @@
+## __ZNK2db12iTunesBridge21getSmartPlaylistTrackEj | 
+address=0x10028fd00 size=0x20
+0x010028fd00  push      rbp
+0x010028fd01  mov       rbp, rsp
+0x010028fd04  mov       rax, qword ptr [rdi]
+0x010028fd07  mov       rax, qword ptr [rax + 0x90]
+0x010028fd0e  pop       rbp
+0x010028fd0f  jmp       rax
+0x010028fd11  nop       word ptr cs:[rax + rax]
+
+## __Z18getRowset_Playlist9RbDBIndexaihi | 
+address=0x100489470 size=0xb40
+0x0100489470  push      rbp
+0x0100489471  mov       rbp, rsp
+0x0100489474  push      r15
+0x0100489476  push      r14
+0x0100489478  push      r13
+0x010048947a  push      r12
+0x010048947c  push      rbx
+0x010048947d  sub       rsp, 0x98
+0x0100489484  mov       r12d, r8d
+0x0100489487  mov       r14d, ecx
+0x010048948a  mov       r15d, edi
+0x010048948d  mov       dword ptr [rbp - 0x88], edx
+0x0100489493  mov       byte ptr [rbp - 0x2b], 0
+0x0100489497  mov       dword ptr [rbp - 0x44], 0
+0x010048949e  mov       dword ptr [rbp - 0x84], 0
+0x01004894a8  mov       byte ptr [rbp - 0x2a], 0
+0x01004894ac  mov       dword ptr [rbp - 0x7c], esi
+0x01004894af  mov       ebx, esi
+0x01004894b1  and       bl, 0x3f
+0x01004894b4  lea       rax, [rbp - 0x88]
+0x01004894bb  mov       qword ptr [rbp - 0xa0], rax
+0x01004894c2  call      0x1009b26f0  ; __Z19updateCachedKeyInfov |
+0x01004894c7  mov       eax, dword ptr [rbp - 0x88]
+0x01004894cd  mov       dword ptr [rip + 0x538c91d], eax  ; __ZZ18getRowset_Playlist9RbDBIndexaihiE10PlaylistID
+0x01004894d3  cmp       r14b, 1
+0x01004894d7  je        0x10048976c
+0x01004894dd  test      r14b, r14b
+0x01004894e0  jne       0x100489770
+0x01004894e6  mov       dword ptr [rbp - 0x94], r12d
+0x01004894ed  and       r12d, 0xff0000
+0x01004894f4  cmp       r12d, 0x20001
+0x01004894fb  mov       r12d, ebx
+0x01004894fe  mov       ebx, r15d
+0x0100489501  setae     r15b
+0x0100489505  mov       edi, ebx
+0x0100489507  mov       esi, 9
+0x010048950c  call      0x101af8e80  ; __Z14getDBTableName9RbDBIndex12TableNameKey |
+0x0100489511  mov       r14, rax
+0x0100489514  xor       r13d, r13d
+0x0100489517  mov       edi, ebx
+0x0100489519  mov       esi, 9
+0x010048951e  xor       edx, edx
+0x0100489520  call      0x101af8ee0  ; __Z14getDBIndexName9RbDBIndex12TableNameKey8FieldKey |
+0x0100489525  mov       dword ptr [rbp - 0x80], ebx
+0x0100489528  test      ebx, ebx
+0x010048952a  lea       rcx, [rip + 0xa7f]  ; __Z31wherefuncGet_RowsetSongPlayListPvS_ |
+0x0100489531  cmove     rcx, r13
+0x0100489535  lea       r8, [rip + 0x538c8b4]  ; __ZZ18getRowset_Playlist9RbDBIndexaihiE10PlaylistID
+0x010048953c  cmove     r8, r13
+0x0100489540  mov       edx, dword ptr [rbp - 0x7c]
+0x0100489543  mov       ebx, edx
+0x0100489545  and       bl, 0xbf
+0x0100489548  mov       byte ptr [rbp - 0x29], r12b
+0x010048954c  test      r12b, r12b
+0x010048954f  sete      dl
+0x0100489552  cmp       bl, 0x80
+0x0100489555  je        0x100489778
+0x010048955b  and       dl, r15b
+0x010048955e  jne       0x100489778
+0x0100489564  lea       rdx, [rbp - 0xa0]
+0x010048956b  mov       qword ptr [rsp + 0x10], rdx
+0x0100489570  lea       rdx, [rip + 0x4f2a095]
+0x0100489577  mov       qword ptr [rsp], rdx
+0x010048957b  mov       dword ptr [rsp + 8], 1
+0x0100489583  xor       edx, edx
+0x0100489585  mov       qword ptr [rbp - 0x70], rdx
+0x0100489589  lea       rdi, [rbp - 0x44]
+0x010048958d  mov       rsi, r14
+0x0100489590  mov       rdx, rax
+0x0100489593  xor       r9d, r9d
+0x0100489596  call      0x10325ddb0  ; _edb_dyn_Select
+0x010048959b  mov       r12, rax
+0x010048959e  cmp       byte ptr [rbp - 0x29], 0
+0x01004895a2  je        0x100489f4c
+0x01004895a8  lea       r13, [rbp - 0x2b]
+0x01004895ac  xor       r14d, r14d
+0x01004895af  xor       eax, eax
+0x01004895b1  mov       qword ptr [rbp - 0x68], rax
+0x01004895b5  xor       ecx, ecx
+0x01004895b7  xor       eax, eax
+0x01004895b9  mov       qword ptr [rbp - 0x58], rax
+0x01004895bd  xor       r15d, r15d
+0x01004895c0  mov       qword ptr [rbp - 0x90], r12
+0x01004895c7  nop       word ptr [rax + rax]
+0x01004895d0  mov       dword ptr [rbp - 0x5c], ecx
+0x01004895d3  mov       qword ptr [rbp - 0x50], r15
+0x01004895d7  mov       rdi, r12
+0x01004895da  lea       rsi, [rbp - 0x44]
+0x01004895de  mov       rbx, qword ptr [rbp - 0x68]
+0x01004895e2  call      0x10325e900  ; _edb_dyn_GetNextRow
+0x01004895e7  mov       r15, rax
+0x01004895ea  test      rax, rax
+0x01004895ed  je        0x100489813
+0x01004895f3  mov       rdi, r15
+0x01004895f6  mov       esi, 1
+0x01004895fb  mov       rdx, r13
+0x01004895fe  call      0x10325e9f0  ; _edb_dyn_GetColumnValue
+0x0100489603  mov       eax, dword ptr [rax]
+0x0100489605  mov       dword ptr [rbp - 0x60], eax
+0x0100489608  mov       rdi, r15
+0x010048960b  mov       esi, 2
+0x0100489610  mov       rdx, r13
+0x0100489613  call      0x10325e9f0  ; _edb_dyn_GetColumnValue
+0x0100489618  mov       r13d, dword ptr [rax]
+0x010048961b  movsxd    r12, dword ptr [rbp - 0x70]
+0x010048961f  test      r12d, r12d
+0x0100489622  je        0x10048963f
+0x0100489624  lea       rax, [r12*4]
+0x010048962c  xor       ecx, ecx
+0x010048962e  nop
+0x0100489630  cmp       dword ptr [rbx + rcx], r13d
+0x0100489634  je        0x1004896a4
+0x0100489636  add       rcx, 4
+0x010048963a  cmp       rax, rcx
+0x010048963d  jne       0x100489630
+0x010048963f  mov       rax, qword ptr [rbp - 0x70]
+0x0100489643  lea       ebx, [rax + 1]
+0x0100489646  cmp       r14d, eax
+0x0100489649  jg        0x100489668
+0x010048964b  mov       rcx, rax
+0x010048964e  mov       eax, ebx
+0x0100489650  shr       eax, 0x1f
+0x0100489653  add       eax, ebx
+0x0100489655  sar       eax, 1
+0x0100489657  lea       r15d, [rcx + rax]
+0x010048965b  add       r15d, 9
+0x010048965f  and       r15d, 0xfffffff8
+0x0100489663  cmp       r14d, r15d
+0x0100489666  jne       0x10048966d
+0x0100489668  mov       r15d, r14d
+0x010048966b  jmp       0x100489693
+0x010048966d  test      r15d, r15d
+0x0100489670  jle       0x100489684
+0x0100489672  mov       esi, r15d
+0x0100489675  shl       rsi, 2
+0x0100489679  mov       rdi, qword ptr [rbp - 0x68]
+0x010048967d  call      0x1038c44b4
+0x0100489682  jmp       0x10048968f
+0x0100489684  mov       rdi, qword ptr [rbp - 0x68]
+0x0100489688  call      0x1038c402e
+0x010048968d  xor       eax, eax
+0x010048968f  mov       qword ptr [rbp - 0x68], rax
+0x0100489693  mov       rax, qword ptr [rbp - 0x68]
+0x0100489697  mov       dword ptr [rax + r12*4], r13d
+0x010048969b  mov       r14d, r15d
+0x010048969e  mov       eax, ebx
+0x01004896a0  mov       qword ptr [rbp - 0x70], rax
+0x01004896a4  mov       ecx, dword ptr [rbp - 0x5c]
+0x01004896a7  movsxd    rax, ecx
+0x01004896aa  mov       rdx, qword ptr [rbp - 0x50]
+0x01004896ae  lea       r15, [rdx + 1]
+0x01004896b2  cmp       rdx, rax
+0x01004896b5  mov       r12, qword ptr [rbp - 0x90]
+0x01004896bc  lea       r13, [rbp - 0x2b]
+0x01004896c0  jl        0x100489700
+0x01004896c2  mov       eax, r15d
+0x01004896c5  shr       eax, 1
+0x01004896c7  lea       ebx, [rdx + rax]
+0x01004896ca  add       ebx, 9
+0x01004896cd  and       ebx, 0xfffffff8
+0x01004896d0  cmp       ecx, ebx
+0x01004896d2  je        0x100489700
+0x01004896d4  test      ebx, ebx
+0x01004896d6  jle       0x1004896ef
+0x01004896d8  mov       esi, ebx
+0x01004896da  shl       rsi, 2
+0x01004896de  mov       rdi, qword ptr [rbp - 0x58]
+0x01004896e2  call      0x1038c44b4
+0x01004896e7  mov       qword ptr [rbp - 0x58], rax
+0x01004896eb  mov       ecx, ebx
+0x01004896ed  jmp       0x100489700
+0x01004896ef  mov       rdi, qword ptr [rbp - 0x58]
+0x01004896f3  call      0x1038c402e
+0x01004896f8  mov       ecx, ebx
+0x01004896fa  xor       eax, eax
+0x01004896fc  mov       qword ptr [rbp - 0x58], rax
+0x0100489700  mov       edi, dword ptr [rbp - 0x60]
+0x0100489703  mov       rax, qword ptr [rbp - 0x58]
+0x0100489707  mov       rdx, qword ptr [rbp - 0x50]
+0x010048970b  mov       dword ptr [rax + rdx*4], edi
+0x010048970e  test      byte ptr [rbp - 0x7c], 0x40
+0x0100489712  je        0x1004895d0
+0x0100489718  cmp       rdx, 0x64
+0x010048971c  jb        0x1004895d0
+0x0100489722  cmp       r15d, 2
+0x0100489726  jl        0x100489821
+0x010048972c  mov       eax, 0xffffffff
+0x0100489731  add       eax, r15d
+0x0100489734  mov       rcx, qword ptr [rbp - 0x58]
+0x0100489738  lea       rsi, [rcx + rax*4]
+0x010048973c  add       rsi, 4
+0x0100489740  lea       rax, [rbp - 0x78]
+0x0100489744  mov       qword ptr [rbp - 0x40], rax
+0x0100489748  mov       rax, rsi
+0x010048974b  sub       rax, rcx
+0x010048974e  je        0x10048983b
+0x0100489754  sar       rax, 2
+0x0100489758  bsr       rcx, rax
+0x010048975c  xor       rcx, 0x3f
+0x0100489760  add       rcx, rcx
+0x0100489763  xor       rcx, 0x7e
+0x0100489767  jmp       0x10048983d
+0x010048976c  test      bl, bl
+0x010048976e  je        0x1004897cf
+0x0100489770  xor       r12d, r12d
+0x0100489773  jmp       0x100489f4c
+0x0100489778  lea       rdx, [rbp - 0xa0]
+0x010048977f  mov       qword ptr [rsp + 8], rdx
+0x0100489784  mov       dword ptr [rsp], 1
+0x010048978b  lea       r9, [rip + 0x4f29e7a]
+0x0100489792  lea       rdi, [rbp - 0x44]
+0x0100489796  mov       rsi, r14
+0x0100489799  mov       rdx, rax
+0x010048979c  call      0x10325e170  ; _edb_dyn_SelectMaterialized
+0x01004897a1  mov       r12, rax
+0x01004897a4  mov       dword ptr [rbp - 0x84], 2
+0x01004897ae  mov       byte ptr [rbp - 0x2a], 1
+0x01004897b2  lea       rdx, [rbp - 0x84]
+0x01004897b9  lea       rcx, [rbp - 0x2a]
+0x01004897bd  mov       rdi, rax
+0x01004897c0  mov       esi, 1
+0x01004897c5  call      0x10325e4f0  ; _edb_dyn_SortRowSet
+0x01004897ca  jmp       0x100489f4c
+0x01004897cf  mov       edi, r15d
+0x01004897d2  mov       esi, 8
+0x01004897d7  call      0x101af8e80  ; __Z14getDBTableName9RbDBIndex12TableNameKey |
+0x01004897dc  mov       qword ptr [rsp + 8], 0
+0x01004897e5  mov       dword ptr [rsp], 0
+0x01004897ec  lea       rcx, [rip + 0x7ed]  ; __Z27wherefuncGet_RowsetPlayListPvS_ |
+0x01004897f3  lea       r8, [rip + 0x538c5f6]  ; __ZZ18getRowset_Playlist9RbDBIndexaihiE10PlaylistID
+0x01004897fa  lea       rdi, [rbp - 0x44]
+0x01004897fe  mov       rsi, rax
+0x0100489801  xor       edx, edx
+0x0100489803  xor       r9d, r9d
+0x0100489806  call      0x10325e170  ; _edb_dyn_SelectMaterialized
+0x010048980b  mov       r12, rax
+0x010048980e  jmp       0x100489f4c
+0x0100489813  mov       r15, qword ptr [rbp - 0x50]
+0x0100489817  cmp       r15d, 2
+0x010048981b  jge       0x10048972c
+0x0100489821  vpxor     xmm0, xmm0, xmm0
+0x0100489825  vmovdqa   xmmword ptr [rbp - 0x40], xmm0
+0x010048982a  cmp       r15d, 1
+0x010048982e  je        0x100489853
+0x0100489830  xor       r14d, r14d
+0x0100489833  xor       r15d, r15d
+0x0100489836  jmp       0x100489bce
+0x010048983b  xor       ecx, ecx
+0x010048983d  lea       rdx, [rbp - 0x40]
+0x0100489841  mov       rdi, qword ptr [rbp - 0x58]
+0x0100489845  call      0x10048c040  ; __ZNSt3__111__introsortINS_17_ClassicAlgPolicyERN4juce21SortFunctionConverterINS2_24DefaultElementComparatorIlEEEEPiEEvT1_S9_T0_NS_15iterator_traitsIS9_E15difference_typeE |
+0x010048984a  vpxor     xmm0, xmm0, xmm0
+0x010048984e  vmovdqa   xmmword ptr [rbp - 0x40], xmm0
+0x0100489853  mov       eax, r15d
+0x0100489856  mov       qword ptr [rbp - 0x70], rax
+0x010048985a  xor       r14d, r14d
+0x010048985d  xor       r13d, r13d
+0x0100489860  xor       r8d, r8d
+0x0100489863  xor       r15d, r15d
+0x0100489866  jmp       0x100489881
+0x0100489868  nop       dword ptr [rax + rax]
+0x0100489870  mov       qword ptr [r15 + rcx*8], r12
+0x0100489874  inc       r14
+0x0100489877  cmp       r14, qword ptr [rbp - 0x70]
+0x010048987b  je        0x1004899fa
+0x0100489881  mov       rax, qword ptr [rbp - 0x58]
+0x0100489885  mov       r12d, dword ptr [rax + r14*4]
+0x0100489889  mov       ecx, dword ptr [rbp - 0x38]
+0x010048988c  mov       eax, dword ptr [rbp - 0x34]
+0x010048988f  cmp       ecx, eax
+0x0100489891  jg        0x1004898e5
+0x0100489893  mov       edx, eax
+0x0100489895  inc       edx
+0x0100489897  shr       edx, 0x1f
+0x010048989a  add       edx, eax
+0x010048989c  inc       edx
+0x010048989e  sar       edx, 1
+0x01004898a0  lea       ebx, [rax + rdx]
+0x01004898a3  add       ebx, 9
+0x01004898a6  and       ebx, 0xfffffff8
+0x01004898a9  cmp       ecx, ebx
+0x01004898ab  je        0x1004898df
+0x01004898ad  mov       dword ptr [rbp - 0x5c], r8d
+0x01004898b1  test      ebx, ebx
+0x01004898b3  jle       0x1004898ca
+0x01004898b5  mov       esi, ebx
+0x01004898b7  shl       rsi, 3
+0x01004898bb  mov       rdi, qword ptr [rbp - 0x40]
+0x01004898bf  call      0x1038c44b4
+0x01004898c4  mov       qword ptr [rbp - 0x40], rax
+0x01004898c8  jmp       0x1004898db
+0x01004898ca  mov       rdi, qword ptr [rbp - 0x40]
+0x01004898ce  call      0x1038c402e
+0x01004898d3  mov       qword ptr [rbp - 0x40], 0
+0x01004898db  mov       r8d, dword ptr [rbp - 0x5c]
+0x01004898df  mov       dword ptr [rbp - 0x38], ebx
+0x01004898e2  mov       eax, dword ptr [rbp - 0x34]
+0x01004898e5  lea       ecx, [rax + 1]
+0x01004898e8  mov       dword ptr [rbp - 0x34], ecx
+0x01004898eb  mov       rcx, qword ptr [rbp - 0x40]
+0x01004898ef  cdqe
+0x01004898f1  mov       qword ptr [rcx + rax*8], r12
+0x01004898f5  mov       rax, qword ptr [rbp - 0x58]
+0x01004898f9  movsxd    r12, dword ptr [rax + r14*4]
+0x01004898fd  xor       esi, esi
+0x01004898ff  mov       eax, r13d
+0x0100489902  jmp       0x100489916
+0x0100489904  nop       word ptr cs:[rax + rax]
+0x0100489910  mov       eax, edi
+0x0100489912  cmp       ecx, ebx
+0x0100489914  je        0x100489950
+0x0100489916  mov       ebx, esi
+0x0100489918  cmp       esi, eax
+0x010048991a  jge       0x10048995a
+0x010048991c  movsxd    rcx, ebx
+0x010048991f  cmp       qword ptr [r15 + rcx*8], r12
+0x0100489923  je        0x100489870
+0x0100489929  lea       edx, [rbx + rax]
+0x010048992c  mov       ecx, edx
+0x010048992e  shr       ecx, 0x1f
+0x0100489931  add       ecx, edx
+0x0100489933  sar       ecx, 1
+0x0100489935  movsxd    rdx, ecx
+0x0100489938  mov       rdx, qword ptr [r15 + rdx*8]
+0x010048993c  mov       edi, ecx
+0x010048993e  mov       esi, ebx
+0x0100489940  cmp       rdx, r12
+0x0100489943  jg        0x100489910
+0x0100489945  mov       edi, eax
+0x0100489947  mov       esi, ecx
+0x0100489949  jmp       0x100489910
+0x010048994b  nop       dword ptr [rax + rax]
+0x0100489950  xor       eax, eax
+0x0100489952  cmp       rdx, r12
+0x0100489955  setle     al
+0x0100489958  add       ebx, eax
+0x010048995a  cmp       r8d, r13d
+0x010048995d  mov       qword ptr [rbp - 0x50], r13
+0x0100489961  jg        0x1004899ac
+0x0100489963  lea       eax, [r13 + 1]
+0x0100489967  shr       eax, 0x1f
+0x010048996a  add       eax, r13d
+0x010048996d  inc       eax
+0x010048996f  sar       eax, 1
+0x0100489971  add       r13d, eax
+0x0100489974  add       r13d, 9
+0x0100489978  and       r13d, 0xfffffff8
+0x010048997c  cmp       r8d, r13d
+0x010048997f  je        0x1004899a8
+0x0100489981  test      r13d, r13d
+0x0100489984  jle       0x10048999a
+0x0100489986  mov       esi, r13d
+0x0100489989  shl       rsi, 3
+0x010048998d  mov       rdi, r15
+0x0100489990  call      0x1038c44b4
+0x0100489995  mov       r15, rax
+0x0100489998  jmp       0x1004899a5
+0x010048999a  mov       rdi, r15
+0x010048999d  call      0x1038c402e
+0x01004899a2  xor       r15d, r15d
+0x01004899a5  mov       r8d, r13d
+0x01004899a8  mov       r13, qword ptr [rbp - 0x50]
+0x01004899ac  mov       eax, r13d
+0x01004899af  sub       eax, ebx
+0x01004899b1  jbe       0x1004899e0
+0x01004899b3  movsxd    rcx, ebx
+0x01004899b6  lea       rbx, [r15 + rcx*8]
+0x01004899ba  lea       rdi, [r15 + rcx*8]
+0x01004899be  add       rdi, 8
+0x01004899c2  movsxd    rdx, eax
+0x01004899c5  shl       rdx, 3
+0x01004899c9  mov       rsi, rbx
+0x01004899cc  mov       r13d, r8d
+0x01004899cf  call      0x1038c42b6
+0x01004899d4  mov       r8d, r13d
+0x01004899d7  mov       r13, qword ptr [rbp - 0x50]
+0x01004899db  jmp       0x1004899e7
+0x01004899dd  nop       dword ptr [rax]
+0x01004899e0  movsxd    rax, r13d
+0x01004899e3  lea       rbx, [r15 + rax*8]
+0x01004899e7  mov       qword ptr [rbx], r12
+0x01004899ea  inc       r13d
+0x01004899ed  inc       r14
+0x01004899f0  cmp       r14, qword ptr [rbp - 0x70]
+0x01004899f4  jne       0x100489881
+0x01004899fa  mov       ecx, dword ptr [rbp - 0x34]
+0x01004899fd  test      ecx, ecx
+0x01004899ff  jle       0x100489bc4
+0x0100489a05  mov       r14d, 0xffffffff
+0x0100489a0b  xor       r12d, r12d
+0x0100489a0e  jmp       0x100489a24
+0x0100489a10  movsxd    rax, ecx
+0x0100489a13  mov       r13, qword ptr [rbp - 0x50]
+0x0100489a17  mov       r12, qword ptr [rbp - 0x70]
+0x0100489a1b  cmp       r12, rax
+0x0100489a1e  jge       0x100489bc4
+0x0100489a24  lea       rdx, [r12 + 1]
+0x0100489a29  movsxd    rax, ecx
+0x0100489a2c  cmp       rdx, rax
+0x0100489a2f  mov       qword ptr [rbp - 0x70], rdx
+0x0100489a33  jge       0x100489a17
+0x0100489a35  mov       qword ptr [rbp - 0x50], r13
+0x0100489a39  mov       r13d, edx
+0x0100489a3c  jmp       0x100489a48
+0x0100489a3e  nop
+0x0100489a40  inc       r13d
+0x0100489a43  cmp       r13d, ecx
+0x0100489a46  jge       0x100489a10
+0x0100489a48  mov       eax, ecx
+0x0100489a4a  cmp       r12, rax
+0x0100489a4d  jae       0x100489a70
+0x0100489a4f  mov       rdx, qword ptr [rbp - 0x40]
+0x0100489a53  mov       rdx, qword ptr [rdx + r12*8]
+0x0100489a57  cmp       ecx, r13d
+0x0100489a5a  ja        0x100489a77
+0x0100489a5c  xor       esi, esi
+0x0100489a5e  cmp       edx, esi
+0x0100489a60  jne       0x100489a40
+0x0100489a62  jmp       0x100489a86
+0x0100489a64  nop       word ptr cs:[rax + rax]
+0x0100489a70  xor       edx, edx
+0x0100489a72  cmp       ecx, r13d
+0x0100489a75  jbe       0x100489a5c
+0x0100489a77  mov       rsi, qword ptr [rbp - 0x40]
+0x0100489a7b  movsxd    rdi, r13d
+0x0100489a7e  mov       rsi, qword ptr [rsi + rdi*8]
+0x0100489a82  cmp       edx, esi
+0x0100489a84  jne       0x100489a40
+0x0100489a86  cmp       r12, rax
+0x0100489a89  jae       0x100489ae0
+0x0100489a8b  mov       rax, qword ptr [rbp - 0x40]
+0x0100489a8f  mov       rbx, qword ptr [rax + r12*8]
+0x0100489a93  movsxd    rax, ecx
+0x0100489a96  cmp       r12, rax
+0x0100489a99  jl        0x100489aea
+0x0100489a9b  mov       edx, dword ptr [rbp - 0x38]
+0x0100489a9e  cmp       edx, ecx
+0x0100489aa0  jg        0x100489b15
+0x0100489aa2  mov       eax, ecx
+0x0100489aa4  inc       eax
+0x0100489aa6  shr       eax, 0x1f
+0x0100489aa9  add       eax, ecx
+0x0100489aab  inc       eax
+0x0100489aad  sar       eax, 1
+0x0100489aaf  lea       r14d, [rcx + rax]
+0x0100489ab3  add       r14d, 9
+0x0100489ab7  and       r14d, 0xfffffff8
+0x0100489abb  cmp       edx, r14d
+0x0100489abe  je        0x100489b05
+0x0100489ac0  test      r14d, r14d
+0x0100489ac3  jle       0x100489af4
+0x0100489ac5  mov       esi, r14d
+0x0100489ac8  shl       rsi, 3
+0x0100489acc  mov       rdi, qword ptr [rbp - 0x40]
+0x0100489ad0  call      0x1038c44b4
+0x0100489ad5  mov       qword ptr [rbp - 0x40], rax
+0x0100489ad9  jmp       0x100489b05
+0x0100489adb  nop       dword ptr [rax + rax]
+0x0100489ae0  xor       ebx, ebx
+0x0100489ae2  movsxd    rax, ecx
+0x0100489ae5  cmp       r12, rax
+0x0100489ae8  jge       0x100489a9b
+0x0100489aea  lea       rax, [r12*8]
+0x0100489af2  jmp       0x100489b1e
+0x0100489af4  mov       rdi, qword ptr [rbp - 0x40]
+0x0100489af8  call      0x1038c402e
+0x0100489afd  mov       qword ptr [rbp - 0x40], 0
+0x0100489b05  mov       dword ptr [rbp - 0x38], r14d
+0x0100489b09  mov       ecx, dword ptr [rbp - 0x34]
+0x0100489b0c  movsxd    rax, ecx
+0x0100489b0f  mov       r14d, 0xffffffff
+0x0100489b15  inc       ecx
+0x0100489b17  mov       dword ptr [rbp - 0x34], ecx
+0x0100489b1a  shl       rax, 3
+0x0100489b1e  add       rax, qword ptr [rbp - 0x40]
+0x0100489b22  lea       rcx, [r14 + rbx]
+0x0100489b26  inc       rcx
+0x0100489b29  movabs    rdx, 0xffff00000000
+0x0100489b33  and       rcx, rdx
+0x0100489b36  mov       edx, ebx
+0x0100489b38  or        rdx, rcx
+0x0100489b3b  mov       qword ptr [rax], rdx
+0x0100489b3e  mov       ecx, dword ptr [rbp - 0x34]
+0x0100489b41  cmp       ecx, r13d
+0x0100489b44  jbe       0x100489a43
+0x0100489b4a  mov       rax, qword ptr [rbp - 0x40]
+0x0100489b4e  movsxd    rdx, r13d
+0x0100489b51  lea       rdi, [rax + rdx*8]
+0x0100489b55  mov       esi, r13d
+0x0100489b58  not       esi
+0x0100489b5a  add       ecx, esi
+0x0100489b5c  lea       rsi, [rax + rdx*8]
+0x0100489b60  add       rsi, 8
+0x0100489b64  movsxd    rdx, ecx
+0x0100489b67  shl       rdx, 3
+0x0100489b6b  call      0x1038c42b6
+0x0100489b70  mov       eax, dword ptr [rbp - 0x38]
+0x0100489b73  mov       edx, dword ptr [rbp - 0x34]
+0x0100489b76  lea       ecx, [rdx - 1]
+0x0100489b79  mov       dword ptr [rbp - 0x34], ecx
+0x0100489b7c  add       edx, edx
+0x0100489b7e  add       edx, -2
+0x0100489b81  test      edx, edx
+0x0100489b83  mov       esi, 0
+0x0100489b88  cmovle    edx, esi
+0x0100489b8b  cmp       eax, edx
+0x0100489b8d  jle       0x100489a43
+0x0100489b93  cmp       ecx, 9
+0x0100489b96  mov       ebx, 8
+0x0100489b9b  cmovge    ebx, ecx
+0x0100489b9e  cmp       eax, ebx
+0x0100489ba0  jle       0x100489a43
+0x0100489ba6  mov       esi, ebx
+0x0100489ba8  shl       rsi, 3
+0x0100489bac  mov       rdi, qword ptr [rbp - 0x40]
+0x0100489bb0  call      0x1038c44b4
+0x0100489bb5  mov       qword ptr [rbp - 0x40], rax
+0x0100489bb9  mov       dword ptr [rbp - 0x38], ebx
+0x0100489bbc  mov       ecx, dword ptr [rbp - 0x34]
+0x0100489bbf  jmp       0x100489a43
+0x0100489bc4  mov       r14, r13
+0x0100489bc7  mov       r12, qword ptr [rbp - 0x90]
+0x0100489bce  mov       rdi, r12
+0x0100489bd1  call      0x10325e830  ; _edb_dyn_CloseRowSet
+0x0100489bd6  mov       r12, r14
+0x0100489bd9  movsxd    rax, r12d
+0x0100489bdc  mov       ecx, 8
+0x0100489be1  mul       rcx
+0x0100489be4  mov       rbx, 0xffffffffffffffff
+0x0100489beb  cmovno    rbx, rax
+0x0100489bef  mov       rdi, rbx
+0x0100489bf2  call      0x1038c3cce
+0x0100489bf7  mov       r13, rax
+0x0100489bfa  test      r12d, r12d
+0x0100489bfd  jle       0x100489efb
+0x0100489c03  mov       rdi, rbx
+0x0100489c06  call      0x1038c3cce
+0x0100489c0b  mov       r12, rax
+0x0100489c0e  mov       rax, r14
+0x0100489c11  mov       r9d, eax
+0x0100489c14  xor       ecx, ecx
+0x0100489c16  cmp       eax, 0x10
+0x0100489c19  jb        0x100489d93
+0x0100489c1f  mov       rdx, r12
+0x0100489c22  sub       rdx, r15
+0x0100489c25  cmp       rdx, 0x80
+0x0100489c2c  jb        0x100489d93
+0x0100489c32  mov       ecx, r9d
+0x0100489c35  and       ecx, 0xfffffff0
+0x0100489c38  lea       r8, [r9*8]
+0x0100489c40  and       r8, 0xffffffffffffff80
+0x0100489c44  xor       esi, esi
+0x0100489c46  nop       word ptr cs:[rax + rax]
+0x0100489c50  vmovups   ymm8, ymmword ptr [r15 + rsi]
+0x0100489c56  vmovups   ymm9, ymmword ptr [r15 + rsi + 0x20]
+0x0100489c5d  vmovups   ymm10, ymmword ptr [r15 + rsi + 0x40]
+0x0100489c64  vmovups   ymm11, ymmword ptr [r15 + rsi + 0x60]
+0x0100489c6b  lea       rdi, [r12 + rsi]
+0x0100489c6f  lea       rbx, [r12 + rsi + 8]
+0x0100489c74  lea       rdx, [r12 + rsi + 0x10]
+0x0100489c79  lea       rax, [r12 + rsi + 0x18]
+0x0100489c7e  vmovq     xmm4, rbx
+0x0100489c83  vmovq     xmm5, rdi
+0x0100489c88  vpunpcklqdq xmm12, xmm5, xmm4
+0x0100489c8c  vmovq     xmm5, rax
+0x0100489c91  vmovq     xmm6, rdx
+0x0100489c96  vpunpcklqdq xmm5, xmm6, xmm5
+0x0100489c9a  lea       rax, [r12 + rsi + 0x20]
+0x0100489c9f  lea       rdx, [r12 + rsi + 0x28]
+0x0100489ca4  lea       rdi, [r12 + rsi + 0x30]
+0x0100489ca9  lea       rbx, [r12 + rsi + 0x38]
+0x0100489cae  vmovq     xmm6, rdx
+0x0100489cb3  vmovq     xmm7, rax
+0x0100489cb8  vpunpcklqdq xmm6, xmm7, xmm6
+0x0100489cbc  vmovq     xmm7, rbx
+0x0100489cc1  vmovq     xmm0, rdi
+0x0100489cc6  vpunpcklqdq xmm0, xmm0, xmm7
+0x0100489cca  lea       rax, [r12 + rsi + 0x40]
+0x0100489ccf  lea       rdx, [r12 + rsi + 0x48]
+0x0100489cd4  lea       rdi, [r12 + rsi + 0x50]
+0x0100489cd9  lea       rbx, [r12 + rsi + 0x58]
+0x0100489cde  vmovq     xmm7, rdx
+0x0100489ce3  vmovq     xmm1, rax
+0x0100489ce8  vpunpcklqdq xmm1, xmm1, xmm7
+0x0100489cec  vmovq     xmm7, rbx
+0x0100489cf1  vmovq     xmm2, rdi
+0x0100489cf6  vpunpcklqdq xmm2, xmm2, xmm7
+0x0100489cfa  lea       rax, [r12 + rsi + 0x60]
+0x0100489cff  lea       rdx, [r12 + rsi + 0x68]
+0x0100489d04  lea       rdi, [r12 + rsi + 0x70]
+0x0100489d09  lea       rbx, [r12 + rsi + 0x78]
+0x0100489d0e  vmovq     xmm7, rdx
+0x0100489d13  vmovq     xmm3, rax
+0x0100489d18  vpunpcklqdq xmm3, xmm3, xmm7
+0x0100489d1c  vmovq     xmm7, rbx
+0x0100489d21  vmovq     xmm4, rdi
+0x0100489d26  vpunpcklqdq xmm4, xmm4, xmm7
+0x0100489d2a  vmovups   ymmword ptr [r12 + rsi], ymm8
+0x0100489d30  vmovups   ymmword ptr [r12 + rsi + 0x20], ymm9
+0x0100489d37  vmovups   ymmword ptr [r12 + rsi + 0x40], ymm10
+0x0100489d3e  vmovups   ymmword ptr [r12 + rsi + 0x60], ymm11
+0x0100489d45  vmovdqu   xmmword ptr [r13 + rsi + 0x10], xmm5
+0x0100489d4c  vmovdqu   xmmword ptr [r13 + rsi], xmm12
+0x0100489d53  vmovdqu   xmmword ptr [r13 + rsi + 0x30], xmm0
+0x0100489d5a  vmovdqu   xmmword ptr [r13 + rsi + 0x20], xmm6
+0x0100489d61  vmovdqu   xmmword ptr [r13 + rsi + 0x50], xmm2
+0x0100489d68  vmovdqu   xmmword ptr [r13 + rsi + 0x40], xmm1
+0x0100489d6f  vmovdqu   xmmword ptr [r13 + rsi + 0x70], xmm4
+0x0100489d76  vmovdqu   xmmword ptr [r13 + rsi + 0x60], xmm3
+0x0100489d7d  sub       rsi, -0x80
+0x0100489d81  cmp       r8, rsi
+0x0100489d84  jne       0x100489c50
+0x0100489d8a  cmp       rcx, r9
+0x0100489d8d  je        0x100489e51
+0x0100489d93  mov       rdx, rcx
+0x0100489d96  not       rdx
+0x0100489d99  add       rdx, r9
+0x0100489d9c  mov       rsi, r9
+0x0100489d9f  and       rsi, 3
+0x0100489da3  je        0x100489dc8
+0x0100489da5  lea       rdi, [r12 + rcx*8]
+0x0100489da9  nop       dword ptr [rax]
+0x0100489db0  mov       rax, qword ptr [r15 + rcx*8]
+0x0100489db4  mov       qword ptr [rdi], rax
+0x0100489db7  mov       qword ptr [r13 + rcx*8], rdi
+0x0100489dbc  inc       rcx
+0x0100489dbf  add       rdi, 8
+0x0100489dc3  dec       rsi
+0x0100489dc6  jne       0x100489db0
+0x0100489dc8  cmp       rdx, 3
+0x0100489dcc  jb        0x100489e51
+0x0100489dd2  sub       r9, rcx
+0x0100489dd5  shl       rcx, 3
+0x0100489dd9  mov       rdx, r13
+0x0100489ddc  add       rdx, 0x18
+0x0100489de0  lea       rsi, [r15 + 0x18]
+0x0100489de4  mov       rdi, r12
+0x0100489de7  nop       word ptr [rax + rax]
+0x0100489df0  mov       rax, qword ptr [rsi + rcx - 0x18]
+0x0100489df5  lea       rbx, [rdi + rcx]
+0x0100489df9  mov       qword ptr [rdi + rcx], rax
+0x0100489dfd  mov       qword ptr [rdx + rcx - 0x18], rbx
+0x0100489e02  mov       rax, qword ptr [rsi + rcx - 0x10]
+0x0100489e07  lea       rbx, [rdi + rcx + 8]
+0x0100489e0c  mov       qword ptr [rdi + rcx + 8], rax
+0x0100489e11  mov       qword ptr [rdx + rcx - 0x10], rbx
+0x0100489e16  mov       rax, qword ptr [rsi + rcx - 8]
+0x0100489e1b  lea       rbx, [rdi + rcx + 0x10]
+0x0100489e20  mov       qword ptr [rdi + rcx + 0x10], rax
+0x0100489e25  mov       qword ptr [rdx + rcx - 8], rbx
+0x0100489e2a  mov       rax, qword ptr [rsi + rcx]
+0x0100489e2e  lea       rbx, [rdi + rcx]
+0x0100489e32  add       rbx, 0x18
+0x0100489e36  mov       qword ptr [rdi + rcx + 0x18], rax
+0x0100489e3b  mov       qword ptr [rdx + rcx], rbx
+0x0100489e3f  add       rdx, 0x20
+0x0100489e43  add       rdi, 0x20
+0x0100489e47  add       rsi, 0x20
+0x0100489e4b  add       r9, -4
+0x0100489e4f  jne       0x100489df0
+0x0100489e51  mov       ebx, dword ptr [rbp - 0x80]
+0x0100489e54  mov       edi, ebx
+0x0100489e56  mov       esi, 1
+0x0100489e5b  vzeroupper
+0x0100489e5e  call      0x101af8e80  ; __Z14getDBTableName9RbDBIndex12TableNameKey |
+0x0100489e63  mov       qword ptr [rbp - 0x50], rax
+0x0100489e67  mov       edi, ebx
+0x0100489e69  mov       esi, 1
+0x0100489e6e  xor       edx, edx
+0x0100489e70  call      0x101af8ee0  ; __Z14getDBIndexName9RbDBIndex12TableNameKey8FieldKey |
+0x0100489e75  mov       qword ptr [rsp + 0x10], r13
+0x0100489e7a  mov       dword ptr [rsp + 8], r14d
+0x0100489e7f  lea       rcx, [rip + 0x4f29786]
+0x0100489e86  mov       qword ptr [rsp], rcx
+0x0100489e8a  lea       rdi, [rbp - 0x44]
+0x0100489e8e  mov       rsi, qword ptr [rbp - 0x50]
+0x0100489e92  mov       rdx, rax
+0x0100489e95  xor       ecx, ecx
+0x0100489e97  xor       r8d, r8d
+0x0100489e9a  xor       r9d, r9d
+0x0100489e9d  call      0x10325ddb0  ; _edb_dyn_Select
+0x0100489ea2  mov       rbx, rax
+0x0100489ea5  movsx     edx, byte ptr [rbp - 0x7c]
+0x0100489ea9  lea       r8, [rbp - 0x40]
+0x0100489ead  mov       edi, dword ptr [rbp - 0x80]
+0x0100489eb0  mov       esi, dword ptr [rbp - 0x94]
+0x0100489eb6  mov       rcx, rax
+0x0100489eb9  call      0x1004dab10  ; __Z12SetTrackSort9RbDBIndexiaPvPN4juce5ArrayI18DuplicateCountHashNS1_20DummyCriticalSectionELi0EEE |
+0x0100489ebe  mov       rdi, rbx
+0x0100489ec1  call      0x10325e830  ; _edb_dyn_CloseRowSet
+0x0100489ec6  mov       qword ptr [rsp + 8], 0
+0x0100489ecf  mov       dword ptr [rsp], 0
+0x0100489ed6  lea       rsi, [rip + 0x4eb4e9c]  ; 'djmdTrackSort'
+0x0100489edd  lea       rdi, [rbp - 0x44]
+0x0100489ee1  xor       edx, edx
+0x0100489ee3  xor       ecx, ecx
+0x0100489ee5  xor       r8d, r8d
+0x0100489ee8  xor       r9d, r9d
+0x0100489eeb  call      0x10325e170  ; _edb_dyn_SelectMaterialized
+0x0100489ef0  cmp       dword ptr [rbp - 0x44], 0
+0x0100489ef4  je        0x100489f00
+0x0100489ef6  xor       r12d, r12d
+0x0100489ef9  jmp       0x100489f22
+0x0100489efb  xor       r12d, r12d
+0x0100489efe  jmp       0x100489f1a
+0x0100489f00  mov       rbx, rax
+0x0100489f03  movzx     edi, byte ptr [rbp - 0x29]
+0x0100489f07  mov       rsi, rax
+0x0100489f0a  call      0x1004db980  ; __Z19Sort_SortTrackTableaPv |
+0x0100489f0f  mov       rdi, r12
+0x0100489f12  call      0x1038c3cc2
+0x0100489f17  mov       r12, rbx
+0x0100489f1a  mov       rdi, r13
+0x0100489f1d  call      0x1038c3cc2
+0x0100489f22  mov       rdi, r15
+0x0100489f25  call      0x1038c402e
+0x0100489f2a  mov       dword ptr [rbp - 0x34], 0
+0x0100489f31  mov       rdi, qword ptr [rbp - 0x40]
+0x0100489f35  call      0x1038c402e
+0x0100489f3a  mov       rdi, qword ptr [rbp - 0x68]
+0x0100489f3e  call      0x1038c402e
+0x0100489f43  mov       rdi, qword ptr [rbp - 0x58]
+0x0100489f47  call      0x1038c402e
+0x0100489f4c  mov       rax, r12
+0x0100489f4f  add       rsp, 0x98
+0x0100489f56  pop       rbx
+0x0100489f57  pop       r12
+0x0100489f59  pop       r13
+0x0100489f5b  pop       r14
+0x0100489f5d  pop       r15
+0x0100489f5f  pop       rbp
+0x0100489f60  ret
+0x0100489f61  jmp       0x100489f84
+0x0100489f63  jmp       0x100489f67
+0x0100489f65  jmp       0x100489f67
+0x0100489f67  mov       r12, rax
+0x0100489f6a  mov       rdi, r15
+0x0100489f6d  call      0x1038c402e
+0x0100489f72  mov       dword ptr [rbp - 0x34], 0
+0x0100489f79  mov       rdi, qword ptr [rbp - 0x40]
+0x0100489f7d  call      0x1038c402e
+0x0100489f82  jmp       0x100489f87
+0x0100489f84  mov       r12, rax
+0x0100489f87  mov       rdi, qword ptr [rbp - 0x68]
+0x0100489f8b  call      0x1038c402e
+0x0100489f90  mov       rdi, qword ptr [rbp - 0x58]
+0x0100489f94  call      0x1038c402e
+0x0100489f99  mov       rdi, r12
+0x0100489f9c  call      0x1038c3812
+0x0100489fa1  nop       word ptr cs:[rax + rax]
+
+## __ZNK2db9IDBBrowse21getSmartPlaylistTrackEj | 
+address=0x10054c8b0 size=0x10
+0x010054c8b0  push      rbp
+0x010054c8b1  mov       rbp, rsp
+0x010054c8b4  xor       eax, eax
+0x010054c8b6  pop       rbp
+0x010054c8b7  ret
+0x010054c8b8  nop       dword ptr [rax + rax]
+
+## __ZNK2db21rekordboxDBController21getSmartPlaylistTrackEj | 
+address=0x1019c3d90 size=0xd0
+0x01019c3d90  push      rbp
+0x01019c3d91  mov       rbp, rsp
+0x01019c3d94  push      r15
+0x01019c3d96  push      r14
+0x01019c3d98  push      r12
+0x01019c3d9a  push      rbx
+0x01019c3d9b  mov       ebx, esi
+0x01019c3d9d  mov       edi, 0x10
+0x01019c3da2  call      0x1038c3cd4
+0x01019c3da7  mov       r14, rax
+0x01019c3daa  vxorps    xmm0, xmm0, xmm0
+0x01019c3dae  vmovups   xmmword ptr [rax], xmm0
+0x01019c3db2  mov       edi, ebx
+0x01019c3db4  mov       rsi, rax
+0x01019c3db7  call      0x102334b00  ; __ZN2db23getSmartlistContentDataEjRN4juce10OwnedArrayINS_12RowDataTrackENS0_20DummyCriticalSectionEEE |
+0x01019c3dbc  test      eax, eax
+0x01019c3dbe  jne       0x1019c3e46
+0x01019c3dc4  mov       eax, dword ptr [r14 + 0xc]
+0x01019c3dc8  test      eax, eax
+0x01019c3dca  jle       0x1019c3e2b
+0x01019c3dcc  mov       r15d, eax
+0x01019c3dcf  neg       r15d
+0x01019c3dd2  mov       r12, rax
+0x01019c3dd5  nop       word ptr cs:[rax + rax]
+0x01019c3de0  lea       ecx, [r12 - 1]
+0x01019c3de5  mov       rdx, qword ptr [r14]
+0x01019c3de8  lea       rdi, [rdx + rcx*8]
+0x01019c3dec  mov       rbx, qword ptr [rdx + rcx*8]
+0x01019c3df0  add       eax, r15d
+0x01019c3df3  lea       rsi, [rdx + rcx*8]
+0x01019c3df7  add       rsi, 8
+0x01019c3dfb  movsxd    rdx, eax
+0x01019c3dfe  shl       rdx, 3
+0x01019c3e02  call      0x1038c42b6
+0x01019c3e07  dec       dword ptr [r14 + 0xc]
+0x01019c3e0b  test      rbx, rbx
+0x01019c3e0e  je        0x1019c3e19
+0x01019c3e10  mov       rax, qword ptr [rbx]
+0x01019c3e13  mov       rdi, rbx
+0x01019c3e16  call      qword ptr [rax + 8]
+0x01019c3e19  cmp       r12, 2
+0x01019c3e1d  jb        0x1019c3e2b
+0x01019c3e1f  mov       eax, dword ptr [r14 + 0xc]
+0x01019c3e23  inc       r15d
+0x01019c3e26  dec       r12
+0x01019c3e29  jmp       0x1019c3de0
+0x01019c3e2b  mov       dword ptr [r14 + 0xc], 0
+0x01019c3e33  mov       rdi, qword ptr [r14]
+0x01019c3e36  call      0x1038c402e
+0x01019c3e3b  mov       rdi, r14
+0x01019c3e3e  call      0x1038c3cc8
+0x01019c3e43  xor       r14d, r14d
+0x01019c3e46  mov       rax, r14
+0x01019c3e49  pop       rbx
+0x01019c3e4a  pop       r12
+0x01019c3e4c  pop       r14
+0x01019c3e4e  pop       r15
+0x01019c3e50  pop       rbp
+0x01019c3e51  ret
+0x01019c3e52  nop       word ptr cs:[rax + rax]
+
+## __GLOBAL__sub_I_dsqlSmartList.cpp | 
+address=0x101e84590 size=0xa30
+0x0101e84590  push      rbp
+0x0101e84591  mov       rbp, rsp
+0x0101e84594  push      r14
+0x0101e84596  push      rbx
+0x0101e84597  lea       rdi, [rip + 0x3b3fe1a]  ; __ZN4juceL27compileUnitMismatchSentinelE
+0x0101e8459e  call      0x102789920  ; __ZN4juce78this_will_fail_to_link_if_some_of_your_compile_units_are_built_in_release_modeC1Ev |
+0x0101e845a3  lea       rdi, [rip + 0x3b3fe12]  ; __ZN4juce7ColoursL16transparentBlackE
+0x0101e845aa  xor       esi, esi
+0x0101e845ac  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e845b1  lea       rdi, [rip + 0x3b3fe08]  ; __ZN4juce7ColoursL16transparentWhiteE
+0x0101e845b8  mov       esi, 0xffffff
+0x0101e845bd  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e845c2  lea       rdi, [rip + 0x3b3fdfb]  ; __ZN4juce7ColoursL9aliceblueE
+0x0101e845c9  mov       esi, 0xfff0f8ff
+0x0101e845ce  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e845d3  lea       rdi, [rip + 0x3b3fdee]  ; __ZN4juce7ColoursL12antiquewhiteE
+0x0101e845da  mov       esi, 0xfffaebd7
+0x0101e845df  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e845e4  lea       rdi, [rip + 0x3b3fde1]  ; __ZN4juce7ColoursL4aquaE
+0x0101e845eb  mov       esi, 0xff00ffff
+0x0101e845f0  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e845f5  lea       rdi, [rip + 0x3b3fdd4]  ; __ZN4juce7ColoursL10aquamarineE
+0x0101e845fc  mov       esi, 0xff7fffd4
+0x0101e84601  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84606  lea       rdi, [rip + 0x3b3fdc7]  ; __ZN4juce7ColoursL5azureE
+0x0101e8460d  mov       esi, 0xfff0ffff
+0x0101e84612  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84617  lea       rdi, [rip + 0x3b3fdba]  ; __ZN4juce7ColoursL5beigeE
+0x0101e8461e  mov       esi, 0xfff5f5dc
+0x0101e84623  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84628  lea       rdi, [rip + 0x3b3fdad]  ; __ZN4juce7ColoursL6bisqueE
+0x0101e8462f  mov       esi, 0xffffe4c4
+0x0101e84634  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84639  lea       rdi, [rip + 0x3b3fda0]  ; __ZN4juce7ColoursL5blackE
+0x0101e84640  mov       esi, 0xff000000
+0x0101e84645  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8464a  lea       rdi, [rip + 0x3b3fd93]  ; __ZN4juce7ColoursL14blanchedalmondE
+0x0101e84651  mov       esi, 0xffffebcd
+0x0101e84656  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8465b  lea       rdi, [rip + 0x3b3fd86]  ; __ZN4juce7ColoursL4blueE
+0x0101e84662  mov       esi, 0xff0000ff
+0x0101e84667  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8466c  lea       rdi, [rip + 0x3b3fd79]  ; __ZN4juce7ColoursL10bluevioletE
+0x0101e84673  mov       esi, 0xff8a2be2
+0x0101e84678  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8467d  lea       rdi, [rip + 0x3b3fd6c]  ; __ZN4juce7ColoursL5brownE
+0x0101e84684  mov       esi, 0xffa52a2a
+0x0101e84689  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8468e  lea       rdi, [rip + 0x3b3fd5f]  ; __ZN4juce7ColoursL9burlywoodE
+0x0101e84695  mov       esi, 0xffdeb887
+0x0101e8469a  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8469f  lea       rdi, [rip + 0x3b3fd52]  ; __ZN4juce7ColoursL9cadetblueE
+0x0101e846a6  mov       esi, 0xff5f9ea0
+0x0101e846ab  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e846b0  lea       rdi, [rip + 0x3b3fd45]  ; __ZN4juce7ColoursL10chartreuseE
+0x0101e846b7  mov       esi, 0xff7fff00
+0x0101e846bc  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e846c1  lea       rdi, [rip + 0x3b3fd38]  ; __ZN4juce7ColoursL9chocolateE
+0x0101e846c8  mov       esi, 0xffd2691e
+0x0101e846cd  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e846d2  lea       rdi, [rip + 0x3b3fd2b]  ; __ZN4juce7ColoursL5coralE
+0x0101e846d9  mov       esi, 0xffff7f50
+0x0101e846de  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e846e3  lea       rdi, [rip + 0x3b3fd1e]  ; __ZN4juce7ColoursL14cornflowerblueE
+0x0101e846ea  mov       esi, 0xff6495ed
+0x0101e846ef  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e846f4  lea       rdi, [rip + 0x3b3fd11]  ; __ZN4juce7ColoursL8cornsilkE
+0x0101e846fb  mov       esi, 0xfffff8dc
+0x0101e84700  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84705  lea       rdi, [rip + 0x3b3fd04]  ; __ZN4juce7ColoursL7crimsonE
+0x0101e8470c  mov       esi, 0xffdc143c
+0x0101e84711  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84716  lea       rdi, [rip + 0x3b3fcf7]  ; __ZN4juce7ColoursL4cyanE
+0x0101e8471d  mov       esi, 0xff00ffff
+0x0101e84722  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84727  lea       rdi, [rip + 0x3b3fcea]  ; __ZN4juce7ColoursL8darkblueE
+0x0101e8472e  mov       esi, 0xff00008b
+0x0101e84733  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84738  lea       rdi, [rip + 0x3b3fcdd]  ; __ZN4juce7ColoursL8darkcyanE
+0x0101e8473f  mov       esi, 0xff008b8b
+0x0101e84744  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84749  lea       rdi, [rip + 0x3b3fcd0]  ; __ZN4juce7ColoursL13darkgoldenrodE
+0x0101e84750  mov       esi, 0xffb8860b
+0x0101e84755  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8475a  lea       rdi, [rip + 0x3b3fcc3]  ; __ZN4juce7ColoursL8darkgreyE
+0x0101e84761  mov       esi, 0xff555555
+0x0101e84766  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8476b  lea       rdi, [rip + 0x3b3fcb6]  ; __ZN4juce7ColoursL9darkgreenE
+0x0101e84772  mov       esi, 0xff006400
+0x0101e84777  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8477c  lea       rdi, [rip + 0x3b3fca9]  ; __ZN4juce7ColoursL9darkkhakiE
+0x0101e84783  mov       esi, 0xffbdb76b
+0x0101e84788  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8478d  lea       rdi, [rip + 0x3b3fc9c]  ; __ZN4juce7ColoursL11darkmagentaE
+0x0101e84794  mov       esi, 0xff8b008b
+0x0101e84799  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8479e  lea       rdi, [rip + 0x3b3fc8f]  ; __ZN4juce7ColoursL14darkolivegreenE
+0x0101e847a5  mov       esi, 0xff556b2f
+0x0101e847aa  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e847af  lea       rdi, [rip + 0x3b3fc82]  ; __ZN4juce7ColoursL10darkorangeE
+0x0101e847b6  mov       esi, 0xffff8c00
+0x0101e847bb  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e847c0  lea       rdi, [rip + 0x3b3fc75]  ; __ZN4juce7ColoursL10darkorchidE
+0x0101e847c7  mov       esi, 0xff9932cc
+0x0101e847cc  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e847d1  lea       rdi, [rip + 0x3b3fc68]  ; __ZN4juce7ColoursL7darkredE
+0x0101e847d8  mov       esi, 0xff8b0000
+0x0101e847dd  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e847e2  lea       rdi, [rip + 0x3b3fc5b]  ; __ZN4juce7ColoursL10darksalmonE
+0x0101e847e9  mov       esi, 0xffe9967a
+0x0101e847ee  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e847f3  lea       rdi, [rip + 0x3b3fc4e]  ; __ZN4juce7ColoursL12darkseagreenE
+0x0101e847fa  mov       esi, 0xff8fbc8f
+0x0101e847ff  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84804  lea       rdi, [rip + 0x3b3fc41]  ; __ZN4juce7ColoursL13darkslateblueE
+0x0101e8480b  mov       esi, 0xff483d8b
+0x0101e84810  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84815  lea       rdi, [rip + 0x3b3fc34]  ; __ZN4juce7ColoursL13darkslategreyE
+0x0101e8481c  mov       esi, 0xff2f4f4f
+0x0101e84821  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84826  lea       rdi, [rip + 0x3b3fc27]  ; __ZN4juce7ColoursL13darkturquoiseE
+0x0101e8482d  mov       esi, 0xff00ced1
+0x0101e84832  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84837  lea       rdi, [rip + 0x3b3fc1a]  ; __ZN4juce7ColoursL10darkvioletE
+0x0101e8483e  mov       esi, 0xff9400d3
+0x0101e84843  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84848  lea       rdi, [rip + 0x3b3fc0d]  ; __ZN4juce7ColoursL8deeppinkE
+0x0101e8484f  mov       esi, 0xffff1493
+0x0101e84854  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84859  lea       rdi, [rip + 0x3b3fc00]  ; __ZN4juce7ColoursL11deepskyblueE
+0x0101e84860  mov       esi, 0xff00bfff
+0x0101e84865  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8486a  lea       rdi, [rip + 0x3b3fbf3]  ; __ZN4juce7ColoursL7dimgreyE
+0x0101e84871  mov       esi, 0xff696969
+0x0101e84876  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8487b  lea       rdi, [rip + 0x3b3fbe6]  ; __ZN4juce7ColoursL10dodgerblueE
+0x0101e84882  mov       esi, 0xff1e90ff
+0x0101e84887  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8488c  lea       rdi, [rip + 0x3b3fbd9]  ; __ZN4juce7ColoursL9firebrickE
+0x0101e84893  mov       esi, 0xffb22222
+0x0101e84898  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8489d  lea       rdi, [rip + 0x3b3fbcc]  ; __ZN4juce7ColoursL11floralwhiteE
+0x0101e848a4  mov       esi, 0xfffffaf0
+0x0101e848a9  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e848ae  lea       rdi, [rip + 0x3b3fbbf]  ; __ZN4juce7ColoursL11forestgreenE
+0x0101e848b5  mov       esi, 0xff228b22
+0x0101e848ba  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e848bf  lea       rdi, [rip + 0x3b3fbb2]  ; __ZN4juce7ColoursL7fuchsiaE
+0x0101e848c6  mov       esi, 0xffff00ff
+0x0101e848cb  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e848d0  lea       rdi, [rip + 0x3b3fba5]  ; __ZN4juce7ColoursL9gainsboroE
+0x0101e848d7  mov       esi, 0xffdcdcdc
+0x0101e848dc  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e848e1  lea       rdi, [rip + 0x3b3fb98]  ; __ZN4juce7ColoursL10ghostwhiteE
+0x0101e848e8  mov       esi, 0xfff8f8ff
+0x0101e848ed  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e848f2  lea       rdi, [rip + 0x3b3fb8b]  ; __ZN4juce7ColoursL4goldE
+0x0101e848f9  mov       esi, 0xffffd700
+0x0101e848fe  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84903  lea       rdi, [rip + 0x3b3fb7e]  ; __ZN4juce7ColoursL9goldenrodE
+0x0101e8490a  mov       esi, 0xffdaa520
+0x0101e8490f  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84914  lea       rdi, [rip + 0x3b3fb71]  ; __ZN4juce7ColoursL4greyE
+0x0101e8491b  mov       esi, 0xff808080
+0x0101e84920  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84925  lea       rdi, [rip + 0x3b3fb64]  ; __ZN4juce7ColoursL5greenE
+0x0101e8492c  mov       esi, 0xff008000
+0x0101e84931  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84936  lea       rdi, [rip + 0x3b3fb57]  ; __ZN4juce7ColoursL11greenyellowE
+0x0101e8493d  mov       esi, 0xffadff2f
+0x0101e84942  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84947  lea       rdi, [rip + 0x3b3fb4a]  ; __ZN4juce7ColoursL8honeydewE
+0x0101e8494e  mov       esi, 0xfff0fff0
+0x0101e84953  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84958  lea       rdi, [rip + 0x3b3fb3d]  ; __ZN4juce7ColoursL7hotpinkE
+0x0101e8495f  mov       esi, 0xffff69b4
+0x0101e84964  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84969  lea       rdi, [rip + 0x3b3fb30]  ; __ZN4juce7ColoursL9indianredE
+0x0101e84970  mov       esi, 0xffcd5c5c
+0x0101e84975  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8497a  lea       rdi, [rip + 0x3b3fb23]  ; __ZN4juce7ColoursL6indigoE
+0x0101e84981  mov       esi, 0xff4b0082
+0x0101e84986  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8498b  lea       rdi, [rip + 0x3b3fb16]  ; __ZN4juce7ColoursL5ivoryE
+0x0101e84992  mov       esi, 0xfffffff0
+0x0101e84997  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e8499c  lea       rdi, [rip + 0x3b3fb09]  ; __ZN4juce7ColoursL5khakiE
+0x0101e849a3  mov       esi, 0xfff0e68c
+0x0101e849a8  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e849ad  lea       rdi, [rip + 0x3b3fafc]  ; __ZN4juce7ColoursL8lavenderE
+0x0101e849b4  mov       esi, 0xffe6e6fa
+0x0101e849b9  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e849be  lea       rdi, [rip + 0x3b3faef]  ; __ZN4juce7ColoursL13lavenderblushE
+0x0101e849c5  mov       esi, 0xfffff0f5
+0x0101e849ca  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e849cf  lea       rdi, [rip + 0x3b3fae2]  ; __ZN4juce7ColoursL9lawngreenE
+0x0101e849d6  mov       esi, 0xff7cfc00
+0x0101e849db  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e849e0  lea       rdi, [rip + 0x3b3fad5]  ; __ZN4juce7ColoursL12lemonchiffonE
+0x0101e849e7  mov       esi, 0xfffffacd
+0x0101e849ec  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e849f1  lea       rdi, [rip + 0x3b3fac8]  ; __ZN4juce7ColoursL9lightblueE
+0x0101e849f8  mov       esi, 0xffadd8e6
+0x0101e849fd  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84a02  lea       rdi, [rip + 0x3b3fabb]  ; __ZN4juce7ColoursL10lightcoralE
+0x0101e84a09  mov       esi, 0xfff08080
+0x0101e84a0e  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84a13  lea       rdi, [rip + 0x3b3faae]  ; __ZN4juce7ColoursL9lightcyanE
+0x0101e84a1a  mov       esi, 0xffe0ffff
+0x0101e84a1f  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84a24  lea       rdi, [rip + 0x3b3faa1]  ; __ZN4juce7ColoursL20lightgoldenrodyellowE
+0x0101e84a2b  mov       esi, 0xfffafad2
+0x0101e84a30  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84a35  lea       rdi, [rip + 0x3b3fa94]  ; __ZN4juce7ColoursL10lightgreenE
+0x0101e84a3c  mov       esi, 0xff90ee90
+0x0101e84a41  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84a46  lea       rdi, [rip + 0x3b3fa87]  ; __ZN4juce7ColoursL9lightgreyE
+0x0101e84a4d  mov       esi, 0xffd3d3d3
+0x0101e84a52  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84a57  lea       rdi, [rip + 0x3b3fa7a]  ; __ZN4juce7ColoursL9lightpinkE
+0x0101e84a5e  mov       esi, 0xffffb6c1
+0x0101e84a63  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84a68  lea       rdi, [rip + 0x3b3fa6d]  ; __ZN4juce7ColoursL11lightsalmonE
+0x0101e84a6f  mov       esi, 0xffffa07a
+0x0101e84a74  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84a79  lea       rdi, [rip + 0x3b3fa60]  ; __ZN4juce7ColoursL13lightseagreenE
+0x0101e84a80  mov       esi, 0xff20b2aa
+0x0101e84a85  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84a8a  lea       rdi, [rip + 0x3b3fa53]  ; __ZN4juce7ColoursL12lightskyblueE
+0x0101e84a91  mov       esi, 0xff87cefa
+0x0101e84a96  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84a9b  lea       rdi, [rip + 0x3b3fa46]  ; __ZN4juce7ColoursL14lightslategreyE
+0x0101e84aa2  mov       esi, 0xff778899
+0x0101e84aa7  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84aac  lea       rdi, [rip + 0x3b3fa39]  ; __ZN4juce7ColoursL14lightsteelblueE
+0x0101e84ab3  mov       esi, 0xffb0c4de
+0x0101e84ab8  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84abd  lea       rdi, [rip + 0x3b3fa2c]  ; __ZN4juce7ColoursL11lightyellowE
+0x0101e84ac4  mov       esi, 0xffffffe0
+0x0101e84ac9  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84ace  lea       rdi, [rip + 0x3b3fa1f]  ; __ZN4juce7ColoursL4limeE
+0x0101e84ad5  mov       esi, 0xff00ff00
+0x0101e84ada  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84adf  lea       rdi, [rip + 0x3b3fa12]  ; __ZN4juce7ColoursL9limegreenE
+0x0101e84ae6  mov       esi, 0xff32cd32
+0x0101e84aeb  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84af0  lea       rdi, [rip + 0x3b3fa05]  ; __ZN4juce7ColoursL5linenE
+0x0101e84af7  mov       esi, 0xfffaf0e6
+0x0101e84afc  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84b01  lea       rdi, [rip + 0x3b3f9f8]  ; __ZN4juce7ColoursL7magentaE
+0x0101e84b08  mov       esi, 0xffff00ff
+0x0101e84b0d  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84b12  lea       rdi, [rip + 0x3b3f9eb]  ; __ZN4juce7ColoursL6maroonE
+0x0101e84b19  mov       esi, 0xff800000
+0x0101e84b1e  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84b23  lea       rdi, [rip + 0x3b3f9de]  ; __ZN4juce7ColoursL16mediumaquamarineE
+0x0101e84b2a  mov       esi, 0xff66cdaa
+0x0101e84b2f  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84b34  lea       rdi, [rip + 0x3b3f9d1]  ; __ZN4juce7ColoursL10mediumblueE
+0x0101e84b3b  mov       esi, 0xff0000cd
+0x0101e84b40  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84b45  lea       rdi, [rip + 0x3b3f9c4]  ; __ZN4juce7ColoursL12mediumorchidE
+0x0101e84b4c  mov       esi, 0xffba55d3
+0x0101e84b51  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84b56  lea       rdi, [rip + 0x3b3f9b7]  ; __ZN4juce7ColoursL12mediumpurpleE
+0x0101e84b5d  mov       esi, 0xff9370db
+0x0101e84b62  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84b67  lea       rdi, [rip + 0x3b3f9aa]  ; __ZN4juce7ColoursL14mediumseagreenE
+0x0101e84b6e  mov       esi, 0xff3cb371
+0x0101e84b73  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84b78  lea       rdi, [rip + 0x3b3f99d]  ; __ZN4juce7ColoursL15mediumslateblueE
+0x0101e84b7f  mov       esi, 0xff7b68ee
+0x0101e84b84  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84b89  lea       rdi, [rip + 0x3b3f990]  ; __ZN4juce7ColoursL17mediumspringgreenE
+0x0101e84b90  mov       esi, 0xff00fa9a
+0x0101e84b95  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84b9a  lea       rdi, [rip + 0x3b3f983]  ; __ZN4juce7ColoursL15mediumturquoiseE
+0x0101e84ba1  mov       esi, 0xff48d1cc
+0x0101e84ba6  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84bab  lea       rdi, [rip + 0x3b3f976]  ; __ZN4juce7ColoursL15mediumvioletredE
+0x0101e84bb2  mov       esi, 0xffc71585
+0x0101e84bb7  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84bbc  lea       rdi, [rip + 0x3b3f969]  ; __ZN4juce7ColoursL12midnightblueE
+0x0101e84bc3  mov       esi, 0xff191970
+0x0101e84bc8  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84bcd  lea       rdi, [rip + 0x3b3f95c]  ; __ZN4juce7ColoursL9mintcreamE
+0x0101e84bd4  mov       esi, 0xfff5fffa
+0x0101e84bd9  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84bde  lea       rdi, [rip + 0x3b3f94f]  ; __ZN4juce7ColoursL9mistyroseE
+0x0101e84be5  mov       esi, 0xffffe4e1
+0x0101e84bea  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84bef  lea       rdi, [rip + 0x3b3f942]  ; __ZN4juce7ColoursL8moccasinE
+0x0101e84bf6  mov       esi, 0xffffe4b5
+0x0101e84bfb  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84c00  lea       rdi, [rip + 0x3b3f935]  ; __ZN4juce7ColoursL11navajowhiteE
+0x0101e84c07  mov       esi, 0xffffdead
+0x0101e84c0c  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84c11  lea       rdi, [rip + 0x3b3f928]  ; __ZN4juce7ColoursL4navyE
+0x0101e84c18  mov       esi, 0xff000080
+0x0101e84c1d  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84c22  lea       rdi, [rip + 0x3b3f91b]  ; __ZN4juce7ColoursL7oldlaceE
+0x0101e84c29  mov       esi, 0xfffdf5e6
+0x0101e84c2e  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84c33  lea       rdi, [rip + 0x3b3f90e]  ; __ZN4juce7ColoursL5oliveE
+0x0101e84c3a  mov       esi, 0xff808000
+0x0101e84c3f  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84c44  lea       rdi, [rip + 0x3b3f901]  ; __ZN4juce7ColoursL9olivedrabE
+0x0101e84c4b  mov       esi, 0xff6b8e23
+0x0101e84c50  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84c55  lea       rdi, [rip + 0x3b3f8f4]  ; __ZN4juce7ColoursL6orangeE
+0x0101e84c5c  mov       esi, 0xffffa500
+0x0101e84c61  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84c66  lea       rdi, [rip + 0x3b3f8e7]  ; __ZN4juce7ColoursL9orangeredE
+0x0101e84c6d  mov       esi, 0xffff4500
+0x0101e84c72  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84c77  lea       rdi, [rip + 0x3b3f8da]  ; __ZN4juce7ColoursL6orchidE
+0x0101e84c7e  mov       esi, 0xffda70d6
+0x0101e84c83  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84c88  lea       rdi, [rip + 0x3b3f8cd]  ; __ZN4juce7ColoursL13palegoldenrodE
+0x0101e84c8f  mov       esi, 0xffeee8aa
+0x0101e84c94  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84c99  lea       rdi, [rip + 0x3b3f8c0]  ; __ZN4juce7ColoursL9palegreenE
+0x0101e84ca0  mov       esi, 0xff98fb98
+0x0101e84ca5  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84caa  lea       rdi, [rip + 0x3b3f8b3]  ; __ZN4juce7ColoursL13paleturquoiseE
+0x0101e84cb1  mov       esi, 0xffafeeee
+0x0101e84cb6  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84cbb  lea       rdi, [rip + 0x3b3f8a6]  ; __ZN4juce7ColoursL13palevioletredE
+0x0101e84cc2  mov       esi, 0xffdb7093
+0x0101e84cc7  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84ccc  lea       rdi, [rip + 0x3b3f899]  ; __ZN4juce7ColoursL10papayawhipE
+0x0101e84cd3  mov       esi, 0xffffefd5
+0x0101e84cd8  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84cdd  lea       rdi, [rip + 0x3b3f88c]  ; __ZN4juce7ColoursL9peachpuffE
+0x0101e84ce4  mov       esi, 0xffffdab9
+0x0101e84ce9  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84cee  lea       rdi, [rip + 0x3b3f87f]  ; __ZN4juce7ColoursL4peruE
+0x0101e84cf5  mov       esi, 0xffcd853f
+0x0101e84cfa  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84cff  lea       rdi, [rip + 0x3b3f872]  ; __ZN4juce7ColoursL4pinkE
+0x0101e84d06  mov       esi, 0xffffc0cb
+0x0101e84d0b  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84d10  lea       rdi, [rip + 0x3b3f865]  ; __ZN4juce7ColoursL4plumE
+0x0101e84d17  mov       esi, 0xffdda0dd
+0x0101e84d1c  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84d21  lea       rdi, [rip + 0x3b3f858]  ; __ZN4juce7ColoursL10powderblueE
+0x0101e84d28  mov       esi, 0xffb0e0e6
+0x0101e84d2d  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84d32  lea       rdi, [rip + 0x3b3f84b]  ; __ZN4juce7ColoursL6purpleE
+0x0101e84d39  mov       esi, 0xff800080
+0x0101e84d3e  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84d43  lea       rdi, [rip + 0x3b3f83e]  ; __ZN4juce7ColoursL13rebeccapurpleE
+0x0101e84d4a  mov       esi, 0xff663399
+0x0101e84d4f  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84d54  lea       rdi, [rip + 0x3b3f831]  ; __ZN4juce7ColoursL3redE
+0x0101e84d5b  mov       esi, 0xffff0000
+0x0101e84d60  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84d65  lea       rdi, [rip + 0x3b3f824]  ; __ZN4juce7ColoursL9rosybrownE
+0x0101e84d6c  mov       esi, 0xffbc8f8f
+0x0101e84d71  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84d76  lea       rdi, [rip + 0x3b3f817]  ; __ZN4juce7ColoursL9royalblueE
+0x0101e84d7d  mov       esi, 0xff4169e1
+0x0101e84d82  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84d87  lea       rdi, [rip + 0x3b3f80a]  ; __ZN4juce7ColoursL11saddlebrownE
+0x0101e84d8e  mov       esi, 0xff8b4513
+0x0101e84d93  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84d98  lea       rdi, [rip + 0x3b3f7fd]  ; __ZN4juce7ColoursL6salmonE
+0x0101e84d9f  mov       esi, 0xfffa8072
+0x0101e84da4  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84da9  lea       rdi, [rip + 0x3b3f7f0]  ; __ZN4juce7ColoursL10sandybrownE
+0x0101e84db0  mov       esi, 0xfff4a460
+0x0101e84db5  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84dba  lea       rdi, [rip + 0x3b3f7e3]  ; __ZN4juce7ColoursL8seagreenE
+0x0101e84dc1  mov       esi, 0xff2e8b57
+0x0101e84dc6  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84dcb  lea       rdi, [rip + 0x3b3f7d6]  ; __ZN4juce7ColoursL8seashellE
+0x0101e84dd2  mov       esi, 0xfffff5ee
+0x0101e84dd7  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84ddc  lea       rdi, [rip + 0x3b3f7c9]  ; __ZN4juce7ColoursL6siennaE
+0x0101e84de3  mov       esi, 0xffa0522d
+0x0101e84de8  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84ded  lea       rdi, [rip + 0x3b3f7bc]  ; __ZN4juce7ColoursL6silverE
+0x0101e84df4  mov       esi, 0xffc0c0c0
+0x0101e84df9  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84dfe  lea       rdi, [rip + 0x3b3f7af]  ; __ZN4juce7ColoursL7skyblueE
+0x0101e84e05  mov       esi, 0xff87ceeb
+0x0101e84e0a  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84e0f  lea       rdi, [rip + 0x3b3f7a2]  ; __ZN4juce7ColoursL9slateblueE
+0x0101e84e16  mov       esi, 0xff6a5acd
+0x0101e84e1b  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84e20  lea       rdi, [rip + 0x3b3f795]  ; __ZN4juce7ColoursL9slategreyE
+0x0101e84e27  mov       esi, 0xff708090
+0x0101e84e2c  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84e31  lea       rdi, [rip + 0x3b3f788]  ; __ZN4juce7ColoursL4snowE
+0x0101e84e38  mov       esi, 0xfffffafa
+0x0101e84e3d  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84e42  lea       rdi, [rip + 0x3b3f77b]  ; __ZN4juce7ColoursL11springgreenE
+0x0101e84e49  mov       esi, 0xff00ff7f
+0x0101e84e4e  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84e53  lea       rdi, [rip + 0x3b3f76e]  ; __ZN4juce7ColoursL9steelblueE
+0x0101e84e5a  mov       esi, 0xff4682b4
+0x0101e84e5f  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84e64  lea       rdi, [rip + 0x3b3f761]  ; __ZN4juce7ColoursL3tanE
+0x0101e84e6b  mov       esi, 0xffd2b48c
+0x0101e84e70  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84e75  lea       rdi, [rip + 0x3b3f754]  ; __ZN4juce7ColoursL4tealE
+0x0101e84e7c  mov       esi, 0xff008080
+0x0101e84e81  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84e86  lea       rdi, [rip + 0x3b3f747]  ; __ZN4juce7ColoursL7thistleE
+0x0101e84e8d  mov       esi, 0xffd8bfd8
+0x0101e84e92  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84e97  lea       rdi, [rip + 0x3b3f73a]  ; __ZN4juce7ColoursL6tomatoE
+0x0101e84e9e  mov       esi, 0xffff6347
+0x0101e84ea3  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84ea8  lea       rdi, [rip + 0x3b3f72d]  ; __ZN4juce7ColoursL9turquoiseE
+0x0101e84eaf  mov       esi, 0xff40e0d0
+0x0101e84eb4  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84eb9  lea       rdi, [rip + 0x3b3f720]  ; __ZN4juce7ColoursL6violetE
+0x0101e84ec0  mov       esi, 0xffee82ee
+0x0101e84ec5  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84eca  lea       rdi, [rip + 0x3b3f713]  ; __ZN4juce7ColoursL5wheatE
+0x0101e84ed1  mov       esi, 0xfff5deb3
+0x0101e84ed6  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84edb  lea       rdi, [rip + 0x3b3f706]  ; __ZN4juce7ColoursL5whiteE
+0x0101e84ee2  mov       esi, 0xffffffff
+0x0101e84ee7  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84eec  lea       rdi, [rip + 0x3b3f6f9]  ; __ZN4juce7ColoursL10whitesmokeE
+0x0101e84ef3  mov       esi, 0xfff5f5f5
+0x0101e84ef8  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84efd  lea       rdi, [rip + 0x3b3f6ec]  ; __ZN4juce7ColoursL6yellowE
+0x0101e84f04  mov       esi, 0xffffff00
+0x0101e84f09  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84f0e  lea       rdi, [rip + 0x3b3f6df]  ; __ZN4juce7ColoursL11yellowgreenE
+0x0101e84f15  mov       esi, 0xff9acd32
+0x0101e84f1a  call      0x102819200  ; __ZN4juce6ColourC1Ej |
+0x0101e84f1f  lea       rbx, [rip + 0x3b3f6d2]  ; __ZN9streamingL16NoParamPairArrayE
+0x0101e84f26  mov       rdi, rbx
+0x0101e84f29  mov       esi, 1
+0x0101e84f2e  call      0x10278bba0  ; __ZN4juce15StringPairArrayC1Eb |
+0x0101e84f33  lea       rdi, [rip - 0x1e7f2ea]  ; __ZN4juce15StringPairArrayD1Ev |
+0x0101e84f3a  lea       r14, [rip - 0x1e84f41]  ; __mh_execute_header
+0x0101e84f41  mov       rsi, rbx
+0x0101e84f44  mov       rdx, r14
+0x0101e84f47  call      0x1038c3cf8
+0x0101e84f4c  lea       rbx, [rip + 0x3b3f6cd]  ; __ZN9streamingL12NoParamArrayE
+0x0101e84f53  mov       rdi, rbx
+0x0101e84f56  call      0x10278de50  ; __ZN4juce11StringArrayC1Ev |
+0x0101e84f5b  lea       rdi, [rip - 0x1e7f272]  ; __ZN4juce11StringArrayD1Ev |
+0x0101e84f62  mov       rsi, rbx
+0x0101e84f65  mov       rdx, r14
+0x0101e84f68  call      0x1038c3cf8
+0x0101e84f6d  lea       rbx, [rip + 0x3b3f6bc]  ; __ZN9streamingL5NoVarE
+0x0101e84f74  mov       rdi, rbx
+0x0101e84f77  call      0x102789af0  ; __ZN4juce3varC1Ev |
+0x0101e84f7c  lea       rdi, [rip + 0x904b7d]  ; __ZN4juce3varD1Ev |
+0x0101e84f83  mov       rsi, rbx
+0x0101e84f86  mov       rdx, r14
+0x0101e84f89  call      0x1038c3cf8
+0x0101e84f8e  lea       rbx, [rip + 0x3b3f6ab]  ; __ZN9streaming11apple_musicL9BASE_PATHE
+0x0101e84f95  lea       rsi, [rip + 0x34b3ab8]  ; 'apple-music:tracks:'
+0x0101e84f9c  mov       rdi, rbx
+0x0101e84f9f  call      0x10278f540  ; __ZN4juce6StringC1EPKc |
+0x0101e84fa4  lea       rdi, [rip + 0x906235]  ; __ZN4juce6StringD1Ev |
+0x0101e84fab  mov       rsi, rbx
+0x0101e84fae  mov       rdx, r14
+0x0101e84fb1  pop       rbx
+0x0101e84fb2  pop       r14
+0x0101e84fb4  pop       rbp
+0x0101e84fb5  jmp       0x1038c3cf8
+0x0101e84fba  nop
+0x0101e84fbb  nop
+0x0101e84fbc  nop
+0x0101e84fbd  nop
+0x0101e84fbe  nop
+0x0101e84fbf  nop
+
+## __ZZ18getRowset_Playlist9RbDBIndexaihiE10PlaylistID
+address=0x105815df0 size=0x10
+unmapped-or-non-code-symbol: SystemError
+

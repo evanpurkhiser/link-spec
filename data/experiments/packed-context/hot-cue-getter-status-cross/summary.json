@@ -1,0 +1,75 @@
+{
+  "artifacts": {
+    "fixture_fingerprint": "718db45aea9624ec7f8c6cd70140ec6ba4b99d0cae4739aa3830ca4d0528b9b7",
+    "generator_sha256": "60ec02bd561cb52a8ef00c700ad9a1ed6e3d35125d802aef4ee40b2ef3343c8c",
+    "golden_sha256": {
+      "extended": {
+        "cdj-3000-status": "d2951a517057826b6637cfd3f60ef4b501ccbd676a15ccf474f0e474d7df741f",
+        "xdj-rx3-status": "5ed851f1391b808287a65408f70e98dce4e8d3c2d98c6fbf4792b7bba32536b2"
+      },
+      "legacy": {
+        "cdj-3000-status": "9f3e1e19636651b3c5fadab4b58a30a36a77888da0bee2b76197d8895a92d20c",
+        "xdj-rx3-status": "ba6105c284657e1cccbc3c08d8fd83db9f12df1b7a13ca07d21a672e45e9d3cd"
+      }
+    },
+    "normalized_behavior_sha256": {
+      "extended": {
+        "cdj-3000-status": "820ec23cde0fa1d817f42ff8812fe1abca175d1a9885cb7c36279b01e2f06c6f",
+        "xdj-rx3-status": "820ec23cde0fa1d817f42ff8812fe1abca175d1a9885cb7c36279b01e2f06c6f"
+      },
+      "legacy": {
+        "cdj-3000-status": "820ec23cde0fa1d817f42ff8812fe1abca175d1a9885cb7c36279b01e2f06c6f",
+        "xdj-rx3-status": "820ec23cde0fa1d817f42ff8812fe1abca175d1a9885cb7c36279b01e2f06c6f"
+      }
+    },
+    "recorder_sha256": "abb8a8fd75ad172d5c57e93f6f5459f329720a20f2c6714e2ab3a96f9f01715d"
+  },
+  "models": [
+    "xdj-rx3-status",
+    "cdj-3000-status"
+  ],
+  "observed": {
+    "all_rejected_track_types_equal_within_family": true,
+    "case_executions": 112,
+    "cases_per_golden": 28,
+    "families": [
+      "legacy-populated",
+      "legacy-empty",
+      "extended-populated",
+      "extended-empty"
+    ],
+    "goldens": 4,
+    "immediate_repeat_executions": 112,
+    "normalized_identity_behavior_equal_within_setup": true,
+    "rejected_status": 50,
+    "rejected_track_types": [
+      "0x00",
+      "0x02",
+      "0x03",
+      "0x04",
+      "0x05",
+      "0x06"
+    ],
+    "request_kinds": [
+      "0x2101",
+      "0x2301"
+    ],
+    "setup_behavior_equal_within_identity": true,
+    "successful_track_type": "0x01",
+    "track_types": [
+      "0x00",
+      "0x01",
+      "0x02",
+      "0x03",
+      "0x04",
+      "0x05",
+      "0x06"
+    ]
+  },
+  "product": "rekordbox 7.2.19",
+  "schema_version": 1,
+  "setups": [
+    "extended",
+    "legacy"
+  ]
+}

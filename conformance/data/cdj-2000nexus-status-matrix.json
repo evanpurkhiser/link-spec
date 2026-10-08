@@ -1,0 +1,100 @@
+{
+  "format": 1,
+  "scope": "real Rekordbox 7.2.19 only; backend comparison is deferred",
+  "identity": "runs/cdj-2000nexus-player-1-genuine-status.json",
+  "status_packet": "status-packets/cdj-2000nexus-player-1.hex",
+  "source_capture": "../../dysentery/doc/assets/captures/S05-link-browse/run.pcapng",
+  "variants": [
+    {
+      "id": "display-baseline",
+      "fixture": "full",
+      "suite": "suites/generated/display-song-info-status-cdj-2000nexus.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/display-song-info.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000-status/display-song-info.json"
+    },
+    {
+      "id": "ordinary-extended",
+      "fixture": "full",
+      "suite": "suites/full.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/full.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000/full.json"
+    },
+    {
+      "id": "ordinary-legacy",
+      "fixture": "full",
+      "suite": "suites/legacy.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/legacy.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000/legacy.json"
+    },
+    {
+      "id": "display-context-extended",
+      "fixture": "full",
+      "suite": "suites/context-display-status-extended.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/context-display-status-extended.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000-status/context-display-status-extended.json"
+    },
+    {
+      "id": "display-context-legacy",
+      "fixture": "full",
+      "suite": "suites/context-display-status-legacy.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/context-display-status-legacy.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000-status/context-display-status-legacy.json"
+    },
+    {
+      "id": "play-context-extended",
+      "fixture": "full",
+      "suite": "suites/context-play-status-player-1-extended.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/context-play-status-extended.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000-status/context-play-status-extended.json"
+    },
+    {
+      "id": "play-context-legacy",
+      "fixture": "full",
+      "suite": "suites/context-play-status-player-1-legacy.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/context-play-status-legacy.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000-status/context-play-status-legacy.json"
+    },
+    {
+      "id": "class2-context-extended",
+      "fixture": "full",
+      "suite": "suites/context-class2-status-player-1-extended.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/context-class2-status-extended.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000-status/context-class2-status-extended.json"
+    },
+    {
+      "id": "class2-context-legacy",
+      "fixture": "full",
+      "suite": "suites/context-class2-status-player-1-legacy.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/context-class2-status-legacy.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000-status/context-class2-status-legacy.json"
+    },
+    {
+      "id": "hot-cue-getters-extended",
+      "fixture": "hot-cue-banks",
+      "suite": "suites/context-hot-cue-getter-status-player-1-extended.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/context-hot-cue-getter-status-extended.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000-status/context-hot-cue-getter-status-extended.json"
+    },
+    {
+      "id": "hot-cue-getters-legacy",
+      "fixture": "hot-cue-banks",
+      "suite": "suites/context-hot-cue-getter-status-player-1-legacy.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/context-hot-cue-getter-status-legacy.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000-status/context-hot-cue-getter-status-legacy.json"
+    },
+    {
+      "id": "hot-cue-catalog-extended",
+      "fixture": "hot-cue-banks",
+      "suite": "suites/context-hot-cue-catalog-status-player-1-extended.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/context-hot-cue-catalog-status-extended.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000-status/context-hot-cue-catalog-status-extended.json"
+    },
+    {
+      "id": "hot-cue-catalog-legacy",
+      "fixture": "hot-cue-banks",
+      "suite": "suites/context-hot-cue-catalog-status-player-1-legacy.json",
+      "golden": "goldens/rekordbox-7.2.19/cdj-2000nexus-status/context-hot-cue-catalog-status-legacy.json",
+      "reference_golden": "goldens/rekordbox-7.2.19/cdj-3000-status/context-hot-cue-catalog-status-legacy.json"
+    }
+  ]
+}

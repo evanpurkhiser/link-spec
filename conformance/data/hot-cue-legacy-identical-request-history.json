@@ -1,0 +1,69 @@
+{
+  "format": 1,
+  "name": "hot-cue-legacy-identical-request-history",
+  "scope": "real Rekordbox 7.2.19 only; backend comparison is deferred",
+  "fixture_profile": "hot-cue-bank-legacy-ordinals",
+  "identity": "xdj-rx3-player-11-status",
+  "setup": "extended",
+  "cycles": 2,
+  "canonical_request_signature": "9b7300807e8244b915d869ae1e8269778a32579ead927f1d28444600b9740925",
+  "capture": [
+    "setter",
+    "rekordbox_processes",
+    "helper_processes",
+    "application_events",
+    "tcp_listeners",
+    "immediate_getter",
+    "database",
+    "same_database_restart_getter"
+  ],
+  "phases": [
+    {
+      "id": "fresh-vm-canonical",
+      "action": "request",
+      "suite": "suites/generated/hot-cue-legacy-setter-parser/hot-cue-legacy-setter-parser-content-id-00002711.json",
+      "vm_state": "fresh-isolated-restart"
+    },
+    {
+      "id": "crash-declared-extension-one",
+      "action": "request",
+      "suite": "suites/generated/hot-cue-legacy-setter-parser/hot-cue-legacy-setter-parser-declared-extension-length-00000001.json",
+      "vm_state": "continuous"
+    },
+    {
+      "id": "after-crash-one-canonical",
+      "action": "request",
+      "suite": "suites/generated/hot-cue-legacy-setter-parser/hot-cue-legacy-setter-parser-content-id-00002711.json",
+      "vm_state": "continuous"
+    },
+    {
+      "id": "crash-declared-extension-seven",
+      "action": "request",
+      "suite": "suites/generated/hot-cue-legacy-setter-parser/hot-cue-legacy-setter-parser-declared-extension-length-00000007.json",
+      "vm_state": "continuous"
+    },
+    {
+      "id": "after-crash-seven-canonical",
+      "action": "request",
+      "suite": "suites/generated/hot-cue-legacy-setter-parser/hot-cue-legacy-setter-parser-content-id-00002711.json",
+      "vm_state": "continuous"
+    },
+    {
+      "id": "restart-isolated-vm",
+      "action": "isolated-vm-restart"
+    },
+    {
+      "id": "after-vm-restart-canonical",
+      "action": "request",
+      "suite": "suites/generated/hot-cue-legacy-setter-parser/hot-cue-legacy-setter-parser-content-id-00002711.json",
+      "vm_state": "fresh-isolated-restart"
+    }
+  ],
+  "invariants": [
+    "Every request phase starts from the same encrypted fixture and a cold Rekordbox application stack.",
+    "Every canonical phase has the declared canonical request signature.",
+    "The physical-LAN VM is inactive and the isolation gate passes before every identity launch.",
+    "No phase is promoted without a hash-bound receipt and both complete cycles.",
+    "Listener availability is reported independently from setter response and durable database effect."
+  ]
+}

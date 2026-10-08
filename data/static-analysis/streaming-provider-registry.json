@@ -1,0 +1,111 @@
+{
+  "format": 1,
+  "scope": "Rekordbox 7.2.19 x86-64 streaming-provider ownership used by Link Export row visibility",
+  "source": {
+    "path": "artifacts/rekordbox/7.2.19/extracted/app-root/rekordbox.app/Contents/MacOS/rekordbox",
+    "sha256": "07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244",
+    "architecture": "x86_64"
+  },
+  "manager": {
+    "constructor": "0x1030d76f0",
+    "get_service": "0x1030d8060",
+    "path_classifier": "0x1030d8610",
+    "global_path_classifier": "0x1030d8820",
+    "login_classifier": "0x1030d8910",
+    "providers": [
+      {
+        "type": 1,
+        "name": "SoundCloud",
+        "slot": "0x8",
+        "constructed": true,
+        "constructor": "0x103042ff0",
+        "used_by_generic_path_classifier": true
+      },
+      {
+        "type": 2,
+        "name": "Beatport",
+        "slot": "0x10",
+        "constructed": true,
+        "constructor": "0x102fcf910",
+        "used_by_generic_path_classifier": true
+      },
+      {
+        "type": 3,
+        "name": "Beatsource",
+        "slot": "0x18",
+        "constructed": false,
+        "constructor": null,
+        "used_by_generic_path_classifier": false
+      },
+      {
+        "type": 4,
+        "name": "Tidal",
+        "slot": "0x20",
+        "constructed": true,
+        "constructor": "0x1030bb180",
+        "used_by_generic_path_classifier": true
+      },
+      {
+        "type": 5,
+        "name": "provider-5",
+        "slot": "0x28",
+        "constructed": false,
+        "constructor": null,
+        "used_by_generic_path_classifier": false
+      },
+      {
+        "type": 6,
+        "name": "provider-6",
+        "slot": "0x30",
+        "constructed": false,
+        "constructor": null,
+        "used_by_generic_path_classifier": false
+      },
+      {
+        "type": 7,
+        "name": "Spotify",
+        "slot": "0x38",
+        "constructed": true,
+        "constructor": "0x103084220",
+        "used_by_generic_path_classifier": true
+      },
+      {
+        "type": 8,
+        "name": "Apple Music",
+        "slot": "0x40",
+        "constructed": true,
+        "constructor": "0x102f7f560",
+        "used_by_generic_path_classifier": true
+      }
+    ]
+  },
+  "beatport_path_predicate": {
+    "service_slot": "0x10",
+    "method_vtable_offset": "0x30",
+    "method_address": "0x102fcfc10",
+    "operation": "juce::String::contains",
+    "substring": "/v4/catalog/tracks/",
+    "login_state_read": false,
+    "fixture_scheme_beatport_tracks_matches": false
+  },
+  "beatsource_path_predicate": {
+    "service_slot": "0x18",
+    "service_constructed": false,
+    "standalone_helper": "0x1030d8200",
+    "standalone_result": false,
+    "fixture_scheme_beatsource_tracks_matches": false
+  },
+  "link_export_implications": [
+    "The generic path classifier and the login classifier are separate functions.",
+    "Beatport is constructed unconditionally and tested by the generic path classifier.",
+    "Beatport path recognition is a pure /v4/catalog/tracks/ substring test in this build.",
+    "The beatport:tracks: fixture control does not exercise the production Beatport predicate.",
+    "Beatsource has a reserved type/slot but no constructed service and its standalone helper returns false.",
+    "Authenticating Beatport is not required to activate its Link Export path predicate."
+  ],
+  "evidence_boundary": {
+    "proven": "macOS x86-64 manager construction and predicates",
+    "live_windows_follow_up": "Record ordinary serving with /v4/catalog/tracks/ and scheme controls",
+    "not_claimed": "Account-conditioned root UI or behavior in other Rekordbox versions"
+  }
+}

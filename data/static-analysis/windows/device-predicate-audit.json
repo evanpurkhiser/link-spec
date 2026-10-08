@@ -1,0 +1,89 @@
+{
+  "format": 1,
+  "scope": "Rekordbox 7.2.19 Windows Link Export device predicates",
+  "source": {
+    "sha256": "c9ed23e974c51c75e2ec069fbd2679a3dbe606be9e79e9cbbd13d6418ab11c37",
+    "size": 103540656,
+    "machine": "MACHINE_TYPES.AMD64"
+  },
+  "functions": {
+    "standalone_content_compatibility": {
+      "address": "0x14227e200",
+      "direct_control_xrefs": 1
+    },
+    "disconnect_with_inlined_aio_clear": {
+      "address": "0x142380930",
+      "direct_control_xrefs": 1
+    },
+    "display_is_aio": {
+      "address": "0x1423815c0",
+      "direct_control_xrefs": 1
+    },
+    "map_only_aio_clear_helper": {
+      "address": "0x142381700",
+      "direct_control_xrefs": 0
+    },
+    "get_list_buf_row_content": {
+      "address": "0x14238c720",
+      "direct_control_xrefs": 3
+    }
+  },
+  "direct_control_xrefs": [
+    {
+      "address": "0x1423627e8",
+      "owner_start": "0x142361f30",
+      "owner_end": "0x142364748",
+      "mnemonic": "call",
+      "target": "0x1423815c0"
+    },
+    {
+      "address": "0x14238d06f",
+      "owner_start": "0x14238c720",
+      "owner_end": "0x14238d17b",
+      "mnemonic": "call",
+      "target": "0x14227e200"
+    },
+    {
+      "address": "0x14238d239",
+      "owner_start": "0x14238d190",
+      "owner_end": "0x14238d24e",
+      "mnemonic": "call",
+      "target": "0x14238c720"
+    },
+    {
+      "address": "0x14238d6e7",
+      "owner_start": "0x14238d470",
+      "owner_end": "0x14238d9e9",
+      "mnemonic": "call",
+      "target": "0x14238c720"
+    },
+    {
+      "address": "0x14238d82b",
+      "owner_start": "0x14238d470",
+      "owner_end": "0x14238d9e9",
+      "mnemonic": "call",
+      "target": "0x14238c720"
+    },
+    {
+      "address": "0x142397710",
+      "owner_start": "0x142397700",
+      "owner_end": "0x142397727",
+      "mnemonic": "call",
+      "target": "0x142380930"
+    }
+  ],
+  "absolute_pointer_references": [],
+  "conclusions": {
+    "display_classifier": "isAIO is called once by the AppSync Display formatter",
+    "disconnect_cache_clear": "Disconnect contains the player-keyed AIO-map erase inline; the separate map-only helper has no direct call or jump",
+    "track_compatibility": "AppSync GetListBufRowContent inlines the FileType/SampleRate predicate; its Master-interface branch calls the standalone predicate once",
+    "bit_depth_read": false,
+    "absolute_pointer_storage": "no little-endian 64-bit image pointer targets any recovered function"
+  },
+  "artifacts": {
+    "disconnect-aio-cache.disasm.txt": "11041a8cb0727855ffca0ccd632ee12f6947c7c225148ef80bca29de561fa060",
+    "clear-aio-map.disasm.txt": "02d4d9913d090e1485415a0f089ff181f4b8c9f341b0591bf4f5d3d047985e62",
+    "content-compatibility.disasm.txt": "572e25115fb283d69dfb87176c826f33a3adb7da6a751b80f6d545a966405e86",
+    "get-list-row-content-compatibility.disasm.txt": "8eec48a18327947caf37cf4d0bd36a6d1c659b60c23f395642f567d72d1d91cf"
+  }
+}

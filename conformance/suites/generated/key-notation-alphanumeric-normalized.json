@@ -1,0 +1,365 @@
+{
+  "name": "key-notation-alphanumeric-normalized",
+  "description": "Link Export key display and menu behavior under the Rekordbox alphanumeric-normalized preference state",
+  "fixture_profile": "key-notation",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 10,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "key-root",
+      "description": "Key-notation preference alphanumeric-normalized: normalized key root",
+      "request_kind": "0x1014",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 24,
+        "row_count": 24
+      }
+    },
+    {
+      "id": "key-distances",
+      "description": "Key-notation preference alphanumeric-normalized: key-distance submenu",
+      "request_kind": "0x1114",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3
+      }
+    },
+    {
+      "id": "key-tracks",
+      "description": "Key-notation preference alphanumeric-normalized: exact key-distance tracks",
+      "request_kind": "0x1214",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": 1
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8
+      }
+    },
+    {
+      "id": "collection-bpm",
+      "description": "Key-notation preference alphanumeric-normalized: collection rows with BPM secondary",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16
+      },
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        4
+      ]
+    },
+    {
+      "id": "collection-key",
+      "description": "Key-notation preference alphanumeric-normalized: collection rows with Key secondary",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16
+      },
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        12
+      ]
+    },
+    {
+      "id": "collection-key-sort",
+      "description": "Key-notation preference alphanumeric-normalized: collection rows sorted by Key",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16
+      },
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        12
+      ]
+    },
+    {
+      "id": "smart-bpm",
+      "description": "Key-notation preference alphanumeric-normalized: SmartList rows with BPM secondary",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16
+      },
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        4
+      ]
+    },
+    {
+      "id": "smart-key",
+      "description": "Key-notation preference alphanumeric-normalized: SmartList rows with Key secondary",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16
+      },
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        12
+      ]
+    },
+    {
+      "id": "smart-key-sort",
+      "description": "Key-notation preference alphanumeric-normalized: SmartList rows sorted by Key",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 12
+        },
+        {
+          "number": "$fixture.playlist.smart_matrix.logic_any"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 8,
+        "row_count": 8,
+        "argument_count": 16
+      },
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        12
+      ]
+    },
+    {
+      "id": "display-bpm",
+      "description": "Key-notation preference alphanumeric-normalized: Display Song Info with BPM secondary",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      },
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        4
+      ]
+    },
+    {
+      "id": "display-key",
+      "description": "Key-notation preference alphanumeric-normalized: Display Song Info with KEY secondary",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 16
+      },
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        12
+      ]
+    },
+    {
+      "id": "delivery-bpm",
+      "description": "Key-notation preference alphanumeric-normalized: Delivery Song Info with BPM secondary",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 13,
+        "row_count": 13,
+        "argument_count": 16
+      },
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        4
+      ]
+    },
+    {
+      "id": "delivery-key",
+      "description": "Key-notation preference alphanumeric-normalized: Delivery Song Info with KEY secondary",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 13,
+        "row_count": 13,
+        "argument_count": 16
+      },
+      "render_arguments": [
+        0,
+        "$total",
+        12,
+        1,
+        12
+      ]
+    }
+  ]
+}

@@ -1,0 +1,348 @@
+{
+  "name": "adjacent-payload-success-status-player-11-extended",
+  "fixture_profile": "payload-valid",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": []
+  },
+  "cases": [
+    {
+      "id": "kind-2003--content-artwork",
+      "description": "0x2003 returns deterministic content artwork",
+      "request_kind": "0x2003",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2003--playlist-artwork",
+      "description": "0x2003 returns deterministic playlist artwork",
+      "request_kind": "0x2003",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.playlist.primary"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2103--content-artwork",
+      "description": "0x2103 returns deterministic content artwork",
+      "request_kind": "0x2103",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2004--deterministic-analysis",
+      "description": "0x2004 returns deterministic generated analysis data",
+      "request_kind": "0x2004",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": 4
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      },
+      "fixed_tag_slots": 5
+    },
+    {
+      "id": "kind-2204--deterministic-analysis",
+      "description": "0x2204 returns deterministic generated analysis data",
+      "request_kind": "0x2204",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2504--deterministic-analysis",
+      "description": "0x2504 returns deterministic generated analysis data",
+      "request_kind": "0x2504",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2804--deterministic-analysis",
+      "description": "0x2804 returns deterministic generated analysis data",
+      "request_kind": "0x2804",
+      "arguments": [
+        {
+          "number": 185074433
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2904--deterministic-analysis",
+      "description": "0x2904 returns deterministic generated analysis data",
+      "request_kind": "0x2904",
+      "arguments": [
+        {
+          "number": 184615681
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2a04--deterministic-analysis",
+      "description": "0x2a04 returns deterministic generated analysis data",
+      "request_kind": "0x2a04",
+      "arguments": [
+        {
+          "number": 184615681
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2c04--atom-pwv3-ext",
+      "description": "0x2c04 returns the generated pwv3-ext atom",
+      "request_kind": "0x2c04",
+      "arguments": [
+        {
+          "number": 184615681
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0x33565750"
+        },
+        {
+          "number": "0x00545845"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2c04--atom-pkey-ext",
+      "description": "0x2c04 returns the generated pkey-ext atom",
+      "request_kind": "0x2c04",
+      "arguments": [
+        {
+          "number": 184615681
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0x59454b50"
+        },
+        {
+          "number": "0x00545845"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2c04--atom-pwv7-2ex",
+      "description": "0x2c04 returns the generated pwv7-2ex atom",
+      "request_kind": "0x2c04",
+      "arguments": [
+        {
+          "number": 184615681
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0x37565750"
+        },
+        {
+          "number": "0x00584532"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2d04--atom-pwv3-ext",
+      "description": "0x2d04 returns the generated pwv3-ext atom",
+      "request_kind": "0x2d04",
+      "arguments": [
+        {
+          "number": 184615681
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0x33565750"
+        },
+        {
+          "number": "0x00545845"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2d04--atom-pkey-ext",
+      "description": "0x2d04 returns the generated pkey-ext atom",
+      "request_kind": "0x2d04",
+      "arguments": [
+        {
+          "number": 184615681
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0x59454b50"
+        },
+        {
+          "number": "0x00545845"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2d04--atom-pwv7-2ex",
+      "description": "0x2d04 returns the generated pwv7-2ex atom",
+      "request_kind": "0x2d04",
+      "arguments": [
+        {
+          "number": 184615681
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0x37565750"
+        },
+        {
+          "number": "0x00584532"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "First malformed precursor: Play Song Info: Display request with an extra number",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 8450
+              },
+              {
+                "type": "number",
+                "value": 7
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "first--play-extra-argument",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 184615681
+            },
+            {
+              "type": "number",
+              "value": 10001
+            },
+            {
+              "type": "number",
+              "value": 3735928559
+            }
+          ],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": 7
+      },
+      {
+        "description": "Second malformed precursor: Play Song Info: Display request with no arguments",
+        "header": [],
+        "id": "second--play-no-arguments",
+        "outcome": "timeout",
+        "pages": [],
+        "request": {
+          "arguments": [],
+          "kind": 8450
+        },
+        "rows": [],
+        "total": null,
+        "transport_error_kind": "WouldBlock"
+      },
+      {
+        "description": "Matched RX3 location-2 Delivery after both malformed precursors",
+        "header": [
+          {
+            "arguments": [
+              {
+                "type": "number",
+                "value": 9730
+              },
+              {
+                "type": "number",
+                "value": 13
+              }
+            ],
+            "kind": 16384
+          }
+        ],
+        "id": "delivery-probe",
+        "outcome": "menu",
+        "pages": [],
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 184681217
+            },
+            {
+              "type": "number",
+              "value": 10001
+            }
+          ],
+          "kind": 9730
+        },
+        "rows": [],
+        "total": 13
+      }
+    ],
+    "fixture": {
+      "fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+      "profile": "full",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 11
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "song-info-location2-malformed-history--play-extra-argument__then__play-no-arguments"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "e8c45a7020a70103d6a15d5cf9aaa32a3d8c758c6c1f3f33b2a8d80872f7c812",
+    "fixture_fingerprint": "c7b0b834a1a1320faaa3526c4792f0d31430c617ea9b8b6008521c514b67853c",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 3,
+      "mac": "02:00:00:60:00:50",
+      "model": "XDJ-RX3",
+      "model_code": 0,
+      "packet_sha256": "da12196004059977cdbcd83b9e0ae22366a2daf50320ed1a7b033c1d7ab157d4",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 11,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0,
+      "status_packet_sha256": "49d262852bc10cbed30f9cd1f40283047b2423d4865ec5d1b240ae5fe6e20987",
+      "status_port": 50002,
+      "status_template": "rx3-captured"
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-rx3-player-11-status.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/full/manifest.json",
+    "recorded_unix_seconds": 1791067195,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/suites/generated/song-info-location2-malformed-history/play-extra-argument__then__play-no-arguments.json",
+    "suite_sha256": "53d6d57e2f7b17c6af10b8e047fd6df4c2ad0277ac197942aa8c8fb9a1da4e45"
+  }
+}

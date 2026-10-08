@@ -1,0 +1,134 @@
+{
+  "behavior": {
+    "cases": [
+      {
+        "description": "Nonempty outbound seek triple crash experiment",
+        "header": [],
+        "id": "out-seek",
+        "outcome": "raw_reply",
+        "pages": [],
+        "raw_response": {
+          "decoded_bytes": 174,
+          "error_kind": null,
+          "messages": [
+            {
+              "arguments": [
+                {
+                  "type": "number",
+                  "value": 8961
+                },
+                {
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "type": "number",
+                  "value": 124
+                },
+                {
+                  "hex": "7c000000010002000000e803a986010000000000000000000800000000000000ffffffff00000000000000000000000000000000420000000000010000000000000000000000000000002c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                  "type": "blob"
+                },
+                {
+                  "type": "number",
+                  "value": 1
+                }
+              ],
+              "kind": 19970
+            }
+          ],
+          "outcome": "raw_reply",
+          "raw_hex": "11872349ae1100000001104e020f051400000005060606030611000023011100000000110000007c140000007c7c000000010002000000e803a986010000000000000000000800000000000000ffffffff00000000000000000000000000000000420000000000010000000000000000000000000000002c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001100000001"
+        },
+        "request": {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 16843521
+            },
+            {
+              "type": "number",
+              "value": 9051
+            },
+            {
+              "type": "number",
+              "value": 1
+            }
+          ],
+          "fixed_tag_slots": null,
+          "kind": 8961
+        },
+        "rows": [],
+        "total": null
+      }
+    ],
+    "fixture": {
+      "fingerprint": "d526d91f7df387f2fe6f2a74fb760e8dd271979729ee97666b0581f65feadebd",
+      "profile": "hot-cue-bank-extended-fields",
+      "version": 1
+    },
+    "setup": "extended",
+    "setup_exchange": {
+      "mode": "extended",
+      "request": {
+        "arguments": [
+          {
+            "type": "number",
+            "value": 1
+          },
+          {
+            "type": "number",
+            "value": 20
+          }
+        ],
+        "kind": 0,
+        "transaction": 4294967294
+      },
+      "response": [
+        {
+          "arguments": [
+            {
+              "type": "number",
+              "value": 17
+            },
+            {
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "kind": 0,
+          "transaction": 4294967294
+        }
+      ]
+    },
+    "suite": "hot-cue-bank-out-seek-crash"
+  },
+  "format": 2,
+  "provenance": {
+    "backend": "rekordbox",
+    "backend_version": "7.2.19",
+    "fixture_database_sha256": "174bdfb7cebe1d088f189b8fe0f5d546832f6fa242f201f1c60290a6c7c15be4",
+    "fixture_fingerprint": "d526d91f7df387f2fe6f2a74fb760e8dd271979729ee97666b0581f65feadebd",
+    "identity": {
+      "address": "172.31.96.50",
+      "broadcast": "172.31.96.255",
+      "device_type": "type7",
+      "generation": 3,
+      "mac": "02:00:00:60:00:50",
+      "model": "XDJ-RX3",
+      "model_code": 0,
+      "packet_sha256": "da12196004059977cdbcd83b9e0ae22366a2daf50320ed1a7b033c1d7ab157d4",
+      "peer_address": "172.31.96.96",
+      "peers": 1,
+      "player": 11,
+      "port": 50000,
+      "presence": 2,
+      "source_port": 0
+    },
+    "identity_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/runs/xdj-rx3-player-11.json",
+    "manifest_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/fixtures/generated/hot-cue-bank-extended-fields/manifest.json",
+    "recorded_unix_seconds": 1790903903,
+    "suite_path": "/home/evan/workspace/rx3-research/rekordbox-link-export-research/conformance/suites/hot-cue-bank-out-seek-crash.json",
+    "suite_sha256": "2171943160491a5e9676c72f64e5522c8ca839143bb7eea059008b4523b10970"
+  }
+}

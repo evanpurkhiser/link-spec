@@ -1,0 +1,51 @@
+{
+  "name": "hot-cue-bank-matrix",
+  "fixture_profile": "hot-cue-banks",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"tree-root","description":"Root children in folder-list mode","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":0},{"number":1},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"tree-alpha-folder","description":"Mixed leaf and folder children under Alpha Folder","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.folder.alpha"},{"number":1},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"tree-beta-folder","description":"Deleted and active leaf children under Beta Folder","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.folder.beta"},{"number":1},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"tree-deep-folder","description":"Leaf child below a nested folder","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.folder.deep"},{"number":1},{"number":0}],"expect":{"outcome":"any"}},
+
+    {"id":"root-bank-as-folder","description":"Root Bank selector in folder-list mode","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.root"},{"number":1},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"alpha-bank-as-folder","description":"Alpha Bank selector in folder-list mode","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.alpha"},{"number":1},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"empty-bank-as-folder","description":"Empty Bank selector in folder-list mode","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.empty"},{"number":1},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"deep-bank-as-folder","description":"Deep Bank selector in folder-list mode","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.deep"},{"number":1},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"beta-bank-as-folder","description":"Beta Bank selector in folder-list mode","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.beta"},{"number":1},{"number":0}],"expect":{"outcome":"any"}},
+
+    {"id":"root-bank-tracks","description":"Two ordered tracks in a root-level bank","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.root"},{"number":0},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"alpha-limit-0","description":"Populated bank with fourth argument zero","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.alpha"},{"number":0},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"alpha-limit-1","description":"Populated bank with fourth argument one","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.alpha"},{"number":0},{"number":1}],"expect":{"outcome":"any"}},
+    {"id":"alpha-limit-2","description":"Populated bank with fourth argument two","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.alpha"},{"number":0},{"number":2}],"expect":{"outcome":"any"}},
+    {"id":"alpha-limit-3","description":"Populated bank with fourth argument three","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.alpha"},{"number":0},{"number":3}],"expect":{"outcome":"any"}},
+    {"id":"alpha-limit-4","description":"Populated bank with fourth argument four","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.alpha"},{"number":0},{"number":4}],"expect":{"outcome":"any"}},
+    {"id":"alpha-limit-5","description":"Populated bank with fourth argument five","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.alpha"},{"number":0},{"number":5}],"expect":{"outcome":"any"}},
+    {"id":"alpha-limit-8","description":"Populated bank with fourth argument eight","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.alpha"},{"number":0},{"number":8}],"expect":{"outcome":"any"}},
+    {"id":"alpha-limit-16","description":"Populated bank with fourth argument sixteen","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.alpha"},{"number":0},{"number":16}],"expect":{"outcome":"any"}},
+    {"id":"empty-bank-tracks","description":"Valid empty leaf in track-list mode","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.empty"},{"number":0},{"number":16}],"expect":{"outcome":"any"}},
+    {"id":"deep-bank-tracks","description":"Zero and negative TrackNo ordering in a nested bank","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.deep"},{"number":0},{"number":8}],"expect":{"outcome":"any"}},
+    {"id":"beta-bank-tracks","description":"Single active track under Beta Bank","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.beta"},{"number":0},{"number":8}],"expect":{"outcome":"any"}},
+    {"id":"deleted-bank-tracks","description":"Locally deleted bank ID in track-list mode","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.bank.beta_deleted"},{"number":0},{"number":8}],"expect":{"outcome":"any"}},
+
+    {"id":"zero-selector-tracks","description":"Zero selector in track-list mode","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":0},{"number":0},{"number":8}],"expect":{"outcome":"any"}},
+    {"id":"unknown-selector-folder","description":"Unknown selector in folder-list mode","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"0xfffffffe"},{"number":1},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"unknown-selector-tracks","description":"Unknown selector in track-list mode","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"0xfffffffe"},{"number":0},{"number":8}],"expect":{"outcome":"any"}},
+    {"id":"mode-2","description":"Unsupported mode value two","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.folder.alpha"},{"number":2},{"number":0}],"expect":{"outcome":"any"}},
+    {"id":"mode-255","description":"Unsupported mode value 255","request_kind":"0x2001","arguments":[{"number":"$context"},{"number":"$fixture.hotcue.folder.alpha"},{"number":255},{"number":0}],"expect":{"outcome":"any"}},
+
+    {"id":"location-1-root","description":"Root request at menu location one","request_kind":"0x2001","arguments":[{"number":"0x01010101"},{"number":0},{"number":1},{"number":0}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"location-2-root","description":"Root request at menu location two","request_kind":"0x2001","arguments":[{"number":"0x01010201"},{"number":0},{"number":1},{"number":0}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"location-3-root","description":"Root request at menu location three","request_kind":"0x2001","arguments":[{"number":"0x01010301"},{"number":0},{"number":1},{"number":0}],"render":false,"expect":{"outcome":"any"}},
+    {"id":"location-7-root","description":"Root request at drag-and-drop location seven","request_kind":"0x2001","arguments":[{"number":"0x01010701"},{"number":0},{"number":1},{"number":0}],"render":false,"expect":{"outcome":"any"}}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "render-pagination",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"one-row-pages","description":"Complete menu fetched one row at a time","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"page_size":1,"expect":{"outcome":"menu","total":8,"row_count":8}},
+    {"id":"single-complete-page","description":"Complete menu fetched in one exact-size page","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_pages":[{"offset":0,"count":"$total"}],"expect":{"outcome":"menu","total":8,"row_count":8}},
+    {"id":"last-row","description":"One row requested at the final valid offset","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_pages":[{"offset":7,"count":1}],"expect":{"outcome":"menu","total":8,"row_count":1}},
+    {"id":"zero-count","description":"Zero rows requested at the first offset","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_pages":[{"offset":0,"count":0}],"expect":{"outcome":"any","total":8}},
+    {"id":"at-end","description":"One row requested exactly at total","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_pages":[{"offset":"$total","count":1}],"expect":{"outcome":"any","total":8}},
+    {"id":"past-end","description":"One row requested beyond total","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_pages":[{"offset":9,"count":1}],"expect":{"outcome":"any","total":8}},
+    {"id":"overrun","description":"A page begins at the final row and requests beyond total","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_pages":[{"offset":7,"count":10}],"expect":{"outcome":"any","total":8}},
+    {"id":"overlap","description":"Two explicitly overlapping page windows preserve repeated wire rows","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_pages":[{"offset":0,"count":3},{"offset":2,"count":3}],"expect":{"outcome":"menu","total":8,"row_count":6}},
+    {"id":"maximum-offset","description":"Maximum unsigned render offset","request_kind":"0x1004","arguments":[{"number":"$context"},{"number":"$sort"}],"render_pages":[{"offset":"0xffffffff","count":1}],"expect":{"outcome":"any","total":8}}
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "name": "context-play-status-player-11-extended",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "immediate",
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "type-00--play",
+      "description": "Track type 0x00: player-11 status-backed Play Song Info",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x0b010300"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x0b010300",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-01--play",
+      "description": "Track type 0x01: player-11 status-backed Play Song Info",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x0b010301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x0b010301",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-02--play",
+      "description": "Track type 0x02: player-11 status-backed Play Song Info",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x0b010302"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x0b010302",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-03--play",
+      "description": "Track type 0x03: player-11 status-backed Play Song Info",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x0b010303"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x0b010303",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-04--play",
+      "description": "Track type 0x04: player-11 status-backed Play Song Info",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x0b010304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x0b010304",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-05--play",
+      "description": "Track type 0x05: player-11 status-backed Play Song Info",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x0b010305"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x0b010305",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "type-06--play",
+      "description": "Track type 0x06: player-11 status-backed Play Song Info",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x0b010306"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render_context": "0x0b010306",
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

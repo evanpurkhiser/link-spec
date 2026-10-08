@@ -1,0 +1,95 @@
+{
+  "name": "display-song-info-legacy",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "legacy",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "populated-track",
+      "description": "Legacy Display Song Info row width",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 16,
+        "row_count": 16,
+        "argument_count": 12
+      }
+    },
+    {
+      "id": "deleted-track",
+      "description": "Legacy Display Song Info for deleted content",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.deleted"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "zero-content-id",
+      "description": "Legacy Display Song Info for content ID zero",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    },
+    {
+      "id": "unknown-content-id",
+      "description": "Legacy Display Song Info for unknown content",
+      "request_kind": "0x2002",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "0xfffffffe"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0
+      }
+    }
+  ]
+}

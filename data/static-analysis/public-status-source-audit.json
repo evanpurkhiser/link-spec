@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-10-03",
+  "purpose": "Find byte-preserved native device-status sources suitable for real-Rekordbox model and generation experiments.",
+  "acceptance_rule": {
+    "eligible": "A byte-preserved UDP status payload with an identified physical model and enough capture provenance to distinguish it from generated, modeled, or model-string-mutated data.",
+    "preferred_metadata": [
+      "original capture hash",
+      "packet timestamp",
+      "source and destination addresses and ports",
+      "firmware version",
+      "paired keepalive"
+    ]
+  },
+  "repositories": [
+    {
+      "name": "prodjlink-rs",
+      "url": "https://github.com/anweiss/prodjlink-rs",
+      "commit": "4fc2bb302b0c3f8a07bb27598f64bd38aa1ce4ea",
+      "capture_files": 0,
+      "classification": "modeled",
+      "eligible_payloads": 0,
+      "evidence": [
+        "README.md calls the testing fixtures modeled after real hardware.",
+        "src/testing/fixtures.rs constructs CDJ-3000, CDJ-2000NXS2, and OPUS-QUAD packets with mock builders."
+      ]
+    },
+    {
+      "name": "alphatheta-connect",
+      "url": "https://github.com/chrisle/alphatheta-connect",
+      "commit": "38aee4413391a0172e04b6bc9ae8b3df6f46460f",
+      "capture_files": 0,
+      "classification": "one corroborating legacy hardware fixture",
+      "eligible_payloads": 0,
+      "evidence": [
+        "tests/_data/status-simple.dat is called a real packet by tests/status/utils.spec.ts.",
+        "The fixture first appeared in prolink-connect commit ec8b012642bf366f495e0cdd498dc5084057af85 by Evan Purkhiser on 2020-10-11.",
+        "The repository retains no parent pcap, packet timestamp, address tuple, or paired keepalive for this fixture.",
+        "The 284-byte payload identifies CDJ-2000nexus firmware 1.43 and player 3."
+      ],
+      "retained_payload": {
+        "path": "conformance/status-packets/cdj-2000nexus-player-3-firmware-1.43.hex",
+        "bytes": 284,
+        "sha256": "42a45b82ea4965e1effc327167141ffa1f60983c3fdba1889b60a98a2b52c0aa",
+        "model": "CDJ-2000nexus",
+        "firmware": "1.43",
+        "player": 3,
+        "provenance_tier": "corroborating_fixture"
+      }
+    },
+    {
+      "name": "prolink-cpp",
+      "url": "https://github.com/grantHarris/prolink-cpp",
+      "commit": "47b0dd58b3fe3355fa559ec378f63cb9602a44c7",
+      "capture_files": 0,
+      "classification": "constructed",
+      "eligible_payloads": 0,
+      "evidence": [
+        "tests/test_packet_parsing.cpp obtains status packets from BuildStatusPacket.",
+        "No byte-preserved device-status fixture or capture is committed."
+      ]
+    },
+    {
+      "name": "usr-ein/prolink",
+      "url": "https://github.com/usr-ein/prolink",
+      "commit": "5065b1c8a69ae7a8e19a8215bd270413be1879b2",
+      "capture_files": 37,
+      "classification": "authentic but already-covered generation",
+      "eligible_payloads": 0,
+      "evidence": [
+        "README.md identifies the corpus as two physical CDJ-2000NXS players on firmware 1.44.",
+        "All exact model strings recovered from the 37 capture files are CDJ-2000nexus; no target modern model string occurs.",
+        "The corpus corroborates the already-retained CDJ-2000nexus generation but supplies no XDJ-XZ, XDJ-AZ, XDJ-1000MK2, XDJ-RR/RX2, OPUS-QUAD, or CDJ-3000 payload."
+      ]
+    },
+    {
+      "name": "beat-link",
+      "url": "https://github.com/Deep-Symmetry/beat-link",
+      "commit": "ef0aaa1ea949f5c3b1e759973f784c488a12288a",
+      "capture_files": 0,
+      "classification": "implementation and field evidence only",
+      "eligible_payloads": 0,
+      "evidence": [
+        "The source documents observed CDJ-3000, XDJ-XZ, XDJ-1000, XDJ-AZ, and OPUS-QUAD behavior.",
+        "No pcap, pcapng, or byte-preserved status fixture is committed at the audited revision."
+      ]
+    },
+    {
+      "name": "SuperTimecodeConverter",
+      "url": "https://github.com/fiverecords/SuperTimecodeConverter",
+      "commit": "cbd3d56c9e12d2c15fb3c3b2bddba4bb5eca7a08",
+      "capture_files": 0,
+      "classification": "external authentic-capture lead",
+      "eligible_payloads": 0,
+      "evidence": [
+        "GitHub issue 12 identifies a physical XDJ-XZ and links a second Wireshark capture recorded after the PC and unit were placed on the same subnet.",
+        "The maintainer reports that the corrected capture shows one announcement identity and two player-number data streams.",
+        "The capture is not committed to the repository and its Google Drive object currently requires sign-in, so no bytes or hash are retained locally."
+      ],
+      "acquisition_lead": {
+        "issue_url": "https://github.com/fiverecords/SuperTimecodeConverter/issues/12",
+        "capture_url": "https://drive.google.com/file/d/1EXgDqWKoWx7-aPoGOtv_W23-LdBHQbVr/view",
+        "reported_at": "2026-07-20",
+        "model": "XDJ-XZ",
+        "access_state": "requires Google sign-in; local gog token lacks Drive scope",
+        "provenance_tier": "source-lead-only"
+      }
+    },
+    {
+      "name": "opus-quad-pro-dj-link-analysis",
+      "url": "https://github.com/kyleawayan/opus-quad-pro-dj-link-analysis",
+      "commit": "d7459fdc0884b704cdd5540b5bf5ab6d003c4ded",
+      "capture_files": 0,
+      "classification": "physical OPUS-QUAD analysis with one retained non-status packet",
+      "eligible_payloads": 0,
+      "evidence": [
+        "The author identifies the source as a physical OPUS-QUAD and documents obtaining CDJ-status traffic after a rekordbox-shaped port-50002 activation request.",
+        "pro-dj-link.js preserves the exact first 36-byte OPUS-QUAD packet received on port 50002 as firstPacketOn50002FromOpusQuad.",
+        "The retained packet is kind 0x10, not the kind-0x0a player-status payload required by the native model matrix.",
+        "Subsequent status packets are relayed dynamically and no pcap, status fixture, firmware, address tuple, or packet timestamp is committed."
+      ],
+      "retained_nonstatus_payload": {
+        "path": "conformance/status-packets/opus-quad-first-50002.hex",
+        "bytes": 36,
+        "sha256": "845014dfceb62648cfcb4c0c0a12c013f41fe9e541e828c78a0fd90d47d2b801",
+        "model": "OPUS-QUAD",
+        "packet_kind": "0x10",
+        "transport": "UDP 50002",
+        "provenance_tier": "corroborating-nonstatus-fixture",
+        "status_matrix_eligible": false
+      }
+    },
+    {
+      "name": "Conduction",
+      "url": "https://github.com/xxvw/Conduction",
+      "commit": "07ee2989c5e2363c4c59bba7670864bea65072c2",
+      "capture_files": 0,
+      "classification": "independent fixture provenance and protocol implementation",
+      "eligible_payloads": 0,
+      "evidence": [
+        "Its hardware-capture fixtures are unchanged packets from the already-audited Dysentery CDJ-2000nexus corpus and issue attachments.",
+        "Its OPUS-QUAD/export-source vectors are explicitly classified as transcribed references rather than public hardware captures.",
+        "The provenance document links the OPUS-QUAD analysis but retains no OPUS-QUAD player-status bytes or parent capture."
+      ]
+    },
+    {
+      "name": "netBeat",
+      "url": "https://github.com/cinderblock/netBeat",
+      "commit": "399583fff849bddd8c8abd744d1d25e1656ba009",
+      "capture_files": 0,
+      "classification": "two corroborating modern hardware status fixtures",
+      "eligible_payloads": 0,
+      "evidence": [
+        "The repository's dated session notes describe a physical XDJ-XZ at 10.255.4.69, two CDJ-class deck identities, a mixer identity, and a gitignored 12 MB JSONL capture made on 2026-04-22.",
+        "packages/prolink/test/status.test.ts embeds two complete 292-byte kind-0x0a packets and labels both as real XDJ-XZ captures from that session.",
+        "One retained packet is player 1 with an analyzed rekordbox track and master state; the other is player 1 with an unanalyzed track.",
+        "The parent JSONL, firmware, packet timestamps, address tuple, and paired keepalive bytes are not committed, so the fixtures remain below captured-verbatim provenance."
+      ],
+      "retained_payloads": [
+        {
+          "path": "conformance/status-packets/xdj-xz-player-1-analyzed-status-20260422.hex",
+          "bytes": 292,
+          "sha256": "8eadeb284e6c0ed167cd1573ba0ed976d5c1abd85694de1299224b54519ff90f",
+          "model": "XDJ-XZ",
+          "player": 1,
+          "track_state": "analyzed rekordbox track; master",
+          "provenance_tier": "corroborating-fixture"
+        },
+        {
+          "path": "conformance/status-packets/xdj-xz-player-1-unanalyzed-status-20260422.hex",
+          "bytes": 292,
+          "sha256": "f596f7ed8e34b5b9ca16e3fc9a50c5d59118308f8055a9514e4562474051ff7b",
+          "model": "XDJ-XZ",
+          "player": 1,
+          "track_state": "unanalyzed track; non-master",
+          "provenance_tier": "corroborating-fixture"
+        }
+      ]
+    }
+  ],
+  "reviewed_nonqualifying_leads": [
+    {
+      "name": "alphatheta-connect CDJ-3000 Stagehand capture sessions",
+      "pull_request_url": "https://github.com/chrisle/alphatheta-connect/pull/2",
+      "commit_url": "https://github.com/chrisle/alphatheta-connect/commit/01befaad76c247dd6e99654ea45e49f88c39703e",
+      "commit": "01befaad76c247dd6e99654ea45e49f88c39703e",
+      "model": "CDJ-3000",
+      "firmware": "3.18",
+      "reported_capture_method": "official Stagehand iPad baseline with layer-2 MAC takeover",
+      "protocol_plane": "Stagehand registration, control, preference, state-report, beat-stream, and announcement traffic",
+      "classification": "real-hardware semantic evidence outside the Link Export status-source requirement",
+      "eligible_payloads": 0,
+      "retained_capture_bytes": false,
+      "evidence": [
+        "The pull request reports physical CDJ-3000 firmware 3.18 capture sessions and offers pcap hex dumps, but neither the pull request nor its comments contains an attachment or raw dump.",
+        "The merged commit changes only docs/STAGEHAND.md.",
+        "The reported packet kinds belong to the Stagehand control plane and do not supply the ordinary UDP 50002 player-status payload required by the Link Export model matrix.",
+        "A recursive scan of the pinned repository tree found no additional CDJ-3000 pcap or byte-preserved status fixture."
+      ]
+    }
+  ],
+  "result": {
+    "new_modern_native_payloads": 0,
+    "new_corroborating_payloads": 3,
+    "modern_status_fixtures": 2,
+    "modern_nonstatus_payloads": 1,
+    "modern_capture_leads": 1,
+    "unresolved_models": [
+      "XDJ-XZ",
+      "XDJ-AZ",
+      "XDJ-1000MK2",
+      "XDJ-RR",
+      "XDJ-RX2",
+      "OPUS-QUAD",
+      "CDJ-3000"
+    ]
+  }
+}

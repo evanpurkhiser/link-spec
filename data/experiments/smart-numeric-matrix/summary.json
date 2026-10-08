@@ -1,0 +1,51 @@
+{
+  "behavior": {
+    "empty_numeric_text_coerces_to_zero": true,
+    "invalid_numeric_text_coerces_to_zero": true,
+    "negative_threshold_preserves_sign": true,
+    "operators_1_through_5": {
+      "1": "equal",
+      "2": "not_equal",
+      "3": "greater_than_exclusive",
+      "4": "less_than_exclusive",
+      "5": "inclusive_ordered_range"
+    },
+    "reversed_ranges_return_empty": true,
+    "values_above_signed_32_bit_remain_positive": true,
+    "zero_value_rows": {
+      "bpm": [],
+      "duration": [],
+      "play-count": [
+        10001
+      ],
+      "rating": [
+        10001,
+        10007
+      ],
+      "year": [
+        10001
+      ]
+    }
+  },
+  "fixture": {
+    "database_sha256": "d1e58253cec61f0ebf6528d5e86d2324d71b1951be2e137b2680d7b24430802f",
+    "fingerprint": "bcfe45e698261d0c7fd248430620cead30e9897dd8e2c8b65f3277e182b17726",
+    "profile": "smart-numeric-matrix",
+    "smart_playlists": 60,
+    "tracks": 8
+  },
+  "format": "rekordbox-link-export-smart-numeric-matrix-v1",
+  "oracle": {
+    "cases": 60,
+    "golden_sha256": "cd9de39965cef27a5041998435c87280a46f7f10e0ceb98017dbf2821980f755",
+    "immediate_repeat_verified": true,
+    "suite_sha256": "c8c975919aa14d96e89eb8ba4e6bc30147ed75d11230691de6068b881f297d6d"
+  },
+  "rbxport": {
+    "cases": 60,
+    "exact": 15,
+    "exact_cases_are_empty_result_controls": true,
+    "same_outcome_total_row_count": 15,
+    "version": "c144f19+tree.80e87ec8aace"
+  }
+}

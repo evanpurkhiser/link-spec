@@ -1,0 +1,41 @@
+{
+  "name": "track-compatibility-exhaustive-legacy",
+  "fixture_profile": "compatibility-exhaustive",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "legacy",
+    "page_size": 32,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "complete-track-row-matrix",
+      "description": "Complete FileType byte domain, wide narrowing, sample-rate boundaries, and BitDepth invariance",
+      "request_kind": "0x1004",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 382,
+        "row_count": 382,
+        "argument_count": 12
+      }
+    }
+  ]
+}

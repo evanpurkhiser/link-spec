@@ -1,0 +1,109 @@
+{
+  "name": "hot-cue-bank-cues",
+  "fixture_profile": "hot-cue-banks",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "alpha-bank",
+      "description": "Cue payload for the populated Alpha Bank",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.alpha"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "root-bank",
+      "description": "Cue payload for the populated root-level bank",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.root"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "empty-bank",
+      "description": "Cue payload for an empty bank",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.empty"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "folder-selector",
+      "description": "Cue payload request using a folder selector",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.folder.alpha"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "deleted-bank",
+      "description": "Cue payload request using a deleted bank selector",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.beta_deleted"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "root-selector-zero",
+      "description": "Cue payload request using selector zero",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": 0}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "unknown-selector",
+      "description": "Cue payload request using an unknown selector",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": "0xfffffffe"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "alpha-bank-fixed-tags",
+      "description": "Populated bank using the XDJ-RR fixed twelve-slot tag area",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.alpha"}],
+      "direct_response": true,
+      "fixed_tag_slots": 12,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "empty-bank-fixed-tags",
+      "description": "Empty bank using the XDJ-RR fixed twelve-slot tag area",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.empty"}],
+      "direct_response": true,
+      "fixed_tag_slots": 12,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "unknown-selector-fixed-tags",
+      "description": "Unknown selector using the XDJ-RR fixed twelve-slot tag area",
+      "request_kind": "0x2101",
+      "arguments": [{"number": "$context"}, {"number": "0xfffffffe"}],
+      "direct_response": true,
+      "fixed_tag_slots": 12,
+      "render": false,
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

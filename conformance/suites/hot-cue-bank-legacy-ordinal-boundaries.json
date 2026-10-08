@@ -1,0 +1,117 @@
+{
+  "name": "hot-cue-bank-legacy-ordinal-boundaries",
+  "fixture_profile": "hot-cue-bank-legacy-ordinal-boundaries",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "ordinal-zero",
+      "description": "Change the bank assignment using wire ordinal 0",
+      "request_kind": "0x2201",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.mutation"}, {"number": 36}, {"blob_hex": "000100001127000000000000111111112222222233333333444444445555555566666666"}, {"number": 8}, {"blob_hex": "7777777788888888"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ordinal-a",
+      "description": "Change the A bank assignment using wire ordinal 1",
+      "request_kind": "0x2201",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.mutation"}, {"number": 36}, {"blob_hex": "000101001227000000000000111111112222222233333333444444445555555566666666"}, {"number": 8}, {"blob_hex": "7777777788888888"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ordinal-b",
+      "description": "Change the B bank assignment using wire ordinal 2",
+      "request_kind": "0x2201",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.mutation"}, {"number": 36}, {"blob_hex": "000102001327000000000000111111112222222233333333444444445555555566666666"}, {"number": 8}, {"blob_hex": "7777777788888888"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ordinal-c",
+      "description": "Change the C bank assignment using wire ordinal 3",
+      "request_kind": "0x2201",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.mutation"}, {"number": 36}, {"blob_hex": "000103001427000000000000111111112222222233333333444444445555555566666666"}, {"number": 8}, {"blob_hex": "7777777788888888"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ordinal-g",
+      "description": "Change the bank assignment using wire ordinal 7",
+      "request_kind": "0x2201",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.mutation"}, {"number": 36}, {"blob_hex": "000107001527000000000000111111112222222233333333444444445555555566666666"}, {"number": 8}, {"blob_hex": "7777777788888888"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ordinal-h",
+      "description": "Change the bank assignment using wire ordinal 8",
+      "request_kind": "0x2201",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.mutation"}, {"number": 36}, {"blob_hex": "000108001627000000000000111111112222222233333333444444445555555566666666"}, {"number": 8}, {"blob_hex": "7777777788888888"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ordinal-uint8-max",
+      "description": "Change the bank assignment using wire ordinal 255",
+      "request_kind": "0x2201",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.mutation"}, {"number": 36}, {"blob_hex": "0001ff001727000000000000111111112222222233333333444444445555555566666666"}, {"number": 8}, {"blob_hex": "7777777788888888"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ordinal-uint8-plus-one",
+      "description": "Change the bank assignment using wire ordinal 256",
+      "request_kind": "0x2201",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.mutation"}, {"number": 36}, {"blob_hex": "000100011827000000000000111111112222222233333333444444445555555566666666"}, {"number": 8}, {"blob_hex": "7777777788888888"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ordinal-int16-max",
+      "description": "Change the bank assignment using wire ordinal 32767",
+      "request_kind": "0x2201",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.mutation"}, {"number": 36}, {"blob_hex": "0001ff7f1127000000000000111111112222222233333333444444445555555566666666"}, {"number": 8}, {"blob_hex": "7777777788888888"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ordinal-int16-min-bit",
+      "description": "Change the bank assignment using wire ordinal 32768",
+      "request_kind": "0x2201",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.mutation"}, {"number": 36}, {"blob_hex": "000100801227000000000000111111112222222233333333444444445555555566666666"}, {"number": 8}, {"blob_hex": "7777777788888888"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ordinal-uint16-max",
+      "description": "Change the bank assignment using wire ordinal 65535",
+      "request_kind": "0x2201",
+      "arguments": [{"number": "$context"}, {"number": "$fixture.hotcue.bank.mutation"}, {"number": 36}, {"blob_hex": "0001ffff1327000000000000111111112222222233333333444444445555555566666666"}, {"number": 8}, {"blob_hex": "7777777788888888"}],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

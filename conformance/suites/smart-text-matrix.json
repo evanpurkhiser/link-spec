@@ -1,0 +1,1756 @@
+{
+  "name": "smart-rule-text-collation-matrix",
+  "fixture_profile": "smart-text-matrix",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 10,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ]
+  },
+  "cases": [
+    {
+      "id": "alpha-operator-01",
+      "description": "SmartList comments collation probe: alpha operator 01",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_operator_01"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 10,
+        "row_count": 10,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_upper",
+          "$fixture.track.smart_text.alpha_lower",
+          "$fixture.track.smart_text.alpha_acute_precomposed",
+          "$fixture.track.smart_text.alpha_acute_decomposed",
+          "$fixture.track.smart_text.alpha_diaeresis_upper",
+          "$fixture.track.smart_text.embedded_nul_suffix",
+          "$fixture.track.smart_text.fullwidth",
+          "$fixture.track.smart_text.trailing_combining",
+          "$fixture.track.smart_text.angstrom_sign",
+          "$fixture.track.smart_text.a_ring"
+        ]
+      }
+    },
+    {
+      "id": "alpha-operator-02",
+      "description": "SmartList comments collation probe: alpha operator 02",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_operator_02"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 33,
+        "row_count": 33,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_prefix",
+          "$fixture.track.smart_text.alpha_suffix",
+          "$fixture.track.smart_text.alpha_middle",
+          "$fixture.track.smart_text.alpha_spaced",
+          "$fixture.track.smart_text.empty",
+          "$fixture.track.smart_text.null",
+          "$fixture.track.smart_text.embedded_nul_prefix",
+          "$fixture.track.smart_text.emoji_prefix",
+          "$fixture.track.smart_text.emoji_suffix",
+          "$fixture.track.smart_text.emoji_only",
+          "$fixture.track.smart_text.sharp_s",
+          "$fixture.track.smart_text.sharp_s_expanded",
+          "$fixture.track.smart_text.ligature",
+          "$fixture.track.smart_text.ligature_expanded",
+          "$fixture.track.smart_text.turkish_ascii",
+          "$fixture.track.smart_text.turkish_dotted",
+          "$fixture.track.smart_text.turkish_dotless",
+          "$fixture.track.smart_text.greek_upper",
+          "$fixture.track.smart_text.greek_sigma",
+          "$fixture.track.smart_text.greek_final_sigma",
+          "$fixture.track.smart_text.katakana",
+          "$fixture.track.smart_text.hiragana",
+          "$fixture.track.smart_text.combining_dot_acute",
+          "$fixture.track.smart_text.combining_acute_dot",
+          "$fixture.track.smart_text.punctuation_hyphen",
+          "$fixture.track.smart_text.punctuation_none",
+          "$fixture.track.smart_text.tab",
+          "$fixture.track.smart_text.newline",
+          "$fixture.track.smart_text.cyrillic_alpha",
+          "$fixture.track.smart_text.greek_alpha",
+          "$fixture.track.smart_text.ampersand",
+          "$fixture.track.smart_text.double_quote",
+          "$fixture.track.smart_text.apostrophe"
+        ]
+      }
+    },
+    {
+      "id": "alpha-operator-08",
+      "description": "SmartList comments collation probe: alpha operator 08",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_operator_08"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 23,
+        "row_count": 23,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_upper",
+          "$fixture.track.smart_text.alpha_lower",
+          "$fixture.track.smart_text.alpha_acute_precomposed",
+          "$fixture.track.smart_text.alpha_acute_decomposed",
+          "$fixture.track.smart_text.alpha_diaeresis_upper",
+          "$fixture.track.smart_text.alpha_prefix",
+          "$fixture.track.smart_text.alpha_suffix",
+          "$fixture.track.smart_text.alpha_middle",
+          "$fixture.track.smart_text.alpha_spaced",
+          "$fixture.track.smart_text.embedded_nul_suffix",
+          "$fixture.track.smart_text.emoji_prefix",
+          "$fixture.track.smart_text.emoji_suffix",
+          "$fixture.track.smart_text.fullwidth",
+          "$fixture.track.smart_text.punctuation_hyphen",
+          "$fixture.track.smart_text.punctuation_none",
+          "$fixture.track.smart_text.tab",
+          "$fixture.track.smart_text.newline",
+          "$fixture.track.smart_text.trailing_combining",
+          "$fixture.track.smart_text.angstrom_sign",
+          "$fixture.track.smart_text.a_ring",
+          "$fixture.track.smart_text.ampersand",
+          "$fixture.track.smart_text.double_quote",
+          "$fixture.track.smart_text.apostrophe"
+        ]
+      }
+    },
+    {
+      "id": "alpha-operator-09",
+      "description": "SmartList comments collation probe: alpha operator 09",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_operator_09"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 18,
+        "row_count": 18,
+        "item_ids": [
+          "$fixture.track.smart_text.embedded_nul_prefix",
+          "$fixture.track.smart_text.emoji_only",
+          "$fixture.track.smart_text.sharp_s",
+          "$fixture.track.smart_text.sharp_s_expanded",
+          "$fixture.track.smart_text.ligature",
+          "$fixture.track.smart_text.ligature_expanded",
+          "$fixture.track.smart_text.turkish_ascii",
+          "$fixture.track.smart_text.turkish_dotted",
+          "$fixture.track.smart_text.turkish_dotless",
+          "$fixture.track.smart_text.greek_upper",
+          "$fixture.track.smart_text.greek_sigma",
+          "$fixture.track.smart_text.greek_final_sigma",
+          "$fixture.track.smart_text.katakana",
+          "$fixture.track.smart_text.hiragana",
+          "$fixture.track.smart_text.combining_dot_acute",
+          "$fixture.track.smart_text.combining_acute_dot",
+          "$fixture.track.smart_text.cyrillic_alpha",
+          "$fixture.track.smart_text.greek_alpha"
+        ]
+      }
+    },
+    {
+      "id": "alpha-operator-10",
+      "description": "SmartList comments collation probe: alpha operator 10",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_operator_10"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 19,
+        "row_count": 19,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_upper",
+          "$fixture.track.smart_text.alpha_lower",
+          "$fixture.track.smart_text.alpha_acute_precomposed",
+          "$fixture.track.smart_text.alpha_acute_decomposed",
+          "$fixture.track.smart_text.alpha_diaeresis_upper",
+          "$fixture.track.smart_text.alpha_prefix",
+          "$fixture.track.smart_text.embedded_nul_suffix",
+          "$fixture.track.smart_text.emoji_suffix",
+          "$fixture.track.smart_text.fullwidth",
+          "$fixture.track.smart_text.punctuation_hyphen",
+          "$fixture.track.smart_text.punctuation_none",
+          "$fixture.track.smart_text.tab",
+          "$fixture.track.smart_text.newline",
+          "$fixture.track.smart_text.trailing_combining",
+          "$fixture.track.smart_text.angstrom_sign",
+          "$fixture.track.smart_text.a_ring",
+          "$fixture.track.smart_text.ampersand",
+          "$fixture.track.smart_text.double_quote",
+          "$fixture.track.smart_text.apostrophe"
+        ]
+      }
+    },
+    {
+      "id": "alpha-operator-11",
+      "description": "SmartList comments collation probe: alpha operator 11",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_operator_11"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 12,
+        "row_count": 12,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_upper",
+          "$fixture.track.smart_text.alpha_lower",
+          "$fixture.track.smart_text.alpha_acute_precomposed",
+          "$fixture.track.smart_text.alpha_acute_decomposed",
+          "$fixture.track.smart_text.alpha_diaeresis_upper",
+          "$fixture.track.smart_text.alpha_suffix",
+          "$fixture.track.smart_text.embedded_nul_suffix",
+          "$fixture.track.smart_text.emoji_prefix",
+          "$fixture.track.smart_text.fullwidth",
+          "$fixture.track.smart_text.trailing_combining",
+          "$fixture.track.smart_text.angstrom_sign",
+          "$fixture.track.smart_text.a_ring"
+        ]
+      }
+    },
+    {
+      "id": "alpha-lower-equal",
+      "description": "SmartList comments collation probe: alpha lower equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_lower_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 10,
+        "row_count": 10,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_upper",
+          "$fixture.track.smart_text.alpha_lower",
+          "$fixture.track.smart_text.alpha_acute_precomposed",
+          "$fixture.track.smart_text.alpha_acute_decomposed",
+          "$fixture.track.smart_text.alpha_diaeresis_upper",
+          "$fixture.track.smart_text.embedded_nul_suffix",
+          "$fixture.track.smart_text.fullwidth",
+          "$fixture.track.smart_text.trailing_combining",
+          "$fixture.track.smart_text.angstrom_sign",
+          "$fixture.track.smart_text.a_ring"
+        ]
+      }
+    },
+    {
+      "id": "alpha-acute-precomposed-equal",
+      "description": "SmartList comments collation probe: alpha acute precomposed equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_acute_precomposed_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 10,
+        "row_count": 10,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_upper",
+          "$fixture.track.smart_text.alpha_lower",
+          "$fixture.track.smart_text.alpha_acute_precomposed",
+          "$fixture.track.smart_text.alpha_acute_decomposed",
+          "$fixture.track.smart_text.alpha_diaeresis_upper",
+          "$fixture.track.smart_text.embedded_nul_suffix",
+          "$fixture.track.smart_text.fullwidth",
+          "$fixture.track.smart_text.trailing_combining",
+          "$fixture.track.smart_text.angstrom_sign",
+          "$fixture.track.smart_text.a_ring"
+        ]
+      }
+    },
+    {
+      "id": "alpha-acute-decomposed-equal",
+      "description": "SmartList comments collation probe: alpha acute decomposed equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_acute_decomposed_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "alpha-diaeresis-equal",
+      "description": "SmartList comments collation probe: alpha diaeresis equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_diaeresis_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 10,
+        "row_count": 10,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_upper",
+          "$fixture.track.smart_text.alpha_lower",
+          "$fixture.track.smart_text.alpha_acute_precomposed",
+          "$fixture.track.smart_text.alpha_acute_decomposed",
+          "$fixture.track.smart_text.alpha_diaeresis_upper",
+          "$fixture.track.smart_text.embedded_nul_suffix",
+          "$fixture.track.smart_text.fullwidth",
+          "$fixture.track.smart_text.trailing_combining",
+          "$fixture.track.smart_text.angstrom_sign",
+          "$fixture.track.smart_text.a_ring"
+        ]
+      }
+    },
+    {
+      "id": "alpha-trailing-combining-equal",
+      "description": "SmartList comments collation probe: alpha trailing combining equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_trailing_combining_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "alpha-angstrom-equal",
+      "description": "SmartList comments collation probe: alpha angstrom equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_angstrom_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 10,
+        "row_count": 10,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_upper",
+          "$fixture.track.smart_text.alpha_lower",
+          "$fixture.track.smart_text.alpha_acute_precomposed",
+          "$fixture.track.smart_text.alpha_acute_decomposed",
+          "$fixture.track.smart_text.alpha_diaeresis_upper",
+          "$fixture.track.smart_text.embedded_nul_suffix",
+          "$fixture.track.smart_text.fullwidth",
+          "$fixture.track.smart_text.trailing_combining",
+          "$fixture.track.smart_text.angstrom_sign",
+          "$fixture.track.smart_text.a_ring"
+        ]
+      }
+    },
+    {
+      "id": "alpha-a-ring-equal",
+      "description": "SmartList comments collation probe: alpha a ring equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.alpha_a_ring_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 10,
+        "row_count": 10,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_upper",
+          "$fixture.track.smart_text.alpha_lower",
+          "$fixture.track.smart_text.alpha_acute_precomposed",
+          "$fixture.track.smart_text.alpha_acute_decomposed",
+          "$fixture.track.smart_text.alpha_diaeresis_upper",
+          "$fixture.track.smart_text.embedded_nul_suffix",
+          "$fixture.track.smart_text.fullwidth",
+          "$fixture.track.smart_text.trailing_combining",
+          "$fixture.track.smart_text.angstrom_sign",
+          "$fixture.track.smart_text.a_ring"
+        ]
+      }
+    },
+    {
+      "id": "beta-contains",
+      "description": "SmartList comments collation probe: beta contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.beta_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 10,
+        "row_count": 10,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_prefix",
+          "$fixture.track.smart_text.alpha_suffix",
+          "$fixture.track.smart_text.alpha_middle",
+          "$fixture.track.smart_text.punctuation_hyphen",
+          "$fixture.track.smart_text.punctuation_none",
+          "$fixture.track.smart_text.tab",
+          "$fixture.track.smart_text.newline",
+          "$fixture.track.smart_text.ampersand",
+          "$fixture.track.smart_text.double_quote",
+          "$fixture.track.smart_text.apostrophe"
+        ]
+      }
+    },
+    {
+      "id": "beta-not-contains",
+      "description": "SmartList comments collation probe: beta not contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.beta_not_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 31,
+        "row_count": 31,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_upper",
+          "$fixture.track.smart_text.alpha_lower",
+          "$fixture.track.smart_text.alpha_acute_precomposed",
+          "$fixture.track.smart_text.alpha_acute_decomposed",
+          "$fixture.track.smart_text.alpha_diaeresis_upper",
+          "$fixture.track.smart_text.alpha_spaced",
+          "$fixture.track.smart_text.embedded_nul_suffix",
+          "$fixture.track.smart_text.embedded_nul_prefix",
+          "$fixture.track.smart_text.emoji_prefix",
+          "$fixture.track.smart_text.emoji_suffix",
+          "$fixture.track.smart_text.emoji_only",
+          "$fixture.track.smart_text.sharp_s",
+          "$fixture.track.smart_text.sharp_s_expanded",
+          "$fixture.track.smart_text.ligature",
+          "$fixture.track.smart_text.ligature_expanded",
+          "$fixture.track.smart_text.fullwidth",
+          "$fixture.track.smart_text.turkish_ascii",
+          "$fixture.track.smart_text.turkish_dotted",
+          "$fixture.track.smart_text.turkish_dotless",
+          "$fixture.track.smart_text.greek_upper",
+          "$fixture.track.smart_text.greek_sigma",
+          "$fixture.track.smart_text.greek_final_sigma",
+          "$fixture.track.smart_text.katakana",
+          "$fixture.track.smart_text.hiragana",
+          "$fixture.track.smart_text.combining_dot_acute",
+          "$fixture.track.smart_text.combining_acute_dot",
+          "$fixture.track.smart_text.cyrillic_alpha",
+          "$fixture.track.smart_text.greek_alpha",
+          "$fixture.track.smart_text.trailing_combining",
+          "$fixture.track.smart_text.angstrom_sign",
+          "$fixture.track.smart_text.a_ring"
+        ]
+      }
+    },
+    {
+      "id": "beta-starts",
+      "description": "SmartList comments collation probe: beta starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.beta_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_suffix",
+          "$fixture.track.smart_text.alpha_middle"
+        ]
+      }
+    },
+    {
+      "id": "beta-ends",
+      "description": "SmartList comments collation probe: beta ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.beta_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 6,
+        "row_count": 6,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_prefix",
+          "$fixture.track.smart_text.punctuation_hyphen",
+          "$fixture.track.smart_text.punctuation_none",
+          "$fixture.track.smart_text.tab",
+          "$fixture.track.smart_text.newline",
+          "$fixture.track.smart_text.ampersand"
+        ]
+      }
+    },
+    {
+      "id": "empty-operator-01",
+      "description": "SmartList comments collation probe: empty operator 01",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.empty_operator_01"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_text.empty",
+          "$fixture.track.smart_text.null"
+        ]
+      }
+    },
+    {
+      "id": "empty-operator-02",
+      "description": "SmartList comments collation probe: empty operator 02",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.empty_operator_02"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 41,
+        "row_count": 41,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_upper",
+          "$fixture.track.smart_text.alpha_lower",
+          "$fixture.track.smart_text.alpha_acute_precomposed",
+          "$fixture.track.smart_text.alpha_acute_decomposed",
+          "$fixture.track.smart_text.alpha_diaeresis_upper",
+          "$fixture.track.smart_text.alpha_prefix",
+          "$fixture.track.smart_text.alpha_suffix",
+          "$fixture.track.smart_text.alpha_middle",
+          "$fixture.track.smart_text.alpha_spaced",
+          "$fixture.track.smart_text.embedded_nul_suffix",
+          "$fixture.track.smart_text.embedded_nul_prefix",
+          "$fixture.track.smart_text.emoji_prefix",
+          "$fixture.track.smart_text.emoji_suffix",
+          "$fixture.track.smart_text.emoji_only",
+          "$fixture.track.smart_text.sharp_s",
+          "$fixture.track.smart_text.sharp_s_expanded",
+          "$fixture.track.smart_text.ligature",
+          "$fixture.track.smart_text.ligature_expanded",
+          "$fixture.track.smart_text.fullwidth",
+          "$fixture.track.smart_text.turkish_ascii",
+          "$fixture.track.smart_text.turkish_dotted",
+          "$fixture.track.smart_text.turkish_dotless",
+          "$fixture.track.smart_text.greek_upper",
+          "$fixture.track.smart_text.greek_sigma",
+          "$fixture.track.smart_text.greek_final_sigma",
+          "$fixture.track.smart_text.katakana",
+          "$fixture.track.smart_text.hiragana",
+          "$fixture.track.smart_text.combining_dot_acute",
+          "$fixture.track.smart_text.combining_acute_dot",
+          "$fixture.track.smart_text.punctuation_hyphen",
+          "$fixture.track.smart_text.punctuation_none",
+          "$fixture.track.smart_text.tab",
+          "$fixture.track.smart_text.newline",
+          "$fixture.track.smart_text.cyrillic_alpha",
+          "$fixture.track.smart_text.greek_alpha",
+          "$fixture.track.smart_text.trailing_combining",
+          "$fixture.track.smart_text.angstrom_sign",
+          "$fixture.track.smart_text.a_ring",
+          "$fixture.track.smart_text.ampersand",
+          "$fixture.track.smart_text.double_quote",
+          "$fixture.track.smart_text.apostrophe"
+        ]
+      }
+    },
+    {
+      "id": "empty-operator-08",
+      "description": "SmartList comments collation probe: empty operator 08",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.empty_operator_08"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "empty-operator-09",
+      "description": "SmartList comments collation probe: empty operator 09",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.empty_operator_09"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "empty-operator-10",
+      "description": "SmartList comments collation probe: empty operator 10",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.empty_operator_10"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "empty-operator-11",
+      "description": "SmartList comments collation probe: empty operator 11",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.empty_operator_11"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "emoji-equal",
+      "description": "SmartList comments collation probe: emoji equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.emoji_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.emoji_only"
+        ]
+      }
+    },
+    {
+      "id": "emoji-contains",
+      "description": "SmartList comments collation probe: emoji contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.emoji_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3,
+        "item_ids": [
+          "$fixture.track.smart_text.emoji_prefix",
+          "$fixture.track.smart_text.emoji_suffix",
+          "$fixture.track.smart_text.emoji_only"
+        ]
+      }
+    },
+    {
+      "id": "emoji-starts",
+      "description": "SmartList comments collation probe: emoji starts",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.emoji_starts"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_text.emoji_prefix",
+          "$fixture.track.smart_text.emoji_only"
+        ]
+      }
+    },
+    {
+      "id": "emoji-ends",
+      "description": "SmartList comments collation probe: emoji ends",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.emoji_ends"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_text.emoji_suffix",
+          "$fixture.track.smart_text.emoji_only"
+        ]
+      }
+    },
+    {
+      "id": "sharp-s-equal",
+      "description": "SmartList comments collation probe: sharp s equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.sharp_s_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_text.sharp_s",
+          "$fixture.track.smart_text.sharp_s_expanded"
+        ]
+      }
+    },
+    {
+      "id": "sharp-s-expanded-equal",
+      "description": "SmartList comments collation probe: sharp s expanded equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.sharp_s_expanded_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.sharp_s_expanded"
+        ]
+      }
+    },
+    {
+      "id": "sharp-s-contains-ss",
+      "description": "SmartList comments collation probe: sharp s contains ss",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.sharp_s_contains_ss"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.sharp_s_expanded"
+        ]
+      }
+    },
+    {
+      "id": "ligature-equal",
+      "description": "SmartList comments collation probe: ligature equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.ligature_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_text.ligature",
+          "$fixture.track.smart_text.ligature_expanded"
+        ]
+      }
+    },
+    {
+      "id": "ligature-expanded-equal",
+      "description": "SmartList comments collation probe: ligature expanded equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.ligature_expanded_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.ligature_expanded"
+        ]
+      }
+    },
+    {
+      "id": "fullwidth-equal",
+      "description": "SmartList comments collation probe: fullwidth equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.fullwidth_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 10,
+        "row_count": 10,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_upper",
+          "$fixture.track.smart_text.alpha_lower",
+          "$fixture.track.smart_text.alpha_acute_precomposed",
+          "$fixture.track.smart_text.alpha_acute_decomposed",
+          "$fixture.track.smart_text.alpha_diaeresis_upper",
+          "$fixture.track.smart_text.embedded_nul_suffix",
+          "$fixture.track.smart_text.fullwidth",
+          "$fixture.track.smart_text.trailing_combining",
+          "$fixture.track.smart_text.angstrom_sign",
+          "$fixture.track.smart_text.a_ring"
+        ]
+      }
+    },
+    {
+      "id": "turkish-ascii-equal",
+      "description": "SmartList comments collation probe: turkish ascii equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.turkish_ascii_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_text.turkish_ascii",
+          "$fixture.track.smart_text.turkish_dotted"
+        ]
+      }
+    },
+    {
+      "id": "turkish-dotted-equal",
+      "description": "SmartList comments collation probe: turkish dotted equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.turkish_dotted_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_text.turkish_ascii",
+          "$fixture.track.smart_text.turkish_dotted"
+        ]
+      }
+    },
+    {
+      "id": "turkish-dotless-equal",
+      "description": "SmartList comments collation probe: turkish dotless equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.turkish_dotless_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.turkish_dotless"
+        ]
+      }
+    },
+    {
+      "id": "greek-upper-equal",
+      "description": "SmartList comments collation probe: greek upper equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.greek_upper_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3,
+        "item_ids": [
+          "$fixture.track.smart_text.greek_upper",
+          "$fixture.track.smart_text.greek_sigma",
+          "$fixture.track.smart_text.greek_final_sigma"
+        ]
+      }
+    },
+    {
+      "id": "greek-sigma-equal",
+      "description": "SmartList comments collation probe: greek sigma equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.greek_sigma_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3,
+        "item_ids": [
+          "$fixture.track.smart_text.greek_upper",
+          "$fixture.track.smart_text.greek_sigma",
+          "$fixture.track.smart_text.greek_final_sigma"
+        ]
+      }
+    },
+    {
+      "id": "greek-final-sigma-equal",
+      "description": "SmartList comments collation probe: greek final sigma equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.greek_final_sigma_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 3,
+        "row_count": 3,
+        "item_ids": [
+          "$fixture.track.smart_text.greek_upper",
+          "$fixture.track.smart_text.greek_sigma",
+          "$fixture.track.smart_text.greek_final_sigma"
+        ]
+      }
+    },
+    {
+      "id": "katakana-equal",
+      "description": "SmartList comments collation probe: katakana equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.katakana_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_text.katakana",
+          "$fixture.track.smart_text.hiragana"
+        ]
+      }
+    },
+    {
+      "id": "hiragana-equal",
+      "description": "SmartList comments collation probe: hiragana equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.hiragana_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 2,
+        "row_count": 2,
+        "item_ids": [
+          "$fixture.track.smart_text.katakana",
+          "$fixture.track.smart_text.hiragana"
+        ]
+      }
+    },
+    {
+      "id": "combining-dot-acute-equal",
+      "description": "SmartList comments collation probe: combining dot acute equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.combining_dot_acute_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "combining-acute-dot-equal",
+      "description": "SmartList comments collation probe: combining acute dot equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.combining_acute_dot_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 0,
+        "row_count": 0,
+        "item_ids": []
+      }
+    },
+    {
+      "id": "punctuation-none-equal",
+      "description": "SmartList comments collation probe: punctuation none equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.punctuation_none_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.punctuation_none"
+        ]
+      }
+    },
+    {
+      "id": "punctuation-none-contains",
+      "description": "SmartList comments collation probe: punctuation none contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.punctuation_none_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.punctuation_none"
+        ]
+      }
+    },
+    {
+      "id": "punctuation-hyphen-equal",
+      "description": "SmartList comments collation probe: punctuation hyphen equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.punctuation_hyphen_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.punctuation_hyphen"
+        ]
+      }
+    },
+    {
+      "id": "punctuation-space-equal",
+      "description": "SmartList comments collation probe: punctuation space equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.punctuation_space_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.alpha_prefix"
+        ]
+      }
+    },
+    {
+      "id": "tab-equal",
+      "description": "SmartList comments collation probe: tab equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.tab_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.tab"
+        ]
+      }
+    },
+    {
+      "id": "newline-equal",
+      "description": "SmartList comments collation probe: newline equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.newline_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.newline"
+        ]
+      }
+    },
+    {
+      "id": "cyrillic-alpha-equal",
+      "description": "SmartList comments collation probe: cyrillic alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.cyrillic_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.cyrillic_alpha"
+        ]
+      }
+    },
+    {
+      "id": "greek-alpha-equal",
+      "description": "SmartList comments collation probe: greek alpha equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.greek_alpha_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.greek_alpha"
+        ]
+      }
+    },
+    {
+      "id": "ampersand-equal",
+      "description": "SmartList comments collation probe: ampersand equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.ampersand_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.ampersand"
+        ]
+      }
+    },
+    {
+      "id": "ampersand-contains",
+      "description": "SmartList comments collation probe: ampersand contains",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.ampersand_contains"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.ampersand"
+        ]
+      }
+    },
+    {
+      "id": "double-quote-equal",
+      "description": "SmartList comments collation probe: double quote equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.double_quote_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.double_quote"
+        ]
+      }
+    },
+    {
+      "id": "apostrophe-equal",
+      "description": "SmartList comments collation probe: apostrophe equal",
+      "request_kind": "0x1105",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$sort"
+        },
+        {
+          "number": "$fixture.playlist.smart_text.apostrophe_equal"
+        },
+        {
+          "number": 0
+        }
+      ],
+      "expect": {
+        "outcome": "menu",
+        "total": 1,
+        "row_count": 1,
+        "item_ids": [
+          "$fixture.track.smart_text.apostrophe"
+        ]
+      }
+    }
+  ]
+}

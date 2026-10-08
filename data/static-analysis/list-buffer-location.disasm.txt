@@ -1,0 +1,530 @@
+## __Z22WhereListBuf_ConditionPvS_ | 
+address=0x1006eb3f0 size=0x40
+0x01006eb3f0  push      rbp
+0x01006eb3f1  mov       rbp, rsp
+0x01006eb3f4  push      r14
+0x01006eb3f6  push      rbx
+0x01006eb3f7  mov       r14, rdi
+0x01006eb3fa  mov       rdi, rsi
+0x01006eb3fd  xor       esi, esi
+0x01006eb3ff  call      0x10325ea70  ; _edb_dyn_GetColumnValueInternal
+0x01006eb404  mov       rbx, rax
+0x01006eb407  test      rax, rax
+0x01006eb40a  jne       0x1006eb41d
+0x01006eb40c  mov       edi, 0x1010b05
+0x01006eb411  mov       esi, 2
+0x01006eb416  xor       edx, edx
+0x01006eb418  call      0x1025a5410  ; __Z11errorHandlejtm |
+0x01006eb41d  xor       eax, eax
+0x01006eb41f  cmp       dword ptr [rbx], r14d
+0x01006eb422  sete      al
+0x01006eb425  pop       rbx
+0x01006eb426  pop       r14
+0x01006eb428  pop       rbp
+0x01006eb429  ret
+0x01006eb42a  nop       word ptr [rax + rax]
+
+## __ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg | 
+address=0x100fa1110 size=0x500
+0x0100fa1110  push      rbp
+0x0100fa1111  mov       rbp, rsp
+0x0100fa1114  push      r15
+0x0100fa1116  push      r14
+0x0100fa1118  push      r13
+0x0100fa111a  push      r12
+0x0100fa111c  push      rbx
+0x0100fa111d  sub       rsp, 0x58
+0x0100fa1121  mov       rbx, rsi
+0x0100fa1124  mov       r13, rdi
+0x0100fa1127  mov       r14, qword ptr [rsi + 0x20]
+0x0100fa112b  mov       r15, qword ptr [r14 + 0x18]
+0x0100fa112f  mov       r12, qword ptr [r14 + 0x20]
+0x0100fa1133  mov       eax, dword ptr [r14 + 0x28]
+0x0100fa1137  mov       qword ptr [rbp - 0x70], rax
+0x0100fa113b  cmp       byte ptr [r14 + 7], 6
+0x0100fa1140  movzx     eax, word ptr [r14 + 0x30]
+0x0100fa1145  mov       word ptr [rbp - 0x50], ax
+0x0100fa1149  mov       eax, 0
+0x0100fa114e  mov       edx, 0
+0x0100fa1153  mov       ecx, 0
+0x0100fa1158  jb        0x100fa117d
+0x0100fa115a  movzx     edi, word ptr [r14 + 0x40]
+0x0100fa115f  call      0x101d627c0  ; __Z20DBCommon_GetCateKindt |
+0x0100fa1164  xor       edx, edx
+0x0100fa1166  cmp       byte ptr [r14 + 7], 8
+0x0100fa116b  jb        0x100fa117b
+0x0100fa116d  cmp       dword ptr [r14 + 0x48], 0
+0x0100fa1172  setne     dl
+0x0100fa1175  mov       ecx, dword ptr [r14 + 0x50]
+0x0100fa1179  jmp       0x100fa117d
+0x0100fa117b  xor       ecx, ecx
+0x0100fa117d  mov       qword ptr [rbp - 0x38], r12
+0x0100fa1181  mov       dword ptr [rbp - 0x2c], edx
+0x0100fa1184  mov       qword ptr [rbp - 0x58], r15
+0x0100fa1188  mov       qword ptr [rbp - 0x78], rcx
+0x0100fa118c  mov       dword ptr [rbp - 0x3c], eax
+0x0100fa118f  mov       qword ptr [rbp - 0x68], r13
+0x0100fa1193  mov       al, byte ptr [rbx + 0x12]
+0x0100fa1196  and       al, 2
+0x0100fa1198  mov       rbx, qword ptr [r14 + 0x18]
+0x0100fa119c  mov       r8d, ebx
+0x0100fa119f  shr       rbx, 0x18
+0x0100fa11a3  neg       al
+0x0100fa11a5  mov       r15d, 0
+0x0100fa11ab  sbb       r15d, r15d
+0x0100fa11ae  mov       dword ptr [rbp - 0x30], 0
+0x0100fa11b5  lea       rsi, [rip + 0x2bdb594]  ; __ZL15cLeftBufTblName; 'djmdLeftBuf'
+0x0100fa11bc  lea       rcx, [rip - 0x8b5dd3]  ; __Z22WhereListBuf_ConditionPvS_ |
+0x0100fa11c3  lea       rdi, [rbp - 0x30]
+0x0100fa11c7  xor       edx, edx
+0x0100fa11c9  xor       r9d, r9d
+0x0100fa11cc  push      0
+0x0100fa11ce  push      0
+0x0100fa11d0  call      0x1000d2e10  ; _edb_dyn_SelectMaterialized_ |
+0x0100fa11d5  add       rsp, 0x10
+0x0100fa11d9  cmp       dword ptr [rbp - 0x30], 0
+0x0100fa11dd  mov       r13d, 0
+0x0100fa11e3  mov       ecx, 0
+0x0100fa11e8  jne       0x100fa1203
+0x0100fa11ea  mov       r12, rax
+0x0100fa11ed  mov       rsi, rax
+0x0100fa11f0  call      0x100f9f8d0  ; __ZN9PSvDBMain11ListBufSortEPv |
+0x0100fa11f5  mov       dword ptr [rbp - 0x30], eax
+0x0100fa11f8  mov       cx, 1
+0x0100fa11fc  mov       r13, r12
+0x0100fa11ff  test      eax, eax
+0x0100fa1201  je        0x100fa1219
+0x0100fa1203  movzx     ecx, cx
+0x0100fa1206  mov       rdi, qword ptr [rbp - 0x68]
+0x0100fa120a  xor       esi, esi
+0x0100fa120c  mov       edx, 0x1010341
+0x0100fa1211  call      0x102520ec0  ; __ZN9PSvDBMain12DeliverErrorEijt |
+0x0100fa1216  mov       r12, r13
+0x0100fa1219  or        r15b, bl
+0x0100fa121c  mov       edi, 0x98
+0x0100fa1221  call      0x1038c3cd4
+0x0100fa1226  mov       rbx, rax
+0x0100fa1229  vxorps    xmm0, xmm0, xmm0
+0x0100fa122d  vmovups   ymmword ptr [rax], ymm0
+0x0100fa1231  vmovups   ymmword ptr [rax + 0x20], ymm0
+0x0100fa1236  vmovups   ymmword ptr [rax + 0x40], ymm0
+0x0100fa123b  vmovups   ymmword ptr [rax + 0x60], ymm0
+0x0100fa1240  vmovups   ymmword ptr [rax + 0x78], ymm0
+0x0100fa1245  mov       word ptr [rax + 4], 0x4001
+0x0100fa124b  mov       eax, dword ptr [r14]
+0x0100fa124e  mov       dword ptr [rbx], eax
+0x0100fa1250  mov       byte ptr [rbx + 6], 1
+0x0100fa1254  test      r12, r12
+0x0100fa1257  je        0x100fa14d0
+0x0100fa125d  mov       rsi, r12
+0x0100fa1260  mov       r12, qword ptr [rbp - 0x38]
+0x0100fa1264  mov       dword ptr [rbp - 0x40], r12d
+0x0100fa1268  movzx     r8d, word ptr [rbp - 0x50]
+0x0100fa126d  lea       rdx, [rbp - 0x40]
+0x0100fa1271  mov       r13, qword ptr [rbp - 0x68]
+0x0100fa1275  mov       rdi, r13
+0x0100fa1278  mov       qword ptr [rbp - 0x50], rsi
+0x0100fa127c  mov       rcx, qword ptr [rbp - 0x70]
+0x0100fa1280  vzeroupper
+0x0100fa1283  call      0x100f9fa90  ; __ZN9PSvDBMain16GetListBuf1stRowEPvPjjt |
+0x0100fa1288  test      rax, rax
+0x0100fa128b  je        0x100fa1516
+0x0100fa1291  mov       qword ptr [rbp - 0x60], rax
+0x0100fa1295  mov       r12, qword ptr [rbp - 0x58]
+0x0100fa1299  shr       r12, 8
+0x0100fa129d  mov       byte ptr [rbx + 6], 5
+0x0100fa12a1  mov       qword ptr [rbx + 0x18], 1
+0x0100fa12a9  mov       eax, dword ptr [rbp - 0x40]
+0x0100fa12ac  mov       qword ptr [rbp - 0x80], rax
+0x0100fa12b0  mov       qword ptr [rbx + 0x20], rax
+0x0100fa12b4  movzx     esi, r15b
+0x0100fa12b8  mov       rdi, r13
+0x0100fa12bb  mov       dword ptr [rbp - 0x38], esi
+0x0100fa12be  mov       rdx, rbx
+0x0100fa12c1  call      0x102521160  ; __ZN9PSvDBMain17RequestToSendDataEhP19_struct_db_comm_cmd |
+0x0100fa12c6  cmp       eax, 1
+0x0100fa12c9  mov       r15, r13
+0x0100fa12cc  je        0x100fa12ea
+0x0100fa12ce  mov       rdi, r15
+0x0100fa12d1  xor       esi, esi
+0x0100fa12d3  mov       edx, 0x1010346
+0x0100fa12d8  mov       ecx, 2
+0x0100fa12dd  call      0x102520ec0  ; __ZN9PSvDBMain12DeliverErrorEijt |
+0x0100fa12e2  mov       rdi, rbx
+0x0100fa12e5  call      0x10049ddd0  ; __Z11DBCCmd_FreePK19_struct_db_comm_cmd |
+0x0100fa12ea  mov       edi, 0x98
+0x0100fa12ef  call      0x1038c3cd4
+0x0100fa12f4  mov       rbx, rax
+0x0100fa12f7  vxorps    xmm0, xmm0, xmm0
+0x0100fa12fb  vmovups   ymmword ptr [rax], ymm0
+0x0100fa12ff  vmovups   ymmword ptr [rax + 0x20], ymm0
+0x0100fa1304  vmovups   ymmword ptr [rax + 0x40], ymm0
+0x0100fa1309  vmovups   ymmword ptr [rax + 0x60], ymm0
+0x0100fa130e  vmovups   ymmword ptr [rax + 0x78], ymm0
+0x0100fa1313  add       rax, 0x78
+0x0100fa1317  lea       r9, [rbx + 0x18]
+0x0100fa131b  sub       rsp, 8
+0x0100fa131f  movzx     ecx, byte ptr [rbp - 0x2c]
+0x0100fa1323  movzx     esi, r12b
+0x0100fa1327  mov       r12, rcx
+0x0100fa132a  movzx     edx, byte ptr [rbp - 0x58]
+0x0100fa132e  mov       rdi, r15
+0x0100fa1331  mov       dword ptr [rbp - 0x58], esi
+0x0100fa1334  mov       dword ptr [rbp - 0x2c], edx
+0x0100fa1337  mov       ecx, dword ptr [rbp - 0x3c]
+0x0100fa133a  mov       r8, qword ptr [rbp - 0x60]
+0x0100fa133e  push      rax
+0x0100fa133f  push      qword ptr [rbp - 0x78]
+0x0100fa1342  push      r12
+0x0100fa1344  vzeroupper
+0x0100fa1347  call      0x100f9fe40  ; __ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt |
+0x0100fa134c  add       rsp, 0x20
+0x0100fa1350  mov       rdi, qword ptr [rbx + 0x30]
+0x0100fa1354  call      0x1009b1d30  ; __Z11UTF16LengthPKt |
+0x0100fa1359  add       rax, rax
+0x0100fa135c  add       rax, 2
+0x0100fa1360  mov       qword ptr [rbx + 0x28], rax
+0x0100fa1364  mov       rdi, qword ptr [rbx + 0x40]
+0x0100fa1368  call      0x1009b1d30  ; __Z11UTF16LengthPKt |
+0x0100fa136d  add       rax, rax
+0x0100fa1370  add       rax, 2
+0x0100fa1374  mov       qword ptr [rbx + 0x38], rax
+0x0100fa1378  mov       eax, dword ptr [r14]
+0x0100fa137b  mov       dword ptr [rbx], eax
+0x0100fa137d  mov       word ptr [rbx + 4], 0x4101
+0x0100fa1383  mov       al, byte ptr [rbx + 6]
+0x0100fa1386  and       al, 0xf8
+0x0100fa1388  or        al, 5
+0x0100fa138a  mov       byte ptr [rbx + 6], al
+0x0100fa138d  mov       rdi, r15
+0x0100fa1390  mov       esi, dword ptr [rbp - 0x38]
+0x0100fa1393  mov       rdx, rbx
+0x0100fa1396  call      0x102521160  ; __ZN9PSvDBMain17RequestToSendDataEhP19_struct_db_comm_cmd |
+0x0100fa139b  cmp       eax, 1
+0x0100fa139e  mov       r13, qword ptr [rbp - 0x70]
+0x0100fa13a2  jne       0x100fa1541
+0x0100fa13a8  mov       qword ptr [rbp - 0x60], r12
+0x0100fa13ac  mov       rcx, qword ptr [rbp - 0x80]
+0x0100fa13b0  lea       eax, [rcx + r13]
+0x0100fa13b4  inc       ecx
+0x0100fa13b6  cmp       ecx, eax
+0x0100fa13b8  mov       r12, qword ptr [rbp - 0x50]
+0x0100fa13bc  jge       0x100fa154a
+0x0100fa13c2  dec       r13d
+0x0100fa13c5  jmp       0x100fa13d9
+0x0100fa13c7  nop       word ptr [rax + rax]
+0x0100fa13d0  dec       r13d
+0x0100fa13d3  je        0x100fa154a
+0x0100fa13d9  mov       edi, 0x98
+0x0100fa13de  call      0x1038c3cd4
+0x0100fa13e3  mov       rbx, rax
+0x0100fa13e6  vxorps    xmm0, xmm0, xmm0
+0x0100fa13ea  vmovups   ymmword ptr [rax], ymm0
+0x0100fa13ee  vmovups   ymmword ptr [rax + 0x20], ymm0
+0x0100fa13f3  vmovups   ymmword ptr [rax + 0x40], ymm0
+0x0100fa13f8  vmovups   ymmword ptr [rax + 0x60], ymm0
+0x0100fa13fd  vmovups   ymmword ptr [rax + 0x78], ymm0
+0x0100fa1402  mov       dword ptr [rbp - 0x44], 0
+0x0100fa1409  mov       rdi, r12
+0x0100fa140c  lea       rsi, [rbp - 0x44]
+0x0100fa1410  vzeroupper
+0x0100fa1413  call      0x1000d2e70  ; _edb_dyn_GetNextRow_ |
+0x0100fa1418  cmp       dword ptr [rbp - 0x44], 0
+0x0100fa141c  jne       0x100fa1575
+0x0100fa1422  test      rax, rax
+0x0100fa1425  je        0x100fa1586
+0x0100fa142b  lea       r10, [rbx + 0x78]
+0x0100fa142f  mov       r9, rbx
+0x0100fa1432  add       r9, 0x18
+0x0100fa1436  sub       rsp, 8
+0x0100fa143a  mov       rdi, r15
+0x0100fa143d  mov       esi, dword ptr [rbp - 0x58]
+0x0100fa1440  mov       edx, dword ptr [rbp - 0x2c]
+0x0100fa1443  mov       ecx, dword ptr [rbp - 0x3c]
+0x0100fa1446  mov       r8, rax
+0x0100fa1449  push      r10
+0x0100fa144b  push      qword ptr [rbp - 0x78]
+0x0100fa144e  push      qword ptr [rbp - 0x60]
+0x0100fa1451  call      0x100f9fe40  ; __ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt |
+0x0100fa1456  add       rsp, 0x20
+0x0100fa145a  mov       rdi, qword ptr [rbx + 0x30]
+0x0100fa145e  call      0x1009b1d30  ; __Z11UTF16LengthPKt |
+0x0100fa1463  add       rax, rax
+0x0100fa1466  add       rax, 2
+0x0100fa146a  mov       qword ptr [rbx + 0x28], rax
+0x0100fa146e  mov       rdi, qword ptr [rbx + 0x40]
+0x0100fa1472  call      0x1009b1d30  ; __Z11UTF16LengthPKt |
+0x0100fa1477  add       rax, rax
+0x0100fa147a  add       rax, 2
+0x0100fa147e  mov       qword ptr [rbx + 0x38], rax
+0x0100fa1482  mov       eax, dword ptr [r14]
+0x0100fa1485  mov       dword ptr [rbx], eax
+0x0100fa1487  mov       word ptr [rbx + 4], 0x4101
+0x0100fa148d  movzx     eax, byte ptr [rbx + 6]
+0x0100fa1491  and       al, 0xf8
+0x0100fa1493  or        al, 5
+0x0100fa1495  mov       byte ptr [rbx + 6], al
+0x0100fa1498  mov       rdi, r15
+0x0100fa149b  mov       esi, dword ptr [rbp - 0x38]
+0x0100fa149e  mov       rdx, rbx
+0x0100fa14a1  call      0x102521160  ; __ZN9PSvDBMain17RequestToSendDataEhP19_struct_db_comm_cmd |
+0x0100fa14a6  cmp       eax, 1
+0x0100fa14a9  je        0x100fa13d0
+0x0100fa14af  mov       rdi, r15
+0x0100fa14b2  xor       esi, esi
+0x0100fa14b4  mov       edx, 0x1010346
+0x0100fa14b9  mov       ecx, 8
+0x0100fa14be  call      0x102520ec0  ; __ZN9PSvDBMain12DeliverErrorEijt |
+0x0100fa14c3  mov       rdi, rbx
+0x0100fa14c6  call      0x10049ddd0  ; __Z11DBCCmd_FreePK19_struct_db_comm_cmd |
+0x0100fa14cb  jmp       0x100fa13d0
+0x0100fa14d0  movzx     esi, r15b
+0x0100fa14d4  mov       r13, qword ptr [rbp - 0x68]
+0x0100fa14d8  mov       rdi, r13
+0x0100fa14db  mov       rdx, rbx
+0x0100fa14de  vzeroupper
+0x0100fa14e1  call      0x102521160  ; __ZN9PSvDBMain17RequestToSendDataEhP19_struct_db_comm_cmd |
+0x0100fa14e6  xor       r12d, r12d
+0x0100fa14e9  cmp       eax, 1
+0x0100fa14ec  je        0x100fa15f0
+0x0100fa14f2  xor       r12d, r12d
+0x0100fa14f5  mov       rdi, r13
+0x0100fa14f8  xor       esi, esi
+0x0100fa14fa  mov       edx, 0x1010346
+0x0100fa14ff  mov       ecx, 1
+0x0100fa1504  call      0x102520ec0  ; __ZN9PSvDBMain12DeliverErrorEijt |
+0x0100fa1509  mov       rdi, rbx
+0x0100fa150c  call      0x10049ddd0  ; __Z11DBCCmd_FreePK19_struct_db_comm_cmd |
+0x0100fa1511  jmp       0x100fa15f0
+0x0100fa1516  mov       eax, r12d
+0x0100fa1519  mov       qword ptr [rbx + 0x20], rax
+0x0100fa151d  movzx     esi, r15b
+0x0100fa1521  mov       rdi, r13
+0x0100fa1524  mov       rdx, rbx
+0x0100fa1527  call      0x102521160  ; __ZN9PSvDBMain17RequestToSendDataEhP19_struct_db_comm_cmd |
+0x0100fa152c  xor       r12d, r12d
+0x0100fa152f  cmp       eax, 1
+0x0100fa1532  mov       r15, r13
+0x0100fa1535  je        0x100fa15cf
+0x0100fa153b  mov       ax, 6
+0x0100fa153f  jmp       0x100fa15b5
+0x0100fa1541  xor       r12d, r12d
+0x0100fa1544  mov       ax, 5
+0x0100fa1548  jmp       0x100fa15b5
+0x0100fa154a  mov       edi, 0x98
+0x0100fa154f  call      0x1038c3cd4
+0x0100fa1554  mov       rbx, rax
+0x0100fa1557  vxorps    xmm0, xmm0, xmm0
+0x0100fa155b  vmovups   ymmword ptr [rax], ymm0
+0x0100fa155f  vmovups   ymmword ptr [rax + 0x20], ymm0
+0x0100fa1564  vmovups   ymmword ptr [rax + 0x40], ymm0
+0x0100fa1569  vmovups   ymmword ptr [rax + 0x60], ymm0
+0x0100fa156e  vmovups   ymmword ptr [rax + 0x78], ymm0
+0x0100fa1573  jmp       0x100fa1586
+0x0100fa1575  mov       rdi, r15
+0x0100fa1578  xor       esi, esi
+0x0100fa157a  mov       edx, 0x1010344
+0x0100fa157f  xor       ecx, ecx
+0x0100fa1581  call      0x102520ec0  ; __ZN9PSvDBMain12DeliverErrorEijt |
+0x0100fa1586  mov       esi, dword ptr [rbp - 0x38]
+0x0100fa1589  mov       eax, dword ptr [r14]
+0x0100fa158c  mov       dword ptr [rbx], eax
+0x0100fa158e  mov       word ptr [rbx + 4], 0x4201
+0x0100fa1594  and       byte ptr [rbx + 6], 0xfb
+0x0100fa1598  mov       rdi, r15
+0x0100fa159b  mov       rdx, rbx
+0x0100fa159e  vzeroupper
+0x0100fa15a1  call      0x102521160  ; __ZN9PSvDBMain17RequestToSendDataEhP19_struct_db_comm_cmd |
+0x0100fa15a6  mov       r12d, 1
+0x0100fa15ac  cmp       eax, 1
+0x0100fa15af  je        0x100fa15cf
+0x0100fa15b1  mov       ax, 0xa
+0x0100fa15b5  movzx     ecx, ax
+0x0100fa15b8  mov       rdi, r15
+0x0100fa15bb  xor       esi, esi
+0x0100fa15bd  mov       edx, 0x1010346
+0x0100fa15c2  call      0x102520ec0  ; __ZN9PSvDBMain12DeliverErrorEijt |
+0x0100fa15c7  mov       rdi, rbx
+0x0100fa15ca  call      0x10049ddd0  ; __Z11DBCCmd_FreePK19_struct_db_comm_cmd |
+0x0100fa15cf  mov       rdi, qword ptr [rbp - 0x50]
+0x0100fa15d3  call      0x1000d2e40  ; _edb_dyn_CloseRowSet_ |
+0x0100fa15d8  test      eax, eax
+0x0100fa15da  je        0x100fa15f0
+0x0100fa15dc  mov       rdi, r15
+0x0100fa15df  xor       esi, esi
+0x0100fa15e1  mov       edx, 0x1010346
+0x0100fa15e6  mov       ecx, 0xb
+0x0100fa15eb  call      0x102520ec0  ; __ZN9PSvDBMain12DeliverErrorEijt |
+0x0100fa15f0  mov       eax, r12d
+0x0100fa15f3  add       rsp, 0x58
+0x0100fa15f7  pop       rbx
+0x0100fa15f8  pop       r12
+0x0100fa15fa  pop       r13
+0x0100fa15fc  pop       r14
+0x0100fa15fe  pop       r15
+0x0100fa1600  pop       rbp
+0x0100fa1601  ret
+0x0100fa1602  nop       word ptr cs:[rax + rax]
+
+## __Z18DsqlListBuf_InsertjPK18_st_listbuf_record | 
+address=0x10249cd50 size=0x1f0
+0x010249cd50  push      rbp
+0x010249cd51  mov       rbp, rsp
+0x010249cd54  push      r14
+0x010249cd56  push      rbx
+0x010249cd57  and       rsp, 0xffffffffffffffe0
+0x010249cd5b  sub       rsp, 0xa0
+0x010249cd62  mov       rax, qword ptr [rip + 0x306020f]
+0x010249cd69  mov       rax, qword ptr [rax]
+0x010249cd6c  mov       qword ptr [rsp + 0x98], rax
+0x010249cd74  mov       dword ptr [rsp + 0x1c], edi
+0x010249cd78  mov       r14d, 0xffffffff
+0x010249cd7e  test      rsi, rsi
+0x010249cd81  je        0x10249cf1b
+0x010249cd87  mov       rbx, rsi
+0x010249cd8a  mov       eax, ebx
+0x010249cd8c  and       eax, 3
+0x010249cd8f  test      rax, rax
+0x010249cd92  jne       0x10249cf1b
+0x010249cd98  vxorps    xmm0, xmm0, xmm0
+0x010249cd9c  vmovups   ymmword ptr [rsp + 0x70], ymm0
+0x010249cda2  vmovaps   ymmword ptr [rsp + 0x60], ymm0
+0x010249cda8  vmovaps   ymmword ptr [rsp + 0x40], ymm0
+0x010249cdae  vmovaps   ymmword ptr [rsp + 0x20], ymm0
+0x010249cdb4  mov       al, byte ptr [rbx + 0x26]
+0x010249cdb7  shl       al, 4
+0x010249cdba  or        al, byte ptr [rbx + 0x27]
+0x010249cdbd  mov       byte ptr [rsp + 0x1b], al
+0x010249cdc1  mov       rdi, qword ptr [rbx + 0x10]
+0x010249cdc5  test      rdi, rdi
+0x010249cdc8  je        0x10249cde7
+0x010249cdca  vzeroupper
+0x010249cdcd  call      0x1009b1d30  ; __Z11UTF16LengthPKt |
+0x010249cdd2  cmp       rax, 0xff
+0x010249cdd8  jb        0x10249cde7
+0x010249cdda  mov       rax, qword ptr [rbx + 0x10]
+0x010249cdde  mov       word ptr [rax + 0x1fe], 0
+0x010249cde7  mov       rdi, qword ptr [rbx + 0x18]
+0x010249cdeb  test      rdi, rdi
+0x010249cdee  je        0x10249ce0d
+0x010249cdf0  vzeroupper
+0x010249cdf3  call      0x1009b1d30  ; __Z11UTF16LengthPKt |
+0x010249cdf8  cmp       rax, 0xff
+0x010249cdfe  jb        0x10249ce0d
+0x010249ce00  mov       rax, qword ptr [rbx + 0x18]
+0x010249ce04  mov       word ptr [rax + 0x1fe], 0
+0x010249ce0d  mov       rdi, qword ptr [rbx + 0x28]
+0x010249ce11  test      rdi, rdi
+0x010249ce14  je        0x10249ce33
+0x010249ce16  vzeroupper
+0x010249ce19  call      0x1009b1d30  ; __Z11UTF16LengthPKt |
+0x010249ce1e  cmp       rax, 0xff
+0x010249ce24  jb        0x10249ce33
+0x010249ce26  mov       rax, qword ptr [rbx + 0x28]
+0x010249ce2a  mov       word ptr [rax + 0x1fe], 0
+0x010249ce33  mov       rdi, qword ptr [rbx + 0x30]
+0x010249ce37  xor       r14d, r14d
+0x010249ce3a  test      rdi, rdi
+0x010249ce3d  je        0x10249ce5e
+0x010249ce3f  vzeroupper
+0x010249ce42  call      0x1009b1d30  ; __Z11UTF16LengthPKt |
+0x010249ce47  mov       rcx, qword ptr [rbx + 0x30]
+0x010249ce4b  cmp       rax, 0xff
+0x010249ce51  jb        0x10249ce60
+0x010249ce53  mov       word ptr [rcx + 0x1fe], 0
+0x010249ce5c  jmp       0x10249ce60
+0x010249ce5e  xor       ecx, ecx
+0x010249ce60  lea       rax, [rsp + 0x1c]
+0x010249ce65  mov       qword ptr [rsp + 0x20], rax
+0x010249ce6a  lea       rax, [rbx + 0x24]
+0x010249ce6e  mov       qword ptr [rsp + 0x28], rax
+0x010249ce73  lea       rax, [rbx + 0x25]
+0x010249ce77  mov       qword ptr [rsp + 0x40], rax
+0x010249ce7c  mov       qword ptr [rsp + 0x30], rbx
+0x010249ce81  lea       rax, [rbx + 4]
+0x010249ce85  mov       qword ptr [rsp + 0x48], rax
+0x010249ce8a  mov       rax, qword ptr [rbx + 0x10]
+0x010249ce8e  test      rax, rax
+0x010249ce91  lea       rdx, [rip + 0x1745b18]  ; _cZero
+0x010249ce98  cmove     rax, rdx
+0x010249ce9c  mov       qword ptr [rsp + 0x38], rax
+0x010249cea1  mov       rax, qword ptr [rbx + 0x18]
+0x010249cea5  test      rax, rax
+0x010249cea8  cmove     rax, rdx
+0x010249ceac  mov       qword ptr [rsp + 0x50], rax
+0x010249ceb1  lea       rax, [rbx + 0x20]
+0x010249ceb5  mov       qword ptr [rsp + 0x58], rax
+0x010249ceba  lea       rax, [rbx + 8]
+0x010249cebe  mov       qword ptr [rsp + 0x88], rax
+0x010249cec6  mov       rax, qword ptr [rbx + 0x28]
+0x010249ceca  test      rax, rax
+0x010249cecd  cmove     rax, rdx
+0x010249ced1  mov       qword ptr [rsp + 0x60], rax
+0x010249ced6  test      rcx, rcx
+0x010249ced9  cmove     rcx, rdx
+0x010249cedd  mov       qword ptr [rsp + 0x70], rcx
+0x010249cee2  mov       qword ptr [rsp + 0x78], rdx
+0x010249cee7  add       rbx, 0x38
+0x010249ceeb  mov       qword ptr [rsp + 0x68], rbx
+0x010249cef0  lea       rax, [rsp + 0x1b]
+0x010249cef5  mov       qword ptr [rsp + 0x80], rax
+0x010249cefd  lea       rdi, [rip + 0x174e63c]  ; __ZL15cLeftBufTblName; 'djmdLeftBuf'
+0x010249cf04  lea       rdx, [rsp + 0x20]
+0x010249cf09  mov       esi, 0xe
+0x010249cf0e  vzeroupper
+0x010249cf11  call      0x10325ced0  ; _edb_dyn_Insert
+0x010249cf16  neg       eax
+0x010249cf18  sbb       r14d, r14d
+0x010249cf1b  mov       rax, qword ptr [rip + 0x3060056]
+0x010249cf22  mov       rax, qword ptr [rax]
+0x010249cf25  cmp       rax, qword ptr [rsp + 0x98]
+0x010249cf2d  jne       0x10249cf3b
+0x010249cf2f  mov       eax, r14d
+0x010249cf32  lea       rsp, [rbp - 0x10]
+0x010249cf36  pop       rbx
+0x010249cf37  pop       r14
+0x010249cf39  pop       rbp
+0x010249cf3a  ret
+0x010249cf3b  call      0x1038c3da0
+
+## __Z17DsqlListBuf_Clearji | 
+address=0x10249cf40 size=0x80
+0x010249cf40  push      rbp
+0x010249cf41  mov       rbp, rsp
+0x010249cf44  push      rbx
+0x010249cf45  sub       rsp, 0x18
+0x010249cf49  mov       ebx, esi
+0x010249cf4b  mov       dword ptr [rbp - 0xc], edi
+0x010249cf4e  xor       edi, edi
+0x010249cf50  call      0x101e1a960  ; __Z28DsqlCmn_ChangeAutoCommitStati |
+0x010249cf55  lea       rax, [rbp - 0xc]
+0x010249cf59  mov       qword ptr [rbp - 0x18], rax
+0x010249cf5d  lea       rax, [rbp - 0x18]
+0x010249cf61  mov       qword ptr [rsp], rax
+0x010249cf65  lea       rdi, [rip + 0x174e5d4]  ; __ZL15cLeftBufTblName; 'djmdLeftBuf'
+0x010249cf6c  lea       rsi, [rip + 0x174e5dd]  ; __ZL18cLeftBufCndIdxName; 'idxMasLeftBufCond'
+0x010249cf73  lea       r8, [rip + 0x2f16692]
+0x010249cf7a  xor       edx, edx
+0x010249cf7c  xor       ecx, ecx
+0x010249cf7e  mov       r9d, 1
+0x010249cf84  call      0x10325d470  ; _edb_dyn_Delete
+0x010249cf89  mov       ecx, eax
+0x010249cf8b  mov       eax, 0xffffffff
+0x010249cf90  test      ecx, ecx
+0x010249cf92  je        0x10249cf9b
+0x010249cf94  add       rsp, 0x18
+0x010249cf98  pop       rbx
+0x010249cf99  pop       rbp
+0x010249cf9a  ret
+0x010249cf9b  test      ebx, ebx
+0x010249cf9d  je        0x10249cfb2
+0x010249cf9f  lea       rdi, [rip + 0x174e5aa]  ; __ZL18cLeftBufCndIdxName; 'idxMasLeftBufCond'
+0x010249cfa6  lea       rsi, [rip + 0x174e593]  ; __ZL15cLeftBufTblName; 'djmdLeftBuf'
+0x010249cfad  call      0x10325eeb0  ; _edb_dyn_CloseIndex
+0x010249cfb2  xor       eax, eax
+0x010249cfb4  add       rsp, 0x18
+0x010249cfb8  pop       rbx
+0x010249cfb9  pop       rbp
+0x010249cfba  ret
+0x010249cfbb  nop       dword ptr [rax + rax]
+

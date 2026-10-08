@@ -1,0 +1,207 @@
+{
+  "behavior": {
+    "blank_track_dates_are_excluded_from_equal_and_not_equal": true,
+    "case_item_ids": {
+      "date-created-blank-equal": [],
+      "date-created-blank-not-equal": [
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006
+      ],
+      "date-created-invalid-equal": [],
+      "date-created-invalid-not-equal": [
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006
+      ],
+      "date-created-operator-01": [
+        10004
+      ],
+      "date-created-operator-02": [
+        10001,
+        10002,
+        10003,
+        10005,
+        10006
+      ],
+      "date-created-operator-03": [
+        10005,
+        10006
+      ],
+      "date-created-operator-04": [
+        10001,
+        10002,
+        10003
+      ],
+      "date-created-operator-05": [
+        10002,
+        10003,
+        10004,
+        10005
+      ],
+      "date-created-reversed-range": [],
+      "date-released-blank-equal": [],
+      "date-released-blank-not-equal": [
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006
+      ],
+      "date-released-invalid-equal": [],
+      "date-released-invalid-not-equal": [
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006
+      ],
+      "date-released-operator-01": [
+        10004
+      ],
+      "date-released-operator-02": [
+        10001,
+        10002,
+        10003,
+        10005,
+        10006
+      ],
+      "date-released-operator-03": [
+        10005,
+        10006
+      ],
+      "date-released-operator-04": [
+        10001,
+        10002,
+        10003
+      ],
+      "date-released-operator-05": [
+        10002,
+        10003,
+        10004,
+        10005
+      ],
+      "date-released-reversed-range": [],
+      "stock-date-blank-equal": [],
+      "stock-date-blank-not-equal": [
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006
+      ],
+      "stock-date-invalid-equal": [],
+      "stock-date-invalid-not-equal": [
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006
+      ],
+      "stock-date-operator-01": [
+        10004
+      ],
+      "stock-date-operator-02": [
+        10001,
+        10002,
+        10003,
+        10005,
+        10006
+      ],
+      "stock-date-operator-03": [
+        10005,
+        10006
+      ],
+      "stock-date-operator-04": [
+        10001,
+        10002,
+        10003
+      ],
+      "stock-date-operator-05": [
+        10002,
+        10003,
+        10004,
+        10005
+      ],
+      "stock-date-reversed-range": []
+    },
+    "malformed_track_dates_are_excluded_from_equal_and_not_equal": true,
+    "operators_1_through_5": {
+      "1": "equal",
+      "2": "not_equal",
+      "3": "greater_than_exclusive",
+      "4": "less_than_exclusive",
+      "5": "inclusive_ordered_range"
+    },
+    "properties": [
+      "stock-date",
+      "date-created",
+      "date-released"
+    ],
+    "reversed_ranges_return_empty": true
+  },
+  "fixture": {
+    "database_sha256": "7ec2225562023db4df8e7cd35c418cbcb9db4b6ae7a447714bea82acc61d12ba",
+    "fingerprint": "9328d718ad717eb154c696339334136037d2f1e52f6d1c8908e58d0c04ccdb87",
+    "profile": "smart-date-matrix",
+    "smart_playlists": 30,
+    "tracks": 8
+  },
+  "format": "rekordbox-link-export-smart-date-matrix-v1",
+  "oracle": {
+    "cases": 30,
+    "golden_sha256": "27c196f58f0df622633f37abc3384a7bab14d22605ac19e1ee4cfec3c8c9535d",
+    "immediate_repeat_verified": true,
+    "suite_sha256": "9362477ee1cd3aef0c51ebdd3bee0a47fde9798f26962e9471d93e34a02c9349"
+  },
+  "rbxport": {
+    "cases": 30,
+    "exact": 9,
+    "exact_cases": [
+      "stock-date-reversed-range",
+      "stock-date-blank-equal",
+      "stock-date-invalid-equal",
+      "date-created-reversed-range",
+      "date-created-blank-equal",
+      "date-created-invalid-equal",
+      "date-released-reversed-range",
+      "date-released-blank-equal",
+      "date-released-invalid-equal"
+    ],
+    "nonempty_oracle_cases_returned_empty": [
+      "stock-date-operator-01",
+      "stock-date-operator-02",
+      "stock-date-operator-03",
+      "stock-date-operator-04",
+      "stock-date-operator-05",
+      "stock-date-blank-not-equal",
+      "stock-date-invalid-not-equal",
+      "date-created-operator-01",
+      "date-created-operator-02",
+      "date-created-operator-03",
+      "date-created-operator-04",
+      "date-created-operator-05",
+      "date-created-blank-not-equal",
+      "date-created-invalid-not-equal",
+      "date-released-operator-01",
+      "date-released-operator-02",
+      "date-released-operator-03",
+      "date-released-operator-04",
+      "date-released-operator-05",
+      "date-released-blank-not-equal",
+      "date-released-invalid-not-equal"
+    ],
+    "same_outcome_total_row_count": 9,
+    "version": "c144f19+tree.80e87ec8aace"
+  }
+}

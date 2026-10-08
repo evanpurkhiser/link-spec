@@ -1,0 +1,43 @@
+{
+  "name": "link-played-link-toggle-post",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "repeat_strategy": "same-process-link-toggle",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 8,
+    "render_arguments": [0, "$total", 12, 1, 0],
+    "read_timeout_ms": 3000
+  },
+  "cases": [
+    {
+      "id": "first-state-after-boundary",
+      "description": "Primed first-track scalar after the control or LINK-toggle boundary",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.first"}],
+      "render": false,
+      "direct_response": true,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "second-state-after-boundary",
+      "description": "Unprimed second-track scalar after the control or LINK-toggle boundary",
+      "request_kind": "0x3b03",
+      "arguments": [{"number": "$fixture.track.second"}],
+      "render": false,
+      "direct_response": true,
+      "expect": {"outcome": "raw_reply"}
+    },
+    {
+      "id": "tracks-after-boundary",
+      "description": "Track rows after the control or LINK-toggle boundary",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    }
+  ]
+}

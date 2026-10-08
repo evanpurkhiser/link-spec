@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "scope": "unpromoted real Rekordbox 7.2.19 malformed-history lifecycle divergence",
+  "pair": "play-blob-content__then__delivery-string-content",
+  "pair_index": 111,
+  "recording_generation": "z32",
+  "recording_service": "codex-rekordbox-song-info-malformed-history-lifecycle-20261004z32.service",
+  "recording_invocation_id": "6fc141d518ed44819dc82908c0ba690d",
+  "observed_at": "2026-10-04T19:26:13Z",
+  "authority_status": "quarantined-unpromoted",
+  "difference": {
+    "case": "second--delivery-string-content",
+    "field": "pre_request_drain",
+    "record": {
+      "outcome": "raw_reply",
+      "decoded_bytes": 32,
+      "message_kind": 16384,
+      "arguments": [8450, 0],
+      "raw_hex": "11872349ae11000000011040000f021400000002060611000021021100000000"
+    },
+    "repeat": {
+      "outcome": "timeout",
+      "error_kind": "WouldBlock",
+      "raw_hex": ""
+    }
+  },
+  "stable_results": {
+    "first": "menu-without-total",
+    "second": "zero-row-menu",
+    "health_probe_total": 13
+  },
+  "sha256": {
+    "record": "a27eacc71f1700bafa9562c1a1416c6101d6da256487d2635d3b1c465e1001e3",
+    "repeat": "cdf7790c10070225b7568b8339393a81db8268796de337cfc94d6dac0dde78ef",
+    "repeat_runner_output": "cdf7790c10070225b7568b8339393a81db8268796de337cfc94d6dac0dde78ef",
+    "record_health_before": "1bf81b8731ab87144c8f3410d761ad0bb4dc36c2cc4015b42f26fc0965691a4f",
+    "record_health_after": "4c86429ee29d8ef9340bd90f595a1728edf89b1b23a3c77c975b66c79ea85363",
+    "repeat_health_before": "fa054720dbca57cf1df6195105defaf7a83e6b584bfab5870a657cd3725e840f"
+  },
+  "recovery_sha256": {
+    "candidate_after_z33": "a27eacc71f1700bafa9562c1a1416c6101d6da256487d2635d3b1c465e1001e3",
+    "z33_repeat": "1a95da9a95a45778363c7405895a233fbe89102905067a0cd3dc6ff4422e0c8b",
+    "z33_repeat_health_before": "74c706a7665bb2a105567a633b4ff81b5dcc2e18066791dc5c9f39e8c0c3bd3a"
+  },
+  "recovery": {
+    "z33": {
+      "service": "codex-rekordbox-song-info-malformed-history-lifecycle-20261004z33.service",
+      "invocation_id": "47a1d6ed66e64530bd96ab6637e1db6c",
+      "strategy": "retain the complete record candidate and run a fresh-fixture cold-process repeat",
+      "result": "second independent drain timeout; candidate remained unpromoted"
+    },
+    "z34": {
+      "service": "codex-rekordbox-song-info-malformed-history-lifecycle-20261004z34.service",
+      "invocation_id": "6ae13e30e7cd40089a42588a9cc1324d",
+      "strategy": "archive the unpromoted candidate and run a wholly fresh record and cold repeat",
+      "result": "fresh record and cold repeat both received the delayed frame; canonical pair promoted",
+      "canonical_golden_sha256": "8473fc54c06a9c8f033f9ad86b0dfe240f08c4322180ddee9576ea80cdba907f",
+      "canonical_receipt_sha256": "fd41b72a0d6937bfa921334ec87e0eaa8aeec41562cbfac70f54a324fef68eac"
+    }
+  }
+}

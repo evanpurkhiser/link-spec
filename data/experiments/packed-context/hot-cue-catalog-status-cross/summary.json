@@ -1,0 +1,94 @@
+{
+  "artifacts": {
+    "cdj-3000-status/extended": {
+      "case_count": 21,
+      "golden_sha256": "c8dfcb07c6d4f0c2522e56b7e5d055e1beb458d68259ead34bccce7316032e86",
+      "normalized_behavior_sha256": "3a1559bf7881415f56bf9db4b44a252de043bbbdf8bbf6b0d9c0800aa0ccc0ce",
+      "suite_sha256": "4b53722bcb2a9c2439384dfcb49596a5a7f32c61517334d61acc5b56d22a395c"
+    },
+    "cdj-3000-status/legacy": {
+      "case_count": 21,
+      "golden_sha256": "21ceefd1908c94912917961a05b3d141c381c56a974c5ad0d63e1e3e488aaebd",
+      "normalized_behavior_sha256": "bfbea6623b0f3cdd0ea5d712412cb12772d36c7a7ae622734d9e1523064db514",
+      "suite_sha256": "75841010aae050f130bf1e3d6bc7621ad7b8c038d22509f6b5e0082792ca74d0"
+    },
+    "xdj-rx3-status/extended": {
+      "case_count": 21,
+      "golden_sha256": "9e3e8b31b64b69ca3a73851c9e99f4306c7e1addbf16568f4256e4104ed81a84",
+      "normalized_behavior_sha256": "3a1559bf7881415f56bf9db4b44a252de043bbbdf8bbf6b0d9c0800aa0ccc0ce",
+      "suite_sha256": "6a480307c5cb029221a03466da1e1906a9bfb392f43461694a2379824e4a2f43"
+    },
+    "xdj-rx3-status/legacy": {
+      "case_count": 21,
+      "golden_sha256": "bff06c742d948ef418c9398209f6ef560f65b8e74d58ae64d0b115ab5107ca7b",
+      "normalized_behavior_sha256": "bfbea6623b0f3cdd0ea5d712412cb12772d36c7a7ae622734d9e1523064db514",
+      "suite_sha256": "5c8f6a7337cb7394de86eb2c290a58dde2c456600bd61e986a46a654745f6045"
+    }
+  },
+  "fixture": {
+    "database_sha256": "066cfa954e435346f80e5abac35dac7631ac4e3023e662d12e0080382f6041dc",
+    "fixture_fingerprint": "718db45aea9624ec7f8c6cd70140ec6ba4b99d0cae4739aa3830ca4d0528b9b7",
+    "profile": "hot-cue-banks"
+  },
+  "matrix": {
+    "cases": 84,
+    "goldens": 4,
+    "independent_fixture_reset_repeats": 4,
+    "models": [
+      "XDJ-RX3",
+      "CDJ-3000"
+    ],
+    "packed_types": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "players": [
+      11,
+      1
+    ],
+    "queries_per_type": [
+      "tree-root",
+      "alpha-tracks",
+      "empty-tracks"
+    ],
+    "setups": [
+      "extended",
+      "legacy"
+    ]
+  },
+  "observations": {
+    "accepted_totals": {
+      "alpha-tracks": 8,
+      "empty-tracks": 0,
+      "tree-root": 3
+    },
+    "accepted_type": 1,
+    "identity_effect": "none after requester-context normalization",
+    "normalized_behavior_sha256": {
+      "extended": "3a1559bf7881415f56bf9db4b44a252de043bbbdf8bbf6b0d9c0800aa0ccc0ce",
+      "legacy": "bfbea6623b0f3cdd0ea5d712412cb12772d36c7a7ae622734d9e1523064db514"
+    },
+    "rejected_header_total": 50,
+    "rejected_render": "32 requested, zero received, WouldBlock",
+    "rejected_types": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "setup_effect": "legacy rows are exact 12-field prefixes of extended rows"
+  },
+  "scope": "real Rekordbox 7.2.19 only; backend comparison is deferred",
+  "sha256": {
+    "fixture_manifest": "54ec3ef97a1f0c01220cb84ff9f16e7ba4567228a775a6e6fbc76812f90663a7",
+    "generator": "73e189483b20fc2c8a89b9eae31e745a82efebb3c5046e3694411f9d2644aed0",
+    "recorder": "14959541e40ede979a2501a490863d58106a286abfbd3c8c95d9915861cac977"
+  }
+}

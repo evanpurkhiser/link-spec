@@ -1,0 +1,40 @@
+{
+  "name": "static-resolved-menu-families-full",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {"id":"play-count-root","description":"Distinct DJPlayCount selector rows","request_kind":"0x100e","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":8,"row_count":8}},
+    {"id":"play-count-zero","description":"Tracks with DJPlayCount zero","request_kind":"0x110e","arguments":[{"number":"$context"},{"number":"$sort"},{"number":0}],"expect":{"outcome":"menu","total":1,"row_count":1,"item_ids":["$fixture.track.first"]}},
+    {"id":"play-count-seven","description":"Tracks with DJPlayCount seven","request_kind":"0x110e","arguments":[{"number":"$context"},{"number":"$sort"},{"number":7}],"expect":{"outcome":"menu","total":1,"row_count":1,"item_ids":["$fixture.track.eighth"]}},
+    {"id":"play-count-byte-boundary","description":"Unsigned one-byte selector boundary","request_kind":"0x110e","arguments":[{"number":"$context"},{"number":"$sort"},{"number":255}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+
+    {"id":"prepare-default","description":"Prepare membership ordered by djmdSongTagList.TrackNo","request_kind":"0x100f","arguments":[{"number":"$context"},{"number":0}],"expect":{"outcome":"menu","total":2,"row_count":2,"item_ids":["$fixture.track.second","$fixture.track.first"]}},
+    {"id":"prepare-key-sort","description":"Prepare membership with explicit Key sort byte","request_kind":"0x100f","arguments":[{"number":"$context"},{"number":12}],"expect":{"outcome":"menu","total":2,"row_count":2}},
+
+    {"id":"date-added-years","description":"Distinct StockDate years","request_kind":"0x1708","arguments":[{"number":"$context"},{"number":"$sort"}],"expect":{"outcome":"menu","total":5,"row_count":5}},
+    {"id":"date-added-months","description":"StockDate months within 2021, including ALL behavior","request_kind":"0x1808","arguments":[{"number":"$context"},{"number":"$sort"},{"number":2021}],"expect":{"outcome":"menu","total":3,"row_count":3,"item_ids":["0xffffffff",2,7]}},
+    {"id":"date-added-days","description":"StockDate days within February 2021","request_kind":"0x1908","arguments":[{"number":"$context"},{"number":"$sort"},{"number":2021},{"number":2}],"expect":{"outcome":"menu","total":2,"row_count":2,"item_ids":["0xffffffff",2]}},
+    {"id":"date-added-days-all-months","description":"Month sentinel behavior for day enumeration","request_kind":"0x1908","arguments":[{"number":"$context"},{"number":"$sort"},{"number":2021},{"number":"0xffffffff"}],"expect":{"outcome":"menu","total":1,"row_count":1,"item_ids":["0xffffffff"]}},
+    {"id":"date-added-track","description":"Exact StockDate year/month/day track filter","request_kind":"0x1a08","arguments":[{"number":"$context"},{"number":"$sort"},{"number":2021},{"number":2},{"number":2}],"expect":{"outcome":"menu","total":1,"row_count":1,"item_ids":["$fixture.track.first"]}},
+    {"id":"date-added-track-day-all","description":"Day sentinel behavior for StockDate track filtering","request_kind":"0x1a08","arguments":[{"number":"$context"},{"number":"$sort"},{"number":2021},{"number":2},{"number":"0xffffffff"}],"expect":{"outcome":"menu","total":1,"row_count":1,"item_ids":["$fixture.track.first"]}},
+
+    {"id":"mytag-root-visible","description":"My Tag root with inclusion flag clear","request_kind":"0x1015","arguments":[{"number":"$context"},{"number":"$sort"},{"number":0},{"number":0}],"expect":{"outcome":"menu","total":2,"row_count":2,"item_ids":["$fixture.mytag.group.genre","$fixture.mytag.group.components"]}},
+    {"id":"mytag-root-selected-only","description":"My Tag root with inclusion flag set","request_kind":"0x1015","arguments":[{"number":"$context"},{"number":"$sort"},{"number":0},{"number":1}],"expect":{"outcome":"error"}},
+    {"id":"mytag-group-visible","description":"Children of a concrete My Tag group","request_kind":"0x1015","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.mytag.group.genre"},{"number":0}],"expect":{"outcome":"menu","total":1,"row_count":1,"item_ids":["$fixture.mytag.warmup"]}},
+    {"id":"mytag-group-selected-only","description":"Concrete group with inclusion flag set","request_kind":"0x1015","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.mytag.group.genre"},{"number":1}],"expect":{"outcome":"error"}},
+    {"id":"mytag-leaf","description":"Leaf tag used as the selector argument","request_kind":"0x1015","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.mytag.warmup"},{"number":0}],"expect":{"outcome":"error"}},
+    {"id":"mytag-on-track-overlap","description":"All tags assigned to the first track","request_kind":"0x1315","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.track.first"}],"expect":{"outcome":"menu","total":4,"row_count":4,"item_ids":["$fixture.mytag.group.genre","$fixture.mytag.warmup","$fixture.mytag.group.components","$fixture.mytag.vocal"]}},
+    {"id":"mytag-on-track-single","description":"Single tag assigned to the second track","request_kind":"0x1315","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.track.second"}],"expect":{"outcome":"menu","total":2,"row_count":2,"item_ids":["$fixture.mytag.group.genre","$fixture.mytag.warmup"]}},
+    {"id":"mytag-on-track-empty","description":"Live track with no tag assignments","request_kind":"0x1315","arguments":[{"number":"$context"},{"number":"$sort"},{"number":"$fixture.track.eighth"}],"expect":{"outcome":"menu","total":0,"row_count":0}},
+    {"id":"mytag-on-track-missing","description":"Unknown content ID","request_kind":"0x1315","arguments":[{"number":"$context"},{"number":"$sort"},{"number":4294967294}],"expect":{"outcome":"menu","total":0,"row_count":0}}
+  ]
+}

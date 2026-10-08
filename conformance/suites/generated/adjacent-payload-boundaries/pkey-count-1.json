@@ -1,0 +1,61 @@
+{
+  "name": "Rekordbox adjacent payload boundary: pkey-count-1",
+  "fixture_profile": "payload-valid",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": []
+  },
+  "cases": [
+    {
+      "id": "kind-2a04",
+      "description": "0x2a04 observes the selected payload boundary profile",
+      "request_kind": "0x2a04",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "kind-2c04--specified-atom",
+      "description": "0x2c04 observes repeated or aligned specified atoms",
+      "request_kind": "0x2c04",
+      "arguments": [
+        {
+          "number": 16843521
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0x59454b50"
+        },
+        {
+          "number": "0x00545845"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

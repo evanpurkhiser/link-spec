@@ -1,0 +1,585 @@
+{
+  "name": "song-info-status-location2-malformed-prefix-same-connection",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 11,
+    "context": "0x0b010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [
+      0,
+      "$total",
+      12,
+      1,
+      0
+    ],
+    "read_timeout_ms": 10000
+  },
+  "cases": [
+    {
+      "id": "play-no-arguments-precursor",
+      "description": "Location-2 prefix: Play Song Info: Display request with no arguments",
+      "request_kind": "0x2102",
+      "arguments": [],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-no-arguments-precursor-delivery-probe",
+      "description": "Location-2 Delivery after play-no-arguments-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-missing-content-precursor",
+      "description": "Location-2 prefix: Play Song Info: Display request with content ID omitted",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-missing-content-precursor-delivery-probe",
+      "description": "Location-2 Delivery after play-missing-content-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-extra-argument-precursor",
+      "description": "Location-2 prefix: Play Song Info: Display request with an extra number",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0xdeadbeef"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-extra-argument-precursor-delivery-probe",
+      "description": "Location-2 Delivery after play-extra-argument-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-string-context-precursor",
+      "description": "Location-2 prefix: Play Song Info: Display request with string context",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "string": "wrong-type"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-string-context-precursor-delivery-probe",
+      "description": "Location-2 Delivery after play-string-context-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-blob-context-precursor",
+      "description": "Location-2 prefix: Play Song Info: Display request with blob context",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "blob_hex": "01020304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-blob-context-precursor-delivery-probe",
+      "description": "Location-2 Delivery after play-blob-context-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-string-content-precursor",
+      "description": "Location-2 prefix: Play Song Info: Display request with string content ID",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "string": "wrong-type"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-string-content-precursor-delivery-probe",
+      "description": "Location-2 Delivery after play-string-content-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-blob-content-precursor",
+      "description": "Location-2 prefix: Play Song Info: Display request with blob content ID",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "blob_hex": "01020304"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-blob-content-precursor-delivery-probe",
+      "description": "Location-2 Delivery after play-blob-content-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-zero-context-precursor",
+      "description": "Location-2 prefix: Play Song Info: Display request with zero context",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": 0
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-zero-context-precursor-delivery-probe",
+      "description": "Location-2 Delivery after play-zero-context-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-alternate-location-precursor",
+      "description": "Location-2 prefix: Play Song Info: Display request at menu location 2",
+      "request_kind": "0x2102",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "play-alternate-location-precursor-delivery-probe",
+      "description": "Location-2 Delivery after play-alternate-location-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-no-arguments-precursor",
+      "description": "Location-2 prefix: Delivery Song Info: Display request with no arguments",
+      "request_kind": "0x2602",
+      "arguments": [],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-no-arguments-precursor-delivery-probe",
+      "description": "Location-2 Delivery after delivery-no-arguments-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-missing-content-precursor",
+      "description": "Location-2 prefix: Delivery Song Info: Display request with content ID omitted",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-missing-content-precursor-delivery-probe",
+      "description": "Location-2 Delivery after delivery-missing-content-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-extra-argument-precursor",
+      "description": "Location-2 prefix: Delivery Song Info: Display request with an extra number",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "number": "$fixture.track.first"
+        },
+        {
+          "number": "0xdeadbeef"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-extra-argument-precursor-delivery-probe",
+      "description": "Location-2 Delivery after delivery-extra-argument-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-string-context-precursor",
+      "description": "Location-2 prefix: Delivery Song Info: Display request with string context",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "string": "wrong-type"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-string-context-precursor-delivery-probe",
+      "description": "Location-2 Delivery after delivery-string-context-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-blob-context-precursor",
+      "description": "Location-2 prefix: Delivery Song Info: Display request with blob context",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "blob_hex": "01020304"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-blob-context-precursor-delivery-probe",
+      "description": "Location-2 Delivery after delivery-blob-context-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-string-content-precursor",
+      "description": "Location-2 prefix: Delivery Song Info: Display request with string content ID",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "string": "wrong-type"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-string-content-precursor-delivery-probe",
+      "description": "Location-2 Delivery after delivery-string-content-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-blob-content-precursor",
+      "description": "Location-2 prefix: Delivery Song Info: Display request with blob content ID",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "$context"
+        },
+        {
+          "blob_hex": "01020304"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    },
+    {
+      "id": "delivery-blob-content-precursor-delivery-probe",
+      "description": "Location-2 Delivery after delivery-blob-content-precursor",
+      "request_kind": "0x2602",
+      "arguments": [
+        {
+          "number": "0x0b020301"
+        },
+        {
+          "number": "$fixture.track.first"
+        }
+      ],
+      "render": false,
+      "fresh_connection": false,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

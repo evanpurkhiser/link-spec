@@ -1,0 +1,136 @@
+{
+  "binary": {
+    "architecture": "x86_64",
+    "path": "../artifacts/rekordbox/7.2.19/extracted/app-root/rekordbox.app/Contents/MacOS/rekordbox",
+    "sha256": "07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244"
+  },
+  "format": "rekordbox-db-interface-selection-audit-v1",
+  "interfaces": {
+    "appsync": {
+      "address": "0x105656d30",
+      "end_address_exclusive": "0x105657058",
+      "exact_object_vptr_reference_count": 2,
+      "object_vptr_address": "0x105656d40",
+      "reference_count": 6,
+      "references": [
+        {
+          "instruction": "lea rax, [rip + 0x46c6b76]",
+          "instruction_address": "0x100f901b3",
+          "owner_address": "0x100f90150",
+          "owner_symbols": [
+            "__ZN20FilterSettingManagerC2ERKN4juce6StringEP9PSvDBMain9RbDBIndex"
+          ],
+          "target_address": "0x105656d30",
+          "vtable_offset": "0x0"
+        },
+        {
+          "instruction": "lea rcx, [rip + 0x46c47d4]",
+          "instruction_address": "0x100f92555",
+          "owner_address": "0x100f92530",
+          "owner_symbols": [
+            "__ZN20FilterSettingManager10setDBIndexE9RbDBIndex"
+          ],
+          "target_address": "0x105656d30",
+          "vtable_offset": "0x0"
+        },
+        {
+          "instruction": "lea rax, [rip + 0x46c3f9e]",
+          "instruction_address": "0x100f92d8b",
+          "owner_address": "0x100f92d30",
+          "owner_symbols": [
+            "__ZN11TrackFilterC2E9RbDBIndexRKN4juce10OwnedArrayI15FilterConditionNS1_20DummyCriticalSectionEEEP9PSvDBMain"
+          ],
+          "target_address": "0x105656d30",
+          "vtable_offset": "0x0"
+        },
+        {
+          "instruction": "lea rax, [rip + 0x3f7a045]",
+          "instruction_address": "0x1016dccf4",
+          "owner_address": "0x1016dccf0",
+          "owner_symbols": [
+            "__ZN14PSvAppSyncDBIFD1Ev"
+          ],
+          "target_address": "0x105656d40",
+          "vtable_offset": "0x10"
+        },
+        {
+          "instruction": "lea rax, [rip + 0x3f7a020]",
+          "instruction_address": "0x1016dcd19",
+          "owner_address": "0x1016dcd10",
+          "owner_symbols": [
+            "__ZN14PSvAppSyncDBIFD0Ev"
+          ],
+          "target_address": "0x105656d40",
+          "vtable_offset": "0x10"
+        },
+        {
+          "instruction": "lea rcx, [rip + 0x3136621]",
+          "instruction_address": "0x102520708",
+          "owner_address": "0x102520680",
+          "owner_symbols": [
+            "__ZN9PSvDBMain15SetSharedDBInfoEbPKhS1_jS1_"
+          ],
+          "target_address": "0x105656d30",
+          "vtable_offset": "0x0"
+        }
+      ],
+      "size": 808,
+      "symbol": "__ZTV14PSvAppSyncDBIF",
+      "vtable_base_reference_count": 4
+    },
+    "master": {
+      "address": "0x1056f54a8",
+      "end_address_exclusive": "0x1056f57d0",
+      "exact_object_vptr_reference_count": 0,
+      "object_vptr_address": "0x1056f54b8",
+      "reference_count": 3,
+      "references": [
+        {
+          "instruction": "lea rax, [rip + 0x47652b4]",
+          "instruction_address": "0x100f901ed",
+          "owner_address": "0x100f90150",
+          "owner_symbols": [
+            "__ZN20FilterSettingManagerC2ERKN4juce6StringEP9PSvDBMain9RbDBIndex"
+          ],
+          "target_address": "0x1056f54a8",
+          "vtable_offset": "0x0"
+        },
+        {
+          "instruction": "lea rcx, [rip + 0x4762f0b]",
+          "instruction_address": "0x100f92596",
+          "owner_address": "0x100f92530",
+          "owner_symbols": [
+            "__ZN20FilterSettingManager10setDBIndexE9RbDBIndex"
+          ],
+          "target_address": "0x1056f54a8",
+          "vtable_offset": "0x0"
+        },
+        {
+          "instruction": "lea rax, [rip + 0x47626cc]",
+          "instruction_address": "0x100f92dd5",
+          "owner_address": "0x100f92d30",
+          "owner_symbols": [
+            "__ZN11TrackFilterC2E9RbDBIndexRKN4juce10OwnedArrayI15FilterConditionNS1_20DummyCriticalSectionEEEP9PSvDBMain"
+          ],
+          "target_address": "0x1056f54a8",
+          "vtable_offset": "0x0"
+        }
+      ],
+      "size": 808,
+      "symbol": "__ZTV13PSvMasterDBIF",
+      "vtable_base_reference_count": 3
+    }
+  },
+  "method": {
+    "limits": [
+      "computed addresses",
+      "non-LEA references",
+      "references originating outside __text",
+      "arm64-only behavior",
+      "runtime writes performed by external or dynamically loaded code"
+    ],
+    "object_vptr_offset": "Itanium ABI vtable + 0x10",
+    "owner_attribution": "nearest preceding address-bearing symbol in __text",
+    "reference_kind": "validated RIP-relative LEA operands in the complete __text section"
+  }
+}

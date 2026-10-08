@@ -1,0 +1,29 @@
+## __ZN9PSvDBMain18GetListBufContentsEP16_struct_dbsm_msg
+0x00100fa116d  cmp       dword ptr [r14 + 0x48], 0
+0x00100fa1172  setne     dl
+0x00100fa1175  mov       ecx, dword ptr [r14 + 0x50]
+0x00100fa1181  mov       dword ptr [rbp - 0x2c], edx
+0x00100fa1188  mov       qword ptr [rbp - 0x78], rcx
+0x00100fa131f  movzx     ecx, byte ptr [rbp - 0x2c]
+0x00100fa133f  push      qword ptr [rbp - 0x78]
+0x00100fa1342  push      r12
+0x00100fa1347  call      0x100f9fe40
+
+## __ZN9PSvDBMain20GetListBufRowContentEhh17ENUM_CATEGORYKINDPvPmbjP18RetListBufParamExt
+0x00100fa093a  mov       r12d, dword ptr [rbp + 0x18]
+0x00100fa093e  mov       r13b, byte ptr [rbp + 0x10]
+0x00100fa0945  test      r12d, r12d
+0x00100fa094a  test      r13b, r13b
+0x00100fa09c9  test      r13b, r13b
+0x00100fa09d2  test      r12d, r12d
+0x00100fa09d5  cmovne    r14d, r12d
+0x00100fa09d9  movsx     edi, r14b
+0x00100fa09dd  call      0x1004dbb90
+0x00100fa09e2  test      r14d, r14d
+0x00100fa0a85  mov       edi, r14d
+0x00100fa0a88  call      0x1016b7bc0
+
+## __Z20Get_SubCategoryValuejN4juce3varERhRjPPt
+0x001016b7bec  add       ebx, -2
+0x001016b7bef  cmp       ebx, 0xf
+0x001016b7bf2  ja        0x1016b80fc

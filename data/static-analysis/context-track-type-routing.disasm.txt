@@ -1,0 +1,122 @@
+## __ZN9PSvDBMain11OnClientReqEP16_struct_dbsm_msg | 
+address=0x102521340 size=0x1c0
+0x0102521340  push      rbp
+0x0102521341  mov       rbp, rsp
+0x0102521344  push      r15
+0x0102521346  push      r14
+0x0102521348  push      rbx
+0x0102521349  push      rax
+0x010252134a  mov       r14, rdi
+0x010252134d  mov       rax, qword ptr [rsi + 0x20]
+0x0102521351  test      rax, rax
+0x0102521354  je        0x1025213ec
+0x010252135a  cmp       dword ptr [rax + 0x90], 0x872349ae
+0x0102521364  jne       0x1025213ec
+0x010252136a  mov       rbx, rsi
+0x010252136d  mov       ecx, dword ptr [rax]
+0x010252136f  mov       dword ptr [rsi + 0x14], ecx
+0x0102521372  mov       word ptr [rsi + 0x18], 0
+0x0102521378  movsx     ecx, word ptr [rax + 4]
+0x010252137c  sar       ecx, 0xc
+0x010252137f  cmp       ecx, 3
+0x0102521382  je        0x10252142e
+0x0102521388  cmp       ecx, 2
+0x010252138b  je        0x102521443
+0x0102521391  cmp       ecx, 1
+0x0102521394  jne       0x102521458
+0x010252139a  movzx     eax, byte ptr [rax + 0x18]
+0x010252139e  add       eax, -3
+0x01025213a1  cmp       eax, 1
+0x01025213a4  ja        0x102521489
+0x01025213aa  xor       r15d, r15d
+0x01025213ad  test      byte ptr [r14 + 0x5c8], 1
+0x01025213b5  je        0x1025214aa
+0x01025213bb  mov       rdi, qword ptr [r14 + 0x5c0]
+0x01025213c2  test      rdi, rdi
+0x01025213c5  je        0x1025214aa
+0x01025213cb  mov       dword ptr [rbp - 0x20], 0x1010334
+0x01025213d2  mov       word ptr [rbp - 0x1c], 1
+0x01025213d8  mov       rax, qword ptr [rdi]
+0x01025213db  xor       r15d, r15d
+0x01025213de  lea       rdx, [rbp - 0x20]
+0x01025213e2  xor       esi, esi
+0x01025213e4  call      qword ptr [rax + 0x10]
+0x01025213e7  jmp       0x1025214aa
+0x01025213ec  xor       r15d, r15d
+0x01025213ef  test      byte ptr [r14 + 0x5c8], 1
+0x01025213f7  je        0x1025214ef
+0x01025213fd  mov       rdi, qword ptr [r14 + 0x5c0]
+0x0102521404  test      rdi, rdi
+0x0102521407  je        0x1025214ef
+0x010252140d  mov       dword ptr [rbp - 0x20], 0x1010334
+0x0102521414  mov       word ptr [rbp - 0x1c], 0
+0x010252141a  mov       rax, qword ptr [rdi]
+0x010252141d  xor       r15d, r15d
+0x0102521420  lea       rdx, [rbp - 0x20]
+0x0102521424  xor       esi, esi
+0x0102521426  call      qword ptr [rax + 0x10]
+0x0102521429  jmp       0x1025214ef
+0x010252142e  mov       rdi, r14
+0x0102521431  mov       rsi, rbx
+0x0102521434  call      0x101d2fd30  ; __ZN9PSvDBMain16OnOtherClientCmdEP16_struct_dbsm_msg |
+0x0102521439  mov       r15d, eax
+0x010252143c  cmp       eax, -2
+0x010252143f  je        0x10252149c
+0x0102521441  jmp       0x1025214aa
+0x0102521443  mov       rdi, r14
+0x0102521446  mov       rsi, rbx
+0x0102521449  call      0x101d2e6b0  ; __ZN9PSvDBMain16OnMAnlzClientCmdEP16_struct_dbsm_msg |
+0x010252144e  mov       r15d, eax
+0x0102521451  cmp       eax, -2
+0x0102521454  je        0x10252149c
+0x0102521456  jmp       0x1025214aa
+0x0102521458  test      byte ptr [r14 + 0x5c8], 1
+0x0102521460  je        0x10252149c
+0x0102521462  mov       rdi, qword ptr [r14 + 0x5c0]
+0x0102521469  test      rdi, rdi
+0x010252146c  je        0x10252149c
+0x010252146e  mov       dword ptr [rbp - 0x20], 0x1010334
+0x0102521475  mov       word ptr [rbp - 0x1c], 4
+0x010252147b  mov       rax, qword ptr [rdi]
+0x010252147e  lea       rdx, [rbp - 0x20]
+0x0102521482  xor       esi, esi
+0x0102521484  call      qword ptr [rax + 0x10]
+0x0102521487  jmp       0x10252149c
+0x0102521489  mov       rdi, r14
+0x010252148c  mov       rsi, rbx
+0x010252148f  call      0x101d2bb80  ; __ZN9PSvDBMain15OnListClientCmdEP16_struct_dbsm_msg |
+0x0102521494  mov       r15d, eax
+0x0102521497  cmp       eax, -2
+0x010252149a  jne       0x1025214aa
+0x010252149c  mov       rdi, r14
+0x010252149f  mov       rsi, rbx
+0x01025214a2  call      0x102521500  ; __ZN9PSvDBMain18OnUnknownClientCmdEP16_struct_dbsm_msg |
+0x01025214a7  mov       r15d, eax
+0x01025214aa  mov       al, byte ptr [rbx + 0x13]
+0x01025214ad  cmp       al, 4
+0x01025214af  je        0x1025214ef
+0x01025214b1  cmp       al, 6
+0x01025214b3  je        0x1025214e4
+0x01025214b5  test      byte ptr [r14 + 0x5c8], 1
+0x01025214bd  je        0x1025214e4
+0x01025214bf  mov       rdi, qword ptr [r14 + 0x5c0]
+0x01025214c6  test      rdi, rdi
+0x01025214c9  je        0x1025214e4
+0x01025214cb  mov       dword ptr [rbp - 0x20], 0x1010334
+0x01025214d2  mov       word ptr [rbp - 0x1c], 5
+0x01025214d8  mov       rax, qword ptr [rdi]
+0x01025214db  lea       rdx, [rbp - 0x20]
+0x01025214df  xor       esi, esi
+0x01025214e1  call      qword ptr [rax + 0x10]
+0x01025214e4  mov       rdi, r14
+0x01025214e7  mov       rsi, rbx
+0x01025214ea  call      0x1025203d0  ; __ZN9PSvDBMain13DeleteMessageEP16_struct_dbsm_msg |
+0x01025214ef  mov       eax, r15d
+0x01025214f2  add       rsp, 8
+0x01025214f6  pop       rbx
+0x01025214f7  pop       r14
+0x01025214f9  pop       r15
+0x01025214fb  pop       rbp
+0x01025214fc  ret
+0x01025214fd  nop       dword ptr [rax]
+

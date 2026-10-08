@@ -1,0 +1,33 @@
+{
+  "name": "Rekordbox adjacent payload malformed kind-2604--string-context",
+  "fixture_profile": "full",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 1500,
+    "render_arguments": []
+  },
+  "cases": [
+    {
+      "id": "kind-2604--string-context",
+      "description": "0x2604 with a string context",
+      "request_kind": "0x2604",
+      "arguments": [
+        {
+          "string": "wrong-type"
+        }
+      ],
+      "direct_response": true,
+      "render": false,
+      "fresh_connection": true,
+      "expect": {
+        "outcome": "any"
+      }
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "format": 1,
+  "scope": "post-lifecycle real-Rekordbox authority queue arming",
+  "recorded_at": "2026-10-04T13:51:43Z",
+  "lifecycle_unit": "codex-rekordbox-song-info-malformed-history-lifecycle-20261004z28.service",
+  "lifecycle_invocation_id": "13fffcb667d74723ac33dd782f2731b3",
+  "launcher_sha256": "3af577016426f3bed143cbcc252ae8cb27a446b9cbea216ec3c968562f805b3e",
+  "stage_count": 18,
+  "all_active": true,
+  "stages": [
+    {
+      "unit": "codex-rekordbox-adjacent-success-status-20261003aa18.service",
+      "runtime_max": "144h",
+      "script": "conformance/run_adjacent_payload_success_status_after_history.sh",
+      "description": "adjacent payload status/setup authority",
+      "invocation_id": "a9b766de7a114cebbe8d2ec2a14ce941",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-adjacent-boundaries-20261003ab18.service",
+      "runtime_max": "192h",
+      "script": "conformance/run_adjacent_payload_boundaries_after_status.sh",
+      "description": "adjacent payload parser boundaries",
+      "invocation_id": "e0ddb864c6ab402ab71eeffa6ff37c73",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-adjacent-cues-20261003ac18.service",
+      "runtime_max": "216h",
+      "script": "conformance/run_adjacent_payload_cues_after_boundaries.sh",
+      "description": "adjacent cue payload authority",
+      "invocation_id": "5456687faf9d4623a4295b8e240749d7",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-xdj-rr-location9-20261003ad18.service",
+      "runtime_max": "240h",
+      "script": "conformance/run_xdj_rr_location9_after_cues.sh",
+      "description": "XDJ-RR location-9 authority",
+      "invocation_id": "ae56edff3f2c405c978c238c8fd8fa47",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-xdj-rr-old-key-20261003ae18.service",
+      "runtime_max": "264h",
+      "script": "conformance/run_xdj_rr_old_key_after_location9.sh",
+      "description": "XDJ-RR old-Key and CueTrack authority",
+      "invocation_id": "27053b42e0db4c0d96de4019c24318b9",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-xdj-xz-corroborating-20261003af18.service",
+      "runtime_max": "288h",
+      "script": "conformance/run_xdj_xz_corroborating_status_after_old_key.sh",
+      "description": "corroborating XDJ-XZ status matrix",
+      "invocation_id": "5fbf3a53df5b4b93878c2d215c77db47",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-hot-cue-buffer-link-toggle-20261003ag18.service",
+      "runtime_max": "336h",
+      "script": "conformance/run_hot_cue_buffer_link_toggle_after_xdj_xz.sh",
+      "description": "Hot Cue buffer LINK-toggle lifecycle",
+      "invocation_id": "26516e25e465427dbe43510c365ff529",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-link-played-state-20261003ah18.service",
+      "runtime_max": "360h",
+      "script": "conformance/run_link_played_state_after_buffer_toggle.sh",
+      "description": "Link-played transition authority",
+      "invocation_id": "a4a65eb55c7e41b690e50a061718c5cf",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-link-played-persistence-20261003ai18.service",
+      "runtime_max": "384h",
+      "script": "conformance/run_link_played_persistence_after_transition.sh",
+      "description": "Link-played restart persistence",
+      "invocation_id": "0fb94122f034429988245fe547d2d774",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-link-played-link-toggle-20261003aj18.service",
+      "runtime_max": "408h",
+      "script": "conformance/run_link_played_link_toggle_after_persistence.sh",
+      "description": "Link-played LINK-toggle refresh",
+      "invocation_id": "cd2777c20c6e4ea7a7e41f45d2605dc4",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-link-played-multiplayer-20261003ak18.service",
+      "runtime_max": "432h",
+      "script": "conformance/run_link_played_multiplayer_after_link_toggle.sh",
+      "description": "two-player Link-played ownership",
+      "invocation_id": "2e5c3cbf411e489590e4ad4cb4dc4f31",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-sort-secondary-render-5-20261003al18.service",
+      "runtime_max": "456h",
+      "script": "conformance/run_sort_secondary_render_5_after_multiplayer.sh",
+      "description": "five-argument active-sort rendering",
+      "invocation_id": "4fceee8a66154c92af7ba0325dbf1d9a",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-sort-secondary-render-7-20261003am18.service",
+      "runtime_max": "480h",
+      "script": "conformance/run_sort_secondary_render_7_after_render_5.sh",
+      "description": "seven-argument active-sort rendering",
+      "invocation_id": "31aab6dc5b464bc994660b812224f179",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-render-arity-boundaries-20261003an18.service",
+      "runtime_max": "504h",
+      "script": "conformance/run_render_arity_boundaries_after_render_7.sh",
+      "description": "track render arity boundaries",
+      "invocation_id": "2d64e7edf95445eb84144c6fb60ee117",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-render-arity-underflow-20261003ao18.service",
+      "runtime_max": "528h",
+      "script": "conformance/run_render_arity_underflow_after_boundaries.sh",
+      "description": "track render arity underflow",
+      "invocation_id": "b45a5ec5a1e94f049378dbe56bb76103",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-render-argument-types-20261003ap18.service",
+      "runtime_max": "552h",
+      "script": "conformance/run_render_argument_type_matrix_after_underflow.sh",
+      "description": "track render argument types",
+      "invocation_id": "e93bad4327754532bc449db9671584bf",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-render-numeric-fields-20261003aq18.service",
+      "runtime_max": "576h",
+      "script": "conformance/run_render_numeric_fields_after_argument_types.sh",
+      "description": "track render numeric fields",
+      "invocation_id": "49e37f0d7e6a4bc6b7195193d60baf93",
+      "active": true
+    },
+    {
+      "unit": "codex-rekordbox-render-override-controls-20261003ar18.service",
+      "runtime_max": "600h",
+      "script": "conformance/run_render_override_controls_after_numeric_fields.sh",
+      "description": "track render override controls",
+      "invocation_id": "63a9489fba344a2a939f19b0b1976999",
+      "active": true
+    }
+  ]
+}

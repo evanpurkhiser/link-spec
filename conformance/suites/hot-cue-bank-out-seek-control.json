@@ -1,0 +1,29 @@
+{
+  "name": "hot-cue-bank-out-seek-control",
+  "fixture_profile": "hot-cue-bank-extended-fields",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "out-seek",
+      "description": "Nonempty outbound seek triple without inbound validity",
+      "request_kind": "0x2301",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.extended_out_seek"},
+        {"number": 1}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

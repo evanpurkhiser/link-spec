@@ -1,0 +1,180 @@
+## _DevResetSubColumn | 
+address=0x100736490 size=0x70
+0x0100736490  push      rbp
+0x0100736491  mov       rbp, rsp
+0x0100736494  push      r14
+0x0100736496  push      rbx
+0x0100736497  sub       rsp, 0x20
+0x010073649b  mov       qword ptr [rbp - 0x30], 0
+0x01007364a3  mov       dword ptr [rbp - 0x20], 0
+0x01007364aa  call      0x10328a790  ; _TEGetCurrentDB
+0x01007364af  mov       qword ptr [rbp - 0x18], rax
+0x01007364b3  lea       rdi, [rbp - 0x30]
+0x01007364b7  call      0x10328b650  ; __epl_Start_Crit
+0x01007364bc  mov       rdi, qword ptr [rbp - 0x18]
+0x01007364c0  test      rdi, rdi
+0x01007364c3  je        0x1007364ce
+0x01007364c5  lea       rsi, [rbp - 0x30]
+0x01007364c9  call      0x10324eed0  ; _TESetErrorCallbackUserData
+0x01007364ce  lea       r14, [rbp - 0x30]
+0x01007364d2  mov       rdi, r14
+0x01007364d5  call      0x100738220  ; _DEV_MODULE6_DEVRESETSUBCOLUMN |
+0x01007364da  mov       ebx, eax
+0x01007364dc  xor       eax, eax
+0x01007364de  cmp       dword ptr [rbp - 0x30], 0
+0x01007364e2  cmovne    ebx, eax
+0x01007364e5  mov       rdi, r14
+0x01007364e8  call      0x10328b6a0  ; __epl_End_Crit
+0x01007364ed  movsx     eax, bx
+0x01007364f0  add       rsp, 0x20
+0x01007364f4  pop       rbx
+0x01007364f5  pop       r14
+0x01007364f7  pop       rbp
+0x01007364f8  ret
+0x01007364f9  nop       dword ptr [rax]
+
+## _DevSetSubColumn | 
+address=0x100736500 size=0x80
+0x0100736500  push      rbp
+0x0100736501  mov       rbp, rsp
+0x0100736504  push      r15
+0x0100736506  push      r14
+0x0100736508  push      rbx
+0x0100736509  sub       rsp, 0x28
+0x010073650d  mov       r14, rdi
+0x0100736510  mov       qword ptr [rbp - 0x38], 0
+0x0100736518  mov       dword ptr [rbp - 0x28], 0
+0x010073651f  call      0x10328a790  ; _TEGetCurrentDB
+0x0100736524  mov       qword ptr [rbp - 0x20], rax
+0x0100736528  lea       rdi, [rbp - 0x38]
+0x010073652c  call      0x10328b650  ; __epl_Start_Crit
+0x0100736531  mov       rdi, qword ptr [rbp - 0x20]
+0x0100736535  test      rdi, rdi
+0x0100736538  je        0x100736543
+0x010073653a  lea       rsi, [rbp - 0x38]
+0x010073653e  call      0x10324eed0  ; _TESetErrorCallbackUserData
+0x0100736543  lea       r15, [rbp - 0x38]
+0x0100736547  mov       rdi, r15
+0x010073654a  mov       rsi, r14
+0x010073654d  call      0x1007374a0  ; _DEV_MODULE6_DEVSETSUBCOLUMN |
+0x0100736552  mov       ebx, eax
+0x0100736554  xor       eax, eax
+0x0100736556  cmp       dword ptr [rbp - 0x38], 0
+0x010073655a  cmovne    ebx, eax
+0x010073655d  mov       rdi, r15
+0x0100736560  call      0x10328b6a0  ; __epl_End_Crit
+0x0100736565  movsx     eax, bx
+0x0100736568  add       rsp, 0x28
+0x010073656c  pop       rbx
+0x010073656d  pop       r14
+0x010073656f  pop       r15
+0x0100736571  pop       rbp
+0x0100736572  ret
+0x0100736573  nop       word ptr cs:[rax + rax]
+
+## __Z16DevSetSubColumn_l | 
+address=0x1013cb250 size=0x10
+0x01013cb250  push      rbp
+0x01013cb251  mov       rbp, rsp
+0x01013cb254  pop       rbp
+0x01013cb255  jmp       0x100736500  ; _DevSetSubColumn |
+0x01013cb25a  nop       word ptr [rax + rax]
+
+## __Z18DevResetSubColumn_v | 
+address=0x1013cb260 size=0x10
+0x01013cb260  push      rbp
+0x01013cb261  mov       rbp, rsp
+0x01013cb264  pop       rbp
+0x01013cb265  jmp       0x100736490  ; _DevResetSubColumn |
+0x01013cb26a  nop       word ptr [rax + rax]
+
+## __Z16MstSetSubColumn_l | 
+address=0x1013cba00 size=0x10
+0x01013cba00  push      rbp
+0x01013cba01  mov       rbp, rsp
+0x01013cba04  pop       rbp
+0x01013cba05  jmp       0x101adf4c0  ; _MstSetSubColumn |
+0x01013cba0a  nop       word ptr [rax + rax]
+
+## __Z18MstResetSubColumn_v | 
+address=0x1013cba10 size=0x10
+0x01013cba10  push      rbp
+0x01013cba11  mov       rbp, rsp
+0x01013cba14  pop       rbp
+0x01013cba15  jmp       0x101adf450  ; _MstResetSubColumn |
+0x01013cba1a  nop       word ptr [rax + rax]
+
+## _MstResetSubColumn | 
+address=0x101adf450 size=0x70
+0x0101adf450  push      rbp
+0x0101adf451  mov       rbp, rsp
+0x0101adf454  push      r14
+0x0101adf456  push      rbx
+0x0101adf457  sub       rsp, 0x20
+0x0101adf45b  mov       qword ptr [rbp - 0x30], 0
+0x0101adf463  mov       dword ptr [rbp - 0x20], 0
+0x0101adf46a  call      0x10328a790  ; _TEGetCurrentDB
+0x0101adf46f  mov       qword ptr [rbp - 0x18], rax
+0x0101adf473  lea       rdi, [rbp - 0x30]
+0x0101adf477  call      0x10328b650  ; __epl_Start_Crit
+0x0101adf47c  mov       rdi, qword ptr [rbp - 0x18]
+0x0101adf480  test      rdi, rdi
+0x0101adf483  je        0x101adf48e
+0x0101adf485  lea       rsi, [rbp - 0x30]
+0x0101adf489  call      0x10324eed0  ; _TESetErrorCallbackUserData
+0x0101adf48e  lea       r14, [rbp - 0x30]
+0x0101adf492  mov       rdi, r14
+0x0101adf495  call      0x101ae0e90  ; _MAS_MODULE6_MSTRESETSUBCOLUMN |
+0x0101adf49a  mov       ebx, eax
+0x0101adf49c  xor       eax, eax
+0x0101adf49e  cmp       dword ptr [rbp - 0x30], 0
+0x0101adf4a2  cmovne    ebx, eax
+0x0101adf4a5  mov       rdi, r14
+0x0101adf4a8  call      0x10328b6a0  ; __epl_End_Crit
+0x0101adf4ad  movsx     eax, bx
+0x0101adf4b0  add       rsp, 0x20
+0x0101adf4b4  pop       rbx
+0x0101adf4b5  pop       r14
+0x0101adf4b7  pop       rbp
+0x0101adf4b8  ret
+0x0101adf4b9  nop       dword ptr [rax]
+
+## _MstSetSubColumn | 
+address=0x101adf4c0 size=0x80
+0x0101adf4c0  push      rbp
+0x0101adf4c1  mov       rbp, rsp
+0x0101adf4c4  push      r15
+0x0101adf4c6  push      r14
+0x0101adf4c8  push      rbx
+0x0101adf4c9  sub       rsp, 0x28
+0x0101adf4cd  mov       r14, rdi
+0x0101adf4d0  mov       qword ptr [rbp - 0x38], 0
+0x0101adf4d8  mov       dword ptr [rbp - 0x28], 0
+0x0101adf4df  call      0x10328a790  ; _TEGetCurrentDB
+0x0101adf4e4  mov       qword ptr [rbp - 0x20], rax
+0x0101adf4e8  lea       rdi, [rbp - 0x38]
+0x0101adf4ec  call      0x10328b650  ; __epl_Start_Crit
+0x0101adf4f1  mov       rdi, qword ptr [rbp - 0x20]
+0x0101adf4f5  test      rdi, rdi
+0x0101adf4f8  je        0x101adf503
+0x0101adf4fa  lea       rsi, [rbp - 0x38]
+0x0101adf4fe  call      0x10324eed0  ; _TESetErrorCallbackUserData
+0x0101adf503  lea       r15, [rbp - 0x38]
+0x0101adf507  mov       rdi, r15
+0x0101adf50a  mov       rsi, r14
+0x0101adf50d  call      0x101ae0110  ; _MAS_MODULE6_MSTSETSUBCOLUMN |
+0x0101adf512  mov       ebx, eax
+0x0101adf514  xor       eax, eax
+0x0101adf516  cmp       dword ptr [rbp - 0x38], 0
+0x0101adf51a  cmovne    ebx, eax
+0x0101adf51d  mov       rdi, r15
+0x0101adf520  call      0x10328b6a0  ; __epl_End_Crit
+0x0101adf525  movsx     eax, bx
+0x0101adf528  add       rsp, 0x28
+0x0101adf52c  pop       rbx
+0x0101adf52d  pop       r14
+0x0101adf52f  pop       r15
+0x0101adf531  pop       rbp
+0x0101adf532  ret
+0x0101adf533  nop       word ptr cs:[rax + rax]
+

@@ -1,0 +1,1538 @@
+## _DEV_MODULE6_DEVSETSUBCOLUMN | 
+address=0x1007374a0 size=0x940
+0x01007374a0  push      rbp
+0x01007374a1  mov       rbp, rsp
+0x01007374a4  push      r15
+0x01007374a6  push      r14
+0x01007374a8  push      r13
+0x01007374aa  push      r12
+0x01007374ac  push      rbx
+0x01007374ad  sub       rsp, 0x138
+0x01007374b4  mov       r12, rsi
+0x01007374b7  mov       r14, rdi
+0x01007374ba  mov       rax, qword ptr [rip + 0x4dc5ab7]
+0x01007374c1  mov       rax, qword ptr [rax]
+0x01007374c4  mov       qword ptr [rbp - 0x30], rax
+0x01007374c8  call      0x10328b650  ; __epl_Start_Crit
+0x01007374cd  lea       rax, [rip + 0x53b582e]  ; _MAS_MODULE1_EDM_FAIL
+0x01007374d4  movzx     ebx, word ptr [rax]
+0x01007374d7  mov       rdi, r14
+0x01007374da  call      0x100c6f5d0  ; _MAS_MODULE2_SETAUTOCOMMITOFF_IFON |
+0x01007374df  mov       byte ptr [rbp - 0xe1], al
+0x01007374e5  cmp       dword ptr [r14], 0
+0x01007374e9  jne       0x100737615
+0x01007374ef  lea       rdi, [rip + 0x507570a]  ; __epl_string_header_67
+0x01007374f6  lea       r9, [rbp - 0x110]
+0x01007374fd  xor       esi, esi
+0x01007374ff  xor       edx, edx
+0x0100737501  xor       ecx, ecx
+0x0100737503  xor       r8d, r8d
+0x0100737506  call      0x1015f3280  ; __epl_DJDBSORT_opencfun |
+0x010073750b  cmp       dword ptr [r14], 0
+0x010073750f  jne       0x100737615
+0x0100737515  mov       rdi, qword ptr [rbp - 0x110]
+0x010073751c  lea       rdx, [rip + 0x5110675]  ; _epl_sort_positions_107445
+0x0100737523  lea       rcx, [rip + 0x5110672]  ; _epl_sort_directions_107446
+0x010073752a  mov       esi, 1
+0x010073752f  call      0x10324f300  ; _TETableSort
+0x0100737534  cmp       dword ptr [r14], 0
+0x0100737538  jne       0x100737615
+0x010073753e  vmovups   xmm0, xmmword ptr [rbp - 0x110]
+0x0100737546  vmovaps   xmmword ptr [rbp - 0x140], xmm0
+0x010073754e  mov       edi, 0x30
+0x0100737553  call      0x10328b340  ; _edb_alloc
+0x0100737558  mov       qword ptr [rax], r14
+0x010073755b  vmovaps   xmm0, xmmword ptr [rbp - 0x140]
+0x0100737563  vmovups   xmmword ptr [rax + 8], xmm0
+0x0100737568  mov       word ptr [rax + 0x18], 0xffff
+0x010073756e  cmp       dword ptr [r14], 0
+0x0100737572  jne       0x100737615
+0x0100737578  mov       r13, rax
+0x010073757b  mov       edi, 0x78
+0x0100737580  call      0x10328b340  ; _edb_alloc
+0x0100737585  mov       r15, rax
+0x0100737588  mov       qword ptr [rax], r14
+0x010073758b  mov       edi, 0x10
+0x0100737590  call      0x10328b340  ; _edb_alloc
+0x0100737595  mov       rcx, qword ptr [r15]
+0x0100737598  mov       qword ptr [rax], rcx
+0x010073759b  mov       qword ptr [r15 + 0x18], 0
+0x01007375a3  lea       rcx, [rip + 0x836]  ; _DEVSETSUBCOLUMN_INTERNAL__573 |
+0x01007375aa  mov       qword ptr [r15 + 8], rcx
+0x01007375ae  mov       qword ptr [r15 + 0x10], rax
+0x01007375b2  lea       rax, [rip + 0x144c7]  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x01007375b9  mov       qword ptr [r15 + 0x20], rax
+0x01007375bd  mov       qword ptr [r15 + 0x28], r13
+0x01007375c1  mov       qword ptr [r15 + 0x30], 0
+0x01007375c9  lea       rax, [rip + 0x14530]  ; _TOTEROWSTREAM_INTERNAL__3 |
+0x01007375d0  mov       qword ptr [r15 + 0x38], rax
+0x01007375d4  mov       qword ptr [r15 + 0x40], r13
+0x01007375d8  mov       qword ptr [r15 + 0x48], 0
+0x01007375e0  lea       rax, [rip + 0x145b9]  ; _TOTEROWSTREAM_INTERNAL__4 |
+0x01007375e7  mov       qword ptr [r15 + 0x50], rax
+0x01007375eb  mov       qword ptr [r15 + 0x58], r13
+0x01007375ef  mov       qword ptr [r15 + 0x60], 0
+0x01007375f7  mov       byte ptr [r15 + 0x68], 1
+0x01007375fc  mov       qword ptr [r15], r14
+0x01007375ff  mov       qword ptr [r13], r14
+0x0100737603  mov       rdi, r13
+0x0100737606  call      0x10074ba80  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x010073760b  cmp       dword ptr [r14], 0
+0x010073760f  je        0x1007376d7
+0x0100737615  mov       r12, qword ptr [r14]
+0x0100737618  mov       dword ptr [r14], 0
+0x010073761f  mov       rdi, r12
+0x0100737622  shr       rdi, 0x20
+0x0100737626  neg       edi
+0x0100737628  call      0x10328ba10  ; __epl_TE_IntToChar
+0x010073762d  mov       rdi, rax
+0x0100737630  mov       esi, 1
+0x0100737635  call      0x10327bcc0  ; _TEStringHdrAdd
+0x010073763a  mov       rbx, rax
+0x010073763d  mov       rsi, qword ptr [rax + 8]
+0x0100737641  lea       rdi, [rip + 0x50755e8]  ; __epl_string_127; 'SDevSetSubColumn failed - SQL Error Code WDevResetSubColumn failed - SQL Error Code '
+0x0100737648  call      0x10327f960  ; _TEStringConcat
+0x010073764d  mov       rdi, rax
+0x0100737650  mov       esi, 1
+0x0100737655  call      0x10327bcc0  ; _TEStringHdrAdd
+0x010073765a  mov       r15, rax
+0x010073765d  lea       r13, [rip + 0x53b56ac]  ; _MAS_MODULE1_LAST_SQL_ERR
+0x0100737664  mov       rdi, qword ptr [r13]
+0x0100737668  test      rdi, rdi
+0x010073766b  je        0x100737672
+0x010073766d  call      0x10327bd90  ; _TEStringHdrFree
+0x0100737672  mov       qword ptr [r13], r15
+0x0100737676  mov       rdi, rbx
+0x0100737679  call      0x10327bd90  ; _TEStringHdrFree
+0x010073767e  cmp       byte ptr [rbp - 0xe1], 1
+0x0100737685  jne       0x1007376a1
+0x0100737687  mov       rdi, r14
+0x010073768a  call      0x100c6f620  ; _MAS_MODULE2_ROLLBACKANDSETAUTOCOMMITON |
+0x010073768f  cmp       dword ptr [r14], 0
+0x0100737693  jne       0x1007376a4
+0x0100737695  lea       rax, [rip + 0x53b5666]  ; _MAS_MODULE1_EDM_FAIL
+0x010073769c  movzx     ebx, word ptr [rax]
+0x010073769f  jmp       0x1007376a6
+0x01007376a1  mov       qword ptr [r14], r12
+0x01007376a4  xor       ebx, ebx
+0x01007376a6  mov       rdi, r14
+0x01007376a9  call      0x10328b6a0  ; __epl_End_Crit
+0x01007376ae  mov       rax, qword ptr [rip + 0x4dc58c3]
+0x01007376b5  mov       rax, qword ptr [rax]
+0x01007376b8  cmp       rax, qword ptr [rbp - 0x30]
+0x01007376bc  jne       0x100737d5f
+0x01007376c2  movsx     eax, bx
+0x01007376c5  add       rsp, 0x138
+0x01007376cc  pop       rbx
+0x01007376cd  pop       r12
+0x01007376cf  pop       r13
+0x01007376d1  pop       r14
+0x01007376d3  pop       r15
+0x01007376d5  pop       rbp
+0x01007376d6  ret
+0x01007376d7  mov       qword ptr [r15], r14
+0x01007376da  test      al, al
+0x01007376dc  je        0x100737c10
+0x01007376e2  lea       rsi, [rbp - 0xf0]
+0x01007376e9  mov       rdi, r15
+0x01007376ec  call      0x100737e00  ; _DEVSETSUBCOLUMN_INTERNAL__575 |
+0x01007376f1  cmp       dword ptr [r14], 0
+0x01007376f5  jne       0x100737615
+0x01007376fb  movsx     r13, word ptr [rbp - 0xf0]
+0x0100737703  mov       qword ptr [r15], r14
+0x0100737706  mov       rdi, r15
+0x0100737709  call      0x100737e50  ; _DEVSETSUBCOLUMN_INTERNAL__576 |
+0x010073770e  test      r12, r12
+0x0100737711  js        0x100737c31
+0x0100737717  cmp       r13, r12
+0x010073771a  jl        0x100737c31
+0x0100737720  mov       edi, 0x18
+0x0100737725  call      0x10328b340  ; _edb_alloc
+0x010073772a  mov       qword ptr [rax], r14
+0x010073772d  mov       qword ptr [rax + 8], r12
+0x0100737731  lea       rcx, [rip + 0x2b53c28]  ; _edb_free
+0x0100737738  mov       rbx, rcx
+0x010073773b  mov       qword ptr [rbp - 0x118], rcx
+0x0100737742  lea       rcx, [rip + 0x767]  ; _DEVSETSUBCOLUMN_INTERNAL__584 |
+0x0100737749  mov       qword ptr [rbp - 0x128], rcx
+0x0100737750  mov       qword ptr [rbp - 0x120], rax
+0x0100737757  lea       rdi, [rip + 0x50754a2]  ; __epl_string_header_67
+0x010073775e  lea       rsi, [rbp - 0x128]
+0x0100737765  lea       r9, [rbp - 0x150]
+0x010073776c  mov       edx, 1
+0x0100737771  xor       ecx, ecx
+0x0100737773  xor       r8d, r8d
+0x0100737776  call      0x1015f3280  ; __epl_DJDBSORT_opencfun |
+0x010073777b  cmp       dword ptr [r14], 0
+0x010073777f  jne       0x100737615
+0x0100737785  mov       edi, 0x30
+0x010073778a  call      0x10328b340  ; _edb_alloc
+0x010073778f  mov       qword ptr [rax], r14
+0x0100737792  vmovups   xmm0, xmmword ptr [rbp - 0x150]
+0x010073779a  vmovups   xmmword ptr [rax + 8], xmm0
+0x010073779f  mov       word ptr [rax + 0x18], 0xffff
+0x01007377a5  cmp       dword ptr [r14], 0
+0x01007377a9  jne       0x100737615
+0x01007377af  mov       r15, rax
+0x01007377b2  mov       edi, 0x78
+0x01007377b7  call      0x10328b340  ; _edb_alloc
+0x01007377bc  mov       r13, rax
+0x01007377bf  mov       qword ptr [rax], r14
+0x01007377c2  mov       edi, 0x10
+0x01007377c7  call      0x10328b340  ; _edb_alloc
+0x01007377cc  mov       rcx, qword ptr [r13]
+0x01007377d0  mov       qword ptr [rax], rcx
+0x01007377d3  mov       qword ptr [r13 + 0x18], 0
+0x01007377db  lea       rcx, [rip + 0x6fe]  ; _DEVSETSUBCOLUMN_INTERNAL__590 |
+0x01007377e2  mov       qword ptr [r13 + 8], rcx
+0x01007377e6  mov       qword ptr [r13 + 0x10], rax
+0x01007377ea  lea       rax, [rip + 0x1428f]  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x01007377f1  mov       qword ptr [r13 + 0x20], rax
+0x01007377f5  mov       qword ptr [r13 + 0x28], r15
+0x01007377f9  mov       qword ptr [r13 + 0x30], 0
+0x0100737801  lea       rax, [rip + 0x142f8]  ; _TOTEROWSTREAM_INTERNAL__3 |
+0x0100737808  mov       qword ptr [r13 + 0x38], rax
+0x010073780c  mov       qword ptr [r13 + 0x40], r15
+0x0100737810  mov       qword ptr [r13 + 0x48], 0
+0x0100737818  lea       rax, [rip + 0x14381]  ; _TOTEROWSTREAM_INTERNAL__4 |
+0x010073781f  mov       qword ptr [r13 + 0x50], rax
+0x0100737823  mov       qword ptr [r13 + 0x58], r15
+0x0100737827  mov       qword ptr [r13 + 0x60], 0
+0x010073782f  mov       byte ptr [r13 + 0x68], 1
+0x0100737834  mov       qword ptr [r13], r14
+0x0100737838  mov       qword ptr [r15], r14
+0x010073783b  mov       rdi, r15
+0x010073783e  call      0x10074ba80  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x0100737843  cmp       dword ptr [r14], 0
+0x0100737847  jne       0x100737615
+0x010073784d  mov       qword ptr [r13], r14
+0x0100737851  test      al, al
+0x0100737853  je        0x100737c7d
+0x0100737859  lea       rsi, [rbp - 0xe8]
+0x0100737860  mov       rdi, r13
+0x0100737863  call      0x100737f00  ; _DEVSETSUBCOLUMN_INTERNAL__592 |
+0x0100737868  cmp       dword ptr [r14], 0
+0x010073786c  jne       0x100737615
+0x0100737872  mov       r15b, byte ptr [rbp - 0xe8]
+0x0100737879  mov       qword ptr [r13], r14
+0x010073787d  mov       rdi, r13
+0x0100737880  call      0x100737f50  ; _DEVSETSUBCOLUMN_INTERNAL__593 |
+0x0100737885  cmp       dword ptr [r14], 0
+0x0100737889  jne       0x100737615
+0x010073788f  mov       edi, 0x18
+0x0100737894  call      0x10328b340  ; _edb_alloc
+0x0100737899  mov       r13, rax
+0x010073789c  mov       qword ptr [rax], r14
+0x010073789f  mov       qword ptr [rax + 8], r12
+0x01007378a3  mov       edi, 0x18
+0x01007378a8  call      0x10328b340  ; _edb_alloc
+0x01007378ad  mov       qword ptr [rax], r14
+0x01007378b0  test      r15b, 2
+0x01007378b4  jne       0x100737c87
+0x01007378ba  mov       ecx, dword ptr [rip + 0x51102b0]  ; _T8173
+0x01007378c0  mov       dword ptr [rbp - 0x50], ecx
+0x01007378c3  lea       rcx, [rip + 0x776]  ; _DEVSETSUBCOLUMN_INTERNAL__603 |
+0x01007378ca  mov       qword ptr [rbp - 0x70], rcx
+0x01007378ce  mov       qword ptr [rbp - 0x90], rax
+0x01007378d5  mov       qword ptr [rbp - 0xb0], rbx
+0x01007378dc  add       rax, 0xd
+0x01007378e0  mov       qword ptr [rbp - 0xd0], rax
+0x01007378e7  call      0x10328a790  ; _TEGetCurrentDB
+0x01007378ec  mov       rsi, qword ptr [rip + 0x5075315]
+0x01007378f3  sub       rsp, 8
+0x01007378f7  lea       r11, [rbp - 0xd0]
+0x01007378fe  lea       r15, [rbp - 0x90]
+0x0100737905  lea       r10, [rbp - 0x70]
+0x0100737909  lea       rdx, [rip + 0x700]  ; _DEVSETSUBCOLUMN_INTERNAL__602 |
+0x0100737910  mov       rdi, rax
+0x0100737913  mov       rcx, r13
+0x0100737916  xor       r8d, r8d
+0x0100737919  mov       r9d, 1
+0x010073791f  push      r11
+0x0100737921  push      0
+0x0100737923  push      r15
+0x0100737925  push      r10
+0x0100737927  lea       rax, [rbp - 0x50]
+0x010073792b  push      rax
+0x010073792c  call      0x10324f790  ; _TENamedTableUpdateFunc
+0x0100737931  add       rsp, 0x30
+0x0100737935  lea       r8, [rbp - 0xb0]
+0x010073793c  mov       rdi, r13
+0x010073793f  lea       rsi, [rip + 0x2b53a1a]  ; _edb_free
+0x0100737946  mov       edx, 1
+0x010073794b  mov       rcx, r15
+0x010073794e  call      0x10328a3c0  ; __epl_FreeUpdateInfo
+0x0100737953  cmp       dword ptr [r14], 0
+0x0100737957  jne       0x100737d38
+0x010073795d  call      0x10328a790  ; _TEGetCurrentDB
+0x0100737962  mov       rdi, rax
+0x0100737965  call      0x1032505c0  ; _TEAutoC_Commit
+0x010073796a  cmp       dword ptr [r14], 0
+0x010073796e  jne       0x100737d38
+0x0100737974  mov       edi, 0x18
+0x0100737979  call      0x10328b340  ; _edb_alloc
+0x010073797e  mov       qword ptr [rax], r14
+0x0100737981  mov       qword ptr [rax + 8], r12
+0x0100737985  mov       qword ptr [rbp - 0x40], rbx
+0x0100737989  lea       rcx, [rip + 0x6e0]  ; _DEVSETSUBCOLUMN_INTERNAL__634 |
+0x0100737990  mov       qword ptr [rbp - 0x50], rcx
+0x0100737994  mov       qword ptr [rbp - 0x48], rax
+0x0100737998  lea       rdi, [rip + 0x5075261]  ; __epl_string_header_67
+0x010073799f  lea       rsi, [rbp - 0x50]
+0x01007379a3  lea       r9, [rbp - 0x160]
+0x01007379aa  xor       edx, edx
+0x01007379ac  xor       ecx, ecx
+0x01007379ae  xor       r8d, r8d
+0x01007379b1  call      0x1015f3280  ; __epl_DJDBSORT_opencfun |
+0x01007379b6  cmp       dword ptr [r14], 0
+0x01007379ba  jne       0x100737615
+0x01007379c0  mov       edi, 0x30
+0x01007379c5  call      0x10328b340  ; _edb_alloc
+0x01007379ca  mov       qword ptr [rax], r14
+0x01007379cd  vmovups   xmm0, xmmword ptr [rbp - 0x160]
+0x01007379d5  vmovups   xmmword ptr [rax + 8], xmm0
+0x01007379da  mov       word ptr [rax + 0x18], 0xffff
+0x01007379e0  cmp       dword ptr [r14], 0
+0x01007379e4  jne       0x100737615
+0x01007379ea  mov       r13, rax
+0x01007379ed  mov       edi, 0x78
+0x01007379f2  call      0x10328b340  ; _edb_alloc
+0x01007379f7  mov       r12, rax
+0x01007379fa  mov       qword ptr [rax], r14
+0x01007379fd  mov       edi, 0x10
+0x0100737a02  call      0x10328b340  ; _edb_alloc
+0x0100737a07  mov       rcx, qword ptr [r12]
+0x0100737a0b  mov       qword ptr [rax], rcx
+0x0100737a0e  mov       qword ptr [r12 + 0x18], 0
+0x0100737a17  lea       rcx, [rip + 0x682]  ; _DEVSETSUBCOLUMN_INTERNAL__640 |
+0x0100737a1e  mov       qword ptr [r12 + 8], rcx
+0x0100737a23  mov       qword ptr [r12 + 0x10], rax
+0x0100737a28  lea       rax, [rip + 0x14051]  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x0100737a2f  mov       qword ptr [r12 + 0x20], rax
+0x0100737a34  mov       qword ptr [r12 + 0x28], r13
+0x0100737a39  mov       qword ptr [r12 + 0x30], 0
+0x0100737a42  lea       rax, [rip + 0x140b7]  ; _TOTEROWSTREAM_INTERNAL__3 |
+0x0100737a49  mov       qword ptr [r12 + 0x38], rax
+0x0100737a4e  mov       qword ptr [r12 + 0x40], r13
+0x0100737a53  mov       qword ptr [r12 + 0x48], 0
+0x0100737a5c  lea       rax, [rip + 0x1413d]  ; _TOTEROWSTREAM_INTERNAL__4 |
+0x0100737a63  mov       qword ptr [r12 + 0x50], rax
+0x0100737a68  mov       qword ptr [r12 + 0x58], r13
+0x0100737a6d  mov       qword ptr [r12 + 0x60], 0
+0x0100737a76  mov       byte ptr [r12 + 0x68], 1
+0x0100737a7c  mov       eax, dword ptr [rbp - 0xff]
+0x0100737a82  mov       ecx, dword ptr [rbp - 0xfc]
+0x0100737a88  mov       dword ptr [r12 + 0x69], eax
+0x0100737a8d  mov       dword ptr [r12 + 0x6c], ecx
+0x0100737a92  mov       qword ptr [r12], r14
+0x0100737a96  mov       qword ptr [r13], r14
+0x0100737a9a  mov       rdi, r13
+0x0100737a9d  call      0x10074ba80  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x0100737aa2  mov       r15d, dword ptr [r14]
+0x0100737aa5  test      r15d, r15d
+0x0100737aa8  jne       0x100737d7e
+0x0100737aae  test      al, al
+0x0100737ab0  je        0x100737d7e
+0x0100737ab6  mov       qword ptr [r12], r14
+0x0100737aba  mov       rdi, r12
+0x0100737abd  lea       rsi, [rbp - 0xf8]
+0x0100737ac4  call      0x100738110  ; _DEVSETSUBCOLUMN_INTERNAL__642 |
+0x0100737ac9  cmp       dword ptr [r14], 0
+0x0100737acd  jne       0x100737d83
+0x0100737ad3  test      byte ptr [rbp - 0xf3], 2
+0x0100737ada  je        0x100737bdd
+0x0100737ae0  mov       edi, 0x18
+0x0100737ae5  call      0x10328b340  ; _edb_alloc
+0x0100737aea  mov       r15, rax
+0x0100737aed  mov       qword ptr [rax], r14
+0x0100737af0  movzx     eax, word ptr [rbp - 0xf8]
+0x0100737af7  mov       word ptr [r15 + 8], ax
+0x0100737afc  movzx     eax, word ptr [rbp - 0xf4]
+0x0100737b03  mov       word ptr [r15 + 0xe], ax
+0x0100737b08  mov       eax, dword ptr [rbp - 0xf8]
+0x0100737b0e  mov       dword ptr [r15 + 0xa], eax
+0x0100737b12  mov       edi, 0x18
+0x0100737b17  call      0x10328b340  ; _edb_alloc
+0x0100737b1c  mov       qword ptr [rax], r14
+0x0100737b1f  mov       ecx, dword ptr [rip + 0x5110043]  ; _T8181
+0x0100737b25  mov       dword ptr [rbp - 0xe0], ecx
+0x0100737b2b  lea       rcx, [rip + 0x6be]  ; _DEVSETSUBCOLUMN_INTERNAL__645 |
+0x0100737b32  mov       qword ptr [rbp - 0x70], rcx
+0x0100737b36  mov       qword ptr [rbp - 0x90], rax
+0x0100737b3d  mov       qword ptr [rbp - 0xb0], rbx
+0x0100737b44  add       rax, 0xd
+0x0100737b48  mov       qword ptr [rbp - 0xd0], rax
+0x0100737b4f  call      0x10328a790  ; _TEGetCurrentDB
+0x0100737b54  mov       rsi, qword ptr [rip + 0x50750ad]
+0x0100737b5b  sub       rsp, 8
+0x0100737b5f  mov       rdi, rax
+0x0100737b62  lea       rdx, [rip + 0x657]  ; _DEVSETSUBCOLUMN_INTERNAL__644 |
+0x0100737b69  mov       rcx, r15
+0x0100737b6c  xor       r8d, r8d
+0x0100737b6f  mov       r9d, 1
+0x0100737b75  lea       rax, [rbp - 0xd0]
+0x0100737b7c  push      rax
+0x0100737b7d  push      0
+0x0100737b7f  lea       r13, [rbp - 0x90]
+0x0100737b86  push      r13
+0x0100737b88  lea       rax, [rbp - 0x70]
+0x0100737b8c  push      rax
+0x0100737b8d  lea       rax, [rbp - 0xe0]
+0x0100737b94  push      rax
+0x0100737b95  call      0x10324f790  ; _TENamedTableUpdateFunc
+0x0100737b9a  add       rsp, 0x30
+0x0100737b9e  mov       rdi, r15
+0x0100737ba1  lea       rsi, [rip + 0x2b537b8]  ; _edb_free
+0x0100737ba8  mov       edx, 1
+0x0100737bad  mov       rcx, r13
+0x0100737bb0  lea       r8, [rbp - 0xb0]
+0x0100737bb7  call      0x10328a3c0  ; __epl_FreeUpdateInfo
+0x0100737bbc  cmp       dword ptr [r14], 0
+0x0100737bc0  jne       0x100737d64
+0x0100737bc6  call      0x10328a790  ; _TEGetCurrentDB
+0x0100737bcb  mov       rdi, rax
+0x0100737bce  call      0x1032505c0  ; _TEAutoC_Commit
+0x0100737bd3  cmp       dword ptr [r14], 0
+0x0100737bd7  jne       0x100737d64
+0x0100737bdd  mov       qword ptr [r12], r14
+0x0100737be1  mov       rax, qword ptr [r12 + 0x28]
+0x0100737be6  mov       qword ptr [rax], r14
+0x0100737be9  cmp       byte ptr [r12 + 0x68], 0
+0x0100737bef  je        0x100737da9
+0x0100737bf5  mov       rdi, qword ptr [r12 + 0x58]
+0x0100737bfa  call      qword ptr [r12 + 0x20]
+0x0100737bff  mov       r15d, dword ptr [r14]
+0x0100737c02  test      r15d, r15d
+0x0100737c05  je        0x100737aae
+0x0100737c0b  jmp       0x100737d7e
+0x0100737c10  mov       rdi, r15
+0x0100737c13  call      0x100737e50  ; _DEVSETSUBCOLUMN_INTERNAL__576 |
+0x0100737c18  mov       rax, qword ptr [r14]
+0x0100737c1b  mov       qword ptr [r14 + 8], rax
+0x0100737c1f  movabs    rax, 0x640032d48c
+0x0100737c29  mov       qword ptr [r14], rax
+0x0100737c2c  jmp       0x100737615
+0x0100737c31  lea       r15, [rip + 0x5074fe0]  ; __epl_string_header_125
+0x0100737c38  mov       rdi, r15
+0x0100737c3b  call      0x10327be70  ; _TEStringHdrCopy
+0x0100737c40  lea       r12, [rip + 0x53b50c9]  ; _MAS_MODULE1_LAST_SQL_ERR
+0x0100737c47  mov       rdi, qword ptr [r12]
+0x0100737c4b  test      rdi, rdi
+0x0100737c4e  je        0x100737c55
+0x0100737c50  call      0x10327bd90  ; _TEStringHdrFree
+0x0100737c55  mov       qword ptr [r12], r15
+0x0100737c59  cmp       byte ptr [rbp - 0xe1], 1
+0x0100737c60  jne       0x1007376a6
+0x0100737c66  mov       rdi, r14
+0x0100737c69  call      0x100c6f530  ; _MAS_MODULE2_COMMITANDSETAUTOCOMMITON |
+0x0100737c6e  cmp       dword ptr [r14], 0
+0x0100737c72  jne       0x100737615
+0x0100737c78  jmp       0x1007376a6
+0x0100737c7d  mov       rdi, r13
+0x0100737c80  call      0x100737f50  ; _DEVSETSUBCOLUMN_INTERNAL__593 |
+0x0100737c85  jmp       0x100737c18
+0x0100737c87  mov       ecx, dword ptr [rip + 0x510fed3]  ; _T8182
+0x0100737c8d  mov       dword ptr [rbp - 0x50], ecx
+0x0100737c90  lea       rcx, [rip + 0x349]  ; _DEVSETSUBCOLUMN_INTERNAL__595 |
+0x0100737c97  mov       qword ptr [rbp - 0x70], rcx
+0x0100737c9b  mov       qword ptr [rbp - 0x90], rax
+0x0100737ca2  mov       r12, rbx
+0x0100737ca5  mov       qword ptr [rbp - 0xb0], rbx
+0x0100737cac  add       rax, 0xd
+0x0100737cb0  mov       qword ptr [rbp - 0xd0], rax
+0x0100737cb7  call      0x10328a790  ; _TEGetCurrentDB
+0x0100737cbc  mov       rsi, qword ptr [rip + 0x5074f45]
+0x0100737cc3  sub       rsp, 8
+0x0100737cc7  lea       r10, [rbp - 0xd0]
+0x0100737cce  lea       rbx, [rbp - 0x90]
+0x0100737cd5  lea       r11, [rbp - 0x70]
+0x0100737cd9  lea       r15, [rbp - 0x50]
+0x0100737cdd  lea       rdx, [rip + 0x2cc]  ; _DEVSETSUBCOLUMN_INTERNAL__594 |
+0x0100737ce4  mov       rdi, rax
+0x0100737ce7  mov       rcx, r13
+0x0100737cea  xor       r8d, r8d
+0x0100737ced  mov       r9d, 1
+0x0100737cf3  push      r10
+0x0100737cf5  push      0
+0x0100737cf7  push      rbx
+0x0100737cf8  push      r11
+0x0100737cfa  push      r15
+0x0100737cfc  call      0x10324f790  ; _TENamedTableUpdateFunc
+0x0100737d01  add       rsp, 0x30
+0x0100737d05  lea       r8, [rbp - 0xb0]
+0x0100737d0c  mov       rdi, r13
+0x0100737d0f  mov       rsi, r12
+0x0100737d12  mov       edx, 1
+0x0100737d17  mov       rcx, rbx
+0x0100737d1a  call      0x10328a3c0  ; __epl_FreeUpdateInfo
+0x0100737d1f  cmp       dword ptr [r14], 0
+0x0100737d23  jne       0x100737d38
+0x0100737d25  call      0x10328a790  ; _TEGetCurrentDB
+0x0100737d2a  mov       rdi, rax
+0x0100737d2d  call      0x1032505c0  ; _TEAutoC_Commit
+0x0100737d32  cmp       dword ptr [r14], 0
+0x0100737d36  je        0x100737db5
+0x0100737d38  mov       rbx, qword ptr [r14]
+0x0100737d3b  mov       dword ptr [r14], 0
+0x0100737d42  call      0x10328a790  ; _TEGetCurrentDB
+0x0100737d47  mov       rdi, rax
+0x0100737d4a  call      0x103250620  ; _TEAutoC_Rollback
+0x0100737d4f  mov       qword ptr [r14], rbx
+0x0100737d52  test      ebx, ebx
+0x0100737d54  jne       0x100737615
+0x0100737d5a  jmp       0x1007376a4
+0x0100737d5f  call      0x1038c3da0
+0x0100737d64  mov       r15, qword ptr [r14]
+0x0100737d67  mov       dword ptr [r14], 0
+0x0100737d6e  call      0x10328a790  ; _TEGetCurrentDB
+0x0100737d73  mov       rdi, rax
+0x0100737d76  call      0x103250620  ; _TEAutoC_Rollback
+0x0100737d7b  mov       qword ptr [r14], r15
+0x0100737d7e  test      r15d, r15d
+0x0100737d81  je        0x100737da9
+0x0100737d83  mov       rbx, qword ptr [r14]
+0x0100737d86  mov       dword ptr [r14], 0
+0x0100737d8d  mov       qword ptr [r12], r14
+0x0100737d91  mov       rdi, r12
+0x0100737d94  call      0x100738160  ; _DEVSETSUBCOLUMN_INTERNAL__643 |
+0x0100737d99  mov       qword ptr [r14], rbx
+0x0100737d9c  test      ebx, ebx
+0x0100737d9e  jne       0x100737615
+0x0100737da4  jmp       0x1007376a4
+0x0100737da9  mov       qword ptr [r12], r14
+0x0100737dad  mov       rdi, r12
+0x0100737db0  call      0x100738160  ; _DEVSETSUBCOLUMN_INTERNAL__643 |
+0x0100737db5  lea       rax, [rip + 0x53b4f48]  ; _MAS_MODULE1_EDM_SUCCESS
+0x0100737dbc  movzx     ebx, word ptr [rax]
+0x0100737dbf  cmp       byte ptr [rbp - 0xe1], 1
+0x0100737dc6  jne       0x1007376a6
+0x0100737dcc  jmp       0x100737c66
+0x0100737dd1  nop       word ptr cs:[rax + rax]
+
+## _DEV_MODULE6_DEVRESETSUBCOLUMN | 
+address=0x100738220 size=0x420
+0x0100738220  push      rbp
+0x0100738221  mov       rbp, rsp
+0x0100738224  push      r15
+0x0100738226  push      r14
+0x0100738228  push      r13
+0x010073822a  push      r12
+0x010073822c  push      rbx
+0x010073822d  sub       rsp, 0xb8
+0x0100738234  mov       r14, rdi
+0x0100738237  mov       rax, qword ptr [rip + 0x4dc4d3a]
+0x010073823e  mov       rax, qword ptr [rax]
+0x0100738241  mov       qword ptr [rbp - 0x30], rax
+0x0100738245  call      0x10328b650  ; __epl_Start_Crit
+0x010073824a  mov       rdi, r14
+0x010073824d  call      0x100c6f5d0  ; _MAS_MODULE2_SETAUTOCOMMITOFF_IFON |
+0x0100738252  mov       byte ptr [rbp - 0xc1], al
+0x0100738258  cmp       dword ptr [r14], 0
+0x010073825c  jne       0x1007382aa
+0x010073825e  lea       rdi, [rip + 0x507499b]  ; __epl_string_header_67
+0x0100738265  lea       r9, [rbp - 0xd8]
+0x010073826c  xor       esi, esi
+0x010073826e  xor       edx, edx
+0x0100738270  xor       ecx, ecx
+0x0100738272  xor       r8d, r8d
+0x0100738275  call      0x1015f3280  ; __epl_DJDBSORT_opencfun |
+0x010073827a  cmp       dword ptr [r14], 0
+0x010073827e  jne       0x1007382aa
+0x0100738280  mov       edi, 0x30
+0x0100738285  call      0x10328b340  ; _edb_alloc
+0x010073828a  mov       qword ptr [rax], r14
+0x010073828d  vmovups   xmm0, xmmword ptr [rbp - 0xd8]
+0x0100738295  vmovups   xmmword ptr [rax + 8], xmm0
+0x010073829a  mov       word ptr [rax + 0x18], 0xffff
+0x01007382a0  cmp       dword ptr [r14], 0
+0x01007382a4  je        0x10073836c
+0x01007382aa  mov       r12, qword ptr [r14]
+0x01007382ad  mov       dword ptr [r14], 0
+0x01007382b4  mov       rdi, r12
+0x01007382b7  shr       rdi, 0x20
+0x01007382bb  neg       edi
+0x01007382bd  call      0x10328ba10  ; __epl_TE_IntToChar
+0x01007382c2  mov       rdi, rax
+0x01007382c5  mov       esi, 1
+0x01007382ca  call      0x10327bcc0  ; _TEStringHdrAdd
+0x01007382cf  mov       rbx, rax
+0x01007382d2  mov       rsi, qword ptr [rax + 8]
+0x01007382d6  lea       rdi, [rip + 0x507497c]  ; __epl_string_124; 'WDevResetSubColumn failed - SQL Error Code '
+0x01007382dd  call      0x10327f960  ; _TEStringConcat
+0x01007382e2  mov       rdi, rax
+0x01007382e5  mov       esi, 1
+0x01007382ea  call      0x10327bcc0  ; _TEStringHdrAdd
+0x01007382ef  mov       r15, rax
+0x01007382f2  lea       r13, [rip + 0x53b4a17]  ; _MAS_MODULE1_LAST_SQL_ERR
+0x01007382f9  mov       rdi, qword ptr [r13]
+0x01007382fd  test      rdi, rdi
+0x0100738300  je        0x100738307
+0x0100738302  call      0x10327bd90  ; _TEStringHdrFree
+0x0100738307  mov       qword ptr [r13], r15
+0x010073830b  mov       rdi, rbx
+0x010073830e  call      0x10327bd90  ; _TEStringHdrFree
+0x0100738313  cmp       byte ptr [rbp - 0xc1], 1
+0x010073831a  jne       0x100738336
+0x010073831c  mov       rdi, r14
+0x010073831f  call      0x100c6f620  ; _MAS_MODULE2_ROLLBACKANDSETAUTOCOMMITON |
+0x0100738324  cmp       dword ptr [r14], 0
+0x0100738328  jne       0x100738339
+0x010073832a  lea       rax, [rip + 0x53b49d1]  ; _MAS_MODULE1_EDM_FAIL
+0x0100738331  movzx     ebx, word ptr [rax]
+0x0100738334  jmp       0x10073833b
+0x0100738336  mov       qword ptr [r14], r12
+0x0100738339  xor       ebx, ebx
+0x010073833b  mov       rdi, r14
+0x010073833e  call      0x10328b6a0  ; __epl_End_Crit
+0x0100738343  mov       rax, qword ptr [rip + 0x4dc4c2e]
+0x010073834a  mov       rax, qword ptr [rax]
+0x010073834d  cmp       rax, qword ptr [rbp - 0x30]
+0x0100738351  jne       0x100738637
+0x0100738357  movsx     eax, bx
+0x010073835a  add       rsp, 0xb8
+0x0100738361  pop       rbx
+0x0100738362  pop       r12
+0x0100738364  pop       r13
+0x0100738366  pop       r14
+0x0100738368  pop       r15
+0x010073836a  pop       rbp
+0x010073836b  ret
+0x010073836c  mov       r12, rax
+0x010073836f  mov       edi, 0x78
+0x0100738374  call      0x10328b340  ; _edb_alloc
+0x0100738379  mov       r15, rax
+0x010073837c  mov       qword ptr [rax], r14
+0x010073837f  mov       edi, 0x10
+0x0100738384  call      0x10328b340  ; _edb_alloc
+0x0100738389  mov       rcx, qword ptr [r15]
+0x010073838c  mov       qword ptr [rax], rcx
+0x010073838f  mov       qword ptr [r15 + 0x18], 0
+0x0100738397  lea       rcx, [rip + 0x2a2]  ; _DEVRESETSUBCOLUMN_INTERNAL__738 |
+0x010073839e  mov       qword ptr [r15 + 8], rcx
+0x01007383a2  mov       qword ptr [r15 + 0x10], rax
+0x01007383a6  lea       rax, [rip + 0x136d3]  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x01007383ad  mov       qword ptr [r15 + 0x20], rax
+0x01007383b1  mov       qword ptr [r15 + 0x28], r12
+0x01007383b5  mov       qword ptr [r15 + 0x30], 0
+0x01007383bd  lea       rax, [rip + 0x1373c]  ; _TOTEROWSTREAM_INTERNAL__3 |
+0x01007383c4  mov       qword ptr [r15 + 0x38], rax
+0x01007383c8  mov       qword ptr [r15 + 0x40], r12
+0x01007383cc  mov       qword ptr [r15 + 0x48], 0
+0x01007383d4  lea       rax, [rip + 0x137c5]  ; _TOTEROWSTREAM_INTERNAL__4 |
+0x01007383db  mov       qword ptr [r15 + 0x50], rax
+0x01007383df  mov       qword ptr [r15 + 0x58], r12
+0x01007383e3  mov       qword ptr [r15 + 0x60], 0
+0x01007383eb  mov       byte ptr [r15 + 0x68], 1
+0x01007383f0  mov       qword ptr [r15], r14
+0x01007383f3  mov       qword ptr [r12], r14
+0x01007383f7  mov       rdi, r12
+0x01007383fa  call      0x10074ba80  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x01007383ff  mov       ebx, dword ptr [r14]
+0x0100738402  test      ebx, ebx
+0x0100738404  jne       0x10073859c
+0x010073840a  test      al, al
+0x010073840c  je        0x10073859c
+0x0100738412  lea       r12, [rbp - 0x70]
+0x0100738416  nop       word ptr cs:[rax + rax]
+0x0100738420  mov       qword ptr [r15], r14
+0x0100738423  mov       rax, qword ptr [r15 + 0x28]
+0x0100738427  mov       qword ptr [rax], r14
+0x010073842a  mov       rdi, qword ptr [r15 + 0x40]
+0x010073842e  call      qword ptr [r15 + 0x38]
+0x0100738432  mov       rcx, qword ptr [r15]
+0x0100738435  cmp       dword ptr [rcx], 0
+0x0100738438  jne       0x10073844f
+0x010073843a  mov       rdi, qword ptr [r15 + 0x10]
+0x010073843e  mov       qword ptr [rdi], rcx
+0x0100738441  mov       rsi, rax
+0x0100738444  lea       rdx, [rbp - 0xc8]
+0x010073844b  call      qword ptr [r15 + 8]
+0x010073844f  cmp       dword ptr [r14], 0
+0x0100738453  jne       0x1007385a0
+0x0100738459  test      byte ptr [rbp - 0xc3], 2
+0x0100738460  je        0x100738554
+0x0100738466  mov       edi, 0x18
+0x010073846b  call      0x10328b340  ; _edb_alloc
+0x0100738470  mov       r13, rax
+0x0100738473  mov       qword ptr [rax], r14
+0x0100738476  movzx     eax, word ptr [rbp - 0xc8]
+0x010073847d  mov       word ptr [r13 + 8], ax
+0x0100738482  movzx     eax, word ptr [rbp - 0xc4]
+0x0100738489  mov       word ptr [r13 + 0xe], ax
+0x010073848e  mov       eax, dword ptr [rbp - 0xc8]
+0x0100738494  mov       dword ptr [r13 + 0xa], eax
+0x0100738498  mov       edi, 0x18
+0x010073849d  call      0x10328b340  ; _edb_alloc
+0x01007384a2  mov       qword ptr [rax], r14
+0x01007384a5  mov       ecx, dword ptr [rip + 0x510f6ad]  ; _T8206
+0x01007384ab  mov       dword ptr [rbp - 0xc0], ecx
+0x01007384b1  lea       rcx, [rip + 0x288]  ; _DEVRESETSUBCOLUMN_INTERNAL__743 |
+0x01007384b8  mov       qword ptr [rbp - 0x50], rcx
+0x01007384bc  mov       qword ptr [rbp - 0x70], rax
+0x01007384c0  lea       rbx, [rip + 0x2b52e99]  ; _edb_free
+0x01007384c7  mov       qword ptr [rbp - 0x90], rbx
+0x01007384ce  add       rax, 0xd
+0x01007384d2  mov       qword ptr [rbp - 0xb0], rax
+0x01007384d9  call      0x10328a790  ; _TEGetCurrentDB
+0x01007384de  mov       rsi, qword ptr [rip + 0x5074723]
+0x01007384e5  sub       rsp, 8
+0x01007384e9  mov       rdi, rax
+0x01007384ec  lea       rdx, [rip + 0x21d]  ; _DEVRESETSUBCOLUMN_INTERNAL__742 |
+0x01007384f3  mov       rcx, r13
+0x01007384f6  xor       r8d, r8d
+0x01007384f9  mov       r9d, 1
+0x01007384ff  lea       rax, [rbp - 0xb0]
+0x0100738506  push      rax
+0x0100738507  push      0
+0x0100738509  push      r12
+0x010073850b  lea       rax, [rbp - 0x50]
+0x010073850f  push      rax
+0x0100738510  lea       rax, [rbp - 0xc0]
+0x0100738517  push      rax
+0x0100738518  call      0x10324f790  ; _TENamedTableUpdateFunc
+0x010073851d  add       rsp, 0x30
+0x0100738521  mov       rdi, r13
+0x0100738524  mov       rsi, rbx
+0x0100738527  mov       edx, 1
+0x010073852c  mov       rcx, r12
+0x010073852f  lea       r8, [rbp - 0x90]
+0x0100738536  call      0x10328a3c0  ; __epl_FreeUpdateInfo
+0x010073853b  cmp       dword ptr [r14], 0
+0x010073853f  jne       0x100738582
+0x0100738541  call      0x10328a790  ; _TEGetCurrentDB
+0x0100738546  mov       rdi, rax
+0x0100738549  call      0x1032505c0  ; _TEAutoC_Commit
+0x010073854e  cmp       dword ptr [r14], 0
+0x0100738552  jne       0x100738582
+0x0100738554  mov       qword ptr [r15], r14
+0x0100738557  mov       rax, qword ptr [r15 + 0x28]
+0x010073855b  mov       qword ptr [rax], r14
+0x010073855e  cmp       byte ptr [r15 + 0x68], 0
+0x0100738563  je        0x100738602
+0x0100738569  mov       rdi, qword ptr [r15 + 0x58]
+0x010073856d  call      qword ptr [r15 + 0x20]
+0x0100738571  mov       ebx, dword ptr [r14]
+0x0100738574  test      ebx, ebx
+0x0100738576  jne       0x10073859c
+0x0100738578  test      al, al
+0x010073857a  jne       0x100738420
+0x0100738580  jmp       0x10073859c
+0x0100738582  mov       rbx, qword ptr [r14]
+0x0100738585  mov       dword ptr [r14], 0
+0x010073858c  call      0x10328a790  ; _TEGetCurrentDB
+0x0100738591  mov       rdi, rax
+0x0100738594  call      0x103250620  ; _TEAutoC_Rollback
+0x0100738599  mov       qword ptr [r14], rbx
+0x010073859c  test      ebx, ebx
+0x010073859e  je        0x100738602
+0x01007385a0  mov       rbx, qword ptr [r14]
+0x01007385a3  mov       dword ptr [r14], 0
+0x01007385aa  mov       qword ptr [r15], r14
+0x01007385ad  mov       rax, qword ptr [r15 + 0x28]
+0x01007385b1  mov       qword ptr [rax], r14
+0x01007385b4  cmp       byte ptr [r15 + 0x68], 0
+0x01007385b9  je        0x1007385c8
+0x01007385bb  mov       byte ptr [r15 + 0x68], 0
+0x01007385c0  mov       rdi, qword ptr [r15 + 0x58]
+0x01007385c4  call      qword ptr [r15 + 0x50]
+0x01007385c8  mov       rdi, qword ptr [r15 + 0x10]
+0x01007385cc  test      rdi, rdi
+0x01007385cf  je        0x1007385ea
+0x01007385d1  mov       rax, qword ptr [r15 + 0x18]
+0x01007385d5  test      rax, rax
+0x01007385d8  je        0x1007385e5
+0x01007385da  call      rax
+0x01007385dc  mov       rdi, qword ptr [r15 + 0x10]
+0x01007385e0  test      rdi, rdi
+0x01007385e3  je        0x1007385ea
+0x01007385e5  call      0x10328b360  ; _edb_free
+0x01007385ea  mov       rdi, r15
+0x01007385ed  call      0x10328b360  ; _edb_free
+0x01007385f2  mov       qword ptr [r14], rbx
+0x01007385f5  test      ebx, ebx
+0x01007385f7  jne       0x1007382aa
+0x01007385fd  jmp       0x100738339
+0x0100738602  mov       qword ptr [r15], r14
+0x0100738605  mov       rdi, r15
+0x0100738608  call      0x1007386b0  ; _DEVRESETSUBCOLUMN_INTERNAL__741 |
+0x010073860d  cmp       byte ptr [rbp - 0xc1], 1
+0x0100738614  jne       0x100738628
+0x0100738616  mov       rdi, r14
+0x0100738619  call      0x100c6f530  ; _MAS_MODULE2_COMMITANDSETAUTOCOMMITON |
+0x010073861e  cmp       dword ptr [r14], 0
+0x0100738622  jne       0x1007382aa
+0x0100738628  lea       rax, [rip + 0x53b46d5]  ; _MAS_MODULE1_EDM_SUCCESS
+0x010073862f  movzx     ebx, word ptr [rax]
+0x0100738632  jmp       0x10073833b
+0x0100738637  call      0x1038c3da0
+0x010073863c  nop       dword ptr [rax]
+
+## _MAS_MODULE6_MSTSETSUBCOLUMN | 
+address=0x101ae0110 size=0x940
+0x0101ae0110  push      rbp
+0x0101ae0111  mov       rbp, rsp
+0x0101ae0114  push      r15
+0x0101ae0116  push      r14
+0x0101ae0118  push      r13
+0x0101ae011a  push      r12
+0x0101ae011c  push      rbx
+0x0101ae011d  sub       rsp, 0x138
+0x0101ae0124  mov       r12, rsi
+0x0101ae0127  mov       r14, rdi
+0x0101ae012a  mov       rax, qword ptr [rip + 0x3a1ce47]
+0x0101ae0131  mov       rax, qword ptr [rax]
+0x0101ae0134  mov       qword ptr [rbp - 0x30], rax
+0x0101ae0138  call      0x10328b650  ; __epl_Start_Crit
+0x0101ae013d  lea       rax, [rip + 0x400cbbe]  ; _MAS_MODULE1_EDM_FAIL
+0x0101ae0144  movzx     ebx, word ptr [rax]
+0x0101ae0147  mov       rdi, r14
+0x0101ae014a  call      0x100c6f5d0  ; _MAS_MODULE2_SETAUTOCOMMITOFF_IFON |
+0x0101ae014f  mov       byte ptr [rbp - 0xe1], al
+0x0101ae0155  cmp       dword ptr [r14], 0
+0x0101ae0159  jne       0x101ae0285
+0x0101ae015f  lea       rdi, [rip + 0x3cd322a]  ; __epl_string_header_46
+0x0101ae0166  lea       r9, [rbp - 0x110]
+0x0101ae016d  xor       esi, esi
+0x0101ae016f  xor       edx, edx
+0x0101ae0171  xor       ecx, ecx
+0x0101ae0173  xor       r8d, r8d
+0x0101ae0176  call      0x100ae1780  ; __epl_DJMDSORT_opencfun |
+0x0101ae017b  cmp       dword ptr [r14], 0
+0x0101ae017f  jne       0x101ae0285
+0x0101ae0185  mov       rdi, qword ptr [rbp - 0x110]
+0x0101ae018c  lea       rdx, [rip + 0x3e9fc15]  ; _epl_sort_positions_104491
+0x0101ae0193  lea       rcx, [rip + 0x3e9fc12]  ; _epl_sort_directions_104492
+0x0101ae019a  mov       esi, 1
+0x0101ae019f  call      0x10324f300  ; _TETableSort
+0x0101ae01a4  cmp       dword ptr [r14], 0
+0x0101ae01a8  jne       0x101ae0285
+0x0101ae01ae  vmovups   xmm0, xmmword ptr [rbp - 0x110]
+0x0101ae01b6  vmovaps   xmmword ptr [rbp - 0x140], xmm0
+0x0101ae01be  mov       edi, 0x30
+0x0101ae01c3  call      0x10328b340  ; _edb_alloc
+0x0101ae01c8  mov       qword ptr [rax], r14
+0x0101ae01cb  vmovaps   xmm0, xmmword ptr [rbp - 0x140]
+0x0101ae01d3  vmovups   xmmword ptr [rax + 8], xmm0
+0x0101ae01d8  mov       word ptr [rax + 0x18], 0xffff
+0x0101ae01de  cmp       dword ptr [r14], 0
+0x0101ae01e2  jne       0x101ae0285
+0x0101ae01e8  mov       r13, rax
+0x0101ae01eb  mov       edi, 0x78
+0x0101ae01f0  call      0x10328b340  ; _edb_alloc
+0x0101ae01f5  mov       r15, rax
+0x0101ae01f8  mov       qword ptr [rax], r14
+0x0101ae01fb  mov       edi, 0x10
+0x0101ae0200  call      0x10328b340  ; _edb_alloc
+0x0101ae0205  mov       rcx, qword ptr [r15]
+0x0101ae0208  mov       qword ptr [rax], rcx
+0x0101ae020b  mov       qword ptr [r15 + 0x18], 0
+0x0101ae0213  lea       rcx, [rip + 0x836]  ; _MSTSETSUBCOLUMN_INTERNAL__249 |
+0x0101ae021a  mov       qword ptr [r15 + 8], rcx
+0x0101ae021e  mov       qword ptr [r15 + 0x10], rax
+0x0101ae0222  lea       rax, [rip + 0x13de7]  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x0101ae0229  mov       qword ptr [r15 + 0x20], rax
+0x0101ae022d  mov       qword ptr [r15 + 0x28], r13
+0x0101ae0231  mov       qword ptr [r15 + 0x30], 0
+0x0101ae0239  lea       rax, [rip + 0x13e50]  ; _TOTEROWSTREAM_INTERNAL__3 |
+0x0101ae0240  mov       qword ptr [r15 + 0x38], rax
+0x0101ae0244  mov       qword ptr [r15 + 0x40], r13
+0x0101ae0248  mov       qword ptr [r15 + 0x48], 0
+0x0101ae0250  lea       rax, [rip + 0x13ed9]  ; _TOTEROWSTREAM_INTERNAL__4 |
+0x0101ae0257  mov       qword ptr [r15 + 0x50], rax
+0x0101ae025b  mov       qword ptr [r15 + 0x58], r13
+0x0101ae025f  mov       qword ptr [r15 + 0x60], 0
+0x0101ae0267  mov       byte ptr [r15 + 0x68], 1
+0x0101ae026c  mov       qword ptr [r15], r14
+0x0101ae026f  mov       qword ptr [r13], r14
+0x0101ae0273  mov       rdi, r13
+0x0101ae0276  call      0x101af4010  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x0101ae027b  cmp       dword ptr [r14], 0
+0x0101ae027f  je        0x101ae0347
+0x0101ae0285  mov       r12, qword ptr [r14]
+0x0101ae0288  mov       dword ptr [r14], 0
+0x0101ae028f  mov       rdi, r12
+0x0101ae0292  shr       rdi, 0x20
+0x0101ae0296  neg       edi
+0x0101ae0298  call      0x10328ba10  ; __epl_TE_IntToChar
+0x0101ae029d  mov       rdi, rax
+0x0101ae02a0  mov       esi, 1
+0x0101ae02a5  call      0x10327bcc0  ; _TEStringHdrAdd
+0x0101ae02aa  mov       rbx, rax
+0x0101ae02ad  mov       rsi, qword ptr [rax + 8]
+0x0101ae02b1  lea       rdi, [rip + 0x3cd3108]  ; __epl_string_126; 'SMstSetSubColumn failed - SQL Error Code WMstResetSubColumn failed - SQL Error Code '
+0x0101ae02b8  call      0x10327f960  ; _TEStringConcat
+0x0101ae02bd  mov       rdi, rax
+0x0101ae02c0  mov       esi, 1
+0x0101ae02c5  call      0x10327bcc0  ; _TEStringHdrAdd
+0x0101ae02ca  mov       r15, rax
+0x0101ae02cd  lea       r13, [rip + 0x400ca3c]  ; _MAS_MODULE1_LAST_SQL_ERR
+0x0101ae02d4  mov       rdi, qword ptr [r13]
+0x0101ae02d8  test      rdi, rdi
+0x0101ae02db  je        0x101ae02e2
+0x0101ae02dd  call      0x10327bd90  ; _TEStringHdrFree
+0x0101ae02e2  mov       qword ptr [r13], r15
+0x0101ae02e6  mov       rdi, rbx
+0x0101ae02e9  call      0x10327bd90  ; _TEStringHdrFree
+0x0101ae02ee  cmp       byte ptr [rbp - 0xe1], 1
+0x0101ae02f5  jne       0x101ae0311
+0x0101ae02f7  mov       rdi, r14
+0x0101ae02fa  call      0x100c6f620  ; _MAS_MODULE2_ROLLBACKANDSETAUTOCOMMITON |
+0x0101ae02ff  cmp       dword ptr [r14], 0
+0x0101ae0303  jne       0x101ae0314
+0x0101ae0305  lea       rax, [rip + 0x400c9f6]  ; _MAS_MODULE1_EDM_FAIL
+0x0101ae030c  movzx     ebx, word ptr [rax]
+0x0101ae030f  jmp       0x101ae0316
+0x0101ae0311  mov       qword ptr [r14], r12
+0x0101ae0314  xor       ebx, ebx
+0x0101ae0316  mov       rdi, r14
+0x0101ae0319  call      0x10328b6a0  ; __epl_End_Crit
+0x0101ae031e  mov       rax, qword ptr [rip + 0x3a1cc53]
+0x0101ae0325  mov       rax, qword ptr [rax]
+0x0101ae0328  cmp       rax, qword ptr [rbp - 0x30]
+0x0101ae032c  jne       0x101ae09cf
+0x0101ae0332  movsx     eax, bx
+0x0101ae0335  add       rsp, 0x138
+0x0101ae033c  pop       rbx
+0x0101ae033d  pop       r12
+0x0101ae033f  pop       r13
+0x0101ae0341  pop       r14
+0x0101ae0343  pop       r15
+0x0101ae0345  pop       rbp
+0x0101ae0346  ret
+0x0101ae0347  mov       qword ptr [r15], r14
+0x0101ae034a  test      al, al
+0x0101ae034c  je        0x101ae0880
+0x0101ae0352  lea       rsi, [rbp - 0xf0]
+0x0101ae0359  mov       rdi, r15
+0x0101ae035c  call      0x101ae0a70  ; _MSTSETSUBCOLUMN_INTERNAL__251 |
+0x0101ae0361  cmp       dword ptr [r14], 0
+0x0101ae0365  jne       0x101ae0285
+0x0101ae036b  movsx     r13, word ptr [rbp - 0xf0]
+0x0101ae0373  mov       qword ptr [r15], r14
+0x0101ae0376  mov       rdi, r15
+0x0101ae0379  call      0x101ae0ac0  ; _MSTSETSUBCOLUMN_INTERNAL__252 |
+0x0101ae037e  test      r12, r12
+0x0101ae0381  js        0x101ae08a1
+0x0101ae0387  cmp       r13, r12
+0x0101ae038a  jl        0x101ae08a1
+0x0101ae0390  mov       edi, 0x18
+0x0101ae0395  call      0x10328b340  ; _edb_alloc
+0x0101ae039a  mov       qword ptr [rax], r14
+0x0101ae039d  mov       qword ptr [rax + 8], r12
+0x0101ae03a1  lea       rcx, [rip + 0x17aafb8]  ; _edb_free
+0x0101ae03a8  mov       rbx, rcx
+0x0101ae03ab  mov       qword ptr [rbp - 0x118], rcx
+0x0101ae03b2  lea       rcx, [rip + 0x767]  ; _MSTSETSUBCOLUMN_INTERNAL__260 |
+0x0101ae03b9  mov       qword ptr [rbp - 0x128], rcx
+0x0101ae03c0  mov       qword ptr [rbp - 0x120], rax
+0x0101ae03c7  lea       rdi, [rip + 0x3cd2fc2]  ; __epl_string_header_46
+0x0101ae03ce  lea       rsi, [rbp - 0x128]
+0x0101ae03d5  lea       r9, [rbp - 0x150]
+0x0101ae03dc  mov       edx, 1
+0x0101ae03e1  xor       ecx, ecx
+0x0101ae03e3  xor       r8d, r8d
+0x0101ae03e6  call      0x100ae1780  ; __epl_DJMDSORT_opencfun |
+0x0101ae03eb  cmp       dword ptr [r14], 0
+0x0101ae03ef  jne       0x101ae0285
+0x0101ae03f5  mov       edi, 0x30
+0x0101ae03fa  call      0x10328b340  ; _edb_alloc
+0x0101ae03ff  mov       qword ptr [rax], r14
+0x0101ae0402  vmovups   xmm0, xmmword ptr [rbp - 0x150]
+0x0101ae040a  vmovups   xmmword ptr [rax + 8], xmm0
+0x0101ae040f  mov       word ptr [rax + 0x18], 0xffff
+0x0101ae0415  cmp       dword ptr [r14], 0
+0x0101ae0419  jne       0x101ae0285
+0x0101ae041f  mov       r15, rax
+0x0101ae0422  mov       edi, 0x78
+0x0101ae0427  call      0x10328b340  ; _edb_alloc
+0x0101ae042c  mov       r13, rax
+0x0101ae042f  mov       qword ptr [rax], r14
+0x0101ae0432  mov       edi, 0x10
+0x0101ae0437  call      0x10328b340  ; _edb_alloc
+0x0101ae043c  mov       rcx, qword ptr [r13]
+0x0101ae0440  mov       qword ptr [rax], rcx
+0x0101ae0443  mov       qword ptr [r13 + 0x18], 0
+0x0101ae044b  lea       rcx, [rip + 0x6fe]  ; _MSTSETSUBCOLUMN_INTERNAL__266 |
+0x0101ae0452  mov       qword ptr [r13 + 8], rcx
+0x0101ae0456  mov       qword ptr [r13 + 0x10], rax
+0x0101ae045a  lea       rax, [rip + 0x13baf]  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x0101ae0461  mov       qword ptr [r13 + 0x20], rax
+0x0101ae0465  mov       qword ptr [r13 + 0x28], r15
+0x0101ae0469  mov       qword ptr [r13 + 0x30], 0
+0x0101ae0471  lea       rax, [rip + 0x13c18]  ; _TOTEROWSTREAM_INTERNAL__3 |
+0x0101ae0478  mov       qword ptr [r13 + 0x38], rax
+0x0101ae047c  mov       qword ptr [r13 + 0x40], r15
+0x0101ae0480  mov       qword ptr [r13 + 0x48], 0
+0x0101ae0488  lea       rax, [rip + 0x13ca1]  ; _TOTEROWSTREAM_INTERNAL__4 |
+0x0101ae048f  mov       qword ptr [r13 + 0x50], rax
+0x0101ae0493  mov       qword ptr [r13 + 0x58], r15
+0x0101ae0497  mov       qword ptr [r13 + 0x60], 0
+0x0101ae049f  mov       byte ptr [r13 + 0x68], 1
+0x0101ae04a4  mov       qword ptr [r13], r14
+0x0101ae04a8  mov       qword ptr [r15], r14
+0x0101ae04ab  mov       rdi, r15
+0x0101ae04ae  call      0x101af4010  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x0101ae04b3  cmp       dword ptr [r14], 0
+0x0101ae04b7  jne       0x101ae0285
+0x0101ae04bd  mov       qword ptr [r13], r14
+0x0101ae04c1  test      al, al
+0x0101ae04c3  je        0x101ae08ed
+0x0101ae04c9  lea       rsi, [rbp - 0xe8]
+0x0101ae04d0  mov       rdi, r13
+0x0101ae04d3  call      0x101ae0b70  ; _MSTSETSUBCOLUMN_INTERNAL__268 |
+0x0101ae04d8  cmp       dword ptr [r14], 0
+0x0101ae04dc  jne       0x101ae0285
+0x0101ae04e2  mov       r15b, byte ptr [rbp - 0xe8]
+0x0101ae04e9  mov       qword ptr [r13], r14
+0x0101ae04ed  mov       rdi, r13
+0x0101ae04f0  call      0x101ae0bc0  ; _MSTSETSUBCOLUMN_INTERNAL__269 |
+0x0101ae04f5  cmp       dword ptr [r14], 0
+0x0101ae04f9  jne       0x101ae0285
+0x0101ae04ff  mov       edi, 0x18
+0x0101ae0504  call      0x10328b340  ; _edb_alloc
+0x0101ae0509  mov       r13, rax
+0x0101ae050c  mov       qword ptr [rax], r14
+0x0101ae050f  mov       qword ptr [rax + 8], r12
+0x0101ae0513  mov       edi, 0x18
+0x0101ae0518  call      0x10328b340  ; _edb_alloc
+0x0101ae051d  mov       qword ptr [rax], r14
+0x0101ae0520  test      r15b, 2
+0x0101ae0524  jne       0x101ae08f7
+0x0101ae052a  mov       ecx, dword ptr [rip + 0x3e9f870]  ; _T7303
+0x0101ae0530  mov       dword ptr [rbp - 0x50], ecx
+0x0101ae0533  lea       rcx, [rip + 0x776]  ; _MSTSETSUBCOLUMN_INTERNAL__279 |
+0x0101ae053a  mov       qword ptr [rbp - 0x70], rcx
+0x0101ae053e  mov       qword ptr [rbp - 0x90], rax
+0x0101ae0545  mov       qword ptr [rbp - 0xb0], rbx
+0x0101ae054c  add       rax, 0xd
+0x0101ae0550  mov       qword ptr [rbp - 0xd0], rax
+0x0101ae0557  call      0x10328a790  ; _TEGetCurrentDB
+0x0101ae055c  mov       rsi, qword ptr [rip + 0x3cd2e35]
+0x0101ae0563  sub       rsp, 8
+0x0101ae0567  lea       r11, [rbp - 0xd0]
+0x0101ae056e  lea       r15, [rbp - 0x90]
+0x0101ae0575  lea       r10, [rbp - 0x70]
+0x0101ae0579  lea       rdx, [rip + 0x700]  ; _MSTSETSUBCOLUMN_INTERNAL__278 |
+0x0101ae0580  mov       rdi, rax
+0x0101ae0583  mov       rcx, r13
+0x0101ae0586  xor       r8d, r8d
+0x0101ae0589  mov       r9d, 1
+0x0101ae058f  push      r11
+0x0101ae0591  push      0
+0x0101ae0593  push      r15
+0x0101ae0595  push      r10
+0x0101ae0597  lea       rax, [rbp - 0x50]
+0x0101ae059b  push      rax
+0x0101ae059c  call      0x10324f790  ; _TENamedTableUpdateFunc
+0x0101ae05a1  add       rsp, 0x30
+0x0101ae05a5  lea       r8, [rbp - 0xb0]
+0x0101ae05ac  mov       rdi, r13
+0x0101ae05af  lea       rsi, [rip + 0x17aadaa]  ; _edb_free
+0x0101ae05b6  mov       edx, 1
+0x0101ae05bb  mov       rcx, r15
+0x0101ae05be  call      0x10328a3c0  ; __epl_FreeUpdateInfo
+0x0101ae05c3  cmp       dword ptr [r14], 0
+0x0101ae05c7  jne       0x101ae09a8
+0x0101ae05cd  call      0x10328a790  ; _TEGetCurrentDB
+0x0101ae05d2  mov       rdi, rax
+0x0101ae05d5  call      0x1032505c0  ; _TEAutoC_Commit
+0x0101ae05da  cmp       dword ptr [r14], 0
+0x0101ae05de  jne       0x101ae09a8
+0x0101ae05e4  mov       edi, 0x18
+0x0101ae05e9  call      0x10328b340  ; _edb_alloc
+0x0101ae05ee  mov       qword ptr [rax], r14
+0x0101ae05f1  mov       qword ptr [rax + 8], r12
+0x0101ae05f5  mov       qword ptr [rbp - 0x40], rbx
+0x0101ae05f9  lea       rcx, [rip + 0x6e0]  ; _MSTSETSUBCOLUMN_INTERNAL__310 |
+0x0101ae0600  mov       qword ptr [rbp - 0x50], rcx
+0x0101ae0604  mov       qword ptr [rbp - 0x48], rax
+0x0101ae0608  lea       rdi, [rip + 0x3cd2d81]  ; __epl_string_header_46
+0x0101ae060f  lea       rsi, [rbp - 0x50]
+0x0101ae0613  lea       r9, [rbp - 0x160]
+0x0101ae061a  xor       edx, edx
+0x0101ae061c  xor       ecx, ecx
+0x0101ae061e  xor       r8d, r8d
+0x0101ae0621  call      0x100ae1780  ; __epl_DJMDSORT_opencfun |
+0x0101ae0626  cmp       dword ptr [r14], 0
+0x0101ae062a  jne       0x101ae0285
+0x0101ae0630  mov       edi, 0x30
+0x0101ae0635  call      0x10328b340  ; _edb_alloc
+0x0101ae063a  mov       qword ptr [rax], r14
+0x0101ae063d  vmovups   xmm0, xmmword ptr [rbp - 0x160]
+0x0101ae0645  vmovups   xmmword ptr [rax + 8], xmm0
+0x0101ae064a  mov       word ptr [rax + 0x18], 0xffff
+0x0101ae0650  cmp       dword ptr [r14], 0
+0x0101ae0654  jne       0x101ae0285
+0x0101ae065a  mov       r13, rax
+0x0101ae065d  mov       edi, 0x78
+0x0101ae0662  call      0x10328b340  ; _edb_alloc
+0x0101ae0667  mov       r12, rax
+0x0101ae066a  mov       qword ptr [rax], r14
+0x0101ae066d  mov       edi, 0x10
+0x0101ae0672  call      0x10328b340  ; _edb_alloc
+0x0101ae0677  mov       rcx, qword ptr [r12]
+0x0101ae067b  mov       qword ptr [rax], rcx
+0x0101ae067e  mov       qword ptr [r12 + 0x18], 0
+0x0101ae0687  lea       rcx, [rip + 0x682]  ; _MSTSETSUBCOLUMN_INTERNAL__316 |
+0x0101ae068e  mov       qword ptr [r12 + 8], rcx
+0x0101ae0693  mov       qword ptr [r12 + 0x10], rax
+0x0101ae0698  lea       rax, [rip + 0x13971]  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x0101ae069f  mov       qword ptr [r12 + 0x20], rax
+0x0101ae06a4  mov       qword ptr [r12 + 0x28], r13
+0x0101ae06a9  mov       qword ptr [r12 + 0x30], 0
+0x0101ae06b2  lea       rax, [rip + 0x139d7]  ; _TOTEROWSTREAM_INTERNAL__3 |
+0x0101ae06b9  mov       qword ptr [r12 + 0x38], rax
+0x0101ae06be  mov       qword ptr [r12 + 0x40], r13
+0x0101ae06c3  mov       qword ptr [r12 + 0x48], 0
+0x0101ae06cc  lea       rax, [rip + 0x13a5d]  ; _TOTEROWSTREAM_INTERNAL__4 |
+0x0101ae06d3  mov       qword ptr [r12 + 0x50], rax
+0x0101ae06d8  mov       qword ptr [r12 + 0x58], r13
+0x0101ae06dd  mov       qword ptr [r12 + 0x60], 0
+0x0101ae06e6  mov       byte ptr [r12 + 0x68], 1
+0x0101ae06ec  mov       eax, dword ptr [rbp - 0xff]
+0x0101ae06f2  mov       ecx, dword ptr [rbp - 0xfc]
+0x0101ae06f8  mov       dword ptr [r12 + 0x69], eax
+0x0101ae06fd  mov       dword ptr [r12 + 0x6c], ecx
+0x0101ae0702  mov       qword ptr [r12], r14
+0x0101ae0706  mov       qword ptr [r13], r14
+0x0101ae070a  mov       rdi, r13
+0x0101ae070d  call      0x101af4010  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x0101ae0712  mov       r15d, dword ptr [r14]
+0x0101ae0715  test      r15d, r15d
+0x0101ae0718  jne       0x101ae09ee
+0x0101ae071e  test      al, al
+0x0101ae0720  je        0x101ae09ee
+0x0101ae0726  mov       qword ptr [r12], r14
+0x0101ae072a  mov       rdi, r12
+0x0101ae072d  lea       rsi, [rbp - 0xf8]
+0x0101ae0734  call      0x101ae0d80  ; _MSTSETSUBCOLUMN_INTERNAL__318 |
+0x0101ae0739  cmp       dword ptr [r14], 0
+0x0101ae073d  jne       0x101ae09f3
+0x0101ae0743  test      byte ptr [rbp - 0xf3], 2
+0x0101ae074a  je        0x101ae084d
+0x0101ae0750  mov       edi, 0x18
+0x0101ae0755  call      0x10328b340  ; _edb_alloc
+0x0101ae075a  mov       r15, rax
+0x0101ae075d  mov       qword ptr [rax], r14
+0x0101ae0760  movzx     eax, word ptr [rbp - 0xf8]
+0x0101ae0767  mov       word ptr [r15 + 8], ax
+0x0101ae076c  movzx     eax, word ptr [rbp - 0xf4]
+0x0101ae0773  mov       word ptr [r15 + 0xe], ax
+0x0101ae0778  mov       eax, dword ptr [rbp - 0xf8]
+0x0101ae077e  mov       dword ptr [r15 + 0xa], eax
+0x0101ae0782  mov       edi, 0x18
+0x0101ae0787  call      0x10328b340  ; _edb_alloc
+0x0101ae078c  mov       qword ptr [rax], r14
+0x0101ae078f  mov       ecx, dword ptr [rip + 0x3e9f603]  ; _T7313
+0x0101ae0795  mov       dword ptr [rbp - 0xe0], ecx
+0x0101ae079b  lea       rcx, [rip + 0x6be]  ; _MSTSETSUBCOLUMN_INTERNAL__321 |
+0x0101ae07a2  mov       qword ptr [rbp - 0x70], rcx
+0x0101ae07a6  mov       qword ptr [rbp - 0x90], rax
+0x0101ae07ad  mov       qword ptr [rbp - 0xb0], rbx
+0x0101ae07b4  add       rax, 0xd
+0x0101ae07b8  mov       qword ptr [rbp - 0xd0], rax
+0x0101ae07bf  call      0x10328a790  ; _TEGetCurrentDB
+0x0101ae07c4  mov       rsi, qword ptr [rip + 0x3cd2bcd]
+0x0101ae07cb  sub       rsp, 8
+0x0101ae07cf  mov       rdi, rax
+0x0101ae07d2  lea       rdx, [rip + 0x657]  ; _MSTSETSUBCOLUMN_INTERNAL__320 |
+0x0101ae07d9  mov       rcx, r15
+0x0101ae07dc  xor       r8d, r8d
+0x0101ae07df  mov       r9d, 1
+0x0101ae07e5  lea       rax, [rbp - 0xd0]
+0x0101ae07ec  push      rax
+0x0101ae07ed  push      0
+0x0101ae07ef  lea       r13, [rbp - 0x90]
+0x0101ae07f6  push      r13
+0x0101ae07f8  lea       rax, [rbp - 0x70]
+0x0101ae07fc  push      rax
+0x0101ae07fd  lea       rax, [rbp - 0xe0]
+0x0101ae0804  push      rax
+0x0101ae0805  call      0x10324f790  ; _TENamedTableUpdateFunc
+0x0101ae080a  add       rsp, 0x30
+0x0101ae080e  mov       rdi, r15
+0x0101ae0811  lea       rsi, [rip + 0x17aab48]  ; _edb_free
+0x0101ae0818  mov       edx, 1
+0x0101ae081d  mov       rcx, r13
+0x0101ae0820  lea       r8, [rbp - 0xb0]
+0x0101ae0827  call      0x10328a3c0  ; __epl_FreeUpdateInfo
+0x0101ae082c  cmp       dword ptr [r14], 0
+0x0101ae0830  jne       0x101ae09d4
+0x0101ae0836  call      0x10328a790  ; _TEGetCurrentDB
+0x0101ae083b  mov       rdi, rax
+0x0101ae083e  call      0x1032505c0  ; _TEAutoC_Commit
+0x0101ae0843  cmp       dword ptr [r14], 0
+0x0101ae0847  jne       0x101ae09d4
+0x0101ae084d  mov       qword ptr [r12], r14
+0x0101ae0851  mov       rax, qword ptr [r12 + 0x28]
+0x0101ae0856  mov       qword ptr [rax], r14
+0x0101ae0859  cmp       byte ptr [r12 + 0x68], 0
+0x0101ae085f  je        0x101ae0a19
+0x0101ae0865  mov       rdi, qword ptr [r12 + 0x58]
+0x0101ae086a  call      qword ptr [r12 + 0x20]
+0x0101ae086f  mov       r15d, dword ptr [r14]
+0x0101ae0872  test      r15d, r15d
+0x0101ae0875  je        0x101ae071e
+0x0101ae087b  jmp       0x101ae09ee
+0x0101ae0880  mov       rdi, r15
+0x0101ae0883  call      0x101ae0ac0  ; _MSTSETSUBCOLUMN_INTERNAL__252 |
+0x0101ae0888  mov       rax, qword ptr [r14]
+0x0101ae088b  mov       qword ptr [r14 + 8], rax
+0x0101ae088f  movabs    rax, 0x640032d48c
+0x0101ae0899  mov       qword ptr [r14], rax
+0x0101ae089c  jmp       0x101ae0285
+0x0101ae08a1  lea       r15, [rip + 0x3cd2b00]  ; __epl_string_header_124
+0x0101ae08a8  mov       rdi, r15
+0x0101ae08ab  call      0x10327be70  ; _TEStringHdrCopy
+0x0101ae08b0  lea       r12, [rip + 0x400c459]  ; _MAS_MODULE1_LAST_SQL_ERR
+0x0101ae08b7  mov       rdi, qword ptr [r12]
+0x0101ae08bb  test      rdi, rdi
+0x0101ae08be  je        0x101ae08c5
+0x0101ae08c0  call      0x10327bd90  ; _TEStringHdrFree
+0x0101ae08c5  mov       qword ptr [r12], r15
+0x0101ae08c9  cmp       byte ptr [rbp - 0xe1], 1
+0x0101ae08d0  jne       0x101ae0316
+0x0101ae08d6  mov       rdi, r14
+0x0101ae08d9  call      0x100c6f530  ; _MAS_MODULE2_COMMITANDSETAUTOCOMMITON |
+0x0101ae08de  cmp       dword ptr [r14], 0
+0x0101ae08e2  jne       0x101ae0285
+0x0101ae08e8  jmp       0x101ae0316
+0x0101ae08ed  mov       rdi, r13
+0x0101ae08f0  call      0x101ae0bc0  ; _MSTSETSUBCOLUMN_INTERNAL__269 |
+0x0101ae08f5  jmp       0x101ae0888
+0x0101ae08f7  mov       ecx, dword ptr [rip + 0x3e9f493]  ; _T7314
+0x0101ae08fd  mov       dword ptr [rbp - 0x50], ecx
+0x0101ae0900  lea       rcx, [rip + 0x349]  ; _MSTSETSUBCOLUMN_INTERNAL__271 |
+0x0101ae0907  mov       qword ptr [rbp - 0x70], rcx
+0x0101ae090b  mov       qword ptr [rbp - 0x90], rax
+0x0101ae0912  mov       r12, rbx
+0x0101ae0915  mov       qword ptr [rbp - 0xb0], rbx
+0x0101ae091c  add       rax, 0xd
+0x0101ae0920  mov       qword ptr [rbp - 0xd0], rax
+0x0101ae0927  call      0x10328a790  ; _TEGetCurrentDB
+0x0101ae092c  mov       rsi, qword ptr [rip + 0x3cd2a65]
+0x0101ae0933  sub       rsp, 8
+0x0101ae0937  lea       r10, [rbp - 0xd0]
+0x0101ae093e  lea       rbx, [rbp - 0x90]
+0x0101ae0945  lea       r11, [rbp - 0x70]
+0x0101ae0949  lea       r15, [rbp - 0x50]
+0x0101ae094d  lea       rdx, [rip + 0x2cc]  ; _MSTSETSUBCOLUMN_INTERNAL__270 |
+0x0101ae0954  mov       rdi, rax
+0x0101ae0957  mov       rcx, r13
+0x0101ae095a  xor       r8d, r8d
+0x0101ae095d  mov       r9d, 1
+0x0101ae0963  push      r10
+0x0101ae0965  push      0
+0x0101ae0967  push      rbx
+0x0101ae0968  push      r11
+0x0101ae096a  push      r15
+0x0101ae096c  call      0x10324f790  ; _TENamedTableUpdateFunc
+0x0101ae0971  add       rsp, 0x30
+0x0101ae0975  lea       r8, [rbp - 0xb0]
+0x0101ae097c  mov       rdi, r13
+0x0101ae097f  mov       rsi, r12
+0x0101ae0982  mov       edx, 1
+0x0101ae0987  mov       rcx, rbx
+0x0101ae098a  call      0x10328a3c0  ; __epl_FreeUpdateInfo
+0x0101ae098f  cmp       dword ptr [r14], 0
+0x0101ae0993  jne       0x101ae09a8
+0x0101ae0995  call      0x10328a790  ; _TEGetCurrentDB
+0x0101ae099a  mov       rdi, rax
+0x0101ae099d  call      0x1032505c0  ; _TEAutoC_Commit
+0x0101ae09a2  cmp       dword ptr [r14], 0
+0x0101ae09a6  je        0x101ae0a25
+0x0101ae09a8  mov       rbx, qword ptr [r14]
+0x0101ae09ab  mov       dword ptr [r14], 0
+0x0101ae09b2  call      0x10328a790  ; _TEGetCurrentDB
+0x0101ae09b7  mov       rdi, rax
+0x0101ae09ba  call      0x103250620  ; _TEAutoC_Rollback
+0x0101ae09bf  mov       qword ptr [r14], rbx
+0x0101ae09c2  test      ebx, ebx
+0x0101ae09c4  jne       0x101ae0285
+0x0101ae09ca  jmp       0x101ae0314
+0x0101ae09cf  call      0x1038c3da0
+0x0101ae09d4  mov       r15, qword ptr [r14]
+0x0101ae09d7  mov       dword ptr [r14], 0
+0x0101ae09de  call      0x10328a790  ; _TEGetCurrentDB
+0x0101ae09e3  mov       rdi, rax
+0x0101ae09e6  call      0x103250620  ; _TEAutoC_Rollback
+0x0101ae09eb  mov       qword ptr [r14], r15
+0x0101ae09ee  test      r15d, r15d
+0x0101ae09f1  je        0x101ae0a19
+0x0101ae09f3  mov       rbx, qword ptr [r14]
+0x0101ae09f6  mov       dword ptr [r14], 0
+0x0101ae09fd  mov       qword ptr [r12], r14
+0x0101ae0a01  mov       rdi, r12
+0x0101ae0a04  call      0x101ae0dd0  ; _MSTSETSUBCOLUMN_INTERNAL__319 |
+0x0101ae0a09  mov       qword ptr [r14], rbx
+0x0101ae0a0c  test      ebx, ebx
+0x0101ae0a0e  jne       0x101ae0285
+0x0101ae0a14  jmp       0x101ae0314
+0x0101ae0a19  mov       qword ptr [r12], r14
+0x0101ae0a1d  mov       rdi, r12
+0x0101ae0a20  call      0x101ae0dd0  ; _MSTSETSUBCOLUMN_INTERNAL__319 |
+0x0101ae0a25  lea       rax, [rip + 0x400c2d8]  ; _MAS_MODULE1_EDM_SUCCESS
+0x0101ae0a2c  movzx     ebx, word ptr [rax]
+0x0101ae0a2f  cmp       byte ptr [rbp - 0xe1], 1
+0x0101ae0a36  jne       0x101ae0316
+0x0101ae0a3c  jmp       0x101ae08d6
+0x0101ae0a41  nop       word ptr cs:[rax + rax]
+
+## _MAS_MODULE6_MSTRESETSUBCOLUMN | 
+address=0x101ae0e90 size=0x420
+0x0101ae0e90  push      rbp
+0x0101ae0e91  mov       rbp, rsp
+0x0101ae0e94  push      r15
+0x0101ae0e96  push      r14
+0x0101ae0e98  push      r13
+0x0101ae0e9a  push      r12
+0x0101ae0e9c  push      rbx
+0x0101ae0e9d  sub       rsp, 0xb8
+0x0101ae0ea4  mov       r14, rdi
+0x0101ae0ea7  mov       rax, qword ptr [rip + 0x3a1c0ca]
+0x0101ae0eae  mov       rax, qword ptr [rax]
+0x0101ae0eb1  mov       qword ptr [rbp - 0x30], rax
+0x0101ae0eb5  call      0x10328b650  ; __epl_Start_Crit
+0x0101ae0eba  mov       rdi, r14
+0x0101ae0ebd  call      0x100c6f5d0  ; _MAS_MODULE2_SETAUTOCOMMITOFF_IFON |
+0x0101ae0ec2  mov       byte ptr [rbp - 0xc1], al
+0x0101ae0ec8  cmp       dword ptr [r14], 0
+0x0101ae0ecc  jne       0x101ae0f1a
+0x0101ae0ece  lea       rdi, [rip + 0x3cd24bb]  ; __epl_string_header_46
+0x0101ae0ed5  lea       r9, [rbp - 0xd8]
+0x0101ae0edc  xor       esi, esi
+0x0101ae0ede  xor       edx, edx
+0x0101ae0ee0  xor       ecx, ecx
+0x0101ae0ee2  xor       r8d, r8d
+0x0101ae0ee5  call      0x100ae1780  ; __epl_DJMDSORT_opencfun |
+0x0101ae0eea  cmp       dword ptr [r14], 0
+0x0101ae0eee  jne       0x101ae0f1a
+0x0101ae0ef0  mov       edi, 0x30
+0x0101ae0ef5  call      0x10328b340  ; _edb_alloc
+0x0101ae0efa  mov       qword ptr [rax], r14
+0x0101ae0efd  vmovups   xmm0, xmmword ptr [rbp - 0xd8]
+0x0101ae0f05  vmovups   xmmword ptr [rax + 8], xmm0
+0x0101ae0f0a  mov       word ptr [rax + 0x18], 0xffff
+0x0101ae0f10  cmp       dword ptr [r14], 0
+0x0101ae0f14  je        0x101ae0fdc
+0x0101ae0f1a  mov       r12, qword ptr [r14]
+0x0101ae0f1d  mov       dword ptr [r14], 0
+0x0101ae0f24  mov       rdi, r12
+0x0101ae0f27  shr       rdi, 0x20
+0x0101ae0f2b  neg       edi
+0x0101ae0f2d  call      0x10328ba10  ; __epl_TE_IntToChar
+0x0101ae0f32  mov       rdi, rax
+0x0101ae0f35  mov       esi, 1
+0x0101ae0f3a  call      0x10327bcc0  ; _TEStringHdrAdd
+0x0101ae0f3f  mov       rbx, rax
+0x0101ae0f42  mov       rsi, qword ptr [rax + 8]
+0x0101ae0f46  lea       rdi, [rip + 0x3cd249c]  ; __epl_string_123; 'WMstResetSubColumn failed - SQL Error Code '
+0x0101ae0f4d  call      0x10327f960  ; _TEStringConcat
+0x0101ae0f52  mov       rdi, rax
+0x0101ae0f55  mov       esi, 1
+0x0101ae0f5a  call      0x10327bcc0  ; _TEStringHdrAdd
+0x0101ae0f5f  mov       r15, rax
+0x0101ae0f62  lea       r13, [rip + 0x400bda7]  ; _MAS_MODULE1_LAST_SQL_ERR
+0x0101ae0f69  mov       rdi, qword ptr [r13]
+0x0101ae0f6d  test      rdi, rdi
+0x0101ae0f70  je        0x101ae0f77
+0x0101ae0f72  call      0x10327bd90  ; _TEStringHdrFree
+0x0101ae0f77  mov       qword ptr [r13], r15
+0x0101ae0f7b  mov       rdi, rbx
+0x0101ae0f7e  call      0x10327bd90  ; _TEStringHdrFree
+0x0101ae0f83  cmp       byte ptr [rbp - 0xc1], 1
+0x0101ae0f8a  jne       0x101ae0fa6
+0x0101ae0f8c  mov       rdi, r14
+0x0101ae0f8f  call      0x100c6f620  ; _MAS_MODULE2_ROLLBACKANDSETAUTOCOMMITON |
+0x0101ae0f94  cmp       dword ptr [r14], 0
+0x0101ae0f98  jne       0x101ae0fa9
+0x0101ae0f9a  lea       rax, [rip + 0x400bd61]  ; _MAS_MODULE1_EDM_FAIL
+0x0101ae0fa1  movzx     ebx, word ptr [rax]
+0x0101ae0fa4  jmp       0x101ae0fab
+0x0101ae0fa6  mov       qword ptr [r14], r12
+0x0101ae0fa9  xor       ebx, ebx
+0x0101ae0fab  mov       rdi, r14
+0x0101ae0fae  call      0x10328b6a0  ; __epl_End_Crit
+0x0101ae0fb3  mov       rax, qword ptr [rip + 0x3a1bfbe]
+0x0101ae0fba  mov       rax, qword ptr [rax]
+0x0101ae0fbd  cmp       rax, qword ptr [rbp - 0x30]
+0x0101ae0fc1  jne       0x101ae12a7
+0x0101ae0fc7  movsx     eax, bx
+0x0101ae0fca  add       rsp, 0xb8
+0x0101ae0fd1  pop       rbx
+0x0101ae0fd2  pop       r12
+0x0101ae0fd4  pop       r13
+0x0101ae0fd6  pop       r14
+0x0101ae0fd8  pop       r15
+0x0101ae0fda  pop       rbp
+0x0101ae0fdb  ret
+0x0101ae0fdc  mov       r12, rax
+0x0101ae0fdf  mov       edi, 0x78
+0x0101ae0fe4  call      0x10328b340  ; _edb_alloc
+0x0101ae0fe9  mov       r15, rax
+0x0101ae0fec  mov       qword ptr [rax], r14
+0x0101ae0fef  mov       edi, 0x10
+0x0101ae0ff4  call      0x10328b340  ; _edb_alloc
+0x0101ae0ff9  mov       rcx, qword ptr [r15]
+0x0101ae0ffc  mov       qword ptr [rax], rcx
+0x0101ae0fff  mov       qword ptr [r15 + 0x18], 0
+0x0101ae1007  lea       rcx, [rip + 0x2a2]  ; _MSTRESETSUBCOLUMN_INTERNAL__414 |
+0x0101ae100e  mov       qword ptr [r15 + 8], rcx
+0x0101ae1012  mov       qword ptr [r15 + 0x10], rax
+0x0101ae1016  lea       rax, [rip + 0x12ff3]  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x0101ae101d  mov       qword ptr [r15 + 0x20], rax
+0x0101ae1021  mov       qword ptr [r15 + 0x28], r12
+0x0101ae1025  mov       qword ptr [r15 + 0x30], 0
+0x0101ae102d  lea       rax, [rip + 0x1305c]  ; _TOTEROWSTREAM_INTERNAL__3 |
+0x0101ae1034  mov       qword ptr [r15 + 0x38], rax
+0x0101ae1038  mov       qword ptr [r15 + 0x40], r12
+0x0101ae103c  mov       qword ptr [r15 + 0x48], 0
+0x0101ae1044  lea       rax, [rip + 0x130e5]  ; _TOTEROWSTREAM_INTERNAL__4 |
+0x0101ae104b  mov       qword ptr [r15 + 0x50], rax
+0x0101ae104f  mov       qword ptr [r15 + 0x58], r12
+0x0101ae1053  mov       qword ptr [r15 + 0x60], 0
+0x0101ae105b  mov       byte ptr [r15 + 0x68], 1
+0x0101ae1060  mov       qword ptr [r15], r14
+0x0101ae1063  mov       qword ptr [r12], r14
+0x0101ae1067  mov       rdi, r12
+0x0101ae106a  call      0x101af4010  ; _TOTEROWSTREAM_INTERNAL__2 |
+0x0101ae106f  mov       ebx, dword ptr [r14]
+0x0101ae1072  test      ebx, ebx
+0x0101ae1074  jne       0x101ae120c
+0x0101ae107a  test      al, al
+0x0101ae107c  je        0x101ae120c
+0x0101ae1082  lea       r12, [rbp - 0x70]
+0x0101ae1086  nop       word ptr cs:[rax + rax]
+0x0101ae1090  mov       qword ptr [r15], r14
+0x0101ae1093  mov       rax, qword ptr [r15 + 0x28]
+0x0101ae1097  mov       qword ptr [rax], r14
+0x0101ae109a  mov       rdi, qword ptr [r15 + 0x40]
+0x0101ae109e  call      qword ptr [r15 + 0x38]
+0x0101ae10a2  mov       rcx, qword ptr [r15]
+0x0101ae10a5  cmp       dword ptr [rcx], 0
+0x0101ae10a8  jne       0x101ae10bf
+0x0101ae10aa  mov       rdi, qword ptr [r15 + 0x10]
+0x0101ae10ae  mov       qword ptr [rdi], rcx
+0x0101ae10b1  mov       rsi, rax
+0x0101ae10b4  lea       rdx, [rbp - 0xc8]
+0x0101ae10bb  call      qword ptr [r15 + 8]
+0x0101ae10bf  cmp       dword ptr [r14], 0
+0x0101ae10c3  jne       0x101ae1210
+0x0101ae10c9  test      byte ptr [rbp - 0xc3], 2
+0x0101ae10d0  je        0x101ae11c4
+0x0101ae10d6  mov       edi, 0x18
+0x0101ae10db  call      0x10328b340  ; _edb_alloc
+0x0101ae10e0  mov       r13, rax
+0x0101ae10e3  mov       qword ptr [rax], r14
+0x0101ae10e6  movzx     eax, word ptr [rbp - 0xc8]
+0x0101ae10ed  mov       word ptr [r13 + 8], ax
+0x0101ae10f2  movzx     eax, word ptr [rbp - 0xc4]
+0x0101ae10f9  mov       word ptr [r13 + 0xe], ax
+0x0101ae10fe  mov       eax, dword ptr [rbp - 0xc8]
+0x0101ae1104  mov       dword ptr [r13 + 0xa], eax
+0x0101ae1108  mov       edi, 0x18
+0x0101ae110d  call      0x10328b340  ; _edb_alloc
+0x0101ae1112  mov       qword ptr [rax], r14
+0x0101ae1115  mov       ecx, dword ptr [rip + 0x3e9ec6d]  ; _T7345
+0x0101ae111b  mov       dword ptr [rbp - 0xc0], ecx
+0x0101ae1121  lea       rcx, [rip + 0x288]  ; _MSTRESETSUBCOLUMN_INTERNAL__419 |
+0x0101ae1128  mov       qword ptr [rbp - 0x50], rcx
+0x0101ae112c  mov       qword ptr [rbp - 0x70], rax
+0x0101ae1130  lea       rbx, [rip + 0x17aa229]  ; _edb_free
+0x0101ae1137  mov       qword ptr [rbp - 0x90], rbx
+0x0101ae113e  add       rax, 0xd
+0x0101ae1142  mov       qword ptr [rbp - 0xb0], rax
+0x0101ae1149  call      0x10328a790  ; _TEGetCurrentDB
+0x0101ae114e  mov       rsi, qword ptr [rip + 0x3cd2243]
+0x0101ae1155  sub       rsp, 8
+0x0101ae1159  mov       rdi, rax
+0x0101ae115c  lea       rdx, [rip + 0x21d]  ; _MSTRESETSUBCOLUMN_INTERNAL__418 |
+0x0101ae1163  mov       rcx, r13
+0x0101ae1166  xor       r8d, r8d
+0x0101ae1169  mov       r9d, 1
+0x0101ae116f  lea       rax, [rbp - 0xb0]
+0x0101ae1176  push      rax
+0x0101ae1177  push      0
+0x0101ae1179  push      r12
+0x0101ae117b  lea       rax, [rbp - 0x50]
+0x0101ae117f  push      rax
+0x0101ae1180  lea       rax, [rbp - 0xc0]
+0x0101ae1187  push      rax
+0x0101ae1188  call      0x10324f790  ; _TENamedTableUpdateFunc
+0x0101ae118d  add       rsp, 0x30
+0x0101ae1191  mov       rdi, r13
+0x0101ae1194  mov       rsi, rbx
+0x0101ae1197  mov       edx, 1
+0x0101ae119c  mov       rcx, r12
+0x0101ae119f  lea       r8, [rbp - 0x90]
+0x0101ae11a6  call      0x10328a3c0  ; __epl_FreeUpdateInfo
+0x0101ae11ab  cmp       dword ptr [r14], 0
+0x0101ae11af  jne       0x101ae11f2
+0x0101ae11b1  call      0x10328a790  ; _TEGetCurrentDB
+0x0101ae11b6  mov       rdi, rax
+0x0101ae11b9  call      0x1032505c0  ; _TEAutoC_Commit
+0x0101ae11be  cmp       dword ptr [r14], 0
+0x0101ae11c2  jne       0x101ae11f2
+0x0101ae11c4  mov       qword ptr [r15], r14
+0x0101ae11c7  mov       rax, qword ptr [r15 + 0x28]
+0x0101ae11cb  mov       qword ptr [rax], r14
+0x0101ae11ce  cmp       byte ptr [r15 + 0x68], 0
+0x0101ae11d3  je        0x101ae1272
+0x0101ae11d9  mov       rdi, qword ptr [r15 + 0x58]
+0x0101ae11dd  call      qword ptr [r15 + 0x20]
+0x0101ae11e1  mov       ebx, dword ptr [r14]
+0x0101ae11e4  test      ebx, ebx
+0x0101ae11e6  jne       0x101ae120c
+0x0101ae11e8  test      al, al
+0x0101ae11ea  jne       0x101ae1090
+0x0101ae11f0  jmp       0x101ae120c
+0x0101ae11f2  mov       rbx, qword ptr [r14]
+0x0101ae11f5  mov       dword ptr [r14], 0
+0x0101ae11fc  call      0x10328a790  ; _TEGetCurrentDB
+0x0101ae1201  mov       rdi, rax
+0x0101ae1204  call      0x103250620  ; _TEAutoC_Rollback
+0x0101ae1209  mov       qword ptr [r14], rbx
+0x0101ae120c  test      ebx, ebx
+0x0101ae120e  je        0x101ae1272
+0x0101ae1210  mov       rbx, qword ptr [r14]
+0x0101ae1213  mov       dword ptr [r14], 0
+0x0101ae121a  mov       qword ptr [r15], r14
+0x0101ae121d  mov       rax, qword ptr [r15 + 0x28]
+0x0101ae1221  mov       qword ptr [rax], r14
+0x0101ae1224  cmp       byte ptr [r15 + 0x68], 0
+0x0101ae1229  je        0x101ae1238
+0x0101ae122b  mov       byte ptr [r15 + 0x68], 0
+0x0101ae1230  mov       rdi, qword ptr [r15 + 0x58]
+0x0101ae1234  call      qword ptr [r15 + 0x50]
+0x0101ae1238  mov       rdi, qword ptr [r15 + 0x10]
+0x0101ae123c  test      rdi, rdi
+0x0101ae123f  je        0x101ae125a
+0x0101ae1241  mov       rax, qword ptr [r15 + 0x18]
+0x0101ae1245  test      rax, rax
+0x0101ae1248  je        0x101ae1255
+0x0101ae124a  call      rax
+0x0101ae124c  mov       rdi, qword ptr [r15 + 0x10]
+0x0101ae1250  test      rdi, rdi
+0x0101ae1253  je        0x101ae125a
+0x0101ae1255  call      0x10328b360  ; _edb_free
+0x0101ae125a  mov       rdi, r15
+0x0101ae125d  call      0x10328b360  ; _edb_free
+0x0101ae1262  mov       qword ptr [r14], rbx
+0x0101ae1265  test      ebx, ebx
+0x0101ae1267  jne       0x101ae0f1a
+0x0101ae126d  jmp       0x101ae0fa9
+0x0101ae1272  mov       qword ptr [r15], r14
+0x0101ae1275  mov       rdi, r15
+0x0101ae1278  call      0x101ae1320  ; _MSTRESETSUBCOLUMN_INTERNAL__417 |
+0x0101ae127d  cmp       byte ptr [rbp - 0xc1], 1
+0x0101ae1284  jne       0x101ae1298
+0x0101ae1286  mov       rdi, r14
+0x0101ae1289  call      0x100c6f530  ; _MAS_MODULE2_COMMITANDSETAUTOCOMMITON |
+0x0101ae128e  cmp       dword ptr [r14], 0
+0x0101ae1292  jne       0x101ae0f1a
+0x0101ae1298  lea       rax, [rip + 0x400ba65]  ; _MAS_MODULE1_EDM_SUCCESS
+0x0101ae129f  movzx     ebx, word ptr [rax]
+0x0101ae12a2  jmp       0x101ae0fab
+0x0101ae12a7  call      0x1038c3da0
+0x0101ae12ac  nop       dword ptr [rax]
+

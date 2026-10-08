@@ -1,0 +1,30 @@
+{
+  "name": "track-compatibility-metadata",
+  "fixture_profile": "compatibility",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 3,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "track-rows",
+      "description": "Compatibility flags for the complete file-type, sample-rate, and bit-depth fixture matrix",
+      "request_kind": "0x1004",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    },
+    {
+      "id": "filename-rows",
+      "description": "Extensions remain visible for every metadata-only compatibility fixture",
+      "request_kind": "0x1013",
+      "arguments": [{"number": "$context"}, {"number": "$sort"}],
+      "expect": {"outcome": "menu", "total": 8, "row_count": 8, "argument_count": 16}
+    }
+  ]
+}

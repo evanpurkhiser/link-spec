@@ -1,0 +1,89 @@
+{
+  "name": "hot-cue-bank-location-state",
+  "fixture_profile": "hot-cue-banks",
+  "fixture_version": 1,
+  "repeat_strategy": "reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "prime-location-1-root",
+      "description": "Populate location one with the three-row root and render it",
+      "request_kind": "0x2001",
+      "arguments": [{"number":"0x01010101"},{"number":0},{"number":1},{"number":0}],
+      "render_context": "0x01010101",
+      "fresh_connection": true,
+      "expect": {"outcome":"any"}
+    },
+    {
+      "id": "location-2-beta-render-location-1",
+      "description": "Populate location two with Beta Folder but render stale location one",
+      "request_kind": "0x2001",
+      "arguments": [{"number":"0x01010201"},{"number":"$fixture.hotcue.folder.beta"},{"number":1},{"number":0}],
+      "render_context": "0x01010101",
+      "fresh_connection": true,
+      "expect": {"outcome":"any"}
+    },
+    {
+      "id": "location-2-beta-current",
+      "description": "Render the current one-row Beta Folder buffer at location two",
+      "request_kind": "0x2001",
+      "arguments": [{"number":"0x01010201"},{"number":"$fixture.hotcue.folder.beta"},{"number":1},{"number":0}],
+      "render_context": "0x01010201",
+      "fresh_connection": true,
+      "expect": {"outcome":"any"}
+    },
+    {
+      "id": "location-3-alpha-render-location-2",
+      "description": "Populate location three with Alpha Folder but render stale location two",
+      "request_kind": "0x2001",
+      "arguments": [{"number":"0x01010301"},{"number":"$fixture.hotcue.folder.alpha"},{"number":1},{"number":0}],
+      "render_context": "0x01010201",
+      "fresh_connection": true,
+      "expect": {"outcome":"any"}
+    },
+    {
+      "id": "location-3-alpha-current",
+      "description": "Render the current three-row Alpha Folder buffer at location three",
+      "request_kind": "0x2001",
+      "arguments": [{"number":"0x01010301"},{"number":"$fixture.hotcue.folder.alpha"},{"number":1},{"number":0}],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {"outcome":"any"}
+    },
+    {
+      "id": "location-7-deep-render-location-3",
+      "description": "Populate location seven with Deep Folder but render stale location three",
+      "request_kind": "0x2001",
+      "arguments": [{"number":"0x01010701"},{"number":"$fixture.hotcue.folder.deep"},{"number":1},{"number":0}],
+      "render_context": "0x01010301",
+      "fresh_connection": true,
+      "expect": {"outcome":"any"}
+    },
+    {
+      "id": "location-7-deep-current",
+      "description": "Render the current one-row Deep Folder buffer at location seven",
+      "request_kind": "0x2001",
+      "arguments": [{"number":"0x01010701"},{"number":"$fixture.hotcue.folder.deep"},{"number":1},{"number":0}],
+      "render_context": "0x01010701",
+      "fresh_connection": true,
+      "expect": {"outcome":"any"}
+    },
+    {
+      "id": "location-7-beta-render-old-location-1",
+      "description": "After all locations are populated, render the original location-one root buffer",
+      "request_kind": "0x2001",
+      "arguments": [{"number":"0x01010701"},{"number":"$fixture.hotcue.folder.beta"},{"number":1},{"number":0}],
+      "render_context": "0x01010101",
+      "fresh_connection": true,
+      "expect": {"outcome":"any"}
+    }
+  ]
+}

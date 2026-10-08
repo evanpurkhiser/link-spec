@@ -1,0 +1,34 @@
+{
+  "artifacts": {
+    "data/static-analysis/link-export-visibility-xrefs.txt": "f1979492bd59245ea10df9a1d3dd271f9a7ffd9a5898c5f430bb281fca9db4ef",
+    "data/static-analysis/windows/appsync-history-vtable.json": "3cb95f3d2e456a0906598385dd747d21133499d6eb20c3b1cd2d1a38f8a9f7b0",
+    "data/static-analysis/windows/appsync-history.disasm.txt": "571dfaf264ba6de5c28366dccb011c11d7954418c49d1a40a0e7ecd1af3ee453",
+    "data/static-analysis/windows/rekordbox-metadata.json": "22cce379bccddcea46ca5da86407ed4b641ee1510018fd235711546bda767ce4",
+    "data/static-analysis/windows/request-1112-dispatch.disasm.txt": "aad4296b6a4fe77972efbbf031c57cb6169279050242765f90c991c1587cc9aa",
+    "data/static-analysis/windows/request-1112-immediates.json": "60042f528f4ca91763a85facb6b932283abb7dd8d4b27db3a708169d19b6b040"
+  },
+  "conclusion": "Windows AppSync History bypasses the FolderPath streaming gate used by macOS History.",
+  "format": "rekordbox-windows-history-static-cross-v1",
+  "macos": {
+    "binary_sha256": "07dcecbaf304f777e435539c83c7dcc02e41de1eaf2e0a75e8a9852e4411a244",
+    "history_function": "djeplGetTrack_History(RbDBIndex,int,int,char)",
+    "product_version": "7.2.19",
+    "visibility_call_sites": [
+      "0x1010c5e12",
+      "0x1010c5f20"
+    ]
+  },
+  "windows": {
+    "binary_sha256": "c9ed23e974c51c75e2ec069fbd2679a3dbe606be9e79e9cbbd13d6418ab11c37",
+    "binary_size": 103540656,
+    "content_query": "select * from djmdContent where rb_local_deleted = 0 and ID = %lu",
+    "dispatch_function": "0x142385970",
+    "explicit_streaming_visibility_gate": false,
+    "history_function": "0x14236c690",
+    "interface": "PSvAppSyncDBIF",
+    "product_version": "7.2.19.0",
+    "reads_folder_path": false,
+    "request_kind": "0x1112",
+    "vtable_offset": "0x230"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "hot-cue-bank-legacy-ordinals",
+  "fixture_profile": "hot-cue-bank-legacy-ordinals",
+  "fixture_version": 1,
+  "repeat_strategy": "fixture-reset-and-restart",
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 32,
+    "read_timeout_ms": 5000,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "ordinal-d",
+      "description": "Change the D bank assignment using wire ordinal 4",
+      "request_kind": "0x2201",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.mutation"},
+        {"number": 36},
+        {"blob_hex": "000104001127000000000000111111112222222233333333444444445555555566666666"},
+        {"number": 8},
+        {"blob_hex": "7777777788888888"}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ordinal-e",
+      "description": "Change the E bank assignment using wire ordinal 5",
+      "request_kind": "0x2201",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.mutation"},
+        {"number": 36},
+        {"blob_hex": "000105001227000000000000111111112222222233333333444444445555555566666666"},
+        {"number": 8},
+        {"blob_hex": "7777777788888888"}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "ordinal-f",
+      "description": "Change the F bank assignment using wire ordinal 6",
+      "request_kind": "0x2201",
+      "arguments": [
+        {"number": "$context"},
+        {"number": "$fixture.hotcue.bank.mutation"},
+        {"number": 36},
+        {"blob_hex": "000106001327000000000000111111112222222233333333444444445555555566666666"},
+        {"number": 8},
+        {"blob_hex": "7777777788888888"}
+      ],
+      "direct_response": true,
+      "render": false,
+      "expect": {"outcome": "any"}
+    }
+  ]
+}

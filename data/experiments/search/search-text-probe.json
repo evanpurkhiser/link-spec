@@ -1,0 +1,215 @@
+{
+  "name": "search-text-probe",
+  "fixture_profile": "search-text",
+  "fixture_version": 1,
+  "defaults": {
+    "device": 1,
+    "context": "0x01010301",
+    "sort": 0,
+    "root_capabilities": "0x05cfffff",
+    "setup": "extended",
+    "page_size": 64,
+    "render_arguments": [0, "$total", 12, 1, 0]
+  },
+  "cases": [
+    {
+      "id": "precomposed-upper",
+      "description": "Uppercase precomposed acute accent",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "PRECOMPOSED ÉCLAIR"},
+        {"string": "PRECOMPOSED ÉCLAIR"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "precomposed-lower",
+      "description": "Lowercase precomposed acute accent",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "PRECOMPOSED éCLAIR"},
+        {"string": "PRECOMPOSED éCLAIR"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "combining-upper-base",
+      "description": "Uppercase ASCII base followed by combining acute",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "COMBINING ÉCLAIR"},
+        {"string": "COMBINING ÉCLAIR"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "combining-lower-base",
+      "description": "Lowercase ASCII base followed by combining acute",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "COMBINING éCLAIR"},
+        {"string": "COMBINING éCLAIR"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "precomposed-against-combining",
+      "description": "Precomposed accent does not normalize to combining form",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "COMBINING ÉCLAIR"},
+        {"string": "COMBINING ÉCLAIR"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "combining-against-precomposed",
+      "description": "Combining accent does not normalize to precomposed form",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "PRECOMPOSED ÉCLAIR"},
+        {"string": "PRECOMPOSED ÉCLAIR"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "emoji-smiling",
+      "description": "Exact supplementary-plane smiling symbol",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "🙂"}, {"string": "🙂"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "emoji-upside-down",
+      "description": "Exact supplementary-plane upside-down symbol",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "🙃"}, {"string": "🙃"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "emoji-mixed-token",
+      "description": "ASCII-folded token combined with supplementary symbol",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "emoji 🙂"}, {"string": "emoji 🙂"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "emoji-scalar-length",
+      "description": "Emoji length computed as one scalar plus terminator",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"number": 4}, {"string": "🙂"}, {"number": 0}
+      ],
+      "render": false,
+      "fresh_connection": true,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "sharp-s-exact",
+      "description": "Exact lowercase sharp S",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "SHARP ß"}, {"string": "SHARP ß"}, {"number": 0}
+      ],
+      "fresh_connection": true,
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "sharp-s-uppercase",
+      "description": "Uppercase sharp S is not folded to lowercase sharp S",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "SHARP ẞ"}, {"string": "SHARP ẞ"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "sharp-s-ascii-expansion",
+      "description": "Sharp S is not expanded to ASCII SS",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "SHARP SS"}, {"string": "SHARP SS"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "dotted-i-exact",
+      "description": "Exact uppercase dotted I",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "DOTTED İ"}, {"string": "DOTTED İ"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "dotted-i-ascii",
+      "description": "ASCII i folding does not produce dotted I",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "DOTTED i"}, {"string": "DOTTED i"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "nul-only",
+      "description": "Query containing one embedded NUL code unit",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "\u0000"}, {"string": "\u0000"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "nul-suffix",
+      "description": "NUL follows an otherwise broad ASCII query",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "EMOJI\u0000"}, {"string": "EMOJI\u0000"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "nul-middle",
+      "description": "NUL separates an ASCII prefix and supplementary symbol",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "EMOJI\u0000🙂"}, {"string": "EMOJI\u0000🙂"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    },
+    {
+      "id": "nul-after-emoji",
+      "description": "NUL follows a supplementary symbol",
+      "request_kind": "0x1300",
+      "arguments": [
+        {"number": "$context"}, {"number": "$sort"},
+        {"utf16_bytes": "🙂\u0000"}, {"string": "🙂\u0000"}, {"number": 0}
+      ],
+      "expect": {"outcome": "any"}
+    }
+  ]
+}
